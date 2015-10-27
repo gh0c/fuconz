@@ -1,0 +1,254 @@
+@import "modules/modules.import";
+
+
+
+/* Component containers
+----------------------------------*/
+.ui-widget {
+    font-family: MuseoSans;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+.ui-widget .ui-widget {
+    font-size: 1em;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+    font-family: MuseoSans;
+    font-weight: 700;
+    font-size: 1em;
+}
+.ui-widget-content {
+    border: 2px solid black ;
+    background-color: $dark-dark-blue;
+    color: $light-blue-gray-light;
+}
+.ui-widget-content a {
+    color: firebrick;
+}
+
+.ui-widget-header {
+//  background-color: $blue-green-status;
+  color: $light-blue-gray-light;
+//    @include gradient-status-bg(25px);
+
+}
+.ui-widget-header a {
+  color: $light-blue-gray-light;
+}
+
+.ui-widget-header .ui-datepicker-title {
+  @include gradient-vertical-bbb-flag-cibona-blue();
+}
+
+
+.ui-datepicker td span,
+.ui-datepicker td a,
+.ui-timepicker td span,
+.ui-timepicker td a {
+  font-weight: 300;
+}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  border: 1px solid transparent;
+  background: $cibona-blue;
+  color: $light-blue-gray-light;
+  height: 1.25em;
+  @include pp-transition(background-color .25s ease-out, color .25s ease-out);
+
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-widget-content .ui-state-hover.ui-state-highlight {
+//    border: 1px solid transparent;
+  background-color: $light-blue-gray-light;
+  color: $dark-dark-blue;
+}
+
+
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited {
+//  text-decoration: none;
+//  color: $dark-dark-blue;
+
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+
+  font-weight: 700;
+  background-color: $light-blue-gray-light;
+  color: $dark-dark-blue;
+}
+
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+    color: #75abff;
+    text-decoration: none;
+}
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+  @include gradient-status-bg(25px, 0.1);
+  color: $light-blue-gray-dark;
+}
+
+
+
+.ui-state-error,
+.ui-widget-content .ui-state-error,
+.ui-widget-header .ui-state-error {
+    border: 1px solid #cd0a0a;
+    background: #a32d00 url("../css/images/ui-bg_dots-small_30_a32d00_2x2.png") 50% 50% repeat;
+    color: #ffffff;
+}
+.ui-state-error a,
+.ui-widget-content .ui-state-error a,
+.ui-widget-header .ui-state-error a {
+    color: #ffffff;
+}
+.ui-state-error-text,
+.ui-widget-content .ui-state-error-text,
+.ui-widget-header .ui-state-error-text {
+    color: #ffffff;
+}
+.ui-priority-primary,
+.ui-widget-content .ui-priority-primary,
+.ui-widget-header .ui-priority-primary {
+    font-weight: bold;
+}
+.ui-priority-secondary,
+.ui-widget-content .ui-priority-secondary,
+.ui-widget-header .ui-priority-secondary {
+    opacity: .7;
+    filter:Alpha(Opacity=70); /* support: IE8 */
+    font-weight: normal;
+}
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+    opacity: .35;
+    filter:Alpha(Opacity=35); /* support: IE8 */
+    background-image: none;
+}
+.ui-state-disabled .ui-icon {
+    filter:Alpha(Opacity=35); /* support: IE8 - See #6059 */
+}
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+//    border-top-left-radius: 4px;
+}
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+//    border-top-right-radius: 4px;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+//    border-bottom-left-radius: 4px;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+//    border-bottom-right-radius: 4px;
+}
+
+.ui-datepicker-header.ui-corner-all {
+  @include rounded(2em);
+}
+.ui-datepicker .ui-datepicker-header {
+  padding: 0;
+}
+
+a.ui-datepicker-prev,
+a.ui-datepicker-next {
+  height: 100%;
+  @include pp-transition(background-color .25s ease-out, color .25s ease-out);
+
+}
+
+a.ui-datepicker-prev {
+  @include rounded-nw(2em);
+  @include rounded-sw(2em);
+}
+a.ui-datepicker-next {
+  @include rounded-ne(2em);
+  @include rounded-se(2em);
+}
+
+
+
+.ui-icon-circle-triangle-e,
+.ui-icon-circle-triangle-s,
+.ui-icon-circle-triangle-w,
+.ui-icon-circle-triangle-n{
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+  height: 100%;
+  width: 100%;
+}
+
+
+.ui-icon-circle-triangle-e:before,
+.ui-icon-circle-triangle-w:before {
+  top: calc(50% - 10px);
+  position: relative;
+
+  font-size: 20px;
+}
+
+.ui-icon-circle-triangle-w:before {
+  content: '\f053';
+}
+.ui-icon-circle-triangle-e:before {
+  content: '\f054';
+}
+
+.ui-datepicker { z-index: 999999 !important; }
+.ui-timepicker { z-index: 999999 !important; }

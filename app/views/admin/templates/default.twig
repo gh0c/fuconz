@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'admin/templates/partials/head_info.twig'%}
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+
+<body>
+
+
+<div class = "pp-a-box container">
+
+
+    <div class = "content-wrap">
+        <div class = "content">
+
+
+            {% include 'admin/templates/std_header.twig'%}
+
+            <section id = "content">
+                <!-- main content, will be injected via Twig -->
+                {% block content %} {% endblock %}
+            </section>
+
+
+            {% include 'admin/templates/std_footer.twig'%}
+        </div>
+    </div>
+</div>
+
+
+
+{% include 'admin/templates/partials/foot_info.twig'%}
+
+
+</body>
+</html>

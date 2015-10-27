@@ -1,0 +1,40 @@
+{% extends "admin/templates/default.twig" %}
+
+{% block title %}
+    Admin stranice
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Admin stranice</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+
+
+                {% include "admin/templates/partials/admin_messages.twig" %}
+
+
+                <div class = "pp-content">
+                    <p>
+                        <span>Admin: {{ auth_admin.username }}</span>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,36 @@
+
+
+<header id = "header">
+    <nav class = "main">
+        <div class = "logo">
+            <strong>
+                <a href="{{ urlFor('home') }}" title="Fuconž.net - Početna">Social network</a>
+            </strong>
+        </div>
+
+
+        <ul class = "menu right-fl">
+            <li>
+                <a href = "">Di halamo</a>
+            </li>
+            {% if auth_user %}
+                <li class = "user-sign" title="{{ auth_user.ssbos("Prijavljena članica", "Prijavljeni član") }} {{ auth_user.username }}">
+                    <i class = "fa fa-user"></i>
+                </li>
+                <li class = "auth"><a href="{{ urlFor('user.logout') }}">Odjava</a></li>
+            {% else %}
+                <li class = "user-sign" title="Niste prijavljeni">
+                    <i class = "fa fa-user-secret"></i>
+                </li>
+                <li class = "auth"><a href="{{ urlFor('user.login') }}">Prijava</a></li>
+                <li class = "auth"><a href="{{ urlFor('user.registration') }}">Registracija</a></li>
+
+            {% endif %}
+        </ul>
+
+    </nav>
+    {% if auth_user %}
+        {% include 'user/user.header.twig' %}
+    {% endif %}
+
+</header>

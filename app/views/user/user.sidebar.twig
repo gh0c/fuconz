@@ -1,0 +1,77 @@
+<div class="menu-wrap">
+    <nav class="menu">
+        <section class = "user-basic-info">
+
+            {% set avatar = auth_user.getAvatarPath("thumb1") %}
+            {%  if avatar %}
+            <div class = "w-20">
+                <div class="menu-button-cont menu-icon">
+                    <div class = "home-icon-cont">
+                        <div class = "thumbnail user">
+                            <div class = "pic-cont">
+                                <span class="v-align-helper"></span><img src="{{ avatar }}">
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "w-80">
+                <h4 class = "full-name">{{ auth_user.full_name }}</h4>
+                <h5 class = "classic-h5 email">{{ auth_user.email }}</h5>
+            </div>
+            {% else %}
+                <div class = "full-w">
+                    <h4 class = "full-name">{{ auth_user.full_name }}</h4>
+                    <h5 class = "classic-h5 email">{{ auth_user.email }}</h5>
+                </div>
+            {% endif %}
+
+        </section>
+        <section class = "jukebox-container">
+            <h5 class = "classic-h5 username">{{ auth_user.username }}</h5>
+            <div>
+                <blockquote>
+                    <p>{{ jukebox.getRandomQuote() }}</p>
+                </blockquote>
+            </div>
+            <div class = "empty-horiz-spacer-10 light-blue-gray-l-bg"></div>
+            <div class = "empty-horiz-spacer-20 dark-dark-blue-bg"></div>
+        </section>
+
+        <section class="icon-list">
+            <a href="{{ urlFor('user.home') }}" class = "menu-link"><i class="fa fa-fw fa-home"></i><span>Početna</span></a>
+            <a href="{{ urlFor('user.profile.home') }}" class = "menu-link"><i class="fa fa-fw fa-user"></i><span>Profilna</span></a>
+            <a href="clanovi/poruke" class = "menu-link"><i class="fa fa-fw fa-envelope-o"></i><span>Poruke</span></a>
+            <a href="#" class = "menu-link"><i class="fa fa-fw fa-calendar-check-o"></i><span>Rezerviraj termin</span></a>
+            <span>&nbsp;</span>
+            <a href="{{ urlFor('user.logout') }}" class = "logout menu-link"><i class="fa fa-fw fa-sign-out"></i><span>Odjava</span></a>
+        </section>
+    </nav>
+
+    <button class="close-button" id="close-button" title = "Zatvori izbornik">
+        <i class="fa fa-fw fa-times-circle"></i>
+    </button>
+</div>
+
+
+<div class="menu-button-cont opener" id="open-user-menu-button"  title = "Članski izbornik">
+    <div class = "home-icon-cont">
+    {% set avatar = auth_user.getAvatarPath('thumb2') %}
+    {%  if avatar %}
+        <div class = "thumbnail user">
+            <div class = "no-show"><i class = "fa fa-bars"></i></div>
+            <div class = "pic-cont"
+                 style="background-image:url('{{ avatar }}');" ></div>
+        </div>
+    {% else %}
+        <div class = "thumbnail user user-icon">
+            <div class = "no-show"><i class = "fa fa-bars"></i></div>
+            <div class="pic-cont">
+                <i class = "fa fa-{{ auth_user.ssbos('fe', '') }}male"></i>
+            </div>
+        </div>
+    {% endif %}
+    </div>
+</div>
+
+

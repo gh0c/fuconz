@@ -1,0 +1,42 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    Korisničke stranice
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Korisničke stranice {{ auth.ssbos('članice', 'člana') }}</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+
+
+                {% include "templates/partials/user_messages.twig" %}
+
+
+                <div class = "pp-content">
+                    <p>
+                        <span>Korisnik: {{ auth_user.email }}</span>
+                        {% set avatar = auth_user.getAvatarPath %}
+                        <span>Avatar path: {{ avatar }}</span>
+                    </p>
+                    <p>
+                        <a href = "{{ urlFor('user.profile') }}"> Uredi profil</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

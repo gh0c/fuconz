@@ -1,0 +1,234 @@
+{% extends "admin/templates/default.twig" %}
+
+{% block title %}
+    Novi registracijski termin
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Novi rezervacijski termin</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+                <div class = "form-container">
+
+
+
+
+                    <form method = "post" name = "training-course" id = "training-course"  onsubmit="return false;"
+                          action = "{{ urlFor('user.registrations.training_course.new.post') }}">
+                        <div class = "inputs-container">
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="title" id="title" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="1"
+                                           class = "large-text-input large-input-width req"/>
+                                    <label id="first-name-label" alt="Naziv" class = "req"
+                                           placeholder="Naziv" data-info="Naziv"></label>
+                                </div>
+                            </div>
+
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="date-from" id="date-from" required
+                                           maxlength="255" spellcheck="false" autocomplete="on" tabindex="2"
+                                           class = "std-text-input std-input-width req datepicker"/>
+                                    <label id="date-from-label" class = "req" alt="Datum početka"
+                                           placeholder="Datum početka" data-info="Datum početka"></label>
+                                </div>
+                            </div>
+
+
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="start-time" id="start-time" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="3"
+                                           class = "std-text-input std-input-width req timepicker"/>
+                                    <label id="start-time-label" class = "req" alt="Početak"
+                                           placeholder="Vrijeme početka termina" data-info="Vrijeme početka termina"></label>
+                                </div>
+
+                            </div>
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="end-time" id="end-time" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="4"
+                                           class = "std-text-input std-input-width req timepicker"/>
+                                    <label id="end-time-label" class = "req" alt="Kraj"
+                                           placeholder="Vrijeme kraja termina" data-info="Vrijeme kraja termina"></label>
+                                </div>
+
+                            </div>
+
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="number" name="capacity" id="capacity"
+                                           min="0" tabindex="5" required
+                                           class = "std-text-input std-input-width req"/>
+                                    <label id="capacity-label" class = "req" alt="Kapacitet" placeholder="Kapacitet"
+                                           data-info="Kapacitet"></label>
+                                </div>
+                            </div>
+
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="number" name="min-reservations" id="min-reservations"
+                                           min="0" tabindex="6" required
+                                           class = "std-text-input std-input-width req"/>
+                                    <label id="min-reservations-label" class = "req" alt="Minimalno rezervacija"
+                                           placeholder="Minimalno rezervacija" data-info="Minimalno rezervacija"></label>
+                                </div>
+                            </div>
+
+
+                            <div class = "vertical-section text-centered ">
+                                <div class ="dashed-spacer empty-horiz-spacer-5"></div>
+                            </div>
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="checkbox" name="repeating" id="repeating" required
+                                           class = "cb-input repeating" tabindex="7">
+                                    <div class = "checkbox-div-cont">
+                                        <label for = "repeating" alt="Ponavljanje" placeholder="Ponavljanje" data-info="Ponavljanje">
+                                            <span>Ponavljanje?</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="date-until" id="date-until" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="8"
+                                           class = "std-text-input std-input-width datepicker"/>
+                                    <label id="date-until-label" alt="Ponavljanje do datuma"
+                                           placeholder="Ponavljanje do datuma" data-info="Ponavljanje do datuma"></label>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <select name="repeating-interval" tabindex="9" required
+                                            class = "std-text-input std-input-width">
+                                        <option selected disabled hidden value=''></option>
+                                        <option value = "{{ config.read('repeating.interval.none') }}">
+                                            Bez ponavljanja
+                                        </option>
+                                        <option value = "{{ config.read('repeating.interval.day') }}">
+                                            Dnevno
+                                        </option>
+                                        <option value = "{{ config.read('repeating.interval.week') }}">
+                                            Tjedno
+                                        </option>
+                                        <option value = "{{ config.read('repeating.interval.month.1') }}">
+                                            Mjesečno
+                                        </option>
+                                        {#<option value = "{{ config.read('repeating.interval.month.2') }}">#}
+                                            {#Mjesečno 2#}
+                                        {#</option>#}
+                                    </select>
+
+                                    <label id="repeating-interval-label" alt="Interval ponavljanja"
+                                           placeholder="Interval ponavljanja" data-info="Interval ponavljanja"></label>
+                                </div>
+                            </div>
+
+
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="number" name="repeating-frequency" id="repeating-frequency"
+                                           min="0" tabindex="10" required
+                                           class = "std-text-input std-input-width"/>
+                                    <label id="repeating-frequency-label" alt="Frekvencija ponavljanja" placeholder="Frekvencija ponavljanja" data-info="Frekvencija ponavljanja"></label>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                        {% include "templates/partials/user_messages.twig" %}
+
+                        {% include "templates/partials/live_status.container.twig" %}
+
+                        <input type = "hidden" name = "{{ csrf_key }}" value = "{{ csrf_token }}">
+
+                        <div class = "submitter-cont">
+                            <div class = "inner-70pct">
+                                <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="10"
+                                     onclick="validateAndSubmitTrainingCourse('training-course')">
+                                    <span>UNESI</span>
+                                </div>
+                                <div class="submitter bbb-flag-v-cibona-blue reversed cancel">
+                                    <a href = "{{ urlFor('admin.reservations.home') }}" tabindex="11">ODUSTANI</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+            function valSub() {
+                if(formSubmittingActive == true) {
+                    validateAndSubmitTrainingCourse('training-course');
+                    return false;
+                }
+            }
+            $('#training-course').keydown(function(e) {
+                if (e.keyCode == 13) {
+                    valSub();
+                }
+            });
+            $('.submitter.submit').keydown(function(e) {
+
+                if (e.keyCode == 13) {
+                    valSub();
+                }
+            });
+
+            $(".datepicker").datepicker( $.datepicker.regional[ "hr" ] );
+
+            $(".timepicker").timepicker( {
+                showPeriodLabels: false
+            } );
+            $(".timepicker").timepicker("option", $.timepicker.regional[ "hr" ]);
+        });
+
+
+    </script>
+
+
+{% endblock %}

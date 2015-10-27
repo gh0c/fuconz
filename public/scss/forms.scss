@@ -1,0 +1,507 @@
+@import "modules/modules.import";
+
+$std-input-height: 2.5em;
+$std-input-width: 24em;
+$large-input-width: 32em;
+$medium-input-width: 20em;
+$small-input-width: 16em;
+
+.form-container {
+  font-size: 0.95em;
+  padding: 1em;
+  .inputs-container {
+    text-align: center;
+  }
+  input {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 15;
+  }
+
+  input[type="password"].text-input,
+  .std-text-input,
+  .large-text-input,
+  .medium-text-input,
+  .small-text-input {
+    font-family: MuseoSans;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 0.6em 3em 0.2em 1.5em;
+    border: 1px solid $dark-blue-dark;
+    border-radius: 1.5em;
+    resize: none;
+    outline: none;
+    color: $dark-dark-blue;
+    height: $std-input-height;
+
+
+  }
+
+  input[type="password"][required].text-input ~ label[placeholder],
+  .std-text-input ~ label,
+  .large-text-input ~ label,
+  .medium-text-input ~ label,
+  .small-text-input ~ label{
+    font-family: 'Raleway',Arial,sans-serif;
+    display: block;
+    pointer-events: none;
+    line-height: -webkit-calc(#{$std-input-height} + 1px);
+    line-height: calc(#{$std-input-height} + 1px);
+    margin-top: -webkit-calc(-#{$std-input-height} + 1px);
+    margin-top: calc(-#{$std-input-height} + 1px);
+
+    padding: 0;
+    position: relative;
+    text-align: left;
+
+    &:before {
+      content: attr(data-info);
+      display: inline-block;
+      line-height: 1em;
+      white-space: nowrap;
+      @include pp-transition(0.3s ease-in-out);
+      background-color: $main-content-bg-color;
+      color: $dark-blue-dark;
+      text-align: left;
+      padding: 0 0.4em;
+      font-style: italic;
+      opacity: .7;
+      position: relative
+    }
+    &:after {
+      content: '\0020';
+      display: inline-block;
+      line-height: 1em;
+      white-space: nowrap;
+      color: $dark-blue-dark;
+      width: 2em;
+      font-family: FontAwesome;
+      position: absolute;
+
+      top: -webkit-calc(50% - 0.5em - 1px);
+      top: calc(50% - 0.5em - 1px);
+    }
+
+    &.req:after {
+      content: '\f069';
+      color: $red-required;
+    }
+  }
+
+
+  .std-text-input ~ label{
+    &:before {
+      left: -webkit-calc(50% - 10em);
+      left: calc(50% - 10em);
+    }
+    &:after {
+      right: -webkit-calc(50% - 11em);
+      right: calc(50% - 11em);
+    }
+  }
+  .large-text-input ~ label{
+    &:before {
+      left: -webkit-calc(50% - 10em - ((#{$large-input-width} - #{$std-input-width}) / 2));
+      left: calc(50% - 10em - ((#{$large-input-width} - #{$std-input-width}) / 2));;
+    }
+    &:after {
+      right: -webkit-calc(50% - 11em - ((#{$large-input-width} - #{$std-input-width}) / 2));;
+      right: calc(50% - 11em - ((#{$large-input-width} - #{$std-input-width}) / 2));;
+    }
+  }
+
+  .medium-text-input ~ label{
+    &:before {
+      left: -webkit-calc(50% - 10em - ((#{$medium-input-width} - #{$std-input-width}) / 2));
+      left: calc(50% - 10em - ((#{$medium-input-width} - #{$std-input-width}) / 2));;
+    }
+    &:after {
+      right: -webkit-calc(50% - 11em - ((#{$medium-input-width} - #{$std-input-width}) / 2));;
+      right: calc(50% - 11em - ((#{$medium-input-width} - #{$std-input-width}) / 2));;
+    }
+  }
+
+
+  .small-text-input ~ label{
+    &:before {
+      left: -webkit-calc(50% - 10em - ((#{$small-input-width} - #{$std-input-width}) / 2));
+      left: calc(50% - 10em - ((#{$small-input-width} - #{$std-input-width}) / 2));;
+    }
+    &:after {
+      right: -webkit-calc(50% - 11em - ((#{$small-input-width} - #{$std-input-width}) / 2));;
+      right: calc(50% - 11em - ((#{$small-input-width} - #{$std-input-width}) / 2));;
+    }
+  }
+
+  input[type="password"][required],
+  .std-text-input,
+  .large-text-input,
+  .medium-text-input,
+  .small-text-input {
+    &:focus {
+      border-color: $dark-blue-light;
+      border-width: 2px;
+      padding-left: -webkit-calc(1.5em - 1px);
+      padding-left: calc(1.5em - 1px);
+    }
+  }
+
+  .std-text-input:focus ~ label:before,
+  .std-text-input:valid ~ label:before,
+  .large-text-input:focus ~ label:before,
+  .large-text-input:valid ~ label:before,
+  .medium-text-input:focus ~ label:before,
+  .medium-text-input:valid ~ label:before,
+  .small-text-input:focus ~ label:before,
+  .small-text-input:valid ~ label:before{
+    @include pp-transform-duration(0.35s);
+    @include pp-transform(translate(-0.5em, -1.2em) scale(0.9, 0.9));
+    opacity: 1;
+    font-style: normal;
+    border-left: 1px solid #183293;
+  }
+
+
+  input[type="password"][required]:invalid ~ label[placeholder][alt]:before {
+    content: attr(alt);
+  }
+
+
+  select.std-text-input,
+  select.medium-text-input,
+  select.small-text-input,
+  select.large-text-input {
+    cursor: pointer;
+    
+    option {
+      font-family: 'Raleway',Arial,sans-serif;
+      @include pp-appearance(none);
+      padding: 0;
+    }
+  }
+
+  input[type="radio"].rb-input, input[type="checkbox"].cb-input {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .pp-radio-div {
+    height: -webkit-calc(#{$std-input-height} + 2px);
+    height: calc(#{$std-input-height} + 2px);
+  }
+
+  input[type="radio"].rb-input,
+  input[type="checkbox"].cb-input {
+
+    & + .radio-div-cont, & + .checkbox-div-cont {
+      font-family: MuseoSans;
+      font-weight: 700;
+      font-size: 1em;
+      padding: 0.5em 0.5em 0.3em 1em;
+      border: 1px solid $dark-blue-dark;
+      border-radius: 1.5em;
+      resize: none;
+      outline: none;
+      color: $dark-dark-blue;
+      height: -webkit-calc(#{$std-input-height} - 0.8em - 2px);
+      height: calc(#{$std-input-height} - 0.8em - 2px);
+      display: inline-block;
+      position: relative;
+    }
+
+    & + .radio-div-cont {
+      width: 10em;
+    }
+
+    & + .checkbox-div-cont {
+      width: 20em;
+    }
+
+    & + .radio-div-cont > label,
+    & + .checkbox-div-cont > label {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: normal;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: inherit;
+      cursor: pointer;
+//      text-align: left;
+      color: $dark-blue-dark;
+    }
+
+    & + .radio-div-cont > label,
+    & + .checkbox-div-cont > label {
+      &:before {
+        font-family: FontAwesome;
+        left: 0em;
+        color: $dark-blue-dark;
+        text-align: center;
+        width: 1.5em;
+        position: absolute;
+        font-size: 1.5em;
+        line-height: 1.5em;
+        /* vertical-align: middle; */
+        top: calc(50% - 0.75em);
+      }
+    }
+
+    & + .radio-div-cont > label {
+      &:before {
+        content: '\f1db';
+        @include pp-transition(all 0.40s);
+      }
+
+      > span {
+
+        line-height: 100%;
+        display: inline-block;
+        width: 4em;
+        padding: 0 0.8em 0 2.2em;
+        text-align: left;
+        position:relative;
+        top: 3px;
+      }
+    }
+
+    & + .checkbox-div-cont > label {
+      &:before {
+        content: '\f1db';
+        @include pp-transition(all 0.40s);
+      }
+
+      > span {
+
+        line-height: 100%;
+        display: inline-block;
+        width: 8em;
+        padding: 0 0.8em 0 2.2em;
+        text-align: left;
+        position:relative;
+        top: 3px;
+      }
+    }
+
+    &:focus + .radio-div-cont,
+    &:focus + .checkbox-div-cont {
+      border-color: $dark-blue-light;
+      border-width: 2px;
+      padding-left: -webkit-calc(1em - 1px);
+      padding-left: calc(1em - 1px);
+      padding-top: -webkit-calc(0.5em - 1px);
+      padding-top: calc(0.5em - 1px);
+      padding-bottom: -webkit-calc(0.3em - 1px);
+      padding-bottom: calc(0.3em - 1px);
+      padding-right: -webkit-calc(0.5em - 1px);
+      padding-right: calc(0.5em - 1px);
+    }
+
+    &:not(:checked) + .radio-div-cont > label:hover:before {
+      color: $dark-blue-light;
+      content:  '\f00c'; //'\f05d';
+    }
+    &:not(:checked) + .checkbox-div-cont > label:hover:before {
+      color: $dark-blue-light;
+      content:  '\f00c'; //'\f05d';
+    }
+
+    &:checked + .radio-div-cont > label {
+      &:before {
+        content: '\f058';
+        color: $dark-dark-blue;
+      }
+      color: $dark-dark-blue;
+      & > span {
+        font-family: MuseoSans;
+        font-weight: 700;
+      }
+    }
+
+    &:checked + .checkbox-div-cont > label {
+      &:before {
+        content: '\f058';
+        color: $dark-dark-blue;
+      }
+      color: $dark-dark-blue;
+      & > span {
+        font-family: MuseoSans;
+        font-weight: 700;
+      }
+    }
+  }
+
+
+  .medium-input-width {
+    width: $medium-input-width;
+  }
+
+  .std-input-width {
+    width: $std-input-width;
+  }
+
+  .large-input-width {
+    width: $large-input-width;
+  }
+
+  .small-input-width {
+    width: $small-input-width;
+  }
+
+  h4.req {
+    padding: 4px 5px 5px 4px;
+    color: $red-required;
+    display: inline-block;
+  }
+
+
+}
+
+
+
+.submitter-cont {
+  padding: 3px 2em 3px 2em;
+  & > div {
+    font-family: MuseoSans;
+    font-weight: 700;
+    text-align: center;
+
+  }
+
+  .submitter {
+    width: 12em;
+    margin: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    @include pp-transition(all 0.35s ease-in-out);
+    @include rounded(1.5em);
+    border: 1px solid black;
+    @include box-sizing(border-box);
+    &.submit {
+      width: 15em;
+    }
+    span, a {
+      color: $light-blue-gray-light;
+      padding: 0.5em 0.5em;
+      display: block;
+      height: 100%;
+    }
+
+    &.bbb-flag-v-cibona-blue.submit {
+      &:hover, &:focus {
+        @include box-shadow(inset 0 0 8px rgba(0,0,0,0.8), 0 0 16px $dark-blue-dark);
+      }
+      &:active {
+        @include box-shadow(inset 0 0 12px rgba(0,0,0,1), 0 0 18px $dark-blue-dark);
+        span, a {
+          color: white;
+        }
+      }
+    }
+    &.bbb-flag-v-cibona-blue.cancel {
+      @include gradient-vertical-bbb-flag-white();
+      span,a {
+        color: $dark-dark-blue;
+      }
+      &:hover, &:focus {
+        @include box-shadow(inset 0 0 8px rgba(0,0,0,0.8), 0 0 12px $red-required);
+      }
+      &:active {
+        @include box-shadow(inset 0 0 12px rgba(0,0,0,0.8), 0 0 18px $red-required);
+        span, a {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+
+$message-line-height: 3em;
+div.info {
+  .status-container {
+    display: inline-table;
+    width: 100%;
+    text-align: center;
+    min-height: $message-line-height;
+    border-bottom: 2px dashed $dark-dark-blue;
+//    border-top: 2px dashed $dark-dark-blue;
+    @include pp-transition(all 0.5s ease);
+
+    &.warning-msg {
+
+      width: 100%;
+//      color: #fff;
+
+      i.fa.warning {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      i.status.fa {
+        color: #fff;
+        @include gradient-status-bg(15px);
+      }
+      &.live i.status.fa {
+        background-color: $orange-warning;
+      }
+
+      &.error-msg i.status.fa {
+        background-color: $red-error;
+      }
+
+      &.success-msg i.status.fa {
+        background-color:$green-success;
+      }
+      &.status-msg i.status.fa {
+        background-color: $blue-green-status;
+      }
+    }
+
+    i.status.fa {
+      vertical-align: middle;
+      display: table-cell;
+      width: 3em;
+    }
+
+
+    h4 {
+      display: inline-block;
+      vertical-align: middle;
+      font-family: MuseoSans;
+      font-weight: 700;
+      text-align: center;
+      padding: 0.3em 1em 0.3em 1em;
+      min-height: $message-line-height;
+      line-height: 125%;
+    }
+
+    .pp-icon-spin {
+      font-size: 1.40em;
+      color: $dark-dark-blue;
+      vertical-align: middle;
+      width: 2em;
+    }
+
+    &.live h4, &.live .fa {
+      color: $dark-dark-blue;
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    &.msg {
+      min-height: 3em;
+      vertical-align: middle;
+
+      & > h4 {
+        min-height: 2em;
+        vertical-align: middle;
+        display: table-cell;
+        padding-right: 0;
+        color: $dark-dark-blue;
+      }
+
+    }
+
+
+  }
+}

@@ -1,0 +1,60 @@
+@import "modules/modules.import";
+
+#content {
+  clear: both;
+  position: relative;
+  @include pp-transition(padding .25s ease-out);
+
+  .main-block-cont {
+    position: relative;
+    padding: 0 0 10px 0;
+  }
+
+  .main-block-cont:first-child, .main-block-cont.first {
+//    padding-top: 50px;
+  }
+
+  .main-title-box {
+    width: 100%;
+    background-color: $dark-dark-blue;
+    .flag {
+      @include gradient-pole-black-blue-white-1();
+      height: 10px;
+    }
+    .page-title {
+      text-align: center;
+      font-family: MuseoSans;
+      font-weight: 700;
+      padding: 10px 0 8px 0px;
+      h1{
+        color: $light-blue-gray-light;
+        font-size: 2em;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .main-content-box {
+    width: 100%;
+    background-color: $main-content-bg-color;
+
+    .vertical-section {
+      padding: 3px 2em 3px 2em;
+
+      & > div {
+        padding: 0.35em 0.7em;
+      }
+
+      .dashed-spacer {
+        border-bottom: 2px dashed $dark-dark-blue;
+        box-sizing: border-box;
+      }
+
+      &.multirow {
+        display: inline-block;
+        min-width: 35em;
+      }
+    }
+  }
+
+}

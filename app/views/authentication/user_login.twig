@@ -1,0 +1,118 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    Prijava na članske stranice
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Prijava registriranih članova</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+                <div class = "form-container">
+
+                    <form method = "post" name = "user-login" id = "user-login"  onsubmit="return false;"
+                          action = "{{ urlFor('user.login.post') }}">
+                        <div class = "inputs-container">
+
+
+                            <div class = "vertical-section text-centered ">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="username" id="username" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="1"
+                                           class = "std-text-input std-input-width req"/>
+                                    <label id="username-label" class = "req" alt="Korisničko ime" placeholder="Korisničko ime" data-info="Korisničko ime"></label>
+                                </div>
+
+                            </div>
+
+                            <div class = "vertical-section text-centered ">
+                                <div class = "inner-70pct">
+                                    <input type="password" name="password" id="password" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="2"
+                                           class = "std-text-input std-input-width req"/>
+                                    <label id="password-label" class = "req" alt="Lozinka" placeholder="Lozinka" data-info="Lozinka"></label>
+                                </div>
+                            </div>
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "inner-70pct">
+                                    <input type="checkbox" name="remember-me" id="remember-me"
+                                           class = "cb-input remember-me " tabindex="3">
+                                    <div class = "checkbox-div-cont">
+                                        <label for = "remember-me" alt="Zapamti me" placeholder="Zapamti me" data-info="Zapamti me">
+                                            <span>Zapamti me?</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+                        {% include "templates/partials/user_messages.twig" %}
+
+                        {% include "templates/partials/live_status.container.twig" %}
+
+                        <input type = "hidden" name = "{{ csrf_key }}" value = "{{ csrf_token }}">
+
+                        <div class = "submitter-cont">
+                            <div class = "inner-70pct">
+                                <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="4"
+                                     onclick="validateAndSubmitLogin('user-login')">
+                                    <span>PRIJAVA</span>
+                                </div>
+                                <div class="submitter bbb-flag-v-cibona-blue reversed cancel">
+                                    <a href = "{{ urlFor('home') }}" tabindex="5">ODUSTANI</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            function valSub() {
+                if(formSubmittingActive == true) {
+                    validateAndSubmitLogin('user-login');
+                    return false;
+                }
+            }
+            $('#user-login').keydown(function(e) {
+                if (e.keyCode == 13) {
+                    valSub();
+                }
+            });
+            $('.submitter.submit').keydown(function(e) {
+
+                if (e.keyCode == 13) {
+                    valSub();
+                }
+            });
+        });
+    </script>
+
+{% endblock %}

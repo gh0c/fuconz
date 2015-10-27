@@ -1,0 +1,113 @@
+{% extends "admin/templates/default.twig" %}
+
+{% block title %}
+    Svi članovi
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Svi članovi </h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+
+
+                {% include "admin/templates/partials/admin_messages.twig" %}
+
+                <div class = "content-column">
+                    <div class = "table-container">
+
+                        <div class = "heading-container">
+                            <div class = "th width-4-and-half-em margin-std-lr">
+                                <h4></h4>
+                            </div>
+                            <div class = "th width-15em margin-std-lr">
+                                <h4>Korisničko ime</h4>
+                            </div>
+                            <div class = "th width-20em margin-std-lr">
+                                <h4>Email</h4>
+                            </div>
+                            <div class = "th width-7em margin-std-lr">
+                                <h4></h4>
+                            </div>
+                        </div>
+
+                        <div class = "rows-container">
+
+                            {% for user in users %}
+                                <div class = "tr height-3-and-half-em">
+                                    <div class = "td width-4-and-half-em margin-std-lr home-icon-cont text-centered">
+                                        <a href = "{{ urlFor('admin.users.user.home', {"user_id":  user.id } ) }}">
+                                            {% set avatar = user.getAvatarPath('thumb2') %}
+                                            {%  if avatar %}
+                                                <div class = "thumbnail user yes-avatar">
+                                                    <div class = "no-show"><i class = "fa fa-home"></i></div>
+                                                    <div class = "pic-cont"
+                                                         style="background-image:url('{{ avatar }}');" ></div>
+                                                </div>
+                                            {% else %}
+                                                <div class = "thumbnail user user-icon no-avatar">
+                                                    <div class = "no-show"><i class = "fa fa-home"></i></div>
+                                                    <div class="pic-cont">
+                                                        <i class = "fa fa-{{ user.ssbos('fe', '') }}male"></i>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </a>
+                                    </div>
+                                    <div class = "td width-15em margin-std-lr text-left">
+                                        <span>{{ user.username }}</span>
+                                    </div>
+                                    <div class = "td width-20em margin-std-lr text-left">
+                                        <span>{{ user.email }}</span>
+                                    </div>
+                                    <div class = "td width-7em margin-std-lr text-centered admin-actions-cont">
+                                        <div>
+                                            <div class = "edit user action" title = "Uredi podatke o članu">
+                                                <a href = "{{ urlFor('admin.users.edit.user', {"user_id":  user.id } ) }}">
+                                                    <i class="fa fa-edit fa-fw"></i>
+                                                </a>
+                                            </div>
+                                            <div class = "activity user action" title = "Zapisi o članovoj aktivnosti">
+                                                <a href = "{{ urlFor('admin.users.user.activity', {"user_id":  user.id } ) }}">
+                                                    <i class="fa fa-bar-chart fa-fw"></i>
+                                                </a>
+                                            </div>
+                                            {% if auth_admin.has_role('Site admin') %}
+                                                <div class = "delete user action" title = "Izbriši člana">
+                                                    <a href = "{{ urlFor('admin.users.delete.user', {"user_id":  user.id } ) }}"
+                                                       data-confirmation = "Izbrisati {{ user.ssbos('članicu', 'člana') }}: {{ user.username }}?">
+                                                        <i class="fa fa-remove fa-fw"></i>
+                                                    </a>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    $('.admin-actions-cont .delete > a').on('click', function () {
+                        return confirm($(this).attr('data-confirmation'));
+                    });
+                </script>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+
+
+<header id = "header" class = "admin">
+    <nav class = "main">
+        <div class = "logo">
+            <strong>
+                <a href="{{ urlFor('home') }}" title="Fuconž.net - Početna">Social network</a>
+            </strong>
+        </div>
+
+
+        <ul class = "menu right-fl">
+
+            {% if auth_admin %}
+                <li class = "admin-sign">
+                    <i class = "fa fa-black-tie"></i> <i class = "fa fa-cogs"></i>
+                </li>
+                <li class = "auth signed">
+                    <div><span>Prijavljeni admin: </span><span>{{ auth_admin.username }}</span></div>
+                    <a href="{{ urlFor('admin.logout') }}"><i class = "fa fa-sign-out"></i> Odjava</a>
+                </li>
+            {% else %}
+                <li class = "auth"><a href="{{ urlFor('admin.login') }}">Admin - Prijava</a></li>
+
+            {% endif %}
+        </ul>
+
+    </nav>
+    {% if auth_admin %}
+        <nav class="secondary search open visible">
+            <div class="left-fl">
+                <img src="public/graphics/soc_net.png">
+                <ul class="menu">
+                    <li class="dropdown{% if active_page == "admin" %} active {% endif %}" data-filter="admin">
+                        <span><i class = "fa fa-black-tie fa-fw"></i> Admin</span>
+                    </li>
+                    <li class="dropdown{% if active_page == "reservations" %} active {% endif %}" data-filter="reservation">
+                        <span><i class = "fa fa-calendar fa-fw"></i> Rezervacije</span>
+                    </li>
+                    <li class="dropdown{% if active_page == "users" %} active {% endif %}" data-filter="users">
+                        <span><i class = "fa fa-users fa-fw"></i> Članovi</span>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        <div class = "empty-horiz-spacer-5 white-bg"></div>
+
+        <nav class="nav-filters" id="nav-filters">
+
+            <div class="filter filter-admin list-tags">
+                <ul>
+                    <li><a href="{{ urlFor('admin.home') }}" {% if active_item == "admin.home" %}class = "active"{% endif %}>Početna</a></li>
+                    <li><a href="/" >Sve poruke</a></li>
+                    <li><a href="/" >Povijest aktivnosti</a></li>
+                </ul>
+            </div>
+
+
+            <div class="filter filter-reservation list-tags">
+                <ul>
+                    <li><a href="{{ urlFor('admin.reservations.home') }}" {% if active_item == "reservations.home" %}class = "active"{% endif %}>Početna</a></li>
+                    <li><a href="{{ urlFor('admin.reservations.user-reservations.all') }}" {% if active_item == "reservations.user-reservations" %}class = "active"{% endif %}>Rezervacije članova</a></li>
+                    <li><a href="{{ urlFor('admin.reservations.training-courses.all') }}" {% if active_item == "reservations.training-courses" %}class = "active"{% endif %}>Rezervacijski termini</a></li>
+                    <li><a href="/" {% if active_item == "users.home" %}class = "active"{% endif %}>Tipovi treninga</a></li>
+                </ul>
+            </div>
+
+            <div class="filter filter-users list-tags">
+                <ul>
+                    <li><a href="{{ urlFor('admin.users.home') }}" {% if active_item == "users.home" %}class = "active"{% endif %}>Početna</a></li>
+                    <li><a href="{{ urlFor('admin.users.all.active') }}" {% if active_item == "users.all.active" %}class = "active"{% endif %}>Aktivni članovi</a></li>
+                    <li><a href="{{ urlFor('admin.users.all') }}" {% if active_item == "users.all" %}class = "active"{% endif %}>Svi članovi</a></li>
+                </ul>
+            </div>
+
+
+        </nav>
+    {% endif %}
+
+</header>

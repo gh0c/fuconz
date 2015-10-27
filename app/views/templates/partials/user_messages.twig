@@ -1,0 +1,65 @@
+{% for success in user_success_msgs %}
+    <div class = "vertical-section info">
+        <div class = "inner-70pct">
+            <div class = "status-container msg success-msg">
+                <i class="status fa fa-check"></i> <h4>{{ success|nl2br }}</h4><i class="status fa"></i>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+{% if flash.success %}
+    <div class = "vertical-section info">
+        <div class = "inner-70pct">
+            <div class = "status-container msg success-msg warning-msg">
+                <i class="status fa fa-check"></i> <h4>{{ flash.success|nl2br }}</h4><i class="status fa"></i>
+            </div>
+        </div>
+    </div>
+
+{% endif %}
+
+
+
+{% for error in user_error_msgs %}
+    <div class = "vertical-section info">
+        <div class = "inner-70pct">
+            <div class = "status-container msg error-msg ">
+                <i class="status fa fa-times-circle"></i> <h4>{{ error|nl2br }}</h4><i class="status fa"></i>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+{% if flash.errors %}
+    <div class = "vertical-section info">
+        <div class = "inner-70pct">
+            <div class = "status-container msg error-msg warning-msg">
+                <i class="status fa fa-times-circle"></i> <h4>{{ flash.errors|nl2br }}</h4><i class="status fa"></i>
+            </div>
+        </div>
+    </div>
+
+{% endif %}
+
+
+{% for status in user_status_msgs %}
+    <div class = "vertical-section info">
+        <div class = "inner-70pct">
+            <div class = "status-container msg status-msg warning-msg">
+                <i class="status fa fa-info-circle"></i> <h4>{{ status|nl2br }}</h4><i class="status fa"></i>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+{% if flash.statuses %}
+    <div class = "vertical-section info">
+        <div class = "inner-70pct">
+            <div class = "status-container msg status-msg warning-msg">
+                <i class="status fa fa-info-circle"></i> <h4>{{ flash.statuses|nl2br }}</h4><i class="status fa"></i>
+            </div>
+        </div>
+    </div>
+
+{% endif %}

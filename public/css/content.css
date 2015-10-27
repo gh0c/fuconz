@@ -1,0 +1,68 @@
+/*********************
+ BREAKPOINTS
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */#content {
+  clear: both;
+  position: relative;
+  -webkit-transition: padding 0.25s ease-out;
+  -moz-transition: padding 0.25s ease-out;
+  -o-transition: padding 0.25s ease-out;
+  -ms-transition: padding 0.25s ease-out;
+  transition: padding 0.25s ease-out;
+}
+#content .main-block-cont {
+  position: relative;
+  padding: 0 0 10px 0;
+}
+#content .main-title-box {
+  width: 100%;
+  background-color: #0c131d;
+}
+#content .main-title-box .flag {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+4,183293+4,183293+8,ffffff+8,ffffff+12,0c131d+12,0c131d+16,ffffff+16,ffffff+20,183293+20,183293+24,ffffff+24,ffffff+32,183293+32,183293+40,0c131d+40,0c131d+44,ffffff+44,ffffff+48,0c131d+48,0c131d+52,ffffff+52,ffffff+56,183293+56,183293+60,ffffff+60,ffffff+64,0c131d+64,0c131d+68,ffffff+68,ffffff+72,183293+72,183293+76,ffffff+76,ffffff+80,0c131d+80,0c131d+88,ffffff+88,ffffff+92,183293+92,183293+96,ffffff+96,ffffff+100 */
+  background: #fff;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #fff 4%, #183293 4%, #183293 8%, #fff 8%, #fff 12%, #0c131d 12%, #0c131d 16%, #fff 16%, #fff 20%, #183293 20%, #183293 24%, #fff 24%, #fff 32%, #183293 32%, #183293 40%, #0c131d 40%, #0c131d 44%, #fff 44%, #fff 48%, #0c131d 48%, #0c131d 52%, #fff 52%, #fff 56%, #183293 56%, #183293 60%, #fff 60%, #fff 64%, #0c131d 64%, #0c131d 68%, #fff 68%, #fff 72%, #183293 72%, #183293 76%, #fff 76%, #fff 80%, #0c131d 80%, #0c131d 88%, #fff 88%, #fff 92%, #183293 92%, #183293 96%, #fff 96%, #fff 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(4%, #fff), color-stop(4%, #183293), color-stop(8%, #183293), color-stop(8%, #fff), color-stop(12%, #fff), color-stop(12%, #0c131d), color-stop(16%, #0c131d), color-stop(16%, #fff), color-stop(20%, #fff), color-stop(20%, #183293), color-stop(24%, #183293), color-stop(24%, #fff), color-stop(32%, #fff), color-stop(32%, #183293), color-stop(40%, #183293), color-stop(40%, #0c131d), color-stop(44%, #0c131d), color-stop(44%, #fff), color-stop(48%, #fff), color-stop(48%, #0c131d), color-stop(52%, #0c131d), color-stop(52%, #fff), color-stop(56%, #fff), color-stop(56%, #183293), color-stop(60%, #183293), color-stop(60%, #fff), color-stop(64%, #fff), color-stop(64%, #0c131d), color-stop(68%, #0c131d), color-stop(68%, #fff), color-stop(72%, #fff), color-stop(72%, #183293), color-stop(76%, #183293), color-stop(76%, #fff), color-stop(80%, #fff), color-stop(80%, #0c131d), color-stop(88%, #0c131d), color-stop(88%, #fff), color-stop(92%, #fff), color-stop(92%, #183293), color-stop(96%, #183293), color-stop(96%, #fff), color-stop(100%, #fff));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #fff 4%, #183293 4%, #183293 8%, #fff 8%, #fff 12%, #0c131d 12%, #0c131d 16%, #fff 16%, #fff 20%, #183293 20%, #183293 24%, #fff 24%, #fff 32%, #183293 32%, #183293 40%, #0c131d 40%, #0c131d 44%, #fff 44%, #fff 48%, #0c131d 48%, #0c131d 52%, #fff 52%, #fff 56%, #183293 56%, #183293 60%, #fff 60%, #fff 64%, #0c131d 64%, #0c131d 68%, #fff 68%, #fff 72%, #183293 72%, #183293 76%, #fff 76%, #fff 80%, #0c131d 80%, #0c131d 88%, #fff 88%, #fff 92%, #183293 92%, #183293 96%, #fff 96%, #fff 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #fff 4%, #183293 4%, #183293 8%, #fff 8%, #fff 12%, #0c131d 12%, #0c131d 16%, #fff 16%, #fff 20%, #183293 20%, #183293 24%, #fff 24%, #fff 32%, #183293 32%, #183293 40%, #0c131d 40%, #0c131d 44%, #fff 44%, #fff 48%, #0c131d 48%, #0c131d 52%, #fff 52%, #fff 56%, #183293 56%, #183293 60%, #fff 60%, #fff 64%, #0c131d 64%, #0c131d 68%, #fff 68%, #fff 72%, #183293 72%, #183293 76%, #fff 76%, #fff 80%, #0c131d 80%, #0c131d 88%, #fff 88%, #fff 92%, #183293 92%, #183293 96%, #fff 96%, #fff 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #fff 4%, #183293 4%, #183293 8%, #fff 8%, #fff 12%, #0c131d 12%, #0c131d 16%, #fff 16%, #fff 20%, #183293 20%, #183293 24%, #fff 24%, #fff 32%, #183293 32%, #183293 40%, #0c131d 40%, #0c131d 44%, #fff 44%, #fff 48%, #0c131d 48%, #0c131d 52%, #fff 52%, #fff 56%, #183293 56%, #183293 60%, #fff 60%, #fff 64%, #0c131d 64%, #0c131d 68%, #fff 68%, #fff 72%, #183293 72%, #183293 76%, #fff 76%, #fff 80%, #0c131d 80%, #0c131d 88%, #fff 88%, #fff 92%, #183293 92%, #183293 96%, #fff 96%, #fff 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #fff 4%, #183293 4%, #183293 8%, #fff 8%, #fff 12%, #0c131d 12%, #0c131d 16%, #fff 16%, #fff 20%, #183293 20%, #183293 24%, #fff 24%, #fff 32%, #183293 32%, #183293 40%, #0c131d 40%, #0c131d 44%, #fff 44%, #fff 48%, #0c131d 48%, #0c131d 52%, #fff 52%, #fff 56%, #183293 56%, #183293 60%, #fff 60%, #fff 64%, #0c131d 64%, #0c131d 68%, #fff 68%, #fff 72%, #183293 72%, #183293 76%, #fff 76%, #fff 80%, #0c131d 80%, #0c131d 88%, #fff 88%, #fff 92%, #183293 92%, #183293 96%, #fff 96%, #fff 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1);
+  /* IE6-9 */
+  height: 10px;
+}
+#content .main-title-box .page-title {
+  text-align: center;
+  font-family: MuseoSans;
+  font-weight: 700;
+  padding: 10px 0 8px 0px;
+}
+#content .main-title-box .page-title h1 {
+  color: #edf0f4;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+#content .main-content-box {
+  width: 100%;
+  background-color: #fff;
+}
+#content .main-content-box .vertical-section {
+  padding: 3px 2em 3px 2em;
+}
+#content .main-content-box .vertical-section > div {
+  padding: 0.35em 0.7em;
+}
+#content .main-content-box .vertical-section .dashed-spacer {
+  border-bottom: 2px dashed #0c131d;
+  box-sizing: border-box;
+}
+#content .main-content-box .vertical-section.multirow {
+  display: inline-block;
+  min-width: 35em;
+}

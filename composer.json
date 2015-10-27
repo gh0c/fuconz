@@ -1,0 +1,23 @@
+{
+
+    "autoload": {
+        "psr-4" : {
+            "app\\" : "app"
+        }
+    },
+
+    "require": {
+        "slim/slim": "^2.6",
+        "slim/views": "^0.1.3",
+        "twig/twig": "^1.22",
+        "phpmailer/phpmailer": "^5.2",
+        "hassankhan/config": "^0.8.2",
+        "ircmaxell/random-lib": "^1.1",
+        "panique/pdo-debug": "^0.2.0",
+        "panique/php-sass": "^1.0",
+        "matthiasmullie/minify": "^1.3",
+        "cloudinary/cloudinary_php": "dev-master",
+        "twbs/bootstrap": "^3.3",
+        "teraone/cloudinary-twig-extension": "^0.2.0"
+    }
+}

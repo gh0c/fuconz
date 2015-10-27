@@ -1,0 +1,98 @@
+{% extends "admin/templates/default.twig" %}
+
+{% block title %}
+    Rezervacijski termini
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Rezervacijski termini </h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+
+
+                {% include "admin/templates/partials/admin_messages.twig" %}
+
+                <div class = "content-column">
+
+                    <div class = "submitter-cont">
+                        <div class = "inner-70pct">
+
+                            <div class="submitter submit bbb-flag-v-cibona-blue">
+                                <a href = "{{ urlFor('user.registrations.training_course.new') }}">Dodaj novi termin</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class = "table-container">
+
+                        <div class = "heading-container">
+
+                            <div class = "th width-15em margin-std-lr">
+                                <h4>Naziv</h4>
+                            </div>
+
+                            <div class = "th width-7em margin-std-lr">
+                                <h4></h4>
+                            </div>
+                        </div>
+
+                        <div class = "rows-container">
+
+                            {% for course in training_courses %}
+                                <div class = "tr height-3-and-half-em">
+
+
+                                    <div class = "td width-15em margin-std-lr text-left"><span>{{ course.title }}</span></div>
+
+                                    <div class = "td width-7em margin-std-lr text-centered admin-actions-cont">
+                                        <div>
+                                            <div class = "edit user action" title = "Uredi podatke o rezervacijskom terminu">
+                                                <a href = "/">
+                                                    <i class="fa fa-edit fa-fw"></i>
+                                                </a>
+                                            </div>
+
+                                            {% if auth_admin.has_role('Site admin') %}
+                                                <div class = "delete course action" title = "Izbriši rezervacijski termin">
+                                                    <a href = "{{ urlFor('admin.registrations.delete.training_course',
+                                                    {"course_id":  course.id } ) }}"
+                                                       data-confirmation = "Izbrisati rezervacijski termin: {{ course.title }}?">
+                                                        <i class="fa fa-remove fa-fw"></i>
+                                                    </a>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    $('.admin-actions-cont .delete > a').on('click', function () {
+                        return confirm($(this).attr('data-confirmation'));
+                    });
+                </script>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
