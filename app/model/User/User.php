@@ -2,13 +2,14 @@
 namespace app\model\User;
 
 use app\helpers\Configuration as Cfg;
+use app\model\Content\Image;
 use app\model\Database\DatabaseConnection;
 use app\helpers\Hash;
 use app\helpers\General;
 use \PDO;
 use \PDOException;
 
-class RegisteredUser
+class User
 {
     public $id = null;
     public $username = null;
@@ -62,6 +63,7 @@ class RegisteredUser
             $this->used_credits = $input_data['used_credits'];
     }
 
+
     public function populate_attributes_from_input($data)
     {
         $this->__construct($data);
@@ -104,7 +106,7 @@ class RegisteredUser
         if ($stmt->rowCount() > 0) {
             $list = array();
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $user = new RegisteredUser($row);
+                $user = new User($row);
                 $list[] = $user;
             }
             return $list;
@@ -126,7 +128,7 @@ class RegisteredUser
         if ($stmt->rowCount() > 0) {
             $list = array();
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $user = new RegisteredUser($row);
+                $user = new User($row);
                 $list[] = $user;
             }
             return $list;
@@ -145,7 +147,7 @@ class RegisteredUser
         $stmt->execute();
 
         if ($stmt->rowCount() == 1) {
-            $user = new RegisteredUser($stmt->fetch(PDO::FETCH_ASSOC));
+            $user = new User($stmt->fetch(PDO::FETCH_ASSOC));
         } else {
             return null;
         }
@@ -160,7 +162,7 @@ class RegisteredUser
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
         if ($stmt->rowCount() == 1) {
-            $user = new RegisteredUser($stmt->fetch(PDO::FETCH_ASSOC));
+            $user = new User($stmt->fetch(PDO::FETCH_ASSOC));
             return $user;
         }
         else {
@@ -176,7 +178,7 @@ class RegisteredUser
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
         $stmt->execute();
         if ($stmt->rowCount() == 1) {
-            $user = new RegisteredUser($stmt->fetch(PDO::FETCH_ASSOC));
+            $user = new User($stmt->fetch(PDO::FETCH_ASSOC));
             return $user;
         }
         else {
@@ -235,7 +237,7 @@ class RegisteredUser
         $stmt->execute();
 
         if ($stmt->rowCount() == 1) {
-            return new RegisteredUser($stmt->fetch());
+            return new User($stmt->fetch());
         } else {
             return null;
         }
@@ -266,93 +268,122 @@ class RegisteredUser
         }
     }
 
-    public function avatarExists($type = null) {
-        $type = isset($type) ? $type : Cfg::read('path.images.full');
-        if ($this->id && $this->avatar_ext != "") {
-            $path = Cfg::read('path.user.avatar') . "/" . $this->id .
-                "/" . $type . "/" . "avatar" . $this->avatar_ext;
-            if(file_exists($path)) {
-                return $path;
-            }
-            else {
-                return false;
-            }
-        }
-        else return false;
-    }
-
-    public function getAvatarPath($type = null) {
-        $type = isset($type) ? $type : Cfg::read('path.images.full');
-        if ($path = $this->avatarExists($type)) {
-            return $path;
-        }
-        else return null;
-    }
+//    public function avatarExists($type = null) {
+//        $type = isset($type) ? $type : Cfg::read('path.images.full');
+//        if ($this->id && $this->avatar_ext != "") {
+//            $path = Cfg::read('path.user.avatar') . "/" . $this->id .
+//                "/" . $type . "/" . "avatar" . $this->avatar_ext;
+//            if(file_exists($path)) {
+//                return $path;
+//            }
+//            else {
+//                return false;
+//            }
+//        }
+//        else return false;
+//    }
 
 
-    public function deleteAvatarDir()
+    public function getClImageURL($type = "avatar", $options = array())
     {
-        if (file_exists(Cfg::read('path.user.avatar') . "/" . $this->id))
-        {
-            General::rrmdir(Cfg::read('path.user.avatar') . "/" . $this->id);
+        if($img = $this->associationExists($type)) {
+            return cloudinary_url($this->getImagePath($type), array_merge($options, array("version" => $img->version)));
+        } else {
+            return null;
         }
-        $this->avatar_ext = "";
     }
 
-
-    public function checkAvatarDir()
+    public function getClImageTag($type = "avatar", $options = array())
     {
-
-        if (!file_exists(Cfg::read('path.user.avatar') . "/" . $this->id))
-        {
-            mkdir(Cfg::read('path.user.avatar') . "/" . $this->id, 0777, true);
-            mkdir(Cfg::read('path.user.avatar') . "/" . $this->id .
-                "/" . Cfg::read('path.images.full'));
-            mkdir(Cfg::read('path.user.avatar') . "/" . $this->id .
-                "/" . Cfg::read('path.images.t1'));
-            mkdir(Cfg::read('path.user.avatar') . "/" . $this->id .
-                "/" . Cfg::read('path.images.t2'));
+        if($img = $this->associationExists($type)) {
+            echo cl_image_tag($this->getImagePath($type), array_merge($options, array("version" => $img->version)));
+        } else {
+            return null;
         }
-        if(!file_exists(Cfg::read('path.user.avatar') . "/" .
-            $this->id . "/" . Cfg::read('path.images.full')))
-            mkdir(Cfg::read('path.user.avatar') . "/" . $this->id .
-                "/" . Cfg::read('path.images.full'));
-        if(!file_exists(Cfg::read('path.user.avatar') . "/" .
-            $this->id . "/" . Cfg::read('path.images.t1')))
-            mkdir(Cfg::read('path.user.avatar') . "/" . $this->id .
-                "/" . Cfg::read('path.images.t1'));
-        if(!file_exists(Cfg::read('path.user.avatar') . "/" .
-            $this->id . "/" . Cfg::read('path.images.t2')))
-            mkdir(Cfg::read('path.user.avatar') . "/" . $this->id .
-                "/" . Cfg::read('path.images.t2'));
     }
 
-    public function updateExtension() {
-        $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE user SET avatar_format_ext = :avatar_ext WHERE id = :id";
-        $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':avatar_ext', $this->avatar_ext, PDO::PARAM_STR);
-        $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
 
-        $stmt->execute();
+    public function getImageURL($type = "avatar")
+    {
+        if($url = $this->avatarExists($type)) {
+            return $url;
+        } else {
+            return null;
+        }
     }
+
+    public function avatarExists($type = "avatar")
+    {
+        if($img = $this->associationExists($type)) {
+            if(isset($img->url)) {
+                if (@getimagesize(cloudinary_url($img->url, array("version" => $img->version)))) {
+                    return cloudinary_url($img->url, array("version" => $img->version));
+                } else {
+                    return null;
+                }
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
+    }
+
+
+    public function associationExists($type = "avatar")
+    {
+        if($img = Image::getImageForEntityWithFlag($this->id, "user", $type)) {
+            return $img;
+        } else {
+            return null;
+        }
+    }
+
+
+    public function deleteImage($type = "avatar")
+    {
+        $api = new \Cloudinary\Api();
+        $api->delete_resources(array($this->getImagePath($type)));
+    }
+
+
+    public function getImagePath($type = "avatar")
+    {
+        return Cfg::read("cl.images.path") . "/user/" . $this->username . "/" . $type . "/img";
+    }
+
+
+    public function deleteOldImages()
+    {
+//        $this->deleteImage("avatar");
+        Image::deleteAssociationsForEntityWithFlag($this->id, "user", "avatar");
+    }
+
+
+
 
     public function updatePassword($hashed_pass) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE user SET password = :new_pass WHERE id = :id";
+        $sql = "UPDATE user SET password = :new_pass WHERE id = :id LIMIT 1";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':new_pass', $hashed_pass, PDO::PARAM_STR);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
 
         $stmt->execute();
+        if ($stmt->rowCount() == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
+
 
     public static function createNew($username, $email, $password, $first_name = null, $last_name = null, $sex = null) {
         $dbh = DatabaseConnection::getInstance();
         $sql = "INSERT INTO user (email, username, first_name, last_name, password, salt, sex, registered_at)
             VALUES (:email, :username, :first_name, :last_name, :password, :salt, :sex, :registered_at)";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':registered_at', date("Y-m-d H:i:s", time()), PDO::PARAM_STR);
+        $stmt->bindValue(':registered_at', date("Y-m-d H:i:s", time()), PDO::PARAM_STR);
         $stmt->bindParam(':sex', $sex, PDO::PARAM_STR);
         $stmt->bindParam(':first_name', $first_name, PDO::PARAM_STR);
         $stmt->bindParam(':last_name', $last_name, PDO::PARAM_STR);
@@ -361,6 +392,28 @@ class RegisteredUser
         $salt = Hash::getMSG()->generateString(128);
         $stmt->bindParam(':salt', $salt, PDO::PARAM_STR);
         $stmt->bindParam(':password', Hash::password($password . $salt), PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        if ($stmt->rowCount() == 1) {
+            return User::getUserById($dbh->lastInsertId());
+        } else {
+            return false;
+        }
+
+    }
+
+
+
+    public  function updateProfileData($email, $first_name = null, $last_name = null, $sex = null) {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "UPDATE user SET email = :email, first_name = :first_name, last_name = :last_name, sex = :sex WHERE id = :id LIMIT 1";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':sex', $sex, PDO::PARAM_STR);
+        $stmt->bindParam(':first_name', $first_name, PDO::PARAM_STR);
+        $stmt->bindParam(':last_name', $last_name, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
 
         $stmt->execute();
 
@@ -383,8 +436,10 @@ class RegisteredUser
             $validation_result["errors"] = "Nedostaju podaci za registraciju! \n" .
                 "Unos e-mail adrese, korisničkog imena i lozinke su obavezni za prijavu.";
             return $validation_result;
-
-        } elseif (!($p_password === $p_password_repeated)) {
+        } elseif(!preg_match('/^(\w|\s|[^\x00-\x7F]|-)+$/', $p_username) ) {
+            $validation_result["errors"] = "Dopušteni znakovi korisničkog imena su slova, brojke i crtica!";
+            return $validation_result;
+        }elseif (!($p_password === $p_password_repeated)) {
             $validation_result["errors"] = "Lozinka i njena potvrda se ne poklapaju!";
             return $validation_result;
         } else {
@@ -404,6 +459,29 @@ class RegisteredUser
     }
 
 
+    public static function validateProfileDataChange($p_email, $user, $first_name = null, $last_name = null, $sex = null) {
+        $validation_result = array();
+        $validation_result["validated"] = false;
+        if(!isset($p_email) || $p_email === "" ) {
+            $validation_result["errors"] = "Prilikom promjene osobnih podataka obavezan je unos e-mail adrese!";
+            return $validation_result;
+        } else {
+            if ($existing_user = self::getUserByEmail($p_email)) {
+                if($existing_user->id != $user->id) {
+                    $validation_result["errors"] = "E-mail na koji se registrirate mora biti jedinstven. \n".
+                        "Već postoji korisnik sa e-mail adresom {$p_email}.";
+                    return $validation_result;
+                } else {
+                    $validation_result["validated"] = true;
+                }
+            } else {
+                $validation_result["validated"] = true;
+            }
+        }
+        return $validation_result;
+    }
+
+
     public static function validatePasswordChange($p_password, $p_password_new, $p_password_new_repeated, $user) {
         $validation_result = array();
         $validation_result["validated"] = false;
@@ -414,7 +492,7 @@ class RegisteredUser
             $validation_result["errors"] = "Nedostaju podaci za registraciju! \n" .
                 "Unos e-mail adrese, korisničkog imena i lozinke su obavezni za prijavu.";
             return $validation_result;
-        } elseif (!($p_password === $p_password_new_repeated)) {
+        } elseif (!($p_password_new === $p_password_new_repeated)) {
             $validation_result["errors"] = "Lozinka i njena potvrda se ne poklapaju!";
             return $validation_result;
         } else {
@@ -428,6 +506,45 @@ class RegisteredUser
         }
         return $validation_result;
     }
+
+
+    public static function validateUserLogin($p_username, $p_password)
+    {
+
+        $validation_result = array();
+        $validation_result["validated"] = false;
+
+        if(!isset($p_username) || $p_username === "" || !isset($p_password) || $p_password === "")
+        {
+            $validation_result["errors"] = "Nedostaju podaci za prijavu! \n" .
+                "Unos korisničkog imena i lozinke su obavezni za prijavu.";
+            return $validation_result;
+        }
+        $user = self::getUserByUsername($p_username);
+        if (!$user) {
+            $validation_result["errors"] = "Neispravo korisničko ime i/ili lozinka.";
+            return $validation_result;
+        }
+        else {
+            $success = Hash::passwordCheck($p_password . $user->getPasswordSalt(), $user->getPassword());
+
+            if($success) {
+
+                if(!$user->activated()) {
+                    $validation_result["errors"] = "Korisnik još nije aktiviran.";
+                    return $validation_result;
+                } else {
+                    $validation_result["validated"] = true;
+                    $validation_result["user"] = $user;
+                }
+            } else {
+                $validation_result["errors"] = "Neispravo korisničko ime i/ili lozinka.";
+                return $validation_result;
+            }
+        }
+        return $validation_result;
+    }
+
 
 
     public function activePassResetRequestExists() {

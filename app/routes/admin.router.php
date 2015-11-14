@@ -1,5 +1,5 @@
 <?php
-use \app\model\User\RegisteredUser;
+use \app\model\User\User;
 use app\helpers\Sessions;
 use app\helpers\Configuration as Cfg;
 use app\model\Content\ImagesHandler;

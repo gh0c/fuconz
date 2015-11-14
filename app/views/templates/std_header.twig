@@ -10,8 +10,13 @@
 
 
         <ul class = "menu right-fl">
+            {% if auth_admin %}
             <li>
-                <a href = "">Di halamo</a>
+                <a href = "{{ urlFor("admin.home") }}" target="_blank" title="Admin panel"><i class = "fa fa-fw fa-cogs"></i></a>
+            </li>
+            {% endif %}
+            <li>
+                <a href = "{{ urlFor("location") }}">Di halamo</a>
             </li>
             {% if auth_user %}
                 <li class = "user-sign" title="{{ auth_user.ssbos("Prijavljena članica", "Prijavljeni član") }} {{ auth_user.username }}">

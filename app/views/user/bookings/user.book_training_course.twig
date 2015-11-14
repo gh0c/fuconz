@@ -19,88 +19,77 @@
         <div class = "black-horiz-spacer-5"></div>
 
         <div class = "main-content-box">
+
+
             <div class = "inner-cont">
+
+                {% include "templates/partials/user_messages.twig" %}
+
+
                 <div class = "form-container">
 
                     <form method = "post" name = "user-course-booking" id = "user-course-booking"  onsubmit="return false;"
                           action = "{{ urlFor('user.book-training-course.post') }}">
                         <div class = "inputs-container">
 
-                            <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
-                                    <input type="text" name="email" id="email" required
-                                           maxlength="255" spellcheck="false" autocomplete="on" tabindex="1"
-                                           class = "std-text-input std-input-width req"/>
-                                    <label id="email-label" class = "req" alt="E-mail" placeholder="E-mail" data-info="E-mail"></label>
-                                </div>
-                            </div>
-
-                            <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
-                                    <input type="text" name="username" id="username" required
-                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="2"
-                                           class = "std-text-input std-input-width req"/>
-                                    <label id="username-label" class = "req" alt="Korisničko ime" placeholder="Korisničko ime" data-info="Korisničko ime"></label>
-                                </div>
-
-                            </div>
-
-                            <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
-                                    <input type="password" name="new-password" id="new-password" required
-                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="3"
-                                           class = "std-text-input std-input-width req"/>
-                                    <label id="password-label" class = "req" alt="Lozinka" placeholder="Lozinka" data-info="Lozinka"></label>
-                                </div>
-                            </div>
-
-                            <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
-                                    <input type="password" name="new-password-repeated" id="new-password-repeated" required
-                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="4"
-                                           class = "std-text-input std-input-width req"/>
-                                    <label id="password-repeated-label" class = "req" alt="Ponovi lozinku" placeholder="Ponovi lozinku" data-info="Ponovi lozinku"></label>
-                                </div>
-                            </div>
-
-                            <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
-                                    <input type="text" name="first-name" id="first-name" required
-                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="5"
-                                           class = "std-text-input std-input-width"/>
-                                    <label id="first-name-label" alt="Ime" placeholder="Ime" data-info="Ime"></label>
-                                </div>
-                            </div>
-                            <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
-                                    <input type="text" name="last-name" id="last-name" required
-                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="6"
-                                           class = "std-text-input std-input-width"/>
-                                    <label id="last-name-label" alt="Ime" placeholder="Prezime" data-info="Prezime"></label>
-                                </div>
-                            </div>
-
-                            <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
-                                    <div class = "pp-radio-div">
-
-                                        <input type="radio" name="sex" value = "M" id = "sex-male"
-                                               class = "rb-input sex " tabindex="7">
-                                        <div class = "radio-div-cont first-left">
-                                            <label for = "sex-male"><span>Muško</span><i class = "fa fa-fw fa-male"></i></label>
-                                        </div>
-
-                                        <input type="radio" name="sex" value = "F" id = "sex-female"
-                                               class = "rb-input sex" tabindex="8">
-                                        <div class = "radio-div-cont second-left">
-                                            <label for = "sex-female"><span>Žensko</span><i class = "fa fa-fw fa-female" ></i></label>
-                                        </div>
+                            <div class = "vertical-section text-centered">
+                                <div>
+                                    <div id = "calendar-datepicker">
+                                        {% include  'user/bookings/calendar/calendar_selection.twig' %}
                                     </div>
                                 </div>
                             </div>
+
+                            {% include 'user/bookings/calendar/legend.twig' %}
+
+
+                            <div id = "selected-spans">
+
+                            </div>
+
+                            <div class = "selected-span-cont blueprint">
+                                <div class = "vertical-section text-centered multirow-special">
+                                    <div class = "">
+                                        <input type="text" name="selected-spans-description-labels[]" required
+                                               maxlength="255" spellcheck="false" autocomplete="on" readonly
+                                               class = "large-text-input large-input-width description-label"/>
+                                        <label alt="Odabrani termin" placeholder="Odabrani termin" data-info="Odabrani termin"></label>
+                                    </div>
+                                </div>
+
+                                <div class = "vertical-section text-centered multirow-special">
+                                    <div class = "">
+                                        <input type="text" name="selected-spans-availability-labels[]" required
+                                               maxlength="255" spellcheck="false" autocomplete="on" readonly
+                                               class = "small-text-input small-input-width availability-label"/>
+                                        <label alt="Popunjenost" placeholder="Popunjenost termina" data-info="Popunjenost termina"></label>
+
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="selected-spans[]" class = "selected-spans-input" value = "-">
+
+                            </div>
+
+
+                            <script>
+                                $(document).on("ready", function(){
+
+                                    $('#selected-spans').mixItUp({
+                                        animation: {
+                                            duration: 700
+                                        },
+                                        layout: {
+                                            display: 'block'
+                                        }
+                                    });
+                                });
+                            </script>
+
+
+
                         </div>
 
-                        {% include "templates/partials/user_messages.twig" %}
 
                         {% include "templates/partials/live_status.container.twig" %}
 
@@ -109,8 +98,8 @@
                         <div class = "submitter-cont">
                             <div class = "inner-70pct">
                                 <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="9"
-                                     onclick="validateAndSubmitRegistration('user-course-booking')">
-                                    <span>REGISTRACIJA</span>
+                                     onclick="validateAndSubmitUserBooking('user-course-booking')">
+                                    <span>REZERVACIJA</span>
                                 </div>
                                 <div class="submitter bbb-flag-v-cibona-blue reversed cancel">
                                     <a href = "{{ urlFor('user.home') }}" tabindex="10">ODUSTANI</a>
@@ -130,7 +119,7 @@
         $(document).ready(function(){
             function valSub() {
                 if(formSubmittingActive == true) {
-                    validateAndSubmitRegistration('user-course-booking');
+                    validateAndSubmitUserBooking('user-course-booking');
                     return false;
                 }
             }
@@ -145,6 +134,7 @@
                     valSub();
                 }
             });
+
         });
     </script>
 

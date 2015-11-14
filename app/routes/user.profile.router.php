@@ -1,14 +1,16 @@
 <?php
-use \app\model\User\RegisteredUser;
+use \app\model\User\User;
 use app\helpers\Configuration as Cfg;
 use \app\helpers\Hash;
+use \app\model\Messages\Logger;
+use \app\model\Content\Image;
 
 $app->group('/clanovi', function () use ($app, $authenticated_user) {
 
     $app->group('/profil', $authenticated_user(), function () use ($app, $authenticated_user) {
 
         $app->get('/', $authenticated_user(), function () use ($app) {
-            $app->render('user/user.profile.twig', array(
+            $app->render('user/profile/user.home.twig', array(
                 'user' => $app->auth_user,
                 'active_page' => 'user.profile',
                 'active_item' => 'user.profile.home'));
@@ -16,7 +18,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 
 
         $app->get('/:action', $authenticated_user(), function ($action) use ($app) {
-            if(in_array($action, array('avatar', 'ikona', 'promjena-lozinke'))) {
+            if(in_array($action, array('avatar', 'ikona', 'promjena-lozinke', 'podaci'))) {
                 $app->pass();
             }
             else
@@ -35,7 +37,6 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
             $app->render('user/profile/user.password_change.twig', array(
                 'active_page' => "user.profile",
                 'active_item' => "user.profile.password-change"));
-
         })->name('user.profile.password-change');
 
 
@@ -44,7 +45,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
             $p_password_new = $app->request->post('new-password');
             $p_password_new_repeated = $app->request->post('new-password-repeated');
 
-            $validation_result = RegisteredUser::validatePasswordChange($p_password, $p_password_new,
+            $validation_result = User::validatePasswordChange($p_password, $p_password_new,
                 $p_password_new_repeated, $app->auth_user);
 
             if(!($validation_result["validated"])) {
@@ -52,27 +53,125 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                 if(isset($validation_result["errors"])) {
                     $app->flash('errors', $validation_result["errors"]);
                 }
-                $app->redirect($app->urlFor('user.profile.password_change'));
+                $app->redirect($app->urlFor('user.profile.password-change'));
             } else {
                 // Validation of input data successful
 
                 if ($app->auth_user->updatePassword(Hash::password($p_password_new . $app->auth_user->getPasswordSalt()))) {
                     $app->flash('success', "Uspješna promjena lozinke.");
-                    $app->redirect($app->urlFor('user.profile'));
+                    Logger::logUserPasswordChange($app->auth_user);
+                    $app->redirect($app->urlFor('user.profile.home'));
                 } else {
                     $app->flash('errors', "Greška kod unosa u bazu.\nPokušajte ponovno");
-                    $app->redirect($app->urlFor('user.profile.password_change'));
+                    $app->redirect($app->urlFor('user.profile.password-change'));
                 }
             }
         })->name('user.profile.password-change.post');
 
 
-//        $app->get('/avatar', $authenticated_user(), function () use ($app) {
-//            $app->render('user/user.avatar.twig', array(
-//                'user' => $app->auth
-//            ));
-//
-//        })->name('user.avatar');
+
+
+        $app->get('/podaci', $authenticated_user(), function () use ($app) {
+            $app->render('user/profile/user.profile_data_change.twig', array(
+                'active_page' => "user.profile",
+                'active_item' => "user.profile.profile-data-change"));
+        })->name('user.profile.profile-data-change');
+
+        $app->post('/podaci', $authenticated_user(), function () use ($app) {
+            $p_email = $app->request->post('email');
+            $p_first_name = $app->request->post('first-name');
+            $p_last_name = $app->request->post('last-name');
+            $p_sex = $app->request->post('sex');
+
+            $validation_result = User::validateProfileDataChange($p_email, $app->auth_user,
+                $p_first_name, $p_last_name, $p_sex);
+
+            if(!($validation_result["validated"])) {
+                // valudation failed
+                if(isset($validation_result["errors"])) {
+                    $app->flash('errors',  $validation_result["errors"]);
+                }
+                $app->redirect($app->urlFor('user.profile.profile-data-change'));
+            } else {
+                // Validation of input data successful
+                if ($app->auth_user->updateProfileData($p_email, $p_first_name, $p_last_name, $p_sex)) {
+                    Logger::logUserProfileDataChange($app->auth_user);
+                    $app->flash('success', "Uspješna promjena osobnih podataka!");
+                    $app->redirect($app->urlFor('user.profile.home'));
+                } else {
+                    $app->flash('errors', "Greška kod unosa u bazu.\nPokušajte ponovno");
+                    $app->redirect($app->urlFor('user.profile.profile-data-change'));
+                }
+            }
+        })->name('user.profile.profile-data-change.post');
+
+
+
+
+        $app->get('/avatar', $authenticated_user(), function () use ($app) {
+            $app->render('user/profile/user.avatar_change.twig', array(
+                'user' => $app->auth,
+                'active_page' => "user.profile",
+                'active_item' => "user.profile.avatar-change"
+            ));
+
+        })->name('user.profile.avatar-change');
+
+
+
+        $app->post('/avatar', $authenticated_user(), function () use ($app) {
+            $p_uploaded_img_hash = $app->request->post('uploaded-img-hash');
+            $img = Image::getImageByHash($p_uploaded_img_hash);
+            if($img) {
+                // delete old images for user
+                $app->auth_user->deleteOldImages();
+                if($img->assignImageToEntity($app->auth_user->id, "user", "avatar")) {
+                    $app->flash('success', "Uspješna promjena avatara.");
+                    Logger::logUserAvatarChange($app->auth_user);
+                    $app->redirect($app->urlFor('user.profile.home'));
+                } else {
+                    $app->flash('errors', "Greška kod unosa u bazu.\nPokušajte ponovno");
+                    $app->redirect($app->urlFor('user.profile.avatar_change'));
+                }
+            }
+        })->name('user.profile.avatar-change.post');
+
+
+        $app->post('/avatar-changed', $authenticated_user(), function () use ($app) {
+            if($app->request->isAjax()) {
+                $input_data = $app->request->post('img-data');
+
+                $p_version = (isset($input_data['version'])) ? (int)$input_data['version'] : null;
+                $p_width = (isset($input_data['width'])) ? (int)$input_data['width'] : null;
+                $p_height = (isset($input_data['height'])) ? (int)$input_data['height'] : null;
+
+                $p_public_id = (isset($input_data['public_id'])) ? $input_data['public_id'] : null;
+
+                $p_format = (isset($input_data['format'])) ? $input_data['format'] : null;
+                $p_resource_type = (isset($input_data['resource_type'])) ? $input_data['resource_type'] : null;
+                $p_created_at = (isset($input_data['created_at'])) ? $input_data['created_at'] : null;
+
+                $p_type = (isset($input_data['type'])) ? $input_data['type'] : null;
+                $p_etag = (isset($input_data['etag'])) ? $input_data['etag'] : null;
+                $p_url = (isset($input_data['url'])) ? $input_data['url'] : null;
+                $p_secure_url = (isset($input_data['secure_url'])) ? $input_data['secure_url'] : null;
+                $p_orig_filename = (isset($input_data['original_filename'])) ?  $input_data['original_filename'] : null;
+                $p_path = (isset($input_data['path'])) ? $input_data['path'] : null;
+                $p_moderated = (isset($input_data['moderated'])) ? (int)$input_data['moderated'] : null;
+
+                try {
+                    $img = Image::createNew($p_public_id, $p_version, $p_width, $p_height, $p_format, $p_url, $p_secure_url,
+                        $p_resource_type, $p_created_at, $p_type, $p_etag, $p_orig_filename, $p_path, $p_moderated);
+                    header('Content-Type: application/json');
+                    echo json_encode(array('hash' => $img->hash));
+                } catch(\Exception $e) {
+                    echo "<br>Greška: " . $e->getMessage() . "<br>";
+                }
+            }
+
+
+        })->name('user.profile.avatar-change.changed.post');
+
 
 //        $app->post('/avatar', $authenticated_user(), function () use ($app) {
 //            $p_avatar_file = $_FILES['avatar_file'];
@@ -91,7 +190,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 //                        $app->response()->redirect($app->urlFor('user.avatar'));
 //                    }
 //                    else {
-//                        $user = RegisteredUser::getUserById($app->auth->id);
+//                        $user = User::getUserById($app->auth->id);
 //                        $user->deleteAvatarDir();
 //                        $user->updateExtension();
 //                        $app->flash("statuses", "Stari avatar je izbrisan. \n" .
@@ -100,7 +199,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 //                    }
 //                }
 //                else {
-//                    $user = RegisteredUser::getUserById($app->auth->id);
+//                    $user = User::getUserById($app->auth->id);
 //                    $user->deleteAvatarDir();
 //
 //                    $user->checkAvatarDir();
@@ -144,7 +243,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 //                $app->response()->redirect($app->urlFor('user.avatar'));
 //            }
 //            else {
-//                $user = RegisteredUser::getUserById($app->auth->id);
+//                $user = User::getUserById($app->auth->id);
 //                $user->deleteAvatarDir();
 //                $user->updateExtension();
 //                $app->flash("success", "Uspješno izbrisan avatar!");
@@ -183,7 +282,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 //                    $app->response()->redirect($app->urlFor('user.avatar.thumb'));
 //                }
 //                else {
-//                    $user = RegisteredUser::getUserById($app->auth->id);
+//                    $user = User::getUserById($app->auth->id);
 //                    $user->checkAvatarDir();
 //
 //                    $width_ratio = floatval($p_width_ratio);
@@ -243,4 +342,6 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
     });
 
 });
+
+
 ?>

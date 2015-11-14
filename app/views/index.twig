@@ -1,7 +1,7 @@
 {% extends "templates/default.twig" %}
 
 {% block title %}
-Fuconž
+    Fuconž
 {% endblock %}
 
 {% block content %}
@@ -12,7 +12,7 @@ Fuconž
         <div class = "main-title-box">
             <div class = "inner-cont flag"></div>
             <div class = "inner-cont page-title">
-                <h1>Korisničke stranice {{ auth_user.ssbos('članice', 'člana') }}</h1>
+                <h1>Fuconž početna stranica</h1>
             </div>
         </div>
         <div class = "black-horiz-spacer-5"></div>
@@ -24,16 +24,12 @@ Fuconž
                 {% include "templates/partials/user_messages.twig" %}
 
 
-                <div class = "pp-content">
-                    <p>
-                        <span>Korisnik: {{ user.email }}</span>
-                        {% set avatar = auth_user.getAvatarPath %}
-                        <span>Avatar path: {{ avatar }}</span>
-                    </p>
-                    <p>
-                        <a href = "{{ urlFor('user.profile.home') }}"> Uredi profil</a>
-                    </p>
+                <div class = "vertical-section text-centered">
+                    <div class = "inner-70pct">
+                        <h4>Ovo su stranice na kojima ekiponž dogovara fuconž</h4>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>

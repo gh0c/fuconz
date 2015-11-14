@@ -60,6 +60,27 @@ class Admin
         return $false;
     }
 
+    public static function getAdmins($limit = 1000000, $order_by = "username ASC") {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "SELECT * FROM administrator ORDER BY :order LIMIT :limit";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
+        $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $admin = new Admin($row);
+                $list[] = $admin;
+            }
+            return $list;
+        }
+        else {
+            return null;
+        }
+    }
+
     public static function getAdminById($admin_id)    {
         $dbh = DatabaseConnection::getInstance();
         $sql = "SELECT * FROM administrator WHERE id = :id LIMIT 1";
@@ -206,7 +227,7 @@ class Admin
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
         $salt = Hash::getMSG()->generateString(128);
         $stmt->bindParam(':salt', $salt, PDO::PARAM_STR);
-        $stmt->bindParam(':password', Hash::password($password . $salt), PDO::PARAM_STR);
+        $stmt->bindValue(':password', Hash::password($password . $salt), PDO::PARAM_STR);
 
         $stmt->execute();
 

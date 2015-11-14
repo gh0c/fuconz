@@ -30,14 +30,14 @@
                         <div class = "heading-container">
                             <div class = "th width-4-and-half-em margin-std-lr">
                                 <h4></h4>
-                            </div>
-                            <div class = "th width-15em margin-std-lr">
+                            </div><!--
+                            --><div class = "th width-15em margin-std-lr">
                                 <h4>Korisničko ime</h4>
-                            </div>
-                            <div class = "th width-20em margin-std-lr">
+                            </div><!--
+                            --><div class = "th width-20em margin-std-lr">
                                 <h4>Email</h4>
-                            </div>
-                            <div class = "th width-7em margin-std-lr">
+                            </div><!--
+                            --><div class = "th width-7em margin-std-lr">
                                 <h4></h4>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                                 <div class = "tr height-3-and-half-em">
                                     <div class = "td width-4-and-half-em margin-std-lr home-icon-cont text-centered">
                                         <a href = "{{ urlFor('admin.users.user.home', {"user_id":  user.id } ) }}">
-                                            {% set avatar = user.getAvatarPath('thumb2') %}
+                                            {% set avatar = user.getClImageURL('avatar', {"width" : 48, "height" : 48, "crop": "limit"}) %}
                                             {%  if avatar %}
                                                 <div class = "thumbnail user yes-avatar">
                                                     <div class = "no-show"><i class = "fa fa-home"></i></div>
@@ -64,14 +64,14 @@
                                                 </div>
                                             {% endif %}
                                         </a>
-                                    </div>
-                                    <div class = "td width-15em margin-std-lr text-left">
+                                    </div><!--
+                                    --><div class = "td width-15em margin-std-lr text-left">
                                         <span>{{ user.username }}</span>
-                                    </div>
-                                    <div class = "td width-20em margin-std-lr text-left">
+                                    </div><!--
+                                    --><div class = "td width-20em margin-std-lr text-left">
                                         <span>{{ user.email }}</span>
-                                    </div>
-                                    <div class = "td width-7em margin-std-lr text-centered admin-actions-cont">
+                                    </div><!--
+                                    --><div class = "td width-7em margin-std-lr text-centered admin-actions-cont">
                                         <div>
                                             <div class = "edit user action" title = "Uredi podatke o članu">
                                                 <a href = "{{ urlFor('admin.users.edit.user', {"user_id":  user.id } ) }}">

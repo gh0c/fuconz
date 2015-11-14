@@ -28,8 +28,10 @@
                 <div class = "pp-content">
                     <p>
                         <span>Korisnik: {{ auth_user.email }}</span>
-                        {% set avatar = auth_user.getAvatarPath %}
+                        {% set avatar = auth_user.getImageURL('avatar') %}
                         <span>Avatar path: {{ avatar }}</span>
+                        <span>URL: {{ auth_user.getClImageURL('avatar',
+                            { "width": 75, "height": 95, "crop": "limit"}) }}</span>
                     </p>
                     <p>
                         <a href = "{{ urlFor('user.profile.home') }}"> Uredi profil</a>

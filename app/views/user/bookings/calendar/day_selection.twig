@@ -1,0 +1,69 @@
+{% set day_passed = curr_date < course_constants.read('today') %}
+
+<div class = "day-container">
+
+    <div class = "date-container">
+        {% if day_passed %}
+            <i class = "fa fa-times day-ended"></i>
+        {% endif %}
+
+        <span>{{ day_counter }}</span>
+    </div>
+
+
+    {% set datetime_spans = datetimes.get_by_date(curr_date) %}
+    {% if datetime_spans %}
+        <div class = "booking-slots-exists"></div>
+
+        <div class = "booking-slots">
+            <div class = "bookings-container">
+            {% for span in datetime_spans %}
+
+                {% set course_passed = span.span_start < "now"|date("Y-m-d H:i:s") %}
+                {% set course_booking_allowed = ( span.span_start|date("U") - span.training_course.reservation_time ) > "now"|date("U")%}
+
+                {% if 1 < 2 %} {#No reservations nor pre-reservations#}
+
+                    {% if not course_passed %} {# Course not over #}
+
+                        {% if not course_booking_allowed %} {# Booking time ended #}
+
+                            <div><span title = "{{ ( span.span_start|date("U") - span.training_course.reservation_time )|date("Y-m-d H:i") }}">-C booking ajbok</span></div>
+
+                        {% else %} {# Course available for booking #}
+
+                            <div class = "booking" title = "{{ span.training_course.title }}&#10;{{ span.description_string() }}"
+                                 data-date = "{{ curr_date }}" data-description = "{{ span.description_string() }}"
+                                 id = "slot-{{ curr_date }}-{{ slot.start_time }}">
+
+                                <i class = "fa fa-calendar-check-o" title = "{{ span.description_string() }}"></i>
+                                <span>-{{ span.training_course.title }}</span>
+
+                            </div>
+
+                        {% endif %}
+
+                    {% else %} {# Course finished #}
+
+                        <span>-C finito</span>
+
+                    {% endif %}
+                {% else %}
+                    {% if 1 < 5 %} {# Course not over #}
+                        {% if 2 < 5 %} {# Course too soon to cancel (pre-)reservation #}
+
+                        {% else %} {# Booking cancelation allowed #}
+
+                        {% endif %}
+                    {% else %} {# Course with finished #}
+
+                    {% endif %}
+                {% endif %}
+
+
+
+            {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+</div>

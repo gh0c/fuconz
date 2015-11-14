@@ -11,7 +11,7 @@ $userAuthCheck = function($required) use ($app) {
         }
         else if ($app->auth_user && !$required){
             $app->flash('statuses', "Već ste prijavljeni!");
-            $app->redirect($app->urlFor('user.home'));
+            $app->redirect($app->urlFor('user.profile.home'));
         }
     };
 };

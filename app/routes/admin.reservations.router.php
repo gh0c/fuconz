@@ -1,5 +1,5 @@
 <?php
-use \app\model\User\RegisteredUser;
+use \app\model\User\User;
 use \app\model\Reservation\TrainingCourse;
 use app\helpers\Sessions;
 use app\helpers\Configuration as Cfg;
@@ -48,7 +48,7 @@ $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
 
 
     $app->post('/rezervacijski-termini/novi', $authenticated_admin(), function () use ($app) {
-        $all_courses = null; //RegisteredUser::getUsers();
+        $all_courses = null; //User::getUsers();
 
         $p_title = $app->request->post('title');
         $p_date_from = $app->request->post('date-from');
@@ -60,45 +60,46 @@ $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
         $p_repeating_frequency = $app->request->post('repeating-frequency');
         $p_capacity = $app->request->post('capacity');
         $p_min_reservations = $app->request->post('min-reservations');
+        $p_reservation_time = $app->request->post('reservation-time') * 60 * 60;
 
         $validation_result = TrainingCourse::validateNew($p_title, $p_start_time, $p_end_time,
             $p_date_from, 1, $p_capacity, $p_min_reservations, $p_repeating, $p_repeating_interval,
-            $p_repeating_frequency, $p_date_until );
+            $p_repeating_frequency, $p_date_until, $p_reservation_time );
 
         if(!($validation_result["validated"])) {
             // validation failed
+            $app->flash('admin_errors', "Greške!\n" . $validation_result["errors"]);
+
             if(isset($validation_result["errors"])) {
-                $app->flash('errors', $validation_result["errors"]);
+                $app->flash('admin_errors', "Greške!\n" . $validation_result["errors"]);
             }
             $app->redirect($app->urlFor('user.registrations.training_course.new'));
         } else {
             // Validation of input data successful
-
             if (TrainingCourse::createNew($p_title, $p_start_time, $p_end_time, date("Y-m-d", strtotime($p_date_from) ),
-                1, $app->auth_admin->id, $p_capacity, $p_min_reservations, isset($p_repeating) && $p_repeating === "on",
-                $p_repeating_interval, $p_repeating_frequency, date("Y-m-d", strtotime($p_date_until) ))) {
-                $app->flash('success', "Uspješan unos!");
+                1, $app->auth_admin->id, (int)$p_capacity, (int)$p_min_reservations, (isset($p_repeating) && $p_repeating === "on"),
+                $p_repeating_interval, (int)$p_repeating_frequency, date("Y-m-d", strtotime($p_date_until) ), (int)$p_reservation_time)) {
+                $app->flash('admin_success', "Uspješan unos!");
                 $app->redirect($app->urlFor('admin.reservations.training-courses.all'));
             } else {
-                $app->flash('errors', "Greška kod unosa u bazu.\nPokušajte ponovno");
+                $app->flash('admin_errors', "Greška kod unosa u bazu.\nPokušajte ponovno");
                 $app->redirect($app->urlFor('user.registrations.training_course.new'));
             }
         }
-
 
     })->name('user.registrations.training_course.new.post');
 
 
     $app->get('/izbrisi/:course_id', $authenticated_admin(), function ($course_id) use ($app) {
         if(!($course = TrainingCourse::getCourseById((int)$course_id))) {
-            $app->flash('errors',  "Ne postoji traženi rezervacijski termin.");
+            $app->flash('admin_errors',  "Ne postoji traženi rezervacijski termin.");
             $app->redirect($app->urlFor('admin.reservations.training-courses.all'));
         } else {
             if($course->delete()) {
-                $app->flash('success', "Uspješno brisanje rezervacijskog termina: {$course->title}");
+                $app->flash('admin_success', "Uspješno brisanje rezervacijskog termina: {$course->title}");
                 $app->redirect($app->urlFor('admin.reservations.training-courses.all'));
             } else {
-                $app->flash('errors',  "Rezervacijski termin nije uspješno izbrisan. Pokušajte ponovo.");
+                $app->flash('admin_errors',  "Rezervacijski termin nije uspješno izbrisan. Pokušajte ponovo.");
                 $app->redirect($app->urlFor('admin.reservations.training-courses.all'));
             }
         }
@@ -106,7 +107,7 @@ $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
 
 
     $app->get('/rezervacije-clanova', $authenticated_admin(), function () use ($app) {
-        $all_users = RegisteredUser::getUsers();
+        $all_users = User::getUsers();
 
         $app->render('admin/reservations/admin.reservations.user_reservations.all.twig', array(
             'users' => $all_users,

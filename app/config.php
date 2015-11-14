@@ -42,6 +42,10 @@ Configuration::write('repeating.interval.week', 'week');
 Configuration::write('repeating.interval.month.1', 'month.1');
 Configuration::write('repeating.interval.month.2', 'month.2');
 
+Configuration::write('calendar.date.offset.day.left', -4);
+Configuration::write('calendar.date.offset.day.right', 11);
+Configuration::write('calendar.date.offset.day.std', 11);
+
 
 // Images subpaths
 
@@ -49,6 +53,7 @@ Configuration::write('path.images.full', 'full');
 Configuration::write('path.images.t1', 'thumb1');
 Configuration::write('path.images.t2', 'thumb2');
 Configuration::write('path.images.t3', 'thumb3');
+
 
 // Avatar
 
@@ -77,8 +82,3 @@ Configuration::write('db.sex.female', 'F');
 Configuration::write('password.reset.duration', 2*60*60);
 
 
-\Cloudinary::config(array(
-    "cloud_name" => "dqpjjihsv",
-    "api_key" => "246759957442647",
-    "api_secret" => "3jQQ4ITKsKslrlwNucryALiYuU0"
-));

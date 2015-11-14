@@ -24,7 +24,7 @@
 @mixin rounded-se($radius: 0.5em) {
   -webkit-border-bottom-right-radius: $radius;
   -moz-border-radius-bottomright: $radius;
-  border-bottom-right-radius-radius: $radius;
+  border-bottom-right-radius: $radius;
 
 }
 
@@ -68,6 +68,12 @@
   transition: $params;
 }
 
+@mixin pp-transition-timing($attr1) {
+  -webkit-transition-timing-function: $attr1; /* older webkit */
+  -moz-transition-timing-function: $attr1;
+  -o-transition-timing-function: $attr1;
+  transition-timing-function: $attr1; /* custom */
+}
 
 @mixin pp-transform($transformations) {
   -webkit-transform: $transformations;
@@ -95,3 +101,17 @@
   #{$property}: -webkit-calc(#{$expression});
   #{$property}: calc(#{$expression});
 }
+
+
+// rem fallback - credits: http://zerosixthree.se/
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+

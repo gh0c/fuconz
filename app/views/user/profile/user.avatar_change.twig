@@ -1,0 +1,160 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    Promjena avatara
+{% endblock %}
+
+{% block content %}
+
+    <script type="text/javascript" src="public/js/cloudinary/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="public/js/cloudinary/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="public/js/cloudinary/jquery.fileupload.js"></script>
+    <script type="text/javascript" src="public/js/cloudinary/jquery.cloudinary.js"></script>
+    {{ cloudinary_js_config() }}
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Promjena avatara</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+
+
+
+
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+                <div class = "form-container">
+
+                    <form method = "post" name = "user-avatar-change" id = "user-avatar-change"  onsubmit="return false;"
+                          action = "{{ urlFor('user.profile.avatar-change.post') }}">
+                        <div class = "inputs-container">
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "inner-70pct">
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+                                    {#<input type="file" accept="image/jpeg,image/gif,image/png" tabindex="1"#}
+                                           {#name="avatar-file" id="avatar-file" class = "file-input" required/>#}
+                                    {{ cl_image_upload_tag('test', {
+                                        "tags":"direct_photo_album",
+                                        "public_id" : "fuconz/user/" ~ auth_user.username ~"/avatar/img",
+                                        "callback" : cors_location,
+                                        "html" : {
+                                            "accept" : "image/jpeg,image/gif,image/png",
+                                            "tabindex" : "1",
+                                            "multiple" : true,
+                                            "class" : "file-input",
+                                            "name": "avatar-file",
+                                            "id" : "avatar-file",
+                                            "required" : "required",
+                                            "data-submit-url" : urlFor('user.profile.avatar-change.changed.post'),
+                                            "data-csrf-key-name" : csrf_key
+                                        }
+                                    }) }}
+
+                                    <div class = "file-div-cont upload">
+                                        <label for = "avatar-file" class = "button-label">
+                                            <span>Odaberite datoteku</span>
+                                        </label>
+                                        <label class = "selected-file">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "inner-70pct">
+                                    <div class = "box">
+                                        <div class="uploaded-info-holder">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "inner-70pct">
+                                    <input type="checkbox" name="delete-avatar" id="delete-avatar"
+                                           class = "cb-input delete-avatar" tabindex="2">
+                                    <div class = "checkbox-div-cont">
+                                        <label for = "delete-avatar" alt="Samo izbriši" placeholder="Samo izbriši" data-info="Samo izbriši">
+                                            <span>Samo izbriši?</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <input type="hidden" name="uploaded-img-hash" id = "uploaded-img-hash"/>
+
+
+                        </div>
+
+
+
+                        <script src="public/js/avatar_change.js"></script>
+
+
+
+                        {% include "templates/partials/user_messages.twig" %}
+
+                        {% include "templates/partials/live_status.container.twig" %}
+
+                        <input type = "hidden" name = "{{ csrf_key }}" value = "{{ csrf_token }}">
+
+                        <div class = "submitter-cont">
+                            <div class = "inner-70pct">
+                                <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="3"
+                                     onclick="validateAndSubmitAvatarChange('user-avatar-change')">
+                                    <span>SPREMI PROMJENU</span>
+                                </div>
+                                <div class="submitter bbb-flag-v-cibona-blue reversed cancel">
+                                    <a href = "{{ urlFor('user.profile.home') }}" tabindex="4">ODUSTANI</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="public/js/cloudinary/load-image.min.js"></script>
+    <script src="public/js/cloudinary/canvas-to-blob.min.js"></script>
+    <script src="public/js/cloudinary/jquery.fileupload-process.js"></script>
+    <script src="public/js/cloudinary/jquery.fileupload-image.js"></script>
+    <script src="public/js/cloudinary/jquery.fileupload-validate.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            function valSub() {
+                if(formSubmittingActive == true) {
+                    validateAndSubmitAvatarChange('user-avatar-change');
+                    return false;
+                }
+            }
+            $('#user-avatar-change').keydown(function(e) {
+
+                if (e.keyCode == 13) {
+                    valSub();
+                }
+            });
+            $('.submitter.submit').keydown(function(e) {
+
+                if (e.keyCode == 13) {
+                    valSub();
+                }
+            });
+        });
+    </script>
+{% endblock %}

@@ -28,7 +28,7 @@
                 <div class = "pp-content">
                     <p>
                         <span>Korisnik: {{ auth_user.email }}</span>
-                        {% set avatar = auth_user.getAvatarPath %}
+                        {% set avatar = auth_user.getClImageURL('avatar') %}
                         <span>Avatar path: {{ avatar }}</span>
                     </p>
                     <p>

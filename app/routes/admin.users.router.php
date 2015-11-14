@@ -1,5 +1,5 @@
 <?php
-use \app\model\User\RegisteredUser;
+use \app\model\User\User;
 use app\helpers\Sessions;
 use app\helpers\Configuration as Cfg;
 use app\model\Content\ImagesHandler;
@@ -24,7 +24,7 @@ $app->group('/admin/clanovi', function () use ($app, $authenticated_admin) {
 
 
     $app->get('/svi-clanovi', $authenticated_admin(), function () use ($app) {
-        $all_users = RegisteredUser::getUsers();
+        $all_users = User::getUsers();
 
         $app->render('admin/users/admin.users.all.twig', array(
             'users' => $all_users,
@@ -35,7 +35,7 @@ $app->group('/admin/clanovi', function () use ($app, $authenticated_admin) {
 
 
     $app->get('/aktivni-clanovi', $authenticated_admin(), function () use ($app) {
-        $all_users = RegisteredUser::getActiveUsers();
+        $all_users = User::getActiveUsers();
 
         $app->render('admin/users/admin.users.all.active.twig', array(
             'users' => $all_users,
@@ -60,17 +60,19 @@ $app->group('/admin/clanovi', function () use ($app, $authenticated_admin) {
         exit();
     })->name('admin.users.user.activity');
 
-    $app->get('/izbrisi/:user_id', $authenticated_admin(), function ($user_id) use ($app) {
-        if(!($user = RegisteredUser::getUserById((int)$user_id))) {
-            $app->flash('errors',  "Ne postoji traženi član za brisanje.");
-            $app->redirect($app->urlFor('admin.users.home'));
+
+    $app->get('/izbrisi/:user_id(/:ref)', $authenticated_admin(), function ($user_id, $ref = "all") use ($app) {
+//        echo "<br>ere<br>";var_dump($ref);exit();
+        if(!($user = User::getUserById((int)$user_id))) {
+            $app->flash('admin_errors',  "Ne postoji traženi član za brisanje.");
+            $app->redirect($app->urlFor('admin.users.' . $ref));
         } else {
             if($user->delete()) {
-                $app->flash('success', "Uspješno brisanje člana: {$user->username}");
-                $app->redirect($app->urlFor('admin.users.home'));
+                $app->flash('admin_success', "Uspješno brisanje člana: {$user->username}");
+                $app->redirect($app->urlFor('admin.users.' . $ref));
             } else {
-                $app->flash('errors',  "Član nije uspješno izbrisan. Pokušajte ponovo.");
-                $app->redirect($app->urlFor('admin.users.home'));
+                $app->flash('admin_errors',  "Član nije uspješno izbrisan. Pokušajte ponovo.");
+                $app->redirect($app->urlFor('admin.users.' . $ref));
             }
         }
     })->name('admin.users.delete.user');

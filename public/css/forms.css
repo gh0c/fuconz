@@ -1,7 +1,6 @@
 /*********************
  BREAKPOINTS
  *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */.form-container {
-  font-size: 0.95em;
   padding: 1em;
 }
 .form-container .inputs-container {
@@ -24,7 +23,7 @@
   color: #0c131d;
   height: 2.5em;
 }
-.form-container input[type="password"][required].text-input ~ label[placeholder], .form-container .std-text-input ~ label, .form-container .large-text-input ~ label, .form-container .medium-text-input ~ label, .form-container .small-text-input ~ label {
+.form-container input[type="password"][required].text-input + label[placeholder], .form-container .std-text-input + label, .form-container .large-text-input + label, .form-container .medium-text-input + label, .form-container .small-text-input + label {
   font-family: 'Raleway', Arial, sans-serif;
   display: block;
   pointer-events: none;
@@ -36,7 +35,7 @@
   position: relative;
   text-align: left;
 }
-.form-container input[type="password"][required].text-input ~ label[placeholder]:before, .form-container .std-text-input ~ label:before, .form-container .large-text-input ~ label:before, .form-container .medium-text-input ~ label:before, .form-container .small-text-input ~ label:before {
+.form-container input[type="password"][required].text-input + label[placeholder]:before, .form-container .std-text-input + label:before, .form-container .large-text-input + label:before, .form-container .medium-text-input + label:before, .form-container .small-text-input + label:before {
   content: attr(data-info);
   display: inline-block;
   line-height: 1em;
@@ -54,7 +53,7 @@
   opacity: 0.7;
   position: relative;
 }
-.form-container input[type="password"][required].text-input ~ label[placeholder]:after, .form-container .std-text-input ~ label:after, .form-container .large-text-input ~ label:after, .form-container .medium-text-input ~ label:after, .form-container .small-text-input ~ label:after {
+.form-container input[type="password"][required].text-input + label[placeholder]:after, .form-container .std-text-input + label:after, .form-container .large-text-input + label:after, .form-container .medium-text-input + label:after, .form-container .small-text-input + label:after {
   content: '\0020';
   display: inline-block;
   line-height: 1em;
@@ -66,41 +65,41 @@
   top: -webkit-calc(50% - 0.5em - 1px);
   top: calc(50% - 0.5em - 1px);
 }
-.form-container input[type="password"][required].text-input ~ label[placeholder].req:after, .form-container .std-text-input ~ label.req:after, .form-container .large-text-input ~ label.req:after, .form-container .medium-text-input ~ label.req:after, .form-container .small-text-input ~ label.req:after {
+.form-container input[type="password"][required].text-input + label[placeholder].req:after, .form-container .std-text-input + label.req:after, .form-container .large-text-input + label.req:after, .form-container .medium-text-input + label.req:after, .form-container .small-text-input + label.req:after {
   content: '\f069';
   color: #bf1a1a;
 }
-.form-container .std-text-input ~ label:before {
+.form-container .std-text-input + label:before {
   left: -webkit-calc(50% - 10em);
   left: calc(50% - 10em);
 }
-.form-container .std-text-input ~ label:after {
+.form-container .std-text-input + label:after {
   right: -webkit-calc(50% - 11em);
   right: calc(50% - 11em);
 }
-.form-container .large-text-input ~ label:before {
+.form-container .large-text-input + label:before {
   left: -webkit-calc(50% - 10em - ((32em - 24em) / 2));
   left: calc(50% - 10em - ((32em - 24em) / 2));
 }
-.form-container .large-text-input ~ label:after {
+.form-container .large-text-input + label:after {
   right: -webkit-calc(50% - 11em - ((32em - 24em) / 2));
   right: calc(50% - 11em - ((32em - 24em) / 2));
 }
-.form-container .medium-text-input ~ label:before {
+.form-container .medium-text-input + label:before {
   left: -webkit-calc(50% - 10em - ((20em - 24em) / 2));
   left: calc(50% - 10em - ((20em - 24em) / 2));
 }
-.form-container .medium-text-input ~ label:after {
+.form-container .medium-text-input + label:after {
   right: -webkit-calc(50% - 11em - ((20em - 24em) / 2));
   right: calc(50% - 11em - ((20em - 24em) / 2));
 }
-.form-container .small-text-input ~ label:before {
-  left: -webkit-calc(50% - 10em - ((16em - 24em) / 2));
-  left: calc(50% - 10em - ((16em - 24em) / 2));
+.form-container .small-text-input + label:before {
+  left: -webkit-calc(50% - 10em - ((14em - 24em) / 2));
+  left: calc(50% - 10em - ((14em - 24em) / 2));
 }
-.form-container .small-text-input ~ label:after {
-  right: -webkit-calc(50% - 11em - ((16em - 24em) / 2));
-  right: calc(50% - 11em - ((16em - 24em) / 2));
+.form-container .small-text-input + label:after {
+  right: -webkit-calc(50% - 11em - ((14em - 24em) / 2));
+  right: calc(50% - 11em - ((14em - 24em) / 2));
 }
 .form-container input[type="password"][required]:focus, .form-container .std-text-input:focus, .form-container .large-text-input:focus, .form-container .medium-text-input:focus, .form-container .small-text-input:focus {
   border-color: #183293;
@@ -108,7 +107,7 @@
   padding-left: -webkit-calc(1.5em - 1px);
   padding-left: calc(1.5em - 1px);
 }
-.form-container .std-text-input:focus ~ label:before, .form-container .std-text-input:valid ~ label:before, .form-container .large-text-input:focus ~ label:before, .form-container .large-text-input:valid ~ label:before, .form-container .medium-text-input:focus ~ label:before, .form-container .medium-text-input:valid ~ label:before, .form-container .small-text-input:focus ~ label:before, .form-container .small-text-input:valid ~ label:before {
+.form-container input[type="password"][required]:focus + label:before, .form-container .std-text-input:focus + label:before, .form-container .large-text-input:focus + label:before, .form-container .medium-text-input:focus + label:before, .form-container .small-text-input:focus + label:before {
   -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
   -webkit-transform: translate(-0.5em, -1.2em) scale(0.9, 0.9);
@@ -118,7 +117,37 @@
   font-style: normal;
   border-left: 1px solid #183293;
 }
-.form-container input[type="password"][required]:invalid ~ label[placeholder][alt]:before {
+.form-container input[type="password"][required]:valid + label:before, .form-container .std-text-input:valid + label:before, .form-container .large-text-input:valid + label:before, .form-container .medium-text-input:valid + label:before, .form-container .small-text-input:valid + label:before {
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transform: translate(-0.5em, -1.2em) scale(0.9, 0.9);
+  -ms-transform: translate(-0.5em, -1.2em) scale(0.9, 0.9);
+  transform: translate(-0.5em, -1.2em) scale(0.9, 0.9);
+  opacity: 1;
+  font-style: normal;
+  border-left: 1px solid #183293;
+}
+.form-container input[type="password"][required]:read-only + label:before, .form-container .std-text-input:read-only + label:before, .form-container .large-text-input:read-only + label:before, .form-container .medium-text-input:read-only + label:before, .form-container .small-text-input:read-only + label:before, .form-container input[type="password"][required][readonly] + label:before, .form-container .std-text-input[readonly] + label:before, .form-container .large-text-input[readonly] + label:before, .form-container .medium-text-input[readonly] + label:before, .form-container .small-text-input[readonly] + label:before, .form-container input[type="password"][required][readonly=""] + label:before, .form-container .std-text-input[readonly=""] + label:before, .form-container .large-text-input[readonly=""] + label:before, .form-container .medium-text-input[readonly=""] + label:before, .form-container .small-text-input[readonly=""] + label:before {
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transform: translate(-0.5em, -1.2em) scale(0.9, 0.9);
+  -ms-transform: translate(-0.5em, -1.2em) scale(0.9, 0.9);
+  transform: translate(-0.5em, -1.2em) scale(0.9, 0.9);
+  opacity: 1;
+  font-style: normal;
+  border-left: 1px solid #183293;
+}
+.form-container input[type="password"][required][readonly=""] + label:before, .form-container .std-text-input[readonly=""] + label:before, .form-container .large-text-input[readonly=""] + label:before, .form-container .medium-text-input[readonly=""] + label:before, .form-container .small-text-input[readonly=""] + label:before {
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transform: translate(-0.5em, -1.2em) scale(0.9, 0.9);
+  -ms-transform: translate(-0.5em, -1.2em) scale(0.9, 0.9);
+  transform: translate(-0.5em, -1.2em) scale(0.9, 0.9);
+  opacity: 1;
+  font-style: normal;
+  border-left: 1px solid #183293;
+}
+.form-container input[type="password"][required]:invalid + label[placeholder][alt]:before {
   content: attr(alt);
 }
 .form-container select.std-text-input, .form-container select.medium-text-input, .form-container select.small-text-input, .form-container select.large-text-input {
@@ -133,15 +162,18 @@
   appearance: none;
   padding: 0;
 }
-.form-container input[type="radio"].rb-input, .form-container input[type="checkbox"].cb-input {
+.form-container input[type="radio"].rb-input, .form-container input[type="checkbox"].cb-input, .form-container input[type="file"].file-input {
   opacity: 0;
   position: absolute;
+}
+.form-container input[type="file"].file-input {
+  left: -200%;
 }
 .form-container .pp-radio-div {
   height: -webkit-calc(2.5em + 2px);
   height: calc(2.5em + 2px);
 }
-.form-container input[type="radio"].rb-input + .radio-div-cont, .form-container input[type="checkbox"].cb-input + .radio-div-cont, .form-container input[type="radio"].rb-input + .checkbox-div-cont, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont {
+.form-container input[type="radio"].rb-input + .radio-div-cont, .form-container input[type="checkbox"].cb-input + .radio-div-cont, .form-container input[type="file"].file-input + .radio-div-cont, .form-container input[type="radio"].rb-input + .checkbox-div-cont, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont, .form-container input[type="file"].file-input + .checkbox-div-cont, .form-container input[type="radio"].rb-input + .file-div-cont, .form-container input[type="checkbox"].cb-input + .file-div-cont, .form-container input[type="file"].file-input + .file-div-cont {
   font-family: MuseoSans;
   font-weight: 700;
   font-size: 1em;
@@ -156,23 +188,45 @@
   display: inline-block;
   position: relative;
 }
-.form-container input[type="radio"].rb-input + .radio-div-cont, .form-container input[type="checkbox"].cb-input + .radio-div-cont {
+.form-container input[type="radio"].rb-input.sex + .radio-div-cont, .form-container input[type="checkbox"].cb-input.sex + .radio-div-cont, .form-container input[type="file"].file-input.sex + .radio-div-cont {
   width: 10em;
 }
-.form-container input[type="radio"].rb-input + .checkbox-div-cont, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont {
+.form-container input[type="radio"].rb-input.booking-selector + .radio-div-cont, .form-container input[type="checkbox"].cb-input.booking-selector + .radio-div-cont, .form-container input[type="file"].file-input.booking-selector + .radio-div-cont {
+  width: 35em;
+}
+.form-container input[type="radio"].rb-input + .checkbox-div-cont, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont, .form-container input[type="file"].file-input + .checkbox-div-cont {
   width: 20em;
 }
-.form-container input[type="radio"].rb-input + .radio-div-cont > label, .form-container input[type="checkbox"].cb-input + .radio-div-cont > label, .form-container input[type="radio"].rb-input + .checkbox-div-cont > label, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont > label {
+.form-container input[type="radio"].rb-input + .file-div-cont, .form-container input[type="checkbox"].cb-input + .file-div-cont, .form-container input[type="file"].file-input + .file-div-cont {
+  -webkit-transition: width 0.45s;
+  -moz-transition: width 0.45s;
+  -o-transition: width 0.45s;
+  -ms-transition: width 0.45s;
+  transition: width 0.45s;
+  min-width: 28em;
+}
+.form-container input[type="radio"].rb-input + .radio-div-cont > label, .form-container input[type="checkbox"].cb-input + .radio-div-cont > label, .form-container input[type="file"].file-input + .radio-div-cont > label, .form-container input[type="radio"].rb-input + .checkbox-div-cont > label, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont > label, .form-container input[type="file"].file-input + .checkbox-div-cont > label, .form-container input[type="radio"].rb-input + .file-div-cont > label.button-label, .form-container input[type="checkbox"].cb-input + .file-div-cont > label.button-label, .form-container input[type="file"].file-input + .file-div-cont > label.button-label {
   font-family: 'Raleway', Arial, sans-serif;
   font-weight: normal;
   position: relative;
   display: inline-block;
-  width: 100%;
   height: inherit;
   cursor: pointer;
   color: #122b72;
 }
-.form-container input[type="radio"].rb-input + .radio-div-cont > label:before, .form-container input[type="checkbox"].cb-input + .radio-div-cont > label:before, .form-container input[type="radio"].rb-input + .checkbox-div-cont > label:before, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont > label:before {
+.form-container input[type="radio"].rb-input + .file-div-cont > label.selected-file, .form-container input[type="checkbox"].cb-input + .file-div-cont > label.selected-file, .form-container input[type="file"].file-input + .file-div-cont > label.selected-file {
+  position: relative;
+  display: none;
+  height: inherit;
+  width: 0%;
+}
+.form-container input[type="radio"].rb-input + .radio-div-cont > label, .form-container input[type="checkbox"].cb-input + .radio-div-cont > label, .form-container input[type="file"].file-input + .radio-div-cont > label, .form-container input[type="radio"].rb-input + .checkbox-div-cont > label, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont > label, .form-container input[type="file"].file-input + .checkbox-div-cont > label {
+  width: 100%;
+}
+.form-container input[type="radio"].rb-input + .file-div-cont > label.button-label, .form-container input[type="checkbox"].cb-input + .file-div-cont > label.button-label, .form-container input[type="file"].file-input + .file-div-cont > label.button-label {
+  width: 100%;
+}
+.form-container input[type="radio"].rb-input + .radio-div-cont > label:before, .form-container input[type="checkbox"].cb-input + .radio-div-cont > label:before, .form-container input[type="file"].file-input + .radio-div-cont > label:before, .form-container input[type="radio"].rb-input + .checkbox-div-cont > label:before, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont > label:before, .form-container input[type="file"].file-input + .checkbox-div-cont > label:before, .form-container input[type="radio"].rb-input + .file-div-cont > label.button-label:before, .form-container input[type="checkbox"].cb-input + .file-div-cont > label.button-label:before, .form-container input[type="file"].file-input + .file-div-cont > label.button-label:before {
   font-family: FontAwesome;
   left: 0em;
   color: #122b72;
@@ -184,7 +238,7 @@
   /* vertical-align: middle; */
   top: calc(50% - 0.75em);
 }
-.form-container input[type="radio"].rb-input + .radio-div-cont > label:before, .form-container input[type="checkbox"].cb-input + .radio-div-cont > label:before {
+.form-container input[type="radio"].rb-input + .radio-div-cont > label:before, .form-container input[type="checkbox"].cb-input + .radio-div-cont > label:before, .form-container input[type="file"].file-input + .radio-div-cont > label:before {
   content: '\f1db';
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -192,7 +246,7 @@
   -ms-transition: all 0.4s;
   transition: all 0.4s;
 }
-.form-container input[type="radio"].rb-input + .radio-div-cont > label > span, .form-container input[type="checkbox"].cb-input + .radio-div-cont > label > span {
+.form-container input[type="radio"].rb-input + .radio-div-cont > label > span, .form-container input[type="checkbox"].cb-input + .radio-div-cont > label > span, .form-container input[type="file"].file-input + .radio-div-cont > label > span {
   line-height: 100%;
   display: inline-block;
   width: 4em;
@@ -201,7 +255,14 @@
   position: relative;
   top: 3px;
 }
-.form-container input[type="radio"].rb-input + .checkbox-div-cont > label:before, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont > label:before {
+.form-container input[type="radio"].rb-input.sex + .radio-div-cont > label > span, .form-container input[type="checkbox"].cb-input.sex + .radio-div-cont > label > span, .form-container input[type="file"].file-input.sex + .radio-div-cont > label > span {
+  width: 4em;
+}
+.form-container input[type="radio"].rb-input.booking-selector + .radio-div-cont > label > span, .form-container input[type="checkbox"].cb-input.booking-selector + .radio-div-cont > label > span, .form-container input[type="file"].file-input.booking-selector + .radio-div-cont > label > span {
+  width: 28em;
+  text-align: center;
+}
+.form-container input[type="radio"].rb-input + .checkbox-div-cont > label:before, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont > label:before, .form-container input[type="file"].file-input + .checkbox-div-cont > label:before {
   content: '\f1db';
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -209,7 +270,7 @@
   -ms-transition: all 0.4s;
   transition: all 0.4s;
 }
-.form-container input[type="radio"].rb-input + .checkbox-div-cont > label > span, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont > label > span {
+.form-container input[type="radio"].rb-input + .checkbox-div-cont > label > span, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont > label > span, .form-container input[type="file"].file-input + .checkbox-div-cont > label > span {
   line-height: 100%;
   display: inline-block;
   width: 8em;
@@ -218,7 +279,39 @@
   position: relative;
   top: 3px;
 }
-.form-container input[type="radio"].rb-input:focus + .radio-div-cont, .form-container input[type="checkbox"].cb-input:focus + .radio-div-cont, .form-container input[type="radio"].rb-input:focus + .checkbox-div-cont, .form-container input[type="checkbox"].cb-input:focus + .checkbox-div-cont {
+.form-container input[type="radio"].rb-input + .file-div-cont > label, .form-container input[type="checkbox"].cb-input + .file-div-cont > label, .form-container input[type="file"].file-input + .file-div-cont > label {
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  transition: all 0.4s;
+  overflow: hidden;
+}
+.form-container input[type="radio"].rb-input + .file-div-cont > label.button-label:before, .form-container input[type="checkbox"].cb-input + .file-div-cont > label.button-label:before, .form-container input[type="file"].file-input + .file-div-cont > label.button-label:before {
+  content: '\f0c2';
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.form-container input[type="radio"].rb-input + .file-div-cont > label.button-label > span, .form-container input[type="checkbox"].cb-input + .file-div-cont > label.button-label > span, .form-container input[type="file"].file-input + .file-div-cont > label.button-label > span {
+  line-height: 100%;
+  display: inline-block;
+  padding: 0 0.8em 0 2.2em;
+  text-align: left;
+  position: relative;
+  top: 3px;
+}
+.form-container input[type="radio"].rb-input + .file-div-cont > label.selected-file > span, .form-container input[type="checkbox"].cb-input + .file-div-cont > label.selected-file > span, .form-container input[type="file"].file-input + .file-div-cont > label.selected-file > span {
+  line-height: 100%;
+  display: inline-block;
+  padding: 0 0.8em 0 2.2em;
+  text-align: left;
+  position: relative;
+  top: 3px;
+}
+.form-container input[type="radio"].rb-input:focus + .radio-div-cont, .form-container input[type="checkbox"].cb-input:focus + .radio-div-cont, .form-container input[type="file"].file-input:focus + .radio-div-cont, .form-container input[type="radio"].rb-input:focus + .checkbox-div-cont, .form-container input[type="checkbox"].cb-input:focus + .checkbox-div-cont, .form-container input[type="file"].file-input:focus + .checkbox-div-cont, .form-container input[type="radio"].rb-input:focus + .file-div-cont, .form-container input[type="checkbox"].cb-input:focus + .file-div-cont, .form-container input[type="file"].file-input:focus + .file-div-cont {
   border-color: #183293;
   border-width: 2px;
   padding-left: -webkit-calc(1em - 1px);
@@ -230,35 +323,64 @@
   padding-right: -webkit-calc(0.5em - 1px);
   padding-right: calc(0.5em - 1px);
 }
-.form-container input[type="radio"].rb-input:not(:checked) + .radio-div-cont > label:hover:before, .form-container input[type="checkbox"].cb-input:not(:checked) + .radio-div-cont > label:hover:before {
+.form-container input[type="radio"].rb-input:not(:checked) + .radio-div-cont > label:hover:before, .form-container input[type="checkbox"].cb-input:not(:checked) + .radio-div-cont > label:hover:before, .form-container input[type="file"].file-input:not(:checked) + .radio-div-cont > label:hover:before {
   color: #183293;
   content: '\f00c';
 }
-.form-container input[type="radio"].rb-input:not(:checked) + .checkbox-div-cont > label:hover:before, .form-container input[type="checkbox"].cb-input:not(:checked) + .checkbox-div-cont > label:hover:before {
+.form-container input[type="radio"].rb-input:not(:checked) + .checkbox-div-cont > label:hover:before, .form-container input[type="checkbox"].cb-input:not(:checked) + .checkbox-div-cont > label:hover:before, .form-container input[type="file"].file-input:not(:checked) + .checkbox-div-cont > label:hover:before {
   color: #183293;
   content: '\f00c';
 }
-.form-container input[type="radio"].rb-input:checked + .radio-div-cont > label, .form-container input[type="checkbox"].cb-input:checked + .radio-div-cont > label {
+.form-container input[type="radio"].rb-input:not(:valid) + .file-div-cont > label.button-label:hover:before, .form-container input[type="checkbox"].cb-input:not(:valid) + .file-div-cont > label.button-label:hover:before, .form-container input[type="file"].file-input:not(:valid) + .file-div-cont > label.button-label:hover:before {
+  color: #183293;
+  content: '\f0ee';
+}
+.form-container input[type="radio"].rb-input:checked + .radio-div-cont > label, .form-container input[type="checkbox"].cb-input:checked + .radio-div-cont > label, .form-container input[type="file"].file-input:checked + .radio-div-cont > label {
   color: #0c131d;
 }
-.form-container input[type="radio"].rb-input:checked + .radio-div-cont > label:before, .form-container input[type="checkbox"].cb-input:checked + .radio-div-cont > label:before {
+.form-container input[type="radio"].rb-input:checked + .radio-div-cont > label:before, .form-container input[type="checkbox"].cb-input:checked + .radio-div-cont > label:before, .form-container input[type="file"].file-input:checked + .radio-div-cont > label:before {
   content: '\f058';
   color: #0c131d;
 }
-.form-container input[type="radio"].rb-input:checked + .radio-div-cont > label > span, .form-container input[type="checkbox"].cb-input:checked + .radio-div-cont > label > span {
+.form-container input[type="radio"].rb-input:checked + .radio-div-cont > label > span, .form-container input[type="checkbox"].cb-input:checked + .radio-div-cont > label > span, .form-container input[type="file"].file-input:checked + .radio-div-cont > label > span {
   font-family: MuseoSans;
   font-weight: 700;
 }
-.form-container input[type="radio"].rb-input:checked + .checkbox-div-cont > label, .form-container input[type="checkbox"].cb-input:checked + .checkbox-div-cont > label {
+.form-container input[type="radio"].rb-input:checked + .checkbox-div-cont > label, .form-container input[type="checkbox"].cb-input:checked + .checkbox-div-cont > label, .form-container input[type="file"].file-input:checked + .checkbox-div-cont > label {
   color: #0c131d;
 }
-.form-container input[type="radio"].rb-input:checked + .checkbox-div-cont > label:before, .form-container input[type="checkbox"].cb-input:checked + .checkbox-div-cont > label:before {
+.form-container input[type="radio"].rb-input:checked + .checkbox-div-cont > label:before, .form-container input[type="checkbox"].cb-input:checked + .checkbox-div-cont > label:before, .form-container input[type="file"].file-input:checked + .checkbox-div-cont > label:before {
   content: '\f058';
   color: #0c131d;
 }
-.form-container input[type="radio"].rb-input:checked + .checkbox-div-cont > label > span, .form-container input[type="checkbox"].cb-input:checked + .checkbox-div-cont > label > span {
+.form-container input[type="radio"].rb-input:checked + .checkbox-div-cont > label > span, .form-container input[type="checkbox"].cb-input:checked + .checkbox-div-cont > label > span, .form-container input[type="file"].file-input:checked + .checkbox-div-cont > label > span {
   font-family: MuseoSans;
   font-weight: 700;
+}
+.form-container input[type="file"].file-input:valid + .file-div-cont > label.button-label {
+  width: initial;
+}
+.form-container input[type="file"].file-input:valid + .file-div-cont > label.button-label:before {
+  content: '\f0ee';
+}
+.form-container input[type="file"].file-input:valid + .file-div-cont > label.selected-file {
+  min-width: 50%;
+  display: inline-block;
+  overflow: hidden;
+  width: initial;
+}
+.form-container .selected-span-cont {
+  position: relative;
+}
+.form-container .selected-span-cont .remove-selection {
+  position: absolute;
+  width: 2em;
+  font-size: 1.5em;
+  top: 0.5em;
+  cursor: pointer;
+}
+.form-container .selected-span-cont .remove-selection:hover {
+  color: #ae2e15;
 }
 .form-container .medium-input-width {
   width: 20em;
@@ -270,7 +392,7 @@
   width: 32em;
 }
 .form-container .small-input-width {
-  width: 16em;
+  width: 14em;
 }
 .form-container h4.req {
   padding: 4px 5px 5px 4px;
@@ -291,11 +413,17 @@
   text-align: center;
   cursor: pointer;
   display: inline-block;
-  -webkit-transition: all 0.35s ease-in-out;
-  -moz-transition: all 0.35s ease-in-out;
-  -o-transition: all 0.35s ease-in-out;
-  -ms-transition: all 0.35s ease-in-out;
-  transition: all 0.35s ease-in-out;
+  -webkit-transition: all 0.22s cubic-bezier(0.295, 1.055, 0.5, 0.995);
+  -moz-transition: all 0.22s cubic-bezier(0.295, 1.055, 0.5, 0.995);
+  -o-transition: all 0.22s cubic-bezier(0.295, 1.055, 0.5, 0.995);
+  -ms-transition: all 0.22s cubic-bezier(0.295, 1.055, 0.5, 0.995);
+  transition: all 0.22s cubic-bezier(0.295, 1.055, 0.5, 0.995);
+  -webkit-transition-timing-function: cubic-bezier(0.295, 1.055, 0.5, 0.995);
+  /* older webkit */
+  -moz-transition-timing-function: cubic-bezier(0.295, 1.055, 0.5, 0.995);
+  -o-transition-timing-function: cubic-bezier(0.295, 1.055, 0.5, 0.995);
+  transition-timing-function: cubic-bezier(0.295, 1.055, 0.5, 0.995);
+  /* custom */
   -webkit-border-radius: 1.5em;
   -moz-border-radius: 1.5em;
   border-radius: 1.5em;
@@ -373,6 +501,14 @@ div.info .status-container {
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+div.info .status-container.successful-validation {
+  background-color: #12408d;
+  color: #edf0f4;
+  border-color: #edf0f4;
+}
+div.info .status-container.successful-validation h4 {
+  color: #edf0f4;
+}
 div.info .status-container.warning-msg {
   width: 100%;
 }
@@ -382,7 +518,7 @@ div.info .status-container.warning-msg i.fa.warning {
 }
 div.info .status-container.warning-msg i.status.fa {
   color: #fff;
-  webkit-background-size: 15px 15px;
+  -webkit-background-size: 15px 15px;
   -moz-background-size: 15px 15px;
   background-size: 15px 15px;
   background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.25, rgba(255, 255, 255, 0.05)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.05)), color-stop(0.75, rgba(255, 255, 255, 0.05)), color-stop(0.75, transparent), to(transparent));
@@ -425,10 +561,16 @@ div.info .status-container .pp-icon-spin {
   vertical-align: middle;
   width: 2em;
 }
+div.info .status-container .pp-icon-spin.successful-validation {
+  color: #edf0f4;
+}
 div.info .status-container.live h4, div.info .status-container.live .fa {
   color: #0c131d;
   display: table-cell;
   vertical-align: middle;
+}
+div.info .status-container.live.successful-validation h4, div.info .status-container.live.successful-validation .fa {
+  color: #edf0f4;
 }
 div.info .status-container.msg {
   min-height: 3em;
@@ -438,6 +580,8 @@ div.info .status-container.msg > h4 {
   min-height: 2em;
   vertical-align: middle;
   display: table-cell;
-  padding-right: 0;
   color: #0c131d;
+}
+div.info .status-container.msg > h4.successful-validation {
+  color: #edf0f4;
 }

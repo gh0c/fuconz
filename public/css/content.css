@@ -35,12 +35,12 @@
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1);
   /* IE6-9 */
-  height: 10px;
+  height: 7px;
 }
 #content .main-title-box .page-title {
   text-align: center;
   font-family: MuseoSans;
-  font-weight: 700;
+  font-weight: 500;
   padding: 10px 0 8px 0px;
 }
 #content .main-title-box .page-title h1 {
@@ -53,16 +53,259 @@
   background-color: #fff;
 }
 #content .main-content-box .vertical-section {
-  padding: 3px 2em 3px 2em;
+  padding: 3px 0;
 }
 #content .main-content-box .vertical-section > div {
-  padding: 0.35em 0.7em;
+  padding: 0.35em 0.5em;
 }
-#content .main-content-box .vertical-section .dashed-spacer {
+#content .main-content-box .vertical-section.dashed-spacer, #content .main-content-box .vertical-section .dashed-spacer {
   border-bottom: 2px dashed #0c131d;
   box-sizing: border-box;
 }
 #content .main-content-box .vertical-section.multirow {
   display: inline-block;
   min-width: 35em;
+}
+#content .main-content-box .vertical-section.multirow-special {
+  display: inline-block;
+  height: 3.5em;
+}
+#content .main-content-box .vertical-section.multirow-special > div {
+  padding: 0.2em 0.7em;
+}
+#content .main-content-box .vertical-section h3 {
+  text-align: center;
+  font-family: MuseoSans;
+  font-weight: 300;
+  font-style: italic;
+}
+#content .main-content-box .vertical-section h4 a {
+  color: #0c131d;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  padding: 0 0.1em;
+  cursor: pointer;
+}
+#content .main-content-box .vertical-section h4 a:hover, #content .main-content-box .vertical-section h4 a:focus {
+  color: white;
+  background-color: #0c131d;
+}
+#content .main-content-box .vertical-section h4 div.legend {
+  padding: 0.5em 0.2em;
+  display: none;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item {
+  width: 32%;
+  display: inline-table;
+  vertical-align: top;
+  text-align: left;
+  height: 3.5em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item i:not(.fa-ellipsis-h) {
+  font-size: 1.5em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item span {
+  font-size: 0.9em;
+  text-align: center;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder {
+  position: relative;
+  width: 6em;
+  font-size: 0.7em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder .ico {
+  width: 100%;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder i.over-stack {
+  position: absolute;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder i.over-stack.sign {
+  z-index: 5;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder .sub-over-stack {
+  z-index: 2;
+  color: white;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder .over-queue-stack {
+  position: absolute;
+  opacity: 1;
+  top: -0.3em;
+  left: -0.3em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder .over-queue-stack.clock {
+  z-index: 3;
+  opacity: 1;
+  color: inherit;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.yes-canceled .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.not-canceled .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.not-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.yes-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.null-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.null-canceled .under-stack {
+  opacity: 0.55;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.yes-canceled .over-stack.sign {
+  color: #8d2d24;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.not-canceled .over-stack.sign {
+  color: #1f6d4d;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.not-activated .over-stack.sign {
+  color: #8d2d24;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.null-activated .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.null-canceled .over-stack.sign {
+  text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0.85;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .sub-over-stack {
+  color: white;
+  opacity: 1;
+  z-index: 2;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .over-queue-stack {
+  opacity: 1;
+  top: 0.3em;
+  left: -0.5em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .over-queue-stack:before {
+  font-size: 1.15em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .over-queue-stack.clock {
+  z-index: 3;
+  opacity: 1;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .under-stack:before {
+  font-size: 1.5em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .sub-under-stack {
+  position: absolute;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .sub-under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .sub-under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .sub-under-stack {
+  left: 0;
+  top: 0.8em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .sub-under-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .sub-under-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .sub-under-stack:before {
+  font-size: 1.9em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .over-stack {
+  top: 1.2em;
+  left: 0;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .over-stack:before {
+  font-size: 1em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .sub-under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .sub-under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .sub-under-stack {
+  left: 0;
+  top: 0.8em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .sub-under-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .sub-under-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .sub-under-stack:before {
+  font-size: 1.9em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .over-stack {
+  top: 1.2em;
+  left: 0;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .over-stack:before {
+  font-size: 1em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .over-stack.sign {
+  color: #0c131d;
+  text-shadow: 0px 1px 4px rgba(255, 255, 255, 0.6), 0px -1px 2px rgba(255, 255, 255, 0.6);
+  opacity: 0.95;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .under-stack {
+  opacity: 1;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .over-stack.sign {
+  text-shadow: 0px 1px 4px rgba(255, 255, 255, 0.6), 0px -1px 2px rgba(255, 255, 255, 0.6);
+  opacity: 0.95;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .under-stack {
+  opacity: 1;
+  position: absolute;
+  left: 0.6em;
+  top: 1.5em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-allowed .calendar-icon-holder .mega {
+  opacity: 1;
+  top: 0.15em;
+  left: 0;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-allowed .calendar-icon-holder .mega:before {
+  font-size: 1.9em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .duration-cont .times {
+  opacity: 0.5;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .legend-icon-cont .not-booked {
+  opacity: 0.5;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder .sub-over-stack {
+  color: #fff;
+  opacity: 0.8;
+  z-index: 2;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder .over-queue-stack {
+  opacity: 1;
+  top: 0.15em;
+  left: -0.45em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder .over-queue-stack:before {
+  font-size: 1.25em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder .over-queue-stack.clock {
+  z-index: 3;
+  opacity: 0.55;
+  color: inherit;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder .under-stack:before {
+  font-size: 1.5em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-activated .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-canceled .over-stack.sign {
+  color: inherit;
+  text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0.8;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-canceled .under-stack {
+  opacity: 0.5;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-canceled .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-canceled .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-activated .over-stack.sign {
+  color: inherit;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0.9;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-canceled .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-canceled .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-activated .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-activated .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-activated .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-canceled .over-stack {
+  top: 1.35em;
+  left: 0.65em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-canceled .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-canceled .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-activated .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-activated .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-activated .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-canceled .over-stack:before {
+  font-size: 1em;
+}
+#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-canceled .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-canceled .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-activated .under-stack {
+  opacity: 0.55;
+}
+#content .main-content-box .loading-gif-div {
+  z-index: 80;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #12408d;
+}
+#content .main-content-box .loading-gif-div:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+#content .main-content-box .loading-gif-div i {
+  font-size: 10em;
+  vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
 }

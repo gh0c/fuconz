@@ -102,25 +102,28 @@ $message-line-height: 3em;
       @include gradient-vertical-bbb-flag-cibona-blue();
     }
     .thumbnail.yes-avatar {
-      @include gradient-vertical-black-white-flag();
-      @include box-shadow(1px 1px 4px rgba(102,102,102,.4))
+//      @include gradient-vertical-black-white-flag();
+      @include gradient-vertical-bbb-flag-cibona-blue();
+
+      @include box-shadow(1px 1px 4px rgba(102,102,102,.4));
     }
 
     $user-icon-button-border-radius: 0;
     /* ICON */
     .user {
-      width: 4.4em;
+      width: 4.5em;
       height: 3.5em;
       @include rounded($user-icon-button-border-radius);
     }
     .pic-cont {
-      background-size: contain;
+//      background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
 
-      width: 86%;
-      height: 90%;
-      top: 5%; left:7%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
     }
 
     .pic-cont, .no-show {

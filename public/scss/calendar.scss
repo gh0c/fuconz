@@ -1,0 +1,715 @@
+@import "modules/modules.import";
+
+
+.calendar-widget {
+  font-family: MuseoSans;
+  font-weight: 500;
+
+  padding: 0.3em 0.5em;
+
+//  height: 35em;
+
+  &.widget-content {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+
+    background-color: $dark-dark-blue;
+    color: $light-blue-gray-light;
+
+    a {
+//      color: firebrick;
+    }
+  }
+
+  &.clearfix-helper {
+    min-height: 0;
+
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+      border-collapse: collapse;
+    }
+  }
+
+  .calendar-overlay {
+    position: relative;
+  }
+
+  .widget-header {
+    color: $light-blue-gray-light;
+    position: relative;
+    padding: 0;
+
+    width: 30em;
+    margin: .4em auto .6em auto;
+
+
+
+
+    a.month-picker-prev,
+    a.month-picker-next,
+    a.offset-picker-prev,
+    a.offset-picker-next {
+      position:absolute;
+      cursor: pointer;
+      height: 100%;
+      font-size: 1.1em;
+
+      text-align: center;
+
+      @include pp-transition(background-color .25s ease-out, color .25s ease-out, border .25s ease-out);
+
+      &:hover,
+      &:focus {
+        background-color: $light-blue-gray-light;
+        color: $dark-dark-blue;
+      }
+
+      span.fa {
+        height: 100%;
+        &:before {
+          font-size: 20px;
+          position: relative;
+          top: 4px;
+        }
+      }
+    }
+    a.month-picker-prev, a.month-picker-next {
+      width: 3em;
+    }
+    a.offset-picker-prev, a.offset-picker-next {
+      width: 4.5em;
+    }
+//    a.offset-picker-prev, a.month-picker-prev {
+//      text-align: left;
+//    }
+//    a.offset-picker-next, a.month-picker-next {
+//      text-align: right;
+//    }
+
+    .month-picker-prev,
+    .offset-picker-prev {
+      left: 0;
+      @include rounded-nw(2em);
+      @include rounded-sw(2em);
+    }
+
+    .month-picker-next,
+    .offset-picker-next {
+      right: 0;
+      @include rounded-ne(2em);
+      @include rounded-se(2em);
+    }
+
+    .month-picker-title,
+    .offset-picker-title {
+      @include gradient-vertical-bbb-flag-cibona-blue();
+
+      margin: 0 4em;
+      line-height: 1.7em;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: 700;
+
+      .month-picker-month:first-letter, .offset-picker-month:first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+  }
+
+  $cell-width: 13.2%;
+//  $cell-width-special: 6.6%;
+  $cell-width-special: 4.25em;
+
+
+
+  .widget-content {
+    &.month-grid {
+      width: 100%;
+      margin: 0;
+    }
+
+
+
+    /***************************************/
+    /*Old edition of calendar */
+    .table-container:not(.special) {
+      .header .th,
+      .tr .td {
+        border: 0;
+        display: inline-block;
+        width: $cell-width;
+        margin: 2px;
+
+      }
+
+      .header {
+        .th {
+          padding-top: 0.7em;
+          padding-bottom: 0.5em;
+          text-align: center;
+          font-weight: bold;
+//          background-color: cadetblue;
+        }
+      }
+
+      .tr {
+        font-size: initial;
+        .td {
+          text-align: center;
+          font-weight: 300;
+          height: 5em;
+          vertical-align: bottom;
+
+//          background-color: hotpink;
+          & > .active-day, & > .inactive-day {
+            height: 100%;
+          }
+
+          & > .active-day {
+            background: $cibona-blue;
+            color: $light-blue-gray-light;
+
+            &.today {
+              @include gradient-status-bg(50px, 0.08);
+            }
+
+            .day-container {
+              position: relative;
+              width: 100%;
+              height: 100%;
+
+              .booking-slots-exists {
+                width: 100%;
+                height: 80%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 8;
+
+//                border-bottom: 2px dashed $light-blue-gray-light;
+              }
+
+              .booking-slots {
+                height: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 12;
+                text-align: left;
+                overflow: hidden;
+
+                width: 80%;
+
+                .bookings-container {
+                  position: absolute;
+                  bottom: 0;
+                  padding-left: 1px;
+                  width: 100%;
+                }
+              }
+            }
+
+            .date-container {
+              font-size: 1.2em;
+              position: absolute;
+              top: 0;
+              right: 0;
+              text-align: center;
+              padding: 1px;
+              z-index: 9;
+
+              width: 20%;
+              height: 30%;
+
+              .day-ended {
+                position: absolute;
+                padding: 0;
+                font-size: 1.7em;
+                top: -3px;
+                right: 3px;
+                text-align: right;
+
+                color: $red-transparent-overlay;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+  /***************************************/
+    /*Special edition of calendar */
+    .table-container.special {
+      .tr .cell {
+        font-size: initial;
+
+        border: 0;
+        display: inline-block;
+        width: $cell-width-special;
+        margin: 2px 2px 2px 4px;
+
+        &.first-day-of-month {
+          margin-left: 0;
+          padding-left: 2px;
+          border-left: 2px dashed $light-blue-gray-light;
+        }
+
+        .th {
+          margin-top: 0.1em;
+          text-align: center;
+          font-weight: bold;
+          & > .active-day {
+            border-top: 3px solid $cibona-blue;
+            padding-top: 0.1em;
+            padding-bottom: 0.1em;
+            &.today {
+              background: $cibona-blue;
+              color: $light-blue-gray-light;
+              @include gradient-status-bg(60px, 0.15);
+              border-top: 3px solid $light-blue-gray-light;
+            }
+            &.weekend:not(.today) {
+              border-top: 3px solid $cibona-blue-dark-overlay;
+              &.sunday {
+  //                border-top: 3px solid $red-transparent-overlay;
+              }
+            }
+          }
+        }
+
+        .td {
+          text-align: center;
+          font-weight: 300;
+          height: 10em;
+          vertical-align: bottom;
+          margin-bottom: 6px;
+
+          & > .active-day, & > .inactive-day {
+            height: 100%;
+          }
+          & > .active-day {
+            background: $cibona-blue;
+            color: $light-blue-gray-light;
+            border-top: 3px dashed transparent;
+            box-sizing: border-box;
+
+
+
+            &.today {
+              @include gradient-status-bg(60px, 0.15);
+              border-top: 3px solid $light-blue-gray-light;
+            }
+
+            &.weekend:not(.today) {
+              background-color: $cibona-blue-dark-overlay;
+              &.sunday {
+//                border-top: 3px solid $red-transparent-overlay;
+              }
+            }
+
+            .day-container {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              @include pp-transition(background-color .25s ease-out, color .25s ease-out);
+              &.day-ended {
+                background-color: rgba(0, 0, 0, .3);
+              }
+              &.selected-day {
+                background-color: $light-blue-gray-dark;
+                color: $dark-dark-blue;
+              }
+
+              .booking-slots-exists {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 8;
+
+              }
+
+              .booking-slots {
+                height: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 12;
+                text-align: left;
+                overflow: hidden;
+
+                width: 100%;
+
+                .bookings-container {
+                  position: absolute;
+                  bottom: 0;
+                  width: 100%;
+                  .booking {
+                    text-align: center;
+
+                    & > div {
+                      width: 100%;
+                      display: inline-table;
+                      vertical-align: bottom;
+                      .mega {
+                        font-size: 1.94em;
+                      }
+                      .times {
+                        font-size: 0.68em;
+                      }
+                      & > * {
+                        display: table-cell;
+                        vertical-align: middle;
+                      }
+
+                      .calendar-icon-holder {
+                        position: relative;
+                        .ico {
+                          width: 100%;
+                        }
+                        i.over-stack {
+                          position:absolute;
+                          &.sign {
+                            z-index: 5;
+                          }
+                        }
+                        .sub-over-stack {
+                          z-index: 2;
+                          color: $cibona-blue;
+                        }
+                        .over-queue-stack {
+                          position:absolute;
+                          opacity: 1;
+                          top: -0.3em;
+                          left: -0.30em;
+
+                          &.clock {
+                            z-index:3;
+                            opacity: 1;
+                            color: inherit;
+                          }
+                        }
+
+                        &.yes-canceled .under-stack,
+                        &.not-canceled .under-stack,
+                        &.not-activated .under-stack,
+                        &.yes-activated .under-stack,
+                        &.null-activated .under-stack,
+                        &.null-canceled .under-stack{
+                          opacity: .55;
+                        }
+
+                        &.yes-canceled {
+                          .over-stack {
+                            &.sign {
+                              color: $red-badge-transparent-overlay;
+                            }
+                          }
+                        }
+                        &.not-canceled { // confirmed reservation
+                          .over-stack {
+                            &.sign {
+                              color: $green-badge-transparent-overlay;
+                            }
+                          }
+                        }
+                        &.not-activated {
+                          .over-stack {
+                            &.sign {
+                              color: $red-badge-transparent-overlay;
+                            }
+                          }
+                        }
+                        &.null-activated,
+                        &.null-canceled {
+                          .over-stack {
+                            &.sign {
+                              text-shadow: 1px 1px 9px rgba(0,0,0,0.4), 0px 0px 8px rgba(0,0,0,0.4);
+                              opacity: .85;
+                            }
+                          }
+                        }
+                      }
+                    }
+
+
+                    &.booking-time-ended {
+                      .calendar-icon-holder {
+                        .sub-over-stack {
+                          color: $light-blue-gray-light;
+                          opacity: 1;
+                          z-index: 2;
+                        }
+                        .over-queue-stack {
+                          opacity: 1;
+                          top: 0.3em;
+                          left: -0.35em;
+                          &:before {
+                            font-size: 1.15em;
+                          }
+                          &.clock {
+                            z-index:3;
+                            opacity: 1;
+                          }
+                        }
+                        .under-stack {
+                          &:before {
+                            font-size: 1.6em;
+                          }
+                        }
+
+                        .sub-under-stack {
+                          position:absolute;
+                          width: 2em;
+
+                        }
+
+                        &.null-activated, &.yes-activated, &.not-activated {
+                          .sub-under-stack {
+                            left: 1.7em;
+                            top: 0.8em;
+                            &:before {
+                              font-size: 1.9em;
+                            }
+                          }
+                          .over-stack {
+                            top: 1.3em;
+                            left: 0.6em;
+                            &:before {
+                              font-size: 1.0em;
+                            }
+                          }
+                        }
+                        &.null-canceled, &.yes-canceled, &.not-canceled {
+                          .sub-under-stack {
+                            left: 1.6em;
+                            top: 0.6em;
+                            &:before {
+                              font-size: 1.9em;
+                            }
+                          }
+                          .over-stack {
+                            top: 1.3em;
+                            left: 0.5em;
+                            &:before {
+                              font-size: 1.0em;
+                            }
+                          }
+                        }
+                        &.null-activated, &.null-canceled {
+                          .over-stack {
+                            &.sign {
+                              color: $dark-dark-blue;
+                              text-shadow: 0px 1px 4px rgba(255,255,255,0.6), 0px -1px 2px rgba(255,255,255,0.6);
+
+                              opacity: .95;
+                            }
+                          }
+                          .under-stack {
+                            opacity: 1;
+                          }
+                        }
+
+                        &.yes-canceled .over-stack,
+                        &.not-canceled .over-stack,
+                        &.not-activated .over-stack {
+                          &.sign {
+//                            color: $white-badge-transparent-overlay;
+                            text-shadow: 0px 1px 4px rgba(255,255,255,0.6), 0px -1px 2px rgba(255,255,255,0.6);
+                            opacity: .95;
+                          }
+                        }
+
+
+                        &.yes-canceled .under-stack,
+                        &.not-canceled .under-stack,
+                        &.not-activated .under-stack,
+                        &.yes-activated .under-stack,
+                        &.null-activated .under-stack,
+                        &.null-canceled .under-stack {
+                          opacity: 1;
+                          position: absolute;
+                          left: 0.95em;
+                          top: 1.4em;
+                        }
+
+                      }
+                    }
+
+
+                    &.course-finished {
+                      .duration-cont .times {
+                        opacity: .5;
+                      }
+                      .legend-icon-cont .not-booked {
+                        opacity: .5;
+                      }
+                      .calendar-icon-holder {
+                        .sub-over-stack {
+                          color: $gray-clock-transparent-overlay;
+                          opacity: .8;
+                          z-index: 2;
+                        }
+                        .over-queue-stack {
+                          opacity: 1;
+                          top: 0.15em;
+                          left: -0.45em;
+                          &:before {
+                            font-size: 1.25em;
+                          }
+                          &.clock {
+                            z-index:3;
+                            opacity: 0.55;
+                            color: inherit;
+                          }
+                        }
+                        .under-stack {
+                          &:before {
+                            font-size: 1.5em;
+                          }
+                        }
+                        &.null-activated, &.null-canceled {
+                          .over-stack {
+                            &.sign {
+                              color: $white-badge-transparent-overlay;
+                              text-shadow: 1px 1px 9px rgba(0,0,0,0.4), 0px 0px 8px rgba(0,0,0,0.4);
+                              opacity: .80;
+                            }
+                          }
+                          .under-stack {
+                            opacity: .50;
+                          }
+                        }
+
+                        &.yes-canceled .over-stack,
+                        &.not-canceled .over-stack,
+                        &.not-activated .over-stack {
+                          &.sign {
+                            color: $white-badge-transparent-overlay;
+                            text-shadow: 1px 1px 6px rgba(0,0,0,0.4), 0px 0px 8px rgba(0,0,0,0.4);
+                            opacity: .90;
+                          }
+                        }
+
+                        &.yes-canceled .over-stack,
+                        &.not-canceled .over-stack,
+                        &.not-activated .over-stack,
+                        &.yes-activated .over-stack,
+                        &.null-activated .over-stack,
+                        &.null-canceled .over-stack {
+                          top: 1.35em;
+                          left: 0.65em;
+                          &:before {
+                            font-size: 1.0em;
+                          }
+                        }
+                        &.yes-canceled .under-stack,
+                        &.not-canceled .under-stack,
+                        &.not-activated .under-stack,
+                        &.yes-activated .under-stack {
+                          opacity: .55;
+                        }
+
+                      }
+                    }
+
+
+                    &.not-selected,
+                    &.yes-selected{
+                      cursor: pointer;
+                    }
+
+                    &.available-for-booking:not(.yes-selected):hover {
+                      .legend-icon-cont .mega:before {
+                        content: "\f192";
+                      }
+                      .duration-cont .times {
+                        font-weight: 500;
+                      }
+                    }
+
+                    &.available-for-booking.yes-selected {
+                      .legend-icon-cont .mega:before {
+                        content: '\f058';
+                      }
+                      .duration-cont .times {
+                        font-weight: 500;
+                        text-decoration: underline;
+                      }
+                      &:hover {
+                        color: $red-close-icons;
+                        .legend-icon-cont .mega:before {
+                          content: '\f057';
+                        }
+                      }
+                    }
+
+                  
+                    
+                    .legend-icon-cont {
+                      height:2.6em;
+                    }
+                    .duration-cont {
+                      height: 1.4em;
+                    }
+
+                  }
+                }
+              }
+            }
+
+            .date-container {
+              font-size: 1.2em;
+              position: absolute;
+              top: 0;
+              right: 0;
+              text-align: center;
+              padding: 1px;
+              z-index: 9;
+
+              width: 40%;
+              height: 15%;
+
+              .day-ended {
+                position: absolute;
+                padding: 0;
+                font-size: 1.7em;
+                top: -3px;
+                right: 3px;
+                text-align: right;
+
+                color: $red-transparent-overlay;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+              }
+            }
+          }
+        }
+
+      }
+    }
+    /* end of special calendar*/
+
+
+
+  }
+
+  /* Slider try */
+  .pr {
+    overflow:hidden;
+    & > ul {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      & > li {
+        float: left;
+        width: 100%;
+      }
+    }
+  }
+}

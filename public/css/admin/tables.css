@@ -103,20 +103,20 @@
   /* IE6-9 */
 }
 .table-container .home-icon-cont .thumbnail.yes-avatar {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,eaeef1+8,edf0f4+11,edf0f4+89,eaeef1+92,0c131d+92,0c131d+100 */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,eaeef1+8,edf0f4+11,12408d+11,12408d+89,edf0f4+89,eaeef1+92,0c131d+92,0c131d+100 */
   background: #0c131d;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  background: -moz-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #0c131d), color-stop(8%, #0c131d), color-stop(8%, #eaeef1), color-stop(11%, #edf0f4), color-stop(89%, #edf0f4), color-stop(92%, #eaeef1), color-stop(92%, #0c131d), color-stop(100%, #0c131d));
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #0c131d), color-stop(8%, #0c131d), color-stop(8%, #eaeef1), color-stop(11%, #edf0f4), color-stop(11%, #12408d), color-stop(89%, #12408d), color-stop(89%, #edf0f4), color-stop(92%, #eaeef1), color-stop(92%, #0c131d), color-stop(100%, #0c131d));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  background: -webkit-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  background: -o-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  background: -ms-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
   /* IE10+ */
-  background: linear-gradient(to right, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  background: linear-gradient(to right, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c131d', endColorstr='#0c131d',GradientType=1);
   /* IE6-9 */
@@ -125,20 +125,19 @@
   box-shadow: 1px 1px 4px rgba(102, 102, 102, .4);
 }
 .table-container .home-icon-cont .user {
-  width: 4.4em;
+  width: 4.5em;
   height: 3.5em;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
 }
 .table-container .home-icon-cont .pic-cont {
-  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 86%;
-  height: 90%;
-  top: 5%;
-  left: 7%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 .table-container .home-icon-cont .pic-cont, .table-container .home-icon-cont .no-show {
   position: absolute;

@@ -6,7 +6,7 @@ use Slim\Middleware;
 use app\helpers\Configuration;
 use app\helpers\Sessions;
 use app\helpers\Hash;
-use app\model\User\RegisteredUser;
+use app\model\User\User;
 
 
 class CsrfMiddleware extends Middleware
@@ -31,6 +31,7 @@ class CsrfMiddleware extends Middleware
         if(in_array($this->app->request()->getMethod(), array('POST', 'PUT', 'DELETE'))) {
             $submittedToken = $this->app->request()->post($this->key) ?: '';
             if(!Hash::hashCheck($token, $submittedToken)) {
+//                Sessions::destroy();
                 throw new \Exception('CSRF token mismatch');
             }
         }

@@ -1,0 +1,559 @@
+/*********************
+ BREAKPOINTS
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */.calendar-widget {
+  font-family: MuseoSans;
+  font-weight: 500;
+  padding: 0.3em 0.5em;
+  /* Slider try */
+}
+.calendar-widget.widget-content {
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  background-color: #0c131d;
+  color: #edf0f4;
+}
+.calendar-widget.clearfix-helper {
+  min-height: 0;
+}
+.calendar-widget.clearfix-helper:before, .calendar-widget.clearfix-helper:after {
+  content: "";
+  display: table;
+  border-collapse: collapse;
+}
+.calendar-widget .calendar-overlay {
+  position: relative;
+}
+.calendar-widget .widget-header {
+  color: #edf0f4;
+  position: relative;
+  padding: 0;
+  width: 30em;
+  margin: 0.4em auto 0.6em auto;
+}
+.calendar-widget .widget-header a.month-picker-prev, .calendar-widget .widget-header a.month-picker-next, .calendar-widget .widget-header a.offset-picker-prev, .calendar-widget .widget-header a.offset-picker-next {
+  position: absolute;
+  cursor: pointer;
+  height: 100%;
+  font-size: 1.1em;
+  text-align: center;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+}
+.calendar-widget .widget-header a.month-picker-prev:hover, .calendar-widget .widget-header a.month-picker-next:hover, .calendar-widget .widget-header a.offset-picker-prev:hover, .calendar-widget .widget-header a.offset-picker-next:hover, .calendar-widget .widget-header a.month-picker-prev:focus, .calendar-widget .widget-header a.month-picker-next:focus, .calendar-widget .widget-header a.offset-picker-prev:focus, .calendar-widget .widget-header a.offset-picker-next:focus {
+  background-color: #edf0f4;
+  color: #0c131d;
+}
+.calendar-widget .widget-header a.month-picker-prev span.fa, .calendar-widget .widget-header a.month-picker-next span.fa, .calendar-widget .widget-header a.offset-picker-prev span.fa, .calendar-widget .widget-header a.offset-picker-next span.fa {
+  height: 100%;
+}
+.calendar-widget .widget-header a.month-picker-prev span.fa:before, .calendar-widget .widget-header a.month-picker-next span.fa:before, .calendar-widget .widget-header a.offset-picker-prev span.fa:before, .calendar-widget .widget-header a.offset-picker-next span.fa:before {
+  font-size: 20px;
+  position: relative;
+  top: 4px;
+}
+.calendar-widget .widget-header a.month-picker-prev, .calendar-widget .widget-header a.month-picker-next {
+  width: 3em;
+}
+.calendar-widget .widget-header a.offset-picker-prev, .calendar-widget .widget-header a.offset-picker-next {
+  width: 4.5em;
+}
+.calendar-widget .widget-header .month-picker-prev, .calendar-widget .widget-header .offset-picker-prev {
+  left: 0;
+  -webkit-border-top-left-radius: 2em;
+  -moz-border-radius-topleft: 2em;
+  border-top-left-radius: 2em;
+  -webkit-border-bottom-left-radius: 2em;
+  -moz-border-radius-bottomleft: 2em;
+  border-bottom-left-radius: 2em;
+}
+.calendar-widget .widget-header .month-picker-next, .calendar-widget .widget-header .offset-picker-next {
+  right: 0;
+  -webkit-border-top-right-radius: 2em;
+  -moz-border-radius-topright: 2em;
+  border-top-right-radius: 2em;
+  -webkit-border-bottom-right-radius: 2em;
+  -moz-border-radius-bottomright: 2em;
+  border-bottom-right-radius: 2em;
+}
+.calendar-widget .widget-header .month-picker-title, .calendar-widget .widget-header .offset-picker-title {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,eaeef1+8,edf0f4+11,12408d+11,12408d+89,edf0f4+89,eaeef1+92,0c131d+92,0c131d+100 */
+  background: #0c131d;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #0c131d), color-stop(8%, #0c131d), color-stop(8%, #eaeef1), color-stop(11%, #edf0f4), color-stop(11%, #12408d), color-stop(89%, #12408d), color-stop(89%, #edf0f4), color-stop(92%, #eaeef1), color-stop(92%, #0c131d), color-stop(100%, #0c131d));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c131d', endColorstr='#0c131d',GradientType=1);
+  /* IE6-9 */
+  margin: 0 4em;
+  line-height: 1.7em;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+.calendar-widget .widget-header .month-picker-title .month-picker-month:first-letter, .calendar-widget .widget-header .offset-picker-title .month-picker-month:first-letter, .calendar-widget .widget-header .month-picker-title .offset-picker-month:first-letter, .calendar-widget .widget-header .offset-picker-title .offset-picker-month:first-letter {
+  text-transform: uppercase;
+}
+.calendar-widget .widget-content {
+  /***************************************/
+  /*Old edition of calendar */
+  /***************************************/
+  /*Special edition of calendar */
+  /* end of special calendar*/
+}
+.calendar-widget .widget-content.month-grid {
+  width: 100%;
+  margin: 0;
+}
+.calendar-widget .widget-content .table-container:not(.special) .header .th, .calendar-widget .widget-content .table-container:not(.special) .tr .td {
+  border: 0;
+  display: inline-block;
+  width: 13.2%;
+  margin: 2px;
+}
+.calendar-widget .widget-content .table-container:not(.special) .header .th {
+  padding-top: 0.7em;
+  padding-bottom: 0.5em;
+  text-align: center;
+  font-weight: bold;
+}
+.calendar-widget .widget-content .table-container:not(.special) .tr {
+  font-size: initial;
+}
+.calendar-widget .widget-content .table-container:not(.special) .tr .td {
+  text-align: center;
+  font-weight: 300;
+  height: 5em;
+  vertical-align: bottom;
+}
+.calendar-widget .widget-content .table-container:not(.special) .tr .td > .active-day, .calendar-widget .widget-content .table-container:not(.special) .tr .td > .inactive-day {
+  height: 100%;
+}
+.calendar-widget .widget-content .table-container:not(.special) .tr .td > .active-day {
+  background: #12408d;
+  color: #edf0f4;
+}
+.calendar-widget .widget-content .table-container:not(.special) .tr .td > .active-day.today {
+  -webkit-background-size: 50px 50px;
+  -moz-background-size: 50px 50px;
+  background-size: 50px 50px;
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.25, rgba(255, 255, 255, 0.08)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.08)), color-stop(0.75, rgba(255, 255, 255, 0.08)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0.08) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.08) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, 0.08) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.08) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, 0.08) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.08) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, 0.08) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.08) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.08) 75%, transparent 75%, transparent);
+}
+.calendar-widget .widget-content .table-container:not(.special) .tr .td > .active-day .day-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.calendar-widget .widget-content .table-container:not(.special) .tr .td > .active-day .day-container .booking-slots-exists {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+}
+.calendar-widget .widget-content .table-container:not(.special) .tr .td > .active-day .day-container .booking-slots {
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 12;
+  text-align: left;
+  overflow: hidden;
+  width: 80%;
+}
+.calendar-widget .widget-content .table-container:not(.special) .tr .td > .active-day .day-container .booking-slots .bookings-container {
+  position: absolute;
+  bottom: 0;
+  padding-left: 1px;
+  width: 100%;
+}
+.calendar-widget .widget-content .table-container:not(.special) .tr .td > .active-day .date-container {
+  font-size: 1.2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  padding: 1px;
+  z-index: 9;
+  width: 20%;
+  height: 30%;
+}
+.calendar-widget .widget-content .table-container:not(.special) .tr .td > .active-day .date-container .day-ended {
+  position: absolute;
+  padding: 0;
+  font-size: 1.7em;
+  top: -3px;
+  right: 3px;
+  text-align: right;
+  color: rgba(175, 20, 5, 0.70);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.calendar-widget .widget-content .table-container.special .tr .cell {
+  font-size: initial;
+  border: 0;
+  display: inline-block;
+  width: 4.25em;
+  margin: 2px 2px 2px 4px;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell.first-day-of-month {
+  margin-left: 0;
+  padding-left: 2px;
+  border-left: 2px dashed #edf0f4;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .th {
+  margin-top: 0.1em;
+  text-align: center;
+  font-weight: bold;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .th > .active-day {
+  border-top: 3px solid #12408d;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .th > .active-day.today {
+  background: #12408d;
+  color: #edf0f4;
+  -webkit-background-size: 60px 60px;
+  -moz-background-size: 60px 60px;
+  background-size: 60px 60px;
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  border-top: 3px solid #edf0f4;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .th > .active-day.weekend:not(.today) {
+  border-top: 3px solid #0f3678;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td {
+  text-align: center;
+  font-weight: 300;
+  height: 10em;
+  vertical-align: bottom;
+  margin-bottom: 6px;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day, .calendar-widget .widget-content .table-container.special .tr .cell .td > .inactive-day {
+  height: 100%;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day {
+  background: #12408d;
+  color: #edf0f4;
+  border-top: 3px dashed transparent;
+  box-sizing: border-box;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day.today {
+  -webkit-background-size: 60px 60px;
+  -moz-background-size: 60px 60px;
+  background-size: 60px 60px;
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  border-top: 3px solid #edf0f4;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day.weekend:not(.today) {
+  background-color: #0f3678;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container.day-ended {
+  background-color: rgba(0, 0, 0, .3);
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container.selected-day {
+  background-color: #eaeef1;
+  color: #0c131d;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots-exists {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots {
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 12;
+  text-align: left;
+  overflow: hidden;
+  width: 100%;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking {
+  text-align: center;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div {
+  width: 100%;
+  display: inline-table;
+  vertical-align: bottom;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .mega {
+  font-size: 1.94em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .times {
+  font-size: 0.68em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder {
+  position: relative;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder .ico {
+  width: 100%;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder i.over-stack {
+  position: absolute;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder i.over-stack.sign {
+  z-index: 5;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder .sub-over-stack {
+  z-index: 2;
+  color: #12408d;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder .over-queue-stack {
+  position: absolute;
+  opacity: 1;
+  top: -0.3em;
+  left: -0.3em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder .over-queue-stack.clock {
+  z-index: 3;
+  opacity: 1;
+  color: inherit;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder.yes-canceled .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder.not-canceled .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder.not-activated .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder.yes-activated .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder.null-activated .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder.null-canceled .under-stack {
+  opacity: 0.55;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder.yes-canceled .over-stack.sign {
+  color: #8d2d24;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder.not-canceled .over-stack.sign {
+  color: #1f6d4d;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder.not-activated .over-stack.sign {
+  color: #8d2d24;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder.null-activated .over-stack.sign, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder.null-canceled .over-stack.sign {
+  text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0.85;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder .sub-over-stack {
+  color: #edf0f4;
+  opacity: 1;
+  z-index: 2;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder .over-queue-stack {
+  opacity: 1;
+  top: 0.3em;
+  left: -0.35em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder .over-queue-stack:before {
+  font-size: 1.15em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder .over-queue-stack.clock {
+  z-index: 3;
+  opacity: 1;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder .under-stack:before {
+  font-size: 1.6em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder .sub-under-stack {
+  position: absolute;
+  width: 2em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-activated .sub-under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-activated .sub-under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-activated .sub-under-stack {
+  left: 1.7em;
+  top: 0.8em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-activated .sub-under-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-activated .sub-under-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-activated .sub-under-stack:before {
+  font-size: 1.9em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-activated .over-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-activated .over-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-activated .over-stack {
+  top: 1.3em;
+  left: 0.6em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-activated .over-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-activated .over-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-activated .over-stack:before {
+  font-size: 1em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-canceled .sub-under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-canceled .sub-under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-canceled .sub-under-stack {
+  left: 1.6em;
+  top: 0.6em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-canceled .sub-under-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-canceled .sub-under-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-canceled .sub-under-stack:before {
+  font-size: 1.9em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-canceled .over-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-canceled .over-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-canceled .over-stack {
+  top: 1.3em;
+  left: 0.5em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-canceled .over-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-canceled .over-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-canceled .over-stack:before {
+  font-size: 1em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-activated .over-stack.sign, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-canceled .over-stack.sign {
+  color: #0c131d;
+  text-shadow: 0px 1px 4px rgba(255, 255, 255, 0.6), 0px -1px 2px rgba(255, 255, 255, 0.6);
+  opacity: 0.95;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-activated .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-canceled .under-stack {
+  opacity: 1;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-canceled .over-stack.sign, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-canceled .over-stack.sign, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-activated .over-stack.sign {
+  text-shadow: 0px 1px 4px rgba(255, 255, 255, 0.6), 0px -1px 2px rgba(255, 255, 255, 0.6);
+  opacity: 0.95;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-canceled .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-canceled .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-activated .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-activated .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-activated .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-canceled .under-stack {
+  opacity: 1;
+  position: absolute;
+  left: 0.95em;
+  top: 1.4em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .duration-cont .times {
+  opacity: 0.5;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .legend-icon-cont .not-booked {
+  opacity: 0.5;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder .sub-over-stack {
+  color: #4b5d7a;
+  opacity: 0.8;
+  z-index: 2;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder .over-queue-stack {
+  opacity: 1;
+  top: 0.15em;
+  left: -0.45em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder .over-queue-stack:before {
+  font-size: 1.25em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder .over-queue-stack.clock {
+  z-index: 3;
+  opacity: 0.55;
+  color: inherit;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder .under-stack:before {
+  font-size: 1.5em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.null-activated .over-stack.sign, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.null-canceled .over-stack.sign {
+  color: #b5bfd0;
+  text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0.8;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.null-activated .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.null-canceled .under-stack {
+  opacity: 0.5;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.yes-canceled .over-stack.sign, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.not-canceled .over-stack.sign, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.not-activated .over-stack.sign {
+  color: #b5bfd0;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0.9;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.yes-canceled .over-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.not-canceled .over-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.not-activated .over-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.yes-activated .over-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.null-activated .over-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.null-canceled .over-stack {
+  top: 1.35em;
+  left: 0.65em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.yes-canceled .over-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.not-canceled .over-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.not-activated .over-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.yes-activated .over-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.null-activated .over-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.null-canceled .over-stack:before {
+  font-size: 1em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.yes-canceled .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.not-canceled .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.not-activated .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .calendar-icon-holder.yes-activated .under-stack {
+  opacity: 0.55;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.not-selected, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.yes-selected {
+  cursor: pointer;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.available-for-booking:not(.yes-selected):hover .legend-icon-cont .mega:before {
+  content: "\f192";
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.available-for-booking:not(.yes-selected):hover .duration-cont .times {
+  font-weight: 500;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.available-for-booking.yes-selected .legend-icon-cont .mega:before {
+  content: '\f058';
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.available-for-booking.yes-selected .duration-cont .times {
+  font-weight: 500;
+  text-decoration: underline;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.available-for-booking.yes-selected:hover {
+  color: #ae2e15;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.available-for-booking.yes-selected:hover .legend-icon-cont .mega:before {
+  content: '\f057';
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont {
+  height: 2.6em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont {
+  height: 1.4em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .date-container {
+  font-size: 1.2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  padding: 1px;
+  z-index: 9;
+  width: 40%;
+  height: 15%;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .date-container .day-ended {
+  position: absolute;
+  padding: 0;
+  font-size: 1.7em;
+  top: -3px;
+  right: 3px;
+  text-align: right;
+  color: rgba(175, 20, 5, 0.70);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.calendar-widget .pr {
+  overflow: hidden;
+}
+.calendar-widget .pr > ul {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.calendar-widget .pr > ul > li {
+  float: left;
+  width: 100%;
+}

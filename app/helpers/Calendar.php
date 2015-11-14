@@ -109,8 +109,9 @@ class Calendar
     public static function dates_span($start_date, $repeating = false, $end_date = null,
                                       $repeating_interval, $repeating_frequency) {
         $dates = array();
-
-        if($repeating) {
+        if(!$repeating_interval) {
+            $dates[] = $start_date;
+        } else {
             $new_date = $start_date;
             $temp_end_date = strtotime($end_date);
 
@@ -165,6 +166,162 @@ class Calendar
         return $dates;
     }
 
+
+    public static function weeks_in_a_month($date) {
+        list($year, $month, $day) = explode("-", $date);
+        $last_day = date("t", mktime(0, 0, 0, $month, 1, $year));
+
+        $day = strtotime("{$year}-{$month}-{$last_day}");
+        $week_count = date('W', $day) - date('W', strtotime(date('Y-m-01', $day))) + 1;
+        return $week_count;
+    }
+
+
+
+    public static function weekday_of_first_in_month($date) {
+        list($year, $month, $day) = explode("-", $date);
+        return date("w", mktime(1, 0, 0, $month, 1, $year));
+    }
+
+
+    public static function days_in_a_month_number($date) {
+        list($year, $month, $day) = explode("-", $date);
+        return date("t", mktime(0, 0, 0, $month, 1, $year));
+    }
+
+
+    public static function cro_month_label($m) {
+        switch((int)$m)
+        {
+            case 0: return "UNESI MJESEC IZMEDJU 1 i 12!";
+            case 1: return "siječanj";
+            case 2: return "veljača";
+            case 3: return "ožujak";
+            case 4: return "travanj";
+            case 5: return "svibanj";
+            case 6: return "lipanj";
+            case 7: return "srpanj";
+            case 8: return "kolovoz";
+            case 9: return "rujan";
+            case 10: return "listopad";
+            case 11: return "studeni";
+            case 12: return "prosinac";
+            default: return "- unknown -";
+        }
+    }
+
+
+
+
+
+    public static function cro_month_label_genitive($m) {
+        switch((int)$m)
+        {
+            case 0: return "UNESI MJESEC IZMEDJU 1 i 12!";
+            case 1: return "siječnja";
+            case 2: return "veljače";
+            case 3: return "ožujka";
+            case 4: return "travnja";
+            case 5: return "svibnja";
+            case 6: return "lipnja";
+            case 7: return "srpnja";
+            case 8: return "kolovoza";
+            case 9: return "rujna";
+            case 10: return "listopada";
+            case 11: return "studenog";
+            case 12: return "prosinca";
+            default: return "- unknown -";
+        }
+    }
+
+
+
+    public static function cro_weekday_label($idx) {
+        switch($idx) {
+            case 0: return "nedjelja";
+            case 1: return "ponedjeljak";
+            case 2: return "utorak";
+            case 3: return "srijeda";
+            case 4: return "četvrtak";
+            case 5: return "petak";
+            case 6: return "subota";
+            default: return "unknown-weekday($idx)";
+        }
+    }
+
+
+    public static function cro_weekday_label_short($idx) {
+        switch($idx) {
+            case 0: return "ned";
+            case 1: return "pon";
+            case 2: return "uto";
+            case 3: return "sri";
+            case 4: return "čet";
+            case 5: return "pet";
+            case 6: return "sub";
+            default: return "unknown-weekday($idx)";
+        }
+    }
+
+
+
+    public static function advanced_month_label($date) {
+        $label = "Default name";
+
+        $first_day_in_view = self::shift_day_month_year($date, self::days_offset_left(), 0, 0);
+        $last_day_in_view = self::shift_day_month_year($date, self::days_offset_right(), 0, 0);
+
+        list($year_1st, $month_1st, $day_1st) = explode("-", $first_day_in_view);
+        list($year_nth, $month_nth, $day_nth) = explode("-", $last_day_in_view);
+
+        if($year_1st == $year_nth) {
+            if ($month_1st == $month_nth) {
+                $label = sprintf("%s %s.", self::cro_month_label($month_1st), $year_1st);
+            } else {
+                $label = sprintf("%s i %s %s.", self::cro_month_label($month_1st), self::cro_month_label($month_nth), $year_1st);
+            }
+        } else {
+            $label = sprintf("%s %s. i %s %s.", self::cro_month_label($month_1st), $year_1st, self::cro_month_label($month_nth), $year_nth);
+        }
+
+        return $label;
+
+    }
+
+    public static function days_offset_left() {
+        return Cfg::read("calendar.date.offset.day.left");
+    }
+
+    public static function days_offset_right() {
+        return Cfg::read("calendar.date.offset.day.right");
+    }
+
+    public static function days_offset_std() {
+        return Cfg::read("calendar.date.offset.day.std");
+    }
+
+
+
+    public static function months_break($date) {
+
+        $first_day_in_view = self::shift_day_month_year($date, self::days_offset_left(), 0, 0);
+        $last_day_in_view = self::shift_day_month_year($date, self::days_offset_right(), 0, 0);
+
+        list($year_1st, $month_1st, $day_1st) = explode("-", $first_day_in_view);
+        list($year_nth, $month_nth, $day_nth) = explode("-", $last_day_in_view);
+
+        if($year_1st == $year_nth) {
+            if ($month_1st == $month_nth) {
+                return null;
+            } else {
+                $index = date("t", mktime(0, 0, 0, $month_1st, 1, $year_1st)) - $day_1st + 1;
+            }
+        } else {
+            $index = date("t", mktime(0, 0, 0, $month_1st, 1, $year_1st)) - $day_1st + 1;
+        }
+        return $index;
+
+    }
 }
 
 

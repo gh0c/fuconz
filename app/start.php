@@ -32,9 +32,9 @@ $app = new Slim(array(
 ));
 
 if ($app->mode === "development")
-    require INC_ROOT . '/app/web_config_dev.php';
+    require INC_ROOT . '/web_config_dev.php';
 else if ($app->mode === "production")
-    require INC_ROOT . '/app/web_config_prod.php';
+    require INC_ROOT . '/web_config_prod.php';
 
 
 
@@ -50,6 +50,7 @@ if (array_key_exists('REQUEST_SCHEME', $_SERVER)) {
 
 $app->add(new Middleware\BeforeMiddleware());
 $app->add(new Middleware\CsrfMiddleware());
+
 
 if ($app->mode === "development") {
     $app->configureMode($app->config('mode'), function() use ($app) {
@@ -68,11 +69,10 @@ if ($app->mode === "development") {
             $minifier->add('public/css/header.css');
             $minifier->add('public/css/content.css');
             $minifier->add('public/css/forms.css');
+            $minifier->add('public/css/calendar.css');
+            $minifier->add('public/css/gmaps.css');
             $minifier->add('public/css/footer.css');
             $minifier->add('public/css/sideslide_menu.css');
-
-            $minifier->add('public/css/jquery-ui.custom_theme.css');
-            $minifier->add('public/css/jquery-ui.datepicker.struct.css');
 
             $minifier->minify('public/css/style.css');
 
@@ -81,9 +81,12 @@ if ($app->mode === "development") {
 
             $minifier = new MatthiasMullie\Minify\CSS('public/css/admin/main.css');
             $minifier->add('public/css/admin/header.css');
-//            $minifier->add('public/css/admin/header.css');
+            $minifier->add('public/css/jquery-ui.custom_theme.css');
+            $minifier->add('public/css/jquery-ui.datepicker.struct.css');
             $minifier->add('public/css/admin/tables.css');
             $minifier->minify('public/css/admin/admin_style.css');
+
+
             // JS minifier @see https://github.com/matthiasmullie/minify
             // DON'T overwrite your real .js files, always save into a different file
             //$minifier = new MatthiasMullie\Minify\JS('js/application.js');

@@ -2,7 +2,7 @@
 
 use app\helpers\Sessions;
 use app\helpers\Configuration as Cfg;
-use app\model\User\RegisteredUser;
+use app\model\User\User;
 use app\helpers\Auth;
 use app\helpers\Mailer;
 use app\helpers\Hash;
@@ -17,7 +17,7 @@ $app->get('/admin/prijava', $guest_admin(), function () use ($app) {
 $app->get('/admin/odjava', function () use ($app) {
     Auth::doAdminLogout();
 
-    $app->flash('success', "Uspješno ste odjavljeni kao admin!");
+    $app->flash('admin_success', "Uspješno ste odjavljeni kao admin!");
     $app->redirect($app->urlFor('home'));
 })->name('admin.logout');
 
@@ -30,14 +30,14 @@ $app->post('/admin/prijava', $guest_admin(), function () use ($app) {
 
     if(!isset($p_username) || $p_username === "" || !isset($p_password) || $p_password === "")
     {
-        $app->flash('errors',  "Nedostaju podaci za prijavu! \n" .
+        $app->flash('admin_errors',  "Nedostaju podaci za prijavu! \n" .
             "Unos korisničkog imena i lozinke su obavezni za prijavu.");
         $app->redirect($app->urlFor('admin.login'));
     }
 
     $admin = Admin::getAdminByUsername($p_username);
     if (!$admin) {
-        $app->flash('errors', "Neispravo korisničko ime");
+        $app->flash('admin_errors', "Neispravo korisničko ime");
         $app->redirect($app->urlFor('admin.login'));
     }
     else {
@@ -47,16 +47,16 @@ $app->post('/admin/prijava', $guest_admin(), function () use ($app) {
         if($success) {
 
             $admin = Auth::doAdminLogin($admin);
-            $app->flash('success', "Uspješna prijava administratora!");
+            $app->flash('admin_success', "Uspješna prijava administratora!");
 
             if (isset($p_remember_me) && $p_remember_me === "on") {
                 Auth::setAdminRememberMe($admin);
-                $app->flash('statuses', "Koristeći ovaj preglednik, sustav će Vas zapamtiti.");
+                $app->flash('admin_statuses', "Koristeći ovaj preglednik, sustav će Vas zapamtiti.");
             }
             $app->redirect($app->urlFor('admin.home'));
 
         } else {
-            $app->flash('errors', "Neispravo korisničko ime i/ili lozinka.");
+            $app->flash('admin_errors', "Neispravo korisničko ime i/ili lozinka.");
             $app->redirect($app->urlFor('admin.login'));
         }
     }

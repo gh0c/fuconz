@@ -1,8 +1,8 @@
 <?php
 
 
-use app\model\User\RegisteredUser;
-
+use \app\model\User\User;
+use \app\model\Messages\Logger;
 
 
 $app->get('/clanovi/registracija', $guest_user(), function () use ($app) {
@@ -21,8 +21,9 @@ $app->post('/clanovi/registracija', $guest_user(), function() use ($app) {
     $p_last_name = $app->request->post('last-name');
     $p_sex = $app->request->post('sex');
 
-    $validation_result = RegisteredUser::validateNew($p_username, $p_email, $p_password, $p_password_repeated,
+    $validation_result = User::validateNew($p_username, $p_email, $p_password, $p_password_repeated,
         $p_first_name, $p_last_name, $p_sex);
+
     if(!($validation_result["validated"])) {
         // valudation failed
         if(isset($validation_result["errors"])) {
@@ -31,7 +32,8 @@ $app->post('/clanovi/registracija', $guest_user(), function() use ($app) {
         $app->redirect($app->urlFor('user.registration'));
     } else {
         // Validation of input data successful
-        if (RegisteredUser::createNew($p_username, $p_email, $p_password, $p_first_name, $p_last_name, $p_sex)) {
+        if ($new_user = User::createNew($p_username, $p_email, $p_password, $p_first_name, $p_last_name, $p_sex)) {
+            Logger::logNewUserRegistration($new_user);
             $app->flash('success', "Uspješna registracija!");
             $app->flash('statuses', "Sada se možete prijaviti koristeći unesene podatke.");
             $app->redirect($app->urlFor('user.login'));
@@ -40,8 +42,6 @@ $app->post('/clanovi/registracija', $guest_user(), function() use ($app) {
             $app->redirect($app->urlFor('user.registration'));
         }
     }
-
-
 
 })->name('user.registration.post');
 

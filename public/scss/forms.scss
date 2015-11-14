@@ -4,10 +4,10 @@ $std-input-height: 2.5em;
 $std-input-width: 24em;
 $large-input-width: 32em;
 $medium-input-width: 20em;
-$small-input-width: 16em;
+$small-input-width: 14em;
 
 .form-container {
-  font-size: 0.95em;
+//  font-size: 0.95em;
   padding: 1em;
   .inputs-container {
     text-align: center;
@@ -37,11 +37,11 @@ $small-input-width: 16em;
 
   }
 
-  input[type="password"][required].text-input ~ label[placeholder],
-  .std-text-input ~ label,
-  .large-text-input ~ label,
-  .medium-text-input ~ label,
-  .small-text-input ~ label{
+  input[type="password"][required].text-input + label[placeholder],
+  .std-text-input + label,
+  .large-text-input + label,
+  .medium-text-input + label,
+  .small-text-input + label {
     font-family: 'Raleway',Arial,sans-serif;
     display: block;
     pointer-events: none;
@@ -89,7 +89,7 @@ $small-input-width: 16em;
   }
 
 
-  .std-text-input ~ label{
+  .std-text-input + label{
     &:before {
       left: -webkit-calc(50% - 10em);
       left: calc(50% - 10em);
@@ -99,7 +99,7 @@ $small-input-width: 16em;
       right: calc(50% - 11em);
     }
   }
-  .large-text-input ~ label{
+  .large-text-input + label{
     &:before {
       left: -webkit-calc(50% - 10em - ((#{$large-input-width} - #{$std-input-width}) / 2));
       left: calc(50% - 10em - ((#{$large-input-width} - #{$std-input-width}) / 2));;
@@ -110,7 +110,7 @@ $small-input-width: 16em;
     }
   }
 
-  .medium-text-input ~ label{
+  .medium-text-input + label{
     &:before {
       left: -webkit-calc(50% - 10em - ((#{$medium-input-width} - #{$std-input-width}) / 2));
       left: calc(50% - 10em - ((#{$medium-input-width} - #{$std-input-width}) / 2));;
@@ -122,7 +122,7 @@ $small-input-width: 16em;
   }
 
 
-  .small-text-input ~ label{
+  .small-text-input + label {
     &:before {
       left: -webkit-calc(50% - 10em - ((#{$small-input-width} - #{$std-input-width}) / 2));
       left: calc(50% - 10em - ((#{$small-input-width} - #{$std-input-width}) / 2));;
@@ -143,26 +143,71 @@ $small-input-width: 16em;
       border-width: 2px;
       padding-left: -webkit-calc(1.5em - 1px);
       padding-left: calc(1.5em - 1px);
+      & + label:before {
+        @include pp-transform-duration(0.35s);
+        @include pp-transform(translate(-0.5em, -1.2em) scale(0.9, 0.9));
+        opacity: 1;
+        font-style: normal;
+        border-left: 1px solid #183293;
+      }
     }
+
+    &:valid {
+      & + label:before {
+        @include pp-transform-duration(0.35s);
+        @include pp-transform(translate(-0.5em, -1.2em) scale(0.9, 0.9));
+        opacity: 1;
+        font-style: normal;
+        border-left: 1px solid #183293;
+      }
+    }
+
+    &:read-only, &[readonly], &[readonly=""] {
+      & + label:before {
+        @include pp-transform-duration(0.35s);
+        @include pp-transform(translate(-0.5em, -1.2em) scale(0.9, 0.9));
+        opacity: 1;
+        font-style: normal;
+        border-left: 1px solid #183293;
+      }
+    }
+
+    &[readonly=""] {
+//      background-color: darkgreen;
+      & + label:before {
+        @include pp-transform-duration(0.35s);
+        @include pp-transform(translate(-0.5em, -1.2em) scale(0.9, 0.9));
+        opacity: 1;
+        font-style: normal;
+        border-left: 1px solid #183293;
+      }
+    }
+
+
   }
 
-  .std-text-input:focus ~ label:before,
-  .std-text-input:valid ~ label:before,
-  .large-text-input:focus ~ label:before,
-  .large-text-input:valid ~ label:before,
-  .medium-text-input:focus ~ label:before,
-  .medium-text-input:valid ~ label:before,
-  .small-text-input:focus ~ label:before,
-  .small-text-input:valid ~ label:before{
-    @include pp-transform-duration(0.35s);
-    @include pp-transform(translate(-0.5em, -1.2em) scale(0.9, 0.9));
-    opacity: 1;
-    font-style: normal;
-    border-left: 1px solid #183293;
-  }
+//  .std-text-input:focus + label:before,
+//  .std-text-input:valid + label:before,
+//  .std-text-input:read-only + label:before,
+//  .large-text-input:focus + label:before,
+//  .large-text-input:valid + label:before,
+//  .large-text-input:read-only + label:before,
+//  .large-text-input:read-only:focus + label:before,
+//  .medium-text-input:focus + label:before,
+//  .medium-text-input:valid + label:before,
+//  .medium-text-input:read-only + label:before,
+//  .small-text-input:focus + label:before,
+//  .small-text-input:valid + label:before,
+//  .small-text-input:read-only + label:before {
+//    @include pp-transform-duration(0.35s);
+//    @include pp-transform(translate(-0.5em, -1.2em) scale(0.9, 0.9));
+//    opacity: 1;
+//    font-style: normal;
+//    border-left: 1px solid #183293;
+//  }
+//
 
-
-  input[type="password"][required]:invalid ~ label[placeholder][alt]:before {
+  input[type="password"][required]:invalid + label[placeholder][alt]:before {
     content: attr(alt);
   }
 
@@ -180,9 +225,12 @@ $small-input-width: 16em;
     }
   }
 
-  input[type="radio"].rb-input, input[type="checkbox"].cb-input {
+  input[type="radio"].rb-input, input[type="checkbox"].cb-input, input[type="file"].file-input {
     opacity: 0;
     position: absolute;
+  }
+  input[type="file"].file-input {
+    left: -200%;
   }
 
   .pp-radio-div {
@@ -191,9 +239,10 @@ $small-input-width: 16em;
   }
 
   input[type="radio"].rb-input,
-  input[type="checkbox"].cb-input {
+  input[type="checkbox"].cb-input,
+  input[type="file"].file-input{
 
-    & + .radio-div-cont, & + .checkbox-div-cont {
+    & + .radio-div-cont, & + .checkbox-div-cont, & + .file-div-cont {
       font-family: MuseoSans;
       font-weight: 700;
       font-size: 1em;
@@ -209,29 +258,57 @@ $small-input-width: 16em;
       position: relative;
     }
 
-    & + .radio-div-cont {
+    &.sex + .radio-div-cont {
       width: 10em;
     }
+
+    &.booking-selector + .radio-div-cont {
+      width: 35em;
+    }
+
 
     & + .checkbox-div-cont {
       width: 20em;
     }
 
+
+    & + .file-div-cont {
+      @include pp-transition(width .45s);
+      min-width: 28em;
+    }
+
     & + .radio-div-cont > label,
-    & + .checkbox-div-cont > label {
+    & + .checkbox-div-cont > label,
+    & + .file-div-cont > label.button-label {
       font-family: 'Raleway', Arial, sans-serif;
       font-weight: normal;
       position: relative;
       display: inline-block;
-      width: 100%;
       height: inherit;
       cursor: pointer;
 //      text-align: left;
       color: $dark-blue-dark;
     }
 
+    & + .file-div-cont > label.selected-file {
+      position: relative;
+      display: none;
+      height: inherit;
+      width: 0%;
+    }
+
     & + .radio-div-cont > label,
     & + .checkbox-div-cont > label {
+      width: 100%;
+    }
+
+    & + .file-div-cont > label.button-label {
+      width: 100%;
+    }
+
+    & + .radio-div-cont > label,
+    & + .checkbox-div-cont > label,
+    & + .file-div-cont > label.button-label {
       &:before {
         font-family: FontAwesome;
         left: 0em;
@@ -264,6 +341,18 @@ $small-input-width: 16em;
       }
     }
 
+    &.sex + .radio-div-cont > label {
+      > span {
+        width: 4em;
+      }
+    }
+    &.booking-selector + .radio-div-cont > label {
+      > span {
+        width: 28em;
+        text-align: center;
+      }
+    }
+
     & + .checkbox-div-cont > label {
       &:before {
         content: '\f1db';
@@ -282,8 +371,43 @@ $small-input-width: 16em;
       }
     }
 
+
+    & + .file-div-cont > label {
+      @include pp-transition(all 0.40s);
+      overflow: hidden;
+      &.button-label {
+        &:before {
+          content: '\f0c2';
+          @include pp-transition(all 0.40s);
+        }
+
+        > span {
+
+          line-height: 100%;
+          display: inline-block;
+          padding: 0 0.8em 0 2.2em;
+          text-align: left;
+          position:relative;
+          top: 3px;
+        }
+      }
+      &.selected-file {
+        > span {
+
+          line-height: 100%;
+          display: inline-block;
+          padding: 0 0.8em 0 2.2em;
+          text-align: left;
+          position:relative;
+          top: 3px;
+        }
+      }
+
+    }
+
     &:focus + .radio-div-cont,
-    &:focus + .checkbox-div-cont {
+    &:focus + .checkbox-div-cont,
+    &:focus + .file-div-cont {
       border-color: $dark-blue-light;
       border-width: 2px;
       padding-left: -webkit-calc(1em - 1px);
@@ -304,6 +428,13 @@ $small-input-width: 16em;
       color: $dark-blue-light;
       content:  '\f00c'; //'\f05d';
     }
+
+    &:not(:valid) + .file-div-cont > label.button-label:hover:before {
+      color: $dark-blue-light;
+      content:  '\f0ee'; //'\f05d';
+    }
+
+
 
     &:checked + .radio-div-cont > label {
       &:before {
@@ -330,6 +461,42 @@ $small-input-width: 16em;
     }
   }
 
+  input[type="file"].file-input {
+    &:valid + .file-div-cont {
+
+      & > label.button-label {
+        width: initial;
+        &:before {
+          content:  '\f0ee';
+        }
+
+      }
+
+      & > label.selected-file {
+        min-width: 50%;
+        display: inline-block;
+        overflow: hidden;
+        width: initial;
+      }
+    }
+
+  }
+
+  .selected-span-cont {
+    position:relative;
+
+    .remove-selection {
+      position: absolute;
+      width: 2em;
+      font-size: 1.5em;
+      top: .5em;
+
+      cursor: pointer;
+      &:hover {
+        color: $red-close-icons;
+      }
+    }
+  }
 
   .medium-input-width {
     width: $medium-input-width;
@@ -373,7 +540,8 @@ $small-input-width: 16em;
     text-align: center;
     cursor: pointer;
     display: inline-block;
-    @include pp-transition(all 0.35s ease-in-out);
+    @include pp-transition(all 0.22s cubic-bezier(0.295, 1.055, 0.500, 0.995));
+    @include pp-transition-timing(cubic-bezier(0.295, 1.055, 0.500, 0.995));
     @include rounded(1.5em);
     border: 1px solid black;
     @include box-sizing(border-box);
@@ -428,6 +596,15 @@ div.info {
 //    border-top: 2px dashed $dark-dark-blue;
     @include pp-transition(all 0.5s ease);
 
+    &.successful-validation {
+      background-color: $cibona-blue;
+      color: $light-blue-gray-light;
+      border-color: $light-blue-gray-light;
+      h4 {
+        color: $light-blue-gray-light;
+      }
+    }
+
     &.warning-msg {
 
       width: 100%;
@@ -480,13 +657,24 @@ div.info {
       color: $dark-dark-blue;
       vertical-align: middle;
       width: 2em;
+      &.successful-validation {
+        color: $light-blue-gray-light;
+      }
     }
 
-    &.live h4, &.live .fa {
-      color: $dark-dark-blue;
-      display: table-cell;
-      vertical-align: middle;
+    &.live{
+      h4, .fa {
+        color: $dark-dark-blue;
+        display: table-cell;
+        vertical-align: middle;
+      }
+      &.successful-validation {
+        h4, .fa {
+          color: $light-blue-gray-light;
+        }
+      }
     }
+
 
     &.msg {
       min-height: 3em;
@@ -496,8 +684,11 @@ div.info {
         min-height: 2em;
         vertical-align: middle;
         display: table-cell;
-        padding-right: 0;
+//        padding-right: 0;
         color: $dark-dark-blue;
+        &.successful-validation {
+          color: $light-blue-gray-light;
+        }
       }
 
     }

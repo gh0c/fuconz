@@ -135,7 +135,7 @@
 }
 
 @mixin gradient-status-bg {
-  webkit-background-size: 150px 150px;
+  -webkit-background-size: 150px 150px;
   -moz-background-size: 150px 150px;
   background-size: 150px 150px;
   background-image: -webkit-gradient(linear, left top, right bottom, color-stop(.25, rgba(255, 255, 255, .05)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .05)), color-stop(.75, rgba(255, 255, 255, .05)), color-stop(.75, transparent), to(transparent));
@@ -147,7 +147,7 @@
 }
 
 @mixin gradient-status-bg($size: 150px) {
-  webkit-background-size: $size $size;
+  -webkit-background-size: $size $size;
   -moz-background-size: $size $size;
   background-size: $size $size;
   background-image: -webkit-gradient(linear, left top, right bottom, color-stop(.25, rgba(255, 255, 255, .05)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .05)), color-stop(.75, rgba(255, 255, 255, .05)), color-stop(.75, transparent), to(transparent));
@@ -159,7 +159,7 @@
 }
 
 @mixin gradient-status-bg($size: 150px, $opacity: 0.05) {
-  webkit-background-size: $size $size;
+  -webkit-background-size: $size $size;
   -moz-background-size: $size $size;
   background-size: $size $size;
   background-image: -webkit-gradient(linear, left top, right bottom, color-stop(.25, rgba(255, 255, 255, $opacity)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, $opacity)), color-stop(.75, rgba(255, 255, 255, $opacity)), color-stop(.75, transparent), to(transparent));
@@ -168,6 +168,33 @@
   background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, $opacity) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, $opacity) 50%, rgba(255, 255, 255, $opacity) 75%, transparent 75%, transparent);
   background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, $opacity) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, $opacity) 50%, rgba(255, 255, 255, $opacity) 75%, transparent 75%, transparent);
   background-image: linear-gradient(135deg, rgba(255, 255, 255, $opacity) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, $opacity) 50%, rgba(255, 255, 255, $opacity) 75%, transparent 75%, transparent);
+}
+
+
+@mixin gradient-status-bg-dark($size: 150px, $opacity: 0.05) {
+  -webkit-background-size: $size $size;
+  -moz-background-size: $size $size;
+  background-size: $size $size;
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(.25, rgba(0, 0, 0, $opacity)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(0, 0, 0, $opacity)), color-stop(.75, rgba(0, 0, 0, $opacity)), color-stop(.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(135deg, rgba(0, 0, 0, $opacity) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, $opacity) 50%, rgba(0, 0, 0, $opacity) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(135deg, rgba(0, 0, 0, $opacity) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, $opacity) 50%, rgba(0, 0, 0, $opacity) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(135deg, rgba(0, 0, 0, $opacity) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, $opacity) 50%, rgba(0, 0, 0, $opacity) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(135deg, rgba(0, 0, 0, $opacity) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, $opacity) 50%, rgba(0, 0, 0, $opacity) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, $opacity) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, $opacity) 50%, rgba(0, 0, 0, $opacity) 75%, transparent 75%, transparent);
+}
+
+
+@mixin gradient-status-bg-custom($size: 150px, $opacity: 0.05, $color: #FFFFFF) {
+  $my-color: rgba($color, $opacity);
+  -webkit-background-size: $size $size;
+  -moz-background-size: $size $size;
+  background-size: $size $size;
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(.25, $my-color), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, $my-color), color-stop(.75, $my-color), color-stop(.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(135deg, $my-color 25%, transparent 25%, transparent 50%, $my-color 50%, $my-color 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(135deg, $my-color 25%, transparent 25%, transparent 50%, $my-color 50%, $my-color 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(135deg, $my-color 25%, transparent 25%, transparent 50%, $my-color 50%, $my-color 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(135deg, $my-color 25%, transparent 25%, transparent 50%, $my-color 50%, $my-color 75%, transparent 75%, transparent);
+  background-image: linear-gradient(135deg, $my-color 25%, transparent 25%, transparent 50%, $my-color 50%, $my-color 75%, transparent 75%, transparent);
 }
 
 

@@ -1,0 +1,52 @@
+{% set indices = [1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0] %}
+
+{% set month_starts_with_weekday = calendar.weekday_of_first_in_month(course_constants.read("selected.date")) %}
+{% set days_in_month = calendar.days_in_a_month_number(course_constants.read("selected.date")) %}
+{% set weeks_in_month = calendar.weeks_in_a_month(course_constants.read("selected.date")) %}
+
+{% set weekdays_indices = [ indices[(month_starts_with_weekday + 7 - 1) : 16],
+                            indices[(month_starts_with_weekday + 15) : 16] ] %}
+
+<div class = "month-grid widget-content">
+    {#Table#}
+    <div class = "table-container special">
+
+
+        {% set day_counter = 0 %}
+        {#{% for i in 1..((weeks_in_month/2)|round(0,'ceil')) %}#}
+        {% for i in 0..1 %}
+
+            <div class="header"><!--
+
+            {% for weekday_idx in weekdays_indices[i] %}
+            --><div class="th">
+                    <span>{{ calendar.cro_weekday_label_short(weekday_idx) }}</span>
+                </div><!--
+            {% endfor %}
+        --></div>
+
+            <div class = "tr"><!--
+            {% for weekday_idx in weekdays_indices[i] %}
+                {% set day_counter = (day_counter > 0 or weekday_idx == month_starts_with_weekday) ? (day_counter + 1) : 0 %}
+                {% set curr_date = "%04s-%02s-%02d"|format(course_constants.read('selected.year'), course_constants.read('selected.month'), day_counter) %}
+
+                {% if day_counter > 0 and day_counter <= days_in_month%}
+                 --><div class = "td">
+                        <div class = "active-day {{ ( curr_date == course_constants.read('today') ) ? 'today' : ''}} {{ ( weekday_idx == 0 or weekday_idx == 6 ) ? 'weekend' : 'working-day'}}">
+                            {% include 'user/bookings/calendar/day_selection.cool.twig' with {'day_counter':day_counter, 'curr_date': curr_date}%}
+                        </div>
+                    </div><!--
+
+                {% else %}
+                 --><div class = "td">
+                        <div class = "inactive-day">
+                        </div>
+                    </div><!--
+                {% endif %}
+            {% endfor %}
+
+     --></div>
+        {% endfor %}
+
+    </div>
+</div>

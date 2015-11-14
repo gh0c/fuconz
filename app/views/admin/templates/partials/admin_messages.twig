@@ -8,11 +8,11 @@
     </div>
 
 {% endfor %}
-{% if flash.success %}
+{% if flash.admin_success %}
     <div class = "vertical-section info">
         <div class = "inner-70pct">
             <div class = "status-container msg success-msg warning-msg">
-                <i class="status fa fa-check"></i> <h4>{{ flash.success|nl2br }}</h4><i class="status fa"></i>
+                <i class="status fa fa-check"></i> <h4>{{ flash.admin_success|nl2br }}</h4><i class="status fa"></i>
             </div>
         </div>
     </div>
@@ -31,11 +31,11 @@
     </div>
 
 {% endfor %}
-{% if flash.errors %}
+{% if flash.admin_errors %}
     <div class = "vertical-section info">
         <div class = "inner-70pct">
             <div class = "status-container msg error-msg warning-msg">
-                <i class="status fa fa-times-circle"></i> <h4>{{ flash.errors|nl2br }}</h4><i class="status fa"></i>
+                <i class="status fa fa-times-circle"></i> <h4>{{ flash.admin_errors|nl2br }}</h4><i class="status fa"></i>
             </div>
         </div>
     </div>
@@ -53,11 +53,11 @@
     </div>
 
 {% endfor %}
-{% if flash.statuses %}
+{% if flash.admin_statuses %}
     <div class = "vertical-section info">
         <div class = "inner-70pct">
             <div class = "status-container msg status-msg warning-msg">
-                <i class="status fa fa-info-circle"></i> <h4>{{ flash.statuses|nl2br }}</h4><i class="status fa"></i>
+                <i class="status fa fa-info-circle"></i> <h4>{{ flash.admin_statuses|nl2br }}</h4><i class="status fa"></i>
             </div>
         </div>
     </div>

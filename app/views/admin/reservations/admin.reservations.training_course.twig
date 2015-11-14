@@ -96,6 +96,16 @@
                                 </div>
                             </div>
 
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="number" name="reservation-time" id="reservation-time"
+                                           min="0" tabindex="7" required
+                                           class = "std-text-input std-input-width"/>
+                                    <label id="reservation-time-label" alt="Vrijeme za rezervaciju [h]"
+                                           placeholder="Vrijeme za rezervaciju [h]" data-info="Vrijeme za rezervaciju [h]"></label>
+                                </div>
+                            </div>
+
 
                             <div class = "vertical-section text-centered ">
                                 <div class ="dashed-spacer empty-horiz-spacer-5"></div>
@@ -104,7 +114,7 @@
                             <div class = "vertical-section text-centered multirow">
                                 <div class = "inner-70pct">
                                     <input type="checkbox" name="repeating" id="repeating" required
-                                           class = "cb-input repeating" tabindex="7">
+                                           class = "cb-input repeating" tabindex="8">
                                     <div class = "checkbox-div-cont">
                                         <label for = "repeating" alt="Ponavljanje" placeholder="Ponavljanje" data-info="Ponavljanje">
                                             <span>Ponavljanje?</span>
@@ -118,7 +128,7 @@
                             <div class = "vertical-section text-centered multirow">
                                 <div class = "inner-70pct">
                                     <input type="text" name="date-until" id="date-until" required
-                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="8"
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="9"
                                            class = "std-text-input std-input-width datepicker"/>
                                     <label id="date-until-label" alt="Ponavljanje do datuma"
                                            placeholder="Ponavljanje do datuma" data-info="Ponavljanje do datuma"></label>
@@ -127,11 +137,9 @@
 
 
 
-
-
                             <div class = "vertical-section text-centered multirow">
                                 <div class = "inner-70pct">
-                                    <select name="repeating-interval" tabindex="9" required
+                                    <select name="repeating-interval" tabindex="10" required
                                             class = "std-text-input std-input-width">
                                         <option selected disabled hidden value=''></option>
                                         <option value = "{{ config.read('repeating.interval.none') }}">
@@ -161,7 +169,7 @@
                             <div class = "vertical-section text-centered multirow">
                                 <div class = "inner-70pct">
                                     <input type="number" name="repeating-frequency" id="repeating-frequency"
-                                           min="0" tabindex="10" required
+                                           min="0" tabindex="11" required
                                            class = "std-text-input std-input-width"/>
                                     <label id="repeating-frequency-label" alt="Frekvencija ponavljanja" placeholder="Frekvencija ponavljanja" data-info="Frekvencija ponavljanja"></label>
                                 </div>
@@ -169,10 +177,10 @@
 
 
 
-
                         </div>
 
-                        {% include "templates/partials/user_messages.twig" %}
+
+                        {% include "admin/templates/partials/admin_messages.twig" %}
 
                         {% include "templates/partials/live_status.container.twig" %}
 
@@ -180,12 +188,12 @@
 
                         <div class = "submitter-cont">
                             <div class = "inner-70pct">
-                                <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="10"
+                                <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="12"
                                      onclick="validateAndSubmitTrainingCourse('training-course')">
                                     <span>UNESI</span>
                                 </div>
                                 <div class="submitter bbb-flag-v-cibona-blue reversed cancel">
-                                    <a href = "{{ urlFor('admin.reservations.home') }}" tabindex="11">ODUSTANI</a>
+                                    <a href = "{{ urlFor('admin.reservations.home') }}" tabindex="13">ODUSTANI</a>
                                 </div>
                             </div>
                         </div>

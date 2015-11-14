@@ -30,7 +30,7 @@ class TrainingCourse {
 
     public $capacity = null;
     public $min_reservations = null;
-
+    public $reservation_time = 86400;
     public $training_type_id = null;
 
 
@@ -66,10 +66,8 @@ class TrainingCourse {
         if ( isset( $input_data['repeating_frequency'] ) )
             $this->repeating_frequency = $input_data['repeating_frequency'];
 
-        if ( isset( $input_data['deactivated'] ) )
-            $this->deactivated = (int)$input_data['deactivated'];
-        if ( isset( $input_data['banned'] ) )
-            $this->banned = (int)$input_data['banned'];
+        if ( isset( $input_data['admin_id'] ) )
+            $this->admin_id = (int)$input_data['admin_id'];
 
 
         if ( isset( $input_data['description'] ) )
@@ -81,6 +79,8 @@ class TrainingCourse {
             $this->capacity = (int)$input_data['capacity'];
         if ( isset( $input_data['min_reservations'] ) )
             $this->min_reservations = (int)$input_data['min_reservations'];
+        if ( isset( $input_data['reservation_time'] ) )
+            $this->reservation_time = (int)$input_data['reservation_time'];
     }
 
     public function populate_attributes_from_input($data)
@@ -92,19 +92,21 @@ class TrainingCourse {
 
 
     public static function createNew($title, $start_time, $end_time, $repeating_from, $training_type_id, $admin_id,
-        $capacity, $min_reservations, $repeating = false,
-        $repeating_interval = "none", $repeating_frequency = null, $repeating_until = null, $description = null) {
+        $capacity, $min_reservations, $repeating = false, $repeating_interval = "none",
+        $repeating_frequency = null, $repeating_until = null, $reservation_time = 86400, $description = null) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "INSERT INTO training_course (title, start_time, end_time, repeating_from, repeating_until, admin_id,
+        $sql = "INSERT INTO training_course (
+            title, start_time, end_time, repeating_from, repeating_until, admin_id, reservation_time,
             capacity, min_reservations, repeating_interval, repeating_frequency, updated_at, training_type_id, description)
-            VALUES (:title, :start_time, :end_time, :repeating_from, :repeating_until, :admin_id,
+            VALUES (:title, :start_time, :end_time, :repeating_from, :repeating_until, :admin_id, :reservation_time,
             :capacity, :min_reservations, :repeating_interval, :repeating_frequency, :updated_at, :training_type, :description)";
 
         $stmt = $dbh->prepare($sql);
 
+
         try {
             $dbh->beginTransaction();
-            $stmt->bindParam(':updated_at', date("Y-m-d H:i:s", time()), PDO::PARAM_STR);
+            $stmt->bindValue(':updated_at', date("Y-m-d H:i:s", time()), PDO::PARAM_STR);
             $stmt->bindParam(':title', $title, PDO::PARAM_STR);
             $stmt->bindParam(':start_time', $start_time, PDO::PARAM_STR);
             $stmt->bindParam(':end_time', $end_time, PDO::PARAM_STR);
@@ -114,14 +116,14 @@ class TrainingCourse {
             $stmt->bindParam(':repeating_frequency', $repeating_frequency, PDO::PARAM_STR);
             $stmt->bindParam(':admin_id', $admin_id, PDO::PARAM_INT);
             $stmt->bindParam(':training_type', $training_type_id, PDO::PARAM_INT);
+            $stmt->bindParam(':reservation_time', $reservation_time, PDO::PARAM_INT);
 
             $stmt->bindParam(':capacity', $capacity, PDO::PARAM_INT);
             $stmt->bindParam(':min_reservations', $min_reservations, PDO::PARAM_INT);
             $stmt->bindParam(':description', $description, PDO::PARAM_STR);
 
-            $stmt->execute();
 
-            echo "<br>id: " . $dbh->lastInsertId() . "<br>";
+            $stmt->execute();
 
             if ($stmt->rowCount() == 1) {
 
@@ -155,15 +157,12 @@ class TrainingCourse {
             $dbh->rollback();
         }
 
-
-
-
     }
 
 
     public static function validateNew($p_title, $p_start_time, $p_end_time, $p_date_from, $training_type_id,
                                        $p_capacity, $p_min_reservations, $p_repeating, $p_repeating_interval,
-                                       $p_repeating_frequency, $p_date_until) {
+                                       $p_repeating_frequency, $p_date_until, $p_reservation_time) {
         $validation_result = array();
         $validation_result["validated"] = false;
 
@@ -187,6 +186,9 @@ class TrainingCourse {
         } elseif (strtotime($p_date_from . " " . $p_start_time) >= strtotime($p_date_from . " " . $p_end_time)) {
             $validation_result["errors"] = "Kraj termina nije nakon njegovog početka: {$p_start_time} - {$p_end_time}";
             return $validation_result;
+        }elseif (!isset($p_reservation_time) || !is_numeric($p_reservation_time) || (int)$p_reservation_time <= 0) {
+            $validation_result["errors"] = "Odabrana je neispravna vrijednost vremena za rezervaciju. To mora biti pozitivan cijeli broj.";
+            return $validation_result;
         }
         if(isset($p_repeating) && $p_repeating === "on") {
             $repeating = true;
@@ -206,7 +208,7 @@ class TrainingCourse {
                 return $validation_result;
             } elseif (!in_array($p_repeating_interval, array(
                 Configuration::read("repeating.interval.day"), Configuration::read("repeating.interval.week"),
-                Configuration::read("repeating.interval.month")))) {
+                Configuration::read("repeating.interval.month.1")))) {
                 $validation_result["errors"] = "Uz odabrano ponavljanje termina odabrana je neispravna vrijednost".
                     " intervala ponavljanja: {$p_repeating_interval}.";
                 return $validation_result;
@@ -233,7 +235,7 @@ class TrainingCourse {
             }
         }
 
-        if(!isset($validation_result["errors"]))
+        if(!isset($validation_result["errors"]) || $validation_result["errors"] === "")
             $validation_result["validated"] = true;
         return $validation_result;
     }
@@ -247,7 +249,16 @@ class TrainingCourse {
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
         $stmt->execute();
         if ($stmt->rowCount() == 1) {
-            return true;
+            $sql = "DELETE FROM datetime_span WHERE training_course_id = :training_course_id";
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':training_course_id', $this->id, PDO::PARAM_INT);
+            $stmt->execute();
+            if ($stmt->rowCount() > 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
         else {
             return false;

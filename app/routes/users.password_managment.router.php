@@ -2,7 +2,7 @@
 
 use app\helpers\Sessions;
 use app\helpers\Configuration as Cfg;
-use app\model\User\RegisteredUser;
+use app\model\User\User;
 use app\helpers\Auth;
 use app\helpers\Mailer;
 use app\helpers\Hash;
@@ -23,7 +23,7 @@ $app->group('/clanovi', function () use ($app, $guest_user, $authenticated_user)
                 "Unos e-mail adrese obavezan je za prijavu.");
             $app->redirect($app->urlFor('user.login'));
         } else {
-            $user = RegisteredUser::getUserByEmail($p_email);
+            $user = User::getUserByEmail($p_email);
             if (!$user) {
                 $app->flash('errors', "Unesena e-mail adresa $p_email ne postoji u bazi registriranih članova.\n" .
                     "Ukoliko smatrate da je to pogreška, javite se na neki od navedenih kontakata.");
@@ -71,11 +71,11 @@ $app->group('/clanovi', function () use ($app, $guest_user, $authenticated_user)
             $app->redirect($app->urlFor('user.login'));
         }
         else {
-            if(!$pass_reset = RegisteredUser::getPassResetByUserHash($g_user)) {
+            if(!$pass_reset = User::getPassResetByUserHash($g_user)) {
                 $app->flash('errors', "Neispravan URL sa zahtjevom za reaktivacijom lozinke!");
                 $app->redirect($app->urlFor('user.login'));
             }
-            else if(!$user = RegisteredUser::getUserById($pass_reset->user_id)) {
+            else if(!$user = User::getUserById($pass_reset->user_id)) {
                 $app->flash('errors', "Nevažeći zahtjev za reaktivacijom lozinke!");
                 $app->redirect($app->urlFor('user.login'));
             }
@@ -111,10 +111,10 @@ $app->group('/clanovi', function () use ($app, $guest_user, $authenticated_user)
             $app->redirect($app->urlFor('user.login'));
         }
         else {
-            if(!$pass_reset = RegisteredUser::getPassResetByUserHash($g_user)) {
+            if(!$pass_reset = User::getPassResetByUserHash($g_user)) {
                 $app->flash('errors', "Neispravan URL sa zahtjevom za reaktivacijom lozinke!:user");
                 $app->redirect($app->urlFor('user.login'));
-            } else if(!$user = RegisteredUser::getUserById($pass_reset->user_id)) {
+            } else if(!$user = User::getUserById($pass_reset->user_id)) {
                 $app->flash('errors', "Nevažeći zahtjev za reaktivacijom lozinke!");
                 $app->redirect($app->urlFor('user.login'));
             } else if(!$user->activePassResetRequestExists()) {

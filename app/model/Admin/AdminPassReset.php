@@ -55,7 +55,7 @@ class AdminPassReset
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':reset_sent_on', date("Y-m-d H:i:s", $time_now), PDO::PARAM_STR);
         $stmt->bindParam(':admin_id', $admin->id, PDO::PARAM_INT);
-        $stmt->bindParam(':reset_hash', Hash::hash($reset_hash), PDO::PARAM_STR);
+        $stmt->bindValue(':reset_hash', Hash::hash($reset_hash), PDO::PARAM_STR);
         $stmt->bindParam(':security', $security, PDO::PARAM_STR);
 
         $stmt->execute();

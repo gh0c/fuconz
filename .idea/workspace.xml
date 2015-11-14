@@ -22,296 +22,13 @@
     <favorites_list name="fuconz" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.6010811">
+    <splitter split-orientation="vertical" split-proportion="0.5524324">
       <split-first>
         <leaf>
           <file leaf-file-name="start.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/start.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="91" column="0" selection-start="3272" selection-end="3272" vertical-scroll-proportion="-20.26923" vertical-offset="867" max-vertical-offset="2125">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="admin.reservations.router.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/routes/admin.reservations.router.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="68" column="20" selection-start="2895" selection-end="2895" vertical-scroll-proportion="-6.576923" vertical-offset="883" max-vertical-offset="2023">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="admin.users.all.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/admin/users/admin.users.all.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="48" column="39" selection-start="1662" selection-end="1662" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="2006">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TrainingCourseConstants.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/model/Reservation/TrainingCourseConstants.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="0" selection-start="7" selection-end="67" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="986">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="admin.reservations.training_course.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.training_course.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="202" column="8" selection-start="10522" selection-end="10551" vertical-scroll-proportion="-7.9615383" vertical-offset="3227" max-vertical-offset="4063">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="foot_info.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/admin/templates/partials/foot_info.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="0" selection-start="315" selection-end="315" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="391">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TrainingCourse.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/model/Reservation/TrainingCourse.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="216" column="13" selection-start="10094" selection-end="10094" vertical-scroll-proportion="0.0" vertical-offset="3672" max-vertical-offset="5083">
-                  <folding>
-                    <marker date="1445918448458" expanded="true" signature="3294:3744" placeholder="INSERT INTO ..." />
-                    <marker date="1445918448458" expanded="true" signature="5487:5631" placeholder="INSERT INTO ..." />
-                    <marker date="1445918448458" expanded="true" signature="5487:5691" placeholder="INSERT INTO ..." />
-                    <marker date="1445918448458" expanded="true" signature="11300:11350" placeholder="DELETE FROM ..." />
-                    <marker date="1445918448458" expanded="true" signature="11757:11815" placeholder="SELECT * FRO..training_course..." />
-                    <marker date="1445918448458" expanded="true" signature="12446:12498" placeholder="SELECT * FRO..training_course..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DatetimeSpan.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/model/Reservation/DatetimeSpan.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="92" column="13" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0" vertical-offset="1032" max-vertical-offset="1819">
-                  <folding>
-                    <marker date="1445915681829" expanded="true" signature="1717:1828" placeholder="SELECT * FRO..datetime_span..." />
-                    <marker date="1445915681829" expanded="true" signature="1730:1745" placeholder="INSERT INTO ..." />
-                    <marker date="1445915681829" expanded="true" signature="2411:2522" placeholder="SELECT * FRO..datetime_span..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="registration.router.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/routes/registration.router.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="23" column="4" selection-start="676" selection-end="1649" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="969">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user.sidebar.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/user.sidebar.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="42" column="49" selection-start="1800" selection-end="1800" vertical-scroll-proportion="-11.769231" vertical-offset="408" max-vertical-offset="1411">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="head_info.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/admin/templates/partials/head_info.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="0" selection-start="1281" selection-end="1350" vertical-scroll-proportion="-15.0" vertical-offset="171" max-vertical-offset="697">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="head_info.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/templates/partials/head_info.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="5.269231" vertical-offset="137" max-vertical-offset="629">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Calendar.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/helpers/Calendar.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="113" column="0" selection-start="4528" selection-end="4528" vertical-scroll-proportion="0.0" vertical-offset="1687" max-vertical-offset="2992">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="admin.authentication.router.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/routes/admin.authentication.router.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="51" column="16" selection-start="1592" selection-end="1640" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1241">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="admin.reservations.training_courses.all.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.training_courses.all.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="61" column="123" selection-start="2151" selection-end="2151" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1751">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="BeforeMiddleware.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/model/Middleware/BeforeMiddleware.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="63" column="67" selection-start="2536" selection-end="2536" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="1700">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RegisteredUser.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/model/User/RegisteredUser.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="424" column="42" selection-start="15115" selection-end="15115" vertical-scroll-proportion="-232.15384" vertical-offset="1087" max-vertical-offset="7803">
-                  <folding>
-                    <marker date="1445959857247" expanded="true" signature="2868:2915" placeholder="SELECT * FRO..user..." />
-                    <marker date="1445959857247" expanded="true" signature="3578:3642" placeholder="SELECT * FRO..user..." />
-                    <marker date="1445959857247" expanded="true" signature="4269:4310" placeholder="SELECT * FRO..user..." />
-                    <marker date="1445959857247" expanded="true" signature="4745:4806" placeholder="SELECT * FRO..user..." />
-                    <marker date="1445959857247" expanded="true" signature="5259:5326" placeholder="SELECT * FRO..user..." />
-                    <marker date="1445959857247" expanded="true" signature="5760:5799" placeholder="DELETE FROM ..." />
-                    <marker date="1445959857247" expanded="true" signature="6194:6285" placeholder="UPDATE user ..." />
-                    <marker date="1445959857247" expanded="true" signature="6673:6764" placeholder="UPDATE user ..." />
-                    <marker date="1445959857247" expanded="true" signature="7170:7235" placeholder="SELECT * FRO..user..." />
-                    <marker date="1445959857247" expanded="true" signature="7633:7674" placeholder="SELECT * FRO..user..." />
-                    <marker date="1445959857247" expanded="true" signature="10542:10604" placeholder="UPDATE user ..." />
-                    <marker date="1445959857247" expanded="true" signature="10931:10982" placeholder="UPDATE user ..." />
-                    <marker date="1445959857247" expanded="true" signature="11372:11569" placeholder="INSERT INTO ..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="admin.users.router.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/routes/admin.users.router.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="62" column="4" selection-start="2072" selection-end="2810" vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="1445">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Admin.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/model/Admin/Admin.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="129" column="0" selection-start="4059" selection-end="4059" vertical-scroll-proportion="0.0" vertical-offset="2193" max-vertical-offset="4301">
-                  <folding>
-                    <marker date="1445229472387" expanded="true" signature="1402:1479" placeholder="SELECT * FRO..admin_has_role..." />
-                    <marker date="1445229472387" expanded="true" signature="1932:1982" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1445229472387" expanded="true" signature="2667:2723" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1445229472387" expanded="true" signature="3167:3229" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1445229472387" expanded="true" signature="3692:3792" placeholder="UPDATE admin..." />
-                    <marker date="1445229472387" expanded="true" signature="4180:4280" placeholder="UPDATE admin..." />
-                    <marker date="1445229472387" expanded="true" signature="4686:4760" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1445229472387" expanded="true" signature="5149:5199" placeholder="SELECT * FRO..administrator..." />
-                    <marker date="1445229472387" expanded="true" signature="5772:5832" placeholder="UPDATE admin..." />
-                    <marker date="1445229472387" expanded="true" signature="6222:6388" placeholder="INSERT INTO ..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user.header.twig" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/user/user.header.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="58" selection-start="551" selection-end="551" vertical-scroll-proportion="0.4185606" vertical-offset="0" max-vertical-offset="1071">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user.book_training_course.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/bookings/user.book_training_course.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="3" column="23" selection-start="81" selection-end="81" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="2652">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user.password_change.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.password_change.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="113" column="14" selection-start="4831" selection-end="4831" vertical-scroll-proportion="-16.384615" vertical-offset="1495" max-vertical-offset="2023">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user.action.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.action.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="38" selection-start="386" selection-end="386" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="731">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user.home.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/user.home.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="1.9615384" vertical-offset="51" max-vertical-offset="799">
-                  <folding>
-                    <marker date="1444954025651" expanded="true" signature="154:1159" placeholder="..." />
-                    <marker date="1444954025651" expanded="true" signature="246:462" placeholder="..." />
-                    <marker date="1444954025651" expanded="true" signature="346:447" placeholder="..." />
-                    <marker date="1444954025651" expanded="true" signature="555:1148" placeholder="..." />
-                    <marker date="1444954025651" expanded="true" signature="594:1133" placeholder="..." />
-                    <marker date="1444954025651" expanded="true" signature="711:1114" placeholder="..." />
-                    <marker date="1444954025651" expanded="true" signature="735:959" placeholder="..." />
-                    <marker date="1444954025651" expanded="true" signature="983:1091" placeholder="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="admin.users.all.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/admin/users/admin.users.all.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="54" column="75" selection-start="2285" selection-end="2285" vertical-scroll-proportion="-9.807693" vertical-offset="663" max-vertical-offset="2006">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="users.password_managment.router.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/routes/users.password_managment.router.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="163" column="0" selection-start="8145" selection-end="8145" vertical-scroll-proportion="-8.307693" vertical-offset="2470" max-vertical-offset="2805">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user.router.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/routes/user.router.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="26" column="41" selection-start="769" selection-end="769" vertical-scroll-proportion="-9.615385" vertical-offset="124" max-vertical-offset="748">
+                <state line="54" column="20" selection-start="1363" selection-end="1363" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2329">
                   <folding />
                 </state>
               </provider>
@@ -320,90 +37,139 @@
           <file leaf-file-name="user.profile.router.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="11" column="16" selection-start="417" selection-end="548" vertical-scroll-proportion="-2.6666667" vertical-offset="51" max-vertical-offset="4284">
+                <state line="284" column="30" selection-start="13617" selection-end="13617" vertical-scroll-proportion="0.0" vertical-offset="4828" max-vertical-offset="6001">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="registration.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/authentication/registration.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="98" column="38" selection-start="889" selection-end="6013" vertical-scroll-proportion="0.0" vertical-offset="1666" max-vertical-offset="2652">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admin.users.all.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/admin/users/admin.users.all.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="50" column="117" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="2006">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.avatar_change.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.avatar_change.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="145" column="34" selection-start="6621" selection-end="6639" vertical-scroll-proportion="0.0" vertical-offset="2465" max-vertical-offset="2805">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="avatar_change.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/js/avatar_change.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="132" column="29" selection-start="4718" selection-end="4718" vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="2890">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admin_messages.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/admin/templates/partials/admin_messages.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="18" column="0" selection-start="698" selection-end="698" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1190">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admin.users.home.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/admin/users/admin.users.home.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="26" column="0" selection-start="642" selection-end="642" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="731">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admin.reservations.training_course.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.training_course.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="182" column="66" selection-start="10196" selection-end="10196" vertical-scroll-proportion="0.0" vertical-offset="2840" max-vertical-offset="4199">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="registration.router.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/routes/registration.router.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="34" column="24" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="969">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="users.authentication.router.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/routes/users.authentication.router.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="30" column="25" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1037">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admin.reservations.training_courses.all.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.training_courses.all.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="61" column="123" selection-start="2151" selection-end="2151" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1751">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/User/User.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="398" column="19" selection-start="12298" selection-end="12298" vertical-scroll-proportion="0.0" vertical-offset="6766" max-vertical-offset="9877">
                   <folding>
-                    <element signature="e#6#41#0" expanded="true" />
+                    <marker date="1447302476090" expanded="true" signature="2888:2935" placeholder="SELECT * FRO..user..." />
+                    <marker date="1447302476090" expanded="true" signature="3588:3652" placeholder="SELECT * FRO..user..." />
+                    <marker date="1447302476090" expanded="true" signature="4269:4310" placeholder="SELECT * FRO..user..." />
+                    <marker date="1447302476090" expanded="true" signature="4735:4796" placeholder="SELECT * FRO..user..." />
+                    <marker date="1447302476090" expanded="true" signature="5239:5306" placeholder="SELECT * FRO..user..." />
+                    <marker date="1447302476090" expanded="true" signature="5730:5769" placeholder="DELETE FROM ..." />
+                    <marker date="1447302476090" expanded="true" signature="6164:6255" placeholder="UPDATE user ..." />
+                    <marker date="1447302476090" expanded="true" signature="6643:6734" placeholder="UPDATE user ..." />
+                    <marker date="1447302476090" expanded="true" signature="7140:7205" placeholder="SELECT * FRO..user..." />
+                    <marker date="1447302476090" expanded="true" signature="7593:7634" placeholder="SELECT * FRO..user..." />
+                    <marker date="1447302476090" expanded="true" signature="10800:10859" placeholder="UPDATE user ..." />
+                    <marker date="1447302476090" expanded="true" signature="11366:11563" placeholder="INSERT INTO ..." />
+                    <marker date="1447302476090" expanded="true" signature="12569:12686" placeholder="UPDATE user ..." />
+                    <marker date="1447302476090" expanded="true" signature="12569:12684" placeholder="UPDATE user ..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="user.header.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/user.header.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="16" column="67" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="1326">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="user.home.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.home.twig">
+            <entry file="file://$PROJECT_DIR$/app/views/user/user.home.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="63" selection-start="1049" selection-end="1049" vertical-scroll-proportion="-8.5" vertical-offset="357" max-vertical-offset="799">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="menu_dropdown.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/js/menu_dropdown.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="22" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tables.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/scss/admin/tables.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="68" column="29" selection-start="1300" selection-end="1300" vertical-scroll-proportion="-6.769231" vertical-offset="980" max-vertical-offset="4420">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="forms.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/scss/forms.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="173" column="19" selection-start="4650" selection-end="4657" vertical-scroll-proportion="-11.346154" vertical-offset="2646" max-vertical-offset="8704">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="content.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/scss/content.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="49" column="31" selection-start="1020" selection-end="1020" vertical-scroll-proportion="-19.961538" vertical-offset="314" max-vertical-offset="1105">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sideslide_menu.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/scss/sideslide_menu.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="257" column="32" selection-start="4497" selection-end="4497" vertical-scroll-proportion="-4.019608" vertical-offset="4164" max-vertical-offset="9367">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="header.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/scss/admin/header.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="193" column="14" selection-start="3902" selection-end="3902" vertical-scroll-proportion="-8.5" vertical-offset="3060" max-vertical-offset="4726">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_mixins.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/scss/modules/_mixins.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="48" column="0" selection-start="1097" selection-end="1097" vertical-scroll-proportion="-19.615385" vertical-offset="306" max-vertical-offset="1734">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="validation_content.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/js/admin/validation_content.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="87" column="24" selection-start="3361" selection-end="3361" vertical-scroll-proportion="0.0" vertical-offset="1169" max-vertical-offset="1632">
+                <state line="30" column="55" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0" vertical-offset="354" max-vertical-offset="799">
                   <folding />
                 </state>
               </provider>
@@ -412,26 +178,341 @@
           <file leaf-file-name="header.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/scss/header.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="148" column="13" selection-start="3341" selection-end="3341" vertical-scroll-proportion="-8.307693" vertical-offset="2300" max-vertical-offset="6069">
+                <state line="115" column="0" selection-start="2558" selection-end="2558" vertical-scroll-proportion="0.0" vertical-offset="1573" max-vertical-offset="6426">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="web_config_dev.php" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/web_config_dev.php">
+          <file leaf-file-name="TrainingCourse.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Reservation/TrainingCourse.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="36" selection-start="133" selection-end="133" vertical-scroll-proportion="0.25373134" vertical-offset="0" max-vertical-offset="374">
+                <state line="102" column="0" selection-start="3882" selection-end="3882" vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="5270">
+                  <folding>
+                    <marker date="1447279044510" expanded="true" signature="3379:3879" placeholder="INSERT INTO ..." />
+                    <marker date="1447279044510" expanded="true" signature="5648:5852" placeholder="INSERT INTO ..." />
+                    <marker date="1447279044510" expanded="true" signature="11816:11866" placeholder="DELETE FROM ..." />
+                    <marker date="1447279044510" expanded="true" signature="12050:12122" placeholder="DELETE FROM ..." />
+                    <marker date="1447279044510" expanded="true" signature="12641:12699" placeholder="SELECT * FRO..training_course..." />
+                    <marker date="1447279044510" expanded="true" signature="13330:13382" placeholder="SELECT * FRO..training_course..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Calendar.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/helpers/Calendar.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="112" column="35" selection-start="4572" selection-end="4572" vertical-scroll-proportion="0.0" vertical-offset="1718" max-vertical-offset="5661">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="web_config_prod.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/web_config_prod.php">
+          <file leaf-file-name="UserLog.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Messages/UserLog.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="66" selection-start="450" selection-end="450" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="374">
+                <state line="41" column="0" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="2431">
+                  <folding>
+                    <marker date="1446771527387" expanded="true" signature="1150:1234" placeholder="SELECT * FRO..user_log..." />
+                    <marker date="1446771527387" expanded="true" signature="2016:2139" placeholder="SELECT * FRO..user_log..." />
+                    <marker date="1446771527387" expanded="true" signature="2908:2980" placeholder="SELECT COUNT..user_log..." />
+                    <marker date="1446771527387" expanded="true" signature="3475:3610" placeholder="INSERT INTO ..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Reservation.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Reservation/Reservation.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="239" column="29" selection-start="11800" selection-end="11800" vertical-scroll-proportion="0.0" vertical-offset="4063" max-vertical-offset="5899">
+                  <folding>
+                    <marker date="1447290462616" expanded="true" signature="1418:1621" placeholder="INSERT INTO ..." />
+                    <marker date="1447290462616" expanded="true" signature="10916:11125" placeholder="INSERT INTO ..." />
+                    <marker date="1447290462616" expanded="true" signature="11991:12164" placeholder="SELECT COUNT..reservation..." />
+                    <marker date="1447290462616" expanded="true" signature="12903:13043" placeholder="SELECT COUNT..reservation..." />
+                    <marker date="1447290462616" expanded="true" signature="13615:13716" placeholder="SELECT * FRO..reservation..." />
+                    <marker date="1447290462616" expanded="true" signature="14256:14325" placeholder="UPDATE reser..." />
+                    <marker date="1447290462616" expanded="true" signature="14256:14322" placeholder="UPDATE reser..." />
+                    <marker date="1447290462616" expanded="true" signature="14256:14314" placeholder="UPDATE reser..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Prereservation.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Reservation/Prereservation.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="40" column="59" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0" vertical-offset="680" max-vertical-offset="5967">
+                  <folding>
+                    <marker date="1447306660816" expanded="true" signature="1567:1774" placeholder="INSERT INTO ..." />
+                    <marker date="1447306660816" expanded="true" signature="11079:11292" placeholder="INSERT INTO ..." />
+                    <marker date="1447306660816" expanded="true" signature="12161:12338" placeholder="SELECT COUNT..pre_reservation..." />
+                    <marker date="1447306660816" expanded="true" signature="13078:13222" placeholder="SELECT COUNT..pre_reservation..." />
+                    <marker date="1447306660816" expanded="true" signature="13794:13899" placeholder="SELECT * FRO..pre_reservation..." />
+                    <marker date="1447306660816" expanded="true" signature="14432:14504" placeholder="UPDATE pre_r..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="calendar.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/scss/calendar.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="537" column="35" selection-start="15086" selection-end="15086" vertical-scroll-proportion="-6.8431373" vertical-offset="8780" max-vertical-offset="12240">
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="legend.twig" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/user/bookings/calendar/legend.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="54" column="110" selection-start="3202" selection-end="3202" vertical-scroll-proportion="0.3161157" vertical-offset="765" max-vertical-offset="3315">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_colors.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/scss/modules/_colors.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="25" column="40" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="918">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="user.bookings.router.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/routes/user.bookings.router.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="16" column="0" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="7004">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Message.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Messages/Message.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="233" column="25" selection-start="7857" selection-end="7857" vertical-scroll-proportion="0.0" vertical-offset="3717" max-vertical-offset="4556">
+                  <folding>
+                    <marker date="1446770607878" expanded="true" signature="1271:1315" placeholder="SELECT * FRO..message..." />
+                    <marker date="1446770607878" expanded="true" signature="1788:1838" placeholder="SELECT * FRO..message..." />
+                    <marker date="1446770607878" expanded="true" signature="2537:2655" placeholder="SELECT * FRO..message..." />
+                    <marker date="1446770607878" expanded="true" signature="3508:3648" placeholder="SELECT * FRO..message..." />
+                    <marker date="1446770607878" expanded="true" signature="4472:4589" placeholder="UPDATE messa..." />
+                    <marker date="1446770607878" expanded="true" signature="4478:4589" placeholder="SELECT * FRO..message..." />
+                    <marker date="1446770607878" expanded="true" signature="5020:5084" placeholder="UPDATE messa..." />
+                    <marker date="1446770607878" expanded="true" signature="5450:5580" placeholder="SELECT COUNT..message..." />
+                    <marker date="1446770607878" expanded="true" signature="6148:6254" placeholder="SELECT COUNT..message..." />
+                    <marker date="1446770607878" expanded="true" signature="6789:6842" placeholder="SELECT COUNT..message..." />
+                    <marker date="1446770607878" expanded="true" signature="7331:7483" placeholder="INSERT INTO ..." />
+                    <marker date="1446770607878" expanded="true" signature="8080:8122" placeholder="DELETE FROM ..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Logger.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Messages/Logger.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="3" column="20" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="5083">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="BeforeMiddleware.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Middleware/BeforeMiddleware.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="25" column="36" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="1700">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CsrfMiddleware.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Middleware/CsrfMiddleware.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="8" column="19" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0" vertical-offset="46" max-vertical-offset="867">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sideslide_menu.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/scss/sideslide_menu.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="417" column="35" selection-start="7892" selection-end="7892" vertical-scroll-proportion="0.0" vertical-offset="6885" max-vertical-offset="9452">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ActionLog.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Messages/ActionLog.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="290" column="0" selection-start="10611" selection-end="10611" vertical-scroll-proportion="0.0" vertical-offset="4930" max-vertical-offset="5763">
+                  <folding>
+                    <marker date="1446776766108" expanded="true" signature="1579:1626" placeholder="SELECT * FRO..action_log..." />
+                    <marker date="1446776766108" expanded="true" signature="2144:2378" placeholder="SELECT actio..action_log..." />
+                    <marker date="1446776766108" expanded="true" signature="3257:3508" placeholder="SELECT actio..action_log..." />
+                    <marker date="1446776766108" expanded="true" signature="4375:4586" placeholder="SELECT COUNT..action_log..." />
+                    <marker date="1446776766108" expanded="true" signature="5234:5609" placeholder="SELECT actio..action_log..." />
+                    <marker date="1446776766108" expanded="true" signature="6536:6834" placeholder="SELECT * FRO..action_log..." />
+                    <marker date="1446776766108" expanded="true" signature="7567:7598" placeholder="SELECT COUNT..message..." />
+                    <marker date="1446776766108" expanded="true" signature="7567:7801" placeholder="SELECT COUNT..action_log..." />
+                    <marker date="1446776766108" expanded="true" signature="7567:7763" placeholder="SELECT COUNT..action_log..." />
+                    <marker date="1446776766108" expanded="true" signature="8235:8291" placeholder="SELECT COUNT..action_log..." />
+                    <marker date="1446776766108" expanded="true" signature="8803:8913" placeholder="INSERT INTO ..." />
+                    <marker date="1446776766108" expanded="true" signature="9446:9588" placeholder="INSERT INTO ..." />
+                    <marker date="1446776766108" expanded="true" signature="10034:10151" placeholder="INSERT INTO ..." />
+                    <marker date="1446776766108" expanded="true" signature="10727:10772" placeholder="DELETE FROM ..." />
+                    <marker date="1446776766108" expanded="true" signature="10956:11013" placeholder="DELETE FROM ..." />
+                    <marker date="1446776766108" expanded="true" signature="11217:11279" placeholder="DELETE FROM ..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Booking.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Reservation/Booking.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="19" column="0" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="442">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.pre_book_training_course.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/bookings/user.pre_book_training_course.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="46" column="73" selection-start="2147" selection-end="2170" vertical-scroll-proportion="0.0" vertical-offset="793" max-vertical-offset="4794">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tables.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/scss/admin/tables.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="105" column="54" selection-start="2088" selection-end="2088" vertical-scroll-proportion="0.0" vertical-offset="1471" max-vertical-offset="4471">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="forms.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/scss/forms.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="613" column="22" selection-start="14495" selection-end="14497" vertical-scroll-proportion="0.0" vertical-offset="10303" max-vertical-offset="11951">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Image.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Content/Image.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="192" column="60" selection-start="7249" selection-end="7249" vertical-scroll-proportion="0.0" vertical-offset="3264" max-vertical-offset="3927">
+                  <folding>
+                    <marker date="1446903464290" expanded="true" signature="2444:2489" placeholder="SELECT * FRO..cl_image..." />
+                    <marker date="1446903464290" expanded="true" signature="2911:2960" placeholder="SELECT * FRO..cl_image..." />
+                    <marker date="1446903464290" expanded="true" signature="3574:3898" placeholder="INSERT INTO ..." />
+                    <marker date="1446903464290" expanded="true" signature="5336:5465" placeholder="INSERT INTO ..." />
+                    <marker date="1446903464290" expanded="true" signature="6092:6189" placeholder="SELECT * FRO..image_entity..." />
+                    <marker date="1446903464290" expanded="true" signature="6924:7041" placeholder="DELETE FROM ..." />
+                    <marker date="1446903464290" expanded="true" signature="7717:7804" placeholder="DELETE FROM ..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="content.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/scss/content.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="191" column="25" selection-start="4459" selection-end="4459" vertical-scroll-proportion="-4.8026314" vertical-offset="2882" max-vertical-offset="6919">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/config.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="84" column="0" selection-start="2883" selection-end="2883" vertical-scroll-proportion="-10.730769" vertical-offset="1149" max-vertical-offset="1530">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="web_config_dev.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web_config_dev.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="7" column="37" selection-start="214" selection-end="218" vertical-scroll-proportion="-2.8846154" vertical-offset="44" max-vertical-offset="544">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="web_config_prod.php" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/web_config_prod.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="8" column="40" selection-start="268" selection-end="268" vertical-scroll-proportion="0.35695538" vertical-offset="0" max-vertical-offset="544">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="offset_header_navigation.ultra.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/bookings/calendar/offset_header_navigation.ultra.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="4" column="125" selection-start="151" selection-end="188" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="561">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="month_grid.ultra.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/bookings/calendar/month_grid.ultra.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="53" column="36" selection-start="2562" selection-end="2562" vertical-scroll-proportion="0.0" vertical-offset="639" max-vertical-offset="1445">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="day_selection.cool.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/bookings/calendar/day_selection.cool.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="131" column="52" selection-start="8563" selection-end="8625" vertical-scroll-proportion="-6.5384617" vertical-offset="2057" max-vertical-offset="4692">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.book_training_course.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/bookings/user.book_training_course.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="26" column="0" selection-start="632" selection-end="632" vertical-scroll-proportion="5.6538463" vertical-offset="589" max-vertical-offset="2482">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="validation.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/js/validation.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="429" column="0" selection-start="13193" selection-end="14103" vertical-scroll-proportion="0.0" vertical-offset="6970" max-vertical-offset="10200">
+                  <folding>
+                    <marker date="1447293329150" expanded="true" signature="12300:12591" placeholder="{...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -448,57 +529,57 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/css/jquery-ui.css" />
-        <option value="$PROJECT_DIR$/app/start.php" />
-        <option value="$PROJECT_DIR$/public/scss/modules/_colors.scss" />
-        <option value="$PROJECT_DIR$/public/js/datepicker-hr.js" />
-        <option value="$PROJECT_DIR$/public/scss/modules/_gradients.scss" />
-        <option value="$PROJECT_DIR$/public/js/timepicker-hr.js" />
-        <option value="$PROJECT_DIR$/public/scss/jquery-ui.custom_theme.scss" />
-        <option value="$PROJECT_DIR$/public/scss/jquery-ui.datepicker.struct.scss" />
-        <option value="$PROJECT_DIR$/public/js/jquery.ui.timepicker.js" />
-        <option value="$PROJECT_DIR$/app/model/Middleware/BeforeMiddleware.php" />
-        <option value="$PROJECT_DIR$/app/config.php" />
-        <option value="$PROJECT_DIR$/public/scss/general_classes.scss" />
-        <option value="$PROJECT_DIR$/public/scss/modules/_mixins.scss" />
-        <option value="$PROJECT_DIR$/public/scss/content.scss" />
+        <option value="$PROJECT_DIR$/app/views/user/profile/user.profile_data_change.twig" />
+        <option value="$PROJECT_DIR$/public/scss/header.scss" />
+        <option value="$PROJECT_DIR$/public/js/cloudinary/canvas-to-blob.min.js" />
+        <option value="$PROJECT_DIR$/public/js/cloudinary/jquery.fileupload-image.js" />
+        <option value="$PROJECT_DIR$/public/js/cloudinary/jquery.fileupload-process.js" />
+        <option value="$PROJECT_DIR$/public/js/cloudinary/load-image.min.js" />
+        <option value="$PROJECT_DIR$/public/js/cloudinary/jquery.iframe-transport (1).js" />
+        <option value="$PROJECT_DIR$/public/js/cloudinary/jquery.fileupload-validate.js" />
+        <option value="$PROJECT_DIR$/app/views/user/profile/user.avatar_change.twig" />
+        <option value="$PROJECT_DIR$/public/js/avatar_change.js" />
+        <option value="$PROJECT_DIR$/app/views/admin/users/admin.users.all.active.twig" />
+        <option value="$PROJECT_DIR$/app/views/user/user.header.twig" />
+        <option value="$PROJECT_DIR$/app/views/user/user.home.twig" />
+        <option value="$PROJECT_DIR$/app/views/user/profile/user.home.twig" />
         <option value="$PROJECT_DIR$/app/views/admin/users/admin.users.all.twig" />
         <option value="$PROJECT_DIR$/public/scss/admin/tables.scss" />
-        <option value="$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.training_courses.all.twig" />
-        <option value="$PROJECT_DIR$/app/routes/registration.router.php" />
-        <option value="$PROJECT_DIR$/public/scss/forms.scss" />
-        <option value="$PROJECT_DIR$/app/helpers/Calendar.php" />
-        <option value="$PROJECT_DIR$/app/model/Reservation/DatetimeSpan.php" />
-        <option value="$PROJECT_DIR$/app/model/Reservation/TrainingCourse.php" />
-        <option value="$PROJECT_DIR$/public/js/admin/validation_content.js" />
-        <option value="$PROJECT_DIR$/app/views/templates/std_header.twig" />
-        <option value="$PROJECT_DIR$/app/views/admin/templates/default.twig" />
-        <option value="$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.training_course.twig" />
-        <option value="$PROJECT_DIR$/app/views/admin/templates/partials/foot_info.twig" />
-        <option value="$PROJECT_DIR$/app/views/admin/templates/partials/head_info.twig" />
-        <option value="$PROJECT_DIR$/app/views/templates/partials/foot_info.twig" />
-        <option value="$PROJECT_DIR$/app/views/authentication/registration.twig" />
-        <option value="$PROJECT_DIR$/app/views/authentication/user_login.twig" />
-        <option value="$PROJECT_DIR$/app/views/user/user.password_change.twig" />
-        <option value="$PROJECT_DIR$/app/views/admin/authentication/admin_login.twig" />
-        <option value="$PROJECT_DIR$/app/views/admin/authentication/admin_registration.twig" />
-        <option value="$PROJECT_DIR$/app/model/User/RegisteredUser.php" />
-        <option value="$PROJECT_DIR$/app/routes/admin.reservations.router.php" />
-        <option value="$PROJECT_DIR$/app/routes/users.password_managment.router.php" />
-        <option value="$PROJECT_DIR$/app/views/user/user.sidebar.twig" />
-        <option value="$PROJECT_DIR$/app/views/index.twig" />
-        <option value="$PROJECT_DIR$/app/views/user/profile/user.password_change.twig" />
-        <option value="$PROJECT_DIR$/app/views/user/profile/user.home.twig" />
-        <option value="$PROJECT_DIR$/app/routes/user.profile.router.php" />
-        <option value="$PROJECT_DIR$/app/views/user/profile/user.action.twig" />
-        <option value="$PROJECT_DIR$/app/routes/users.router.php" />
-        <option value="$PROJECT_DIR$/app/routes/user.router.php" />
-        <option value="$PROJECT_DIR$/app/views/user/bookings/user.book_training_course.twig" />
         <option value="$PROJECT_DIR$/public/scss/sideslide_menu.scss" />
-        <option value="$PROJECT_DIR$/app/views/user/user.header.twig" />
-        <option value="$PROJECT_DIR$/public/scss/header.scss" />
-        <option value="$PROJECT_DIR$/app/web_config_prod.php" />
-        <option value="$PROJECT_DIR$/app/web_config_dev.php" />
+        <option value="$PROJECT_DIR$/app/views/user/user.sidebar.twig" />
+        <option value="$PROJECT_DIR$/app/model/Reservation/TrainingCourse.php" />
+        <option value="$PROJECT_DIR$/app/helpers/Calendar.php" />
+        <option value="$PROJECT_DIR$/app/views/user/bookings/user.pre_book_training_course.twig" />
+        <option value="$PROJECT_DIR$/app/model/Reservation/Booking.php" />
+        <option value="$PROJECT_DIR$/app/model/Reservation/Reservation.php" />
+        <option value="$PROJECT_DIR$/public/js/validation.js" />
+        <option value="$PROJECT_DIR$/public/scss/forms.scss" />
+        <option value="$PROJECT_DIR$/app/start.php" />
+        <option value="$PROJECT_DIR$/app/helpers/Auth.php" />
+        <option value="$PROJECT_DIR$/app/model/Messages/Logger.php" />
+        <option value="$PROJECT_DIR$/app/model/Middleware/BeforeMiddleware.php" />
+        <option value="$PROJECT_DIR$/app/model/Middleware/CsrfMiddleware.php" />
+        <option value="$PROJECT_DIR$/app/model/User/RegisteredUser.php" />
+        <option value="$PROJECT_DIR$/app/routes/admin.authentication.router.php" />
+        <option value="$PROJECT_DIR$/app/routes/admin.reservations.router.php" />
+        <option value="$PROJECT_DIR$/app/routes/admin.router.php" />
+        <option value="$PROJECT_DIR$/app/routes/admin.users.router.php" />
+        <option value="$PROJECT_DIR$/app/routes/registration.router.php" />
+        <option value="$PROJECT_DIR$/app/routes/user.bookings.router.php" />
+        <option value="$PROJECT_DIR$/app/routes/user.profile.router.php" />
+        <option value="$PROJECT_DIR$/app/routes/user.router.php" />
+        <option value="$PROJECT_DIR$/app/routes/users.authentication.router.php" />
+        <option value="$PROJECT_DIR$/app/routes/users.password_managment.router.php" />
+        <option value="$PROJECT_DIR$/app/routes/home.router.php" />
+        <option value="$PROJECT_DIR$/app/model/Reservation/Prereservation.php" />
+        <option value="$PROJECT_DIR$/public/scss/modules/_colors.scss" />
+        <option value="$PROJECT_DIR$/public/scss/calendar.scss" />
+        <option value="$PROJECT_DIR$/app/views/user/bookings/calendar/day_selection.cool.twig" />
+        <option value="$PROJECT_DIR$/app/views/user/bookings/calendar/legend.twig" />
+        <option value="$PROJECT_DIR$/public/scss/content.scss" />
+        <option value="$PROJECT_DIR$/app/config.php" />
+        <option value="$PROJECT_DIR$/web_config_dev.php" />
+        <option value="$PROJECT_DIR$/web_config_prod.php" />
       </list>
     </option>
   </component>
@@ -653,6 +734,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SideslideSidebar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloudinary" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -856,7 +959,63 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="calendar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -901,6 +1060,114 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reservations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1005,6 +1272,32 @@
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1086,6 +1379,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extras" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -1098,21 +1409,22 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views\user\bookings" />
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\routes" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views\user\profile" />
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\js\cloudinary" />
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\graphics" />
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\js" />
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views\user\profile" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\js" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\scss" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views\admin\templates\partials" />
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views\admin\templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -1147,10 +1459,9 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756758" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19755058" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21884984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1159,6 +1470,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32470334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1169,7 +1481,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756758" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264865" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1178,7 +1490,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19755058" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21033014" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1201,397 +1513,397 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/routes/admin.authentication.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="16" selection-start="1592" selection-end="1640" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1241">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/Auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="31" selection-end="61" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="3298">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/Calendar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="0" selection-start="4528" selection-end="4528" vertical-scroll-proportion="0.0" vertical-offset="1687" max-vertical-offset="2992">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Reservation/DatetimeSpan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="13" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0" vertical-offset="1032" max-vertical-offset="1819">
-          <folding>
-            <marker date="1445915681829" expanded="true" signature="1717:1828" placeholder="SELECT * FRO..datetime_span..." />
-            <marker date="1445915681829" expanded="true" signature="1730:1745" placeholder="INSERT INTO ..." />
-            <marker date="1445915681829" expanded="true" signature="2411:2522" placeholder="SELECT * FRO..datetime_span..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Reservation/TrainingCourse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="216" column="13" selection-start="10094" selection-end="10094" vertical-scroll-proportion="0.0" vertical-offset="3672" max-vertical-offset="5083">
-          <folding>
-            <marker date="1445918448458" expanded="true" signature="3294:3744" placeholder="INSERT INTO ..." />
-            <marker date="1445918448458" expanded="true" signature="5487:5631" placeholder="INSERT INTO ..." />
-            <marker date="1445918448458" expanded="true" signature="5487:5691" placeholder="INSERT INTO ..." />
-            <marker date="1445918448458" expanded="true" signature="11300:11350" placeholder="DELETE FROM ..." />
-            <marker date="1445918448458" expanded="true" signature="11757:11815" placeholder="SELECT * FRO..training_course..." />
-            <marker date="1445918448458" expanded="true" signature="12446:12498" placeholder="SELECT * FRO..training_course..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/filters/user.filters.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/jquery-ui.theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="301" column="52" selection-start="12791" selection-end="12791" vertical-scroll-proportion="0.0" vertical-offset="5763" max-vertical-offset="7072">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin/validation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1283" selection-end="3059" vertical-scroll-proportion="0.0" vertical-offset="2312" max-vertical-offset="6477">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.0783582" vertical-offset="867" max-vertical-offset="123148">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/jquery-ui.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/templates/default.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="663" selection-end="663" vertical-scroll-proportion="0.73275864" vertical-offset="0" max-vertical-offset="812">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scss/admin/tables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="29" selection-start="1300" selection-end="1300" vertical-scroll-proportion="-6.769231" vertical-offset="980" max-vertical-offset="4420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scss/forms.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="19" selection-start="4650" selection-end="4657" vertical-scroll-proportion="-11.346154" vertical-offset="2646" max-vertical-offset="8704">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scss/content.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="31" selection-start="1020" selection-end="1020" vertical-scroll-proportion="-19.961538" vertical-offset="314" max-vertical-offset="1105">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scss/modules/_mixins.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1097" selection-end="1097" vertical-scroll-proportion="-19.615385" vertical-offset="306" max-vertical-offset="1734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin/validation_content.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="24" selection-start="3361" selection-end="3361" vertical-scroll-proportion="0.0" vertical-offset="1169" max-vertical-offset="1632">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/menu_dropdown.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="22" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/templates/partials/head_info.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1281" selection-end="1350" vertical-scroll-proportion="-15.0" vertical-offset="171" max-vertical-offset="697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/templates/partials/head_info.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="5.269231" vertical-offset="137" max-vertical-offset="629">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/templates/partials/foot_info.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="315" selection-end="315" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="391">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.training_course.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="202" column="8" selection-start="10522" selection-end="10551" vertical-scroll-proportion="-7.9615383" vertical-offset="3227" max-vertical-offset="4063">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/authentication/admin_registration.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="11" selection-start="7759" selection-end="7759" vertical-scroll-proportion="5.217119" vertical-offset="0" max-vertical-offset="2652">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/templates/default.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="392" selection-end="392" vertical-scroll-proportion="0.032520324" vertical-offset="341" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/authentication/admin_login.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="11" selection-start="4637" selection-end="4637" vertical-scroll-proportion="-15.884615" vertical-offset="1440" max-vertical-offset="2006">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/authentication/user_login.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="11" selection-start="4614" selection-end="4614" vertical-scroll-proportion="0.9308943" vertical-offset="1480" max-vertical-offset="2091">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/templates/partials/foot_info.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="200" selection-end="200" vertical-scroll-proportion="0.103658535" vertical-offset="0" max-vertical-offset="492">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/authentication/registration.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="29" selection-start="7552" selection-end="7552" vertical-scroll-proportion="-90.23077" vertical-offset="0" max-vertical-offset="2652">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/users.authentication.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/admin.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="12" selection-start="587" selection-end="660" vertical-scroll-proportion="0.7104478" vertical-offset="51" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/admin.reservations.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="20" selection-start="2895" selection-end="2895" vertical-scroll-proportion="-6.576923" vertical-offset="883" max-vertical-offset="2023">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/user.sidebar.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="49" selection-start="1800" selection-end="1800" vertical-scroll-proportion="-11.769231" vertical-offset="408" max-vertical-offset="1411">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/users.password_managment.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="0" selection-start="8145" selection-end="8145" vertical-scroll-proportion="-8.307693" vertical-offset="2470" max-vertical-offset="2805">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/templates/std_header.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="36" selection-start="1147" selection-end="1147" vertical-scroll-proportion="1.030303" vertical-offset="0" max-vertical-offset="697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/templates/std_header.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="18" selection-start="1828" selection-end="1828" vertical-scroll-proportion="-0.066019416" vertical-offset="765" max-vertical-offset="1462">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="63" selection-start="1030" selection-end="1030" vertical-scroll-proportion="-17.653847" vertical-offset="102" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/user.home.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="1.9615384" vertical-offset="51" max-vertical-offset="799">
-          <folding>
-            <marker date="1444954025651" expanded="true" signature="154:1159" placeholder="..." />
-            <marker date="1444954025651" expanded="true" signature="246:462" placeholder="..." />
-            <marker date="1444954025651" expanded="true" signature="346:447" placeholder="..." />
-            <marker date="1444954025651" expanded="true" signature="555:1148" placeholder="..." />
-            <marker date="1444954025651" expanded="true" signature="594:1133" placeholder="..." />
-            <marker date="1444954025651" expanded="true" signature="711:1114" placeholder="..." />
-            <marker date="1444954025651" expanded="true" signature="735:959" placeholder="..." />
-            <marker date="1444954025651" expanded="true" signature="983:1091" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.home.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="63" selection-start="1049" selection-end="1049" vertical-scroll-proportion="-8.5" vertical-offset="357" max-vertical-offset="799">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.password_change.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="14" selection-start="4831" selection-end="4831" vertical-scroll-proportion="-16.384615" vertical-offset="1495" max-vertical-offset="2023">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.action.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="38" selection-start="386" selection-end="386" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="731">
+        <state line="98" column="38" selection-start="889" selection-end="6013" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2652">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/users/admin.users.all.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="75" selection-start="2285" selection-end="2285" vertical-scroll-proportion="-9.807693" vertical-offset="663" max-vertical-offset="2006">
+        <state line="50" column="117" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0" vertical-offset="592" max-vertical-offset="2006">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/user.sidebar.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1769" selection-end="1769" vertical-scroll-proportion="0.3617021" vertical-offset="561" max-vertical-offset="1462" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Admin/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="14" selection-start="2473" selection-end="2473" vertical-scroll-proportion="0.7743271" vertical-offset="867" max-vertical-offset="4573" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.profile_data_change.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="100" selection-start="711" selection-end="711" vertical-scroll-proportion="0.436853" vertical-offset="197" max-vertical-offset="2312" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/user.header.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="67" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-8.165025" vertical-offset="3315" max-vertical-offset="5406" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/templates/std_header.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="47" selection-start="556" selection-end="556" vertical-scroll-proportion="0.50789475" vertical-offset="113" max-vertical-offset="782" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Reservation/TrainingCourseConstants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="145" column="103" selection-start="5177" selection-end="5252" vertical-scroll-proportion="-59.115383" vertical-offset="911" max-vertical-offset="2924" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Reservation/TrainingCourse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="0" selection-start="3882" selection-end="3882" vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="5270">
+          <folding>
+            <marker date="1447279044510" expanded="true" signature="3379:3879" placeholder="INSERT INTO ..." />
+            <marker date="1447279044510" expanded="true" signature="5648:5852" placeholder="INSERT INTO ..." />
+            <marker date="1447279044510" expanded="true" signature="11816:11866" placeholder="DELETE FROM ..." />
+            <marker date="1447279044510" expanded="true" signature="12050:12122" placeholder="DELETE FROM ..." />
+            <marker date="1447279044510" expanded="true" signature="12641:12699" placeholder="SELECT * FRO..training_course..." />
+            <marker date="1447279044510" expanded="true" signature="13330:13382" placeholder="SELECT * FRO..training_course..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Reservation/Booking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Reservation/Reservation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="239" column="29" selection-start="11800" selection-end="11800" vertical-scroll-proportion="0.0" vertical-offset="4063" max-vertical-offset="5899">
+          <folding>
+            <marker date="1447290462616" expanded="true" signature="1418:1621" placeholder="INSERT INTO ..." />
+            <marker date="1447290462616" expanded="true" signature="10916:11125" placeholder="INSERT INTO ..." />
+            <marker date="1447290462616" expanded="true" signature="11991:12164" placeholder="SELECT COUNT..reservation..." />
+            <marker date="1447290462616" expanded="true" signature="12903:13043" placeholder="SELECT COUNT..reservation..." />
+            <marker date="1447290462616" expanded="true" signature="13615:13716" placeholder="SELECT * FRO..reservation..." />
+            <marker date="1447290462616" expanded="true" signature="14256:14325" placeholder="UPDATE reser..." />
+            <marker date="1447290462616" expanded="true" signature="14256:14322" placeholder="UPDATE reser..." />
+            <marker date="1447290462616" expanded="true" signature="14256:14314" placeholder="UPDATE reser..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scss/admin/tables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="54" selection-start="2088" selection-end="2088" vertical-scroll-proportion="0.0" vertical-offset="1471" max-vertical-offset="4471">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Content/Image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="192" column="60" selection-start="7249" selection-end="7249" vertical-scroll-proportion="0.0" vertical-offset="3264" max-vertical-offset="3927">
+          <folding>
+            <marker date="1446903464290" expanded="true" signature="2444:2489" placeholder="SELECT * FRO..cl_image..." />
+            <marker date="1446903464290" expanded="true" signature="2911:2960" placeholder="SELECT * FRO..cl_image..." />
+            <marker date="1446903464290" expanded="true" signature="3574:3898" placeholder="INSERT INTO ..." />
+            <marker date="1446903464290" expanded="true" signature="5336:5465" placeholder="INSERT INTO ..." />
+            <marker date="1446903464290" expanded="true" signature="6092:6189" placeholder="SELECT * FRO..image_entity..." />
+            <marker date="1446903464290" expanded="true" signature="6924:7041" placeholder="DELETE FROM ..." />
+            <marker date="1446903464290" expanded="true" signature="7717:7804" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/cloudinary/cloudinary_php/src/Helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="66" selection-start="3288" selection-end="3288" vertical-scroll-proportion="1.1552632" vertical-offset="836" max-vertical-offset="4318" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.home.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="70" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.30526316" vertical-offset="428" max-vertical-offset="833" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Messages/ActionLog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="290" column="0" selection-start="10611" selection-end="10611" vertical-scroll-proportion="0.0" vertical-offset="4930" max-vertical-offset="5763">
+          <folding>
+            <marker date="1446776766108" expanded="true" signature="1579:1626" placeholder="SELECT * FRO..action_log..." />
+            <marker date="1446776766108" expanded="true" signature="2144:2378" placeholder="SELECT actio..action_log..." />
+            <marker date="1446776766108" expanded="true" signature="3257:3508" placeholder="SELECT actio..action_log..." />
+            <marker date="1446776766108" expanded="true" signature="4375:4586" placeholder="SELECT COUNT..action_log..." />
+            <marker date="1446776766108" expanded="true" signature="5234:5609" placeholder="SELECT actio..action_log..." />
+            <marker date="1446776766108" expanded="true" signature="6536:6834" placeholder="SELECT * FRO..action_log..." />
+            <marker date="1446776766108" expanded="true" signature="7567:7598" placeholder="SELECT COUNT..message..." />
+            <marker date="1446776766108" expanded="true" signature="7567:7801" placeholder="SELECT COUNT..action_log..." />
+            <marker date="1446776766108" expanded="true" signature="7567:7763" placeholder="SELECT COUNT..action_log..." />
+            <marker date="1446776766108" expanded="true" signature="8235:8291" placeholder="SELECT COUNT..action_log..." />
+            <marker date="1446776766108" expanded="true" signature="8803:8913" placeholder="INSERT INTO ..." />
+            <marker date="1446776766108" expanded="true" signature="9446:9588" placeholder="INSERT INTO ..." />
+            <marker date="1446776766108" expanded="true" signature="10034:10151" placeholder="INSERT INTO ..." />
+            <marker date="1446776766108" expanded="true" signature="10727:10772" placeholder="DELETE FROM ..." />
+            <marker date="1446776766108" expanded="true" signature="10956:11013" placeholder="DELETE FROM ..." />
+            <marker date="1446776766108" expanded="true" signature="11217:11279" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/bookings/user.pre_book_training_course.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="73" selection-start="2147" selection-end="2170" vertical-scroll-proportion="0.0" vertical-offset="793" max-vertical-offset="4794">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/validation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="429" column="0" selection-start="13193" selection-end="14103" vertical-scroll-proportion="0.0" vertical-offset="6970" max-vertical-offset="10200">
+          <folding>
+            <marker date="1447293329150" expanded="true" signature="12300:12591" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/start.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="20" selection-start="1363" selection-end="1363" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2329">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/bookings/calendar/month_grid.ultra.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="36" selection-start="2562" selection-end="2562" vertical-scroll-proportion="0.0" vertical-offset="639" max-vertical-offset="1445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Messages/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="20" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="5083">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Middleware/BeforeMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="36" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="1700">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Middleware/CsrfMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="19" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0" vertical-offset="46" max-vertical-offset="867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/registration.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="24" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="16" selection-start="417" selection-end="548" vertical-scroll-proportion="-2.6666667" vertical-offset="51" max-vertical-offset="4284">
+        <state line="284" column="30" selection-start="13617" selection-end="13617" vertical-scroll-proportion="0.0" vertical-offset="4828" max-vertical-offset="6001">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/users.password_managment.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="31" selection-start="5411" selection-end="5411" vertical-scroll-proportion="0.2173913" vertical-offset="1867" max-vertical-offset="2890" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="23" selection-start="3197" selection-end="3197" vertical-scroll-proportion="0.2173913" vertical-offset="1306" max-vertical-offset="3298" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/users.authentication.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="25" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1037">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Messages/UserLog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="2431">
           <folding>
-            <element signature="e#6#41#0" expanded="true" />
+            <marker date="1446771527387" expanded="true" signature="1150:1234" placeholder="SELECT * FRO..user_log..." />
+            <marker date="1446771527387" expanded="true" signature="2016:2139" placeholder="SELECT * FRO..user_log..." />
+            <marker date="1446771527387" expanded="true" signature="2908:2980" placeholder="SELECT COUNT..user_log..." />
+            <marker date="1446771527387" expanded="true" signature="3475:3610" placeholder="INSERT INTO ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/Calendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="35" selection-start="4572" selection-end="4572" vertical-scroll-proportion="0.0" vertical-offset="1718" max-vertical-offset="5661">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/admin.users.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="21" selection-start="2225" selection-end="2225" vertical-scroll-proportion="0.22567287" vertical-offset="996" max-vertical-offset="1479" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/admin.authentication.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="19" selection-start="90" selection-end="90" vertical-scroll-proportion="0.14078675" vertical-offset="0" max-vertical-offset="1241" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scss/header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="0" selection-start="2558" selection-end="2558" vertical-scroll-proportion="0.0" vertical-offset="1573" max-vertical-offset="6426">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/user.router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="41" selection-start="769" selection-end="769" vertical-scroll-proportion="-9.615385" vertical-offset="124" max-vertical-offset="748">
+        <state line="7" column="18" selection-start="174" selection-end="174" vertical-scroll-proportion="0.10559006" vertical-offset="0" max-vertical-offset="493" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/admin.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="20" selection-start="26" selection-end="26" vertical-scroll-proportion="0.035196688" vertical-offset="0" max-vertical-offset="595" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/admin.reservations.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="21" selection-start="5227" selection-end="5227" vertical-scroll-proportion="0.4016563" vertical-offset="1659" max-vertical-offset="2142" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/User/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="398" column="19" selection-start="12298" selection-end="12298" vertical-scroll-proportion="0.0" vertical-offset="6766" max-vertical-offset="9877">
+          <folding>
+            <marker date="1447302476090" expanded="true" signature="2888:2935" placeholder="SELECT * FRO..user..." />
+            <marker date="1447302476090" expanded="true" signature="3588:3652" placeholder="SELECT * FRO..user..." />
+            <marker date="1447302476090" expanded="true" signature="4269:4310" placeholder="SELECT * FRO..user..." />
+            <marker date="1447302476090" expanded="true" signature="4735:4796" placeholder="SELECT * FRO..user..." />
+            <marker date="1447302476090" expanded="true" signature="5239:5306" placeholder="SELECT * FRO..user..." />
+            <marker date="1447302476090" expanded="true" signature="5730:5769" placeholder="DELETE FROM ..." />
+            <marker date="1447302476090" expanded="true" signature="6164:6255" placeholder="UPDATE user ..." />
+            <marker date="1447302476090" expanded="true" signature="6643:6734" placeholder="UPDATE user ..." />
+            <marker date="1447302476090" expanded="true" signature="7140:7205" placeholder="SELECT * FRO..user..." />
+            <marker date="1447302476090" expanded="true" signature="7593:7634" placeholder="SELECT * FRO..user..." />
+            <marker date="1447302476090" expanded="true" signature="10800:10859" placeholder="UPDATE user ..." />
+            <marker date="1447302476090" expanded="true" signature="11366:11563" placeholder="INSERT INTO ..." />
+            <marker date="1447302476090" expanded="true" signature="12569:12686" placeholder="UPDATE user ..." />
+            <marker date="1447302476090" expanded="true" signature="12569:12684" placeholder="UPDATE user ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/home.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="2" selection-start="315" selection-end="315" vertical-scroll-proportion="0.6263158" vertical-offset="0" max-vertical-offset="380" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/user.bookings.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="7004">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Reservation/Prereservation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="59" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0" vertical-offset="680" max-vertical-offset="5967">
+          <folding>
+            <marker date="1447306660816" expanded="true" signature="1567:1774" placeholder="INSERT INTO ..." />
+            <marker date="1447306660816" expanded="true" signature="11079:11292" placeholder="INSERT INTO ..." />
+            <marker date="1447306660816" expanded="true" signature="12161:12338" placeholder="SELECT COUNT..pre_reservation..." />
+            <marker date="1447306660816" expanded="true" signature="13078:13222" placeholder="SELECT COUNT..pre_reservation..." />
+            <marker date="1447306660816" expanded="true" signature="13794:13899" placeholder="SELECT * FRO..pre_reservation..." />
+            <marker date="1447306660816" expanded="true" signature="14432:14504" placeholder="UPDATE pre_r..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scss/forms.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="613" column="22" selection-start="14495" selection-end="14497" vertical-scroll-proportion="0.0" vertical-offset="10303" max-vertical-offset="11951">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scss/modules/_colors.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="40" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="918">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scss/calendar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="537" column="35" selection-start="15086" selection-end="15086" vertical-scroll-proportion="-6.8431373" vertical-offset="8780" max-vertical-offset="12240">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/bookings/user.book_training_course.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="23" selection-start="81" selection-end="81" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="2652">
+        <state line="26" column="0" selection-start="632" selection-end="632" vertical-scroll-proportion="5.6538463" vertical-offset="589" max-vertical-offset="2482">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/scss/admin/header.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/user/bookings/calendar/day_selection.cool.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="193" column="14" selection-start="3902" selection-end="3902" vertical-scroll-proportion="-8.5" vertical-offset="3060" max-vertical-offset="4726">
+        <state line="131" column="52" selection-start="8563" selection-end="8625" vertical-scroll-proportion="-6.5384617" vertical-offset="2057" max-vertical-offset="4692">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/start.php">
+    <entry file="file://$PROJECT_DIR$/app/views/user/bookings/calendar/legend.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="0" selection-start="3272" selection-end="3272" vertical-scroll-proportion="-20.26923" vertical-offset="867" max-vertical-offset="2125">
+        <state line="54" column="110" selection-start="3202" selection-end="3202" vertical-scroll-proportion="0.3161157" vertical-offset="765" max-vertical-offset="3315">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/User/RegisteredUser.php">
+    <entry file="file://$PROJECT_DIR$/public/scss/content.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="424" column="42" selection-start="15115" selection-end="15115" vertical-scroll-proportion="-232.15384" vertical-offset="1087" max-vertical-offset="7803">
-          <folding>
-            <marker date="1445959857247" expanded="true" signature="2868:2915" placeholder="SELECT * FRO..user..." />
-            <marker date="1445959857247" expanded="true" signature="3578:3642" placeholder="SELECT * FRO..user..." />
-            <marker date="1445959857247" expanded="true" signature="4269:4310" placeholder="SELECT * FRO..user..." />
-            <marker date="1445959857247" expanded="true" signature="4745:4806" placeholder="SELECT * FRO..user..." />
-            <marker date="1445959857247" expanded="true" signature="5259:5326" placeholder="SELECT * FRO..user..." />
-            <marker date="1445959857247" expanded="true" signature="5760:5799" placeholder="DELETE FROM ..." />
-            <marker date="1445959857247" expanded="true" signature="6194:6285" placeholder="UPDATE user ..." />
-            <marker date="1445959857247" expanded="true" signature="6673:6764" placeholder="UPDATE user ..." />
-            <marker date="1445959857247" expanded="true" signature="7170:7235" placeholder="SELECT * FRO..user..." />
-            <marker date="1445959857247" expanded="true" signature="7633:7674" placeholder="SELECT * FRO..user..." />
-            <marker date="1445959857247" expanded="true" signature="10542:10604" placeholder="UPDATE user ..." />
-            <marker date="1445959857247" expanded="true" signature="10931:10982" placeholder="UPDATE user ..." />
-            <marker date="1445959857247" expanded="true" signature="11372:11569" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scss/sideslide_menu.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="32" selection-start="4497" selection-end="4497" vertical-scroll-proportion="-4.019608" vertical-offset="4164" max-vertical-offset="9367">
+        <state line="191" column="25" selection-start="4459" selection-end="4459" vertical-scroll-proportion="-4.8026314" vertical-offset="2882" max-vertical-offset="6919">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/user.header.twig">
+    <entry file="file://$PROJECT_DIR$/app/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="58" selection-start="551" selection-end="551" vertical-scroll-proportion="0.4185606" vertical-offset="0" max-vertical-offset="1071">
+        <state line="84" column="0" selection-start="2883" selection-end="2883" vertical-scroll-proportion="-10.730769" vertical-offset="1149" max-vertical-offset="1530">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/scss/header.scss">
+    <entry file="file://$PROJECT_DIR$/web_config_dev.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="13" selection-start="3341" selection-end="3341" vertical-scroll-proportion="-8.307693" vertical-offset="2300" max-vertical-offset="6069">
+        <state line="7" column="37" selection-start="214" selection-end="218" vertical-scroll-proportion="-2.8846154" vertical-offset="44" max-vertical-offset="544">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/web_config_prod.php">
+    <entry file="file://$PROJECT_DIR$/web_config_prod.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="66" selection-start="450" selection-end="450" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/web_config_dev.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="36" selection-start="133" selection-end="133" vertical-scroll-proportion="0.25373134" vertical-offset="0" max-vertical-offset="374">
+        <state line="8" column="40" selection-start="268" selection-end="268" vertical-scroll-proportion="0.35695538" vertical-offset="0" max-vertical-offset="544">
           <folding />
         </state>
       </provider>

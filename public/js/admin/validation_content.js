@@ -71,7 +71,7 @@ function validateAndSubmitTrainingCourse(formName) {
             td1.setFullYear(year, month-1, day);
 
             var td2 = new Date();
-            var dateUntil = myForm["date-from"].value;
+            var dateUntil = myForm["date-until"].value;
             day = parseInt(dateUntil.split(".")[0]);
             month = parseInt(dateUntil.split(".")[1]);
             year = parseInt(dateUntil.split(".")[2]);

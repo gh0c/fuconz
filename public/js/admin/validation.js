@@ -2,9 +2,7 @@ var statusText = $(".status-container.live > .status");
 var panel = $("#info-panel");
 var formSubmittingActive = true;
 
-function myFunn() {
-    $(".submitter-cont .submitter span").text(carName)
-}
+
 
 function haltFormSubmitting() {
     if (!formSubmittingActive) {
@@ -347,19 +345,22 @@ function errorStatus(errorText, focusElem )
     var escaped = $('<div>').text(errorText).text();
     statusText.html(escaped.replace(/\n/g, '<br />'));
 
-    $(".submitter-cont .submitter").css("cursor", "pointer");
-    $(".submitter-cont .submitter").removeClass("disabledbutton");
-    $(".submitter-cont .submitter").css("pointer-events", "auto");
+    enableFormSubmiting();
     if (typeof focusElem !== 'undefined') {
         focusElem.focus();
     }
-    formSubmittingActive = true;
     return false;
 }
 
 
 
+function enableFormSubmiting() {
+    $(".submitter-cont .submitter").css("cursor", "pointer");
+    $(".submitter-cont .submitter").removeClass("disabledbutton");
+    $(".submitter-cont .submitter").css("pointer-events", "auto");
+    formSubmittingActive = true;
 
+}
 
 // Handle the Ajax response
 function submitFinished( response ) {

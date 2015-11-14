@@ -1,0 +1,131 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    Promjena podataka
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Promjena osobnih podataka</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+                <div class = "form-container">
+
+                    <form method = "post" name = "user-profile-data-change" id = "user-profile-data-change"  onsubmit="return false;"
+                          action = "{{ urlFor('user.profile.profile-data-change.post') }}">
+                        <div class = "inputs-container">
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="email" id="email" required
+                                           maxlength="255" spellcheck="false" autocomplete="on" tabindex="1"
+                                           class = "std-text-input std-input-width req" value = "{{ auth_user.email }}"/>
+                                    <label id="email-label" class = "req" alt="E-mail" placeholder="E-mail" data-info="E-mail"></label>
+                                </div>
+
+                            </div>
+
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="first-name" id="first-name" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="2"
+                                           class = "std-text-input std-input-width" value = "{{ auth_user.first_name }}"/>
+                                    <label id="first-name-label" alt="Ime" placeholder="Ime" data-info="Ime"></label>
+                                </div>
+                            </div>
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="last-name" id="last-name" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="3"
+                                           class = "std-text-input std-input-width" value = "{{ auth_user.last_name }}"/>
+                                    <label id="last-name-label" alt="Ime" placeholder="Prezime" data-info="Prezime"></label>
+                                </div>
+                            </div>
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <div class = "pp-radio-div">
+
+                                        <input type="radio" name="sex" value = "M" id = "sex-male"
+                                               class = "rb-input sex " tabindex="4" {{ (auth_user.sex == 'M')? 'checked="true"' : '' }}>
+                                        <div class = "radio-div-cont first-left">
+                                            <label for = "sex-male"><span>Muško</span><i class = "fa fa-fw fa-male"></i></label>
+                                        </div>
+
+                                        <input type="radio" name="sex" value = "F" id = "sex-female"
+                                               class = "rb-input sex" tabindex="5" {{ (auth_user.sex == 'F')? 'checked="true"' : '' }}>
+                                        <div class = "radio-div-cont second-left">
+                                            <label for = "sex-female"><span>Žensko</span><i class = "fa fa-fw fa-female" ></i></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                        {% include "templates/partials/user_messages.twig" %}
+
+                        {% include "templates/partials/live_status.container.twig" %}
+
+                        <input type = "hidden" name = "{{ csrf_key }}" value = "{{ csrf_token }}">
+
+                        <div class = "submitter-cont">
+                            <div class = "inner-70pct">
+                                <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="6"
+                                     onclick="validateAndSubmitProfileDataChange('user-profile-data-change')">
+                                    <span>SPREMI PROMJENU</span>
+                                </div>
+                                <div class="submitter bbb-flag-v-cibona-blue reversed cancel">
+                                    <a href = "{{ urlFor('user.profile.home') }}" tabindex="7">ODUSTANI</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        $(document).ready(function(){
+            function valSub() {
+                if(formSubmittingActive == true) {
+                    validateAndSubmitProfileDataChange('user-profile-data-change');
+                    return false;
+                }
+            }
+            $('#user-profile-data-change').keydown(function(e) {
+
+                if (e.keyCode == 13) {
+                    valSub();
+                }
+            });
+            $('.submitter.submit').keydown(function(e) {
+
+                if (e.keyCode == 13) {
+                    valSub();
+                }
+            });
+        });
+    </script>
+{% endblock %}

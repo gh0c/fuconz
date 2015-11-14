@@ -8,8 +8,8 @@
   nav {
     position: relative;
     width: 100%;
-    height: 47px;
-    line-height: 48px;
+//    height: 47px;
+//    line-height: 48px;
 
     z-index: 20;
     @include pp-transition(background .25s ease-out);
@@ -71,7 +71,7 @@
         }
 
         li.user-sign {
-          line-height: initial;
+          line-height: normal;
           height: 100%;
           font-size: 25px;
           color: $light-blue-gray-light;
@@ -106,33 +106,54 @@
 
     &.secondary.user {
       background-color: #ffffff;
-      height: 57px;
-
-      line-height: 58px;
-      font-size: 16px;
       font-family: MuseoSans;
       font-weight: 700;
       text-transform: none;
-
-      img {
-        float: left;
+//
+      img.soc-net-logo {
+        vertical-align: top;
       }
 
       div.home-cont {
-        float: left;
+//        float: left;
 
-        width: 24em;
-
+        width: 25em;
+        height: 4em;
+        display: inline-table;
         & > div {
-          display: inline-block;
+          display: table-cell;
+          vertical-align: middle;
+
+        }
+
+        .home-icon-cont {
+          .thumbnail.yes-avatar {
+            @include gradient-vertical-bbb-flag-cibona-blue();
+            @include box-shadow(1px 1px 4px rgba(102,102,102,.4));
+          }
+          .thumbnail {
+            width: 4.5em;
+            height: 3.5em;
+            margin: 0 auto;
+            .pic-cont {
+              background-repeat: no-repeat;
+              background-position: center;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+
+              position: absolute;
+            }
+          }
         }
 
         .welcome-name {
-          width: 70%;
+          width: 18em;
           .name {
-            border-bottom: 2px solid $dark-dark-blue;
+            border-bottom: 2px dashed $dark-dark-blue;
             a {
-              line-height: initial;
+              line-height: normal;
               color: $dark-dark-blue;
               @include pp-transition(background-color .25s ease-out, color .25s ease-out, border .25s ease-out);
 
@@ -142,8 +163,8 @@
               }
 
               &.first-last-name {
-                font-size: .95em;
-                padding: 1px 5px 1px 8px;
+                font-size: 1em;
+                padding: 1px 0 1px 8px;
                 display:block;
               }
             }
@@ -152,8 +173,9 @@
           h5.classic {
             color: $cibona-blue;
             padding: 1px 5px 0px 8px;
-            line-height: initial;
-            font-size: .84em;
+            line-height: normal;
+            font-size: .85em;
+            font-weight: 700;
           }
         }
 
@@ -162,8 +184,6 @@
       }
 
       ul.menu {
-        right: initial;
-        position: initial;
         display: inline-block;
         float:right;
       }
@@ -192,7 +212,8 @@
         }
         li a, li span {
           display: block;
-          height: 57px;
+          height: 4em;
+          line-height: 4em;
           @include box-sizing(border-box);
           //          border-bottom: 2px dashed transparent;
 

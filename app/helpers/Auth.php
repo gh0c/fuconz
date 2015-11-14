@@ -4,7 +4,7 @@ namespace app\helpers;
 
 use app\helpers\Configuration;
 use app\helpers\Sessions;
-use app\model\User\RegisteredUser;
+use app\model\User\User;
 use app\model\Admin\Admin;
 use app\helpers\Hash;
 
@@ -36,7 +36,7 @@ class Auth
     {
 
         Sessions::set(Configuration::read('session.user_logged_in'), true);
-        $user = RegisteredUser::getUserByEmail($user->email);
+        $user = User::getUserByEmail($user->email);
         Sessions::set(Configuration::read('session.logged_user'), $user);
         Sessions::set(Configuration::read('session.logged_user_id'), $user->id);
         Sessions::set(Configuration::read('session.logged_user_email'), $user->email);
@@ -48,7 +48,7 @@ class Auth
         if(isset($_COOKIE[Configuration::read('cookie.user_remember_me')]))
         {
             $logged_user_id = Sessions::get(Configuration::read('session.logged_user_id'));
-            $user = RegisteredUser::getUserById($logged_user_id);
+            $user = User::getUserById($logged_user_id);
             $user->removeRememberMeCredentials();
             setcookie(Configuration::read('cookie.user_remember_me'), "", time() - 36000, "/");
             unset($_COOKIE[Configuration::read('cookie.user_remember_me')]);
@@ -81,7 +81,7 @@ class Auth
         {
             $identifier = $credentials[0];
             $token = Hash::hash($credentials[1]);
-            if($user = RegisteredUser::existsWithCredentials($identifier)) {
+            if($user = User::existsWithCredentials($identifier)) {
                 if($user->credentialsMatch($token)) {
                     $user = Auth::doUserLogin($user);
                     return $user;

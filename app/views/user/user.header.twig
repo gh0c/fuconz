@@ -3,16 +3,29 @@
 
 <nav class="secondary user search open visible">
     <div class="left-fl">
-        <img src="public/graphics/soc_net.png">
+        <img src="public/graphics/soc_net.png" class = "soc-net-logo">
 
         <div class="home-cont">
+            {% set avatar = auth_user.getClImageURL('avatar',
+                { "width": 48, "height": 48, "crop": "fill"})
+            %}
+            {%  if avatar %}
+            <div class = "w-20">
+                <div class = "home-icon-cont">
+                    <div class = "thumbnail user yes-avatar">
+                        <div class = "pic-cont"
+                             style="background-image:url('{{ avatar }}');" >
+                         </div>
+                    </div>
+
+                </div>
+            </div>
+            {% endif %}
             <div class="welcome-name">
                 <div class = "name">
                     <h5 class ="classic">{{ auth_user.ssbos("Dobrodošla,", "Dobrodošao,") }}</h5>
-                    <a href="{{ urlFor('user.home') }}" class="first-last-name" title="Članske stranice">{{ auth_user.full_name() }}</a>
+                    <a href="{{ urlFor('user.home') }}" class="first-last-name" title="Članske stranice">{{ auth_user.username }}</a>
                 </div>
-                <h5 class ="classic">{{ auth_user.username }}</h5>
-
             </div>
         </div>
 
@@ -22,7 +35,7 @@
                 <span><i class = "fa fa-cogs fa-fw"></i> Profil</span>
             </li>
             <li class="no-dropdown{% if active_page == "user.reservations" %} active{% endif %}" data-filter="reservation">
-                <a href = "{{ urlFor('user.book-training-course') }}"><i class = "fa fa-calendar fa-fw"></i> Rezervacije</a>
+                <a href = "{{ urlFor('user.book-training-course') }}"><i class = "fa fa-calendar-check-o fa-fw"></i> Rezervacija</a>
             </li>
             <li class="dropdown{% if active_page == "user.main" %} active {% endif %}" data-filter="user-main">
                 <span><i class = "fa fa-user fa-fw"></i> Korisničke stranice</span>
@@ -41,6 +54,8 @@
                    {% if active_item == "user.profile.home" %}class = "active"{% endif %}>Početna</a></li>
             <li><a href="{{ urlFor('user.profile.password-change') }}"
                    {% if active_item == "user.profile.password-change" %}class = "active"{% endif %}><i class = "fa fa-fw fa-key"></i> Promjena lozinke</a></li>
+            <li><a href="{{ urlFor('user.profile.profile-data-change') }}"
+                   {% if active_item == "user.profile.profile-data-change" %}class = "active"{% endif %}><i class = "fa fa-fw fa-cog"></i> Osobni podaci</a></li>
             <li><a href="/" >Povijest aktivnosti</a></li>
         </ul>
     </div>

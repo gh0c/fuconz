@@ -6,7 +6,7 @@ use Slim\Middleware;
 use app\helpers\Configuration;
 use app\helpers\Sessions;
 use app\helpers\Auth;
-use app\model\User\RegisteredUser;
+use app\model\User\User;
 use app\model\Admin\Admin;
 use app\model\Content\Jukebox;
 
@@ -23,7 +23,7 @@ class BeforeMiddleware extends Middleware
     {
 
         if (Sessions::get(Configuration::read('session.user_logged_in')))  {
-            $this->app->auth_user = RegisteredUser::getUserById(Sessions::get(Configuration::read('session.logged_user_id')));
+            $this->app->auth_user = User::getUserById(Sessions::get(Configuration::read('session.logged_user_id')));
         }
         $this->checkUserRememberMe();
 

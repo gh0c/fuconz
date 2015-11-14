@@ -1,0 +1,190 @@
+<div class = "vertical-section info">
+    <div class = "">
+        <div class = "status-container msg status-msg warning-msg">
+            <i class="status fa fa-info-circle"></i>
+            <h4>
+
+                <a class = "underline-link l-o">Legenda</a>
+                <div class="legend">
+                    <div>
+                        <div class = "legend-item booking-exists booking-allowed">
+                            <span class = "calendar-icon-holder">
+                                <i class = "fa fa-fw ico fa-circle-thin mega"></i>
+                            </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Dostupan termin</span>
+                        </div>
+
+                        <div class = "legend-item booking-exists booking-allowed">
+                            <span class = "calendar-icon-holder">
+                                <i class = "fa fa-fw ico fa-calendar-check-o mega"></i>
+                            </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Imaš rezervaciju</span>
+                        </div>
+                        <div class = "legend-item booking-exists booking-allowed">
+                            <span class = "calendar-icon-holder">
+                                <i class = "fa fa-fw ico fa-clock-o mega"></i>
+                            </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Imaš predbilježbu</span>
+                        </div>
+                    </div>
+
+                    <div>
+
+                        <div class = "legend-item booking-exists booking-time-ended">
+                                <span class="calendar-icon-holder not-canceled">
+                                    <i class="fa fa-fw ico fa-sticky-note-o fa-rotate-270 sub-under-stack"></i>
+                                    <i class = "fa fa-fw fa-lock under-stack"></i>
+                                </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Vrijeme za rezervaciju isteklo</span>
+                        </div>
+                        <div class = "legend-item booking-exists booking-time-ended">
+                                    <span class="calendar-icon-holder not-canceled">
+                                        <i class="fa fa-fw ico fa-calendar-o sub-under-stack"></i>
+                                        <i class = "fa fa-fw fa-lock under-stack"></i>
+                                    </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Imaš rezervaciju. Vrijeme otkazivanja prošlo</span>
+                        </div>
+                        <div class = "legend-item booking-exists booking-time-ended">
+                                    <span class="calendar-icon-holder not-activated">
+                                        <i class="fa fa-fw fa-clock-o ico over-queue-stack clock"></i>
+                                        <i class="fa fa-fw fa-circle ico over-queue-stack sub-over-stack"></i>
+                                        <i class="fa fa-fw ico fa-sticky-note-o fa-rotate-270 sub-under-stack"></i>
+                                        <i class = "fa fa-fw fa-lock under-stack"></i>
+                                    </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Imaš predbilježbu. Vrijeme otkazivanja prošlo</span>
+                        </div>
+                    </div>
+
+
+                    <div>
+
+                        <div class = "legend-item booking-exists booking-time-ended">
+                            <span class="calendar-icon-holder not-canceled">
+                                <i class="fa fa-fw fa-check-circle-o ico over-stack sign"></i>
+                                <i class="fa fa-fw fa-square ico over-stack sub-over-stack"></i>
+                                <i class="fa fa-fw fa-square-o ico sub-under-stack"></i>
+                            </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Potvrđeno</span>
+                        </div>
+
+                        <div class = "legend-item booking-exists booking-time-ended">
+                            <span class="calendar-icon-holder not-activated">
+                                <i class="fa fa-fw fa-times ico over-stack sign"></i>
+                                <i class="fa fa-fw fa-square ico over-stack sub-over-stack"></i>
+                                <i class="fa fa-fw fa-square-o ico sub-under-stack"></i>
+                            </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Otkazano/Neaktivirano</span>
+                        </div>
+
+                        <div class = "legend-item booking-exists booking-time-ended">
+                            <span class="calendar-icon-holder null-canceled">
+                                <i class="fa fa-fw fa-question ico over-stack sign"></i>
+                                <i class="fa fa-fw fa-square ico over-stack sub-over-stack"></i>
+                                <i class="fa fa-fw fa-square-o ico sub-under-stack"></i>
+                            </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Nepoznat status</span>
+                        </div>
+
+                    </div>
+
+
+
+                    <div>
+                        <div class = "legend-item course-finished">
+                            <span class="calendar-icon-holder not-canceled">
+                                <i class="fa fa-fw ico fa-sticky-note-o  fa-rotate-270 under-stack"></i>
+                            </span>
+                            <i class = "fa fa-fw fa-ellipsis-h">
+                            </i><span>Završen termin bez tvoje rezervacije</span>
+                        </div>
+
+                        <div class = "legend-item course-finished">
+                             <span class="calendar-icon-holder null-activated" title = "{{ my_booking.activated }}">
+                                <i class="fa fa-fw ico fa-calendar-o under-stack"></i>
+                            </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Završen termin s tvojom rezervacijom</span>
+                        </div>
+
+                        <div class = "legend-item course-finished">
+                            <span class="calendar-icon-holder not-activated">
+                                <i class="fa fa-fw fa-clock-o ico over-queue-stack clock"></i>
+                                <i class="fa fa-fw fa-circle ico over-queue-stack sub-over-stack"></i>
+
+                                <i class="fa fa-fw ico fa-sticky-note-o fa-rotate-270 under-stack"></i>
+                            </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Završen termin s tvojom predbilježbom</span>
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <div class = "legend-item course-finished">
+                            <span class="calendar-icon-holder not-canceled" title = "{{ my_booking.canceled }}">
+                                <i class="fa fa-fw fa-check-circle ico over-stack sign"></i>
+                                <i class="fa fa-fw fa-circle ico over-stack sub-over-stack"></i>
+                                <i class="fa fa-fw ico fa-square-o under-stack"></i>
+                            </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Potvrđeno</span>
+                        </div>
+
+                        <div class = "legend-item course-finished">
+                            <span class="calendar-icon-holder yes-canceled" title = "{{ my_booking.canceled }}">
+                                <i class="fa fa-fw fa-ban ico over-stack sign"></i>
+                                <i class="fa fa-fw fa-circle ico over-stack sub-over-stack"></i>
+                                <i class="fa fa-fw ico fa-square-o under-stack"></i>
+                            </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Otkazano</span>
+                        </div>
+
+                        <div class = "legend-item course-finished">
+                            <span class="calendar-icon-holder null-canceled" title = "{{ my_booking.canceled }}">
+                                <i class="fa fa-fw fa-question-circle ico over-stack sign"></i>
+                                <i class="fa fa-fw fa-circle ico over-stack sub-over-stack"></i>
+                                <i class="fa fa-fw ico fa-square-o under-stack"></i>
+                            </span>
+                            <i class = "fa fa-fw fa-ellipsis-h"></i>
+                            <span>Nepoznat status</span>
+                        </div>
+
+                    </div>
+
+                    Termin je moguće rezervirati do 24 sata prije njegovog početka. <br>
+                    Ranije rezervirane termine moguće je odjaviti do 24 sata prije početka na
+                    <a href="{{ urlFor('user.home') }}" class="underline-link">članskim stranicama.</a> <br>
+                    Ko sjebe nedolaskom na rezervirani termin plaća mi pivo da nisam ovo radio bezveze.
+                    <i class = "fa fa-fw fa-beer"></i><br>
+                </div>
+            </h4>
+            <i class="status fa"></i>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).on("ready", function(){
+        $('a.l-o').click(function(){
+
+            if ($(".legend").hasClass("open")) {
+                $(".legend").removeClass("open");
+                $(".legend").slideToggle("normal");
+            } else {
+                $(".legend").addClass("open");
+                $(".legend").slideToggle("normal")
+            }
+        });
+    });
+</script>

@@ -8,8 +8,6 @@
 #header nav {
   position: relative;
   width: 100%;
-  height: 47px;
-  line-height: 48px;
   z-index: 20;
   -webkit-transition: background 0.25s ease-out;
   -moz-transition: background 0.25s ease-out;
@@ -70,7 +68,7 @@
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
 }
 #header nav.main ul.menu li.user-sign {
-  line-height: initial;
+  line-height: normal;
   height: 100%;
   font-size: 25px;
   color: #edf0f4;
@@ -110,31 +108,66 @@
 }
 #header nav.secondary.user {
   background-color: #fff;
-  height: 57px;
-  line-height: 58px;
-  font-size: 16px;
   font-family: MuseoSans;
   font-weight: 700;
   text-transform: none;
 }
-#header nav.secondary.user img {
-  float: left;
+#header nav.secondary.user img.soc-net-logo {
+  vertical-align: top;
 }
 #header nav.secondary.user div.home-cont {
-  float: left;
-  width: 24em;
+  width: 25em;
+  height: 4em;
+  display: inline-table;
 }
 #header nav.secondary.user div.home-cont > div {
-  display: inline-block;
+  display: table-cell;
+  vertical-align: middle;
+}
+#header nav.secondary.user div.home-cont .home-icon-cont .thumbnail.yes-avatar {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,eaeef1+8,edf0f4+11,12408d+11,12408d+89,edf0f4+89,eaeef1+92,0c131d+92,0c131d+100 */
+  background: #0c131d;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #0c131d), color-stop(8%, #0c131d), color-stop(8%, #eaeef1), color-stop(11%, #edf0f4), color-stop(11%, #12408d), color-stop(89%, #12408d), color-stop(89%, #edf0f4), color-stop(92%, #eaeef1), color-stop(92%, #0c131d), color-stop(100%, #0c131d));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c131d', endColorstr='#0c131d',GradientType=1);
+  /* IE6-9 */
+  -webkit-box-shadow: 1px 1px 4px rgba(102, 102, 102, .4);
+  -moz-box-shadow: 1px 1px 4px rgba(102, 102, 102, .4);
+  box-shadow: 1px 1px 4px rgba(102, 102, 102, .4);
+}
+#header nav.secondary.user div.home-cont .home-icon-cont .thumbnail {
+  width: 4.5em;
+  height: 3.5em;
+  margin: 0 auto;
+}
+#header nav.secondary.user div.home-cont .home-icon-cont .thumbnail .pic-cont {
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
 }
 #header nav.secondary.user div.home-cont .welcome-name {
-  width: 70%;
+  width: 18em;
 }
 #header nav.secondary.user div.home-cont .welcome-name .name {
-  border-bottom: 2px solid #0c131d;
+  border-bottom: 2px dashed #0c131d;
 }
 #header nav.secondary.user div.home-cont .welcome-name .name a {
-  line-height: initial;
+  line-height: normal;
   color: #0c131d;
   -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
   -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
@@ -147,19 +180,18 @@
   background-color: #12408d;
 }
 #header nav.secondary.user div.home-cont .welcome-name .name a.first-last-name {
-  font-size: 0.95em;
-  padding: 1px 5px 1px 8px;
+  font-size: 1em;
+  padding: 1px 0 1px 8px;
   display: block;
 }
 #header nav.secondary.user div.home-cont .welcome-name h5.classic {
   color: #12408d;
   padding: 1px 5px 0px 8px;
-  line-height: initial;
-  font-size: 0.84em;
+  line-height: normal;
+  font-size: 0.85em;
+  font-weight: 700;
 }
 #header nav.secondary.user ul.menu {
-  right: initial;
-  position: initial;
   display: inline-block;
   float: right;
 }
@@ -180,7 +212,8 @@
 }
 #header nav.secondary.user ul.menu li a, #header nav.secondary.user ul.menu li span {
   display: block;
-  height: 57px;
+  height: 4em;
+  line-height: 4em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
