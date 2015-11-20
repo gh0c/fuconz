@@ -107,7 +107,7 @@ class User
 
     public static function getUsers($limit = 1000000, $order_by = "username ASC") {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM user ORDER BY {$order_by} LIMIT :limit";
+        $sql = "SELECT * FROM users ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
 
@@ -128,7 +128,7 @@ class User
 
     public static function getActiveUsers($limit = 1000000, $order_by = "username ASC") {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM user WHERE active = 1 ORDER BY {$order_by} LIMIT :limit";
+        $sql = "SELECT * FROM users WHERE active = 1 ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
 
@@ -160,7 +160,7 @@ class User
     protected static function getUserDataById($user_id)
     {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM user WHERE id = :id LIMIT 1";
+        $sql = "SELECT * FROM users WHERE id = :id LIMIT 1";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':id', $user_id, PDO::PARAM_INT);
         $stmt->execute();
@@ -174,7 +174,7 @@ class User
 
     public static function getUserByEmail($email){
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM user WHERE UPPER(email) = UPPER(:email) LIMIT 1";
+        $sql = "SELECT * FROM users WHERE UPPER(email) = UPPER(:email) LIMIT 1";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
@@ -190,7 +190,7 @@ class User
 
     public static function getUserByUsername($username){
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM user WHERE UPPER(username) = UPPER(:username) LIMIT 1";
+        $sql = "SELECT * FROM users WHERE UPPER(username) = UPPER(:username) LIMIT 1";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
         $stmt->execute();
@@ -207,7 +207,7 @@ class User
 
     public function delete() {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "DELETE FROM user WHERE id = :id LIMIT 1";
+        $sql = "DELETE FROM users WHERE id = :id LIMIT 1";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
         $stmt->execute();
@@ -222,7 +222,7 @@ class User
 
     public function updateRememberMeCredentials($identifier, $token) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE user SET remember_me_id = :remember_me_id, remember_me_token = :token WHERE id = :id";
+        $sql = "UPDATE users SET remember_me_id = :remember_me_id, remember_me_token = :token WHERE id = :id";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':remember_me_id', $identifier, PDO::PARAM_STR);
         $stmt->bindParam(':token', $token, PDO::PARAM_STR);
@@ -235,7 +235,7 @@ class User
 
     public function removeRememberMeCredentials() {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE user SET remember_me_id = :remember_me_id, remember_me_token = :token WHERE id = :id";
+        $sql = "UPDATE users SET remember_me_id = :remember_me_id, remember_me_token = :token WHERE id = :id";
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':remember_me_id', null, PDO::PARAM_INT);
         $stmt->bindValue(':token', null, PDO::PARAM_INT);
@@ -248,7 +248,7 @@ class User
     public static function existsWithCredentials($identifier) {
 
         $dbh = DatabaseConnection::getInstance();
-        $stmt = $dbh->prepare('SELECT * FROM user WHERE remember_me_id = :remember_me_id LIMIT 1');
+        $stmt = $dbh->prepare('SELECT * FROM users WHERE remember_me_id = :remember_me_id LIMIT 1');
         $stmt->bindParam(':remember_me_id', $identifier, PDO::PARAM_STR);
 
         $stmt->execute();
@@ -264,7 +264,7 @@ class User
     public function credentialsMatch($hashedToken)
     {
         $dbh = DatabaseConnection::getInstance();
-        $stmt = $dbh->prepare('SELECT * FROM user WHERE id = :id LIMIT 1');
+        $stmt = $dbh->prepare('SELECT * FROM users WHERE id = :id LIMIT 1');
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
 
         $stmt->execute();
@@ -451,7 +451,7 @@ class User
 
     public function updatePassword($hashed_pass) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE user SET password = :new_pass WHERE id = :id LIMIT 1";
+        $sql = "UPDATE users SET password = :new_pass WHERE id = :id LIMIT 1";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':new_pass', $hashed_pass, PDO::PARAM_STR);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
@@ -467,7 +467,7 @@ class User
 
     public function updateFacebookAvatarUsage($use_fb_avatar, $fb_id) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE user SET use_fb_avatar = :use, fb_id = :fb_id WHERE id = :id LIMIT 1";
+        $sql = "UPDATE users SET use_fb_avatar = :use, fb_id = :fb_id WHERE id = :id LIMIT 1";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':fb_id', $fb_id, PDO::PARAM_STR);
         $stmt->bindParam(':use', $use_fb_avatar, PDO::PARAM_INT);
@@ -484,7 +484,7 @@ class User
 
     public function unsetFacebookAvatarUsage() {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE user SET use_fb_avatar = :use WHERE id = :id LIMIT 1";
+        $sql = "UPDATE users SET use_fb_avatar = :use WHERE id = :id LIMIT 1";
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':use', 0, PDO::PARAM_INT);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
@@ -499,7 +499,7 @@ class User
 
     public static function createNew($username, $email, $password, $first_name = null, $last_name = null, $sex = null) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "INSERT INTO user (email, username, first_name, last_name, password, salt, sex, registered_at)
+        $sql = "INSERT INTO users (email, username, first_name, last_name, password, salt, sex, registered_at)
             VALUES (:email, :username, :first_name, :last_name, :password, :salt, :sex, :registered_at)";
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':registered_at', date("Y-m-d H:i:s", time()), PDO::PARAM_STR);
@@ -526,7 +526,7 @@ class User
 
     public  function updateProfileData($email, $first_name = null, $last_name = null, $sex = null) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE user SET email = :email, first_name = :first_name, last_name = :last_name, sex = :sex WHERE id = :id LIMIT 1";
+        $sql = "UPDATE users SET email = :email, first_name = :first_name, last_name = :last_name, sex = :sex WHERE id = :id LIMIT 1";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':sex', $sex, PDO::PARAM_STR);
         $stmt->bindParam(':first_name', $first_name, PDO::PARAM_STR);

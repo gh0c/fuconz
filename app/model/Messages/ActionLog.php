@@ -51,20 +51,20 @@ class ActionLog
 
 
 
-    public static function getActionLogById($user_id)
+    public static function getActionLogById($log_id)
     {
         $dbh = DatabaseConnection::getInstance();
         $sql = "SELECT * FROM action_log WHERE id = :id LIMIT 1";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':id', $user_id, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $log_id, PDO::PARAM_INT);
         $stmt->execute();
 
         if ($stmt->rowCount() == 1) {
-            $user = new ActionLog($stmt->fetch(PDO::FETCH_ASSOC));
+            $log = new ActionLog($stmt->fetch(PDO::FETCH_ASSOC));
         } else {
             return null;
         }
-        return $user;
+        return $log;
     }
 
 

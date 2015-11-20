@@ -45,20 +45,20 @@ class Message
 
 
 
-    public static function getMessageById($user_id)
+    public static function getMessageById($msg_id)
     {
         $dbh = DatabaseConnection::getInstance();
         $sql = "SELECT * FROM message WHERE id = :id LIMIT 1";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':id', $user_id, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $msg_id, PDO::PARAM_INT);
         $stmt->execute();
 
         if ($stmt->rowCount() == 1) {
-            $user = new Message($stmt->fetch(PDO::FETCH_ASSOC));
+            $msg = new Message($stmt->fetch(PDO::FETCH_ASSOC));
         } else {
             return null;
         }
-        return $user;
+        return $msg;
     }
 
 
