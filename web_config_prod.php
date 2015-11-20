@@ -8,7 +8,7 @@ Configuration::write('db.basename', 'authdatabase');
 Configuration::write('db.user', 'root');
 Configuration::write('db.password', '***');
 // Project Config
-Configuration::write('path.url', 'https://fuconz.herokuapp.com/');
+Configuration::write('path.url', '/');
 
 
 
@@ -21,7 +21,7 @@ Configuration::write('cl.images.path', 'fuconz/prod/images/');
 
 
 \Cloudinary::config(array(
-    "cloud_name" => "***",
-    "api_key" => "***",
-    "api_secret" => "***"
+    "cloud_name" => "dqpjjihsv",
+    "api_key" => "246759957442647",
+    "api_secret" => "3jQQ4ITKsKslrlwNucryALiYuU0"
 ));
