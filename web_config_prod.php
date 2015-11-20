@@ -8,13 +8,13 @@ Configuration::write('db.basename', 'authdatabase');
 Configuration::write('db.user', 'root');
 Configuration::write('db.password', '***');
 // Project Config
-Configuration::write('path.url', '/');
+Configuration::write('path.url', 'https://fuconz.herokuapp.com/');
 
 
 
 Configuration::write('mail.send', false);
 
-Configuration::write('path.domain', 'http://....'); // your domain
+Configuration::write('path.domain', 'https://fuconz.herokuapp.com/'); // your domain
 
 
 Configuration::write('cl.images.path', 'fuconz/prod/images/');
