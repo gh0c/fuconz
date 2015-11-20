@@ -228,10 +228,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="web_config_dev.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="web_config_dev.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web_config_dev.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="4" column="38" selection-start="89" selection-end="89" vertical-scroll-proportion="0.10526316" vertical-offset="28" max-vertical-offset="578">
+                <state line="6" column="44" selection-start="138" selection-end="138" vertical-scroll-proportion="-2.8461537" vertical-offset="28" max-vertical-offset="612">
                   <folding />
                 </state>
               </provider>
@@ -246,10 +246,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="web_config_prod.php" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="web_config_prod.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/web_config_prod.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="17" selection-start="100" selection-end="142" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="612">
+                <state line="17" column="0" selection-start="541" selection-end="541" vertical-scroll-proportion="0.7605263" vertical-offset="0" max-vertical-offset="629">
                   <folding />
                 </state>
               </provider>
@@ -258,7 +258,7 @@
           <file leaf-file-name="DatabaseConnection.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/model/Database/DatabaseConnection.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="53" selection-start="325" selection-end="325" vertical-scroll-proportion="-3.2692308" vertical-offset="153" max-vertical-offset="663">
+                <state line="19" column="74" selection-start="581" selection-end="581" vertical-scroll-proportion="-5.230769" vertical-offset="153" max-vertical-offset="663">
                   <folding />
                 </state>
               </provider>
@@ -1805,21 +1805,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Database/DatabaseConnection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="53" selection-start="325" selection-end="325" vertical-scroll-proportion="-3.2692308" vertical-offset="153" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web_config_prod.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="100" selection-end="142" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="612">
+        <state line="19" column="74" selection-start="581" selection-end="581" vertical-scroll-proportion="-5.230769" vertical-offset="153" max-vertical-offset="663">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web_config_dev.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="38" selection-start="89" selection-end="89" vertical-scroll-proportion="0.10526316" vertical-offset="28" max-vertical-offset="578">
+        <state line="6" column="44" selection-start="138" selection-end="138" vertical-scroll-proportion="-2.8461537" vertical-offset="28" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_config_prod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="541" selection-end="541" vertical-scroll-proportion="0.7605263" vertical-offset="0" max-vertical-offset="629">
           <folding />
         </state>
       </provider>

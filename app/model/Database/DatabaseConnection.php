@@ -17,7 +17,7 @@ class DatabaseConnection
             $dsn = '' . Configuration::read('db.type') . ':host=' . Configuration::read('db.host') .
                 ';dbname='    . Configuration::read('db.basename') .
                 ';port='      . Configuration::read('db.port') .
-                ';connect_timeout=15;charset=UTF8';
+                ';connect_timeout=15;' . Configuration::read('db.encoding') . '=UTF8';
 
             // getting DB user from config
             $user = Configuration::read('db.user');
