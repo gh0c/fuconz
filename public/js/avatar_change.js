@@ -53,6 +53,7 @@ $(document).ready(function(){
 
                 request.done(function( reply ) {
                     infoPanelSuccess("Pohranjeno. \nSpremite promjene!", true);
+                    console.log(reply);
     //                alert(msg["hash"]);
                     $("#uploaded-img-hash").val(reply["hash"]);
                     enableFormSubmiting();

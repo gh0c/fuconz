@@ -46,7 +46,7 @@
           <file leaf-file-name="user.profile.router.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="62" column="70" selection-start="2763" selection-end="2763" vertical-scroll-proportion="-14.384615" vertical-offset="612" max-vertical-offset="6766">
+                <state line="26" column="16" selection-start="983" selection-end="1196" vertical-scroll-proportion="-8.5" vertical-offset="153" max-vertical-offset="6766">
                   <folding />
                 </state>
               </provider>
@@ -72,19 +72,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="avatar_change.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="avatar_change.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/js/avatar_change.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="38" selection-start="604" selection-end="678" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2907">
+                <state line="55" column="39" selection-start="1921" selection-end="1921" vertical-scroll-proportion="0.935167" vertical-offset="459" max-vertical-offset="2924">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="User.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/model/User/User.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="507" column="37" selection-start="15210" selection-end="15210" vertical-scroll-proportion="0.62882096" vertical-offset="8331" max-vertical-offset="12223">
+                <state line="499" column="34" selection-start="14560" selection-end="14567" vertical-scroll-proportion="-0.98039216" vertical-offset="8433" max-vertical-offset="12223">
                   <folding>
                     <element signature="e#33#70#0" expanded="true" />
                     <marker date="1448048059091" expanded="true" signature="3191:3244" placeholder="SELECT * FRO..users..." />
@@ -104,6 +104,15 @@
                     <marker date="1448048059091" expanded="true" signature="15924:16042" placeholder="UPDATE user ..." />
                     <marker date="1448048059091" expanded="true" signature="15924:16040" placeholder="UPDATE users..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CsrfMiddleware.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Middleware/CsrfMiddleware.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="47" column="51" selection-start="1744" selection-end="1744" vertical-scroll-proportion="-14.807693" vertical-offset="346" max-vertical-offset="1037">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -473,8 +482,6 @@
         <option value="$PROJECT_DIR$/public/scss/modules/_mixins.scss" />
         <option value="$PROJECT_DIR$/public/js/calendar.js" />
         <option value="$PROJECT_DIR$/app/routes/user.bookings.router.php" />
-        <option value="$PROJECT_DIR$/public/js/avatar_change.js" />
-        <option value="$PROJECT_DIR$/app/model/Middleware/CsrfMiddleware.php" />
         <option value="$PROJECT_DIR$/public/scss/match.scss" />
         <option value="$PROJECT_DIR$/app/views/game.test.twig" />
         <option value="$PROJECT_DIR$/public/js/match/game.js" />
@@ -521,6 +528,8 @@
         <option value="$PROJECT_DIR$/app/model/Messages/Message.php" />
         <option value="$PROJECT_DIR$/app/model/Reservation/Prereservation.php" />
         <option value="$PROJECT_DIR$/app/model/User/User.php" />
+        <option value="$PROJECT_DIR$/app/model/Middleware/CsrfMiddleware.php" />
+        <option value="$PROJECT_DIR$/public/js/avatar_change.js" />
       </list>
     </option>
   </component>
@@ -1390,13 +1399,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/templates/partials/foot_info.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="12" selection-start="653" selection-end="653" vertical-scroll-proportion="0.56198347" vertical-offset="0" max-vertical-offset="484">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/game.test.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="46" selection-start="1925" selection-end="1927" vertical-scroll-proportion="0.3161157" vertical-offset="629" max-vertical-offset="1700">
@@ -1414,13 +1416,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.home.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="50" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="799">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/avatar_change.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="38" selection-start="604" selection-end="678" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2907">
           <folding />
         </state>
       </provider>
@@ -1498,13 +1493,6 @@
     <entry file="file://$PROJECT_DIR$/app/routes/user.router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="8" selection-start="724" selection-end="907" vertical-scroll-proportion="-6.1538463" vertical-offset="197" max-vertical-offset="731">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="70" selection-start="2763" selection-end="2763" vertical-scroll-proportion="-14.384615" vertical-offset="612" max-vertical-offset="6766">
           <folding />
         </state>
       </provider>
@@ -1837,9 +1825,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="16" selection-start="983" selection-end="1196" vertical-scroll-proportion="-8.5" vertical-offset="153" max-vertical-offset="6766">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Middleware/CsrfMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="51" selection-start="1744" selection-end="1744" vertical-scroll-proportion="-14.807693" vertical-offset="346" max-vertical-offset="1037">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/model/User/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="507" column="37" selection-start="15210" selection-end="15210" vertical-scroll-proportion="0.62882096" vertical-offset="8331" max-vertical-offset="12223">
+        <state line="499" column="34" selection-start="14560" selection-end="14567" vertical-scroll-proportion="-0.98039216" vertical-offset="8433" max-vertical-offset="12223">
           <folding>
             <element signature="e#33#70#0" expanded="true" />
             <marker date="1448048059091" expanded="true" signature="3191:3244" placeholder="SELECT * FRO..users..." />
@@ -1859,6 +1861,13 @@
             <marker date="1448048059091" expanded="true" signature="15924:16042" placeholder="UPDATE user ..." />
             <marker date="1448048059091" expanded="true" signature="15924:16040" placeholder="UPDATE users..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/avatar_change.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="39" selection-start="1921" selection-end="1921" vertical-scroll-proportion="0.935167" vertical-offset="459" max-vertical-offset="2924">
+          <folding />
         </state>
       </provider>
     </entry>
