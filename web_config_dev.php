@@ -10,7 +10,7 @@ Configuration::write('db.host', 'localhost');
 Configuration::write('db.port', '');
 Configuration::write('db.basename', 'fuconz');
 Configuration::write('db.user', 'root');
-Configuration::write('db.password', '***');
+Configuration::write('db.password', 'gh0c2211hrx');
 // Project Config
 Configuration::write('path.url', '/fuconz/');
 
@@ -25,7 +25,7 @@ Configuration::write('cl.images.path', 'fuconz/');
 
 
 \Cloudinary::config(array(
-    "cloud_name" => "***",
-    "api_key" => "***",
-    "api_secret" => "***"
+    "cloud_name" => "dqpjjihsv",
+    "api_key" => "246759957442647",
+    "api_secret" => "3jQQ4ITKsKslrlwNucryALiYuU0"
 ));

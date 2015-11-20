@@ -458,9 +458,12 @@ class User
 
         try {
             $stmt->execute();
-            return true;
+            $status["success"] = true;
+            return $status;
         } catch (\Exception $e) {
-            return false;
+            $status["success"] = false;
+            $status["err"] = $e->getMessage();
+            return $status;
         }
     }
 

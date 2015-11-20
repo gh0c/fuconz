@@ -56,13 +56,13 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                 $app->redirect($app->urlFor('user.profile.password-change'));
             } else {
                 // Validation of input data successful
-
-                if ($app->auth_user->updatePassword(Hash::password($p_password_new . $app->auth_user->getPasswordSalt()))) {
+                $status = $app->auth_user->updatePassword(Hash::password($p_password_new . $app->auth_user->getPasswordSalt()));
+                if ($status["success"] == true) {
                     $app->flash('success', "Uspješna promjena lozinke.");
                     Logger::logUserPasswordChange($app->auth_user);
                     $app->redirect($app->urlFor('user.profile.home'));
                 } else {
-                    $app->flash('errors', "Greška kod unosa u bazu.\nPokušajte ponovno");
+                    $app->flash('errors', "Greška kod unosa u bazu.\n" . $status["err"] . "\nPokušajte ponovno");
                     $app->redirect($app->urlFor('user.profile.password-change'));
                 }
             }
