@@ -76,13 +76,15 @@ $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
             $app->redirect($app->urlFor('user.registrations.training_course.new'));
         } else {
             // Validation of input data successful
-            if (TrainingCourse::createNew($p_title, $p_start_time, $p_end_time, date("Y-m-d", strtotime($p_date_from) ),
+            $status = TrainingCourse::createNew($p_title, $p_start_time, $p_end_time, date("Y-m-d", strtotime($p_date_from) ),
                 1, $app->auth_admin->id, (int)$p_capacity, (int)$p_min_reservations, (isset($p_repeating) && $p_repeating === "on"),
-                $p_repeating_interval, (int)$p_repeating_frequency, date("Y-m-d", strtotime($p_date_until) ), (int)$p_reservation_time)) {
+                $p_repeating_interval, (int)$p_repeating_frequency, date("Y-m-d", strtotime($p_date_until) ), (int)$p_reservation_time);
+
+            if ($status["success"]) {
                 $app->flash('admin_success', "Uspješan unos!");
                 $app->redirect($app->urlFor('admin.reservations.training-courses.all'));
             } else {
-                $app->flash('admin_errors', "Greška kod unosa u bazu.\nPokušajte ponovno");
+                $app->flash('admin_errors', "Greška kod unosa u bazu.\n" . $status["err"] . "\nPokušajte ponovno");
                 $app->redirect($app->urlFor('user.registrations.training_course.new'));
             }
         }

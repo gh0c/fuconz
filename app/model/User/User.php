@@ -433,7 +433,7 @@ class User
     public function deleteOldImages()
     {
 //        $this->deleteImage("avatar");
-        Image::deleteAssociationsForEntityWithFlag($this->id, "user", "avatar");
+        $status = Image::deleteAssociationsForEntityWithFlag($this->id, "user", "avatar");
     }
 
 
@@ -514,12 +514,14 @@ class User
         $stmt->bindParam(':salt', $salt, PDO::PARAM_STR);
         $stmt->bindValue(':password', Hash::password($password . $salt), PDO::PARAM_STR);
 
-        $stmt->execute();
-
-        if ($stmt->rowCount() == 1) {
+        try {
+            $stmt->execute();
+            $status["success"] = true;
             return User::getUserById($dbh->lastInsertId());
-        } else {
-            return false;
+        } catch (\Exception $e) {
+            $status["success"] = false;
+            $status["err"] = $e->getMessage();
+            return $status;
         }
 
     }

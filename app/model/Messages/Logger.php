@@ -21,6 +21,10 @@ class Logger
                 "<span>{$user->email}</span>";
             Message::createNew("admin", $admin->id, $msg);
         }
+        $msg = "<h3>" . $user->ssbos("Dobrodošla", "Dobrodošao") . " " . $user->username . "!</h3><br>" .
+            "<span>Hvala na registraciji! <i class = 'fa fa-fw fa-thumbs-o-up'></i></span>";
+        Message::createNew("user", $user->id, $msg);
+
 
 
         // Action logs

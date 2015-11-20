@@ -162,12 +162,13 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                     if($img) {
                         // delete old images for user
                         $app->auth_user->deleteOldImages();
-                        if($img->assignImageToEntity($app->auth_user->id, "user", "avatar")) {
+                        $status = $img->assignImageToEntity($app->auth_user->id, "user", "avatar");
+                        if($status["success"]) {
                             $app->flash('success', "Uspješna promjena avatara.");
                             Logger::logUserAvatarChange($app->auth_user);
                             $app->redirect($app->urlFor('user.profile.home'));
                         } else {
-                            $app->flash('errors', "Greška kod unosa u bazu.\nPokušajte ponovno");
+                            $app->flash('errors', "Greška kod unosa u bazu.\n" . $status["err"] . "\nPokušajte ponovno");
                             $app->redirect($app->urlFor('user.profile.avatar-change'));
                         }
                     } else {
@@ -176,8 +177,6 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                     }
                 }
             }
-
-
 
 
         })->name('user.profile.avatar-change.post');
@@ -209,10 +208,16 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                 $p_moderated = (isset($input_data['moderated'])) ? (int)$input_data['moderated'] : null;
 
                 try {
-                    $img = Image::createNew($p_public_id, $p_version, $p_width, $p_height, $p_format, $p_url, $p_secure_url,
+                    list($status, $img) = Image::createNew($p_public_id, $p_version, $p_width, $p_height, $p_format, $p_url, $p_secure_url,
                         $p_resource_type, $p_created_at, $p_type, $p_etag, $p_orig_filename, $p_path, $p_moderated);
-                    header('Content-Type: application/json');
-                    echo json_encode(array("hash" => $img->hash));
+                    if ($status["success"]) {
+                        header('Content-Type: application/json');
+                        echo json_encode(array("hash" => $img->hash));
+                    } else {
+                        echo json_encode(array("error" =>"Greška: " . $status["err"]));
+
+                    }
+
                 } catch(\Exception $e) {
                     echo json_encode(array("error" =>"Greška: " . $e->getMessage() . ""));
                 }

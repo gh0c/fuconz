@@ -68,12 +68,11 @@ class Reservation {
         $stmt->bindParam(':training_type_id', $training_type, PDO::PARAM_INT);
         $stmt->bindParam(':triggered', $triggered, PDO::PARAM_INT);
 
-        $stmt->execute();
-
-        if ($stmt->rowCount() == 1) {
+        try {
+            $stmt->execute();
             return true;
-        } else {
-            return false;
+        } catch (\Exception $e) {
+            return null;
         }
     }
 

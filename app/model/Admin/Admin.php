@@ -44,7 +44,8 @@ class Admin
         $this->__construct($data);
     }
 
-    public function has_role($role) {
+    public function has_role($role)
+    {
         $dbh = DatabaseConnection::getInstance();
         $sql = "SELECT * FROM admin_has_role WHERE admin_id = :id AND role_id = :role LIMIT 1";
         $stmt = $dbh->prepare($sql);

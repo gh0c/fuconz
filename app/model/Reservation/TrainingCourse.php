@@ -122,11 +122,8 @@ class TrainingCourse {
             $stmt->bindParam(':min_reservations', $min_reservations, PDO::PARAM_INT);
             $stmt->bindParam(':description', $description, PDO::PARAM_STR);
 
-
-            $stmt->execute();
-
-            if ($stmt->rowCount() == 1) {
-
+            try {
+                $stmt->execute();
                 $dates = Calendar::dates_span($repeating_from, $repeating, $repeating_until,
                     $repeating_interval, $repeating_frequency);
                 $course_id = $dbh->lastInsertId();
@@ -147,11 +144,14 @@ class TrainingCourse {
                     $stmt->execute();
                 }
                 $dbh->commit();
-
-                return true;
-            } else {
-                return false;
+                $status["success"] = true;
+                return $status;
+            } catch (\Exception $e) {
+                $status["success"] = false;
+                $status["err"] = $e->getMessage();
+                return $status;
             }
+
 
         } catch(\Exception $e) {
             $dbh->rollback();
@@ -247,22 +247,21 @@ class TrainingCourse {
         $sql = "DELETE FROM training_course WHERE id = :id LIMIT 1";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
-        $stmt->execute();
-        if ($stmt->rowCount() == 1) {
+        try {
+            $stmt->execute();
             $sql = "DELETE FROM datetime_span WHERE training_course_id = :training_course_id";
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':training_course_id', $this->id, PDO::PARAM_INT);
-            $stmt->execute();
-            if ($stmt->rowCount() > 0) {
+            try {
+                $stmt->execute();
                 return true;
+            } catch (\Exception $e) {
+                return null;
             }
-            else {
-                return false;
-            }
+        } catch (\Exception $e) {
+            return null;
         }
-        else {
-            return false;
-        }
+
     }
 
 

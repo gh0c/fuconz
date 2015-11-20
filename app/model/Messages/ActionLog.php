@@ -253,10 +253,8 @@ class ActionLog
             $stmt->bindParam(':flag', $flag, PDO::PARAM_STR);
             $stmt->bindParam(':message_body', $message_body, PDO::PARAM_STR);
 
-            $stmt->execute();
-
-            if ($stmt->rowCount() == 1) {
-
+            try {
+                $stmt->execute();
                 $action_log_id = $dbh->lastInsertId();
                 foreach($receivers as $receiver) {
                     $sql2 = "INSERT INTO action_log_receiver (action_log_id, receiver_type, receiver_id)
@@ -267,7 +265,6 @@ class ActionLog
                     $stmt->bindParam(':receiver_type', $receiver["type"], PDO::PARAM_STR);
                     $stmt->execute();
                 }
-
                 foreach($datetimes as $span) {
                     $sql2 = "INSERT INTO action_log_datetime_span (action_log_id, datetime_span_id)
                         VALUES (:id, :span_id)";
@@ -276,14 +273,22 @@ class ActionLog
                     $stmt->bindParam(':span_id', $span["id"], PDO::PARAM_INT);
                     $stmt->execute();
                 }
-
                 $dbh->commit();
-                return true;
-            } else {
-                return false;
+                $status["success"] = true;
+                return $status;
+
+            }catch(\Exception $e) {
+                $dbh->rollback();
+                $status["success"] = false;
+                $status["err"] = $e->getMessage();
+                return $status;
             }
+
         } catch(\Exception $e) {
             $dbh->rollback();
+            $status["success"] = false;
+            $status["err"] = $e->getMessage();
+            return $status;
         }
 
     }
@@ -294,31 +299,28 @@ class ActionLog
         $sql = "DELETE FROM action_log WHERE id = :id LIMIT 1";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
-        $stmt->execute();
-        if ($stmt->rowCount() == 1) {
+        try {
+            $dbh->beginTransaction();
+
+            $stmt->execute();
+
             $sql = "DELETE FROM action_log_receiver WHERE action_log_id = :id";
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
+
             $stmt->execute();
-            if ($stmt->rowCount() == 1) {
-                $sql = "DELETE FROM action_log_datetime_span WHERE action_log_id = :id";
-                $stmt = $dbh->prepare($sql);
-                $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
-                $stmt->execute();
-                if ($stmt->rowCount() == 1) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            }
-            else {
-                return false;
-            }
-        }
-        else {
+            $sql = "DELETE FROM action_log_datetime_span WHERE action_log_id = :id";
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
+            $stmt->execute();
+            return true;
+
+        } catch (\Exception $e) {
+            $dbh->rollBack();
             return false;
         }
+
+
 
     }
 

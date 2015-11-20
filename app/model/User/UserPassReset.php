@@ -99,7 +99,7 @@ class UserPassReset
 
     public static function getByUserHash($hash) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM user_pass_reset WHERE security = :security";
+        $sql = "SELECT * FROM user_pass_reset WHERE security = :security LIMIT 1";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':security', $hash, PDO::PARAM_STR);
         $stmt->execute();

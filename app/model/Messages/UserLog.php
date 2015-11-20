@@ -121,12 +121,11 @@ class UserLog
         $stmt->bindParam(':receiver_id', $receiver_id, PDO::PARAM_INT);
         $stmt->bindParam(':message_body', $message_body, PDO::PARAM_STR);
 
-        $stmt->execute();
-
-        if ($stmt->rowCount() == 1) {
+        try {
+            $stmt->execute();
             return true;
-        } else {
-            return false;
+        } catch (\Exception $e) {
+            return null;
         }
     }
 

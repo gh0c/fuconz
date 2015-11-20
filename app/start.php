@@ -51,7 +51,7 @@ $app->add(new Middleware\BeforeMiddleware());
 $app->add(new Middleware\CsrfMiddleware());
 
 
-if ($app->mode === "development") {
+if ($app->mode === "..development") {
     $app->configureMode($app->config('mode'), function() use ($app) {
 
         // pre-application hook, performs stuff before real action happens @see http://docs.slimframework.com/#Hooks

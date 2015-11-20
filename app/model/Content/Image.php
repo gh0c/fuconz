@@ -125,13 +125,14 @@ class Image
         $stmt->bindParam(':mod', $moderated, PDO::PARAM_STR);
         $stmt->bindValue(':hash', Hash::getMSG()->generateString(128), PDO::PARAM_STR);
 
-
-        $stmt->execute();
-
-        if ($stmt->rowCount() == 1) {
-            return Image::getImageById($dbh->lastInsertId());
-        } else {
-            return false;
+        try {
+            $stmt->execute();
+            $status["success"] = true;
+            return array($status, Image::getImageById($dbh->lastInsertId()));
+        } catch (\Exception $e) {
+            $status["success"] = false;
+            $status["err"] = $e->getMessage();
+            return array($status, null);
         }
 
     }
@@ -150,10 +151,14 @@ class Image
 
         $stmt->execute();
 
-        if ($stmt->rowCount() == 1) {
-            return true;
-        } else {
-            return null;
+        try {
+            $stmt->execute();
+            $status["success"] = true;
+            return $status;
+        } catch (\Exception $e) {
+            $status["success"] = false;
+            $status["err"] = $e->getMessage();
+            return $status;
         }
     }
 
@@ -194,18 +199,20 @@ class Image
         $stmt->bindParam(':id', $entity_id, PDO::PARAM_INT);
         $stmt->bindParam(':flag', $flag, PDO::PARAM_STR);
 
-        $stmt->execute();
-
-        if ($stmt->rowCount() == 1) {
-            return true;
-        } else {
-            return null;
+        try {
+            $stmt->execute();
+            $status["success"] = true;
+            return $status;
+        } catch (\Exception $e) {
+            $status["success"] = false;
+            $status["err"] = $e->getMessage();
+            return $status;
         }
     }
 
     public static function deleteAssociationsForEntityWithFlag($entity_id, $entity_type, $flag = "general")
     {
-        self::deleteImagesForEntityWithFlag($entity_id, $entity_type, $flag);
+        $status = self::deleteImagesForEntityWithFlag($entity_id, $entity_type, $flag);
 
         $dbh = DatabaseConnection::getInstance();
         $sql = "DELETE FROM image_entity WHERE entity_type = :type AND entity_id = :id AND flag = :flag";
@@ -214,12 +221,14 @@ class Image
         $stmt->bindParam(':id', $entity_id, PDO::PARAM_INT);
         $stmt->bindParam(':flag', $flag, PDO::PARAM_STR);
 
-        $stmt->execute();
-
-        if ($stmt->rowCount() == 1) {
-            return true;
-        } else {
-            return null;
+        try {
+            $stmt->execute();
+            $status["success"] = true;
+            return $status;
+        } catch (\Exception $e) {
+            $status["success"] = false;
+            $status["err"] = $e->getMessage();
+            return $status;
         }
     }
 
