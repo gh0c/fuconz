@@ -62,9 +62,8 @@ class Admin
 
     public static function getAdmins($limit = 1000000, $order_by = "username ASC") {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM administrator ORDER BY :order LIMIT :limit";
+        $sql = "SELECT * FROM administrator ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
 
         $stmt->execute();
@@ -77,7 +76,7 @@ class Admin
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 

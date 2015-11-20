@@ -2,12 +2,12 @@
 
 <div class="calendar-header widget-header clearfix-helper">
 
-    <a class="month-picker-prev month-changer" data-handler="prev" data-event="click" data-csrf-key-name = "{{ csrf_key }}"
+    <a class="month-picker-prev month-changer" data-handler="prev" data-event="click" data-csrf-key-name = "csrf-token"
        title="" data-link = "{{ urlFor('user.booking.change-month.post') }}" data-date = "{{ course_constants.read('month.before') }}">
         <span class="fa fa-chevron-left"></span>
     </a>
 
-    <a class="month-picker-next month-changer" data-handler="next" data-event="click" data-csrf-key-name = "{{ csrf_key }}"
+    <a class="month-picker-next month-changer" data-handler="next" data-event="click" data-csrf-key-name = "csrf-token"
        title="" data-link = "{{ urlFor('user.booking.change-month.post') }}" data-date = "{{ course_constants.read('month.after') }}">
         <span class="fa fa-chevron-right"></span>
     </a>

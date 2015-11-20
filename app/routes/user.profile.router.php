@@ -121,25 +121,74 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 
         $app->post('/avatar', $authenticated_user(), function () use ($app) {
             $p_uploaded_img_hash = $app->request->post('uploaded-img-hash');
-            $img = Image::getImageByHash($p_uploaded_img_hash);
-            if($img) {
-                // delete old images for user
-                $app->auth_user->deleteOldImages();
-                if($img->assignImageToEntity($app->auth_user->id, "user", "avatar")) {
-                    $app->flash('success', "Uspješna promjena avatara.");
-                    Logger::logUserAvatarChange($app->auth_user);
+            $p_delete_avatar = $app->request->post('delete-avatar');
+            $p_use_fb_avatar = $app->request->post('use-fb-avatar');
+            $p_fb_id = $app->request->post('fb-id');
+            if(isset($p_delete_avatar) && $p_delete_avatar === "on") {
+                if($app->auth_user->deleteOldImages() &&
+                    $app->auth_user->unsetFacebookAvatarUsage()) {
+                    $app->flash('success', "Uspješno brisanje avatara.");
+                    Logger::logUserAvatarDelete($app->auth_user);
                     $app->redirect($app->urlFor('user.profile.home'));
                 } else {
-                    $app->flash('errors', "Greška kod unosa u bazu.\nPokušajte ponovno");
-                    $app->redirect($app->urlFor('user.profile.avatar_change'));
+                    $app->flash('errors', "Greška kod unosa u bazu (:1).\nPokušajte ponovno");
+                    $app->redirect($app->urlFor('user.profile.avatar-change'));
+                }
+
+            } else {
+                if(isset($p_use_fb_avatar) && $p_use_fb_avatar === "on") {
+                    if(!isset($p_fb_id) || $p_fb_id === "") {
+                        $app->flash('errors', "Odabrano je postavljanje avatara na FB profilnu sliku, ali nije unesen i Facebook identifikator!\nPokušajte ponovno");
+                        $app->redirect($app->urlFor('user.profile.avatar-change'));
+                    } else {
+                        if($app->auth_user->updateFacebookAvatarUsage(1, $p_fb_id)) {
+                            $app->flash('success', "Uspješna promjena avatara.\nKao avatar koristit će se profilna slika Facebook profila koji ste unijeli.\n" .
+                                $app->auth_user->getFacebookAvatarURL());
+                            Logger::logUserAvatarFacebookChange($app->auth_user);
+                            if(!$app->auth_user->facebookAvatarExists()) {
+                                $app->flash("statuses", "Profilna slika za zadani Facebook identifikator nije pronađena!");
+                            } else {
+                                $app->flash("statuses", "Profilna slika za zadani Facebook je pronađena!");
+                            }
+                            $app->redirect($app->urlFor('user.profile.home'));
+                        } else {
+                            $app->flash('errors', "Greška kod unosa u bazu (:2) \n {$p_fb_id}.\nPokušajte ponovno");
+                            $app->redirect($app->urlFor('user.profile.avatar-change'));
+                        }
+                    }
+
+                } else {
+                    $img = Image::getImageByHash($p_uploaded_img_hash);
+                    if($img) {
+                        // delete old images for user
+                        $app->auth_user->deleteOldImages();
+                        if($img->assignImageToEntity($app->auth_user->id, "user", "avatar")) {
+                            $app->flash('success', "Uspješna promjena avatara.");
+                            Logger::logUserAvatarChange($app->auth_user);
+                            $app->redirect($app->urlFor('user.profile.home'));
+                        } else {
+                            $app->flash('errors', "Greška kod unosa u bazu.\nPokušajte ponovno");
+                            $app->redirect($app->urlFor('user.profile.avatar-change'));
+                        }
+                    } else {
+                        $app->flash('errors', "Greška kod dohvata uploadane slike.\nPokušajte ponovno");
+                        $app->redirect($app->urlFor('user.profile.avatar-change'));
+                    }
                 }
             }
+
+
+
+
         })->name('user.profile.avatar-change.post');
 
 
         $app->post('/avatar-changed', $authenticated_user(), function () use ($app) {
             if($app->request->isAjax()) {
-                $input_data = $app->request->post('img-data');
+                $body = $app->request->getBody();
+                $json_data_received = json_decode($body, true);
+
+                $input_data = $json_data_received["img-data"];
 
                 $p_version = (isset($input_data['version'])) ? (int)$input_data['version'] : null;
                 $p_width = (isset($input_data['width'])) ? (int)$input_data['width'] : null;
@@ -163,9 +212,9 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                     $img = Image::createNew($p_public_id, $p_version, $p_width, $p_height, $p_format, $p_url, $p_secure_url,
                         $p_resource_type, $p_created_at, $p_type, $p_etag, $p_orig_filename, $p_path, $p_moderated);
                     header('Content-Type: application/json');
-                    echo json_encode(array('hash' => $img->hash));
+                    echo json_encode(array("hash" => $img->hash));
                 } catch(\Exception $e) {
-                    echo "<br>Greška: " . $e->getMessage() . "<br>";
+                    echo json_encode(array("error" =>"Greška: " . $e->getMessage() . ""));
                 }
             }
 

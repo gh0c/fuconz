@@ -21,7 +21,7 @@ Configuration::write('session.admin.status.error', 's_admin_status_error');
 Configuration::write('session.admin.status.neutral', 's_admin_status_neutral');
 Configuration::write('session.admin.status.success', 's_admin_status_success');
 
-Configuration::write('session.csrf_token', 's_nsn_csrf_token');
+Configuration::write('session.csrf_token', 'csrf-token');
 
 // Cookies (rememberMe)
 

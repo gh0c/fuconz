@@ -20,71 +20,85 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
     $app->group('/rezervacija-termina', function() use ($app, $authenticated_user){
 
         $app->post('/promjeni-mjesec-kalendara', $authenticated_user(), function() use ($app) {
-            $p_selected_date = $app->request->post('date');
-            $p_pre_selected_spans = $app->request->post('selected-spans');
-            $pre_selected_spans = array();
-            if(isset($p_pre_selected_spans)) {
-                foreach($p_pre_selected_spans as $span){
-                    $datetime = explode(" ", $span);
-                    $pre_selected_spans[$datetime[0]][] = $datetime[1];
+            if($app->request->isAjax()) {
+
+                $body = $app->request->getBody();
+                $json_data_received = json_decode($body, true);
+
+                $p_selected_date = $json_data_received['date'];
+                $p_pre_selected_spans = $json_data_received['selected-spans'];
+
+                $pre_selected_spans = array();
+                if(isset($p_pre_selected_spans)) {
+                    foreach($p_pre_selected_spans as $span){
+                        $datetime = explode(" ", $span);
+                        $pre_selected_spans[$datetime[0]][] = $datetime[1];
+                    }
                 }
+
+                $calendar = new Calendar();
+                $course_constants = new TrainingCourseConstants();
+                $course_constants::set_custom_values($p_selected_date);
+                $datetime_span = new DatetimeSpan();
+                $reservation = new Reservation();
+                $prereservation = new Prereservation();
+                $booking = new Booking();
+
+                $app->render('user/bookings/calendar/months_navigation.ultra.twig', array(
+                    'user' => $app->auth_user,
+                    'active_page' => 'user.reservations',
+                    'course_constants' => $course_constants,
+                    'calendar' => $calendar,
+                    'datetimes' => $datetime_span,
+                    'reservation' => $reservation,
+                    'prereservation' => $prereservation,
+                    'booking' => $booking,
+                    'pre_selected_spans' => $pre_selected_spans
+                ));
             }
-
-            $calendar = new Calendar();
-            $course_constants = new TrainingCourseConstants();
-            $course_constants::set_custom_values($p_selected_date);
-            $datetime_span = new DatetimeSpan();
-            $reservation = new Reservation();
-            $prereservation = new Prereservation();
-            $booking = new Booking();
-
-            $app->render('user/bookings/calendar/months_navigation.twig', array(
-                'user' => $app->auth_user,
-                'active_page' => 'user.reservations',
-                'course_constants' => $course_constants,
-                'calendar' => $calendar,
-                'datetimes' => $datetime_span,
-                'reservation' => $reservation,
-                'prereservation' => $prereservation,
-                'booking' => $booking,
-                'pre_selected_spans' => $pre_selected_spans
-            ));
 
         })->name('user.booking.change-month.post');
 
 
 
         $app->post('/promjeni-datum-kalendara', $authenticated_user(), function() use ($app) {
-            $p_selected_date = $app->request->post('date');
-            $p_pre_selected_spans = $app->request->post('selected-spans');
-            $pre_selected_spans = array();
+            if($app->request->isAjax()) {
 
-            if(isset($p_pre_selected_spans)) {
-                foreach($p_pre_selected_spans as $span){
-                    $datetime = explode(" ", $span);
-                    $pre_selected_spans[$datetime[0]][] = $datetime[1];
+                $body = $app->request->getBody();
+                $json_data_received = json_decode($body, true);
+
+                $p_selected_date = $json_data_received['date'];
+                $p_pre_selected_spans = $json_data_received['selected-spans'];
+                $pre_selected_spans = array();
+
+                if(isset($p_pre_selected_spans)) {
+                    foreach($p_pre_selected_spans as $span){
+                        $datetime = explode(" ", $span);
+                        $pre_selected_spans[$datetime[0]][] = $datetime[1];
+                    }
                 }
+
+                $calendar = new Calendar();
+                $course_constants = new TrainingCourseConstants();
+                $course_constants::set_custom_values($p_selected_date);
+                $datetime_span = new DatetimeSpan();
+                $reservation = new Reservation();
+                $prereservation = new Prereservation();
+                $booking = new Booking();
+                $app->response->headers->set('Content-Type', 'application/json');
+
+                $app->render('user/bookings/calendar/months_navigation.ultra.twig', array(
+                    'user' => $app->auth_user,
+                    'active_page' => 'user.reservations',
+                    'course_constants' => $course_constants,
+                    'calendar' => $calendar,
+                    'reservation' => $reservation,
+                    'prereservation' => $prereservation,
+                    'booking' => $booking,
+                    'datetimes' => $datetime_span,
+                    'pre_selected_spans' => $pre_selected_spans
+                ));
             }
-
-            $calendar = new Calendar();
-            $course_constants = new TrainingCourseConstants();
-            $course_constants::set_custom_values($p_selected_date);
-            $datetime_span = new DatetimeSpan();
-            $reservation = new Reservation();
-            $prereservation = new Prereservation();
-            $booking = new Booking();
-
-            $app->render('user/bookings/calendar/months_navigation.twig', array(
-                'user' => $app->auth_user,
-                'active_page' => 'user.reservations',
-                'course_constants' => $course_constants,
-                'calendar' => $calendar,
-                'reservation' => $reservation,
-                'prereservation' => $prereservation,
-                'booking' => $booking,
-                'datetimes' => $datetime_span,
-                'pre_selected_spans' => $pre_selected_spans
-            ));
 
         })->name('user.booking.change-date-offset.post');
 
@@ -284,7 +298,6 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                                 $app->redirect($app->urlFor('user.book-training-course'));
                             } else {
                                 $app->flash('errors', "Greška kod unosa u bazu.\nPokušajte ponovno");
-                                echo "sto papira!";exit();
                                 $app->redirect($app->urlFor('user.book-training-course'));
                             }
                         } else if($check_result_reservations["prereservations"] && !$check_result_prereservations["reservations"]){
@@ -401,6 +414,9 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 
 
 
-
 });
+
+
+
+
 ?>

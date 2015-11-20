@@ -45,9 +45,8 @@ class UserLog
     public static function getUserLogsLogsForReceiver($receiver_id, $limit = 1000000, $order_by = "created_at DESC")
     {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM user_log WHERE receiver_id = :receiver_id ORDER BY :order LIMIT :limit";
+        $sql = "SELECT * FROM user_log WHERE receiver_id = :receiver_id ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':receiver_id', $receiver_id, PDO::PARAM_INT);
 
@@ -61,7 +60,7 @@ class UserLog
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 
@@ -69,9 +68,8 @@ class UserLog
     public static function getUserLogsWithFlagForReceiver($receiver_id, $flag = "general", $limit = 1000000, $order_by = "created_at DESC")
     {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM user_log WHERE receiver_id = :receiver_id AND flag = :flag AND has_been_read = 0 ORDER BY :order LIMIT :limit";
+        $sql = "SELECT * FROM user_log WHERE receiver_id = :receiver_id AND flag = :flag AND has_been_read = 0 ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':flag', $flag, PDO::PARAM_STR);
         $stmt->bindParam(':receiver_id', $receiver_id, PDO::PARAM_INT);
@@ -86,7 +84,7 @@ class UserLog
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 

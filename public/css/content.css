@@ -1,6 +1,396 @@
 /*********************
  BREAKPOINTS
- *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */#content {
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */@-webkit-keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-moz-keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-o-keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@-moz-keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@-o-keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@-webkit-keyframes highlight-anchored {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  10% {
+    background-color: #246173;
+  }
+  100% {
+    background-color: initial;
+  }
+}
+@-moz-keyframes highlight-anchored {
+  0% {
+    background-color: rgba(0, 0, 0, .1);
+  }
+  10% {
+    background-color: #246173;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, .1);
+  }
+}
+#content {
   clear: both;
   position: relative;
   -webkit-transition: padding 0.25s ease-out;
@@ -51,12 +441,25 @@
 #content .main-content-box {
   width: 100%;
   background-color: #fff;
+  /*********************
+ BREAKPOINTS
+ *********************/
+  /* "X" icons hover */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */
+  /*********************
+ BREAKPOINTS
+ *********************/
+  /* "X" icons hover */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */
 }
 #content .main-content-box .vertical-section {
   padding: 3px 0;
 }
 #content .main-content-box .vertical-section > div {
   padding: 0.35em 0.5em;
+}
+#content .main-content-box .vertical-section > div.std-item {
+  padding: 0 0.5em;
 }
 #content .main-content-box .vertical-section.dashed-spacer, #content .main-content-box .vertical-section .dashed-spacer {
   border-bottom: 2px dashed #0c131d;
@@ -93,199 +496,975 @@
   color: white;
   background-color: #0c131d;
 }
-#content .main-content-box .vertical-section h4 div.legend {
-  padding: 0.5em 0.2em;
-  display: none;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item {
-  width: 32%;
+#content .main-content-box .std-item .std-icon-holder {
   display: inline-table;
-  vertical-align: top;
-  text-align: left;
-  height: 3.5em;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item i:not(.fa-ellipsis-h) {
-  font-size: 1.5em;
+#content .main-content-box .std-item .std-icon-holder .std-icon-cont {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  overflow: hidden;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item > * {
+#content .main-content-box .std-item .std-icon-holder .std-icon-cont .thumbnail {
+  margin: 0 auto;
+}
+#content .main-content-box .std-item .std-icon-holder .std-icon-cont .thumbnail .std-pic-cont {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: inline-table;
+}
+#content .main-content-box .std-item .std-icon-holder .std-icon-cont .thumbnail .std-pic-cont > .v-align-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+#content .main-content-box .std-item .std-icon-holder .std-icon-cont .thumbnail .std-pic-cont > img {
+  max-width: 95%;
+  max-height: 95%;
+  vertical-align: middle;
+}
+#content .main-content-box .std-item .std-icon-holder .std-icon-cont .thumbnail .std-pic-cont > .icon {
   display: table-cell;
   vertical-align: middle;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item span {
-  font-size: 0.9em;
-  text-align: center;
+@-webkit-keyframes horizontal-alarm-frames {
+  #content .main-content-box 10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  #content .main-content-box 39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  #content .main-content-box 43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  #content .main-content-box 47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder {
-  position: relative;
-  width: 6em;
-  font-size: 0.7em;
+@-moz-keyframes horizontal-alarm-frames {
+  #content .main-content-box 10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  #content .main-content-box 39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  #content .main-content-box 43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  #content .main-content-box 47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder .ico {
+@-o-keyframes horizontal-alarm-frames {
+  #content .main-content-box 10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  #content .main-content-box 39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  #content .main-content-box 43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  #content .main-content-box 47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes horizontal-alarm-frames {
+  #content .main-content-box 10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  #content .main-content-box 39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  #content .main-content-box 43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  #content .main-content-box 47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes alarm-text-shadow-frames {
+  #content .main-content-box 18% {
+    text-shadow: none;
+  }
+  #content .main-content-box 20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 22% {
+    text-shadow: none;
+  }
+  #content .main-content-box 43% {
+    text-shadow: none;
+  }
+  #content .main-content-box 45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 47% {
+    text-shadow: none;
+  }
+}
+@-moz-keyframes alarm-text-shadow-frames {
+  #content .main-content-box 18% {
+    text-shadow: none;
+  }
+  #content .main-content-box 20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 22% {
+    text-shadow: none;
+  }
+  #content .main-content-box 43% {
+    text-shadow: none;
+  }
+  #content .main-content-box 45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 47% {
+    text-shadow: none;
+  }
+}
+@-o-keyframes alarm-text-shadow-frames {
+  #content .main-content-box 18% {
+    text-shadow: none;
+  }
+  #content .main-content-box 20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 22% {
+    text-shadow: none;
+  }
+  #content .main-content-box 43% {
+    text-shadow: none;
+  }
+  #content .main-content-box 45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 47% {
+    text-shadow: none;
+  }
+}
+@keyframes alarm-text-shadow-frames {
+  #content .main-content-box 18% {
+    text-shadow: none;
+  }
+  #content .main-content-box 20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 22% {
+    text-shadow: none;
+  }
+  #content .main-content-box 43% {
+    text-shadow: none;
+  }
+  #content .main-content-box 45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 47% {
+    text-shadow: none;
+  }
+}
+@-webkit-keyframes highlight-anchored {
+  #content .main-content-box 0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  #content .main-content-box 10% {
+    background-color: #246173;
+  }
+  #content .main-content-box 100% {
+    background-color: initial;
+  }
+}
+@-moz-keyframes highlight-anchored {
+  #content .main-content-box 0% {
+    background-color: rgba(0, 0, 0, .1);
+  }
+  #content .main-content-box 10% {
+    background-color: #246173;
+  }
+  #content .main-content-box 100% {
+    background-color: rgba(0, 0, 0, .1);
+  }
+}
+#content .main-content-box .std-item.message {
   width: 100%;
+  text-align: left;
+  margin-bottom: 3px;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder i.over-stack {
-  position: absolute;
+#content .main-content-box .std-item.message .icon-holder {
+  width: 3em;
+  background-color: #12408d;
+  height: 2em;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder i.over-stack.sign {
-  z-index: 5;
+#content .main-content-box .std-item.message .icon-holder .message-icon-cont .message-icon {
+  width: 1.75em;
+  height: 1.75em;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder .sub-over-stack {
-  z-index: 2;
+#content .main-content-box .std-item.message .icon-holder .message-icon-cont .message-icon .pic-cont {
+  border-radius: 50%;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+#content .main-content-box .std-item.message .icon-holder .message-icon-cont .message-icon .pic-cont > .icon {
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
   color: white;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder .over-queue-stack {
-  position: absolute;
-  opacity: 1;
-  top: -0.3em;
-  left: -0.3em;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder .over-queue-stack.clock {
-  z-index: 3;
-  opacity: 1;
-  color: inherit;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.yes-canceled .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.not-canceled .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.not-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.yes-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.null-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.null-canceled .under-stack {
-  opacity: 0.55;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.yes-canceled .over-stack.sign {
-  color: #8d2d24;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.not-canceled .over-stack.sign {
-  color: #1f6d4d;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.not-activated .over-stack.sign {
-  color: #8d2d24;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.null-activated .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item .calendar-icon-holder.null-canceled .over-stack.sign {
-  text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.4);
-  opacity: 0.85;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .sub-over-stack {
-  color: white;
-  opacity: 1;
-  z-index: 2;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .over-queue-stack {
-  opacity: 1;
-  top: 0.3em;
-  left: -0.5em;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .over-queue-stack:before {
-  font-size: 1.15em;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .over-queue-stack.clock {
-  z-index: 3;
-  opacity: 1;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .under-stack:before {
-  font-size: 1.5em;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .sub-under-stack {
-  position: absolute;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .sub-under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .sub-under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .sub-under-stack {
-  left: 0;
-  top: 0.8em;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .sub-under-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .sub-under-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .sub-under-stack:before {
-  font-size: 1.9em;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .over-stack {
-  top: 1.2em;
-  left: 0;
-}
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .over-stack:before {
   font-size: 1em;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .sub-under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .sub-under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .sub-under-stack {
-  left: 0;
-  top: 0.8em;
+#content .main-content-box .std-item.message.has-not-been-read .icon-holder {
+  background-color: #12408d;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .sub-under-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .sub-under-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .sub-under-stack:before {
-  font-size: 1.9em;
+#content .main-content-box .std-item.message.has-not-been-read .icon-holder .message-icon-cont .message-icon .pic-cont {
+  -webkit-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
+  -moz-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
+  box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .over-stack {
-  top: 1.2em;
-  left: 0;
+#content .main-content-box .std-item.message.has-not-been-read .icon-holder .message-icon-cont .message-icon .pic-cont > .icon {
+  color: #edf0f4;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .over-stack:before {
-  font-size: 1em;
+#content .main-content-box .std-item.message.has-been-read .icon-holder {
+  background-color: #0c131d;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .over-stack.sign {
+#content .main-content-box .std-item.message.has-been-read .icon-holder .message-icon-cont .message-icon .pic-cont {
+  -webkit-box-shadow: inset 0 0 1.5em 0.125em rgba(250, 235, 225, 0.15), 0 0 1.5em 0.25em rgba(220, 230, 230, 0.35);
+  -moz-box-shadow: inset 0 0 1.5em 0.125em rgba(250, 235, 225, 0.15), 0 0 1.5em 0.25em rgba(220, 230, 230, 0.35);
+  box-shadow: inset 0 0 1.5em 0.125em rgba(250, 235, 225, 0.15), 0 0 1.5em 0.25em rgba(220, 230, 230, 0.35);
+}
+#content .main-content-box .std-item.message.has-been-read .icon-holder .message-icon-cont .message-icon .pic-cont > .icon {
+  color: #edf0f4;
+}
+#content .main-content-box .std-item.message section.td {
+  border: 0;
+  display: inline-block;
+  margin: 2px 0 2px 0;
+  vertical-align: top;
+}
+#content .main-content-box .std-item.message section.td.icon {
+  width: 4em;
+}
+#content .main-content-box .std-item.message section.td.message {
+  font-family: MuseoSans;
+  font-weight: 700;
+  width: 70%;
+}
+#content .main-content-box .std-item.message section.td.message .time-label-holder {
+  width: 15em;
+  border-right: 2px dashed #0c131d;
+  height: 2em;
+  display: inline-table;
+  position: relative;
+  padding: 0 0.5em;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
   color: #0c131d;
-  text-shadow: 0px 1px 4px rgba(255, 255, 255, 0.6), 0px -1px 2px rgba(255, 255, 255, 0.6);
-  opacity: 0.95;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .under-stack {
-  opacity: 1;
+#content .main-content-box .std-item.message section.td.message .time-label-holder > span {
+  display: table-cell;
+  vertical-align: middle;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .over-stack.sign {
-  text-shadow: 0px 1px 4px rgba(255, 255, 255, 0.6), 0px -1px 2px rgba(255, 255, 255, 0.6);
-  opacity: 0.95;
+#content .main-content-box .std-item.message section.td.message .message-holder {
+  width: 100%;
+  padding: 0.25em 0.5em;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .under-stack {
-  opacity: 1;
-  position: absolute;
-  left: 0.6em;
-  top: 1.5em;
+#content .main-content-box .std-item.message.has-not-been-read section.td.message .time-label-holder {
+  background-color: #12408d;
+  color: white;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-allowed .calendar-icon-holder .mega {
-  opacity: 1;
-  top: 0.15em;
-  left: 0;
+@-webkit-keyframes horizontal-alarm-frames {
+  #content .main-content-box 10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  #content .main-content-box 39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  #content .main-content-box 43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  #content .main-content-box 47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.booking-allowed .calendar-icon-holder .mega:before {
-  font-size: 1.9em;
+@-moz-keyframes horizontal-alarm-frames {
+  #content .main-content-box 10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  #content .main-content-box 39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  #content .main-content-box 43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  #content .main-content-box 47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .duration-cont .times {
-  opacity: 0.5;
+@-o-keyframes horizontal-alarm-frames {
+  #content .main-content-box 10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  #content .main-content-box 39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  #content .main-content-box 43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  #content .main-content-box 47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .legend-icon-cont .not-booked {
-  opacity: 0.5;
+@keyframes horizontal-alarm-frames {
+  #content .main-content-box 10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  #content .main-content-box 22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  #content .main-content-box 39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  #content .main-content-box 43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  #content .main-content-box 45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  #content .main-content-box 47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder .sub-over-stack {
-  color: #fff;
-  opacity: 0.8;
-  z-index: 2;
+@-webkit-keyframes alarm-text-shadow-frames {
+  #content .main-content-box 18% {
+    text-shadow: none;
+  }
+  #content .main-content-box 20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 22% {
+    text-shadow: none;
+  }
+  #content .main-content-box 43% {
+    text-shadow: none;
+  }
+  #content .main-content-box 45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 47% {
+    text-shadow: none;
+  }
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder .over-queue-stack {
-  opacity: 1;
-  top: 0.15em;
-  left: -0.45em;
+@-moz-keyframes alarm-text-shadow-frames {
+  #content .main-content-box 18% {
+    text-shadow: none;
+  }
+  #content .main-content-box 20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 22% {
+    text-shadow: none;
+  }
+  #content .main-content-box 43% {
+    text-shadow: none;
+  }
+  #content .main-content-box 45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 47% {
+    text-shadow: none;
+  }
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder .over-queue-stack:before {
-  font-size: 1.25em;
+@-o-keyframes alarm-text-shadow-frames {
+  #content .main-content-box 18% {
+    text-shadow: none;
+  }
+  #content .main-content-box 20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 22% {
+    text-shadow: none;
+  }
+  #content .main-content-box 43% {
+    text-shadow: none;
+  }
+  #content .main-content-box 45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 47% {
+    text-shadow: none;
+  }
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder .over-queue-stack.clock {
-  z-index: 3;
-  opacity: 0.55;
-  color: inherit;
+@keyframes alarm-text-shadow-frames {
+  #content .main-content-box 18% {
+    text-shadow: none;
+  }
+  #content .main-content-box 20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 22% {
+    text-shadow: none;
+  }
+  #content .main-content-box 43% {
+    text-shadow: none;
+  }
+  #content .main-content-box 45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  #content .main-content-box 47% {
+    text-shadow: none;
+  }
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder .under-stack:before {
-  font-size: 1.5em;
+@-webkit-keyframes highlight-anchored {
+  #content .main-content-box 0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  #content .main-content-box 10% {
+    background-color: #246173;
+  }
+  #content .main-content-box 100% {
+    background-color: initial;
+  }
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-activated .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-canceled .over-stack.sign {
-  color: inherit;
-  text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.4);
-  opacity: 0.8;
+@-moz-keyframes highlight-anchored {
+  #content .main-content-box 0% {
+    background-color: rgba(0, 0, 0, .1);
+  }
+  #content .main-content-box 10% {
+    background-color: #246173;
+  }
+  #content .main-content-box 100% {
+    background-color: rgba(0, 0, 0, .1);
+  }
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-canceled .under-stack {
-  opacity: 0.5;
+#content .main-content-box .std-item.booking {
+  width: 100%;
+  text-align: left;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-canceled .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-canceled .over-stack.sign, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-activated .over-stack.sign {
-  color: inherit;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.4);
-  opacity: 0.9;
+#content .main-content-box .std-item.booking .icon-holder {
+  width: 3em;
+  background-color: #12408d;
+  height: 2.5em;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-canceled .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-canceled .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-activated .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-activated .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-activated .over-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-canceled .over-stack {
-  top: 1.35em;
-  left: 0.65em;
+#content .main-content-box .std-item.booking .icon-holder .booking-icon-cont .booking-icon {
+  width: 2em;
+  height: 2em;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-canceled .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-canceled .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-activated .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-activated .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-activated .over-stack:before, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-canceled .over-stack:before {
+#content .main-content-box .std-item.booking .icon-holder .booking-icon-cont .booking-icon .pic-cont {
+  border-radius: 50%;
+}
+#content .main-content-box .std-item.booking .icon-holder .booking-icon-cont .booking-icon .pic-cont > .icon {
+  color: white;
   font-size: 1em;
 }
-#content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-canceled .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-canceled .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-activated .under-stack, #content .main-content-box .vertical-section h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-activated .under-stack {
-  opacity: 0.55;
+#content .main-content-box .std-item.booking.booking-allowed .icon-holder {
+  background-color: #edf0f4;
+}
+#content .main-content-box .std-item.booking.booking-allowed .icon-holder .booking-icon-cont .booking-icon .pic-cont > .icon {
+  color: #0c131d;
+}
+#content .main-content-box .std-item.booking.booking-disallowed .icon-holder {
+  background-color: #12408d;
+}
+#content .main-content-box .std-item.booking.booking-disallowed .icon-holder .booking-icon-cont .booking-icon .pic-cont {
+  -webkit-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
+  -moz-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
+  box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
+}
+#content .main-content-box .std-item.booking.booking-disallowed .icon-holder .booking-icon-cont .booking-icon .pic-cont > .icon {
+  color: #edf0f4;
+}
+#content .main-content-box .std-item.booking.booking-ended .icon-holder {
+  background-color: #0c131d;
+}
+#content .main-content-box .std-item.booking.booking-ended .icon-holder .booking-icon-cont .booking-icon .pic-cont {
+  -webkit-box-shadow: inset 0 0 1.5em 0.125em rgba(250, 235, 225, 0.15), 0 0 1.5em 0.25em rgba(220, 230, 230, 0.35);
+  -moz-box-shadow: inset 0 0 1.5em 0.125em rgba(250, 235, 225, 0.15), 0 0 1.5em 0.25em rgba(220, 230, 230, 0.35);
+  box-shadow: inset 0 0 1.5em 0.125em rgba(250, 235, 225, 0.15), 0 0 1.5em 0.25em rgba(220, 230, 230, 0.35);
+}
+#content .main-content-box .std-item.booking.booking-ended .icon-holder .booking-icon-cont .booking-icon .pic-cont > .icon {
+  color: #edf0f4;
+}
+#content .main-content-box .std-item.booking section.td {
+  font-size: initial;
+  border: 0;
+  display: inline-block;
+  width: 4.25em;
+  margin: 2px 0 2px 0;
+}
+#content .main-content-box .std-item.booking.item:target {
+  -webkit-animation: highlight-anchored 4s 1;
+  -moz-animation: highlight-anchored 4s 1;
+  color: darkorange;
 }
 #content .main-content-box .loading-gif-div {
   z-index: 80;
@@ -308,4 +1487,29 @@
   vertical-align: middle;
   display: inline-block;
   vertical-align: middle;
+}
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+  border-left: 1px solid #eaeef1;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  -moz-transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  -ms-transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  background-color: #12408d;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0f3678;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: #0c131d;
 }

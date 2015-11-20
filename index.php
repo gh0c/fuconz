@@ -8,8 +8,9 @@ ini_set("display_errors", 1);
 
 date_default_timezone_set( "Europe/Zagreb" );
 
-require 'app/start.php';
-$app->run();
+try {
+    require 'app/start.php';
+    $app->run();
 
+} catch (\Exception $e) {echo "Greška: " . $e->getMessage();}
 
-?>

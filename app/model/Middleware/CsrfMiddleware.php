@@ -15,7 +15,7 @@ class CsrfMiddleware extends Middleware
 
     public function call()
     {
-        $this->key = Configuration::read('session.csrf_token');
+        $this->key = "csrf-token";
         $this->app->hook('slim.before', array($this, 'check'));
         $this->next->call();
     }
@@ -29,7 +29,18 @@ class CsrfMiddleware extends Middleware
         $token = Sessions::get($this->key);
 
         if(in_array($this->app->request()->getMethod(), array('POST', 'PUT', 'DELETE'))) {
-            $submittedToken = $this->app->request()->post($this->key) ?: '';
+            if($this->app->request->isAjax()) {
+                $body = $this->app->request->getBody();
+                $json_data_received = json_decode($body, true);
+                if (isset($json_data_received[$this->key])) {
+                    $submittedToken = $json_data_received[$this->key] ?: '';
+                } else {
+                    $submittedToken = '';
+                }
+
+            } else {
+                $submittedToken = $this->app->request()->post($this->key) ?: '';
+            }
             if(!Hash::hashCheck($token, $submittedToken)) {
 //                Sessions::destroy();
                 throw new \Exception('CSRF token mismatch');

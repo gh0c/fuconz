@@ -203,6 +203,7 @@ function validateAndSubmitPassReset(formName) {
     if(!haltFormSubmitting()) {
         return false;
     }
+
     var myForm = document.forms[formName];
 
     expandInfoPanel("Provjera ispravnosti formata unesenih podataka");
@@ -254,6 +255,8 @@ function validateAndSubmitAvatarChange(formName) {
     if(!haltFormSubmitting()) {
         return false;
     }
+    $("#user-avatar-change").addClass("disabled-button");
+
     var myForm = document.forms[formName];
 
 
@@ -261,9 +264,17 @@ function validateAndSubmitAvatarChange(formName) {
 
     setTimeout (function() {
 
-        if (myForm["avatar-file"].value == "" && !myForm["delete-avatar"].checked) {
+        if (myForm["avatar-file"].value == "" && !myForm["delete-avatar"].checked && !myForm["use-fb-avatar"].checked) {
             if (!errorStatus("Nije odabrana slika za upload, " +
-                "a nije niti označeno samo brisanje starog avatara!", myForm["avatar_file"])) {
+                "a nije niti označeno samo brisanje starog avatara ili korištenje FB profilne slike!", myForm["avatar-file"])) {
+                $("#user-avatar-change").removeClass("disabled-button");
+                return false;
+            }
+        }
+
+        if (myForm["use-fb-avatar"].checked && myForm["fb-id"].value == "") {
+            if (!errorStatus("Odabrano je korištenje FB profilne slike kao avatara, ali nije unesen FB identifikator!", myForm["fb-id"])) {
+                $("#user-avatar-change").removeClass("disabled-button");
                 return false;
             }
         }
@@ -274,6 +285,7 @@ function validateAndSubmitAvatarChange(formName) {
                 if(myForm["avatar-file"].files[0].size > 2*1024*1024) {
                     if (!errorStatus("Najveća dopuštena veličina slike je 2 MB. " +
                         "Odaberite manju sliku!", myForm["avatar-file"])) {
+                        $("#user-avatar-change").removeClass("disabled-button");
                         return false;
                     }
                 }
@@ -283,6 +295,7 @@ function validateAndSubmitAvatarChange(formName) {
                     if (!acceptFileTypes.test(fileType)) {
                         if (!errorStatus("Neispravan tip slike! (" + fileType +
                             ")\nDopušteno: {jpg, jpeg, png, gif ...}", myForm["avatar-file"])) {
+                            $("#user-avatar-change").removeClass("disabled-button");
                             return false;
                         }
                     }
@@ -294,6 +307,7 @@ function validateAndSubmitAvatarChange(formName) {
 
                     if (!errorStatus("Neispravan format slike! (" + extension +
                         ")\nDopušteno: {jpg, jpeg, png, gif ...}", myForm["avatar-file"])) {
+                        $("#user-avatar-change").removeClass("disabled-button");
                         return false;
                     }
                 }
@@ -301,7 +315,13 @@ function validateAndSubmitAvatarChange(formName) {
             }
 
         }
-        infoPanelSuccess();
+        if(!myForm["use-fb-avatar"].checked && (!myForm["uploaded-img-hash"] || myForm["uploaded-img-hash"].value === "")) {
+            if (!errorStatus("Došlo je do pogreške prilikom procedure nakon uploada. Refreshajte stranicu i pokušajte ponovo")) {
+                $("#user-avatar-change").removeClass("disabled-button");
+                return false;
+            }
+        }
+        infoPanelSuccess("Sad će, još malo pa je...");
 
         myForm.submit();
 
@@ -526,8 +546,6 @@ function infoPanelSuccess(text, noGif) {
         } else {
 
         }
-
-
         panel.find(".status-container").addClass("successful-validation");
 
     }

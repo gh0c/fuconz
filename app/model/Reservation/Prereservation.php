@@ -42,8 +42,10 @@ class Prereservation {
 
         if ( isset( $input_data['training_course_id'] ) )
             $this->course_id = (int) $input_data['training_course_id'];
-        if ( isset( $input_data['datetime_span_id'] ) )
+        if ( isset( $input_data['datetime_span_id'] ) ) {
             $this->datetime_span_id = (int) $input_data['datetime_span_id'];
+            $this->datetime_span = DatetimeSpan::getById($this->datetime_span_id);
+        }
         if ( isset( $input_data['user_id'] ) )
             $this->user_id = (int) $input_data['user_id'];
 
@@ -105,7 +107,7 @@ class Prereservation {
                             "Ponovite rezervaciju!";
                         return $validation_result;
 
-                    } else if (!($datetime_span = DatetimeSpan::get_by_datetime_and_course($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
+                    } else if (!($datetime_span = DatetimeSpan::getByDatetimeAndCourse($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
                         $s_course_id))) {
                         $validation_result["errors"] = "Termin koji ste odabrali: " . $s_date . " " . $s_time . " nema " .
                             "odgovarajući zapis u bazi podataka uz pripadnu vrijednost identifikatora termina i ovog vremena...";
@@ -162,7 +164,7 @@ class Prereservation {
             $s_course_id = $date_time_courseId[2];
             list($s_hours, $s_minutes) = explode("-", $s_time);
 
-            $datetime_span = DatetimeSpan::get_by_datetime_and_course($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
+            $datetime_span = DatetimeSpan::getByDatetimeAndCourse($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
                 $s_course_id);
             $training_course = TrainingCourse::getCourseById($s_course_id);
 
@@ -221,7 +223,7 @@ class Prereservation {
                 $s_course_id = $date_time_courseId[2];
                 list($s_hours, $s_minutes) = explode("-", $s_time);
 
-                $datetime_span = DatetimeSpan::get_by_datetime_and_course($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
+                $datetime_span = DatetimeSpan::getByDatetimeAndCourse($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
                     $s_course_id);
                 $training_course = TrainingCourse::getCourseById($s_course_id);
 
@@ -276,6 +278,58 @@ class Prereservation {
             return null;
         }
     }
+
+
+    public static function existsForUser($user_id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT COUNT(*) AS number FROM prereservation WHERE user_id = :id";
+
+        $stmt = $dbh->prepare($sql);
+
+        $stmt->bindParam(':id', $user_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($row["number"] > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        else {
+            return null;
+        }
+    }
+
+
+
+    public static function getByUser($user_id, $order_by = "datetime_span.datetime_span_start")
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT pre_reservation.* FROM pre_reservation JOIN datetime_span
+          ON pre_reservation.datetime_span_id = datetime_span.id WHERE
+          user_id = :user_id ORDER BY {$order_by}";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $booking = new Prereservation($row);
+                $list[] = $booking;
+            }
+            return $list;
+        }
+        else {
+            return array();
+        }
+    }
+
 
 
     public static function numberOfPrereservationsForDatetimeAndCourse($course, $datetime_span)

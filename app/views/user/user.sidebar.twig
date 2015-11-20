@@ -1,17 +1,16 @@
 <div class="menu-wrap">
     <nav class="menu">
         <section class = "user-basic-info">
-
-            {% set avatar = auth_user.getImageURL("avatar") %}
-            {%  if avatar %}
+            {%  set avatar_url = auth_user.getAvatarURL('avatar',
+            { "width": 50, "height": 50, "crop": "fill"}) %}
+            {%  if avatar_url %}
             <div class = "w-20">
                 <div class="menu-button-cont menu-icon">
                     <div class = "home-icon-cont">
                         <div class = "thumbnail user">
                             <div class = "pic-cont">
                                 <span class="v-align-helper"></span><!--
-                                -->{{  auth_user.getClImageTag('avatar',
-                                    { "width": 50, "height": 50, "crop": "fill"}) }}
+                                --><img src = "{{  avatar_url }}"/>
                              </div>
                         </div>
                     </div>
@@ -57,14 +56,15 @@
 
 <div class="menu-button-cont opener" id="open-user-menu-button"  title = "Članski izbornik">
     <div class = "home-icon-cont">
-    {% set avatar = auth_user.getClImageURL('avatar',
-        { "width": 75, "height": 95, "crop": "limit"})
-    %}
-    {%  if avatar %}
+    {%  set avatar_url = auth_user.getAvatarURL('avatar',
+    { "width": 75, "height": 95, "crop": "limit"}) %}
+    {%  if avatar_url %}
         <div class = "thumbnail user yes-avatar">
             <div class = "no-show"><i class = "fa fa-bars"></i></div>
             <div class = "pic-cont"
-                 style="background-image:url('{{ avatar }}');" ></div>
+                 style="background-image:url('{{ avatar_url }}');" >
+
+            </div>
         </div>
     {% else %}
         <div class = "thumbnail user user-icon no-avatar">

@@ -2,14 +2,14 @@
 
 <div class="calendar-header widget-header clearfix-helper">
 
-    <a class="offset-picker-prev offset-changer" data-handler="prev" data-event="click" data-csrf-key-name = "{{ csrf_key }}"
+    <a class="offset-picker-prev offset-changer" data-handler="prev" data-event="click" data-csrf-key-name = "csrf-token"
         title="" data-link = "{{ urlFor('user.booking.change-date-offset.post') }}"
         data-date = "{{ course_constants.get_day_offset(-calendar.days_offset_std()) }}"
         data-direction = "minus" data-direction-offset = "{{ calendar.days_offset_std() }}">
         <span class="fa fa-chevron-left"></span>
     </a>
 
-    <a class="offset-picker-next offset-changer" data-handler="next" data-event="click" data-csrf-key-name = "{{ csrf_key }}"
+    <a class="offset-picker-next offset-changer" data-handler="next" data-event="click" data-csrf-key-name = "csrf-token"
         title="" data-link = "{{ urlFor('user.booking.change-date-offset.post') }}"
         data-date = "{{ course_constants.get_day_offset(calendar.days_offset_std()) }}"
         data-direction = "plus" data-direction-offset = "{{ calendar.days_offset_std() }}">

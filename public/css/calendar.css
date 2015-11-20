@@ -1,6 +1,396 @@
 /*********************
  BREAKPOINTS
- *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */.calendar-widget {
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */@-webkit-keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-moz-keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-o-keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@-moz-keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@-o-keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@-webkit-keyframes highlight-anchored {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  10% {
+    background-color: #246173;
+  }
+  100% {
+    background-color: initial;
+  }
+}
+@-moz-keyframes highlight-anchored {
+  0% {
+    background-color: rgba(0, 0, 0, .1);
+  }
+  10% {
+    background-color: #246173;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, .1);
+  }
+}
+.calendar-widget {
   font-family: MuseoSans;
   font-weight: 500;
   padding: 0.3em 0.5em;
@@ -383,8 +773,8 @@
 }
 .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder .over-queue-stack {
   opacity: 1;
-  top: 0.3em;
-  left: -0.35em;
+  top: 0.4em;
+  left: 0.8em;
 }
 .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder .over-queue-stack:before {
   font-size: 1.15em;
@@ -392,9 +782,6 @@
 .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder .over-queue-stack.clock {
   z-index: 3;
   opacity: 1;
-}
-.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder .under-stack:before {
-  font-size: 1.6em;
 }
 .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder .sub-under-stack {
   position: absolute;
@@ -443,8 +830,19 @@
 .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-canceled .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-canceled .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-activated .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-activated .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-activated .under-stack, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-canceled .under-stack {
   opacity: 1;
   position: absolute;
-  left: 0.95em;
-  top: 1.4em;
+  left: 1.1em;
+  top: 1.6em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-canceled .under-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-canceled .under-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.not-activated .under-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.yes-activated .under-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-activated .under-stack:before, .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.null-canceled .under-stack:before {
+  font-size: 1.2em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.no-booking .under-stack {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+}
+.calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.booking-time-ended .calendar-icon-holder.no-booking .under-stack:before {
+  font-size: 1em;
 }
 .calendar-widget .widget-content .table-container.special .tr .cell .td > .active-day .day-container .booking-slots .bookings-container .booking.course-finished .duration-cont .times {
   opacity: 0.5;

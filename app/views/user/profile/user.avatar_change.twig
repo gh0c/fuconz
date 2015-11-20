@@ -42,8 +42,7 @@
                                     {#<input type="file" accept="image/jpeg,image/gif,image/png" tabindex="1"#}
                                            {#name="avatar-file" id="avatar-file" class = "file-input" required/>#}
                                     {{ cl_image_upload_tag('test', {
-                                        "tags":"direct_photo_album",
-                                        "public_id" : "fuconz/user/" ~ auth_user.username ~"/avatar/img",
+                                        "public_id" : auth_user.getImagePath('avatar'),
                                         "callback" : cors_location,
                                         "html" : {
                                             "accept" : "image/jpeg,image/gif,image/png",
@@ -54,7 +53,7 @@
                                             "id" : "avatar-file",
                                             "required" : "required",
                                             "data-submit-url" : urlFor('user.profile.avatar-change.changed.post'),
-                                            "data-csrf-key-name" : csrf_key
+                                            "data-csrf-key-name" : 'csrf-token'
                                         }
                                     }) }}
 
@@ -94,6 +93,37 @@
                             <input type="hidden" name="uploaded-img-hash" id = "uploaded-img-hash"/>
 
 
+                            <div class = "vertical-section text-centered ">
+                                <div class ="inner-70pct dashed-spacer empty-horiz-spacer-5"></div>
+                            </div>
+
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "inner-70pct">
+                                    <input type="checkbox" name="use-fb-avatar" id="use-fb-avatar"
+                                           class = "cb-input use-fb-avatar" tabindex="3" {{ (auth_user.use_fb_avatar)? 'checked="true"' : '' }}>
+                                    <div class = "checkbox-div-cont">
+                                        <label for = "use-fb-avatar" alt="Koristi FB avatar" placeholder="Koristi FB avatar"
+                                               data-info="Koristi FB avatar">
+                                            <span>Koristi FB profilnu?</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="fb-id" id="fb-id" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="4"
+                                           class = "std-text-input std-input-width" value = "{{ auth_user.fb_id }}"/>
+                                    <label id="fb-id-label" alt="Facebook ID" placeholder="Facebook ID" data-info="Facebook ID"></label>
+                                </div>
+                                <h4>
+                                    <a class = "underline-link l-o" target="_blank" href = "http://findmyfbid.com/">Dohvati Facebook ID</a>
+                                </h4>
+                            </div>
+
                         </div>
 
 
@@ -106,16 +136,16 @@
 
                         {% include "templates/partials/live_status.container.twig" %}
 
-                        <input type = "hidden" name = "{{ csrf_key }}" value = "{{ csrf_token }}">
+                        <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
 
                         <div class = "submitter-cont">
                             <div class = "inner-70pct">
-                                <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="3"
+                                <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="5"
                                      onclick="validateAndSubmitAvatarChange('user-avatar-change')">
                                     <span>SPREMI PROMJENU</span>
                                 </div>
                                 <div class="submitter bbb-flag-v-cibona-blue reversed cancel">
-                                    <a href = "{{ urlFor('user.profile.home') }}" tabindex="4">ODUSTANI</a>
+                                    <a href = "{{ urlFor('user.profile.home') }}" tabindex="6">ODUSTANI</a>
                                 </div>
                             </div>
                         </div>

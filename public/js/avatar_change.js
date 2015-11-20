@@ -1,10 +1,3 @@
-function prettydump(obj) {
-    ret = ""
-    $.each(obj, function(key, value) {
-        ret += "<tr><td>" + key + "</td><td>" + value + "</td></tr>";
-    });
-    return ret;
-}
 
 var cldFU = $('#avatar-file').cloudinary_fileupload();
 
@@ -26,6 +19,7 @@ $(document).ready(function(){
                     if(!haltFormSubmitting()) {
                         return false;
                     }
+                    $("#user-avatar-change").addClass("disabled-button");
                     expandInfoPanel("Započinje upload...");
                 },
                 progress: function () {
@@ -52,23 +46,30 @@ $(document).ready(function(){
                 var request = $.ajax({
                     url: url,
                     type: "POST",
-                    data: params,
-                    dataType: "json"
+                    data: JSON.stringify(params),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8"
                 });
 
-                request.done(function( msg ) {
-                    $( ".box .t1" ).html( msg );
+                request.done(function( reply ) {
                     infoPanelSuccess("Pohranjeno. \nSpremite promjene!", true);
     //                alert(msg["hash"]);
-                    $("#uploaded-img-hash").val(msg["hash"]);
+                    $("#uploaded-img-hash").val(reply["hash"]);
                     enableFormSubmiting();
+                    $("#user-avatar-change").removeClass("disabled-button");
+
+                });
+                request.fail(function() {
+                    $("#user-avatar-change").removeClass("disabled-button");
 
                 });
 
                 var info = $('<div class="uploaded-info"/>');
                 $(info).append($('<div class="image"/>').html(
                     $.cloudinary.image(data.result.public_id, {
-                        format: data.result.format, width: 150, height: 150, crop: "fill", version: data.result.version
+                        format: data.result.format, width: 150, height: 150,
+                        crop: "fill", version: data.result.version,
+                        alt: "Nova slika"
                     })
                 ));
                 $('.uploaded-info-holder').html(info);

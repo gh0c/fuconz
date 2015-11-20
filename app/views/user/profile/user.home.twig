@@ -28,9 +28,7 @@
                 <div class = "pp-content">
                     <p>
                         <span>Korisnik: {{ auth_user.email }}</span>
-                        {% set avatar = auth_user.getImageURL('avatar') %}
-                        <span>Avatar path: {{ avatar }}</span>
-                        <span>URL: {{ auth_user.getClImageURL('avatar',
+                        <span>URL: {{ auth_user.getAvatarURL('avatar',
                             { "width": 75, "height": 95, "crop": "limit"}) }}</span>
                     </p>
                     <p>

@@ -1,0 +1,36 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    O stranici
+{% endblock %}
+
+{% block content %}
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Fuconž početna stranica</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+
+
+                {% include "templates/partials/user_messages.twig" %}
+
+
+                <div class = "vertical-section text-centered">
+                    <div class = "inner-70pct">
+                        <h4>Ovo su stranice na kojima ekiponž dogovara fuconž</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

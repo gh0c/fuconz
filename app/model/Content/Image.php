@@ -183,6 +183,7 @@ class Image
         }
     }
 
+
     public static function deleteImagesForEntityWithFlag($entity_id, $entity_type, $flag = "general")
     {
         $dbh = DatabaseConnection::getInstance();

@@ -1,0 +1,294 @@
+@import "modules/modules.import";
+
+h4 div.legend {
+  padding: .5em .2em;
+
+  display: none;
+
+
+  div.legend-item {
+    width: 32%;
+    display: inline-table;
+    //          float: left;
+    vertical-align: top;
+    text-align: left;
+    height: 3.5em;
+    i:not(.fa-ellipsis-h) {
+      font-size: 1.5em;
+    }
+    & > * {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    span {
+      font-size:.9em;
+      text-align: center;
+    }
+
+
+
+    .calendar-icon-holder {
+      position: relative;
+      width: 6em;
+      font-size: .7em;
+      .ico {
+        width: 100%;
+      }
+      i.over-stack {
+        position:absolute;
+        &.sign {
+          z-index: 5;
+        }
+      }
+      .sub-over-stack {
+        z-index: 2;
+        color: white;
+      }
+      .over-queue-stack {
+        position:absolute;
+        opacity: 1;
+        top: -0.3em;
+        left: -0.30em;
+
+        &.clock {
+          z-index:3;
+          opacity: 1;
+          color: inherit;
+        }
+      }
+
+      &.yes-canceled .under-stack,
+      &.not-canceled .under-stack,
+      &.not-activated .under-stack,
+      &.yes-activated .under-stack,
+      &.null-activated .under-stack,
+      &.null-canceled .under-stack{
+        opacity: .55;
+      }
+
+      &.yes-canceled {
+        .over-stack {
+          &.sign {
+            color: $red-badge-transparent-overlay;
+          }
+        }
+      }
+      &.not-canceled { // confirmed reservation
+        .over-stack {
+          &.sign {
+            color: $green-badge-transparent-overlay;
+          }
+        }
+      }
+      &.not-activated {
+        .over-stack {
+          &.sign {
+            color: $red-badge-transparent-overlay;
+          }
+        }
+      }
+      &.null-activated,
+      &.null-canceled {
+        .over-stack {
+          &.sign {
+            text-shadow: 1px 1px 9px rgba(0,0,0,0.4), 0px 0px 8px rgba(0,0,0,0.4);
+            opacity: .85;
+          }
+        }
+      }
+    }
+
+    &.booking-time-ended {
+      .calendar-icon-holder {
+        .sub-over-stack {
+          color: white;
+          opacity: 1;
+          z-index: 2;
+        }
+        .over-queue-stack {
+          opacity: 1;
+          top: 0.3em;
+          left: -0.5em;
+          &:before {
+            font-size: 1.15em;
+          }
+          &.clock {
+            z-index:3;
+            opacity: 1;
+          }
+        }
+        .under-stack {
+          &:before {
+            font-size: 1.5em;
+          }
+        }
+
+        .sub-under-stack {
+          position:absolute;
+          //                width: 2em;
+
+        }
+
+        &.null-activated, &.yes-activated, &.not-activated {
+          .sub-under-stack {
+            left: 0;
+            top: 0.8em;
+            &:before {
+              font-size: 1.9em;
+            }
+          }
+          .over-stack {
+            top: 1.2em;
+            left: 0;
+            &:before {
+              font-size: 1.0em;
+            }
+          }
+        }
+        &.null-canceled, &.yes-canceled, &.not-canceled {
+          .sub-under-stack {
+            left: 0;
+            top: 0.8em;
+            &:before {
+              font-size: 1.9em;
+            }
+          }
+          .over-stack {
+            top: 1.2em;
+            left: 0;
+            &:before {
+              font-size: 1.0em;
+            }
+          }
+        }
+        &.null-activated, &.null-canceled {
+          .over-stack {
+            &.sign {
+              color: $dark-dark-blue;
+              text-shadow: 0px 1px 4px rgba(255,255,255,0.6), 0px -1px 2px rgba(255,255,255,0.6);
+
+              opacity: .95;
+            }
+          }
+          .under-stack {
+            opacity: 1;
+          }
+        }
+
+        &.yes-canceled .over-stack,
+        &.not-canceled .over-stack,
+        &.not-activated .over-stack {
+          &.sign {
+            //                            color: $white-badge-transparent-overlay;
+            text-shadow: 0px 1px 4px rgba(255,255,255,0.6), 0px -1px 2px rgba(255,255,255,0.6);
+            opacity: .95;
+          }
+        }
+
+
+        &.yes-canceled .under-stack,
+        &.not-canceled .under-stack,
+        &.not-activated .under-stack,
+        &.yes-activated .under-stack,
+        &.null-activated .under-stack,
+        &.null-canceled .under-stack {
+          opacity: 1;
+          position: absolute;
+          left: 0.6em;
+          top: 1.5em;
+        }
+
+      }
+    }
+
+    &.booking-allowed {
+      .calendar-icon-holder {
+        .mega  {
+          opacity: 1;
+          top: 0.15em;
+          left: 0;
+          &:before {
+            font-size: 1.9em;
+          }
+        }
+      }
+    }
+
+    &.course-finished {
+      .duration-cont .times {
+        opacity: .5;
+      }
+      .legend-icon-cont .not-booked {
+        opacity: .5;
+      }
+      .calendar-icon-holder {
+        .sub-over-stack {
+          color: #ffffff;
+          opacity: .8;
+          z-index: 2;
+        }
+        .over-queue-stack {
+          opacity: 1;
+          top: 0.15em;
+          left: -0.45em;
+          &:before {
+            font-size: 1.25em;
+          }
+          &.clock {
+            z-index:3;
+            opacity: 0.55;
+            color: inherit;
+          }
+        }
+        .under-stack {
+          &:before {
+            font-size: 1.5em;
+          }
+        }
+        &.null-activated, &.null-canceled {
+          .over-stack {
+            &.sign {
+              color: inherit;
+              text-shadow: 1px 1px 9px rgba(0,0,0,0.4), 0px 0px 8px rgba(0,0,0,0.4);
+              opacity: .80;
+            }
+          }
+          .under-stack {
+            opacity: .50;
+          }
+        }
+
+        &.yes-canceled .over-stack,
+        &.not-canceled .over-stack,
+        &.not-activated .over-stack {
+          &.sign {
+            color: inherit;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.4), 0px 0px 8px rgba(0,0,0,0.4);
+            opacity: .90;
+          }
+        }
+
+        &.yes-canceled .over-stack,
+        &.not-canceled .over-stack,
+        &.not-activated .over-stack,
+        &.yes-activated .over-stack,
+        &.null-activated .over-stack,
+        &.null-canceled .over-stack {
+          top: 1.35em;
+          left: 0.65em;
+          &:before {
+            font-size: 1.0em;
+          }
+        }
+        &.yes-canceled .under-stack,
+        &.not-canceled .under-stack,
+        &.not-activated .under-stack,
+        &.yes-activated .under-stack {
+          opacity: .55;
+        }
+
+      }
+    }
+
+  }
+}

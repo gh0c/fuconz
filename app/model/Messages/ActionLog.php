@@ -75,9 +75,8 @@ class ActionLog
         $dbh = DatabaseConnection::getInstance();
         $sql = "SELECT action_log.* FROM action_log JOIN action_log_receiver
             ON action_log.id = action_log_receiver.action_log_id
-            WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type ORDER BY :order LIMIT :limit";
+            WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':receiver_type', $receiver_type, PDO::PARAM_STR);
         $stmt->bindParam(':receiver_id', $receiver_id, PDO::PARAM_INT);
@@ -92,7 +91,7 @@ class ActionLog
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 
@@ -103,10 +102,9 @@ class ActionLog
         $dbh = DatabaseConnection::getInstance();
         $sql = "SELECT action_log.* FROM action_log JOIN action_log_receiver
             ON action_log.id = action_log_receiver.action_log_id
-            WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type AND flag = :flag ORDER BY :order LIMIT :limit";
+            WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type AND flag = :flag ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':flag', $flag, PDO::PARAM_STR);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':receiver_type', $receiver_type, PDO::PARAM_STR);
         $stmt->bindParam(':receiver_id', $receiver_id, PDO::PARAM_INT);
@@ -121,7 +119,7 @@ class ActionLog
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 
@@ -155,10 +153,9 @@ class ActionLog
         $sql = "SELECT action_log.* FROM action_log JOIN action_log_receiver
             ON action_log.id = action_log_receiver.action_log_id JOIN action_log_datetime_span
             ON action_log.id = action_log_datetime_span.action_log_id
-            WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type AND datetime_span_id = :datetime_span_id ORDER BY :order LIMIT :limit";
+            WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type AND datetime_span_id = :datetime_span_id ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':datetime_span_id', $datetime_span_id, PDO::PARAM_INT);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':receiver_type', $receiver_type, PDO::PARAM_STR);
         $stmt->bindParam(':receiver_id', $receiver_id, PDO::PARAM_INT);
@@ -173,7 +170,7 @@ class ActionLog
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 
@@ -185,10 +182,9 @@ class ActionLog
         $sql = "SELECT * FROM action_log JOIN action_log_receiver
             ON action_log.id = action_log_receiver.action_log_id JOIN action_log_datetime_span
             ON action_log.id = action_log_datetime_span.action_log_id
-            WHERE datetime_span_id = :datetime_span_id ORDER BY :order LIMIT :limit";
+            WHERE datetime_span_id = :datetime_span_id ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':datetime_span_id', $datetime_span_id, PDO::PARAM_INT);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
 
         $stmt->execute();
@@ -201,7 +197,7 @@ class ActionLog
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 

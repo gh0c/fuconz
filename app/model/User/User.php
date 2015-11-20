@@ -4,6 +4,7 @@ namespace app\model\User;
 use app\helpers\Configuration as Cfg;
 use app\model\Content\Image;
 use app\model\Database\DatabaseConnection;
+use \app\model\Messages\Message;
 use app\helpers\Hash;
 use app\helpers\General;
 use \PDO;
@@ -27,7 +28,11 @@ class User
     public $banned = null;
     public $used_credits = null;
 
-    function __construct($input_data = array()) {
+    public $fb_id = null;
+    public $use_fb_avatar = null;
+
+    function __construct($input_data = array())
+    {
         if ( isset( $input_data['id'] ) )
             $this->id = (int) $input_data['id'];
         if ( isset( $input_data['username'] ) )
@@ -38,6 +43,11 @@ class User
             $this->last_name = $input_data['last_name'];
         if ( isset( $input_data['email'] ) )
             $this->email = $input_data['email'] ;
+
+        if( isset($input_data['fb_id']))
+            $this->fb_id = $input_data["fb_id"];
+        if( isset($input_data['use_fb_avatar']))
+            $this->use_fb_avatar = $input_data["use_fb_avatar"];
 
         if ( isset( $input_data['avatar_format_ext'] ) )
             $this->avatar_ext = $input_data['avatar_format_ext'];
@@ -97,9 +107,8 @@ class User
 
     public static function getUsers($limit = 1000000, $order_by = "username ASC") {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM user ORDER BY :order LIMIT :limit";
+        $sql = "SELECT * FROM user ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
 
         $stmt->execute();
@@ -112,16 +121,15 @@ class User
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 
 
     public static function getActiveUsers($limit = 1000000, $order_by = "username ASC") {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM user WHERE active = 1 ORDER BY :order LIMIT :limit";
+        $sql = "SELECT * FROM user WHERE active = 1 ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
 
         $stmt->execute();
@@ -134,12 +142,23 @@ class User
             return $list;
         }
         else {
-            return null;
+            return array();
         }
 
     }
 
-    public static function getUserById($user_id)    {
+    public static function getUserById($user_id)
+    {
+        if ($user_data = self::getUserDataById($user_id)) {
+            return new User($user_data);
+        } else {
+            return null;
+        }
+    }
+
+
+    protected static function getUserDataById($user_id)
+    {
         $dbh = DatabaseConnection::getInstance();
         $sql = "SELECT * FROM user WHERE id = :id LIMIT 1";
         $stmt = $dbh->prepare($sql);
@@ -147,13 +166,11 @@ class User
         $stmt->execute();
 
         if ($stmt->rowCount() == 1) {
-            $user = new User($stmt->fetch(PDO::FETCH_ASSOC));
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         } else {
             return null;
         }
-        return $user;
     }
-
 
     public static function getUserByEmail($email){
         $dbh = DatabaseConnection::getInstance();
@@ -246,7 +263,6 @@ class User
 
     public function credentialsMatch($hashedToken)
     {
-
         $dbh = DatabaseConnection::getInstance();
         $stmt = $dbh->prepare('SELECT * FROM user WHERE id = :id LIMIT 1');
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
@@ -268,56 +284,84 @@ class User
         }
     }
 
-//    public function avatarExists($type = null) {
-//        $type = isset($type) ? $type : Cfg::read('path.images.full');
-//        if ($this->id && $this->avatar_ext != "") {
-//            $path = Cfg::read('path.user.avatar') . "/" . $this->id .
-//                "/" . $type . "/" . "avatar" . $this->avatar_ext;
-//            if(file_exists($path)) {
-//                return $path;
-//            }
-//            else {
-//                return false;
-//            }
-//        }
-//        else return false;
-//    }
 
 
-    public function getClImageURL($type = "avatar", $options = array())
-    {
-        if($img = $this->associationExists($type)) {
-            return cloudinary_url($this->getImagePath($type), array_merge($options, array("version" => $img->version)));
+    // AVATAR ---
+    public function hasAvatar($type = "avatar") {
+        if ($this->facebookAvatarExists() || $this->customAvatarExists($type)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function getAvatarURL($type = "avatar", $options = array()) {
+        if($url = $this->facebookAvatarExists($options)) {
+            if($this->imageHosted($url)) {
+                return $url;
+            } else {
+                return null;
+            }
+        } else if ($url = $this->customAvatarExists($type, $options)) {
+            if($this->imageHosted($url)) {
+                return $url;
+        } else {
+                return null;
+            }
         } else {
             return null;
         }
     }
 
-    public function getClImageTag($type = "avatar", $options = array())
+
+
+
+
+
+    //
+    // (1)
+    // FACEBOOK AVATAR
+    //
+    public function facebookAvatarExists($options = array()) {
+        if($this->use_fb_avatar && $this->fb_id) {
+            $new_merged_options = array_merge($options, array("type" => "facebook"));
+            return cloudinary_url($this->fb_id . ".jpg", $new_merged_options);
+        } else {
+            return null;
+        }
+    }
+    public function getFacebookAvatarURL($options = array())
     {
-        if($img = $this->associationExists($type)) {
-            echo cl_image_tag($this->getImagePath($type), array_merge($options, array("version" => $img->version)));
+        if($this->use_fb_avatar && $this->fb_id) {
+            $new_merged_options = array_merge($options, array("type" => "facebook"));
+            $url = (string)cloudinary_url($this->fb_id . ".jpg", $new_merged_options);
+            if (($url)) {
+                return $url;
+            } else {
+                return null;
+            }
         } else {
             return null;
         }
     }
 
 
-    public function getImageURL($type = "avatar")
-    {
-        if($url = $this->avatarExists($type)) {
-            return $url;
-        } else {
-            return null;
-        }
-    }
 
-    public function avatarExists($type = "avatar")
+
+    //
+    // (1)
+    // CUSTOM AVATAR
+    //
+
+    public function customAvatarExists($type = "avatar", $options = array())
     {
-        if($img = $this->associationExists($type)) {
+        if($img = $this->customAvatarAssociationExists($type)) {
             if(isset($img->url)) {
-                if (@getimagesize(cloudinary_url($img->url, array("version" => $img->version)))) {
-                    return cloudinary_url($img->url, array("version" => $img->version));
+                $new_merged_options = array_merge($options, array("version" => $img->version));
+
+                $url = (string)cloudinary_url($this->getImagePath($type), $new_merged_options);
+                if (($url)) {
+                    return $url;
                 } else {
                     return null;
                 }
@@ -330,7 +374,41 @@ class User
     }
 
 
-    public function associationExists($type = "avatar")
+    public function getCustomAvatarURL($type = "avatar", $options = array())
+    {
+        if($img = $this->customAvatarAssociationExists($type)) {
+            $new_merged_options = array_merge($options, array("version" => $img->version));
+
+            return (string)cloudinary_url($this->getImagePath($type), $new_merged_options);
+        } else {
+            return null;
+        }
+    }
+
+    public function getCustomAvatarImageTag($type = "avatar", $options = array())
+    {
+        if($img = $this->customAvatarAssociationExists($type)) {
+            $new_merged_options = array_merge($options, array("version" => $img->version));
+
+            echo cl_image_tag($this->getImagePath($type), $new_merged_options);
+        } else {
+            return null;
+        }
+    }
+
+    public function returnCustomAvatarImageTag($type = "avatar", $options = array())
+    {
+        if($img = $this->customAvatarAssociationExists($type)) {
+            $new_merged_options = array_merge($options, array("version" => $img->version));
+
+            return cl_image_tag($this->getImagePath($type), $new_merged_options);
+        } else {
+            return null;
+        }
+    }
+
+
+    public function customAvatarAssociationExists($type = "avatar")
     {
         if($img = Image::getImageForEntityWithFlag($this->id, "user", $type)) {
             return $img;
@@ -362,6 +440,15 @@ class User
 
 
 
+    public function imageHosted($url) {
+        if (@getimagesize($url)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     public function updatePassword($hashed_pass) {
         $dbh = DatabaseConnection::getInstance();
         $sql = "UPDATE user SET password = :new_pass WHERE id = :id LIMIT 1";
@@ -369,14 +456,46 @@ class User
         $stmt->bindParam(':new_pass', $hashed_pass, PDO::PARAM_STR);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
 
-        $stmt->execute();
-        if ($stmt->rowCount() == 1) {
+        try {
+            $stmt->execute();
             return true;
-        } else {
+        } catch (\Exception $e) {
             return false;
         }
     }
 
+
+    public function updateFacebookAvatarUsage($use_fb_avatar, $fb_id) {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "UPDATE user SET use_fb_avatar = :use, fb_id = :fb_id WHERE id = :id LIMIT 1";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':fb_id', $fb_id, PDO::PARAM_STR);
+        $stmt->bindParam(':use', $use_fb_avatar, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
+
+        try {
+            $stmt->execute();
+            $this->populate_attributes_from_input(array("use_fb_avatar"=>$use_fb_avatar, "fb_id" => $fb_id));
+            return true;
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+
+    public function unsetFacebookAvatarUsage() {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "UPDATE user SET use_fb_avatar = :use WHERE id = :id LIMIT 1";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':use', 0, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
+
+        try {
+            $stmt->execute();
+            return true;
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
 
     public static function createNew($username, $email, $password, $first_name = null, $last_name = null, $sex = null) {
         $dbh = DatabaseConnection::getInstance();
@@ -415,14 +534,33 @@ class User
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
 
-        $stmt->execute();
+        try {
+            $stmt->execute();
+            return true;
+        } catch (\Exception $e) {
+            return false;
+        }
 
-        if ($stmt->rowCount() == 1) {
+    }
+
+
+    public function unreadMessagesExists()
+    {
+        if(Message::numberOfUnreadForReceiver($this->id, "user") > 0) {
             return true;
         } else {
             return false;
         }
+    }
 
+    public function numberOfUnreadMessages()
+    {
+        return Message::numberOfUnreadForReceiver($this->id, "user");
+    }
+
+    public function numberOfMessages()
+    {
+        return Message::numberOfMessagesForReceiver($this->id, "user");
     }
 
 

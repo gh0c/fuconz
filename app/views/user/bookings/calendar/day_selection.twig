@@ -11,8 +11,8 @@
     </div>
 
 
-    {% set datetime_spans = datetimes.get_by_date(curr_date) %}
-    {% if datetime_spans %}
+    {% set datetime_spans = datetimes.getByDate(curr_date) %}
+    {% if datetime_spans|length > 0 %}
         <div class = "booking-slots-exists"></div>
 
         <div class = "booking-slots">

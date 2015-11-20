@@ -16,8 +16,6 @@
         var b_description = $(this).data('description');
         var b_availability = $(this).data('availability');
 
-        // -
-        console.log("add: " + b_description);
         if($("#slot-" + b_date + "-" + b_start_time + "-" + b_course_id).hasClass("yes-selected")) {
             console.log("-no add");
             enableFormSubmiting();
@@ -54,7 +52,6 @@
         divCloned.find(".remove-selection").attr('data-description', b_description);
 
         divCloned.hide().appendTo('#selected-spans:last').slideDown(700, function() {
-            console.log("-slide down");
             divCloned.attr("data-myorder", b_date.replace(/-/g, "") + b_start_time.replace("-",""));
 
             var selectedSpanInput = divCloned.find(".selected-spans-input");
@@ -71,19 +68,13 @@
 //            }
             }
             selectedSpanInput.val(b_date + " " + b_start_time + " " + b_course_id);
-            console.log("-selected value: " + selectedSpanInput.val());
-
-
-
 
             var selectedSpans = $("#selected-spans input[name='selected-spans\\[\\]']")
                 .map(function(){return $(this).val();}).get();
-            console.log("-selected spans tot: " + selectedSpans);
 
             $("#selected-spans").mixItUp('sort', 'myorder:asc', function() {
                 $("#user-course-booking").removeClass("disabled-button");
                 enableFormSubmiting();
-                console.log("add end");
             });
 
         });
@@ -103,11 +94,8 @@
         var b_course_id = $(this).data('course-id');
         var b_description = $(this).data('description');
 
-        console.log("remove: " + b_description);
-
         if($("#slot-" + b_date + "-" + b_start_time + "-" + b_course_id).length > 0) {
             // removing selected slot from actual month
-            console.log("-removing from actual month");
             var slot = $("#slot-" + b_date + "-" + b_start_time + "-" + b_course_id);
             slot.addClass("not-selected");
             slot.removeClass("yes-selected");
@@ -116,8 +104,6 @@
                 icon_cont.removeClass("yes-selected");
                 icon_cont.addClass("not-selected");
                 if(!($("#day-" + b_date).find(".legend-icon-cont.yes-selected").length > 0)) {
-                    console.log("-no more selections this day");
-
                     $("#day-" + b_date).removeClass("selected-day");
                 }
                 var selected_spans_input = $('#selected-spans .selected-span-cont .selected-spans-input').filter(function() {
@@ -125,23 +111,18 @@
                 });
                 selected_spans_input.parent().slideUp(800, function(){
                     $(this).remove();
-                    console.log("-slide...")
                     var selectedSpans = $("#selected-spans input[name='selected-spans\\[\\]']")
                         .map(function(){return $(this).val();}).get();
-                    console.log("-selected spans tot: " + selectedSpans);
                     $("#selected-spans").mixItUp('sort', 'myorder:asc', function() {
                         $("#user-course-booking").removeClass("disabled-button");
                         enableFormSubmiting();
-                        console.log("remove end");
                     });
                 });
 
             }
         } else {
             // removing slot selected in some other month view
-            console.log("-removing from some other view");
             if($("#day-" + b_date).length > 0) {
-                console.log("-filtered slots...");
                 var selected_spans_input = $('#selected-spans .selected-span-cont .selected-spans-input').filter(function() {
                     return this.value == b_date + " " + b_start_time + " " + b_course_id;
                 });
@@ -154,16 +135,13 @@
                         }
                         var selectedSpans = $("#selected-spans input[name='selected-spans\\[\\]']")
                             .map(function(){return $(this).val();}).get();
-                        console.log("-selected spans tot: " + selectedSpans);
                         $("#selected-spans").mixItUp('sort', 'myorder:asc', function() {
                             $("#user-course-booking").removeClass("disabled-button");
                             enableFormSubmiting();
-                            console.log("remove end");
                         });
                     });
 
             } else {
-                console.log("-other month");
                 var selected_spans_input = $('#selected-spans .selected-span-cont .selected-spans-input').filter(function() {
                     return this.value == b_date + " " + b_start_time + " " + b_course_id;
                 });
@@ -172,7 +150,6 @@
                     $("#selected-spans").mixItUp('sort', 'myorder:asc', function() {
                         $("#user-course-booking").removeClass("disabled-button");
                         enableFormSubmiting();
-                        console.log("remove end");
                     });
                 });
             }
@@ -220,8 +197,10 @@ $(document).on("click", ".calendar-header.widget-header .month-changer", functio
     var request = $.ajax({
         url: url,
         type: "POST",
-        data: params,
-        dataType: "html"
+        data: JSON.stringify(params),
+        dataType: "html",
+        contentType: "application/json; charset=utf-8"
+
     });
 
     request.done(function( msg ) {
@@ -234,6 +213,12 @@ $(document).on("click", ".calendar-header.widget-header .month-changer", functio
         enableFormSubmiting();
 
         $( "#booking-calendar" ).html( msg );
+    });
+    request.fail(function(jqXHr, textStatus, errorThrown){
+        console.log("ERROR!");
+        console.log(jqXHr);
+        console.log(textStatus);
+        console.log(errorThrown);
     });
 });
 
@@ -290,16 +275,20 @@ $(document).on("click", ".calendar-header.widget-header .offset-changer", functi
     params[csrfKeyName] = csrfToken;
     params["selected-spans"] = selectedSpans;
 
+    console.log("Req started");
+
     var request = $.ajax({
         url: url,
         type: "POST",
-        data: params,
-        dataType: "html"
+        data: JSON.stringify(params),
+        dataType: "html",
+        contentType: "application/json; charset=utf-8"
     });
 
 
 
     request.done(function( msg ) {
+        console.log("Req ended");
         $("#booking-calendar > *").css("opacity", "initial");
         $(".loading-gif-div").remove();
         $("#user-course-booking").removeClass("disabled-button");
@@ -308,6 +297,12 @@ $(document).on("click", ".calendar-header.widget-header .offset-changer", functi
         enableFormSubmiting();
 
         $( "#booking-calendar" ).html( msg );
+    });
+    request.fail(function(jqXHr, textStatus, errorThrown){
+        console.log("ERROR!");
+        console.log(jqXHr);
+        console.log(textStatus);
+        console.log(errorThrown);
     });
 });
 //});

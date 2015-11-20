@@ -1,0 +1,144 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    Rezervacije
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Moje rezervacije</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+
+
+            <div class = "inner-cont">
+
+                {% include "templates/partials/user_messages.twig" %}
+
+
+                <span>..ere they are...</span>
+                {% if not bookings_exists %}
+                    <span>Nema rezervacija</span>
+                {% else %}
+
+                    <div class = "vertical-section text-centered dashed-spacer">
+
+                    </div>
+
+                    <div  class = "vertical-section text-centered">
+                        {% if bookings_allowed|length < 1 %}
+                            <span>Nema rezervacija di je dozboljeno kibidabi</span>
+                        {% else %}
+                            {% set num_of_activated_prebookings = 0 %}
+                            {% for booking in bookings_allowed %}
+                                <div id = "b-{{ booking.datetime_span.datetimeIdString() }}" class = "booking item std-item booking-allowed">
+                                    <section class="td">
+                                        <div class = "icon-holder std-icon-holder">
+                                            <div class = "booking-icon-cont std-icon-cont">
+                                                <div class = "thumbnail booking booking-icon std-icon no-avatar">
+                                                    <div class="pic-cont std-pic-cont">
+                                                        {% if booking.type == 'reservation' %}
+                                                            <i class = "fa icon fa-fw fa-calendar-check-o"></i>
+                                                        {% elseif booking.type == 'prereservation' %}
+                                                            <i class = "fa icon fa-fw fa-clock-o"></i>
+                                                        {% else %}
+                                                            <i class = "fa icon fa-fw fa-question"></i>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+
+                                </div>
+                            {% endfor %}
+                            <div class = "vertical-section text-centered dashed-spacer">
+
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div  class = "vertical-section text-centered">
+                        {% if bookings_not_allowed|length < 1 %}
+                            <span>Nema rezervacija di nije dozboljeno kibidabi</span>
+                        {% else %}
+                            {% for booking in bookings_not_allowed %}
+                                <div id = "b-{{ booking.datetime_span.datetimeIdString() }}" class = "booking item std-item booking-disallowed">
+                                    <section class="td">
+                                        <div class = "icon-holder std-icon-holder">
+                                            <div class = "booking-icon-cont std-icon-cont">
+                                                <div class = "thumbnail booking booking-icon std-icon no-avatar">
+                                                    <div class="pic-cont std-pic-cont">
+                                                        {% if booking.type == 'reservation' %}
+                                                            <i class = "fa icon fa-fw fa-calendar-check-o"></i>
+                                                        {% elseif booking.type == 'prereservation' %}
+                                                            <i class = "fa icon fa-fw fa-clock-o"></i>
+                                                        {% else %}
+                                                            <i class = "fa icon fa-fw fa-question"></i>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </section>
+
+                                </div>
+                            {% endfor %}
+                            <div class = "vertical-section text-centered dashed-spacer">
+
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div  class = "vertical-section text-centered">
+                        {% if bookings_ended|length < 1 %}
+                            <span>Nema rezervacija termina koji su završili</span>
+                        {% else %}
+                            {% for booking in bookings_ended %}
+                                <div id = "b-{{ booking.datetime_span.datetimeIdString() }}" class = "booking item std-item booking-ended">
+                                    <section class="td">
+                                        <div class = "icon-holder std-icon-holder">
+                                            <div class = "booking-icon-cont std-icon-cont">
+                                                <div class = "thumbnail booking booking-icon std-icon no-avatar">
+                                                    <div class="pic-cont std-pic-cont">
+                                                        {% if booking.type == 'reservation' %}
+                                                            <i class = "fa icon fa-fw fa-calendar-check-o"></i>
+                                                        {% elseif booking.type == 'prereservation' %}
+                                                            <i class = "fa icon fa-fw fa-clock-o"></i>
+                                                        {% else %}
+                                                            <i class = "fa icon fa-fw fa-question"></i>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </section>
+
+                                </div>
+                            {% endfor %}
+                            <div class = "vertical-section text-centered dashed-spacer">
+
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

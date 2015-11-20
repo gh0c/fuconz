@@ -12,8 +12,8 @@
     </div>
 
 
-    {% set datetime_spans = datetimes.get_by_date(curr_date) %}
-    {% if datetime_spans %}
+    {% set datetime_spans = datetimes.getByDate(curr_date) %}
+    {% if datetime_spans|length > 0 %}
         <div class = "booking-slots-exists"></div>
 
         <div class = "booking-slots">
@@ -45,8 +45,8 @@
                                  data-date = "{{ curr_date }}" data-description = "{{ span.description_string() }}"
                                  id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
                                 <div class = "legend-icon-cont">
-                                    <span class="calendar-icon-holder yes-canceled" title = "{{ my_booking.canceled }}">
-                                        <i class="fa fa-fw  fa-sticky-note-o  fa-rotate-270 sub-under-stack"></i>
+                                    <span class="calendar-icon-holder no-booking" title = "{{ my_booking.canceled }}">
+                                        <i class="fa fa-fw fa-sticky-note-o fa-rotate-270 sub-under-stack-solo"></i>
                                         <i class = "fa fa-fw fa-lock under-stack"></i>
                                     </span>
                                 </div>
@@ -84,7 +84,7 @@
                              data-date = "{{ curr_date }}" data-description = "{{ span.description_string() }}"
                              id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
                             <div class = "legend-icon-cont">
-                                <i class = "fa fa-fw fa-sticky-note-o mega not-booked fa-rotate-270" title = "{{ span.description_string() }}"></i>
+                                <i class = "fa fa-fw fa-sticky-note-o not-booked fa-rotate-270" title = "{{ span.description_string() }}"></i>
                             </div>
                             <div class = "duration-cont">
                                 <span class = "times">{{ span.start_time }}-{{ span.end_time }}</span>
@@ -107,7 +107,7 @@
                                         {% if my_booking.type == 'prereservation' %}
                                             {% if my_booking.activated == 1 %}
                                                 <span class="calendar-icon-holder yes-activated" title = "{{ my_booking.activated }}">
-                                                    <i class="fa fa-fw fa-clock-o ico over-queue-stack clock"></i>
+                                                    <i class="fa fa-fw fa-clock-o over-queue-stack clock"></i>
                                                     {#<i class="fa fa-fw fa-circle ico over-queue-stack sub-over-stack"></i>#}
 
                                                     <i class="fa fa-fw fa-check-circle ico over-stack sign"></i>
@@ -118,7 +118,7 @@
 
                                             {% elseif my_booking.activated == 2 %}
                                                 <span class="calendar-icon-holder not-activated" title = "{{ my_booking.activated }}">
-                                                    <i class="fa fa-fw fa-clock-o ico over-queue-stack clock"></i>
+                                                    <i class="fa fa-fw fa-clock-o over-queue-stack clock"></i>
                                                     {#<i class="fa fa-fw fa-circle ico over-queue-stack sub-over-stack"></i>#}
 
                                                     <i class="fa fa-fw fa-times ico over-stack sign"></i>
@@ -129,7 +129,7 @@
                                             {% else %}
 
                                                 <span class="calendar-icon-holder null-activated" title = "{{ my_booking.activated }}">
-                                                    <i class="fa fa-fw fa-clock-o ico over-queue-stack clock"></i>
+                                                    <i class="fa fa-fw fa-clock-o over-queue-stack clock"></i>
                                                     {#<i class="fa fa-fw fa-circle ico over-queue-stack sub-over-stack"></i>#}
 
                                                     <i class="fa fa-fw fa-question ico over-stack sign"></i>
@@ -173,7 +173,9 @@
 
                         {% else %} {# Booking cancelation still allowed #}
 
-                            <a href = "#">
+                            <a target = "_blank" href = "{{ urlFor('user.bookings.home') }}#b-{{
+                                curr_date}}-{{span.start_time_hour}}-{{ span.start_time_minutes}}">
+                                 {#~ '-' ~ span.start_time_hour ~ '-' ~ span.start_time_minutes ~ '-' ~ span.training-course.id  }}">#}
                                 <div class = "booking booking-exists"
                                      id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
                                     <div class = "legend-icon-cont">

@@ -12,7 +12,7 @@
 <div class = "pp-a-box container">
 
     <!-- sidebar for logged users -->
-    {%  if auth_user %}
+    {%  if auth_user.show_sidebar %}
         {% include 'user/user.sidebar.twig' %}
     {% endif %}
 
@@ -33,12 +33,13 @@
     </div>
 </div>
 
-{% if auth_user %}
+{% if auth_user.show_sidebar %}
 <script src="public/js/SideslideSidebar/classie.js"></script>
 <script src="public/js/SideslideSidebar/main.js"></script>
 {% endif %}
 
 {% include 'templates/partials/foot_info.twig'%}
 
+{% block additional_js %} {% endblock %}
 </body>
 </html>

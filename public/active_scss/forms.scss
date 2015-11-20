@@ -1,4 +1,4 @@
-@import "modules/modules.import";
+@import "../scss/modules/_modules.import";
 
 $std-input-height: 2.5em;
 $std-input-width: 24em;
@@ -363,13 +363,15 @@ $small-input-width: 14em;
 
         line-height: 100%;
         display: inline-block;
-        width: 8em;
+        width: 10em;
         padding: 0 0.8em 0 2.2em;
         text-align: left;
         position:relative;
         top: 3px;
       }
     }
+
+
 
 
     & + .file-div-cont > label {

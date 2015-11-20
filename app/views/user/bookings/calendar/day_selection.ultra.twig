@@ -1,0 +1,270 @@
+{% set day_preselected = (pre_selected_spans and curr_date in pre_selected_spans|keys)? true : false %}
+
+<div class = "day-container {{ (day_preselected)? 'selected-day' : '' }}  {{ (day_passed) ? 'day-ended' : '' }}"
+     id = "day-{{ curr_date }}">
+
+    <div class = "date-container">
+        {% if day_passed %}
+            <i class = "fa fa-times day-ended"></i>
+        {% endif %}
+
+        <span>{{ curr_date|date("j") }}</span>
+    </div>
+
+
+    {% set datetime_spans = datetimes.getByDate(curr_date) %}
+    {% if datetime_spans|length > 0 %}
+        <div class = "booking-slots-exists"></div>
+
+        <div class = "booking-slots">
+            <div class = "bookings-container">
+            {% for span in datetime_spans %}
+
+
+                {% set course_passed = span.span_start < "now"|date("Y-m-d H:i:s") %}
+                {% set course_booking_allowed = ( span.span_start|date("U") - span.training_course.reservation_time ) > "now"|date("U")%}
+
+                {% set span_preselected = (day_preselected and
+                    (span.start_time_hour ~ '-' ~ span.start_time_minutes) in pre_selected_spans[curr_date])? true : false %}
+
+                {% set my_booking = booking.getByUserAndDatetimeSpan(auth_user.id, span.id)%}
+                {% if my_booking %}
+                    {% set booking_exists = true %}
+                {% else %}
+                    {% set booking_exists = false %}
+                {% endif %}
+
+
+                {% if not booking_exists %} {#No reservations nor pre-reservations#}
+                    {% if not course_passed %} {# Course without booking not over #}
+
+                        {% if not course_booking_allowed %} {# Booking time ended for not over course #}
+
+                            {#<div><span title = "{{ ( span.span_start|date("U") - span.training_course.reservation_time )|date("Y-m-d H:i") }}">-C booking ajbok</span></div>#}
+                            <div class = "booking booking-time-ended" title = "{{ span.training_course.title }}&#10;{{ span.description_string() }}"
+                                 data-date = "{{ curr_date }}" data-description = "{{ span.description_string() }}"
+                                 id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
+                                <div class = "legend-icon-cont">
+                                    <span class="calendar-icon-holder no-booking" title = "{{ my_booking.canceled }}">
+                                        <i class="fa fa-fw fa-sticky-note-o fa-rotate-270 sub-under-stack-solo"></i>
+                                        <i class = "fa fa-fw fa-lock under-stack"></i>
+                                    </span>
+                                </div>
+                                <div class = "duration-cont">
+                                    <span class = "times">{{ span.start_time }}-{{ span.end_time }}</span>
+                                </div>
+                            </div>
+
+
+                        {% else %} {# Course available for booking #}
+
+                            <div class = "booking available-for-booking {{ span_preselected? 'yes':'not' }}-selected"
+                                 title = "{{ span.training_course.title }}&#10;{{ span.description_string() }}"
+                                 data-date = "{{ curr_date }}"
+                                 data-start-time = "{{ span.start_time_hour }}-{{ span.start_time_minutes }}"
+                                 data-course-id = "{{ span.training_course.id }}"
+                                 data-description = "{{ span.description_string() }}"
+                                 data-availability = "{{ reservation.number_of_reservations_for_datetime_and_course(span.training_course.id, span.id)
+                                    ~ '/' ~ span.training_course.capacity }}"
+                                 data-reservation-time = "{{ span.training_course.reservation_time }}"
+                                 id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
+                                <div class = "legend-icon-cont {{ span_preselected? 'yes':'not' }}-selected">
+                                    <i class = "fa fa-fw fa-circle-thin mega" title = "{{ span.description_string() }}"></i>
+                                </div>
+                                <div class = "duration-cont">
+                                    <span class = "times">{{ span.start_time }}-{{ span.end_time }}</span>
+                                </div>
+                            </div>
+
+                        {% endif %}
+
+                    {% else %} {# Course without booking finished #}
+
+                        <div class = "booking course-finished" title = "{{ span.training_course.title }}&#10;{{ span.description_string() }}"
+                             data-date = "{{ curr_date }}" data-description = "{{ span.description_string() }}"
+                             id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
+                            <div class = "legend-icon-cont">
+                                <i class = "fa fa-fw fa-sticky-note-o not-booked fa-rotate-270" title = "{{ span.description_string() }}"></i>
+                            </div>
+                            <div class = "duration-cont">
+                                <span class = "times">{{ span.start_time }}-{{ span.end_time }}</span>
+                            </div>
+                        </div>
+
+                    {% endif %}
+
+
+                {% else %} {# (Pre)reservation == any booking exists#}
+
+                    {% if not course_passed %} {# Course with booking not over #}
+
+                        {% if not course_booking_allowed %} {# Course with booking too soon to cancel (pre-)reservation #}
+
+                            <a target = "_blank" href = "{{ urlFor('user.bookings.home') }}#b-{{
+                                curr_date}}-{{span.start_time_hour}}-{{ span.start_time_minutes}}">
+                                <div class = "booking booking-exists booking-time-ended"
+                                     id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
+                                    <div class = "legend-icon-cont">
+                                        {% if my_booking.type == 'prereservation' %}
+                                            {% if my_booking.activated == 1 %}
+                                                <span class="calendar-icon-holder yes-activated" title = "{{ my_booking.activated }}">
+                                                    <i class="fa fa-fw fa-clock-o over-queue-stack clock"></i>
+
+                                                    <i class="fa fa-fw fa-check-circle ico over-stack sign"></i>
+                                                    <i class="fa fa-fw fa-square ico over-stack sub-over-stack"></i>
+                                                    <i class="fa fa-fw  fa-sticky-note-o fa-rotate-270 sub-under-stack"></i>
+                                                    <i class = "fa fa-fw fa-lock under-stack"></i>
+                                                </span>
+
+                                            {% elseif my_booking.activated == 2 %}
+                                                <span class="calendar-icon-holder not-activated" title = "{{ my_booking.activated }}">
+                                                    <i class="fa fa-fw fa-clock-o over-queue-stack clock"></i>
+
+                                                    <i class="fa fa-fw fa-times ico over-stack sign"></i>
+                                                    <i class="fa fa-fw fa-square ico over-stack sub-over-stack"></i>
+                                                    <i class="fa fa-fw  fa-sticky-note-o fa-rotate-270 sub-under-stack"></i>
+                                                    <i class = "fa fa-fw fa-lock under-stack"></i>
+                                                </span>
+                                            {% else %}
+
+                                                <span class="calendar-icon-holder null-activated" title = "{{ my_booking.activated }}">
+                                                    <i class="fa fa-fw fa-clock-o over-queue-stack clock"></i>
+
+                                                    <i class="fa fa-fw fa-question ico over-stack sign"></i>
+                                                    <i class="fa fa-fw fa-square ico over-stack sub-over-stack"></i>
+                                                    <i class="fa fa-fw  fa-sticky-note-o fa-rotate-270 sub-under-stack"></i>
+                                                    <i class = "fa fa-fw fa-lock under-stack"></i>
+                                                </span>
+                                            {% endif %}
+
+                                        {% elseif my_booking.type == 'reservation' %}
+                                            {% if my_booking.canceled == 1 %}
+                                                <span class="calendar-icon-holder yes-canceled">
+                                                    <i class="fa fa-fw fa-times ico over-stack sign"></i>
+                                                    <i class="fa fa-fw fa-square ico over-stack sub-over-stack"></i>
+                                                    <i class="fa fa-fw  fa-calendar-o sub-under-stack"></i>
+                                                    <i class = "fa fa-fw fa-lock under-stack"></i>
+                                                </span>
+                                            {% elseif my_booking.canceled == 2 %}
+                                                <span class="calendar-icon-holder not-canceled">
+                                                    <i class="fa fa-fw fa-check-circle ico over-stack sign"></i>
+                                                    <i class="fa fa-fw fa-square ico over-stack sub-over-stack"></i>
+                                                    <i class="fa fa-fw  fa-calendar-o sub-under-stack"></i>
+                                                    <i class = "fa fa-fw fa-lock under-stack"></i>
+                                                </span>
+                                            {% else %}
+                                                <span class="calendar-icon-holder null-canceled" title = "">
+                                                    <i class="fa fa-fw fa-question ico over-stack sign"></i>
+                                                    <i class="fa fa-fw fa-square ico over-stack sub-over-stack"></i>
+                                                    <i class="fa fa-fw  fa-calendar-o sub-under-stack"></i>
+                                                    <i class = "fa fa-fw fa-lock under-stack"></i>
+                                                </span>
+                                            {% endif %}
+                                        {% endif %}
+
+                                    </div>
+                                    <div class = "duration-cont">
+                                        <span class = "times">{{ span.start_time }}-{{ span.end_time }}</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                        {% else %} {# Booking cancelation still allowed #}
+
+                            <a target = "_blank" href = "{{ urlFor('user.bookings.home') }}#b-{{
+                                curr_date}}-{{span.start_time_hour}}-{{ span.start_time_minutes}}">
+                                <div class = "booking booking-exists"
+                                     id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
+                                    <div class = "legend-icon-cont">
+                                        {% if my_booking.type == 'prereservation' %}
+                                            <i class = "fa fa-fw fa-clock-o mega"
+                                               title = "Postoji predbilježba&#10;Uneseno: {{ (my_booking.created_at|date("U"))|date("d.m.Y. H:i") }}">
+                                            </i>
+                                        {% elseif my_booking.type == 'reservation' %}
+                                            <i class = "fa fa-fw fa-calendar-check-o mega"
+                                               title = "Postoji rezervacija&#10;Uneseno: {{ (my_booking.created_at|date("U"))|date("d.m.Y. H:i") }}">
+                                            </i>
+                                        {% endif %}
+                                    </div>
+                                    <div class = "duration-cont">
+                                        <span class = "times">{{ span.start_time }}-{{ span.end_time }}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        {% endif %}
+
+                    {% else %} {# Course with booking finished #}
+
+                        <div class = "booking course-finished" title = "{{ span.training_course.title }}&#10;{{ span.description_string() }}"
+                             data-date = "{{ curr_date }}" data-description = "{{ span.description_string() }}"
+                             id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
+                            <div class = "legend-icon-cont">
+
+                                {% if my_booking.type == 'prereservation' %}
+                                    {% if my_booking.activated == 1 %}
+                                        <span class="calendar-icon-holder yes-activated" title = "{{ my_booking.activated }}">
+                                            <i class="fa fa-fw fa-clock-o ico over-queue-stack clock"></i>
+                                            <i class="fa fa-fw fa-circle ico over-queue-stack sub-over-stack"></i>
+                                            <i class="fa fa-fw fa-check-circle ico over-stack sign"></i>
+                                            <i class="fa fa-fw fa-circle ico over-stack sub-over-stack"></i>
+
+                                            <i class="fa fa-fw ico fa-sticky-note-o fa-rotate-270 under-stack"></i>
+                                        </span>
+                                    {% elseif my_booking.activated == 2 %}
+                                        <span class="calendar-icon-holder not-activated" title = "{{ my_booking.activated }}">
+                                            <i class="fa fa-fw fa-clock-o ico over-queue-stack clock"></i>
+                                            <i class="fa fa-fw fa-circle ico over-queue-stack sub-over-stack"></i>
+                                            <i class="fa fa-fw fa-ban ico over-stack sign"></i>
+                                            <i class="fa fa-fw fa-circle ico over-stack sub-over-stack"></i>
+
+                                            <i class="fa fa-fw ico fa-sticky-note-o fa-rotate-270 under-stack"></i>
+                                        </span>
+                                    {% else %}
+                                        <span class="calendar-icon-holder null-activated" title = "{{ my_booking.activated }}">
+                                            <i class="fa fa-fw fa-clock-o ico over-queue-stack clock"></i>
+                                            <i class="fa fa-fw fa-circle ico over-queue-stack sub-over-stack"></i>
+                                            <i class="fa fa-fw fa-question-circle ico over-stack sign"></i>
+                                            <i class="fa fa-fw fa-circle ico over-stack sub-over-stack"></i>
+
+                                            <i class="fa fa-fw ico fa-sticky-note-o fa-rotate-270 under-stack"></i>
+                                        </span>
+                                    {% endif %}
+
+                                {% elseif my_booking.type == 'reservation' %}
+                                    {% if my_booking.canceled == 1 %}
+                                        <span class="calendar-icon-holder yes-canceled" title = "{{ my_booking.canceled }}">
+                                            <i class="fa fa-fw fa-ban ico over-stack sign"></i>
+                                            <i class="fa fa-fw fa-circle ico over-stack sub-over-stack"></i>
+                                            <i class="fa fa-fw ico fa-calendar-o under-stack"></i>
+                                        </span>
+                                    {% elseif my_booking.canceled == 2 %}
+                                        <span class="calendar-icon-holder not-canceled" title = "{{ my_booking.canceled }}">
+                                            <i class="fa fa-fw fa-check-circle ico over-stack sign"></i>
+                                            <i class="fa fa-fw fa-circle ico over-stack sub-over-stack"></i>
+                                            <i class="fa fa-fw ico fa-calendar-o under-stack"></i>
+                                        </span>
+                                    {% else %}
+                                        <span class="calendar-icon-holder null-canceled" title = "{{ my_booking.canceled }}">
+                                            <i class="fa fa-fw fa-question-circle ico over-stack sign"></i>
+                                            <i class="fa fa-fw fa-circle ico over-stack sub-over-stack"></i>
+                                            <i class="fa fa-fw ico fa-calendar-o under-stack"></i>
+                                        </span>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            <div class = "duration-cont">
+                                <span class = "times">{{ span.start_time }}-{{ span.end_time }}</span>
+                            </div>
+                        </div>
+
+                    {% endif %}
+
+                {% endif %}
+
+
+
+            {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+</div>

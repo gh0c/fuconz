@@ -66,6 +66,26 @@ class Logger
         UserLog::createNew($user->id, "Promjena avatara", "profile");
     }
 
+    public static function logUserAvatarDelete($user)
+    {
+        // Messages
+
+        // Action logs
+
+        // User logs
+        UserLog::createNew($user->id, "Brisanje avatara", "profile");
+    }
+
+    public static function logUserAvatarFacebookChange($user)
+    {
+        // Messages
+
+        // Action logs
+
+        // User logs
+        UserLog::createNew($user->id, "Postavljanje avatara na Facebook profilnu sliku", "profile");
+    }
+
     public static function logUserProfileDataChange($user)
     {
         // Messages
@@ -100,7 +120,7 @@ class Logger
             $s_course_id = $date_time_courseId[2];
             list($s_hours, $s_minutes) = explode("-", $s_time);
 
-            $datetime_span = DatetimeSpan::get_by_datetime_and_course($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
+            $datetime_span = DatetimeSpan::getByDatetimeAndCourse($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
                 $s_course_id);
             $datetimes[] = array("id" => $datetime_span->id);
 
@@ -158,7 +178,7 @@ class Logger
                 $s_course_id = $date_time_courseId[2];
                 list($s_hours, $s_minutes) = explode("-", $s_time);
 
-                $datetime_span = DatetimeSpan::get_by_datetime_and_course($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
+                $datetime_span = DatetimeSpan::getByDatetimeAndCourse($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
                     $s_course_id);
                 $datetimes[] = array("id" => $datetime_span->id);
 
@@ -192,7 +212,7 @@ class Logger
                 $s_course_id = $date_time_courseId[2];
                 list($s_hours, $s_minutes) = explode("-", $s_time);
 
-                $datetime_span = DatetimeSpan::get_by_datetime_and_course($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
+                $datetime_span = DatetimeSpan::getByDatetimeAndCourse($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
                     $s_course_id);
                 $datetimes[] = array("id" => $datetime_span->id);
 
@@ -252,7 +272,7 @@ class Logger
                 $s_course_id = $date_time_courseId[2];
                 list($s_hours, $s_minutes) = explode("-", $s_time);
 
-                $datetime_span = DatetimeSpan::get_by_datetime_and_course($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
+                $datetime_span = DatetimeSpan::getByDatetimeAndCourse($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
                     $s_course_id);
                 $datetimes[] = array("id" => $datetime_span->id);
 

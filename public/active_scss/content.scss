@@ -1,0 +1,187 @@
+@import "modules/modules.import";
+
+#content {
+  clear: both;
+  position: relative;
+  @include pp-transition(padding .25s ease-out);
+
+  .main-block-cont {
+    position: relative;
+    padding: 0 0 10px 0;
+  }
+
+  .main-block-cont:first-child, .main-block-cont.first {
+//    padding-top: 50px;
+  }
+
+  .main-title-box {
+    width: 100%;
+    background-color: $dark-dark-blue;
+    .flag {
+      @include gradient-pole-black-blue-white-1();
+      height: 7px;
+    }
+    .page-title {
+      text-align: center;
+      font-family: MuseoSans;
+      font-weight: 500;
+      padding: 10px 0 8px 0px;
+      h1{
+        color: $light-blue-gray-light;
+        font-size: 2em;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .main-content-box {
+    width: 100%;
+    background-color: $main-content-bg-color;
+
+    .vertical-section {
+      padding: 3px 0;
+
+      & > div {
+        padding: 0.35em 0.5em;
+        &.std-item {
+          padding: 0 0.5em;
+        }
+      }
+
+      &.dashed-spacer, .dashed-spacer {
+        border-bottom: 2px dashed $dark-dark-blue;
+        box-sizing: border-box;
+      }
+
+      &.multirow {
+        display: inline-block;
+        min-width: 35em;
+      }
+
+      &.multirow-special {
+        display: inline-block;
+        height: 3.5em;
+        & > div {
+          padding: 0.2em 0.7em;
+        }
+      }
+      h3 {
+        text-align: center;
+        font-family: MuseoSans;
+        font-weight: 300;
+        font-style: italic;
+      }
+      h4 a {
+        color: $dark-dark-blue;
+        @include pp-transition(background-color .25s ease-out, color .25s ease-out, border .25s ease-out);
+        padding: 0 0.1em;
+        cursor: pointer;
+
+        &:hover, &:focus {
+          color: white;
+          background-color: $dark-dark-blue;
+
+        }
+      }
+
+    }
+
+
+    .std-item {
+      .std-icon-holder {
+        display: inline-table;
+        .std-icon-cont {
+          text-align: center;
+          vertical-align: middle;
+          display: table-cell;
+          overflow: hidden;
+          .thumbnail {
+            margin: 0 auto;
+            .std-pic-cont {
+              margin: 0 auto;
+              width: 100%;
+              height: 100%;
+              display: inline-table;
+              & > .v-align-helper {
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+              }
+              & > img {
+                max-width: 95%;
+                max-height: 95%;
+                vertical-align: middle;
+              }
+              & > .icon {
+                display: table-cell;
+                vertical-align: middle;
+              }
+
+            }
+          }
+        }
+      }
+
+
+    }
+
+    @import 'content.messages';
+
+    @import 'content.bookings';
+
+    .loading-gif-div {
+      z-index: 80;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      color: $cibona-blue;
+      &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+      i {
+        font-size: 10em;
+        vertical-align: middle;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+
+
+
+  }
+
+}
+
+
+
+
+
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+  border-left: 1px solid $light-blue-gray-dark;
+}
+::-webkit-scrollbar-thumb {
+  @include pp-transition(background-color .30s ease-out, color .30s ease-out);
+  background-color: $cibona-blue;
+  @include rounded(8px);
+  cursor: pointer;
+
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: $cibona-blue-dark-overlay;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: $dark-dark-blue;
+}

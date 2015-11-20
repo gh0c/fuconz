@@ -67,9 +67,8 @@ class Message
     public static function getMessages($limit = 1000000, $order_by = "created_at DESC")
     {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM message ORDER BY :order LIMIT :limit";
+        $sql = "SELECT * FROM message ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
 
         $stmt->execute();
@@ -82,17 +81,16 @@ class Message
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 
 
-    public static function getMessagesForReceiver($receiver_id, $receiver_type, $limit = 1000000, $order_by = "created_at DESC")
+    public static function getMessagesForReceiver($receiver_id, $receiver_type, $limit = 100000, $order_by = "created_at DESC")
     {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM message WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type ORDER BY :order LIMIT :limit";
+        $sql = "SELECT * FROM message WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':receiver_type', $receiver_type, PDO::PARAM_STR);
         $stmt->bindParam(':receiver_id', $receiver_id, PDO::PARAM_INT);
@@ -107,7 +105,7 @@ class Message
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 
@@ -115,9 +113,8 @@ class Message
     public static function getUnreadMessagesForReceiver($receiver_id, $receiver_type, $limit = 1000000, $order_by = "created_at DESC")
     {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM message WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type AND has_been_read = 0 ORDER BY :order LIMIT :limit";
+        $sql = "SELECT * FROM message WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type AND has_been_read = 0 ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':receiver_type', $receiver_type, PDO::PARAM_STR);
         $stmt->bindParam(':receiver_id', $receiver_id, PDO::PARAM_INT);
@@ -132,7 +129,7 @@ class Message
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 
@@ -152,7 +149,7 @@ class Message
 
 
 
-    public function setHasBeenReadForList($has_been_read)
+    public function setHasBeenRead($has_been_read)
     {
         $dbh = DatabaseConnection::getInstance();
         $sql = "UPDATE message SET has_been_read = :has_been_read WHERE id = :id";
@@ -167,7 +164,7 @@ class Message
     public static function numberOfUnreadForReceiver($receiver_id, $receiver_type)
     {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT COUNT(*) AS number FROM message WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type WHERE has_been_read = 0";
+        $sql = "SELECT COUNT(*) AS number FROM message WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type AND has_been_read = 0";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':receiver_type', $receiver_type, PDO::PARAM_STR);
         $stmt->bindParam(':receiver_id', $receiver_id, PDO::PARAM_INT);
@@ -253,6 +250,14 @@ class Message
         else {
             return false;
         }
+    }
+
+
+
+    public function timeLabel()
+    {
+        $time = strtotime($this->created_at);
+        return sprintf("%s %s %s", date("j.", $time), Calendar::cro_month_label_genitive(date("n", $time)), date("Y. H:i", $time));
     }
 
 

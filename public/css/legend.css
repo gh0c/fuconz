@@ -1,0 +1,586 @@
+/*********************
+ BREAKPOINTS
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */@-webkit-keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-moz-keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-o-keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@-moz-keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@-o-keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@-webkit-keyframes highlight-anchored {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  10% {
+    background-color: #246173;
+  }
+  100% {
+    background-color: initial;
+  }
+}
+@-moz-keyframes highlight-anchored {
+  0% {
+    background-color: rgba(0, 0, 0, .1);
+  }
+  10% {
+    background-color: #246173;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, .1);
+  }
+}
+h4 div.legend {
+  padding: 0.5em 0.2em;
+  display: none;
+}
+h4 div.legend div.legend-item {
+  width: 32%;
+  display: inline-table;
+  vertical-align: top;
+  text-align: left;
+  height: 3.5em;
+}
+h4 div.legend div.legend-item i:not(.fa-ellipsis-h) {
+  font-size: 1.5em;
+}
+h4 div.legend div.legend-item > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+h4 div.legend div.legend-item span {
+  font-size: 0.9em;
+  text-align: center;
+}
+h4 div.legend div.legend-item .calendar-icon-holder {
+  position: relative;
+  width: 6em;
+  font-size: 0.7em;
+}
+h4 div.legend div.legend-item .calendar-icon-holder .ico {
+  width: 100%;
+}
+h4 div.legend div.legend-item .calendar-icon-holder i.over-stack {
+  position: absolute;
+}
+h4 div.legend div.legend-item .calendar-icon-holder i.over-stack.sign {
+  z-index: 5;
+}
+h4 div.legend div.legend-item .calendar-icon-holder .sub-over-stack {
+  z-index: 2;
+  color: white;
+}
+h4 div.legend div.legend-item .calendar-icon-holder .over-queue-stack {
+  position: absolute;
+  opacity: 1;
+  top: -0.3em;
+  left: -0.3em;
+}
+h4 div.legend div.legend-item .calendar-icon-holder .over-queue-stack.clock {
+  z-index: 3;
+  opacity: 1;
+  color: inherit;
+}
+h4 div.legend div.legend-item .calendar-icon-holder.yes-canceled .under-stack, h4 div.legend div.legend-item .calendar-icon-holder.not-canceled .under-stack, h4 div.legend div.legend-item .calendar-icon-holder.not-activated .under-stack, h4 div.legend div.legend-item .calendar-icon-holder.yes-activated .under-stack, h4 div.legend div.legend-item .calendar-icon-holder.null-activated .under-stack, h4 div.legend div.legend-item .calendar-icon-holder.null-canceled .under-stack {
+  opacity: 0.55;
+}
+h4 div.legend div.legend-item .calendar-icon-holder.yes-canceled .over-stack.sign {
+  color: #8d2d24;
+}
+h4 div.legend div.legend-item .calendar-icon-holder.not-canceled .over-stack.sign {
+  color: #1f6d4d;
+}
+h4 div.legend div.legend-item .calendar-icon-holder.not-activated .over-stack.sign {
+  color: #8d2d24;
+}
+h4 div.legend div.legend-item .calendar-icon-holder.null-activated .over-stack.sign, h4 div.legend div.legend-item .calendar-icon-holder.null-canceled .over-stack.sign {
+  text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0.85;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .sub-over-stack {
+  color: white;
+  opacity: 1;
+  z-index: 2;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .over-queue-stack {
+  opacity: 1;
+  top: 0.3em;
+  left: -0.5em;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .over-queue-stack:before {
+  font-size: 1.15em;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .over-queue-stack.clock {
+  z-index: 3;
+  opacity: 1;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .under-stack:before {
+  font-size: 1.5em;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder .sub-under-stack {
+  position: absolute;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .sub-under-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .sub-under-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .sub-under-stack {
+  left: 0;
+  top: 0.8em;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .sub-under-stack:before, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .sub-under-stack:before, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .sub-under-stack:before {
+  font-size: 1.9em;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .over-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .over-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .over-stack {
+  top: 1.2em;
+  left: 0;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .over-stack:before, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .over-stack:before, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .over-stack:before {
+  font-size: 1em;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .sub-under-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .sub-under-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .sub-under-stack {
+  left: 0;
+  top: 0.8em;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .sub-under-stack:before, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .sub-under-stack:before, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .sub-under-stack:before {
+  font-size: 1.9em;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .over-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .over-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .over-stack {
+  top: 1.2em;
+  left: 0;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .over-stack:before, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .over-stack:before, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .over-stack:before {
+  font-size: 1em;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .over-stack.sign, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .over-stack.sign {
+  color: #0c131d;
+  text-shadow: 0px 1px 4px rgba(255, 255, 255, 0.6), 0px -1px 2px rgba(255, 255, 255, 0.6);
+  opacity: 0.95;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .under-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .under-stack {
+  opacity: 1;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .over-stack.sign, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .over-stack.sign, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .over-stack.sign {
+  text-shadow: 0px 1px 4px rgba(255, 255, 255, 0.6), 0px -1px 2px rgba(255, 255, 255, 0.6);
+  opacity: 0.95;
+}
+h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-canceled .under-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-canceled .under-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.not-activated .under-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.yes-activated .under-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-activated .under-stack, h4 div.legend div.legend-item.booking-time-ended .calendar-icon-holder.null-canceled .under-stack {
+  opacity: 1;
+  position: absolute;
+  left: 0.6em;
+  top: 1.5em;
+}
+h4 div.legend div.legend-item.booking-allowed .calendar-icon-holder .mega {
+  opacity: 1;
+  top: 0.15em;
+  left: 0;
+}
+h4 div.legend div.legend-item.booking-allowed .calendar-icon-holder .mega:before {
+  font-size: 1.9em;
+}
+h4 div.legend div.legend-item.course-finished .duration-cont .times {
+  opacity: 0.5;
+}
+h4 div.legend div.legend-item.course-finished .legend-icon-cont .not-booked {
+  opacity: 0.5;
+}
+h4 div.legend div.legend-item.course-finished .calendar-icon-holder .sub-over-stack {
+  color: #fff;
+  opacity: 0.8;
+  z-index: 2;
+}
+h4 div.legend div.legend-item.course-finished .calendar-icon-holder .over-queue-stack {
+  opacity: 1;
+  top: 0.15em;
+  left: -0.45em;
+}
+h4 div.legend div.legend-item.course-finished .calendar-icon-holder .over-queue-stack:before {
+  font-size: 1.25em;
+}
+h4 div.legend div.legend-item.course-finished .calendar-icon-holder .over-queue-stack.clock {
+  z-index: 3;
+  opacity: 0.55;
+  color: inherit;
+}
+h4 div.legend div.legend-item.course-finished .calendar-icon-holder .under-stack:before {
+  font-size: 1.5em;
+}
+h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-activated .over-stack.sign, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-canceled .over-stack.sign {
+  color: inherit;
+  text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0.8;
+}
+h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-activated .under-stack, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-canceled .under-stack {
+  opacity: 0.5;
+}
+h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-canceled .over-stack.sign, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-canceled .over-stack.sign, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-activated .over-stack.sign {
+  color: inherit;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0.9;
+}
+h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-canceled .over-stack, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-canceled .over-stack, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-activated .over-stack, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-activated .over-stack, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-activated .over-stack, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-canceled .over-stack {
+  top: 1.35em;
+  left: 0.65em;
+}
+h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-canceled .over-stack:before, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-canceled .over-stack:before, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-activated .over-stack:before, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-activated .over-stack:before, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-activated .over-stack:before, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.null-canceled .over-stack:before {
+  font-size: 1em;
+}
+h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-canceled .under-stack, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-canceled .under-stack, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.not-activated .under-stack, h4 div.legend div.legend-item.course-finished .calendar-icon-holder.yes-activated .under-stack {
+  opacity: 0.55;
+}

@@ -1,0 +1,721 @@
+/*********************
+ BREAKPOINTS
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */@-webkit-keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-moz-keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-o-keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes horizontal-alarm-frames {
+  10% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  12% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  14% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  16% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  18% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  22% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  35% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  37% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  39% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  41% {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  43% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
+    transform: scale(1.6);
+  }
+  47% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@-moz-keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@-o-keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@keyframes alarm-text-shadow-frames {
+  18% {
+    text-shadow: none;
+  }
+  20% {
+    text-shadow: 0px 0px 25px red;
+  }
+  22% {
+    text-shadow: none;
+  }
+  43% {
+    text-shadow: none;
+  }
+  45% {
+    text-shadow: 0px 0px 25px red;
+  }
+  47% {
+    text-shadow: none;
+  }
+}
+@-webkit-keyframes highlight-anchored {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  10% {
+    background-color: #246173;
+  }
+  100% {
+    background-color: initial;
+  }
+}
+@-moz-keyframes highlight-anchored {
+  0% {
+    background-color: rgba(0, 0, 0, .1);
+  }
+  10% {
+    background-color: #246173;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, .1);
+  }
+}
+.match-container.main .player {
+  position: absolute;
+  height: 4.5em;
+  width: 4.5em;
+  left: -2.25em;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+  text-align: center;
+  z-index: 2;
+}
+.match-container.main .player .player__placeholder {
+  position: absolute;
+  opacity: 0.1;
+  height: 1em;
+  width: 2.5em;
+  bottom: -10px;
+  left: 1em;
+  margin: auto;
+  border-radius: 50%;
+  background-color: rgba(12, 19, 29, 0.3);
+}
+.match-container.main .player.active .player__placeholder {
+  opacity: 1;
+}
+.match-container.main .player .player__card {
+  display: none;
+  font-family: MuseoSans;
+  font-weight: 500;
+  position: absolute;
+  bottom: 1.5em;
+  left: -5.5em;
+  height: 16em;
+  background-color: #eaeef1;
+  opacity: 0.1;
+  width: 15.5em;
+  padding: 0;
+  color: #0c131d;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, .25);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, .25);
+}
+.match-container.main .player .player__card:after {
+  position: absolute;
+  display: block;
+  content: '';
+  height: 1px;
+  width: 1px;
+  border: solid 10px transparent;
+  border-top: solid 10px #edf0f4;
+  bottom: -21px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: auto;
+}
+.match-container.main .player .player__card i {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 10px 15px;
+  font-size: 24px;
+  line-height: 20px;
+  color: #fff;
+  opacity: 0.3;
+  cursor: pointer;
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  -o-transition: all 0.15s;
+  -ms-transition: all 0.15s;
+  transition: all 0.15s;
+}
+.match-container.main .player .player__card i:hover {
+  opacity: 0.6;
+}
+.match-container.main .player .player__card .name {
+  text-align: center;
+  line-height: 1.5em;
+  color: #edf0f4;
+  padding: 0.5em 1.5em 2.5em;
+  margin: 0 0 30px;
+  border-radius: 4px 4px 0 0;
+  background-color: #12408d;
+}
+.match-container.main .player .player__card .name h3 {
+  font-size: 19px;
+}
+.match-container.main .player .player__card .name h3 span:first-child {
+  display: inline-block;
+  height: 27px;
+  width: 27px;
+  border-radius: 50%;
+  border: solid 1px #fff;
+  line-height: 27px;
+  opacity: 0.4;
+  font-size: 18px;
+}
+.match-container.main .player .player__card .name h3 span:last-child {
+  font-size: 14px;
+  opacity: 0.4;
+}
+.match-container.main .player .player__card p {
+  color: #777;
+  font-syle: italic;
+  text-align: center;
+}
+.match-container.main .player .player__card .player__card__list {
+  font-family: MuseoSans;
+  font-weight: 700;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #777;
+  overflow: auto;
+  text-align: center;
+}
+.match-container.main .player .player__card .player__card__list li {
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 15px;
+  padding-left: 20px;
+  color: #333;
+}
+.match-container.main .player .player__card .player__card__list li span {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+.match-container.main .player .player__card .player__card__list li:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+.match-container.main .player .player__card .player__card__list--last {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+  border-top: solid 1px #ddd;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+}
+.match-container.main .player .player__card .player__card__list--last li {
+  width: 50%;
+  padding: 10px 0 20px 0;
+  color: #a40028;
+  font-size: 28px;
+  line-height: 22px;
+}
+.match-container.main .player .player__card .player__card__list--last li:last-child {
+  border-left: solid 1px #ddd;
+}
+.match-container.main .player .player__img {
+  position: absolute;
+  top: 0;
+  left: 0em;
+  width: 4.5em;
+  height: 4.5em;
+  overflow: hidden;
+  border-radius: 10em;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.match-container.main .player .player__img .icon-holder {
+  width: 100%;
+  height: 100%;
+}
+.match-container.main .player .player__img .icon-holder .user-avatar-cont .user-icon {
+  width: 3.5em;
+  height: 3.5em;
+}
+.match-container.main .player .player__img .icon-holder .user-avatar-cont .user-icon .pic-cont {
+  border-radius: 50%;
+}
+.match-container.main .player .player__img .icon-holder .user-avatar-cont .user-icon .pic-cont > .icon {
+  font-size: 2em;
+}
+.match-container.main .player .player__img .icon-holder .user-avatar-cont .user-icon .pic-cont > .v-align-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.match-container.main .player .player__img .icon-holder .user-avatar-cont .user-icon .pic-cont > img {
+  max-width: 95%;
+  max-height: 95%;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.match-container.main .player.teamOne .player__img:hover ~ .holder .player__label {
+  -webkit-box-shadow: 0px 0px 0.5em 2px ;
+  -moz-box-shadow: 0px 0px 0.5em 2px ;
+  box-shadow: 0px 0px 0.5em 2px ;
+}
+.match-container.main .player.teamOne .player__img .icon-holder {
+  background-color: ;
+  color: ;
+}
+.match-container.main .player.teamTwo .player__img:hover ~ .holder .player__label {
+  -webkit-box-shadow: 0px 0px 0.5em 2px ;
+  -moz-box-shadow: 0px 0px 0.5em 2px ;
+  box-shadow: 0px 0px 0.5em 2px ;
+}
+.match-container.main .player.teamTwo .player__img .icon-holder {
+  background-color: ;
+  color: ;
+}
+.match-container.main .player .holder {
+  position: absolute;
+  top: 4.75em;
+  display: inline-block;
+  left: -50%;
+  right: -50%;
+}
+.match-container.main .player span.player__label {
+  position: relative;
+  display: block;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-family: MuseoSans;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 4px 8px 4px 8px;
+  border-radius: 5em;
+}
+.match-container.main .player.teamOne .player__label {
+  background-color: ;
+  color: ;
+}
+.match-container.main .player.teamOne .player__label:hover {
+  -webkit-box-shadow: 0px 0px 0.5em 2px ;
+  -moz-box-shadow: 0px 0px 0.5em 2px ;
+  box-shadow: 0px 0px 0.5em 2px ;
+}
+.match-container.main .player.teamTwo .player__label {
+  background-color: ;
+  color: ;
+}
+.match-container.main .player.teamTwo .player__label:hover {
+  -webkit-box-shadow: 0px 0px 0.5em 2px ;
+  -moz-box-shadow: 0px 0px 0.5em 2px ;
+  box-shadow: 0px 0px 0.5em 2px ;
+}
+.match-container.main .stub-player {
+  position: absolute;
+  height: 5.5em;
+  width: 4.5em;
+  left: -2.5em;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.match-container.main .stub-player .player__placeholder {
+  position: absolute;
+  opacity: 1;
+  height: 2em;
+  width: 3.5em;
+  bottom: -5px;
+  left: 1em;
+  margin: auto;
+  border-radius: 2em;
+  pointer-events: none;
+  text-align: center;
+}
+.match-container.main .stub-player .player__placeholder i {
+  font-size: 1.75em;
+  position: relative;
+}
+.match-container.main .stub-player.teamOne .player__placeholder i {
+  color: ;
+}
+.match-container.main .stub-player.teamOne .player__placeholder i:before {
+  text-shadow: 0 0 1.5em ;
+}
+.match-container.main .stub-player.teamTwo .player__placeholder i {
+  color: ;
+}
+.match-container.main .stub-player.teamTwo .player__placeholder i:before {
+  text-shadow: 0 0 1.5em ;
+}
+.match-container.main .stub-player .player__label {
+  position: absolute;
+  height: 1.5em;
+  display: inline-block;
+  width: auto;
+  left: -100%;
+  right: -100%;
+  margin: auto;
+  padding: 0 10px;
+  line-height: 1.5em;
+  text-align: center;
+  border-radius: 5em;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  top: 5em;
+}
+.match-container.main .stub-player .player__label span {
+  background-color: #0c131d;
+  color: #edf0f4;
+  font-size: 13px;
+  padding: 3px 10px 3px 10px;
+  border-radius: 5em;
+}

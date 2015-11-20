@@ -48,12 +48,14 @@
                                 <div class = "tr height-3-and-half-em">
                                     <div class = "td width-4-and-half-em margin-std-lr home-icon-cont text-centered">
                                         <a href = "{{ urlFor('admin.users.user.home', {"user_id":  user.id } ) }}">
-                                            {% set avatar = user.getClImageURL('avatar', {"width" : 48, "height" : 48, "crop": "limit"}) %}
-                                            {%  if avatar %}
+                                            {%  set avatar_url = user.getAvatarURL('avatar',
+                                            { "width": 48, "height": 48, "crop": "limit"}) %}
+                                            {%  if avatar_url %}
                                                 <div class = "thumbnail user yes-avatar">
                                                     <div class = "no-show"><i class = "fa fa-home"></i></div>
                                                     <div class = "pic-cont"
-                                                         style="background-image:url('{{ avatar }}');" ></div>
+                                                         style="background-image:url('{{ avatar_url }}');" >
+                                                         </div>
                                                 </div>
                                             {% else %}
                                                 <div class = "thumbnail user user-icon no-avatar">

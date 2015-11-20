@@ -15,11 +15,10 @@ use app\model\Middleware;
 session_cache_limiter(false);
 session_start();
 
-define ('INC_ROOT', dirname(__DIR__));
-
+//define ('INC_ROOT', dirname(__DIR__));
+define('INC_ROOT', ".");
 require INC_ROOT .'/vendor/autoload.php';
 require INC_ROOT .'/app/extras/password.php';
-require INC_ROOT .'/app/extras/small_helpers.php';
 
 
 require INC_ROOT .'/app/config.php';
@@ -58,8 +57,9 @@ if ($app->mode === "development") {
         // pre-application hook, performs stuff before real action happens @see http://docs.slimframework.com/#Hooks
         $app->hook('slim.before', function () use ($app) {
 
+            $start = microtime(true);
             // SASS-to-CSS compiler @see https://github.com/panique/php-sass
-            SassCompiler::run("public/scss/", "public/css/");
+            SassCompiler::run("public/active_scss/", "public/css/");
             // CSS minifier @see https://github.com/matthiasmullie/minify
             $minifier = new MatthiasMullie\Minify\CSS('public/css/main.css');
 
@@ -70,21 +70,29 @@ if ($app->mode === "development") {
             $minifier->add('public/css/content.css');
             $minifier->add('public/css/forms.css');
             $minifier->add('public/css/calendar.css');
+            $minifier->add('public/css/legend.css');
             $minifier->add('public/css/gmaps.css');
+            $minifier->add('public/css/match.css');
             $minifier->add('public/css/footer.css');
             $minifier->add('public/css/sideslide_menu.css');
 
             $minifier->minify('public/css/style.css');
 
 
-            SassCompiler::run("public/scss/admin/", "public/css/admin/");
+            // --------------- !!! ----------------------
+            // --------------- !!! ----------------------
+            // UNCOMMENT AFTER CHANGING /admin/ STYLES!!!
+            // --------------- !!! ----------------------
 
-            $minifier = new MatthiasMullie\Minify\CSS('public/css/admin/main.css');
-            $minifier->add('public/css/admin/header.css');
-            $minifier->add('public/css/jquery-ui.custom_theme.css');
-            $minifier->add('public/css/jquery-ui.datepicker.struct.css');
-            $minifier->add('public/css/admin/tables.css');
-            $minifier->minify('public/css/admin/admin_style.css');
+//            SassCompiler::run("public/scss/admin/", "public/css/admin/");
+//
+//            $minifier = new MatthiasMullie\Minify\CSS('public/css/admin/main.css');
+//            $minifier->add('public/css/admin/header.css');
+//            $minifier->add('public/css/jquery-ui.custom_theme.css');
+//            $minifier->add('public/css/jquery-ui.datepicker.struct.css');
+//            $minifier->add('public/css/admin/tables.css');
+//            $minifier->minify('public/css/admin/admin_style.css');
+            // --------------- !!! ----------------------
 
 
             // JS minifier @see https://github.com/matthiasmullie/minify

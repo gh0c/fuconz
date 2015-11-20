@@ -268,9 +268,8 @@ class TrainingCourse {
 
     public static function getCourses($limit = 1000000, $order_by = "title ASC") {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM training_course ORDER BY :order LIMIT :limit";
+        $sql = "SELECT * FROM training_course ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
-        $stmt->bindParam(':order', $order_by, PDO::PARAM_STR);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
 
         $stmt->execute();
@@ -283,7 +282,7 @@ class TrainingCourse {
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 

@@ -44,7 +44,7 @@
                             <div class = "td">
                                 <div class = "active-day{{ "%s%s%s"|format((today)?' today' : '',
                                     (weekday_idx == 0 or weekday_idx == 6) ? ' weekend' : ' working-day', ( weekday_idx == 0 ) ? ' sunday' : '')}}">
-                                      {% include 'user/bookings/calendar/day_selection.cool.twig' with {'curr_date': curr_date, 'day_passed': day_passed}%}
+                                      {% include 'user/bookings/calendar/day_selection.ultra.twig' with {'curr_date': curr_date, 'day_passed': day_passed}%}
                                 </div>
 
                             </div>
@@ -63,8 +63,6 @@
 
                 --></div>
 
-
-
             </div>
         </div>
     </li>
@@ -73,7 +71,3 @@
 </ul>
 
 </div>
-
-
-
-

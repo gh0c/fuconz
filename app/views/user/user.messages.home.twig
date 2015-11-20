@@ -1,0 +1,78 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    Poruke
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Poruke</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+
+
+            <div class = "inner-cont">
+
+                {% include "templates/partials/user_messages.twig" %}
+
+
+                <span>..ere they are...</span>
+
+                <div  class = "vertical-section text-centered">
+                    <div class = "inner-70pct">
+                        {% if messages|length < 1 %}
+                            <span>Nemaš poruka!</span>
+                        {% else %}
+
+                            {% for message in messages %}
+                                {% if message.has_been_read == 1 %}
+                                    <div id = "m-{{ message.id }}" class = "message item std-item has-been-read">
+                                {% else %}
+                                    <div id = "m-{{ message.id }}" class = "message item std-item has-not-been-read">
+                                {% endif %}
+                                        <section class="td icon">
+                                            <div class = "icon-holder std-icon-holder">
+                                                <div class = "message-icon-cont std-icon-cont">
+                                                    <div class = "thumbnail message message-icon std-icon">
+                                                        <div class="pic-cont std-pic-cont">
+                                                            <i class = "fa icon fa-fw fa-envelope-o"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section><!--
+
+                                        --><section class="td message">
+                                            <div class = "time-label-holder">
+                                                 <span>{{ message.timeLabel() }}</span>
+                                            </div>
+                                            <div class = "message-holder">
+                                                {{ message.message_body|raw }}
+
+                                            </div>
+                                        </section>
+
+                                    </div>
+                            {% endfor %}
+                        {% endif %}
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

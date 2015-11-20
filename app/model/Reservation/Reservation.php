@@ -28,6 +28,7 @@ class Reservation {
     public $user = null;
     public $user_id = null;
 
+    public $triggered = null;
 
     function __construct($input_data = array()) {
 
@@ -38,10 +39,15 @@ class Reservation {
 
         if ( isset( $input_data['training_course_id'] ) )
             $this->course_id = (int) $input_data['training_course_id'];
-        if ( isset( $input_data['datetime_span_id'] ) )
+        if ( isset( $input_data['datetime_span_id'] ) ) {
             $this->datetime_span_id = (int) $input_data['datetime_span_id'];
+            $this->datetime_span = DatetimeSpan::getById($this->datetime_span_id);
+        }
         if ( isset( $input_data['user_id'] ) )
             $this->user_id = (int) $input_data['user_id'];
+
+        if ( isset( $input_data['triggered'] ) )
+            $this->triggered = (int) $input_data['triggered'];
 
         if ( isset( $input_data['created_at'] ) )
             $this->created_at = $input_data['created_at'];
@@ -49,10 +55,10 @@ class Reservation {
     }
 
 
-    public static function create_new($course, $datetime_span, $user, $training_type = 1) {
+    public static function create_new($course, $datetime_span, $user, $training_type = 1, $triggered = 0) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "INSERT INTO reservation (user_id, datetime_span_id, training_course_id, training_type_id, created_at)
-            VALUES (:user_id, :datetime_span_id, :training_course_id, :training_type_id, :created_at)";
+        $sql = "INSERT INTO reservation (user_id, datetime_span_id, training_course_id, training_type_id, created_at, triggered)
+            VALUES (:user_id, :datetime_span_id, :training_course_id, :training_type_id, :created_at, :triggered)";
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':created_at', date("Y-m-d H:i:s", time()), PDO::PARAM_STR);
 
@@ -60,6 +66,7 @@ class Reservation {
         $stmt->bindParam(':datetime_span_id', $datetime_span, PDO::PARAM_INT);
         $stmt->bindParam(':training_course_id', $course, PDO::PARAM_INT);
         $stmt->bindParam(':training_type_id', $training_type, PDO::PARAM_INT);
+        $stmt->bindParam(':triggered', $triggered, PDO::PARAM_INT);
 
         $stmt->execute();
 
@@ -101,7 +108,7 @@ class Reservation {
                             "Ponovite rezervaciju!";
                         return $validation_result;
 
-                    } else if (!($datetime_span = DatetimeSpan::get_by_datetime_and_course($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
+                    } else if (!($datetime_span = DatetimeSpan::getByDatetimeAndCourse($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
                         $s_course_id))) {
                         $validation_result["errors"] = "Termin koji ste odabrali: " . $s_date . " " . $s_time . " nema " .
                             "odgovarajući zapis u bazi podataka uz pripadnu vrijednost identifikatora termina i ovog vremena...";
@@ -158,7 +165,7 @@ class Reservation {
             $s_course_id = $date_time_courseId[2];
             list($s_hours, $s_minutes) = explode("-", $s_time);
 
-            $datetime_span = DatetimeSpan::get_by_datetime_and_course($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
+            $datetime_span = DatetimeSpan::getByDatetimeAndCourse($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
                 $s_course_id);
             $training_course = TrainingCourse::getCourseById($s_course_id);
 
@@ -218,7 +225,7 @@ class Reservation {
                 $s_course_id = $date_time_courseId[2];
                 list($s_hours, $s_minutes) = explode("-", $s_time);
 
-                $datetime_span = DatetimeSpan::get_by_datetime_and_course($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
+                $datetime_span = DatetimeSpan::getByDatetimeAndCourse($s_date . " " . $s_hours . ":" . $s_minutes . ":00",
                     $s_course_id);
                 $training_course = TrainingCourse::getCourseById($s_course_id);
 
@@ -259,6 +266,27 @@ class Reservation {
         $stmt->bindParam(':training_course_id', $course, PDO::PARAM_INT);
         $stmt->bindParam(':user_id', $user, PDO::PARAM_INT);
 
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($row["number"] > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        else {
+            return null;
+        }
+    }
+
+    public static function existsForUser($user_id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT COUNT(*) AS number FROM reservation WHERE user_id = :id";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':id', $user_id, PDO::PARAM_INT);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -315,6 +343,31 @@ class Reservation {
         }
         else {
             return null;
+        }
+    }
+
+
+    public static function getByUser($user_id, $order_by = "datetime_span.datetime_span_start")
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT reservation.* FROM reservation JOIN datetime_span
+          ON reservation.datetime_span_id = datetime_span.id WHERE
+          user_id = :user_id ORDER BY {$order_by}";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $booking = new Reservation($row);
+                $list[] = $booking;
+            }
+            return $list;
+        }
+        else {
+            return array();
         }
     }
 

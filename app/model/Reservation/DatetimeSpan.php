@@ -54,8 +54,11 @@ class DatetimeSpan {
             $this->canceled = (int) $input_data['canceled'];
         if ( isset( $input_data['day_of_week'] ) )
             $this->day_of_week = (int) $input_data['day_of_week'];
-        if ( isset( $input_data['training_course_id'] ) )
+        if ( isset( $input_data['training_course_id'] ) ) {
             $this->course_id = (int) $input_data['training_course_id'];
+            $this->training_course = TrainingCourse::getCourseById($this->course_id);
+
+        }
     }
 
 
@@ -101,12 +104,12 @@ class DatetimeSpan {
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 
 
-    public static function get_by_date($date) {
+    public static function getByDate($date) {
         $dbh = DatabaseConnection::getInstance();
 
         $sql = "SELECT * FROM datetime_span WHERE
@@ -123,17 +126,16 @@ class DatetimeSpan {
             $list = array();
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $span = new DatetimeSpan($row);
-                $span->training_course = TrainingCourse::getCourseById($span->course_id);
                 $list[] = $span;
             }
             return $list;
         }
         else {
-            return null;
+            return array();
         }
     }
 
-    public static function get_by_datetime_and_course($datetime, $course_id) {
+    public static function getByDatetimeAndCourse($datetime, $course_id) {
         $dbh = DatabaseConnection::getInstance();
 
         $sql = "SELECT * FROM datetime_span WHERE
@@ -147,7 +149,25 @@ class DatetimeSpan {
         $stmt->execute();
         if ($stmt->rowCount() == 1) {
             $span = new DatetimeSpan($stmt->fetch(PDO::FETCH_ASSOC));
-            $span->training_course = TrainingCourse::getCourseById($span->course_id);
+            return $span;
+        }
+        else {
+            return null;
+        }
+    }
+
+
+    public static function getById($datetime_span_id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT * FROM datetime_span WHERE id = :id LIMIT 1";
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':id', $datetime_span_id, PDO::PARAM_INT);
+        $stmt->execute();
+        if ($stmt->rowCount() == 1) {
+            $span = new DatetimeSpan($stmt->fetch(PDO::FETCH_ASSOC));
             return $span;
         }
         else {
@@ -163,5 +183,12 @@ class DatetimeSpan {
             $year, Calendar::cro_weekday_label(date("w", strtotime($this->date))), $this->start_time);
 
         return $description;
+    }
+
+
+    public function datetimeIdString()
+    {
+        $id = sprintf("%s-%s-%s", $this->date, $this->start_time_hour, $this->start_time_minutes);
+        return $id;
     }
 }
