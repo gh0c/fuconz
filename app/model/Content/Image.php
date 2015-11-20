@@ -101,14 +101,14 @@ class Image
 
 
     public static function createNew($public_id, $version, $width, $height, $format, $url, $secure_url, $resource_type = null,
-        $created_at = null, $type = null, $etag = null, $orig_filename = null, $path = null, $moderated = null) {
+        $type = null, $etag = null, $orig_filename = null, $path = null, $moderated = null) {
         $dbh = DatabaseConnection::getInstance();
         $sql = "INSERT INTO cl_image (public_id, version, width, height, format, url, secure_url, resource_type,
             created_at, type, etag, orig_filename, path, moderated, hash)
             VALUES (:public_id, :v, :w, :h, :format, :url, :s_url, :resource_type, :created_at, :type, :etag,
             :orig_name, :path, :mod, :hash)";
         $stmt = $dbh->prepare($sql);
-//        $stmt->bindValue(':registered_at', date("Y-m-d H:i:s", time()), PDO::PARAM_STR);
+        $stmt->bindValue(':created_at', date("Y-m-d H:i:s", time()), PDO::PARAM_STR);
         $stmt->bindParam(':public_id', $public_id, PDO::PARAM_STR);
         $stmt->bindParam(':v', $version, PDO::PARAM_INT);
         $stmt->bindParam(':w', $width, PDO::PARAM_INT);
@@ -117,7 +117,6 @@ class Image
         $stmt->bindParam(':url', $url, PDO::PARAM_STR);
         $stmt->bindParam(':s_url', $secure_url, PDO::PARAM_STR);
         $stmt->bindParam(':resource_type', $resource_type, PDO::PARAM_STR);
-        $stmt->bindParam(':created_at', $created_at, PDO::PARAM_STR);
         $stmt->bindParam(':type', $type, PDO::PARAM_STR);
         $stmt->bindParam(':etag', $etag, PDO::PARAM_STR);
         $stmt->bindParam(':orig_name', $orig_filename, PDO::PARAM_STR);

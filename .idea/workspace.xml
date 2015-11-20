@@ -43,10 +43,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="user.profile.router.php" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="user.profile.router.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="219" column="21" selection-start="11416" selection-end="11416" vertical-scroll-proportion="-15.038462" vertical-offset="3264" max-vertical-offset="6868">
+                <state line="199" column="0" selection-start="9976" selection-end="9976" vertical-scroll-proportion="0.54603857" vertical-offset="3060" max-vertical-offset="6868">
                   <folding />
                 </state>
               </provider>
@@ -72,10 +72,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="avatar_change.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="avatar_change.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/js/avatar_change.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="68" column="54" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.8965517" vertical-offset="714" max-vertical-offset="3145">
+                <state line="56" column="45" selection-start="1888" selection-end="1888" vertical-scroll-proportion="-13.72" vertical-offset="609" max-vertical-offset="3145">
                   <folding />
                 </state>
               </provider>
@@ -282,10 +282,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="mode.php" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="mode.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mode.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="11" selection-start="11" selection-end="11" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
+                <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="398">
                   <folding />
                 </state>
               </provider>
@@ -430,17 +430,17 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Image.php" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="Image.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/model/Content/Image.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="97" column="20" selection-start="3257" selection-end="3257" vertical-scroll-proportion="0.87935656" vertical-offset="1236" max-vertical-offset="4012">
+                <state line="119" column="0" selection-start="4502" selection-end="4502" vertical-scroll-proportion="-0.09803922" vertical-offset="1933" max-vertical-offset="3995">
                   <folding>
-                    <marker date="1448058144871" expanded="true" signature="2444:2489" placeholder="SELECT * FRO..cl_image..." />
-                    <marker date="1448058144871" expanded="true" signature="2911:2960" placeholder="SELECT * FRO..cl_image..." />
-                    <marker date="1448058144871" expanded="true" signature="3574:3898" placeholder="INSERT INTO ..." />
-                    <marker date="1448058144871" expanded="true" signature="5488:5617" placeholder="INSERT INTO ..." />
-                    <marker date="1448058144871" expanded="true" signature="6399:6496" placeholder="SELECT * FRO..image_entity..." />
-                    <marker date="1448058144871" expanded="true" signature="8163:8250" placeholder="DELETE FROM ..." />
+                    <marker date="1448061155704" expanded="true" signature="2444:2489" placeholder="SELECT * FRO..cl_image..." />
+                    <marker date="1448061155704" expanded="true" signature="2911:2960" placeholder="SELECT * FRO..cl_image..." />
+                    <marker date="1448061155704" expanded="true" signature="3554:3878" placeholder="INSERT INTO ..." />
+                    <marker date="1448061155704" expanded="true" signature="5393:5522" placeholder="INSERT INTO ..." />
+                    <marker date="1448061155704" expanded="true" signature="6304:6401" placeholder="SELECT * FRO..image_entity..." />
+                    <marker date="1448061155704" expanded="true" signature="8068:8155" placeholder="DELETE FROM ..." />
                   </folding>
                 </state>
               </provider>
@@ -544,7 +544,6 @@
         <option value="$PROJECT_DIR$/app/model/Messages/Logger.php" />
         <option value="$PROJECT_DIR$/app/model/Admin/Admin.php" />
         <option value="$PROJECT_DIR$/app/model/User/User.php" />
-        <option value="$PROJECT_DIR$/app/model/Content/Image.php" />
         <option value="$PROJECT_DIR$/app/model/User/UserPassReset.php" />
         <option value="$PROJECT_DIR$/app/routes/admin.reservations.router.php" />
         <option value="$PROJECT_DIR$/app/model/Reservation/TrainingCourse.php" />
@@ -554,9 +553,10 @@
         <option value="$PROJECT_DIR$/app/model/Reservation/Prereservation.php" />
         <option value="$PROJECT_DIR$/app/model/Reservation/Reservation.php" />
         <option value="$PROJECT_DIR$/app/start.php" />
-        <option value="$PROJECT_DIR$/mode.php" />
-        <option value="$PROJECT_DIR$/app/routes/user.profile.router.php" />
         <option value="$PROJECT_DIR$/public/js/avatar_change.js" />
+        <option value="$PROJECT_DIR$/app/model/Content/Image.php" />
+        <option value="$PROJECT_DIR$/app/routes/user.profile.router.php" />
+        <option value="$PROJECT_DIR$/mode.php" />
       </list>
     </option>
   </component>
@@ -1828,27 +1828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="11" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="398">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Content/Image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="20" selection-start="3257" selection-end="3257" vertical-scroll-proportion="0.87935656" vertical-offset="1236" max-vertical-offset="4012">
-          <folding>
-            <marker date="1448058144871" expanded="true" signature="2444:2489" placeholder="SELECT * FRO..cl_image..." />
-            <marker date="1448058144871" expanded="true" signature="2911:2960" placeholder="SELECT * FRO..cl_image..." />
-            <marker date="1448058144871" expanded="true" signature="3574:3898" placeholder="INSERT INTO ..." />
-            <marker date="1448058144871" expanded="true" signature="5488:5617" placeholder="INSERT INTO ..." />
-            <marker date="1448058144871" expanded="true" signature="6399:6496" placeholder="SELECT * FRO..image_entity..." />
-            <marker date="1448058144871" expanded="true" signature="8163:8250" placeholder="DELETE FROM ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.avatar_change.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="76" selection-start="1874" selection-end="1886" vertical-scroll-proportion="65.38461" vertical-offset="2448" max-vertical-offset="3315">
@@ -1856,16 +1835,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
+    <entry file="file://$PROJECT_DIR$/app/model/Content/Image.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="21" selection-start="11416" selection-end="11416" vertical-scroll-proportion="-15.038462" vertical-offset="3264" max-vertical-offset="6868">
-          <folding />
+        <state line="119" column="0" selection-start="4502" selection-end="4502" vertical-scroll-proportion="-0.09803922" vertical-offset="1933" max-vertical-offset="3995">
+          <folding>
+            <marker date="1448061155704" expanded="true" signature="2444:2489" placeholder="SELECT * FRO..cl_image..." />
+            <marker date="1448061155704" expanded="true" signature="2911:2960" placeholder="SELECT * FRO..cl_image..." />
+            <marker date="1448061155704" expanded="true" signature="3554:3878" placeholder="INSERT INTO ..." />
+            <marker date="1448061155704" expanded="true" signature="5393:5522" placeholder="INSERT INTO ..." />
+            <marker date="1448061155704" expanded="true" signature="6304:6401" placeholder="SELECT * FRO..image_entity..." />
+            <marker date="1448061155704" expanded="true" signature="8068:8155" placeholder="DELETE FROM ..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/avatar_change.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="54" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.8965517" vertical-offset="714" max-vertical-offset="3145">
+        <state line="56" column="45" selection-start="1888" selection-end="1888" vertical-scroll-proportion="-13.72" vertical-offset="609" max-vertical-offset="3145">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="199" column="0" selection-start="9976" selection-end="9976" vertical-scroll-proportion="0.54603857" vertical-offset="3060" max-vertical-offset="6868">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="398">
           <folding />
         </state>
       </provider>

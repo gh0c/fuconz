@@ -197,7 +197,6 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 
                 $p_format = (isset($input_data['format'])) ? $input_data['format'] : null;
                 $p_resource_type = (isset($input_data['resource_type'])) ? $input_data['resource_type'] : null;
-                $p_created_at = (isset($input_data['created_at'])) ? $input_data['created_at'] : null;
 
                 $p_type = (isset($input_data['type'])) ? $input_data['type'] : null;
                 $p_etag = (isset($input_data['etag'])) ? $input_data['etag'] : null;
@@ -209,7 +208,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 
                 try {
                     list($status, $img) = Image::createNew($p_public_id, $p_version, $p_width, $p_height, $p_format, $p_url, $p_secure_url,
-                        $p_resource_type, $p_created_at, $p_type, $p_etag, $p_orig_filename, $p_path, $p_moderated);
+                        $p_resource_type, $p_type, $p_etag, $p_orig_filename, $p_path, $p_moderated);
                     if ($status["success"]) {
                         header('Content-Type: application/json');
                         echo json_encode(array("hash" => $img->hash));
@@ -222,6 +221,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                     header('Content-Type: application/json');
                     echo json_encode(array("error" =>"Greška 2: " . $e->getMessage() . ""));
                 }
+                exit();
             }
 
 
