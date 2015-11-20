@@ -14,7 +14,7 @@ class DatabaseConnection
         if (!isset(self::$dbh))
         {
             // building data source name from config
-            $dsn = 'mysql:host=' . Configuration::read('db.host') .
+            $dsn = '' . Configuration::read('db.type') . ':host=' . Configuration::read('db.host') .
                 ';dbname='    . Configuration::read('db.basename') .
                 ';port='      . Configuration::read('db.port') .
                 ';connect_timeout=15;charset=UTF8';

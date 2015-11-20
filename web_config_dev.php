@@ -2,6 +2,8 @@
 
 use app\helpers\Configuration;
 // DB Config
+Configuration::write('db.type', "mysql");
+
 Configuration::write('db.host', 'localhost');
 Configuration::write('db.port', '');
 Configuration::write('db.basename', 'fuconz');

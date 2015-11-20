@@ -1,12 +1,16 @@
 <?php
 
 use app\helpers\Configuration;
+
+$db_params = parse_url(getenv('DATABASE_URL'));
 // DB Config
-Configuration::write('db.host', 'localhost');
-Configuration::write('db.port', '');
-Configuration::write('db.basename', 'authdatabase');
-Configuration::write('db.user', 'root');
-Configuration::write('db.password', '***');
+Configuration::write('db.type', "pgsql");
+
+Configuration::write('db.host', $db_params["host"]);
+Configuration::write('db.port', $db_params["port"]);
+Configuration::write('db.basename', ltrim($db_params["path"],'/'));
+Configuration::write('db.user', $db_params["user"]);
+Configuration::write('db.password', $db_params["pass"]);
 // Project Config
 Configuration::write('path.url', '/');
 
