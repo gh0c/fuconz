@@ -214,12 +214,13 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                         header('Content-Type: application/json');
                         echo json_encode(array("hash" => $img->hash));
                     } else {
-                        echo json_encode(array("error" =>"Greška: " . $status["err"]));
+                        header('Content-Type: application/json');
+                        echo json_encode(array("error" =>"Greška 1: " . $status["err"]));
 
                     }
-
                 } catch(\Exception $e) {
-                    echo json_encode(array("error" =>"Greška: " . $e->getMessage() . ""));
+                    header('Content-Type: application/json');
+                    echo json_encode(array("error" =>"Greška 2: " . $e->getMessage() . ""));
                 }
             }
 

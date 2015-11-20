@@ -52,12 +52,25 @@ $(document).ready(function(){
                 });
 
                 request.done(function( reply ) {
-                    infoPanelSuccess("Pohranjeno. \nSpremite promjene!", true);
                     console.log(reply);
-    //                alert(msg["hash"]);
-                    $("#uploaded-img-hash").val(reply["hash"]);
-                    enableFormSubmiting();
-                    $("#user-avatar-change").removeClass("disabled-button");
+
+                    if(reply.error != null) {
+                        errorStatus("Greška! " + reply.error);
+                        $("#user-avatar-change").removeClass("disabled-button");
+
+                    } else {
+                        infoPanelSuccess("Pohranjeno. \nSpremite promjene!", true);
+                        //                alert(msg["hash"]);
+                        if(reply.hash != null) {
+                            $("#uploaded-img-hash").val(reply["hash"]);
+                            enableFormSubmiting();
+                            $("#user-avatar-change").removeClass("disabled-button");
+                        } else {
+                            errorStatus("Neka greška!!");
+
+                        }
+
+                    }
 
                 });
                 request.fail(function() {
