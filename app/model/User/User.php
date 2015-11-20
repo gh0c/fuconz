@@ -207,15 +207,14 @@ class User
 
     public function delete() {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "DELETE FROM users WHERE id = :id LIMIT 1";
+        $sql = "DELETE FROM users WHERE id = :id";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
-        $stmt->execute();
-        if ($stmt->rowCount() == 1) {
+        try {
+            $stmt->execute();
             return true;
-        }
-        else {
-            return false;
+        } catch (\Exception $e) {
+            return null;
         }
     }
 
@@ -451,7 +450,7 @@ class User
 
     public function updatePassword($hashed_pass) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE users SET password = :new_pass WHERE id = :id LIMIT 1";
+        $sql = "UPDATE users SET password = :new_pass WHERE id = :id";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':new_pass', $hashed_pass, PDO::PARAM_STR);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
@@ -470,7 +469,7 @@ class User
 
     public function updateFacebookAvatarUsage($use_fb_avatar, $fb_id) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE users SET use_fb_avatar = :use, fb_id = :fb_id WHERE id = :id LIMIT 1";
+        $sql = "UPDATE users SET use_fb_avatar = :use, fb_id = :fb_id WHERE id = :id";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':fb_id', $fb_id, PDO::PARAM_STR);
         $stmt->bindParam(':use', $use_fb_avatar, PDO::PARAM_INT);
@@ -487,7 +486,7 @@ class User
 
     public function unsetFacebookAvatarUsage() {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE users SET use_fb_avatar = :use WHERE id = :id LIMIT 1";
+        $sql = "UPDATE users SET use_fb_avatar = :use WHERE id = :id";
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':use', 0, PDO::PARAM_INT);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
@@ -529,7 +528,7 @@ class User
 
     public  function updateProfileData($email, $first_name = null, $last_name = null, $sex = null) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE users SET email = :email, first_name = :first_name, last_name = :last_name, sex = :sex WHERE id = :id LIMIT 1";
+        $sql = "UPDATE users SET email = :email, first_name = :first_name, last_name = :last_name, sex = :sex WHERE id = :id";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':sex', $sex, PDO::PARAM_STR);
         $stmt->bindParam(':first_name', $first_name, PDO::PARAM_STR);

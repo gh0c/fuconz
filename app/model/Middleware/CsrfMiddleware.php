@@ -44,7 +44,7 @@ class CsrfMiddleware extends Middleware
             if(!Hash::hashCheck($token, $submittedToken)) {
                 $this->app->flashNow('errors', "Nepodudaranje CSRF tokena.\nVjerojatno je stavljena nova verzija aplikacije koja je prebrisala stare postavke.\n".
                   "Pokušaj refreshati stranicu (i to na način da lupiš enter u address-baru u pregledniku, a ne samo F5 ili refresh)\nJavi ako se problem nastavi. Hvala.");
-                $this->app->render('idex.twig', array(
+                $this->app->render('index.twig', array(
                     'user' => $this->app->auth_user
                 ));
             }

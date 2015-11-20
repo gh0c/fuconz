@@ -377,16 +377,16 @@ class Reservation {
     {
         $dbh = DatabaseConnection::getInstance();
 
-        $sql = "UPDATE reservation set canceled = :canceled WHERE id = :id LIMIT 1";
+        $sql = "UPDATE reservation set canceled = :canceled WHERE id = :id";
 
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':canceled', (int)$flag, PDO::PARAM_INT);
         $stmt->bindValue(':id', (int)$this->id, PDO::PARAM_INT);
         $stmt->execute();
-        if ($stmt->rowCount() > 0) {
+        try {
+            $stmt->execute();
             return true;
-        }
-        else {
+        } catch (\Exception $e) {
             return null;
         }
     }
