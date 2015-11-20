@@ -510,7 +510,7 @@ class User
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
         $salt = Hash::getMSG()->generateString(128);
         $stmt->bindParam(':salt', $salt, PDO::PARAM_STR);
-        $stmt->bindParam(':password', Hash::password($password . $salt), PDO::PARAM_STR);
+        $stmt->bindValue(':password', Hash::password($password . $salt), PDO::PARAM_STR);
 
         $stmt->execute();
 
