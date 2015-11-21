@@ -141,14 +141,14 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                         $app->flash('errors', "Odabrano je postavljanje avatara na FB profilnu sliku, ali nije unesen i Facebook identifikator!\nPokušajte ponovno");
                         $app->redirect($app->urlFor('user.profile.avatar-change'));
                     } else {
-                        if($app->auth_user->updateFacebookAvatarUsage(1, $p_fb_id)) {
+                        if($app->auth_user->updateFacebookAvatarUsage(1, trim($p_fb_id))) {
                             $app->flash('success', "Uspješna promjena avatara.\nKao avatar koristit će se profilna slika Facebook profila koji ste unijeli.\n" .
                                 $app->auth_user->getFacebookAvatarURL());
                             Logger::logUserAvatarFacebookChange($app->auth_user);
                             if(!$app->auth_user->facebookAvatarExists()) {
                                 $app->flash("statuses", "Profilna slika za zadani Facebook identifikator nije pronađena!");
                             } else {
-                                $app->flash("statuses", "Profilna slika za zadani Facebook je pronađena!");
+                                $app->flash("statuses", "Profilna slika za zadani Facebook identifikator je pronađena!");
                             }
                             $app->redirect($app->urlFor('user.profile.home'));
                         } else {
@@ -209,17 +209,24 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                 try {
                     list($status, $img) = Image::createNew($p_public_id, $p_version, $p_width, $p_height, $p_format, $p_url, $p_secure_url,
                         $p_resource_type, $p_type, $p_etag, $p_orig_filename, $p_path, $p_moderated);
-                    if ($status["success"]) {
+                    if ($status["success"] == true && $img) {
                         header('Content-Type: application/json');
                         echo json_encode(array("hash" => $img->hash));
                     } else {
                         header('Content-Type: application/json');
-                        echo json_encode(array("error" =>"Greška 1: " . $status["err"]));
+                        echo json_encode(array(
+                            "error" =>"Greška 1: " . $status["err"],
+                            "img" => $img,
+                            "sent_data" => $input_data
+                        ));
 
                     }
                 } catch(\Exception $e) {
                     header('Content-Type: application/json');
-                    echo json_encode(array("error" =>"Greška 2: " . $e->getMessage() . ""));
+                    echo json_encode(array(
+                        "error" =>"Greška 2: " . $e->getMessage() . "",
+                        "sent_data" => $input_data
+                    ));
                 }
                 exit();
             }

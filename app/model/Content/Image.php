@@ -127,7 +127,8 @@ class Image
         try {
             $stmt->execute();
             $status["success"] = true;
-            return array($status, Image::getImageById($dbh->lastInsertId()));
+            $img = Image::getImageById($dbh->lastInsertId());
+            return array($status, $img);
         } catch (\Exception $e) {
             $status["success"] = false;
             $status["err"] = $e->getMessage();

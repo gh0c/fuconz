@@ -30,6 +30,7 @@ $(document).ready(function(){
             })
 
             .on('cloudinarydone', function (e, data) {
+                console.log("On cloudinary done...");
                 infoPanelSuccess("Upload završen.", true);
                 var url = $(this).data("submit-url");
     //                                                $.post('url', data.result);
@@ -42,7 +43,7 @@ $(document).ready(function(){
                 params[csrfKeyName] = csrfToken;
 
                 infoPanelSuccess("Pohrana u bazu...");
-
+                console.log("--Zahtjev");
                 var request = $.ajax({
                     url: url,
                     type: "POST",
@@ -53,6 +54,7 @@ $(document).ready(function(){
 
                 request.done(function( reply ) {
                     console.log(reply);
+                    console.log("zahtjev gotov");
 
                     if(reply.error != null) {
                         errorStatus("Greška! " + reply.error);
@@ -75,7 +77,6 @@ $(document).ready(function(){
                 });
                 request.fail(function() {
                     $("#user-avatar-change").removeClass("disabled-button");
-
                 });
 
                 var info = $('<div class="uploaded-info"/>');
