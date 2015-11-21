@@ -39,6 +39,7 @@ $app->post('/clanovi/registracija', $guest_user(), function() use ($app) {
             $app->flash('statuses', "Sada se možete prijaviti koristeći unesene podatke.");
             $app->redirect($app->urlFor('user.login'));
         } else {
+            var_dump($status);exit();
             $app->flash('errors', "Greška kod unosa u bazu.\n" . $status["err"] . "\nPokušajte ponovno");
             $app->redirect($app->urlFor('user.registration'));
         }
