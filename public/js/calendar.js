@@ -203,7 +203,8 @@ $(document).on("click", ".calendar-header.widget-header .month-changer", functio
 
     });
 
-    request.done(function( msg ) {
+    request.done(function( reply ) {
+        console.log(reply);
         $("#booking-calendar > *").css("opacity", "initial");
         $(".loading-gif-div").remove();
         $("#user-course-booking").removeClass("disabled-button");
@@ -212,7 +213,7 @@ $(document).on("click", ".calendar-header.widget-header .month-changer", functio
 
         enableFormSubmiting();
 
-        $( "#booking-calendar" ).html( msg );
+        $( "#booking-calendar" ).html( reply );
     });
     request.fail(function(jqXHr, textStatus, errorThrown){
         console.log("ERROR!");
@@ -287,16 +288,32 @@ $(document).on("click", ".calendar-header.widget-header .offset-changer", functi
 
 
 
-    request.done(function( msg ) {
-        console.log("Req ended");
+    request.done(function( reply ) {
+        console.log("Req ended call");
+        try {
+            var json_o = jQuery.parseJSON(reply);
+            if(json_o.error != null) {
+                expandInfoPanel("");
+                errorStatus("Greška! " + json_o.error);
+                alert(json_o.error);
+                $("#booking-calendar > *").css("opacity", "initial");
+                $(".loading-gif-div").remove();
+                $("#user-course-booking").removeClass("disabled-button");
+                $("#booking-calendar").removeClass("disabled-button");
+                enableFormSubmiting();
+                return;
+
+            }
+        } catch (err) {
+        }
+
         $("#booking-calendar > *").css("opacity", "initial");
         $(".loading-gif-div").remove();
         $("#user-course-booking").removeClass("disabled-button");
-
         $("#booking-calendar").removeClass("disabled-button");
         enableFormSubmiting();
 
-        $( "#booking-calendar" ).html( msg );
+        $( "#booking-calendar" ).html( reply );
     });
     request.fail(function(jqXHr, textStatus, errorThrown){
         console.log("ERROR!");

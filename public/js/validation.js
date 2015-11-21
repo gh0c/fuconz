@@ -2,9 +2,6 @@ var statusText = $(".status-container.live > .status");
 var panel = $("#info-panel");
 var formSubmittingActive = true;
 
-function myFunn() {
-    $(".submitter-cont .submitter span").text(carName)
-}
 
 function haltFormSubmitting() {
     if (!formSubmittingActive) {

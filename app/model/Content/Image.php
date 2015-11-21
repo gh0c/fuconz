@@ -124,6 +124,7 @@ class Image
         $stmt->bindParam(':mod', $moderated, PDO::PARAM_STR);
         $stmt->bindValue(':hash', Hash::getMSG()->generateString(128), PDO::PARAM_STR);
 
+        $status = array();
         try {
             $stmt->execute();
             $status["success"] = true;

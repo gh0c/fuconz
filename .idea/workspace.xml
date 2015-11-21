@@ -28,7 +28,7 @@
           <file leaf-file-name="start.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/start.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="53" column="22" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="2465">
+                <state line="53" column="22" selection-start="1340" selection-end="1340" vertical-scroll-proportion="5.8846154" vertical-offset="901" max-vertical-offset="2312">
                   <folding />
                 </state>
               </provider>
@@ -37,7 +37,7 @@
           <file leaf-file-name="user.profile.router.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="145" column="60" selection-start="7022" selection-end="7022" vertical-scroll-proportion="-12.076923" vertical-offset="2083" max-vertical-offset="6987">
+                <state line="217" column="49" selection-start="11319" selection-end="11319" vertical-scroll-proportion="-7.8461537" vertical-offset="3417" max-vertical-offset="5644">
                   <folding />
                 </state>
               </provider>
@@ -57,7 +57,7 @@
           <file leaf-file-name="user.avatar_change.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.avatar_change.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="123" column="39" selection-start="6616" selection-end="6616" vertical-scroll-proportion="-16.115385" vertical-offset="1672" max-vertical-offset="3332">
+                <state line="118" column="134" selection-start="6253" selection-end="6253" vertical-scroll-proportion="-12.846154" vertical-offset="1672" max-vertical-offset="3332">
                   <folding>
                     <element signature="e#6550#6576#0" expanded="true" />
                   </folding>
@@ -68,7 +68,7 @@
           <file leaf-file-name="avatar_change.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/js/avatar_change.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="32" column="53" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="3162">
+                <state line="58" column="20" selection-start="2008" selection-end="2201" vertical-scroll-proportion="-8.16" vertical-offset="782" max-vertical-offset="3162">
                   <folding />
                 </state>
               </provider>
@@ -77,25 +77,34 @@
           <file leaf-file-name="User.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/model/User/User.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="326" column="27" selection-start="9506" selection-end="9506" vertical-scroll-proportion="0.4411135" vertical-offset="5217" max-vertical-offset="12172">
+                <state line="524" column="39" selection-start="16028" selection-end="16028" vertical-scroll-proportion="0.7752443" vertical-offset="8551" max-vertical-offset="12189">
                   <folding>
-                    <marker date="1448092616246" expanded="true" signature="3191:3244" placeholder="SELECT * FRO..users..." />
-                    <marker date="1448092616246" expanded="true" signature="3837:3907" placeholder="SELECT * FRO..users..." />
-                    <marker date="1448092616246" expanded="true" signature="4688:4730" placeholder="SELECT * FRO..users..." />
-                    <marker date="1448092616246" expanded="true" signature="5121:5183" placeholder="SELECT * FRO..users..." />
-                    <marker date="1448092616246" expanded="true" signature="5626:5694" placeholder="SELECT * FRO..users..." />
-                    <marker date="1448092616246" expanded="true" signature="6118:6150" placeholder="DELETE FROM ..." />
-                    <marker date="1448092616246" expanded="true" signature="6533:6625" placeholder="UPDATE users..." />
-                    <marker date="1448092616246" expanded="true" signature="7013:7105" placeholder="UPDATE users..." />
-                    <marker date="1448092616246" expanded="true" signature="7511:7577" placeholder="SELECT * FRO..users..." />
-                    <marker date="1448092616246" expanded="true" signature="7964:8006" placeholder="SELECT * FRO..users..." />
-                    <marker date="1448092616246" expanded="true" signature="12982:13034" placeholder="UPDATE users..." />
-                    <marker date="1448092616246" expanded="true" signature="13620:13688" placeholder="UPDATE users..." />
-                    <marker date="1448092616246" expanded="true" signature="14286:14338" placeholder="UPDATE users..." />
-                    <marker date="1448092616246" expanded="true" signature="14825:15023" placeholder="INSERT INTO ..." />
-                    <marker date="1448092616246" expanded="true" signature="16153:16263" placeholder="UPDATE user ..." />
-                    <marker date="1448092616246" expanded="true" signature="16153:16261" placeholder="UPDATE users..." />
+                    <marker date="1448104663387" expanded="true" signature="3191:3244" placeholder="SELECT * FRO..users..." />
+                    <marker date="1448104663387" expanded="true" signature="3837:3907" placeholder="SELECT * FRO..users..." />
+                    <marker date="1448104663387" expanded="true" signature="4688:4730" placeholder="SELECT * FRO..users..." />
+                    <marker date="1448104663387" expanded="true" signature="5121:5183" placeholder="SELECT * FRO..users..." />
+                    <marker date="1448104663387" expanded="true" signature="5626:5694" placeholder="SELECT * FRO..users..." />
+                    <marker date="1448104663387" expanded="true" signature="6118:6150" placeholder="DELETE FROM ..." />
+                    <marker date="1448104663387" expanded="true" signature="6533:6625" placeholder="UPDATE users..." />
+                    <marker date="1448104663387" expanded="true" signature="7013:7105" placeholder="UPDATE users..." />
+                    <marker date="1448104663387" expanded="true" signature="7511:7577" placeholder="SELECT * FRO..users..." />
+                    <marker date="1448104663387" expanded="true" signature="7964:8006" placeholder="SELECT * FRO..users..." />
+                    <marker date="1448104663387" expanded="true" signature="12982:13034" placeholder="UPDATE users..." />
+                    <marker date="1448104663387" expanded="true" signature="13620:13688" placeholder="UPDATE users..." />
+                    <marker date="1448104663387" expanded="true" signature="14286:14338" placeholder="UPDATE users..." />
+                    <marker date="1448104663387" expanded="true" signature="14825:15023" placeholder="INSERT INTO ..." />
+                    <marker date="1448104663387" expanded="true" signature="16217:16327" placeholder="UPDATE user ..." />
+                    <marker date="1448104663387" expanded="true" signature="16217:16325" placeholder="UPDATE users..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="registration.router.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/routes/registration.router.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="41" column="85" selection-start="1708" selection-end="1708" vertical-scroll-proportion="-8.5" vertical-offset="459" max-vertical-offset="969">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -139,7 +148,16 @@
           <file leaf-file-name="calendar.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/js/calendar.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="108" column="123" selection-start="4732" selection-end="4742" vertical-scroll-proportion="0.0" vertical-offset="1675" max-vertical-offset="5321">
+                <state line="303" column="23" selection-start="11958" selection-end="11958" vertical-scroll-proportion="0.0" vertical-offset="4743" max-vertical-offset="5610">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.filters.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/filters/user.filters.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="46" column="23" selection-start="1756" selection-end="1756" vertical-scroll-proportion="-28.423077" vertical-offset="26" max-vertical-offset="1564">
                   <folding />
                 </state>
               </provider>
@@ -206,7 +224,7 @@
           <file leaf-file-name="Player.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/model/User/Player.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="17" column="0" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="884">
+                <state line="17" column="0" selection-start="381" selection-end="381" vertical-scroll-proportion="-0.0" vertical-offset="289" max-vertical-offset="884">
                   <folding />
                 </state>
               </provider>
@@ -248,10 +266,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="mode.php" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="mode.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mode.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="11" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="398">
+                <state line="0" column="11" selection-start="11" selection-end="11" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
                   <folding />
                 </state>
               </provider>
@@ -372,7 +390,7 @@
           <file leaf-file-name="validation.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/js/validation.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="266" column="48" selection-start="7262" selection-end="7262" vertical-scroll-proportion="0.0" vertical-offset="4488" max-vertical-offset="10506">
+                <state line="486" column="24" selection-start="15245" selection-end="15260" vertical-scroll-proportion="0.0" vertical-offset="7560" max-vertical-offset="10455">
                   <folding />
                 </state>
               </provider>
@@ -396,17 +414,17 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Image.php" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="Image.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/model/Content/Image.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="130" column="38" selection-start="5082" selection-end="5082" vertical-scroll-proportion="0.0" vertical-offset="2210" max-vertical-offset="4097">
+                <state line="130" column="33" selection-start="5042" selection-end="5042" vertical-scroll-proportion="1.1660231" vertical-offset="1823" max-vertical-offset="4029">
                   <folding>
-                    <marker date="1448062001489" expanded="true" signature="2444:2489" placeholder="SELECT * FRO..cl_image..." />
-                    <marker date="1448062001489" expanded="true" signature="2911:2960" placeholder="SELECT * FRO..cl_image..." />
-                    <marker date="1448062001489" expanded="true" signature="3554:3878" placeholder="INSERT INTO ..." />
-                    <marker date="1448062001489" expanded="true" signature="5418:5547" placeholder="INSERT INTO ..." />
-                    <marker date="1448062001489" expanded="true" signature="6329:6426" placeholder="SELECT * FRO..image_entity..." />
-                    <marker date="1448062001489" expanded="true" signature="8093:8180" placeholder="DELETE FROM ..." />
+                    <marker date="1448103980263" expanded="true" signature="2444:2489" placeholder="SELECT * FRO..cl_image..." />
+                    <marker date="1448103980263" expanded="true" signature="2911:2960" placeholder="SELECT * FRO..cl_image..." />
+                    <marker date="1448103980263" expanded="true" signature="3554:3878" placeholder="INSERT INTO ..." />
+                    <marker date="1448103980263" expanded="true" signature="5445:5574" placeholder="INSERT INTO ..." />
+                    <marker date="1448103980263" expanded="true" signature="6356:6453" placeholder="SELECT * FRO..image_entity..." />
+                    <marker date="1448103980263" expanded="true" signature="8120:8207" placeholder="DELETE FROM ..." />
                   </folding>
                 </state>
               </provider>
@@ -471,12 +489,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/scss/match.scss" />
-        <option value="$PROJECT_DIR$/app/views/game.test.twig" />
-        <option value="$PROJECT_DIR$/public/js/match/game.js" />
         <option value="$PROJECT_DIR$/public/active_scss/forms.scss" />
         <option value="$PROJECT_DIR$/public/active_scss/modules/_mixins.scss" />
-        <option value="$PROJECT_DIR$/public/js/validation.js" />
         <option value="$PROJECT_DIR$/app/views/user/user.home.twig" />
         <option value="$PROJECT_DIR$/app/model/User/Player.php" />
         <option value="$PROJECT_DIR$/app/views/user/user.sidebar.twig" />
@@ -516,12 +530,16 @@
         <option value="$PROJECT_DIR$/app/model/Reservation/Prereservation.php" />
         <option value="$PROJECT_DIR$/app/model/Reservation/Reservation.php" />
         <option value="$PROJECT_DIR$/app/start.php" />
-        <option value="$PROJECT_DIR$/app/model/Content/Image.php" />
         <option value="$PROJECT_DIR$/public/js/avatar_change.js" />
-        <option value="$PROJECT_DIR$/app/routes/user.profile.router.php" />
         <option value="$PROJECT_DIR$/mode.php" />
         <option value="$PROJECT_DIR$/app/views/user/profile/user.avatar_change.twig" />
+        <option value="$PROJECT_DIR$/app/filters/user.filters.php" />
+        <option value="$PROJECT_DIR$/public/js/validation.js" />
+        <option value="$PROJECT_DIR$/public/js/calendar.js" />
+        <option value="$PROJECT_DIR$/app/routes/user.profile.router.php" />
+        <option value="$PROJECT_DIR$/app/model/Content/Image.php" />
         <option value="$PROJECT_DIR$/app/model/User/User.php" />
+        <option value="$PROJECT_DIR$/app/routes/registration.router.php" />
       </list>
     </option>
   </component>
@@ -1335,6 +1353,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32254586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23162939" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1346,7 +1365,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32254586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1391,39 +1409,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/calendar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="123" selection-start="4732" selection-end="4742" vertical-scroll-proportion="0.0" vertical-offset="1675" max-vertical-offset="5321">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/user.sidebar.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="4" selection-start="2645" selection-end="2777" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1462">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/user.matches.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="54" selection-start="2335" selection-end="2335" vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="2958">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/registration.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="15" selection-start="49" selection-end="49" vertical-scroll-proportion="0.27530363" vertical-offset="0" max-vertical-offset="969" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/match/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="380" column="18" selection-start="11725" selection-end="11725" vertical-scroll-proportion="0.0" vertical-offset="6163" max-vertical-offset="11917">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/game.test.2.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="155" column="0" selection-start="8483" selection-end="8483" vertical-scroll-proportion="0.0" vertical-offset="2322" max-vertical-offset="2822">
@@ -1438,7 +1423,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/location.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1278" selection-end="1278" vertical-scroll-proportion="0.50789475" vertical-offset="504" max-vertical-offset="884" />
+        <state line="41" column="0" selection-start="1278" selection-end="1278" vertical-scroll-proportion="0.50789475" vertical-offset="504" max-vertical-offset="884">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/user.bookings.home.twig">
@@ -1465,7 +1452,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/content.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="12" selection-start="1668" selection-end="1674" vertical-scroll-proportion="0.33152175" vertical-offset="1136" max-vertical-offset="25024" />
+        <state line="74" column="12" selection-start="1668" selection-end="1674" vertical-scroll-proportion="0.33152175" vertical-offset="1136" max-vertical-offset="25024">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/calendar.css">
@@ -1522,11 +1511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Reservation/Booking.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="29" selection-start="1521" selection-end="1521" vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1445" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/user.header.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="77" column="54" selection-start="3454" selection-end="3454" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1768">
@@ -1554,11 +1538,6 @@
     <entry file="file://$PROJECT_DIR$/app/routes/user.bookings.router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="212" column="0" selection-start="9642" selection-end="9642" vertical-scroll-proportion="2.0075567" vertical-offset="2569" max-vertical-offset="7038" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/user.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="8" selection-start="724" selection-end="907" vertical-scroll-proportion="0.12846348" vertical-offset="306" max-vertical-offset="731" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/User/UserPassReset.php">
@@ -1724,52 +1703,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/start.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="22" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="2465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Content/Image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="38" selection-start="5082" selection-end="5082" vertical-scroll-proportion="0.0" vertical-offset="2210" max-vertical-offset="4097">
-          <folding>
-            <marker date="1448062001489" expanded="true" signature="2444:2489" placeholder="SELECT * FRO..cl_image..." />
-            <marker date="1448062001489" expanded="true" signature="2911:2960" placeholder="SELECT * FRO..cl_image..." />
-            <marker date="1448062001489" expanded="true" signature="3554:3878" placeholder="INSERT INTO ..." />
-            <marker date="1448062001489" expanded="true" signature="5418:5547" placeholder="INSERT INTO ..." />
-            <marker date="1448062001489" expanded="true" signature="6329:6426" placeholder="SELECT * FRO..image_entity..." />
-            <marker date="1448062001489" expanded="true" signature="8093:8180" placeholder="DELETE FROM ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="60" selection-start="363" selection-end="363" vertical-scroll-proportion="0.509636" vertical-offset="0" max-vertical-offset="467" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/avatar_change.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="53" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="3162">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mode.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="11" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="398">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.avatar_change.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="39" selection-start="6616" selection-end="6616" vertical-scroll-proportion="-16.115385" vertical-offset="1672" max-vertical-offset="3332">
-          <folding>
-            <element signature="e#6550#6576#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1780,33 +1722,119 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/profile/user.avatar_change.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="134" selection-start="6253" selection-end="6253" vertical-scroll-proportion="-12.846154" vertical-offset="1672" max-vertical-offset="3332">
+          <folding>
+            <element signature="e#6550#6576#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/start.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="22" selection-start="1340" selection-end="1340" vertical-scroll-proportion="5.8846154" vertical-offset="901" max-vertical-offset="2312">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/match/game.old.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="694" column="22" selection-start="23064" selection-end="23064" vertical-scroll-proportion="0.33125" vertical-offset="11692" max-vertical-offset="12597">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/avatar_change.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="20" selection-start="2008" selection-end="2201" vertical-scroll-proportion="-8.16" vertical-offset="782" max-vertical-offset="3162">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/filters/user.filters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="23" selection-start="1756" selection-end="1756" vertical-scroll-proportion="-28.423077" vertical-offset="26" max-vertical-offset="1564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="303" column="23" selection-start="11958" selection-end="11958" vertical-scroll-proportion="0.0" vertical-offset="4743" max-vertical-offset="5610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/validation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="486" column="24" selection-start="15245" selection-end="15260" vertical-scroll-proportion="0.0" vertical-offset="7560" max-vertical-offset="10455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/user.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="8" selection-start="624" selection-end="624" vertical-scroll-proportion="0.33204633" vertical-offset="254" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Reservation/Booking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="27" selection-start="1556" selection-end="1556" vertical-scroll-proportion="-1.011583" vertical-offset="1095" max-vertical-offset="1445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Content/Image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="33" selection-start="5042" selection-end="5042" vertical-scroll-proportion="1.1660231" vertical-offset="1823" max-vertical-offset="4029">
+          <folding>
+            <marker date="1448103980263" expanded="true" signature="2444:2489" placeholder="SELECT * FRO..cl_image..." />
+            <marker date="1448103980263" expanded="true" signature="2911:2960" placeholder="SELECT * FRO..cl_image..." />
+            <marker date="1448103980263" expanded="true" signature="3554:3878" placeholder="INSERT INTO ..." />
+            <marker date="1448103980263" expanded="true" signature="5445:5574" placeholder="INSERT INTO ..." />
+            <marker date="1448103980263" expanded="true" signature="6356:6453" placeholder="SELECT * FRO..image_entity..." />
+            <marker date="1448103980263" expanded="true" signature="8120:8207" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="60" selection-start="7022" selection-end="7022" vertical-scroll-proportion="-12.076923" vertical-offset="2083" max-vertical-offset="6987">
+        <state line="217" column="49" selection-start="11319" selection-end="11319" vertical-scroll-proportion="-7.8461537" vertical-offset="3417" max-vertical-offset="5644">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/registration.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="85" selection-start="1708" selection-end="1708" vertical-scroll-proportion="-8.5" vertical-offset="459" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/User/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="326" column="27" selection-start="9506" selection-end="9506" vertical-scroll-proportion="0.4411135" vertical-offset="5217" max-vertical-offset="12172">
+        <state line="524" column="39" selection-start="16028" selection-end="16028" vertical-scroll-proportion="0.7752443" vertical-offset="8551" max-vertical-offset="12189">
           <folding>
-            <marker date="1448092616246" expanded="true" signature="3191:3244" placeholder="SELECT * FRO..users..." />
-            <marker date="1448092616246" expanded="true" signature="3837:3907" placeholder="SELECT * FRO..users..." />
-            <marker date="1448092616246" expanded="true" signature="4688:4730" placeholder="SELECT * FRO..users..." />
-            <marker date="1448092616246" expanded="true" signature="5121:5183" placeholder="SELECT * FRO..users..." />
-            <marker date="1448092616246" expanded="true" signature="5626:5694" placeholder="SELECT * FRO..users..." />
-            <marker date="1448092616246" expanded="true" signature="6118:6150" placeholder="DELETE FROM ..." />
-            <marker date="1448092616246" expanded="true" signature="6533:6625" placeholder="UPDATE users..." />
-            <marker date="1448092616246" expanded="true" signature="7013:7105" placeholder="UPDATE users..." />
-            <marker date="1448092616246" expanded="true" signature="7511:7577" placeholder="SELECT * FRO..users..." />
-            <marker date="1448092616246" expanded="true" signature="7964:8006" placeholder="SELECT * FRO..users..." />
-            <marker date="1448092616246" expanded="true" signature="12982:13034" placeholder="UPDATE users..." />
-            <marker date="1448092616246" expanded="true" signature="13620:13688" placeholder="UPDATE users..." />
-            <marker date="1448092616246" expanded="true" signature="14286:14338" placeholder="UPDATE users..." />
-            <marker date="1448092616246" expanded="true" signature="14825:15023" placeholder="INSERT INTO ..." />
-            <marker date="1448092616246" expanded="true" signature="16153:16263" placeholder="UPDATE user ..." />
-            <marker date="1448092616246" expanded="true" signature="16153:16261" placeholder="UPDATE users..." />
+            <marker date="1448104663387" expanded="true" signature="3191:3244" placeholder="SELECT * FRO..users..." />
+            <marker date="1448104663387" expanded="true" signature="3837:3907" placeholder="SELECT * FRO..users..." />
+            <marker date="1448104663387" expanded="true" signature="4688:4730" placeholder="SELECT * FRO..users..." />
+            <marker date="1448104663387" expanded="true" signature="5121:5183" placeholder="SELECT * FRO..users..." />
+            <marker date="1448104663387" expanded="true" signature="5626:5694" placeholder="SELECT * FRO..users..." />
+            <marker date="1448104663387" expanded="true" signature="6118:6150" placeholder="DELETE FROM ..." />
+            <marker date="1448104663387" expanded="true" signature="6533:6625" placeholder="UPDATE users..." />
+            <marker date="1448104663387" expanded="true" signature="7013:7105" placeholder="UPDATE users..." />
+            <marker date="1448104663387" expanded="true" signature="7511:7577" placeholder="SELECT * FRO..users..." />
+            <marker date="1448104663387" expanded="true" signature="7964:8006" placeholder="SELECT * FRO..users..." />
+            <marker date="1448104663387" expanded="true" signature="12982:13034" placeholder="UPDATE users..." />
+            <marker date="1448104663387" expanded="true" signature="13620:13688" placeholder="UPDATE users..." />
+            <marker date="1448104663387" expanded="true" signature="14286:14338" placeholder="UPDATE users..." />
+            <marker date="1448104663387" expanded="true" signature="14825:15023" placeholder="INSERT INTO ..." />
+            <marker date="1448104663387" expanded="true" signature="16217:16327" placeholder="UPDATE user ..." />
+            <marker date="1448104663387" expanded="true" signature="16217:16325" placeholder="UPDATE users..." />
           </folding>
         </state>
       </provider>

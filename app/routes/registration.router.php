@@ -32,13 +32,14 @@ $app->post('/clanovi/registracija', $guest_user(), function() use ($app) {
         $app->redirect($app->urlFor('user.registration'));
     } else {
         // Validation of input data successful
-        if ($new_user = User::createNew($p_username, $p_email, $p_password, $p_first_name, $p_last_name, $p_sex)) {
+        list($status, $new_user) = User::createNew($p_username, $p_email, $p_password, $p_first_name, $p_last_name, $p_sex);
+        if ($status["success"] == true && $new_user) {
             Logger::logNewUserRegistration($new_user);
             $app->flash('success', "Uspješna registracija!");
             $app->flash('statuses', "Sada se možete prijaviti koristeći unesene podatke.");
             $app->redirect($app->urlFor('user.login'));
         } else {
-            $app->flash('errors', "Greška kod unosa u bazu.\nPokušajte ponovno");
+            $app->flash('errors', "Greška kod unosa u bazu.\n" . $status["err"] . "\nPokušajte ponovno");
             $app->redirect($app->urlFor('user.registration'));
         }
     }

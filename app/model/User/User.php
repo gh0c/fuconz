@@ -517,11 +517,12 @@ class User
         try {
             $stmt->execute();
             $status["success"] = true;
-            return User::getUserById($dbh->lastInsertId());
+            $new_user = User::getUserById($dbh->lastInsertId());
+            return array($status, $new_user);
         } catch (\Exception $e) {
             $status["success"] = false;
             $status["err"] = $e->getMessage();
-            return $status;
+            return array($status, null);
         }
 
     }
