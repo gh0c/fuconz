@@ -116,11 +116,12 @@
                                 <div class = "inner-70pct">
                                     <input type="text" name="fb-id" id="fb-id" required
                                            maxlength="255" spellcheck="false" autocomplete="off" tabindex="4"
-                                           class = "std-text-input std-input-width" value = "{{ (auth_user.fb_id)?: '' }}"/>
+                                           class = "std-text-input std-input-width" value = "{{ (auth_user.use_fb_avatar)? auth_user.gb_id : '' }}"/>
                                     <label id="fb-id-label" alt="Facebook ID" placeholder="Facebook ID" data-info="Facebook ID"></label>
                                 </div>
                                 <h4>
-                                    <a class = "underline-link l-o" target="_blank" href = "http://findmyfbid.com/">Dohvati Facebook ID</a>
+                                    <a class = "underline-link l-o" style = "font-size: 0.9em"
+                                       target="_blank" href = "http://findmyfbid.com/">Dohvati Facebook ID</a>
                                 </h4>
                             </div>
 

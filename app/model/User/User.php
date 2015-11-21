@@ -324,7 +324,7 @@ class User
     public function facebookAvatarExists($options = array()) {
         if($this->use_fb_avatar && $this->fb_id) {
             $new_merged_options = array_merge($options, array("type" => "facebook"));
-            return cloudinary_url($this->fb_id . ".jpg", $new_merged_options);
+            return (string)cloudinary_url($this->fb_id . ".jpg", $new_merged_options);
         } else {
             return null;
         }
