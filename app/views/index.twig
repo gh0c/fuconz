@@ -7,15 +7,15 @@
 {% block content %}
 
     <div class = "main-block-cont">
-        <div class = "black-horiz-spacer-10"></div>
+        {#<div class = "black-horiz-spacer-10"></div>#}
 
-        <div class = "main-title-box">
-            <div class = "inner-cont flag"></div>
-            <div class = "inner-cont page-title">
-                <h1>Fuconž početna stranica</h1>
-            </div>
-        </div>
-        <div class = "black-horiz-spacer-5"></div>
+        {#<div class = "main-title-box">#}
+            {#<div class = "inner-cont flag"></div>#}
+            {#<div class = "inner-cont page-title">#}
+                {#<h1>Fuconž početna stranica</h1>#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class = "black-horiz-spacer-5"></div>#}
 
         <div class = "main-content-box">
             <div class = "inner-cont">
@@ -23,14 +23,47 @@
 
                 {% include "templates/partials/user_messages.twig" %}
 
+            </div>
 
-                <div class = "vertical-section text-centered">
-                    <div class = "inner-70pct">
+            <div class = "home-cont mega home-container main" id = "home-cont">
+                <div class = "main-img-holder">
+                </div>
+                <div class = "homepage-cont-holder">
+                    <div class = "subtitle-std lev1 inner-70pct text-centered">
                         <h4>Ovo su stranice na kojima ekiponž dogovara fuconž</h4>
+                    </div>
+                    {% if not auth_user %}
+                    <div class = "inner-70pct subtitle-std lev2">
+                        <span>Za početak se, ako nisi, registriraj i prijavi!</span>
+                    </div>
+                    {% endif %}
+                    <div class = "inner-70pct subtitle-std lev2">
+                        <span class = "info">Glavna svrha stranice trebala bi biti prijava za određeni termin, međusobna komunikacija i pregled informacija o odigranim tekmama!</span>
+                    </div>
+                    <div class = "inner-70pct subtitle-std lev3">
+                        <i class="fa fa-fw fa-calendar-check-o"></i>
+                        <i class="fa fa-fw fa-pie-chart"></i>
+                        <i class="fa fa-fw fa-envelope"></i>
+                        <i class="fa fa-fw fa-trophy"></i>
+                        <i class="fa fa-fw fa-soccer-ball-o"></i>
+                        <i class="fa fa-fw fa-beer"></i>
+
+                    </div>
+                    <div class = "inner-70pct subtitle-std lev2">
+                        <span class = "info">Računaj da su moguća kršenja stranice, nedostupnost ili iznenadne odjave prijavljenih članova!</span>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block additional_js %}
+    <script src="public/js/imagesloaded.min.js"></script>
+    <script src="public/js/velocity.min.js"></script>
+
+    <script src="public/js/homepage.js"></script>
+
+
 {% endblock %}

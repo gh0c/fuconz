@@ -41,7 +41,7 @@ class Booking
     public static function getByUser($user_id, $order_by = "datetime_span.datetime_span_start")
     {
         $reservations = Reservation::getByUser($user_id, $order_by);
-        $prereservations = Prereservation::getByUser($user_id, $order_by);
+        $prereservations = Prereservation::getUnactivatedByUser($user_id, $order_by);
         $all_bookings = array_merge($reservations, $prereservations);
         usort($all_bookings, array('app\model\Reservation\Booking', "sortByDatetimeSpanStart"));
         return $all_bookings;
@@ -54,7 +54,7 @@ class Booking
         $booking_allowed = array();
 
         $reservations = Reservation::getByUser($user_id, $order_by);
-        $prereservations = Prereservation::getByUser($user_id, $order_by);
+        $prereservations = Prereservation::getUnactivatedByUser($user_id, $order_by);
         $all_bookings = array_merge($reservations, $prereservations);
 
         foreach ($all_bookings as $booking ) {
@@ -74,6 +74,60 @@ class Booking
         return array($booking_allowed, $booking_not_allowed, $ended);
     }
 
+
+    public static function getByUserLimitedSorted($user_id, $limit_allowed = 1000, $limit_ended = 1000,
+                                                  $limit_not_allowed = 1000, $total = 1000, $order_by = "datetime_span.datetime_span_start")
+    {
+        $ended = array();
+        $booking_not_allowed = array();
+        $booking_allowed = array();
+
+        $reservations = Reservation::getByUser($user_id, $order_by);
+        $pre_reservations = Prereservation::getUnactivatedByUser($user_id, $order_by);
+        $all_bookings = array_merge($reservations, $pre_reservations);
+
+        foreach ($all_bookings as $booking ) {
+            if($booking->datetime_span->span_start < date("Y-m-d H:i:s")) {
+                $ended[] = $booking;
+            } else if (!( (strtotime($booking->datetime_span->span_start) - $booking->datetime_span->training_course->reservation_time )
+                > date("U"))) {
+                $booking_not_allowed[] = $booking;
+            } else {
+                $booking_allowed[] = $booking;
+            }
+        }
+
+//        echo sprintf("We originally got %d not allowed, %d allowed and %d ended bookings<br>",
+//            sizeof($booking_not_allowed), sizeof($booking_allowed), sizeof($ended));
+
+        usort($booking_not_allowed, array('app\model\Reservation\Booking', "sortByDatetimeSpanStart"));
+
+        $booking_not_allowed = array_slice($booking_not_allowed, 0, $limit_not_allowed);
+
+        $o_not_allowed_size = sizeof($booking_not_allowed);
+        if($o_not_allowed_size >= $total) {
+            $ended = array();
+            $booking_allowed = array();
+        } else {
+            usort($booking_allowed, array('app\model\Reservation\Booking', "sortByDatetimeSpanStart"));
+            $limit_allowed = (($total - $o_not_allowed_size) > $limit_allowed) ? $limit_allowed : ($total - $o_not_allowed_size);
+            $booking_allowed = array_slice($booking_allowed, 0, $limit_allowed);
+            $o_allowed_size = sizeof($booking_allowed);
+
+            if($o_not_allowed_size + $o_allowed_size >= $total) {
+                $ended = array();
+            } else {
+                usort($ended, array('app\model\Reservation\Booking', "sortByDatetimeSpanStart"));
+                $limit_ended = (($total - $limit_ended - $o_allowed_size) > $limit_ended) ? $limit_ended : ($total - $o_not_allowed_size - $o_allowed_size);
+                $ended = array_slice($ended, 0, $limit_ended);
+                $o_ended_size = sizeof($ended);
+
+            }
+        }
+
+
+        return array($booking_allowed, $booking_not_allowed, $ended);
+    }
 
 
 

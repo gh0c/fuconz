@@ -4,6 +4,8 @@ use app\helpers\Configuration as Cfg;
 use \app\helpers\Hash;
 use \app\model\Messages\Logger;
 use \app\model\Content\Image;
+use \app\model\Messages\Message;
+use \app\model\Reservation\Booking;
 
 $app->group('/clanovi', function () use ($app, $authenticated_user) {
 
@@ -16,13 +18,45 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                 'active_item' => 'user.profile.home'));
         })->name('user.profile.home');
 
+        $app->post('/load-messages', $authenticated_user(), function() use ($app) {
+            if($app->request->isAjax()) {
+
+                $body = $app->request->getBody();
+                $json_data_received = json_decode($body, true);
+
+                $unread_messages = Message::getUnreadMessagesForReceiver($app->auth_user->id, "user");
+                $app->render('user/profile/home/unread_messages.twig', array(
+                    'user' => $app->auth_user,
+                    'unread_messages' => $unread_messages
+                ));
+                exit();
+            }
+        })->name('user.profile.load.messages.post');
+
+
+        $app->post('/load-reservations', $authenticated_user(), function() use ($app) {
+            if($app->request->isAjax()) {
+
+                $body = $app->request->getBody();
+                $json_data_received = json_decode($body, true);
+
+                list($b_allowed, $b_not_allowed, $b_ended) = Booking::getByUserLimitedSorted($app->auth_user->id, 5, 2, 1000, 5);
+
+                $app->render('user/profile/home/hot_bookings.twig', array(
+                    'user' => $app->auth_user,
+                    'bookings_allowed' => $b_allowed,
+                    'bookings_not_allowed' => $b_not_allowed,
+                    'bookings_ended' => $b_ended
+                ));
+                exit();
+            }
+        })->name('user.profile.load.reservations.post');
 
         $app->get('/:action', $authenticated_user(), function ($action) use ($app) {
             if(in_array($action, array('avatar', 'ikona', 'promjena-lozinke', 'podaci'))) {
                 $app->pass();
             }
-            else
-            {
+            else {
                 $app->flashNow('errors', "Nema tražene stranice!");
                 $app->render('user/profile/user.action.twig', array(
                     'user' => $app->auth_user,
@@ -145,7 +179,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                             $app->flash('success', "Uspješna promjena avatara.\nKao avatar koristit će se profilna slika Facebook profila koji ste unijeli.\n" .
                                 $app->auth_user->getFacebookAvatarURL());
                             Logger::logUserAvatarFacebookChange($app->auth_user);
-                            if(!$app->auth_user->facebookAvatarExists()) {
+                            if(!$app->auth_user->imageHosted($app->auth_user->facebookAvatarExists())) {
                                 $app->flash("statuses", "Profilna slika za zadani Facebook identifikator nije pronađena!");
                             } else {
                                 $app->flash("statuses", "Profilna slika za zadani Facebook identifikator je pronađena!");
@@ -214,17 +248,21 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                         echo json_encode(array("hash" => $img->hash));
                     } else {
                         header('Content-Type: application/json');
+                        if(isset($status["err"])) {
+                            $error = "Greška (:1) - " . $status["err"];
+                        } else {
+                            $error = "Greška (:1.1) - Nepotpun dohvat slike.";
+                        }
                         echo json_encode(array(
-                            "error" =>"Greška 1: " . $status["err"],
+                            "error" => $error,
                             "img" => $img,
                             "sent_data" => $input_data
                         ));
-
                     }
                 } catch(\Exception $e) {
                     header('Content-Type: application/json');
                     echo json_encode(array(
-                        "error" =>"Greška 2: " . $e->getMessage() . "",
+                        "error" =>"Greška (:2) - " . $e->getMessage() . "",
                         "sent_data" => $input_data
                     ));
                 }

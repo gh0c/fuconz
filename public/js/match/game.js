@@ -375,7 +375,7 @@
                 translateZ: 0,
                 translateY: -60
             }, 0);
-            $('main').css("pointer-events", "initial");
+            $('main').css("pointer-events", "auto");
             return $('main').velocity({
                 opacity: 1
             }, 0);

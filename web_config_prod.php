@@ -6,7 +6,7 @@ $db_params = parse_url(getenv('DATABASE_URL'));
 // DB Config
 Configuration::write('db.type', "pgsql");
 
-Configuration::write('db.encoding', 'client_encoding');
+Configuration::write('db.encoding', 'UTF-8');
 Configuration::write('db.host', $db_params["host"]);
 Configuration::write('db.port', $db_params["port"]);
 Configuration::write('db.basename', ltrim($db_params["path"],'/'));

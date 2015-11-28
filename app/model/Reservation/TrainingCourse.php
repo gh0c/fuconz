@@ -126,7 +126,7 @@ class TrainingCourse {
                 $stmt->execute();
                 $dates = Calendar::dates_span($repeating_from, $repeating, $repeating_until,
                     $repeating_interval, $repeating_frequency);
-                $course_id = $dbh->lastInsertId();
+                $course_id = $dbh->lastInsertId("training_course_id_seq");
 
                 foreach($dates as $date) {
                     $day_of_week = date("w", strtotime($date));
@@ -299,5 +299,26 @@ class TrainingCourse {
             return null;
         }
         return $course;
+    }
+
+
+    public static function maxReservationTime()
+    {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "SELECT MAX(reservation_time) AS number FROM training_course";
+        $stmt = $dbh->prepare($sql);
+        try {
+            $stmt->execute();
+            if ($stmt->rowCount() > 0) {
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                return (int)$row["number"];
+            }
+            else {
+                return null;
+            }
+        } catch (\Exception $e) {
+            return null;
+        }
+
     }
 }

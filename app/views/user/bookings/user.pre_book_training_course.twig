@@ -34,7 +34,7 @@
                                     termin se automatski popunjava u slučaju da postoje predbilježbe za njega.
                                     Ukoliko tvoja predbilježba postane aktivirana, dobit ćeš poruku sa obavijeti. <br>
                                     Predbilježbe je, kao i rezervacije, moguće odjaviti do 24 sata prije početka na
-                                    <a href="{{ urlFor('user.home') }}" class="underline-link">članskim stranicama.</a> <br><br>
+                                    <a href="{{ urlFor('user.profile.home') }}" class="underline-link">članskim stranicama.</a> <br><br>
                                     <a href="{{ urlFor('user.book-training-course') }}" class="underline-link">Povratak na kalendar
                                         <i class = "fa fa-fw fa-calendar-check-o"></i></a> <br>
 
@@ -51,7 +51,7 @@
                             <div id = "selected-spans">
                             {% if flash.available_datetime_spans and flash.available_datetime_spans|length > 0 %}
 
-                                <div class = "vertical-section text-centered dashed-spacer">
+                                <div class = "vertical-section inner-70pct text-centered">
                                     <h3>Slobodni termini</h3>
                                 </div>
 
@@ -88,7 +88,7 @@
 
                             {% if flash.full_datetime_spans and flash.full_datetime_spans|length > 0 %}
 
-                                <div class = "vertical-section text-centered dashed-spacer">
+                                <div class = "vertical-section text-centered inner-70pct">
                                     <h3>Zauzeti termini</h3>
                                 </div>
 

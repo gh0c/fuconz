@@ -25,15 +25,16 @@
 
                 {% include "templates/partials/user_messages.twig" %}
 
+                <div  class = "vertical-section text-centered">
 
-                <span>..ere they are...</span>
                 {% if not bookings_exists %}
-                    <span>Nema rezervacija</span>
+                    <div class = "inner-70pct">
+
+                        <span>Nema rezervacija</span>
+                    </div>
                 {% else %}
 
-                    <div class = "vertical-section text-centered dashed-spacer">
 
-                    </div>
 
                     <div  class = "vertical-section text-centered">
                         {% if bookings_allowed|length < 1 %}
@@ -135,10 +136,16 @@
                         {% endif %}
                     </div>
                 {% endif %}
-
+                </div>
             </div>
         </div>
 
     </div>
+
+{% endblock %}
+
+
+{% block additional_js %}
+    <script src="public/js/bookings.js"></script>
 
 {% endblock %}

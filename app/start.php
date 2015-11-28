@@ -34,7 +34,8 @@ if ($app->mode === "development")
     require INC_ROOT . '/web_config_dev.php';
 else if ($app->mode === "production")
     require INC_ROOT . '/web_config_prod.php';
-
+if ($app->mode === "development2")
+    require INC_ROOT . '/web_config_dev2.php';
 
 
 // Cloudinary stuff
@@ -51,7 +52,7 @@ $app->add(new Middleware\BeforeMiddleware());
 $app->add(new Middleware\CsrfMiddleware());
 
 
-if ($app->mode === "..development") {
+if ($app->mode === "development2" && !$app->request->isAjax()) {
     $app->configureMode($app->config('mode'), function() use ($app) {
 
         // pre-application hook, performs stuff before real action happens @see http://docs.slimframework.com/#Hooks
@@ -92,7 +93,7 @@ if ($app->mode === "..development") {
 //            $minifier->add('public/css/jquery-ui.datepicker.struct.css');
 //            $minifier->add('public/css/admin/tables.css');
 //            $minifier->minify('public/css/admin/admin_style.css');
-            // --------------- !!! ----------------------
+//             --------------- !!! ----------------------
 
 
             // JS minifier @see https://github.com/matthiasmullie/minify

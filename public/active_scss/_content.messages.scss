@@ -4,15 +4,23 @@
 .std-item {
   // list of bookings
   &.message {
-    width: 100%;
-    text-align: left;
-    margin-bottom: 3px;
+//    width: 100%;
+    display: inline-block;
+    padding-top: 4px;
+    margin: 4px auto 1px auto;
+    text-align: center;
+
+    border-top: 2px dashed $dark-dark-blue;
+    &:first-of-type {
+      border-top-color: transparent;
+    }
+    @include pp-transition(all 0.45s ease-out);
 
     .icon-holder {
       width: 3em;
-      background-color: #12408d;
+      background-color: $cibona-blue;
       height: 2em;
-      @include pp-transition(all 0.25s ease-out);
+      @include pp-transition(all 0.45s ease-out);
 
       .message-icon-cont {
 
@@ -21,10 +29,10 @@
           height: 1.75em;
           .pic-cont {
             border-radius: 50%;
-            @include pp-transition(all 0.25s ease-out);
+            @include pp-transition(all 0.45s ease-out);
 
             & > .icon {
-              @include pp-transition(all 0.25s ease-out);
+              @include pp-transition(all 0.45s ease-out);
 
               color: white;
               font-size: 1em;
@@ -35,6 +43,7 @@
     }
 
     &.has-not-been-read {
+      border-top-color: $cibona-blue;
       .icon-holder {
         background-color: $cibona-blue;
         .message-icon-cont .message-icon .pic-cont {
@@ -60,7 +69,7 @@
     }
     section.td {
       border: 0;
-      display: inline-block;
+      display: table-cell;
       margin: 2px 0 2px 0;
       vertical-align: top;
       &.icon {
@@ -69,25 +78,153 @@
       &.message {
         font-family: MuseoSans;
         font-weight: 700;
-        width: 70%;
+        width: 34em;
+        text-align: left;
         .time-label-holder {
           width: 15em;
-          border-right: 2px dashed $dark-dark-blue;
           height: 2em;
           display: inline-table;
           position: relative;
           padding: 0 0.5em;
-          @include pp-transition(all 0.25s ease-out);
+          box-sizing: border-box;
+          border-bottom: 2px solid $dark-dark-blue;
+
+          @include pp-transition(all 0.45s ease-out);
           color: $dark-dark-blue;
           > span {
             display: table-cell;
             vertical-align: middle;
+            font-size: 0.85em;
           }
         }
 
+
         .message-holder {
-          width: 100%;
           padding: 0.25em 0.5em;
+
+          // styles of message itself:
+
+          ol, ul {
+            list-style: square inside none;
+            text-indent: -1em;
+            padding-left: 1em;
+            margin-top: 0.25em;
+            margin-bottom: 0.25em;
+          }
+
+          .std-item.sender {
+            margin-top: 4px;
+            margin-left: 6px;
+            min-width: 6em;
+            padding: 3px 2px 2px 2px;
+            border-top: 1px solid $dark-dark-blue;
+            display: inline-block;
+          }
+          .msg-sender-icon-holder {
+            width: 2.375em;
+            height: 2.375em;
+            background-color: $light-blue-gray-dark;
+            color: $dark-dark-blue;
+            margin-left: 6px;
+
+            @include rounded(10em);
+            .pic-cont > img {
+              @include rounded(10em);
+
+            }
+          }
+          .sender-label {
+            display: inline-table;
+            height: 2.375em;
+            vertical-align: top;
+            & > span {
+              display: table-cell;
+              vertical-align: middle;
+              padding: 0px 6px;
+              font-size: 0.9em;
+              opacity: 0.9;
+            }
+          }
+
+          .std-item.active-booking-user {
+            margin-top: 4px;
+            margin-left: 6px;
+            min-width: 6em;
+            padding: 3px 2px 2px 2px;
+            display: inline-block;
+            vertical-align: top;
+          }
+          .active-booking-user-icon-holder {
+            width: 2.375em;
+            height: 2.375em;
+            background-color: $light-blue-gray-dark;
+            color: $dark-dark-blue;
+            margin-left: 6px;
+            @include rounded(10em);
+            .pic-cont > img {
+              @include rounded(10em);
+            }
+          }
+          .active-booking-user-label {
+            display: inline-table;
+            height: 2.375em;
+            vertical-align: top;
+            & > span {
+              display: table-cell;
+              vertical-align: middle;
+              padding: 0px 6px;
+              font-size: 0.9em;
+            }
+          }
+
+        }
+      }
+      $status-td-w: 3em;
+      &.has-been-read-status {
+        width: $status-td-w;
+        .status-holder {
+//          background-color: maroon;
+          display: inline-table;
+          width: 100%;
+          height: 100%;
+          a {
+            line-height: 2em;
+//            background-color: darkcyan;
+            width: $status-td-w;
+            cursor: pointer;
+            display: block;
+            position: relative;
+            @include pp-transition(all 0.3s ease-out);
+
+            span {
+              vertical-align: middle;
+              @include pp-transition(all 0.3s ease-out);
+            }
+            span.selector {
+              color: $cibona-blue;
+              font-size: 1.4em;
+              width: 100%;
+              text-align: left;
+              margin-left: .5em;
+
+            }
+            span.exclamation-alarm {
+              position: absolute;
+              right: 0;
+              top: 0.5em;
+              color: orangered;
+              @include animation('ring-frames 2.5s ease infinite');
+            }
+            &.active:hover {
+              background-color: $cibona-blue;
+              span.selector {
+                color: $light-blue-gray-light;
+                &:not(.fa-spin):before {
+                  content: '\f046';
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -95,6 +232,17 @@
       section.td.message .time-label-holder {
         background-color: $cibona-blue;
         color: white;
+        border-bottom: 2px solid $cibona-blue;
+
+      }
+    }
+
+    &.has-been-read {
+      section.td.message .time-label-holder {
+        color: $light-blue-gray-light;
+        background-color: $dark-dark-blue;
+
+        border-bottom: 2px solid $dark-dark-blue;
       }
     }
   }

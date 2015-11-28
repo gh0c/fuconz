@@ -1,6 +1,8 @@
 
 var cldFU = $('#avatar-file').cloudinary_fileupload();
 
+var communicationWithServer = false;
+
 $(document).ready(function(){
 
     $(function() {
@@ -30,6 +32,11 @@ $(document).ready(function(){
             })
 
             .on('cloudinarydone', function (e, data) {
+                if(communicationWithServer) {
+                    console.log("Already set oncloudinarydone");
+                    return;
+                }
+                communicationWithServer = true;
                 console.log("On cloudinary done...");
                 infoPanelSuccess("Upload završen.", true);
                 var url = $(this).data("submit-url");

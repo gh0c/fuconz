@@ -1,4 +1,4 @@
-@import "modules/modules.import";
+@import "modules/_modules.import";
 
 @import 'bourbon'; // http://bourbon.io/
 
@@ -15,7 +15,7 @@
   }
 
   @include MQ(L) {
-    height: 550px;
+    height: 520px;
   }
 }
 

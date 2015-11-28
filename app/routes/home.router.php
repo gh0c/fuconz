@@ -12,4 +12,6 @@ $app->get('/lokacija', function() use ($app) {
 $app->get('/o-stranici', function() use ($app) {
     $app->render('about_site.twig');
 })->name('about-site');
+
+
 ?>

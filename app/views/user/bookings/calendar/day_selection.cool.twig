@@ -41,8 +41,8 @@
                         {% if not course_booking_allowed %} {# Booking time ended for not over course #}
 
                             {#<div><span title = "{{ ( span.span_start|date("U") - span.training_course.reservation_time )|date("Y-m-d H:i") }}">-C booking ajbok</span></div>#}
-                            <div class = "booking booking-time-ended" title = "{{ span.training_course.title }}&#10;{{ span.description_string() }}"
-                                 data-date = "{{ curr_date }}" data-description = "{{ span.description_string() }}"
+                            <div class = "booking booking-time-ended" title = "{{ span.training_course.title }}&#10;{{ span.descriptionString() }}"
+                                 data-date = "{{ curr_date }}" data-description = "{{ span.descriptionString() }}"
                                  id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
                                 <div class = "legend-icon-cont">
                                     <span class="calendar-icon-holder no-booking" title = "{{ my_booking.canceled }}">
@@ -59,17 +59,17 @@
                         {% else %} {# Course available for booking #}
 
                             <div class = "booking available-for-booking {{ span_preselected? 'yes':'not' }}-selected"
-                                 title = "{{ span.training_course.title }}&#10;{{ span.description_string() }}"
+                                 title = "{{ span.training_course.title }}&#10;{{ span.descriptionString() }}"
                                  data-date = "{{ curr_date }}"
                                  data-start-time = "{{ span.start_time_hour }}-{{ span.start_time_minutes }}"
                                  data-course-id = "{{ span.training_course.id }}"
-                                 data-description = "{{ span.description_string() }}"
+                                 data-description = "{{ span.descriptionString() }}"
                                  data-availability = "{{ reservation.number_of_reservations_for_datetime_and_course(span.training_course.id, span.id)
                                     ~ '/' ~ span.training_course.capacity }}"
                                  data-reservation-time = "{{ span.training_course.reservation_time }}"
                                  id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
                                 <div class = "legend-icon-cont {{ span_preselected? 'yes':'not' }}-selected">
-                                    <i class = "fa fa-fw fa-circle-thin mega" title = "{{ span.description_string() }}"></i>
+                                    <i class = "fa fa-fw fa-circle-thin mega" title = "{{ span.descriptionString() }}"></i>
                                 </div>
                                 <div class = "duration-cont">
                                     <span class = "times">{{ span.start_time }}-{{ span.end_time }}</span>
@@ -80,11 +80,11 @@
 
                     {% else %} {# Course without booking finished #}
 
-                        <div class = "booking course-finished" title = "{{ span.training_course.title }}&#10;{{ span.description_string() }}"
-                             data-date = "{{ curr_date }}" data-description = "{{ span.description_string() }}"
+                        <div class = "booking course-finished" title = "{{ span.training_course.title }}&#10;{{ span.descriptionString() }}"
+                             data-date = "{{ curr_date }}" data-description = "{{ span.descriptionString() }}"
                              id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
                             <div class = "legend-icon-cont">
-                                <i class = "fa fa-fw fa-sticky-note-o not-booked fa-rotate-270" title = "{{ span.description_string() }}"></i>
+                                <i class = "fa fa-fw fa-sticky-note-o not-booked fa-rotate-270" title = "{{ span.descriptionString() }}"></i>
                             </div>
                             <div class = "duration-cont">
                                 <span class = "times">{{ span.start_time }}-{{ span.end_time }}</span>
@@ -198,8 +198,8 @@
 
                     {% else %} {# Course with booking finished #}
 
-                        <div class = "booking course-finished" title = "{{ span.training_course.title }}&#10;{{ span.description_string() }}"
-                             data-date = "{{ curr_date }}" data-description = "{{ span.description_string() }}"
+                        <div class = "booking course-finished" title = "{{ span.training_course.title }}&#10;{{ span.descriptionString() }}"
+                             data-date = "{{ curr_date }}" data-description = "{{ span.descriptionString() }}"
                              id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
                             <div class = "legend-icon-cont">
 

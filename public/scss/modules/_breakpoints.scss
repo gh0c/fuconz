@@ -43,3 +43,13 @@ $L:     1170px;
   }
 }
 
+
+
+
+@mixin responsive-w-min($canvas) {
+    @media only screen and (min-width: $canvas) { @content; }
+}
+
+@mixin responsive-w-max($canvas) {
+  @media only screen and (max-width: $canvas) { @content; }
+}

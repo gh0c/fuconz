@@ -255,7 +255,7 @@ class ActionLog
 
             try {
                 $stmt->execute();
-                $action_log_id = $dbh->lastInsertId();
+                $action_log_id = $dbh->lastInsertId("action_log_id_seq");
                 foreach($receivers as $receiver) {
                     $sql2 = "INSERT INTO action_log_receiver (action_log_id, receiver_type, receiver_id)
                         VALUES (:id, :receiver_type, :receiver_id)";

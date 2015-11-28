@@ -5,6 +5,7 @@ use app\helpers\Configuration as Cfg;
 use app\model\Database\DatabaseConnection;
 use app\helpers\Hash;
 use app\helpers\General;
+use \app\model\Messages\Message;
 use \PDO;
 use \PDOException;
 
@@ -43,6 +44,28 @@ class Admin
     {
         $this->__construct($data);
     }
+
+
+
+    public function unreadMessagesExists()
+    {
+        if(Message::numberOfUnreadForReceiver($this->id, "admin") > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function numberOfUnreadMessages()
+    {
+        return Message::numberOfUnreadForReceiver($this->id, "admin");
+    }
+
+    public function numberOfMessages()
+    {
+        return Message::numberOfMessagesForReceiver($this->id, "admin");
+    }
+
 
     public function has_role($role)
     {

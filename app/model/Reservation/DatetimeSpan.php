@@ -109,6 +109,30 @@ class DatetimeSpan {
     }
 
 
+    public function setFlagCanceled($flag)
+    {
+        $this->canceled = (int)$flag;
+
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "UPDATE datetime_span SET canceled = :flag WHERE id = :id";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
+        $stmt->bindParam(':flag', $flag, PDO::PARAM_INT);
+
+        try {
+            $stmt->execute();
+            return true;
+        } catch (\Exception $e) {
+            return null;
+        }
+    }
+
+    public function numberOfReservations()
+    {
+        return Reservation::getNumberByDatetimeSpan($this->id);
+    }
+
+
     public static function getByDate($date) {
         $dbh = DatabaseConnection::getInstance();
 
@@ -134,6 +158,36 @@ class DatetimeSpan {
             return array();
         }
     }
+
+
+
+    public static function getFromNowUntil($date, $order_by = "datetime_span_start ASC")
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $now = date("Y-m-d H:i:s");
+
+        $sql = "SELECT * FROM datetime_span WHERE datetime_span_start BETWEEN :now AND :date ORDER BY {$order_by}";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':now', $now , PDO::PARAM_STR);
+        $stmt->bindValue(':date', date("Y-m-d H:i:s",$date), PDO::PARAM_STR);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $span = new DatetimeSpan($row);
+                $list[] = $span;
+            }
+            return $list;
+        }
+        else {
+            return array();
+        }
+    }
+
+
+
 
     public static function getByDatetimeAndCourse($datetime, $course_id) {
         $dbh = DatabaseConnection::getInstance();
@@ -176,7 +230,8 @@ class DatetimeSpan {
     }
 
 
-    public function description_string() {
+    public function descriptionString()
+    {
         list($year, $month, $day) = explode("-", $this->date);
 
         $description = sprintf("%02s. %s %04s. (%s) od %s sati", $day, Calendar::cro_month_label_genitive($month),

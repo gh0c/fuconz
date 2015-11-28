@@ -25,9 +25,6 @@
 
                 {% include "templates/partials/user_messages.twig" %}
 
-
-                <span>..ere they are...</span>
-
                 <div  class = "vertical-section text-centered">
                     <div class = "inner-70pct">
                         {% if messages|length < 1 %}
@@ -60,11 +57,28 @@
                                                 {{ message.message_body|raw }}
 
                                             </div>
+                                        </section><!--
+
+                                        --><section class = "td has-been-read-status">
+                                            <div class = "status-holder">
+                                            {% if message.has_been_read == 0 %}
+                                                <a class="has-been-read-status-changer active"
+                                                   data-event="click" data-csrf-key-name = "csrf-token"
+                                                   title="Pročitano?" data-link = "{{ urlFor('user.messages.change-read-status.post') }}"
+                                                   data-msg-id = "{{ message.id }}" data-msg-receiver-type = "user">
+                                                    <span class="fa fa-square-o selector"></span>
+                                                    <span class="fa fa-exclamation exclamation-alarm"></span>
+                                                </a>
+                                            {% endif %}
+                                            </div>
+
                                         </section>
+
 
                                     </div>
                             {% endfor %}
                         {% endif %}
+                        <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
 
                     </div>
                 </div>
@@ -74,5 +88,11 @@
         </div>
 
     </div>
+
+{% endblock %}
+
+
+{% block additional_js %}
+        <script src="public/js/messages.js"></script>
 
 {% endblock %}

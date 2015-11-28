@@ -110,6 +110,31 @@ class Message
     }
 
 
+    public static function getMessagesInRangeForReceiver($receiver_id, $receiver_type, $limit = 10000, $offset = 0, $order_by = "created_at DESC")
+    {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "SELECT * FROM message WHERE receiver_id = :receiver_id AND receiver_type = :receiver_type ORDER BY {$order_by} LIMIT :limit OFFSET :off";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+        $stmt->bindParam(':off', $offset, PDO::PARAM_INT);
+        $stmt->bindParam(':receiver_type', $receiver_type, PDO::PARAM_STR);
+        $stmt->bindParam(':receiver_id', $receiver_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $msg = new Message($row);
+                $list[] = $msg;
+            }
+            return $list;
+        }
+        else {
+            return array();
+        }
+    }
+
+
     public static function getUnreadMessagesForReceiver($receiver_id, $receiver_type, $limit = 1000000, $order_by = "created_at DESC")
     {
         $dbh = DatabaseConnection::getInstance();

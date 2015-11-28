@@ -92,6 +92,9 @@
   transform-origin: $origin;
 }
 
+
+
+
 @mixin pp-transform-style($style) {
   -webkit-transform-style: $style;
   transform-style: $style;
@@ -130,40 +133,7 @@
   #{$property}: calc(#{$expression});
 }
 
-
-
-@mixin animation($animate...) {
-  $max: length($animate);
-  $animations: '';
-
-  @for $i from 1 through $max {
-    $animations: #{$animations + nth($animate, $i)};
-
-    @if $i < $max {
-      $animations: #{$animations + ", "};
-    }
-  }
-  -webkit-animation: $animations;
-  -moz-animation:    $animations;
-  -o-animation:      $animations;
-  animation:         $animations;
-}
-
-@mixin keyframes($animationName) {
-  @-webkit-keyframes #{$animationName} {
-    @content;
-  }
-  @-moz-keyframes #{$animationName} {
-    @content;
-  }
-  @-o-keyframes #{$animationName} {
-    @content;
-  }
-  @keyframes #{$animationName} {
-    @content;
-  }
-}
-
+@import 'animations';
 
 // rem fallback - credits: http://zerosixthree.se/
 
@@ -175,94 +145,4 @@
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateRem($size);
-}
-
-
-
-// Keyframes -- animations
-@include keyframes(horizontal-alarm-frames) {
-  10% {
-    @include pp-transform(scale(1));
-  }
-  12% {
-    @include pp-transform(scale(1.2));
-  }
-  14% {
-    @include pp-transform(scale(1));
-  }
-  16% {
-    @include pp-transform(scale(1.2));
-  }
-  18% {
-    @include pp-transform(scale(1));
-  }
-  20% {
-    @include pp-transform(scale(1.2));
-  }
-  22% {
-    @include pp-transform(scale(1));
-  }
-
-
-  35% {
-    @include pp-transform(scale(1));
-  }
-  37% {
-    @include pp-transform(scale(1.4));
-  }
-  39%{
-    @include pp-transform(scale(1));
-  }
-  41%{
-     @include pp-transform(scale(1.5));
-  }
-  43% {
-    @include pp-transform(scale(1));
-  }
-  45% {
-    @include pp-transform(scale(1.6));
-  }
-  47% {
-    @include pp-transform(scale(1));
-  }
-}
-
-@include keyframes(alarm-text-shadow-frames) {
-  18% {
-    text-shadow: none
-  }
-  20% {
-    text-shadow:
-      0px 0px 25px red;
-  }
-  22% {
-    text-shadow: none
-  }
-
-  43% {
-    text-shadow: none
-  }
-  45% {
-    text-shadow:
-      0px 0px 25px red;
-  }
-  47% {
-    text-shadow: none;
-  }
-}
-
-
-
-//
-
-@-webkit-keyframes highlight-anchored {
-  0% {background-color: rgba(0, 0, 0, 0);}
-  10% {background-color: rgba(36, 97, 115, 1);}
-  100% {background-color: initial;}
-}
-
-@-moz-keyframes highlight-anchored {
-  0% {background-color: rgba(0, 0, 0, .1);}
-  10% {background-color: rgba(36, 97, 115, 1);}
-  100% {background-color: rgba(0, 0, 0, .1);}
 }

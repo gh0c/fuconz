@@ -169,11 +169,24 @@ class Calendar
 
     public static function weeks_in_a_month($date) {
         list($year, $month, $day) = explode("-", $date);
-        $last_day = date("t", mktime(0, 0, 0, $month, 1, $year));
+        $last_day = date("t", mktime(0, 0, 0, $month, 1, $year)); // 28, 29, 30, 31
+        $last_day_time = strtotime("{$year}-{$month}-{$last_day}");
+        $fist_day_time = strtotime(date("Y-m-01", $last_day_time));
 
-        $day = strtotime("{$year}-{$month}-{$last_day}");
-        $week_count = date('W', $day) - date('W', strtotime(date('Y-m-01', $day))) + 1;
-        return $week_count;
+        // week number of year
+        // 1st week of the year is the one with January the 4th
+        // e.g. If 1 January is on a Monday, Tuesday, Wednesday or Thursday, it is in week 01.
+        // If 1 January is on a Friday, Saturday or Sunday, it is in week 52 or 53 of the previous year
+
+        $first_day_week_num = date('W', $fist_day_time);
+        $last_day_week_num = date('W', $last_day_time);
+
+        if ($first_day_week_num < $last_day_week_num) {
+            return $last_day_week_num - $first_day_week_num + 1;
+        } else {
+            return $last_day_week_num + 1;
+        }
+
     }
 
 

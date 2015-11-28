@@ -554,7 +554,7 @@ $small-input-width: 14em;
       color: $light-blue-gray-light;
       padding: 0.5em 0.5em;
       display: block;
-      height: 100%;
+//      height: 100%;
     }
 
     &.bbb-flag-v-cibona-blue.submit {
@@ -654,7 +654,7 @@ div.info {
       line-height: 125%;
     }
 
-    .pp-icon-spin {
+    .pp-icon-spin, .fuconz-spinner {
       font-size: 1.40em;
       color: $dark-dark-blue;
       vertical-align: middle;

@@ -32,11 +32,11 @@
 
                         {% else %} {# Course available for booking #}
 
-                            <div class = "booking" title = "{{ span.training_course.title }}&#10;{{ span.description_string() }}"
-                                 data-date = "{{ curr_date }}" data-description = "{{ span.description_string() }}"
+                            <div class = "booking" title = "{{ span.training_course.title }}&#10;{{ span.descriptionString() }}"
+                                 data-date = "{{ curr_date }}" data-description = "{{ span.descriptionString() }}"
                                  id = "slot-{{ curr_date }}-{{ slot.start_time }}">
 
-                                <i class = "fa fa-calendar-check-o" title = "{{ span.description_string() }}"></i>
+                                <i class = "fa fa-calendar-check-o" title = "{{ span.descriptionString() }}"></i>
                                 <span>-{{ span.training_course.title }}</span>
 
                             </div>

@@ -17,7 +17,7 @@ class DatabaseConnection
             $dsn = '' . Configuration::read('db.type') . ':host=' . Configuration::read('db.host') .
                 ';dbname='    . Configuration::read('db.basename') .
                 ';port='      . Configuration::read('db.port') .
-                ';connect_timeout=15;' . Configuration::read('db.encoding') . '=UTF8';
+                ';connect_timeout=15';
 
             // getting DB user from config
             $user = Configuration::read('db.user');
@@ -28,7 +28,9 @@ class DatabaseConnection
             // @see http://php.net/manual/de/pdo.construct.php
             $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING);
 
-            self::$dbh = new PDO($dsn, $user, $password, $options);
+            $pdo = new PDO($dsn, $user, $password, $options);
+            $pdo->query("SET NAMES '" . Configuration::read('db.encoding') ."'");
+            self::$dbh = $pdo;
         }
         return self::$dbh;
     }

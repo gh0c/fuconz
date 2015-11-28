@@ -20,21 +20,48 @@
 
         <div class = "main-content-box">
             <div class = "inner-cont">
-
-
                 {% include "admin/templates/partials/admin_messages.twig" %}
 
+                {% include "admin/templates/partials/live_status.container.twig" %}
 
-                <div class = "pp-content">
-                    <p>
-                        <span>Admin: {{ auth_admin.username }}</span>
-                    </p>
-
-                </div>
             </div>
+            <input type="hidden" name="messages-loader-url" id = "messages-loader-url" value="{{ urlFor('admin.home.load.messages.post') }}" />
+            <input type="hidden" name="reservations-loader-url" id = "reservations-loader-url" value="{{ urlFor('admin.home.load.reservations.post') }}" />
+
+
+            <div class = "profile-cont mega profile-container main" id = "main-profile-cont">
+                <section class="main">
+                    <div class = "inner-cont loading-info-cont">
+                        <div class = "vertical-section text-centered">
+                            <div class = "inner-70pct">
+                                <div class = "loading js-loading">Učitavanje...
+                                    <i class = "fuconz-spinner fa fa-fw fa-spinner fa-spin"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <main>
+                        <div class = "general-holder">
+                            <section id = "unread-messages" style = "display: none;">
+
+                            </section>
+                        </div>
+
+                    </main>
+                </section>
+            </div>
+            <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
+
         </div>
     </div>
 
 {% endblock %}
 
+{% block additional_js %}
+    <script src="public/js/velocity.min.js"></script>
 
+    <script src="public/js/admin/profile.js"></script>
+
+    <script src="public/js/admin/messages.js"></script>
+
+{% endblock %}

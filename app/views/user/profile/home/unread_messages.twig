@@ -1,0 +1,55 @@
+{% if unread_messages|length < 1 %}
+    <span>Nemaš nepročitanih poruka!</span>
+{% else %}
+    <div class = "subtitle std-item">
+        <div class = "icon-holder std-icon-holder">
+            <div class = "message-icon-cont std-icon-cont">
+                <div class = "thumbnail message message-icon std-icon">
+                    <div class="pic-cont std-pic-cont">
+                        <i class = "fa icon fa-fw fa-envelope-o"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div><!--
+        --><div class = "subtitle-holder">
+            <span>Nepročitane poruke</span>
+        </div>
+    </div>
+
+
+
+
+    {% for message in unread_messages %}
+        <div id = "m-{{ message.id }}" class = "profile-home-message item std-item has{{ (message.has_been_read == 1)? '-' : '-not-' }}been-read">
+            <div class = "inner-box">
+                <section class="td message">
+                    <div class = "time-label-holder">
+                        <span>{{ message.timeLabel() }}</span>
+                    </div>
+                    <div class = "message-holder">
+                        {{ message.message_body|raw }}
+
+                    </div>
+                </section><!--
+
+            --><section class = "td has-been-read-status">
+                    <div class = "status-holder">
+                        {% if message.has_been_read == 0 %}
+                            <a class="has-been-read-status-changer active"
+                               data-event="click" data-csrf-key-name = "csrf-token"
+                               title="Pročitano?" data-url = "{{ urlFor('user.messages.change-read-status.post') }}"
+                               data-msg-id = "{{ message.id }}" data-msg-receiver-type = "user">
+                                <span class="fa fa-square-o selector"></span>
+                            </a>
+                        {% endif %}
+                    </div>
+                </section>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<a href = "{{ urlFor('user.messages.home') }}" class = "external-link-holder">
+    <span>Sve moje poruke ({{ auth_user.numberOfMessages() }})</span>
+</a>

@@ -31,6 +31,12 @@ class User
     public $fb_id = null;
     public $use_fb_avatar = null;
 
+    public $bookings_allowed = null;
+    public $stub_user = null;
+
+    public $neighborhood = null;
+    public $date_of_birth = null;
+
     function __construct($input_data = array())
     {
         if ( isset( $input_data['id'] ) )
@@ -62,6 +68,16 @@ class User
             $this->deactivated = (int)$input_data['deactivated'];
         if ( isset( $input_data['banned'] ) )
             $this->banned = (int)$input_data['banned'];
+
+        if ( isset( $input_data['bookings_allowed'] ) )
+            $this->bookings_allowed = (int)$input_data['bookings_allowed'];
+        if ( isset( $input_data['stub_user'] ) )
+            $this->stub_user = (int)$input_data['stub_user'];
+
+        if ( isset( $input_data['neighborhood'] ) )
+            $this->neighborhood = $input_data['neighborhood'];
+        if ( isset( $input_data['date_of_birth'] ) )
+            $this->date_of_birth = $input_data['date_of_birth'];
 
 
         if ( isset( $input_data['password'] ) )
@@ -296,17 +312,19 @@ class User
 
     public function getAvatarURL($type = "avatar", $options = array()) {
         if($url = $this->facebookAvatarExists($options)) {
-            if($this->imageHosted($url)) {
-                return $url;
-            } else {
-                return null;
-            }
+//            if($this->imageHosted($url)) {
+//                return $url;
+//            } else {
+//                return null;
+//            }
+            return $url;
         } else if ($url = $this->customAvatarExists($type, $options)) {
-            if($this->imageHosted($url)) {
-                return $url;
-        } else {
-                return null;
-            }
+//            if($this->imageHosted($url)) {
+//                return $url;
+//            } else {
+//                return null;
+//            }
+            return $url;
         } else {
             return null;
         }
@@ -516,8 +534,9 @@ class User
 
         try {
             $stmt->execute();
+            $last_id = $dbh->lastInsertId("users_id_seq");
+            $new_user = User::getUserById($last_id);
             $status["success"] = true;
-            $new_user = User::getUserById($dbh->lastInsertId());
             return array($status, $new_user);
         } catch (\Exception $e) {
             $status["success"] = false;

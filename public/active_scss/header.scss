@@ -1,4 +1,4 @@
-@import "modules/modules.import";
+@import "../scss/modules/_modules.import";
 
 #header {
   position: relative;
@@ -117,7 +117,7 @@
       div.home-cont {
 //        float: left;
 
-        width: 25em;
+//        width: 25em;
         height: 4em;
         display: inline-table;
         & > div {
@@ -149,7 +149,11 @@
         }
 
         .welcome-name {
-          width: 18em;
+          @include responsive-w-max(1150px) {
+            display: none;
+          }
+          width: 16em;
+          padding-left: 1em;
           .name {
             border-bottom: 2px dashed $dark-dark-blue;
             a {
@@ -334,7 +338,12 @@
             @include pp-transition(background-color .25s ease-out, color .25s ease-out);
 
             span {
-              padding: 0 3px;
+              padding: 0 2px;
+              &.num-of-msg {
+                width: 1.4em;
+                display: inline-block;
+                text-align: center;
+              }
             }
             .unread-exists {
               @include pp-transition(color .25s ease-out, text-shadow .25s ease-out);

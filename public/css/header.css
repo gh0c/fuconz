@@ -506,7 +506,6 @@
   vertical-align: top;
 }
 #header nav.secondary.user div.home-cont {
-  width: 25em;
   height: 4em;
   display: inline-table;
 }
@@ -551,7 +550,13 @@
   position: absolute;
 }
 #header nav.secondary.user div.home-cont .welcome-name {
-  width: 18em;
+  width: 16em;
+  padding-left: 1em;
+}
+@media only screen and (max-width: 1150px) {
+  #header nav.secondary.user div.home-cont .welcome-name {
+    display: none;
+  }
 }
 #header nav.secondary.user div.home-cont .welcome-name .name {
   border-bottom: 2px dashed #0c131d;
@@ -703,7 +708,12 @@
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
 }
 #header nav.user.nav-filters .list-tags li a span {
-  padding: 0 3px;
+  padding: 0 2px;
+}
+#header nav.user.nav-filters .list-tags li a span.num-of-msg {
+  width: 1.4em;
+  display: inline-block;
+  text-align: center;
 }
 #header nav.user.nav-filters .list-tags li a .unread-exists {
   -webkit-transition: color 0.25s ease-out, text-shadow 0.25s ease-out;

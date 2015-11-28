@@ -44,7 +44,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                 $prereservation = new Prereservation();
                 $booking = new Booking();
 
-                $app->render('user/bookings/calendar/months_navigation.ultra.twig', array(
+                $app->render('user/bookings/calendar/months_navigation.twig', array(
                     'user' => $app->auth_user,
                     'active_page' => 'user.reservations',
                     'course_constants' => $course_constants,
@@ -409,6 +409,89 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
             }
 
         })->name('user.pre-book-training-course.post');
+
+
+
+        $app->post('/otkazivanje', $authenticated_user(), function() use ($app) {
+            if($app->request->isAjax()) {
+
+                $body = $app->request->getBody();
+                $json_data_received = json_decode($body, true);
+
+                $p_booking_id = $json_data_received['booking-id'];
+                $p_booking_type = $json_data_received['booking-type'];
+
+                if(!isset($p_booking_id) || !isset($p_booking_type) || !in_array($p_booking_type, array("reservation", "pre_reservation"))) {
+                    header('Content-Type: application/json');
+                    echo json_encode(array(
+                        "error" =>"Neispravni podaci za otkazivanje rezervacije!"
+                    ));
+                    exit();
+                }
+                if ($p_booking_type == "pre_reservation") {
+                    $pre_reservation = Prereservation::getById($p_booking_id);
+                    if(!$pre_reservation || $pre_reservation->user->id != $app->auth_user->id) {
+                        header('Content-Type: application/json');
+                        echo json_encode(array(
+                            "error" =>"Nije pronađena tvoja predbilježba sa unesenim ID-em!"
+                        ));
+                        exit();
+                    } else {
+                        $pre_reservation->delete();
+                        Logger::logPrereservationCancelation($app->auth_user, $pre_reservation);
+                        header('Content-Type: application/json');
+                        echo json_encode(array(
+                            "success" => true
+                        ));
+                        exit();
+                    }
+                } else if ($p_booking_type == "reservation") {
+                    $reservation = Reservation::getById($p_booking_id);
+                    if(!$reservation || $reservation->user->id != $app->auth_user->id) {
+                        header('Content-Type: application/json');
+                        echo json_encode(array(
+                            "error" =>"Nije pronađena tvoja prijava sa unesenim ID-em!"
+                        ));
+                        exit();
+                    } else {
+                        $existing_prereservations = Prereservation::getUnactivatedByDatetimeSpan(
+                            $reservation->datetime_span->id, "created_at ASC");
+                        if(count($existing_prereservations) > 0) {
+                            $reservation->delete();
+                            $pre_reservation = $existing_prereservations[0];
+                            $pre_reservation->setFlagActivated(1);
+
+                            Reservation::createNew($reservation->training_course_id, $reservation->datetime_span->id,
+                                $pre_reservation->user->id, 1, 1);
+                            Logger::logReservationCancelationWithTriggeredPrereservationActivation($app->auth_user, $reservation, $pre_reservation);
+                            header('Content-Type: application/json');
+                            echo json_encode(array(
+                                "success" => true
+                            ));
+                            exit();
+                        } else {
+                            $reservation->delete();
+                            Logger::logClassicReservationCancelation($app->auth_user, $reservation);
+                            header('Content-Type: application/json');
+                            echo json_encode(array(
+                                "success" => true
+                            ));
+                            exit();
+                        }
+//
+                    }
+                }
+
+                $pre_selected_spans = array();
+                if(isset($p_pre_selected_spans)) {
+                    foreach($p_pre_selected_spans as $span){
+                        $datetime = explode(" ", $span);
+                        $pre_selected_spans[$datetime[0]][] = $datetime[1];
+                    }
+                }
+            }
+
+        })->name('user.booking.cancel.post');
 
     });
 

@@ -68,6 +68,7 @@
                                 </div>
                             </div>
 
+
                             <div class = "vertical-section text-centered">
                                 <div class = "inner-70pct">
                                     <div class = "box">
@@ -77,18 +78,7 @@
                                 </div>
                             </div>
 
-                            <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
-                                    <input type="checkbox" name="delete-avatar" id="delete-avatar"
-                                           class = "cb-input delete-avatar" tabindex="2">
-                                    <div class = "checkbox-div-cont">
-                                        <label for = "delete-avatar" alt="Samo izbriši" placeholder="Samo izbriši" data-info="Samo izbriši">
-                                            <span>Samo izbriši?</span>
-                                        </label>
-                                    </div>
-                                </div>
 
-                            </div>
 
                             <input type="hidden" name="uploaded-img-hash" id = "uploaded-img-hash"/>
 
@@ -101,7 +91,7 @@
                             <div class = "vertical-section text-centered">
                                 <div class = "inner-70pct">
                                     <input type="checkbox" name="use-fb-avatar" id="use-fb-avatar"
-                                           class = "cb-input use-fb-avatar" tabindex="3" {{ (auth_user.use_fb_avatar)? 'checked="true"' : '' }}>
+                                           class = "cb-input use-fb-avatar" tabindex="2" {{ (auth_user.use_fb_avatar)? 'checked="true"' : '' }}>
                                     <div class = "checkbox-div-cont">
                                         <label for = "use-fb-avatar" alt="Koristi FB avatar" placeholder="Koristi FB avatar"
                                                data-info="Koristi FB avatar">
@@ -115,21 +105,36 @@
                             <div class = "vertical-section text-centered">
                                 <div class = "inner-70pct">
                                     <input type="text" name="fb-id" id="fb-id" required
-                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="4"
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="3"
                                            class = "std-text-input std-input-width" value = "{{ (auth_user.use_fb_avatar)? auth_user.fb_id : '' }}"/>
                                     <label id="fb-id-label" alt="Facebook ID" placeholder="Facebook ID" data-info="Facebook ID"></label>
                                 </div>
                                 <h4>
-                                    <a class = "underline-link l-o" style = "font-size: 0.9em"
+                                    <a class = "underline-link l-o" style = "font-size: 0.9em" tabindex = "4"
                                        target="_blank" href = "http://findmyfbid.com/">Dohvati Facebook ID</a>
                                 </h4>
                             </div>
 
+
+                            <div class = "vertical-section text-centered ">
+                                <div class ="inner-70pct dashed-spacer empty-horiz-spacer-5"></div>
+                            </div>
+
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "inner-70pct">
+                                    <input type="checkbox" name="delete-avatar" id="delete-avatar"
+                                           class = "cb-input delete-avatar" tabindex="5">
+                                    <div class = "checkbox-div-cont">
+                                        <label for = "delete-avatar" alt="Samo izbriši" placeholder="Samo izbriši" data-info="Samo izbriši">
+                                            <span>Samo izbriši?</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
                         </div>
-
-
-
-                        <script src="public/js/avatar_change.js"></script>
 
 
 
@@ -158,6 +163,12 @@
         </div>
 
     </div>
+
+{% endblock %}
+
+{% block additional_js %}
+    <script src="public/js/avatar_change.js"></script>
+
 
     <script src="public/js/cloudinary/load-image.min.js"></script>
     <script src="public/js/cloudinary/canvas-to-blob.min.js"></script>

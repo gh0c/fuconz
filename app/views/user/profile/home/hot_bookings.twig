@@ -1,0 +1,261 @@
+{% if (bookings_ended|length + bookings_allowed|length + bookings_not_allowed|length) < 1 %}
+    <span>Nemaš prijava za termine!</span>
+{% else %}
+    <div class = "subtitle std-item">
+        <div class = "icon-holder std-icon-holder">
+            <div class = "message-icon-cont std-icon-cont">
+                <div class = "thumbnail message message-icon std-icon">
+                    <div class="pic-cont std-pic-cont">
+                        <i class = "fa icon fa-fw fa-book"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div><!--
+        --><div class = "subtitle-holder">
+            <span>Aktualne prijave</span>
+        </div>
+    </div>
+
+
+    {% if bookings_not_allowed|length > 0 %}
+        <div class = "bookings-label-holder">
+            <div class = "bookings-label">
+                <span>Uskoro!</span>
+            </div>
+        </div>
+        {% for my_booking in bookings_not_allowed %}
+            <div id = "b-{{ my_booking.datetime_span.datetimeIdString() }}" class = "profile-hot-booking item std-item booking-not-allowed">
+                <div class = "inner-box">
+                    <section class="td icon">
+                        <div class = "icon-holder std-icon-holder">
+                            <div class = "booking-icon-cont std-icon-cont">
+                                <div class = "thumbnail booking booking-icon std-icon no-avatar">
+                                    {#<div class="pic-cont std-pic-cont">#}
+                                        {#{% if my_booking.type == 'prereservation' %}#}
+                                            {#<i class="icon fa fa-fw  fa-clock-o"></i>#}
+                                        {#{% elseif my_booking.type == 'reservation' %}#}
+                                            {#<i class="icon fa fa-fw  fa-calendar-o"></i>#}
+                                        {#{% else %}#}
+                                            {#<i class = "fa icon fa-fw fa-question"></i>#}
+                                        {#{% endif %}#}
+                                    {#</div>#}
+                                    <div class="pic-cont">
+                                        {% if my_booking.type == 'prereservation' %}
+                                            {% if my_booking.activated == 1 %}
+                                                    <i class="icon fa fa-fw fa-check"></i>
+                                            {% elseif my_booking.activated == 2 %}
+                                                    <i class="icon fa fa-fw fa-times"></i>
+                                            {% else %}
+                                                    <i class="icon fa fa-fw fa-question"></i>
+                                            {% endif %}
+                                        {% elseif my_booking.type == 'reservation' %}
+                                            {% if my_booking.canceled == 1 %}
+                                                    <i class="icon fa fa-fw fa-times"></i>
+                                            {% elseif my_booking.canceled == 2 %}
+                                                    <i class="icon fa fa-fw fa-check"></i>
+                                            {% else %}
+                                                    <i class="icon fa fa-fw fa-question"></i>
+                                            {% endif %}
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section><!--
+                    --><section class ="td label">
+                        <span>{{ my_booking.datetime_span.descriptionString() }}</span>
+                    </section><!--
+                    --><section class = "td info">
+                        <div class = "icon-holder info std-icon-holder">
+                            <div class = "info-icon-cont std-icon-cont">
+                                <div class = "thumbnail info info-icon std-icon ">
+                                    <div class="pic-cont std-pic-cont">
+                                        <i class = "fa fa-fw icon fa-info-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "info-overlay">
+                            <div class = "info-holder">
+                                {% if my_booking.type == 'prereservation' %}
+                                    {% if my_booking.activated == 2 %}
+                                        <span>Otpala predbilježba za popunjeni termin</span>
+                                    {% elseif my_booking.activated == 1 %}
+                                        <span>Aktivirana predbilježba</span>
+                                    {% else %}
+                                        <span>Predbilježba zasad nepoznatog statusa</span>
+                                    {% endif %}
+                                {% elseif my_booking.type == 'reservation' %}
+                                    {% if my_booking.canceled == 1 %}
+                                        <span>Poništena rezervacija za otkazani temin</span>
+                                    {% elseif my_booking.canceled == 2 %}
+                                        <span>Potvrđeno održavanje termina</span>
+                                        {% if my_booking.triggered == 1 %}
+                                            <br><span>Rezervacija aktivirana predbilježbom</span>
+                                        {% endif %}
+                                    {% else %}
+                                        <span>Rezervacija zasad nepoznatog statusa</span>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+                    </section>
+                </div>
+
+            </div>
+        {% endfor %}
+    {% endif %}
+
+
+    {% if bookings_allowed|length > 0 %}
+        <div class = "bookings-label-holder">
+            <div class = "bookings-label">
+                <span>U budućnosti!</span>
+            </div>
+        </div>
+        {% for my_booking in bookings_allowed %}
+
+            <div id = "b-{{ my_booking.datetime_span.datetimeIdString() }}" class = "profile-hot-booking item std-item booking-allowed active">
+                <div class = "inner-box">
+                    <section class="td icon">
+                        <div class = "icon-holder std-icon-holder">
+                            <div class = "booking-icon-cont std-icon-cont">
+                                <div class = "thumbnail booking booking-icon std-icon no-avatar">
+                                    <div class="pic-cont std-pic-cont">
+                                        {% if my_booking.type == 'reservation' %}
+                                            <i class = "fa icon fa-fw fa-calendar-check-o"></i>
+                                        {% elseif my_booking.type == 'prereservation' %}
+                                            <i class = "fa icon fa-fw fa-clock-o"></i>
+                                        {% else %}
+                                            <i class = "fa icon fa-fw fa-question"></i>
+                                        {% endif %}
+                                    </div>
+                                    {% if my_booking.type == 'reservation' and my_booking.triggered == 1%}
+                                    <div class = "overlay-pic-cont std-pic-cont" title = "Aktivirana predbilježba">
+                                        <i class = "fa fa-fw icon-o fa-exclamation"></i>
+                                    </div>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </section><!--
+                    --><section class ="td label">
+                        <span>{{ my_booking.datetime_span.descriptionString() }}</span>
+                    </section><!--
+                    --><section class = "td info">
+                        <div class = "icon-holder info std-icon-holder">
+                            <div class = "info-icon-cont std-icon-cont">
+                                <div class = "thumbnail info info-icon std-icon ">
+                                    <div class="pic-cont std-pic-cont">
+                                        <i class = "fa fa-fw icon fa-info-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "info-overlay">
+                            <div class = "info-holder">
+                                <div class = "datetime-holder">
+                                    <div class = "datetime">
+                                        <span>{{ (my_booking.type == 'prereservation')? 'Predbilježeno:' : 'Prijavljeno:' }} </span><!--
+                                    --><span class = "time">{{ my_booking.created_at|date("j.n.Y.") }} {{ my_booking.created_at|date("H:i") }}</span>
+                                    </div>
+                                </div>
+                                <div class = "availability-holder">
+                                    <span>Trenutna popunjenost: {{ my_booking.datetime_span.numberOfReservations() ~
+                                        '/' ~ my_booking.datetime_span.training_course.capacity}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "info-overlay-right">
+                            <div class = "info-holder">
+                                <div class = "datetime-holder">
+                                    <div class = "datetime">
+                                        <span>Odjave do:</span><br><!--
+                                    --><span class = "time">{{ (my_booking.datetime_span.span_start|date("U") -
+                                            my_booking.datetime_span.training_course.reservation_time|date("U")) |date("j.n.Y. H:i") }}</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </section><!--
+                    --><section class = "td cancelation">
+                        <div class = "icon-holder std-icon-holder" data-url = "{{ urlFor('user.booking.cancel.post') }}"
+                                data-booking-type = "{{ (my_booking.type == 'prereservation')? 'pre_reservation' : 'reservation' }}"
+                                data-booking-id = "{{ my_booking.id }}"
+                                data-confirmation-text = "Jeste li sigurni da želite otkazati {{
+                                (my_booking.type == 'prereservation')? 'predbilježbu' : 'rezervaciju' }}? ">
+                            <div class = "cancel-label"><span>Otkaži</span></div>
+                            <div class = "cancelation-icon-cont std-icon-cont">
+                                <div class = "thumbnail cancelation cancelation-icon std-icon ">
+                                    <div class="pic-cont std-pic-cont">
+                                        <i class = "fa fa-fw icon fa-ban"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if bookings_ended|length > 0 %}
+        <div class = "bookings-label-holder">
+            <div class = "bookings-label">
+                <span>Gotove!</span>
+            </div>
+        </div>
+        {% for my_booking in bookings_ended %}
+            <div id = "b-{{ my_booking.datetime_span.datetimeIdString() }}" class = "profile-hot-booking item std-item booking-ended">
+                <div class = "inner-box">
+                    <section class="td icon">
+                        <div class = "icon-holder std-icon-holder">
+                            <div class = "booking-icon-cont std-icon-cont">
+                                <div class = "thumbnail booking booking-icon std-icon no-avatar">
+
+                                    <div class="pic-cont">
+                                        {% if my_booking.type == 'prereservation' %}
+                                            {% if my_booking.activated == 1 %}
+                                                <i class="icon fa fa-fw fa-check"></i>
+                                            {% elseif my_booking.activated == 2 %}
+                                                <i class="icon fa fa-fw fa-times"></i>
+                                            {% else %}
+                                                <i class="icon fa fa-fw fa-question"></i>
+                                            {% endif %}
+                                        {% elseif my_booking.type == 'reservation' %}
+                                            {% if my_booking.canceled == 1 %}
+                                                <i class="icon fa fa-fw fa-times"></i>
+                                            {% elseif my_booking.canceled == 2 %}
+                                                <i class="icon fa fa-fw fa-check"></i>
+                                            {% else %}
+                                                <i class="icon fa fa-fw fa-question"></i>
+                                            {% endif %}
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section><!--
+                    --><section class ="td label">
+                        <span>{{ my_booking.datetime_span.descriptionString() }}</span>
+                    </section>
+                </div>
+
+            </div>
+        {% endfor %}
+    {% endif %}
+
+{% endif %}
+
+<a href = "{{ urlFor('user.bookings.home') }}" class = "external-link-holder">
+    <span>Sve rezervacije i prijave</span>
+</a>

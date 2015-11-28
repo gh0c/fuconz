@@ -128,7 +128,7 @@ class Image
         try {
             $stmt->execute();
             $status["success"] = true;
-            $img = Image::getImageById($dbh->lastInsertId());
+            $img = Image::getImageById($dbh->lastInsertId("cl_image_id_seq"));
             return array($status, $img);
         } catch (\Exception $e) {
             $status["success"] = false;
@@ -149,8 +149,6 @@ class Image
         $stmt->bindParam(':entity_id', $entity_id, PDO::PARAM_INT);
         $stmt->bindParam(':entity_type', $entity_type, PDO::PARAM_STR);
         $stmt->bindParam(':flag', $flag, PDO::PARAM_STR);
-
-        $stmt->execute();
 
         try {
             $stmt->execute();

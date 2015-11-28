@@ -20,23 +20,53 @@
 
         <div class = "main-content-box">
             <div class = "inner-cont">
-
-
                 {% include "templates/partials/user_messages.twig" %}
 
+                {% include "templates/partials/live_status.container.twig" %}
 
-                <div class = "pp-content">
-                    <p>
-                        <span>Korisnik: {{ auth_user.email }}</span>
-                        <span>URL: {{ auth_user.getAvatarURL('avatar',
-                            { "width": 75, "height": 95, "crop": "limit"}) }}</span>
-                    </p>
-                    <p>
-                        <a href = "{{ urlFor('user.profile.home') }}"> Uredi profil</a>
-                    </p>
-                </div>
             </div>
+            <input type="hidden" name="messages-loader-url" id = "messages-loader-url" value="{{ urlFor('user.profile.load.messages.post') }}" />
+            <input type="hidden" name="reservations-loader-url" id = "reservations-loader-url" value="{{ urlFor('user.profile.load.reservations.post') }}" />
+
+
+            <div class = "profile-cont mega profile-container main" id = "main-profile-cont">
+                <section class="main">
+                    <div class = "inner-cont loading-info-cont">
+                        <div class = "vertical-section text-centered">
+                            <div class = "inner-70pct">
+                                <div class = "loading js-loading">Učitavanje...
+                                    <i class = "fuconz-spinner fa fa-fw fa-spinner fa-spin"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <main>
+                        <div class = "general-holder">
+                            <section id = "unread-messages" style = "display: none;">
+                            </section><!--
+
+                            --><section id = "hot-bookings" style = "display: none;">
+
+                            </section>
+                        </div>
+
+                    </main>
+                </section>
+            </div>
+            <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
+
         </div>
     </div>
 
 {% endblock %}
+
+{% block additional_js %}
+    <script src="public/js/velocity.min.js"></script>
+    <script src="public/js/profile.js"></script>
+
+    <script src="public/js/messages.js"></script>
+    <script src="public/js/bookings.js"></script>
+
+{% endblock %}
+
+

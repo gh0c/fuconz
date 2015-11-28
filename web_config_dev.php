@@ -4,7 +4,7 @@ use app\helpers\Configuration;
 // DB Config
 Configuration::write('db.type', "mysql");
 
-Configuration::write('db.encoding', 'charset');
+Configuration::write('db.encoding', 'UTF8');
 
 Configuration::write('db.host', 'localhost');
 Configuration::write('db.port', '');

@@ -42,7 +42,7 @@
       padding: 3px 0;
 
       & > div {
-        padding: 0.35em 0.5em;
+        padding: 0.25em 0.5em;
         &.std-item {
           padding: 0 0.5em;
         }
@@ -68,8 +68,12 @@
       h3 {
         text-align: center;
         font-family: MuseoSans;
-        font-weight: 300;
-        font-style: italic;
+        font-weight: 700;
+        /* font-style: italic; */
+        font-size: 1em;
+        padding: 0.25em 1em;
+        background-color: $dark-dark-blue;
+        color: $light-blue-gray-light;
       }
       h4 a {
         color: $dark-dark-blue;
@@ -87,7 +91,93 @@
     }
 
 
-    .std-item {
+    .home-container.main {
+      &.mega {
+        @include gradient-horizontal-bbb-flag-cibona-blue;
+
+        min-height: 24em;
+        padding: 2em 0;
+        position: relative;
+        & > div.main-img-holder {
+          height: 18em;
+          min-width: 960px;
+          margin-top: 3em;
+          opacity: 0;
+          overflow:hidden;
+          & > img {
+            float: right;
+          }
+        }
+
+        .homepage-cont-holder {
+          position: absolute;
+          top: 0;
+          margin: 0 auto;
+          width: 50em;
+          left: 0;
+          right: 0;
+          color: white;
+          padding-top: 6em;
+
+          opacity: 0;
+          .subtitle-std {
+            padding: 1em 1em;
+
+            @include font-size(13px);
+            box-sizing: border-box;
+            &.lev1 {
+              background-color: rgba($cibona-blue, .8);
+              color: $light-blue-gray-light;
+              font-family: MuseoSans;
+              font-weight: 500;
+              text-transform: uppercase;
+            }
+            &.lev2 {
+              background-color: $light-blue-gray-light;
+              color: $dark-dark-blue;
+              padding-left: 2em;
+              padding-bottom: 0.5em;
+            }
+
+            &.lev3 {
+              text-align: center;
+              padding: 0.2em 0.5em 1em 0.5em;
+              i.fa {
+                font-size: 3em;
+                color: $light-blue-gray-light;
+
+                &:first-of-type {
+                  font-size: 2.9em;
+                  transform: rotateZ(20deg);
+                  padding: 0.2em 0.1em 0.1em 0.4em;
+                }
+                &:nth-of-type(2) {
+                  transform: rotateZ(5deg);
+                  padding: 0.1em 0.3em 0em 0.5em;
+                }
+                &:nth-of-type(3) {
+                  transform: rotateZ(345deg);
+                  padding: 0.1em 0.1em 0em 0.6em;
+                  font-size: 2em;
+                }
+                &:nth-of-type(4) {
+                  transform: rotateZ(20deg);
+                  padding: 0.0em 0.0em 0em 0.3em;
+                  font-size: 3.2em;
+                }
+                &:nth-of-type(5) {
+                  padding: 0.3em 0.2em 0em 0.4em;
+                  font-size: 2.7em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+      .std-item {
       .std-icon-holder {
         display: inline-table;
         .std-icon-cont {
@@ -128,6 +218,8 @@
     @import 'content.messages';
 
     @import 'content.bookings';
+
+    @import 'profile.home';
 
     .loading-gif-div {
       z-index: 80;

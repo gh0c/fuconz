@@ -10,20 +10,23 @@
                 { "width": 48, "height": 48, "crop": "fill"}) %}
             {%  if avatar_url %}
             <div class = "w-20">
-                <div class = "home-icon-cont">
-                    <div class = "thumbnail user yes-avatar">
-                        <div class = "pic-cont"
-                             style="background-image:url('{{ avatar_url }}');" >
-                         </div>
-                    </div>
+                <a href="{{ urlFor('user.profile.home') }}"  title="Članske stranice">
+                    <div class = "home-icon-cont">
+                        <div class = "thumbnail user yes-avatar">
+                            <div class = "pic-cont"
+                                 style="background-image:url('{{ avatar_url }}');" >
+                            </div>
+                        </div>
 
-                </div>
+                    </div>
+                </a>
+
             </div>
             {% endif %}
             <div class="welcome-name">
                 <div class = "name">
                     <h5 class ="classic">{{ auth_user.ssbos("Dobrodošla,", "Dobrodošao,") }}</h5>
-                    <a href="{{ urlFor('user.home') }}" class="first-last-name" title="Članske stranice">{{ auth_user.username }}</a>
+                    <a href="{{ urlFor('user.profile.home') }}" class="first-last-name" title="Članske stranice">{{ auth_user.username }}</a>
                 </div>
             </div>
         </div>
@@ -42,11 +45,20 @@
                     <script>
                         var originalDocTitle = document.title;
                         var prependToTitle = function(prefix) {
-                            document.title = prefix + ' ' + originalDocTitle;
+                            document.title = prefix + originalDocTitle;
                         };
-                        prependToTitle('({{ auth_user.numberOfUnreadMessages() }})');
+                        prependToTitle('({{ auth_user.numberOfUnreadMessages() }}) ');
+
+                        $(document).on('ready', function() {
+                            // Update number in all browser tabs right away
+                            if (Intercom.supported) {
+                                var intercom = new Intercom();
+                                intercom.emit('numOfMessagesChange', {numberOfUnread: {{ auth_user.numberOfUnreadMessages() }} });
+                            }
+                        });
+
                     </script>
-                    <i class = "fa fa-envelope faa-horizontal animated alarm"></i>
+                    <i class = "fa fa-envelope faa-horizontal animated alarm" id = "unread-messages-header-alarm"></i>
                     {% endif %}
                 </span>
 
@@ -80,16 +92,16 @@
                     <i class = "fa fa-fw fa-envelope-o{{ (auth_user.unreadMessagesExists())? ' unread-exists' : '' }}"></i>
                     <span> Poruke</span><!--
                     --><span>(</span><!--
-                    --><span class = "{{ (auth_user.unreadMessagesExists())? ' unread-exists' : '' }}" id = "number-of-unread">
+                    --><span class = "num-of-msg{{ (auth_user.unreadMessagesExists())? ' unread-exists' : '' }}" id = "header-number-of-unread">
                         {{ auth_user.numberOfUnreadMessages() }}
                     </span><!--
                     --><span>/</span><!--
-                    --><span>{{ auth_user.numberOfMessages() }}</span><!--
+                    --><span class = "num-of-msg">{{ auth_user.numberOfMessages() }}</span><!--
                     --><span>)</span>
                 </a>
             </li>
             <li><a href="{{ urlFor('user.bookings.home') }}"
-                   {% if active_item == "user.main.bookings" %}class = "active"{% endif %}><i class = "fa fa-fw fa-calendar-o"></i> Moje rezervacije</a>
+                   {% if active_item == "user.main.bookings" %}class = "active"{% endif %}><i class = "fa fa-fw fa-book"></i> Moje prijave</a>
             </li>
             <li><a href="{{ urlFor('user.logout') }}"><i class = "fa fa-fw fa-sign-out"></i> Odjava</a></li>
         </ul>

@@ -5,7 +5,7 @@ namespace app\model\Reservation;
 use \app\helpers\Calendar;
 use \app\helpers\Configuration;
 use app\model\Database\DatabaseConnection;
-use MatthiasMullie\Minify\Exception;
+use \app\model\User\User;
 use \PDO;
 use \PDOException;
 
@@ -46,8 +46,10 @@ class Prereservation {
             $this->datetime_span_id = (int) $input_data['datetime_span_id'];
             $this->datetime_span = DatetimeSpan::getById($this->datetime_span_id);
         }
-        if ( isset( $input_data['user_id'] ) )
+        if ( isset( $input_data['user_id'] ) ) {
             $this->user_id = (int) $input_data['user_id'];
+            $this->user = User::getUserById($this->user_id);
+        }
 
         if ( isset( $input_data['created_at'] ) )
             $this->created_at = $input_data['created_at'];
@@ -122,7 +124,7 @@ class Prereservation {
 
                     } else {
                         if(self::alreadyExists($training_course->id, $datetime_span->id, $user->id)) {
-                            $validation_result["errors"] = "Već imate identičnu predbilježbu: " . $datetime_span->description_string() . "\n" .
+                            $validation_result["errors"] = "Već imate identičnu predbilježbu: " . $datetime_span->descriptionString() . "\n" .
                                 "Nemoguće je dvaput predbilježiti isto";
                             return $validation_result;
                         } else {
@@ -170,14 +172,14 @@ class Prereservation {
             $number_of_existing_reservations = Reservation::number_of_reservations_for_datetime_and_course($training_course->id, $datetime_span->id);
             if($number_of_existing_reservations < $training_course->capacity) {
                 $available_datetime_spans[] = $selected_span;
-                $available_datetime_spans_description_labels[] = $datetime_span->description_string();
+                $available_datetime_spans_description_labels[] = $datetime_span->descriptionString();
                 $available_datetime_spans_availability_labels[] = "" . $number_of_existing_reservations . "/" . $training_course->capacity;
                 $prereservations_unnecessary = true;
                 $pre_reservations_status_label .= sprintf("Više nije popunjen termin %s. Popunjenost %d/%d \n",
-                    $datetime_span->description_string(), $number_of_existing_reservations, $training_course->capacity);
+                    $datetime_span->descriptionString(), $number_of_existing_reservations, $training_course->capacity);
             } else {
                 $full_datetime_spans[] = $selected_span;
-                $full_datetime_spans_description_labels[] = $datetime_span->description_string();
+                $full_datetime_spans_description_labels[] = $datetime_span->descriptionString();
                 $full_datetime_spans_availability_labels[] = "" . $number_of_existing_reservations . "/" . $training_course->capacity;
             }
         }
@@ -244,10 +246,45 @@ class Prereservation {
             $dbh->rollback();
             return false;
         }
-
-
-
     }
+
+
+    public static function getById($id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT * FROM pre_reservation WHERE id = :id LIMIT 1";
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        try {
+            $stmt->execute();
+            if ($stmt->rowCount() == 1) {
+                $reservation = new Prereservation($stmt->fetch(PDO::FETCH_ASSOC));
+                return $reservation;
+            }
+            else {
+                return null;
+            }
+        } catch (\Exception $e) {
+            return null;
+        }
+    }
+
+
+    public function delete() {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "DELETE FROM pre_reservation WHERE id = :id";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
+        try {
+            $stmt->execute();
+            return true;
+        } catch (\Exception $e) {
+            return null;
+        }
+    }
+
 
 
     public static function alreadyExists($course, $datetime_span, $user)
@@ -282,9 +319,7 @@ class Prereservation {
     public static function existsForUser($user_id)
     {
         $dbh = DatabaseConnection::getInstance();
-
-        $sql = "SELECT COUNT(*) AS number FROM prereservation WHERE user_id = :id";
-
+        $sql = "SELECT COUNT(*) AS number FROM pre_reservation WHERE user_id = :id";
         $stmt = $dbh->prepare($sql);
 
         $stmt->bindParam(':id', $user_id, PDO::PARAM_INT);
@@ -329,6 +364,82 @@ class Prereservation {
         }
     }
 
+    public static function getUnactivatedByUser($user_id, $order_by = "datetime_span.datetime_span_start")
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT pre_reservation.* FROM pre_reservation JOIN datetime_span
+          ON pre_reservation.datetime_span_id = datetime_span.id WHERE
+          user_id = :user_id AND pre_reservation.activated <> 1 ORDER BY {$order_by}";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $booking = new Prereservation($row);
+                $list[] = $booking;
+            }
+            return $list;
+        }
+        else {
+            return array();
+        }
+    }
+
+
+
+
+    public static function getByUserLimited($user_id, $limit = 1000, $order_by = "datetime_span.datetime_span_start")
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT pre_reservation.* FROM pre_reservation JOIN datetime_span
+          ON pre_reservation.datetime_span_id = datetime_span.id WHERE
+          user_id = :user_id ORDER BY {$order_by} LIMIT :limit";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $booking = new Prereservation($row);
+                $list[] = $booking;
+            }
+            return $list;
+        }
+        else {
+            return array();
+        }
+    }
+
+    public static function getUnactivatedByUserLimited($user_id, $limit = 1000, $order_by = "datetime_span.datetime_span_start")
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT pre_reservation.* FROM pre_reservation JOIN datetime_span
+          ON pre_reservation.datetime_span_id = datetime_span.id WHERE
+          user_id = :user_id AND pre_reservation.activated <> 1 ORDER BY {$order_by} LIMIT :limit";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $booking = new Prereservation($row);
+                $list[] = $booking;
+            }
+            return $list;
+        }
+        else {
+            return array();
+        }
+    }
 
 
     public static function numberOfPrereservationsForDatetimeAndCourse($course, $datetime_span)
@@ -376,9 +487,84 @@ class Prereservation {
         }
     }
 
+    public static function getUnactivatedByUserAndDatetimeSpan($user_id, $datetime_span_id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT * FROM pre_reservation WHERE
+          datetime_span_id = :datetime_span_id AND user_id = :user_id AND activated <> 1";
+
+        $stmt = $dbh->prepare($sql);
+
+        $stmt->bindParam(':datetime_span_id', $datetime_span_id, PDO::PARAM_INT);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return new Prereservation($row);
+        }
+        else {
+            return null;
+        }
+    }
+
+
+
+
+    public static function getByDatetimeSpan($datetime_span_id, $order_by = "created_at ASC")
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT * FROM pre_reservation WHERE
+          datetime_span_id = :datetime_span_id ORDER BY {$order_by}";
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':datetime_span_id', (int)$datetime_span_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $booking = new Prereservation($row);
+                $list[] = $booking;
+            }
+            return $list;
+        }
+        else {
+            return array();
+        }
+    }
+
+
+    public static function getUnactivatedByDatetimeSpan($datetime_span_id, $order_by = "created_at ASC")
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT * FROM pre_reservation WHERE
+          datetime_span_id = :datetime_span_id AND activated <> 1 ORDER BY {$order_by}";
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':datetime_span_id', (int)$datetime_span_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $booking = new Prereservation($row);
+                $list[] = $booking;
+            }
+            return $list;
+        }
+        else {
+            return array();
+        }
+    }
+
 
     public function setFlagActivated($flag)
     {
+        $this->activated = (int)$flag;
         $dbh = DatabaseConnection::getInstance();
 
         $sql = "UPDATE pre_reservation set activated = :activated WHERE id = :id";

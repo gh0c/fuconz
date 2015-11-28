@@ -168,12 +168,12 @@ $(document).on("click", ".calendar-header.widget-header .month-changer", functio
         return false;
     }
 
-    $("#booking-calendar").addClass("disabled-button");
+    $("#booking-calendar-std").addClass("disabled-button");
     $("#user-course-booking").addClass("disabled-button");
 
     var divForGifCont = document.createElement("div");
     divForGifCont.className = "loading-gif-div";
-    $("#booking-calendar > *").css("opacity", ".5");
+    $("#booking-calendar-std > *").css("opacity", ".5");
     $(".calendar-overlay").append(divForGifCont);
 
     var iForGifCont = document.createElement("i");
@@ -204,16 +204,31 @@ $(document).on("click", ".calendar-header.widget-header .month-changer", functio
     });
 
     request.done(function( reply ) {
-        console.log(reply);
-        $("#booking-calendar > *").css("opacity", "initial");
+        console.log("Req ended call");
+        try {
+            var json_o = jQuery.parseJSON(reply);
+            if(json_o.error != null) {
+                expandInfoPanel("");
+                errorStatus("Greška! " + json_o.error);
+                alert(json_o.error);
+                $("#booking-calendar-std > *").css("opacity", "initial");
+                $(".loading-gif-div").remove();
+                $("#user-course-booking").removeClass("disabled-button");
+                $("#booking-calendar-std").removeClass("disabled-button");
+                enableFormSubmiting();
+                return;
+
+            }
+        } catch (err) {
+        }
+        $("#booking-calendar-std > *").css("opacity", "initial");
         $(".loading-gif-div").remove();
         $("#user-course-booking").removeClass("disabled-button");
-
-        $("#booking-calendar").removeClass("disabled-button");
+        $("#booking-calendar-std").removeClass("disabled-button");
 
         enableFormSubmiting();
 
-        $( "#booking-calendar" ).html( reply );
+        $( "#booking-calendar-std" ).html( reply );
     });
     request.fail(function(jqXHr, textStatus, errorThrown){
         console.log("ERROR!");
@@ -231,12 +246,12 @@ $(document).on("click", ".calendar-header.widget-header .offset-changer", functi
         return false;
     }
 
-    $("#booking-calendar").addClass("disabled-button");
+    $("#booking-calendar-ultra").addClass("disabled-button");
     $("#user-course-booking").addClass("disabled-button");
 
     var divForGifCont = document.createElement("div");
     divForGifCont.className = "loading-gif-div";
-    $("#booking-calendar > *").css("opacity", ".5");
+    $("#booking-calendar-ultra > *").css("opacity", ".5");
     $(".calendar-overlay").append(divForGifCont);
 
     var iForGifCont = document.createElement("i");
@@ -296,10 +311,10 @@ $(document).on("click", ".calendar-header.widget-header .offset-changer", functi
                 expandInfoPanel("");
                 errorStatus("Greška! " + json_o.error);
                 alert(json_o.error);
-                $("#booking-calendar > *").css("opacity", "initial");
+                $("#booking-calendar-ultra > *").css("opacity", "initial");
                 $(".loading-gif-div").remove();
                 $("#user-course-booking").removeClass("disabled-button");
-                $("#booking-calendar").removeClass("disabled-button");
+                $("#booking-calendar-ultra").removeClass("disabled-button");
                 enableFormSubmiting();
                 return;
 
@@ -307,13 +322,13 @@ $(document).on("click", ".calendar-header.widget-header .offset-changer", functi
         } catch (err) {
         }
 
-        $("#booking-calendar > *").css("opacity", "initial");
+        $("#booking-calendar-ultra > *").css("opacity", "initial");
         $(".loading-gif-div").remove();
         $("#user-course-booking").removeClass("disabled-button");
-        $("#booking-calendar").removeClass("disabled-button");
+        $("#booking-calendar-ultra").removeClass("disabled-button");
         enableFormSubmiting();
 
-        $( "#booking-calendar" ).html( reply );
+        $( "#booking-calendar-ultra" ).html( reply );
     });
     request.fail(function(jqXHr, textStatus, errorThrown){
         console.log("ERROR!");

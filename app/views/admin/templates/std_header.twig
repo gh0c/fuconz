@@ -51,7 +51,7 @@
             <div class="filter filter-admin list-tags">
                 <ul>
                     <li><a href="{{ urlFor('admin.home') }}" {% if active_item == "admin.home" %}class = "active"{% endif %}>Početna</a></li>
-                    <li><a href="/" >Sve poruke</a></li>
+                    <li><a href="{{ urlFor('admin.messages.home') }}" {% if active_item == "admin.messages" %}class = "active"{% endif %}>Sve poruke</a></li>
                     <li><a href="/" >Povijest aktivnosti</a></li>
                 </ul>
             </div>

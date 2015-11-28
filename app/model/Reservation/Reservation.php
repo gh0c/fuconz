@@ -5,7 +5,7 @@ namespace app\model\Reservation;
 use \app\helpers\Calendar;
 use \app\helpers\Configuration;
 use app\model\Database\DatabaseConnection;
-use MatthiasMullie\Minify\Exception;
+use \app\model\User\User;
 use \PDO;
 use \PDOException;
 
@@ -43,8 +43,10 @@ class Reservation {
             $this->datetime_span_id = (int) $input_data['datetime_span_id'];
             $this->datetime_span = DatetimeSpan::getById($this->datetime_span_id);
         }
-        if ( isset( $input_data['user_id'] ) )
+        if ( isset( $input_data['user_id'] ) ) {
             $this->user_id = (int) $input_data['user_id'];
+            $this->user = User::getUserById($this->user_id);
+        }
 
         if ( isset( $input_data['triggered'] ) )
             $this->triggered = (int) $input_data['triggered'];
@@ -55,7 +57,47 @@ class Reservation {
     }
 
 
-    public static function create_new($course, $datetime_span, $user, $training_type = 1, $triggered = 0) {
+
+
+    public static function getById($id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT * FROM reservation WHERE id = :id LIMIT 1";
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        try {
+            $stmt->execute();
+            if ($stmt->rowCount() == 1) {
+                $reservation = new Reservation($stmt->fetch(PDO::FETCH_ASSOC));
+                return $reservation;
+            }
+            else {
+                return null;
+            }
+        } catch (\Exception $e) {
+            return null;
+        }
+    }
+
+
+    public function delete() {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "DELETE FROM reservation WHERE id = :id";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
+        try {
+            $stmt->execute();
+            return true;
+        } catch (\Exception $e) {
+            return null;
+        }
+    }
+
+
+    public static function createNew($course, $datetime_span, $user, $training_type = 1, $triggered = 0)
+    {
         $dbh = DatabaseConnection::getInstance();
         $sql = "INSERT INTO reservation (user_id, datetime_span_id, training_course_id, training_type_id, created_at, triggered)
             VALUES (:user_id, :datetime_span_id, :training_course_id, :training_type_id, :created_at, :triggered)";
@@ -123,7 +165,7 @@ class Reservation {
 
                     } else {
                         if(self::already_exists($training_course->id, $datetime_span->id, $user->id)) {
-                            $validation_result["errors"] = "Već imate identičnu rezervaciju: " . $datetime_span->description_string() . "\n" .
+                            $validation_result["errors"] = "Već imate identičnu rezervaciju: " . $datetime_span->descriptionString() . "\n" .
                                 "Nemoguće je dvaput rezervirati isto";
                             return $validation_result;
                         } else {
@@ -171,15 +213,15 @@ class Reservation {
             $number_of_existing_reservations = self::number_of_reservations_for_datetime_and_course($training_course->id, $datetime_span->id);
             if($number_of_existing_reservations < $training_course->capacity) {
                 $available_datetime_spans[] = $selected_span;
-                $available_datetime_spans_description_labels[] = $datetime_span->description_string();
+                $available_datetime_spans_description_labels[] = $datetime_span->descriptionString();
                 $available_datetime_spans_availability_labels[] = "" . $number_of_existing_reservations . "/" . $training_course->capacity;
             } else {
                 $full_datetime_spans[] = $selected_span;
-                $full_datetime_spans_description_labels[] = $datetime_span->description_string();
+                $full_datetime_spans_description_labels[] = $datetime_span->descriptionString();
                 $full_datetime_spans_availability_labels[] = "" . $number_of_existing_reservations . "/" . $training_course->capacity;
                 $prereservations_necessary = true;
                 $pre_reservations_status_label .= sprintf("Popunjen je termin %s. - Popunjenost: %d/%d \n",
-                    $datetime_span->description_string(), $number_of_existing_reservations, $training_course->capacity);
+                    $datetime_span->descriptionString(), $number_of_existing_reservations, $training_course->capacity);
             }
         }
 
@@ -346,6 +388,54 @@ class Reservation {
     }
 
 
+
+    public static function getByDatetimeSpan($datetime_span_id, $order_by = "created_at ASC")
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT * FROM reservation WHERE
+          datetime_span_id = :datetime_span_id ORDER BY {$order_by}";
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':datetime_span_id', (int)$datetime_span_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $booking = new Reservation($row);
+                $list[] = $booking;
+            }
+            return $list;
+        }
+        else {
+            return array();
+        }
+    }
+
+
+
+    public static function getNumberByDatetimeSpan($datetime_span_id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT COUNT(*) AS number FROM reservation WHERE
+          datetime_span_id = :datetime_span_id";
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':datetime_span_id', (int)$datetime_span_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return (int)$row["number"];
+        }
+        else {
+            return null;
+        }
+    }
+
+
     public static function getByUser($user_id, $order_by = "datetime_span.datetime_span_start")
     {
         $dbh = DatabaseConnection::getInstance();
@@ -371,9 +461,35 @@ class Reservation {
     }
 
 
+    public static function getByUserLimited($user_id, $limit = 1000, $order_by = "datetime_span.datetime_span_start")
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT reservation.* FROM reservation JOIN datetime_span
+          ON reservation.datetime_span_id = datetime_span.id WHERE
+          user_id = :user_id ORDER BY {$order_by} LIMIT :limit";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $booking = new Reservation($row);
+                $list[] = $booking;
+            }
+            return $list;
+        }
+        else {
+            return array();
+        }
+    }
+
 
     public function setFlagCanceled($flag)
     {
+        $this->canceled = (int)$flag;
         $dbh = DatabaseConnection::getInstance();
 
         $sql = "UPDATE reservation set canceled = :canceled WHERE id = :id";
@@ -381,7 +497,6 @@ class Reservation {
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':canceled', (int)$flag, PDO::PARAM_INT);
         $stmt->bindValue(':id', (int)$this->id, PDO::PARAM_INT);
-        $stmt->execute();
         try {
             $stmt->execute();
             return true;
