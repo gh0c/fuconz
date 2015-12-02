@@ -719,3 +719,111 @@
     }
   }
 }
+
+
+
+
+
+.calendar-widget-holder {
+  font-family: MuseoSans;
+  font-weight: 500;
+  padding: 0.3em 0.5em;
+  margin: 1em 0;
+
+  &.widget-content {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    background-color: $dark-dark-blue;
+    color: $light-blue-gray-light;
+  }
+
+  &.clearfix-helper {
+    min-height: 0;
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+      border-collapse: collapse;
+    }
+  }
+
+  .calendar-overlay {
+    position: relative;
+  }
+
+  .calendar-header {
+    color: $light-blue-gray-light;
+    position: relative;
+    padding: 0;
+    width: 30em;
+    margin: .4em auto .6em auto;
+
+    a.month-picker-prev,
+    a.month-picker-next,
+    a.offset-picker-prev,
+    a.offset-picker-next {
+      position:absolute;
+      cursor: pointer;
+      height: 100%;
+      font-size: 1.1em;
+      text-align: center;
+
+      @include pp-transition(background-color .25s ease-out, color .25s ease-out, border .25s ease-out);
+
+      &:hover,
+      &:focus {
+        background-color: $light-blue-gray-light;
+        color: $dark-dark-blue;
+      }
+
+      span.fa {
+        height: 100%;
+        &:before {
+          font-size: 20px;
+          position: relative;
+          top: 4px;
+        }
+      }
+    }
+    a.month-picker-prev, a.month-picker-next {
+      width: 3em;
+    }
+    a.offset-picker-prev, a.offset-picker-next {
+      width: 4.5em;
+    }
+
+    .month-picker-prev,
+    .offset-picker-prev {
+      left: 0;
+      @include rounded-nw(2em);
+      @include rounded-sw(2em);
+    }
+
+    .month-picker-next,
+    .offset-picker-next {
+      right: 0;
+      @include rounded-ne(2em);
+      @include rounded-se(2em);
+    }
+
+    .month-picker-title,
+    .offset-picker-title {
+      @include gradient-vertical-bbb-flag-cibona-blue();
+
+      margin: 0 4em;
+      line-height: 1.7em;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: 700;
+    }
+  }
+
+  .widget-content {
+    &.month-grid {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  @import "calendar.standard";
+}

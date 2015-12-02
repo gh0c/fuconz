@@ -1,0 +1,246 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    {{ game.title }}
+{% endblock %}
+
+{% block content %}
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-subtitle-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h2>{{ game.title }}</h2>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+                {% include "templates/partials/user_messages.twig" %}
+            </div>
+            <div class = "game-cont mega match-container main" id = "main-game-cont">
+                <input type="hidden" name="game-id" value="{{ game_id }}" />
+
+                <section class="main">
+                    <div class = "inner-cont loading-info-cont">
+                        <div class = "vertical-section text-centered">
+                            <div class = "inner-70pct">
+                                <div class = "loading js-loading">Učitavanje...
+                                    <i class = "fuconz-spinner fa fa-fw fa-spinner fa-spin"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <main>
+                        <div class = "game-data-holder">
+                            <div class = "tr">
+                                <div>
+                                    <div class = "td left-th">
+                                        <span>Termin</span>
+                                    </div><!--
+                                    --><div class = "td">
+                                        <span>{{ game.datetime_span.descriptionString() }}</span>
+                                    </div>
+                                </div>
+
+                                {% if game.field %}
+                                    <div>
+                                        <div class = "td left-th">
+                                            <span>Teren</span>
+                                        </div><!--
+                                        --><div class = "td">
+                                            <span>{{ game.field }}</span>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <div class = "tr result">
+                                <div>
+                                    <div class = "td left-th">
+                                        <span>Rezultat</span>
+                                    </div>
+                                    <div class = "td">
+                                        <div>
+                                            <span>{{ game.resultDescriptionString() }}</span><span> - {{ game.resultFromWinnersPerspective }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% set my_status = game.playersStatus(auth_user.id) %}
+                                {% if my_status != 4 %}
+                                <div>
+                                    <div class = "td left-th">
+                                        <span>Moj ishod u utakmici:</span>
+                                    </div>
+                                    <div class = "td std-item">
+                                        <div>
+                                            <div class = "icon-holder">
+                                                <div class = "game-icon-cont">
+                                                    <div class = "thumbnail game game-icon std-icon no-avatar">
+
+                                                        <div class="pic-cont std-pic-cont">
+                                                            {% if my_status == 1 and not game.after_extra_time %}
+                                                                <i class = "fa icon victory fa-fw fa-flag"></i>
+                                                            {% elseif my_status == 2  and not game.after_extra_time %}
+                                                                <i class = "fa icon loss fa-fw fa-flag"></i>
+                                                            {% elseif my_status == 3 or game.after_extra_time %}
+                                                                <i class = "fa icon draw fa-fw fa-flag-o"></i>
+                                                            {% endif %}
+                                                        </div>
+
+                                                        {% if game.after_extra_time %}
+                                                            <div class = "overlay-pic-cont std-pic-cont">
+                                                                {% if my_status == 1 %}
+                                                                    <i class = "fa icon icon-o victory fa-fw fa-flag"></i>
+                                                                {% elseif my_status == 2 %}
+                                                                    <i class = "fa icon icon-o loss fa-fw fa-flag"></i>
+                                                                {% endif %}
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class = "td">
+                                        <span>{{ game.resultDescriptionStringFromPlayersPerspective(auth_user.id) }}</span>
+                                    </div>
+                                </div>
+
+                                {% endif %}
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+
+                        <div class="js-switcher switcher">
+                            <a href="#" class="js-switch disabled teamOne switch-btn">EKIPA 1</a><a href="#" class="js-switch teamTwo switch-btn">EKIPA 2</a>
+                        </div>
+                        <div class="js-stage stage texture">
+                            <div class="js-world world">
+
+                                <div class="terrain js-terrain">
+                                    <div class = "terrain-holder">
+                                        <div class="field field--alt"></div>
+                                        <div class="field ground">
+                                            <div class="field__texture field__texture--gradient"></div>
+                                            <div class="field__texture field__texture--gradient-b"></div>
+                                            <div class="field__texture field__texture--grass"></div>
+
+                                            <div class="field__line field__line--outline"></div>
+                                            <div class="field__line field__line--penalty"></div>
+
+                                            <div class="field__line field__line--mid"></div>
+                                            <div class="field__line field__line--circle"></div>
+                                            <div class="field__line field__line--penalty field__line--penalty--far"></div>
+                                        </div>
+                                        <div class="field__side field__side--front"></div>
+                                        <div class="field__side field__side--left"></div>
+                                        <div class="field__side field__side--right"></div>
+                                        <div class="field__side field__side--back"></div>
+                                    </div>
+                                </div>
+
+
+                                <div class="team js-stub-team">
+                                    <!-- Team cards / icons goes here -->
+                                    {% for teamSide in ["teamOne", "teamTwo"] %}
+                                        {% for player in teams[teamSide] %}
+                                            <div class = "stub-player js-stub-player {{ teamSide }}" data-side = "{{ teamSide }}"
+                                                 data-name = "{{ player.username }}" data-x = "" data-y = "">
+
+                                                <div class="player__placeholder"><i class = "fa fa-fw fa-user"></i></div>
+                                                <div class="player__label"><span>{{ player.username }}</span></div>
+
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+
+
+                                <div class="team js-team">
+                                    <!-- Team cards / icons goes here -->
+                                    {% for teamSide in ["teamOne", "teamTwo"] %}
+                                        {% for player in teams[teamSide] %}
+                                            {%  set avatar_url = player.getAvatarURL('avatar',
+                                            { "width": 50, "height": 50, "crop": "fill"}) %}
+
+                                            <div class = "player js-player {{ teamSide }}" data-side = "{{ teamSide }}"
+                                                 data-name = "{{ player.username }}" data-x = "" data-y = ""
+                                                 data-avatar-exists = "{{ (avatar_url)? '1' : '0' }}"
+                                                 data-avatar-url = "{{ avatar_url }}">
+
+
+                                                <div class="player__placeholder"></div>
+
+                                                <div class="player__card">
+                                                    <div class = "name"><h3>{{ player.username }}</h3></div>
+                                                    <ul class="player__card__list">
+                                                        <li><span>Starost</span><br/>{{ (player.date_of_birth)? player.age() ~ 'g' : '-' }}</li><!--
+                                                        --><li><span>Kvart</span><br/>{{ (player.neighborhood)?: '-' }}</li>
+                                                    </ul>
+                                                    <ul class="player__card__list player__card__list--last">
+                                                        <li><span>Nastupa</span><br/>{{ player.number_of_apps }}</li><!--
+                                                        --><li><span>Pobjeda</span><br/>{{ player.number_of_wins }}</li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="player__img std-item">
+                                                    <div class = "icon-holder std-icon-holder">
+                                                        <div class = "user-avatar-cont std-icon-cont">
+                                                            <div class = "thumbnail user user-icon std-icon no-avatar">
+                                                                <div class="pic-cont std-pic-cont">
+                                                                    {% if avatar_url %}
+                                                                        <span class="v-align-helper"></span><!--
+                                                                    --><img src = "{{ avatar_url }}">
+                                                                    {% else %}
+                                                                        <i class = "fa icon fa-fw fa-male"></i>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class = "holder">
+                                                    <span class="player__label">{{ player.username }}</span>
+                                                </div>
+
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </main>
+                </section>
+
+
+            </div>
+            <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
+
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block additional_js %}
+    <script src="public/js/velocity.min.js"></script>
+
+    <script src="public/js/match/game.js"></script>
+{% endblock %}

@@ -1,0 +1,147 @@
+{% if games|length < 1 %}
+    <span>Nema unesenih utakmica u kojima si sudjelovao!</span>
+{% else %}
+    <div class = "subtitle std-item">
+        <div class = "icon-holder std-icon-holder">
+            <div class = "message-icon-cont std-icon-cont">
+                <div class = "thumbnail message message-icon std-icon">
+                    <div class="pic-cont std-pic-cont">
+                        <i class = "fa icon fa-fw fa-futbol-o"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div><!--
+        --><div class = "subtitle-holder">
+            <span>Posljednje utakmice</span>
+        </div>
+    </div>
+
+
+    {#<div class = "games-label-holder">#}
+        {#<div class = "games-label">#}
+            {#<span>Zadnje utakmice</span>#}
+        {#</div>#}
+    {#</div>#}
+    {% for my_game in games %}
+
+        <div id = "g-{{ my_game.id }}" class = "profile-hot-game item std-item game-{{ my_game.playersStatusLabel(auth_user.id) }}">
+            <div class = "inner-box">
+
+                <section class="td icon">
+                    <div class = "icon-holder std-icon-holder">
+                        <div class = "game-icon-cont std-icon-cont">
+                            <div class = "thumbnail game game-icon std-icon no-avatar">
+
+                                <div class="pic-cont std-pic-cont">
+                                    {% if my_game.playersStatus(auth_user.id) == 1 and not my_game.after_extra_time %}
+                                        <i class = "fa icon victory fa-fw fa-flag"></i>
+                                    {% elseif my_game.playersStatus(auth_user.id) == 2  and not my_game.after_extra_time %}
+                                        <i class = "fa icon loss fa-fw fa-flag"></i>
+                                    {% elseif my_game.playersStatus(auth_user.id) == 3 or my_game.after_extra_time %}
+                                        <i class = "fa icon draw fa-fw fa-flag-o"></i>
+                                    {% else %}
+                                        <i class="icon fa fa-fw fa-question"></i>
+                                    {% endif %}
+
+                                </div>
+
+                                {% if my_game.after_extra_time %}
+                                    <div class = "overlay-pic-cont std-pic-cont">
+                                        {% if my_game.playersStatus(auth_user.id) == 1 %}
+                                        <i class = "fa icon icon-o victory fa-fw fa-flag"></i>
+                                        {% elseif my_game.playersStatus(auth_user.id) == 2 %}
+                                            <i class = "fa icon icon-o loss fa-fw fa-flag"></i>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </section><!--
+
+                --><section class ="td label">
+                    <span>{{ my_game.datetime_span.descriptionString() }}</span>
+                </section><!--
+
+                --><section class = "td info">
+                    <div class = "icon-holder info std-icon-holder">
+                        <div class = "info-icon-cont std-icon-cont">
+                            <div class = "thumbnail info info-icon std-icon ">
+                                <div class="pic-cont std-pic-cont">
+                                    <i class = "fa fa-fw icon fa-info-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "info-overlay">
+                        <div class = "info-holder">
+                            <div>
+                                <span>{{ my_game.title }}</span>
+                            </div>
+                            <div>
+                                <span>{{ my_game.resultDescriptionStringFromPlayersPerspective(auth_user.id) }}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </section><!--
+
+                --><section class = "td ext-link">
+                    <div class = "icon-holder std-icon-holder">
+                        <a class = "ext-link-icon-cont std-icon-cont" target="_blank"
+                           href = "{{ urlFor('user.matches.game', {'game_id': my_game.id}) }}">
+                            <div class = "thumbnail ext-link ext-link-icon std-icon ">
+                                <div class="pic-cont std-pic-cont">
+                                    <i class = "fa fa-fw icon fa-external-link"></i>
+                                </div>
+                            </div>
+
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    {% endfor %}
+
+{% endif %}
+
+<a href = "{{ urlFor('user.bookings.home') }}" class = "external-link-holder">
+    <span>Sve moje utakmice ({{ auth_user.numberOfAppearances() }})</span>
+</a>
+
+<div class = "games-label-holder">
+    <div class = "games-label">
+        <span>Statistitka mojih nastupa</span>
+    </div>
+</div>
+
+<div class = "profile-stats">
+    <div class = "tr">
+        <div class = "td thl">
+            <span>Broj nastupa:</span>
+        </div>
+        <div class = "td cont">
+            <span>{{ auth_user.numberOfAppearances() }}</span>
+        </div>
+    </div>
+
+    <div class = "tr">
+        <div class = "td thl">
+            <span>Broj pobjeda:</span>
+        </div>
+        <div class = "td cont">
+            <span>{{ auth_user.numberOfWins() }}</span>
+        </div>
+    </div>
+
+    <div class = "tr">
+        <div class = "td thl">
+            <span>Omjer rezultata:</span>
+        </div>
+        <div class = "td cont">
+            <span>{{ auth_user.totalResultsRatioString() }}</span>
+        </div>
+    </div>
+</div>

@@ -42,11 +42,21 @@ class CsrfMiddleware extends Middleware
                 $submittedToken = $this->app->request()->post($this->key) ?: '';
             }
             if(!Hash::hashCheck($token, $submittedToken)) {
-                $this->app->flashNow('errors', "Nepodudaranje CSRF tokena.\nVjerojatno je stavljena nova verzija aplikacije koja je prebrisala stare postavke.\n".
-                  "Pokušaj refreshati stranicu (i to na način da lupiš enter u address-baru u pregledniku, a ne samo F5 ili refresh)\nJavi ako se problem nastavi. Hvala.");
-                $this->app->render('index.twig', array(
-                    'user' => $this->app->auth_user
-                ));
+                if($this->app->request->isAjax()) {
+                    header('Content-Type: application/json');
+                    echo json_encode(array(
+                        "error" =>"Nepodudaranje ili nepostojanje CSRF tokena. Vjerojatno je stavljena nova verzija aplikacije koja je prebrisala stare postavke.".
+                            "Pokušaj refreshati stranicu (i to na način da lupiš enter u address-baru u pregledniku, a ne samo F5 ili refresh)\nJavi ako se problem nastavi. Hvala."
+                    ));
+                    exit();
+                } else {
+                    $this->app->flashNow('errors', "Nepodudaranje ili nepostojanje CSRF tokena.\nVjerojatno je stavljena nova verzija aplikacije koja je prebrisala stare postavke.\n".
+                        "Pokušaj refreshati stranicu (i to na način da lupiš enter u address-baru u pregledniku, a ne samo F5 ili refresh)\nJavi ako se problem nastavi. Hvala.");
+                    $this->app->render('index.twig', array(
+                        'user' => $this->app->auth_user
+                    ));
+                }
+
             }
         }
 

@@ -18,6 +18,19 @@
   text-align: right;
 }
 
+.display-none {
+  display: none;
+}
+
+.relative-pos, .pos-relative, .relative-position {
+  position: relative;
+}
+
+.multirow-inline {
+  display: inline-block;
+  vertical-align: top;
+}
+
 
 .black-horiz-spacer-5 {
   @include horizontal-spacer(5px, #000000);

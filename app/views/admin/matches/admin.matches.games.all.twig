@@ -1,0 +1,116 @@
+{% extends "admin/templates/default.twig" %}
+
+{% block title %}
+    Utakmice
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Utakmice</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+
+
+                {% include "admin/templates/partials/admin_messages.twig" %}
+
+                <div class = "content-column">
+
+                    {#<div class = "submitter-cont">#}
+                        {#<div class = "inner-70pct">#}
+
+                            {#<div class="submitter submit bbb-flag-v-cibona-blue">#}
+                                {#<a href = "{{ urlFor('admin.reservations.training_course.new') }}">Dodaj novi termin</a>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
+
+
+                    <div class = "table-container">
+
+                        <div class = "heading-container">
+
+                            <div class = "th width-12em margin-std-lr">
+                                <h4>Naziv</h4>
+                            </div>
+
+                            <div class = "th width-12em margin-std-lr">
+                                <h4>Termin</h4>
+                            </div>
+
+                            <div class = "th width-10em margin-std-lr">
+                                <h4>Rezultat</h4>
+                            </div>
+
+                            <div class = "th width-7em margin-std-lr">
+                                <h4></h4>
+                            </div>
+                        </div>
+
+                        <div class = "rows-container">
+
+                            {% for game in games %}
+                                <div class = "tr height-3-and-half-em">
+
+
+                                    <div class = "td width-12em margin-std-lr text-left">
+                                        <span>{{ game.title }}</span>
+                                    </div>
+
+                                    <div class = "td width-12em margin-std-lr text-left">
+                                        <span>{{ game.datetime_span.descriptionString() }}</span>
+                                    </div>
+
+                                    <div class = "td width-10em margin-std-lr text-left">
+                                        <span>{{ game.result() }} {{ game.resultDescriptionString() }}</span>
+                                    </div>
+
+
+                                    <div class = "td width-7em margin-std-lr text-centered admin-actions-cont">
+                                        <div>
+                                            <div class = "edit game action" title = "Uredi podatke o utakmici">
+                                                <a href = "{{ urlFor('admin.matches.game.edit', {"game_id": game.id}) }}">
+                                                    <i class="fa fa-edit fa-fw"></i>
+                                                </a>
+                                            </div>
+
+                                            {% if auth_admin.has_role('Site admin') %}
+                                                <div class = "delete game action" title = "Izbriši utakmicu">
+                                                    <a href = "{{ urlFor('admin.matches.delete.game',
+                                                    {"game_id":  game.id } ) }}"
+                                                       data-confirmation = "Izbrisati utakmicu: {{ game.title }}?">
+                                                        <i class="fa fa-remove fa-fw"></i>
+                                                    </a>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    $('.admin-actions-cont .delete > a').on('click', function () {
+                        return confirm($(this).attr('data-confirmation'));
+                    });
+                </script>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

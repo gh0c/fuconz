@@ -21,7 +21,7 @@ $neutral-color-1: $cibona-blue;
     @include pp-transition(none !important);
   }
   .main {
-    height: 30em;
+    height: 35em;
     overflow: hidden;
   }
   main {
@@ -62,7 +62,7 @@ $neutral-color-1: $cibona-blue;
 
 
   .switcher {
-    height: 2.5em;
+//    height: 2.5em;
     padding: 0.5em;
     text-align: center;
     z-index: 5;
@@ -127,6 +127,122 @@ $neutral-color-1: $cibona-blue;
       border-radius: 0 1em 1em 0;
     }
   }
+
+
+  .game-data-holder {
+    padding: 0.5em;
+    text-align: center;
+    z-index: 5;
+    position: relative;
+    margin: 0 auto;
+//    width: 35em;
+
+    .tr {
+      background-color: $light-blue-gray-light;
+      color: $dark-dark-blue;
+      font-family: MuseoSans;
+      font-weight: 700;
+      display: inline-block;
+
+      margin: 0 1em 0.25em 1em;
+      text-align: left;
+      padding: 0 1em;
+      width: 30em;
+
+      & > div {
+        height: 2em;
+      }
+      .td {
+        display:inline-table;
+        height: 100%;
+        vertical-align: top;
+        & > * {
+          display: table-cell;
+          vertical-align: middle;
+        }
+        span {
+          font-size: 0.95em;
+        }
+
+        .icon-holder {
+          width: 3em;
+          height: 2em;
+          background-color: $light-blue-gray-light;
+
+          .game-icon-cont {
+            .game-icon {
+              width: 2.25em;
+              position: relative;
+              height: 2em;
+              margin: 0 auto;
+
+              .icon, .icon-o {
+                font-size: 1.7em;
+                color: $dark-dark-blue;
+
+                &.victory {
+                  color: $green-badge-transparent-overlay;
+                }
+                &.loss {
+                  color: $red-badge-transparent-overlay;
+                }
+                &.draw {
+                  color: $orange-warning;
+                }
+                &.fa-question {
+                  color: $cibona-blue-transp10;
+                }
+              }
+
+              .pic-cont {
+                margin: 0 auto;
+                width: 100%;
+                height: 100%;
+                display: inline-table;
+
+                & > .icon {
+                  vertical-align: middle;
+                  display: table-cell;
+                }
+              }
+              .overlay-pic-cont {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                display: inline-table;
+
+                clip: rect(auto 22px auto auto); /* IE4 to IE7 */
+                clip: rect(auto, 22px, auto, auto);
+                & > .icon-o {
+                  vertical-align: middle;
+                  display: table-cell;
+                }
+              }
+            }
+          }
+        }
+
+      }
+      .left-th {
+        width: 7em;
+        text-align: left;
+        span {
+          font-size: 0.9em;
+        }
+      }
+      &.result {
+        .left-th {
+          width: 11em;
+
+        }
+      }
+    }
+
+  }
+
+
 
   .team {
     position: absolute;

@@ -9,6 +9,8 @@ use app\helpers\Hash;
 use app\helpers\General;
 use \PDO;
 use \PDOException;
+use \app\model\Match\Game;
+use \app\helpers\Calendar;
 
 class User
 {
@@ -36,6 +38,8 @@ class User
 
     public $neighborhood = null;
     public $date_of_birth = null;
+
+    public $show_sidebar = false;
 
     function __construct($input_data = array())
     {
@@ -95,7 +99,16 @@ class User
         $this->__construct($data);
     }
 
-
+    public function age()
+    {
+        if(isset($this->date_of_birth)) {
+            $from = new \DateTime($this->date_of_birth);
+            $to   = new \DateTime('today');
+            echo $from->diff($to)->y;
+        } else {
+            return null;
+        }
+    }
 
     public function getPassword() {
         return $this->password;
@@ -548,15 +561,19 @@ class User
 
 
 
-    public  function updateProfileData($email, $first_name = null, $last_name = null, $sex = null) {
+    public  function updateProfileData($email, $first_name = null, $last_name = null, $sex = null,
+                                       $neighborhood = null, $date_of_birth = null) {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "UPDATE users SET email = :email, first_name = :first_name, last_name = :last_name, sex = :sex WHERE id = :id";
+        $sql = "UPDATE users SET email = :email, first_name = :first_name, last_name = :last_name, sex = :sex,
+            neighborhood = :neighborhood, date_of_birth = :dob WHERE id = :id";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':sex', $sex, PDO::PARAM_STR);
         $stmt->bindParam(':first_name', $first_name, PDO::PARAM_STR);
         $stmt->bindParam(':last_name', $last_name, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
+        $stmt->bindParam(':neighborhood', $neighborhood, PDO::PARAM_STR);
+        $stmt->bindParam(':dob', $date_of_birth, PDO::PARAM_STR);
 
         try {
             $stmt->execute();
@@ -587,6 +604,22 @@ class User
         return Message::numberOfMessagesForReceiver($this->id, "user");
     }
 
+
+    public function numberOfAppearances()
+    {
+        return Game::numberOfPlayerAppearances($this->id);
+    }
+
+    public function numberOfWins()
+    {
+        return Game::numberOfPlayerWins($this->id);
+    }
+
+    public function totalResultsRatioString()
+    {
+        list($results_for, $results_against) = Game::playerTotalResultsRatio($this->id);
+        return sprintf("%d:%d", $results_for, $results_against);
+    }
 
     public static function validateNew($p_username, $p_email, $p_password, $p_password_repeated,
                                        $first_name = null, $last_name = null, $sex = null) {
@@ -621,13 +654,16 @@ class User
     }
 
 
-    public static function validateProfileDataChange($p_email, $user, $first_name = null, $last_name = null, $sex = null) {
+    public static function validateProfileDataChange($p_email, $user, $first_name = null, $last_name = null, $sex = null, $dob = null) {
         $validation_result = array();
         $validation_result["validated"] = false;
         if(!isset($p_email) || $p_email === "" ) {
             $validation_result["errors"] = "Prilikom promjene osobnih podataka obavezan je unos e-mail adrese!";
             return $validation_result;
-        } else {
+        } else if (isset($dob) && !Calendar::validate_date($dob, "d.m.Y.")) {
+            $validation_result["errors"] = "Neispravan datum rođenja: {$dob}";
+            return $validation_result;
+        }else {
             if ($existing_user = self::getUserByEmail($p_email)) {
                 if($existing_user->id != $user->id) {
                     $validation_result["errors"] = "E-mail na koji se registrirate mora biti jedinstven. \n".

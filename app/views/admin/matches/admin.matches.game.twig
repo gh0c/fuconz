@@ -1,0 +1,272 @@
+{% extends "admin/templates/default.twig" %}
+
+{% block title %}
+    Nova utakmica
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Nova utakmica</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+                <div class = "form-container">
+
+
+                    <form method = "post" name = "game" id = "game"  onsubmit="return false;"
+                          action = "{{ urlFor('admin.matches.game.new.post') }}">
+                        <div class = "inputs-container">
+
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="span-label" id="span_label" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="1" readonly
+                                           class = "large-text-input large-input-width description-label"
+                                            value = "{{ datetime_span_label }}"/>
+                                    <label id="datetime-span-label" alt="Termin"
+                                           placeholder="Termin" data-info="Termin"></label>
+                                </div>
+                            </div>
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="title" id="title" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="2"
+                                           class = "std-text-input std-input-width req"/>
+                                    <label id="title-label" alt="Naziv" class = "req"
+                                           placeholder="Naziv" data-info="Naziv"></label>
+                                </div>
+                            </div>
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="field" id="field" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="3"
+                                           class = "std-text-input std-input-width"/>
+                                    <label id="field-label" class = "" alt="teren" placeholder="teren" data-info="Teren"></label>
+                                </div>
+
+                            </div>
+
+                            <input type = "hidden" name = "span-id" required readonly value = "{{ datetime_span_id }}">
+
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="number" name="res-team-one" id="res-team-one"
+                                           min="0" tabindex="4" required
+                                           class = "small-text-input small-input-width req"/>
+                                    <label id="res-team-one-label" class = "req" alt="Rezultat ekipe 1" placeholder="Rezultat ekipe 1"
+                                           data-info="Rezultat ekipe 1"></label>
+                                </div>
+                            </div>
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="number" name="res-team-two" id="res-team-two"
+                                           min="0" tabindex="5" required
+                                           class = "small-text-input small-input-width req"/>
+                                    <label id="res-team-one-label" class = "req" alt="Rezultat ekipe 2" placeholder="Rezultat ekipe 2"
+                                           data-info="Rezultat ekipe 2"></label>
+                                </div>
+                            </div>
+
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="checkbox" name="after-et" id="after-et" required
+                                           class = "cb-input after-et" tabindex="6">
+                                    <div class = "checkbox-div-cont">
+                                        <label for = "after-et" alt="Nakon penala" placeholder="Nakon penala" data-info="Nakon penala">
+                                            <span>Produžetak/Penali?</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "inner-70pct">
+                                    <div class = "pp-radio-div multirow-inline">
+                                        <input type="radio" name="winner-selection" value = "1" id = "home-win"
+                                               class = "rb-input winner-selector " tabindex="7">
+                                        <div class = "radio-div-cont first-left">
+                                            <label for = "home-win">
+                                                <span>Pobjeda ekipe 1</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class = "pp-radio-div multirow-inline">
+                                        <input type="radio" name="winner-selection" value = "2" id = "away-win"
+                                               class = "rb-input winner-selector" tabindex="8">
+                                        <div class = "radio-div-cont second-left">
+                                            <label for = "away-win">
+                                                <span>Pobjeda ekipe 2</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class = "pp-radio-div multirow-inline">
+                                        <input type="radio" name="winner-selection" value = "0" id = "draw"
+                                               class = "rb-input winner-selector" tabindex="9">
+                                        <div class = "radio-div-cont second-left">
+                                            <label for = "draw">
+                                                <span>Neriješeno</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class = "vertical-section text-centered multirow multirow-inline players team-one">
+                                <h3>Ekipa 1</h3>
+                                <div class = "submitter-cont">
+                                    <div class="submitter submit bbb-flag-v-cibona-blue">
+                                        <a data-team = "one" class = "add-player" tabindex = "10">Dodaj igrača</a>
+                                    </div>
+                                </div>
+
+                                <div class = "display-none vertical-section text-centered one player-selector">
+                                    <div class = "inner-70pct relative-pos">
+                                        <select name="players-team-one[]"  required
+                                                class = "std-text-input std-input-width">
+                                            <option selected disabled hidden value=''></option>
+                                            {% for user in users %}
+                                                <option value = "{{ user.id }}">
+                                                    {{ user.username }} ({{ user.full_name() }})
+                                                </option>
+                                            {% endfor %}
+
+                                        </select>
+
+                                        <label alt="Igrač" placeholder="Igrač" data-info="Igrač"></label>
+                                    </div>
+                                </div>
+
+                            </div><!--
+
+                            --><div class = "vertical-section text-centered multirow multirow-inline players team-two">
+                                <h3>Ekipa 2</h3>
+                                <div class = "submitter-cont">
+                                    <div class="submitter submit bbb-flag-v-cibona-blue">
+                                        <a data-team = "two" class = "add-player" tabindex = "11">Dodaj igrača</a>
+                                    </div>
+                                </div>
+                                <div class = "display-none vertical-section text-centered two player-selector">
+                                    <div class = "inner-70pct relative-pos">
+                                        <select name="players-team-two[]" required
+                                                class = "std-text-input std-input-width">
+                                            <option selected disabled hidden value=''></option>
+                                            {% for user in users %}
+                                                <option value = "{{ user.id }}">
+                                                    {{ user.username }} ({{ user.full_name() }})
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+
+                                        <label alt="Igrač" placeholder="Igrač" data-info="Igrač"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        {% include "admin/templates/partials/admin_messages.twig" %}
+
+                        {% include "admin/templates/partials/live_status.container.twig" %}
+
+                        <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
+
+                        <div class = "submitter-cont">
+                            <div class = "inner-70pct">
+                                <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="12"
+                                     onclick="validateAndSubmitGame('game')">
+                                    <span>UNESI</span>
+                                </div>
+                                <div class="submitter bbb-flag-v-cibona-blue reversed cancel">
+                                    <a href = "{{ urlFor('admin.matches.home') }}" tabindex="13">ODUSTANI</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+            function valSub() {
+                if(formSubmittingActive == true) {
+                    validateAndSubmitGame('game');
+                    return false;
+                }
+            }
+            $('#game').keydown(function(e) {
+                if (e.keyCode == 13) {
+                    valSub();
+                }
+            });
+            $('.submitter.submit').keydown(function(e) {
+
+                if (e.keyCode == 13) {
+                    valSub();
+                }
+            });
+
+        });
+
+
+    </script>
+
+
+{% endblock %}
+
+{% block additional_js %}
+    <script>
+        $(document).on("click", ".add-player", function() {
+            var team = $(this).data("team");
+
+            var divCloned = $(".player-selector." + team ).first().clone();
+
+            divCloned.removeClass("display-none");
+
+            removeSelectionIcon = document.createElement("i");
+            removeSelectionIcon.className = "fa fa-fw fa-times-circle remove-selection";
+            removeSelectionIcon.title = "Izbriši odabir";
+
+            divCloned.children().first().append(removeSelectionIcon);
+            divCloned.appendTo('.players.team-' + team + '').slideDown(700, function() {
+            });
+            divCloned.find("select").focus();
+
+
+        });
+
+
+        $(document).on("click", ".player-selector .remove-selection", function() {
+            $(this).closest(".player-selector").slideUp(800, function(){
+                $(this).remove();
+            });
+
+        });
+
+    </script>
+{% endblock %}

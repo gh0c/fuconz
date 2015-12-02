@@ -266,6 +266,9 @@ $small-input-width: 14em;
       width: 35em;
     }
 
+    &.winner-selector + .radio-div-cont {
+      width: 14em;
+    }
 
     & + .checkbox-div-cont {
       width: 20em;
@@ -330,7 +333,6 @@ $small-input-width: 14em;
       }
 
       > span {
-
         line-height: 100%;
         display: inline-block;
         width: 4em;
@@ -352,6 +354,13 @@ $small-input-width: 14em;
         text-align: center;
       }
     }
+    &.winner-selector + .radio-div-cont > label {
+      > span {
+        width: 11em;
+        text-align: center;
+      }
+    }
+
 
     & + .checkbox-div-cont > label {
       &:before {
@@ -499,6 +508,22 @@ $small-input-width: 14em;
       }
     }
   }
+
+  .player-selector {
+    .remove-selection {
+      position: absolute;
+      width: 2em;
+      font-size: 1.5em;
+      top: .5em;
+      right: -50px;
+      cursor: pointer;
+      &:hover {
+        color: $red-close-icons;
+      }
+  }
+
+  }
+
 
   .medium-input-width {
     width: $medium-input-width;

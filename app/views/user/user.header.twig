@@ -73,13 +73,35 @@
 
     <div class="filter filter-profile list-tags">
         <ul>
-            <li><a href="{{ urlFor('user.profile.home') }}"
-                   {% if active_item == "user.profile.home" %}class = "active"{% endif %}>Početna</a></li>
-            <li><a href="{{ urlFor('user.profile.password-change') }}"
-                   {% if active_item == "user.profile.password-change" %}class = "active"{% endif %}><i class = "fa fa-fw fa-key"></i> Promjena lozinke</a></li>
-            <li><a href="{{ urlFor('user.profile.profile-data-change') }}"
-                   {% if active_item == "user.profile.profile-data-change" %}class = "active"{% endif %}><i class = "fa fa-fw fa-cog"></i> Osobni podaci</a></li>
-            <li><a href="/" >Povijest aktivnosti</a></li>
+            <li>
+                <a href="{{ urlFor('user.profile.home') }}"
+                   {% if active_item == "user.profile.home" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-home"></i><span class = "link-label-fw"> Početna</span>
+                </a>
+            </li><!--
+            --><li>
+                <a href="{{ urlFor('user.profile.password-change') }}"
+                   {% if active_item == "user.profile.password-change" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-key"></i><span class = "link-label-fw"> Promjena lozinke</span>
+                </a>
+            </li><!--
+            --><li>
+                <a href="{{ urlFor('user.profile.profile-data-change') }}"
+                   {% if active_item == "user.profile.profile-data-change" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-wrench"></i><span class = "link-label-fw"> Osobni podaci</span>
+                </a>
+            </li><!--
+            --><li>
+                <a href="{{ urlFor('user.profile.avatar-change') }}"
+                   {% if active_item == "user.profile.avatar-change" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-file-image-o"></i><span class = "link-label-fw"> Avatar</span>
+                </a>
+            </li>
+            {#--><li>#}
+                {#<a href="/" >#}
+                    {#<i class = "fa fa-fw fa-calendar"></i><span class = "link-label-fw"> Aktivnosti</span>#}
+                {#</a>#}
+            {#</li>#}
         </ul>
     </div>
 
@@ -90,20 +112,25 @@
                 <a href="{{ urlFor('user.messages.home') }}"
                    {% if active_item == "user.main.messages" %}class = "active"{% endif %}>
                     <i class = "fa fa-fw fa-envelope-o{{ (auth_user.unreadMessagesExists())? ' unread-exists' : '' }}"></i>
-                    <span> Poruke</span><!--
-                    --><span>(</span><!--
-                    --><span class = "num-of-msg{{ (auth_user.unreadMessagesExists())? ' unread-exists' : '' }}" id = "header-number-of-unread">
+                    <span class = "link-label-fw"> Poruke</span><!--
+                    --><span class = "link-label-fw">(</span><!--
+                    --><span class = "num-of-msg link-label-fw{{ (auth_user.unreadMessagesExists())? ' unread-exists' : '' }}" id = "header-number-of-unread">
                         {{ auth_user.numberOfUnreadMessages() }}
                     </span><!--
-                    --><span>/</span><!--
-                    --><span class = "num-of-msg">{{ auth_user.numberOfMessages() }}</span><!--
-                    --><span>)</span>
+                    --><span class = "link-label-fw">/</span><!--
+                    --><span class = "num-of-msg link-label-fw">{{ auth_user.numberOfMessages() }}</span><!--
+                    --><span class = "link-label-fw">)</span>
                 </a>
             </li>
-            <li><a href="{{ urlFor('user.bookings.home') }}"
-                   {% if active_item == "user.main.bookings" %}class = "active"{% endif %}><i class = "fa fa-fw fa-book"></i> Moje prijave</a>
+            <li>
+                <a href="{{ urlFor('user.bookings.home') }}"
+                   {% if active_item == "user.main.bookings" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-book"></i><span class = "link-label-fw"> Moje prijave</span>
+                </a>
             </li>
-            <li><a href="{{ urlFor('user.logout') }}"><i class = "fa fa-fw fa-sign-out"></i> Odjava</a></li>
+            <li>
+                <a href="{{ urlFor('user.logout') }}">
+                    <i class = "fa fa-fw fa-sign-out link-label-fw"></i> Odjava</a></li>
         </ul>
     </div>
 

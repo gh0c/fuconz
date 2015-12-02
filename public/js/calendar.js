@@ -184,7 +184,7 @@ $(document).on("click", ".calendar-header.widget-header .month-changer", functio
     var date = $(this).data("date");
 
     var csrfKeyName = $(this).data("csrf-key-name");
-    var csrfToken = $("input[name=" + csrfKeyName + "]").val();
+    var csrfToken = $("input[name=csrf-token]").val();
 
     var selectedSpans = $("#selected-spans input[name='selected-spans\\[\\]']")
         .map(function(){return $(this).val();}).get();
@@ -338,3 +338,73 @@ $(document).on("click", ".calendar-header.widget-header .offset-changer", functi
     });
 });
 //});
+
+
+
+$(document).on("click", ".calendar-widget-holder .standard-month-changer", function(){
+    if(!haltFormSubmitting()) {
+        return false;
+    }
+    console.log(".");
+    var calendarContainer = $(this).closest(".calendar-container");
+    var calendarOverlay = $(this).closest(".calendar-overlay");
+    calendarContainer.addClass("disabled-button");
+
+    var divForGifCont = document.createElement("div");
+    divForGifCont.className = "loading-gif-div";
+    calendarContainer.find("> *").css("opacity", ".5");
+    calendarOverlay.append(divForGifCont);
+    var iForGifCont = document.createElement("i");
+    iForGifCont.className = "fa fa-spinner fa-spin";
+    divForGifCont.appendChild(iForGifCont);
+
+
+    var url = $(this).data("link");
+    var date = $(this).data("date");
+    var csrfToken = $("input[name=csrf-token]").val();
+
+    var params = {};
+    params["date"] = date;
+    params["csrf-token"] = csrfToken;
+
+    var request = $.ajax({
+        url: url,
+        type: "POST",
+        data: JSON.stringify(params),
+        dataType: "html",
+        contentType: "application/json; charset=utf-8"
+    });
+
+    request.done(function( reply ) {
+        console.log("Req ended call");
+        try {
+            var json_o = jQuery.parseJSON(reply);
+            if(json_o.error != null) {
+                alert(json_o.error);
+                calendarContainer.find("> *").css("opacity", "initial");
+                $(".loading-gif-div").remove();
+                calendarContainer.removeClass("disabled-button");
+                enableFormSubmiting();
+                return;
+            }
+        } catch (err) {
+        }
+
+        calendarContainer.html( reply );
+
+        calendarContainer.find("> *").css("opacity", "initial");
+        $(".loading-gif-div").remove();
+        calendarContainer.removeClass("disabled-button");
+        enableFormSubmiting();
+
+    });
+    request.fail(function(jqXHr, textStatus, errorThrown){
+        console.log(jqXHr);
+        console.log(textStatus);
+        console.log(errorThrown);
+        calendarContainer.find("> *").css("opacity", "initial");
+        $(".loading-gif-div").remove();
+        calendarContainer.removeClass("disabled-button");
+        enableFormSubmiting();
+    });
+});

@@ -1,0 +1,63 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    O stranici
+{% endblock %}
+
+{% block content %}
+
+    <div class = "main-block-cont">
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+
+
+                {% include "templates/partials/user_messages.twig" %}
+
+
+                <div class = "subtitle-std lev1 inner-70pct text-centered">
+                    <h4>Ovo su stranice na kojima ekiponž dogovara fuconž</h4>
+                </div>
+
+                <div class = "subtitle-std lev1 inner-70pct text-left">
+                    <span>Stranica je nastala iz dobre volje i viška slobodnog vremena.</span><br>
+                    <span>Cijelo vrijeme se nadograđuje aplikacija koja se vrti u pozadini, ispravljaju se <i>bugovi</i> i sređuje dizajn.</span><br>
+                    <span></span><br>
+                    <span>Stranica je postavljena na besplatnom <a class = "underline-link" target="_blank" href = "https://www.heroku.com/">
+                            Heroku developerskom hostingu</a>, a za upload slika (npr. avatara i ostalih grafičkih elemenata koji nisu "hardkodirani")
+                            korišten je odličan servis za upload, pohranu i manipulaciju slika <a class = "underline-link" target="_blank"
+                            href = "cloudinary.com">Cloudinary</a>.</span><br>
+                    <br>
+                    <span>Važna <strong>napomena</strong>: stranica nema skoro nikakvu ciljano napravljenu prilagodbu za mobitele i ostale gluparije
+                        (<i>Responsive design</i>). Trganje layouta pri pokušaju otvaranja putem bilo čega ekrana manjeg od ~1000 pixela u širinu je itekako očekivano.
+                        To se u dogledno vrijeme sasvim sigurno neće promijeniti.</span><br><br>
+                    <span>
+                        Stranica je primarno napravljena uz testiranje u <strong><i class = "fa fa-chrome"></i> Chromeu</strong>, ali izgled bi trebao biti prihvatljive sličnosti i u još nekim preglednicima. <br>
+                        To se <u>ne</u> odnosi na stare Internet Explorere, u tom smeću pouzdano mogu tvrditi da prikaz svega na stranici neće funkcionirati kako treba.
+                        </span><br><br>
+                    <span><strong>Ovo je više napravljeno više iz zafrkancije, čisto kao odmak od ovisnosti o židovima s facebooka i meni za vježbu.</strong><br>
+                        Ipak, stranica je pristojne tehnološke zahtjevnosti što je rezultiralo nekim zgodnim funkcionalnostima koje sam sklepao.<br>
+                        Šifre za prijavu koje koristite ni u jednom trenutku nisu zapisane u izvornom obliku nego kripritano, uz dodatni sloj zaštite.<br>
+                        Općenito, stranica što se sigurnosti tiče posjeduje i više od minimalnih zahtjeva kad su u pitanju registracija i autentifikacija korisnika.<br>
+                        Svejedno, vrijedi napomenuti da ne lupetate neke generičke lako "lomljive" šifre, kao niti one koje koristite na drugim stranicama.
+                        <br>Pro tip: puno je zajebanije (<i>skoro</i> pa nemoguće u životnom vijeku bilo koga od nas uz postojeću tehnologiju) <i>brute force</i>
+                        načinom probiti šifru tipa "dobitćešgaupak-okolosvudajetama" nego "22111990Gh0C" ili "dNMN:Kfdsa!kd929)".<br>
+                    </span><br>
+                    <span>Možda omogućim nekakvo automatsko odašiljanje mailova s obavijestima pa bi bilo dobro da kod registracije unesete aktivnu mail adresu.</span><br><br>
+                    <span>Kao i ostatak stranice, updateat ću ovaj odlomak sa eventualnim nadopunama, pojašnjenjima oko korištenja stranice itd.<br>
+                        Svi prijedlozi su i više nego dobrodošli, ja imam još puno ideja za čiju realizaciju ipak treba još malo više vremena i znanja od ovog mog.<br>
+                        Ako vam stranica upadne u neke glitcheve, beskonačne loadinge, pojave vam se errori ili exceptioni - svakako mi prijavite.
+                        Do toga ne bi trebalo dolaziti, eventualna potpuna nedostupnost je jedino moguća zbog hostinga (ipak je besplatan) ili stavljanja nove verzije.<br>
+                    </span><br><span>Još jedna <strong>napomena</strong>: Zbog načina uploadanja nove verzije na hosting, moguće je
+                    da se prebrišu neke postojeće postavke pa recimo onaj "<u>zapamti me</u>" prilikom prijave uzmite u obzir uvjetno
+                        jer je moguće da ćete se morati ponovno prijaviti unosom korisničkog imena i šifre čak i kada to neće imati smisla...</span><br>
+                    <span>Trudit ću se te upgradeove objavljivat samo kad ih lokalno dovoljno istestiram i nakupim dovoljno novotarija da budu vrijedne uploada.</span><br><br>
+
+                    <span><strong>gh0c</strong></span><br>
+                    <a href="mailto:ghoc.hrx@gmail.com" class = "underline-link"><i class = "fa fa-fw fa-envelope-o"></i> Gmail</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

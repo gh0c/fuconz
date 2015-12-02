@@ -88,3 +88,59 @@ function validateAndSubmitTrainingCourse(formName) {
         myForm.submit();
     }, 1000);
 }
+
+
+
+
+
+
+function validateAndSubmitGame(formName) {
+    if(!haltFormSubmitting()) {
+        return false;
+    }
+    var myForm = document.forms[formName];
+
+    expandInfoPanel("Provjera ispravnosti formata unesenih podataka");
+
+    setTimeout (function() {
+        if (myForm["title"].value == "" ) {
+            if (!errorStatus("Niste upisali naziv!", myForm["title"])) {
+                return false;
+            }
+        }
+//
+//        if (myForm["capacity"].value == "" ||
+//            parseInt(myForm["capacity"].value) <= 0)  {
+//            if (!errorStatus("Niste odabrali ispravan kapacitet termina!", myForm["capacity"])) {
+//                return false;
+//            }
+//        }
+//        if (myForm["min-reservations"].value == "" ||
+//            parseInt(myForm["min-reservations"].value) <= 0)  {
+//            if (!errorStatus("Niste odabrali ispravan minimalni broj rezervacija!", myForm["min-reservations"])) {
+//                return false;
+//            }
+//        }
+//        if(myForm["repeating"].checked) {
+//            if (myForm["date-until"].value == "") {
+//                if (!errorStatus("Odabrana je opcija ponavljanja, ali ne i datuma do kad.", myForm["date-until"])) {
+//                    return false;
+//                }
+//            }
+//            if (myForm["repeating-interval"].value == "") {
+//                if (!errorStatus("Odabrana je opcija ponavljanja, ali ne i interval ponavljanja.", myForm["repeating-interval"])) {
+//                    return false;
+//                }
+//            }
+//            if (myForm["repeating-frequency"].value == "" ||
+//                parseInt(myForm["repeating-frequency"].value) <= 0) {
+//                if (!errorStatus("Odabrana je opcija ponavljanja, ali ne i ispravna frekvencija ponavljanja.\nTo mora biti pozitivni cijeli broj", myForm["repeating-frequency"])) {
+//                    return false;
+//                }
+//            }
+
+
+
+        myForm.submit();
+    }, 1000);
+}

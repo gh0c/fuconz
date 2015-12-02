@@ -38,13 +38,12 @@ $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
     $app->get('/rezervacijski-termini/novi', $authenticated_admin(), function () use ($app) {
         $all_courses = TrainingCourse::getCourses();
 
-
         $app->render('admin/reservations/admin.reservations.training_course.twig', array(
             'training_courses' => $all_courses,
             'auth_admin' => $app->auth_admin,
             'active_page' => "reservations",
             'active_item' => "reservations.training-courses"));
-    })->name('user.registrations.training_course.new');
+    })->name('admin.reservations.training_course.new');
 
 
     $app->post('/rezervacijski-termini/novi', $authenticated_admin(), function () use ($app) {
@@ -73,7 +72,7 @@ $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
             if(isset($validation_result["errors"])) {
                 $app->flash('admin_errors', "Greške!\n" . $validation_result["errors"]);
             }
-            $app->redirect($app->urlFor('user.registrations.training_course.new'));
+            $app->redirect($app->urlFor('admin.reservations.training_course.new'));
         } else {
             // Validation of input data successful
             $status = TrainingCourse::createNew($p_title, $p_start_time, $p_end_time, date("Y-m-d", strtotime($p_date_from) ),
@@ -85,11 +84,11 @@ $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
                 $app->redirect($app->urlFor('admin.reservations.training-courses.all'));
             } else {
                 $app->flash('admin_errors', "Greška kod unosa u bazu.\n" . $status["err"] . "\nPokušajte ponovno");
-                $app->redirect($app->urlFor('user.registrations.training_course.new'));
+                $app->redirect($app->urlFor('admin.reservations.training_course.new'));
             }
         }
 
-    })->name('user.registrations.training_course.new.post');
+    })->name('admin.reservations.training_course.new.post');
 
 
     $app->get('/izbrisi/:course_id', $authenticated_admin(), function ($course_id) use ($app) {
@@ -105,7 +104,7 @@ $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
                 $app->redirect($app->urlFor('admin.reservations.training-courses.all'));
             }
         }
-    })->name('admin.registrations.delete.training_course');
+    })->name('admin.reservations.delete.training_course');
 
 
     $app->get('/rezervacije-clanova', $authenticated_admin(), function () use ($app) {

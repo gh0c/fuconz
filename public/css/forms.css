@@ -584,6 +584,9 @@
 .form-container input[type="radio"].rb-input.booking-selector + .radio-div-cont, .form-container input[type="checkbox"].cb-input.booking-selector + .radio-div-cont, .form-container input[type="file"].file-input.booking-selector + .radio-div-cont {
   width: 35em;
 }
+.form-container input[type="radio"].rb-input.winner-selector + .radio-div-cont, .form-container input[type="checkbox"].cb-input.winner-selector + .radio-div-cont, .form-container input[type="file"].file-input.winner-selector + .radio-div-cont {
+  width: 14em;
+}
 .form-container input[type="radio"].rb-input + .checkbox-div-cont, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont, .form-container input[type="file"].file-input + .checkbox-div-cont {
   width: 20em;
 }
@@ -650,6 +653,10 @@
 }
 .form-container input[type="radio"].rb-input.booking-selector + .radio-div-cont > label > span, .form-container input[type="checkbox"].cb-input.booking-selector + .radio-div-cont > label > span, .form-container input[type="file"].file-input.booking-selector + .radio-div-cont > label > span {
   width: 28em;
+  text-align: center;
+}
+.form-container input[type="radio"].rb-input.winner-selector + .radio-div-cont > label > span, .form-container input[type="checkbox"].cb-input.winner-selector + .radio-div-cont > label > span, .form-container input[type="file"].file-input.winner-selector + .radio-div-cont > label > span {
+  width: 11em;
   text-align: center;
 }
 .form-container input[type="radio"].rb-input + .checkbox-div-cont > label:before, .form-container input[type="checkbox"].cb-input + .checkbox-div-cont > label:before, .form-container input[type="file"].file-input + .checkbox-div-cont > label:before {
@@ -770,6 +777,17 @@
   cursor: pointer;
 }
 .form-container .selected-span-cont .remove-selection:hover {
+  color: #ae2e15;
+}
+.form-container .player-selector .remove-selection {
+  position: absolute;
+  width: 2em;
+  font-size: 1.5em;
+  top: 0.5em;
+  right: -50px;
+  cursor: pointer;
+}
+.form-container .player-selector .remove-selection:hover {
   color: #ae2e15;
 }
 .form-container .medium-input-width {

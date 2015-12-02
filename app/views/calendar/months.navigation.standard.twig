@@ -1,0 +1,29 @@
+
+
+<div class="calendar-header clearfix-helper">
+
+    <a class="month-picker-prev navigation-month-changer standard-month-changer"
+       data-handler="prev"
+       data-event="click"
+       title="{{ calendar.cro_month_label(course_constants.read('month.before.month')) }}"
+       data-link = "{{ url_change_view }}"
+       data-date = "{{ course_constants.read('month.before') }}">
+        <span class="fa fa-chevron-left"></span>
+    </a>
+
+    <a class="month-picker-next navigation-month-changer standard-month-changer"
+       data-handler="next"
+       data-event="click"
+       title="{{ calendar.cro_month_label(course_constants.read('month.after.month')) }}"
+       data-link = "{{ url_change_view }}"
+       data-date = "{{ course_constants.read('month.after') }}">
+        <span class="fa fa-chevron-right"></span>
+    </a>
+
+    <div class="month-picker-title">
+        <span class="month-picker-month">{{ calendar.cro_month_label(course_constants.read('selected.month')) }}</span>&nbsp;
+        <span class="month-picker-year">{{ course_constants.read('selected.year') }}.</span>
+    </div>
+
+</div>
+

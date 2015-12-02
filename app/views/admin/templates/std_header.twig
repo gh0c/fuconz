@@ -40,6 +40,9 @@
                     <li class="dropdown{% if active_page == "users" %} active {% endif %}" data-filter="users">
                         <span><i class = "fa fa-users fa-fw"></i> Članovi</span>
                     </li>
+                    <li class="dropdown{% if active_page == "matches" %} active {% endif %}" data-filter="matches">
+                        <span><i class = "fa fa-futbol-o fa-fw"></i> Susreti</span>
+                    </li>
                 </ul>
             </div>
 
@@ -71,6 +74,14 @@
                     <li><a href="{{ urlFor('admin.users.home') }}" {% if active_item == "users.home" %}class = "active"{% endif %}>Početna</a></li>
                     <li><a href="{{ urlFor('admin.users.all.active') }}" {% if active_item == "users.all.active" %}class = "active"{% endif %}>Aktivni članovi</a></li>
                     <li><a href="{{ urlFor('admin.users.all') }}" {% if active_item == "users.all" %}class = "active"{% endif %}>Svi članovi</a></li>
+                </ul>
+            </div>
+
+            <div class="filter filter-matches list-tags">
+                <ul>
+                    <li><a href="{{ urlFor('admin.matches.home') }}" {% if active_item == "matches.home" %}class = "active"{% endif %}>Početna</a></li>
+                    <li><a href="{{ urlFor('admin.matches.games.all') }}" {% if active_item == "matches.games" %}class = "active"{% endif %}>Utakmice</a></li>
+                    <li><a href="{{ urlFor('admin.matches.games.add') }}" {% if active_item == "matches.games.add" %}class = "active"{% endif %}>Nova utakmica</a></li>
                 </ul>
             </div>
 

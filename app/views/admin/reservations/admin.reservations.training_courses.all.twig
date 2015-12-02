@@ -30,7 +30,7 @@
                         <div class = "inner-70pct">
 
                             <div class="submitter submit bbb-flag-v-cibona-blue">
-                                <a href = "{{ urlFor('user.registrations.training_course.new') }}">Dodaj novi termin</a>
+                                <a href = "{{ urlFor('admin.reservations.training_course.new') }}">Dodaj novi termin</a>
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
 
                                             {% if auth_admin.has_role('Site admin') %}
                                                 <div class = "delete course action" title = "Izbriši rezervacijski termin">
-                                                    <a href = "{{ urlFor('admin.registrations.delete.training_course',
+                                                    <a href = "{{ urlFor('admin.reservations.delete.training_course',
                                                     {"course_id":  course.id } ) }}"
                                                        data-confirmation = "Izbrisati rezervacijski termin: {{ course.title }}?">
                                                         <i class="fa fa-remove fa-fw"></i>

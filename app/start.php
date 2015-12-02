@@ -52,13 +52,12 @@ $app->add(new Middleware\BeforeMiddleware());
 $app->add(new Middleware\CsrfMiddleware());
 
 
-if ($app->mode === "development2" && !$app->request->isAjax()) {
+if ($app->mode === "development22" && !$app->request->isAjax()) {
     $app->configureMode($app->config('mode'), function() use ($app) {
 
         // pre-application hook, performs stuff before real action happens @see http://docs.slimframework.com/#Hooks
         $app->hook('slim.before', function () use ($app) {
 
-            $start = microtime(true);
             // SASS-to-CSS compiler @see https://github.com/panique/php-sass
             SassCompiler::run("public/active_scss/", "public/css/");
             // CSS minifier @see https://github.com/matthiasmullie/minify
@@ -76,6 +75,8 @@ if ($app->mode === "development2" && !$app->request->isAjax()) {
             $minifier->add('public/css/match.css');
             $minifier->add('public/css/footer.css');
             $minifier->add('public/css/sideslide_menu.css');
+            $minifier->add('public/css/jquery-ui.custom_theme.css');
+            $minifier->add('public/css/jquery-ui.datepicker.struct.css');
 
             $minifier->minify('public/css/style.css');
 
@@ -85,14 +86,14 @@ if ($app->mode === "development2" && !$app->request->isAjax()) {
             // UNCOMMENT AFTER CHANGING /admin/ STYLES!!!
             // --------------- !!! ----------------------
 
-//            SassCompiler::run("public/scss/admin/", "public/css/admin/");
-//
-//            $minifier = new MatthiasMullie\Minify\CSS('public/css/admin/main.css');
-//            $minifier->add('public/css/admin/header.css');
-//            $minifier->add('public/css/jquery-ui.custom_theme.css');
-//            $minifier->add('public/css/jquery-ui.datepicker.struct.css');
-//            $minifier->add('public/css/admin/tables.css');
-//            $minifier->minify('public/css/admin/admin_style.css');
+            SassCompiler::run("public/active_scss/admin/", "public/css/admin/");
+
+            $minifier = new MatthiasMullie\Minify\CSS('public/css/admin/main.css');
+            $minifier->add('public/css/admin/header.css');
+            $minifier->add('public/css/jquery-ui.custom_theme.css');
+            $minifier->add('public/css/jquery-ui.datepicker.struct.css');
+            $minifier->add('public/css/admin/tables.css');
+            $minifier->minify('public/css/admin/admin_style.css');
 //             --------------- !!! ----------------------
 
 
@@ -128,9 +129,6 @@ $app->container->singleton('hash', function() use ($app) {
 
 $view = $app->view();
 
-//$view->parserOptions = array(
-//    'debug' => $app->config->get('twig.debug')
-//);
 
 $view->parserExtensions = array(
     new TwigExtension(),

@@ -4,6 +4,7 @@
         $loading,
         $unreadMessages,
         $hotBookings,
+        $hotGames,
         $infos,
 
         anim,
@@ -19,6 +20,7 @@
     $loading = null;
     $unreadMessages = null;
     $hotBookings = null;
+    $hotGames = null;
     $infos = null;
 
 
@@ -60,7 +62,9 @@
             $hotBookings.velocity({
                 opacity: 0
             }, 0);
-
+            $hotGames.velocity({
+                opacity: 0
+            }, 0);
             $('main').css("pointer-events", "auto");
             return $('main').velocity({
                 opacity: 1
@@ -203,11 +207,14 @@
         $loading = $('.loading-info-cont');
         $unreadMessages = $("#unread-messages");
         $hotBookings = $("#hot-bookings");
+        $hotGames = $("#hot-games");
 
         anim.fadeInDir($loading, 500, 0, 'block', 0, 20);
 
         var messagesUrl = $("#messages-loader-url").val();
         var reservationsUrl = $("#reservations-loader-url").val();
+        var gamesUrl = $("#games-loader-url").val();
+
         var csrfToken = $("input[name=csrf-token]").val();
 
         var params = {};
@@ -283,7 +290,52 @@
 
                                     $hotBookings.promise().done( function() {
                                         events.attachInfosExpand();
-                                        scenes.endLoading();
+
+                                        console.log("Req3 started");
+                                        var request3 = $.ajax({
+                                            url: gamesUrl,
+                                            type: "POST",
+                                            data: JSON.stringify(params),
+                                            dataType: "html",
+                                            contentType: "application/json; charset=utf-8"
+                                        });
+
+                                        request3.done(function( reply ) {
+                                            console.log("Req3 ended call");
+                                            try {
+                                                var json_o = jQuery.parseJSON(reply);
+                                                if(json_o.error != null) {
+                                                    expandInfoPanel("");
+                                                    errorStatus("Greška! " + json_o.error);
+                                                    return;
+                                                }
+                                            } catch (err) {
+                                            }
+
+                                            $hotGames.html(reply);
+
+                                            if ($hotGames.css("display") == "inline-block") {
+                                            }
+                                            else  {
+
+                                                $hotGames.slideDown(500, function() {
+                                                    anim.fadeInDir($hotGames, 800, 400, 'inline-block', 0, 80, 0, 'spring');
+                                                    $infos = $hotGames.find(".icon-holder.info");
+
+                                                    $hotGames.promise().done( function() {
+                                                        events.attachInfosExpand();
+                                                        scenes.endLoading();
+                                                    });
+                                                });
+                                            }
+                                        });
+                                        request3.fail(function(jqXHr, textStatus, errorThrown){
+                                            console.log("ERROR!");
+                                            console.log(jqXHr);
+                                            console.log(textStatus);
+                                            console.log(errorThrown);
+                                        });
+                                        return;
                                     });
                                 });
                             }

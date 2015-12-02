@@ -2,7 +2,6 @@
 use \app\model\User\User;
 use \app\helpers\Sessions;
 use \app\helpers\Configuration as Cfg;
-use \app\model\Content\ImagesHandler;
 use \app\helpers\Hash;
 
 use \app\model\Reservation\TrainingCourseConstants;

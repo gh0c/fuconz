@@ -31,16 +31,8 @@
                         <div class = "icon-holder std-icon-holder">
                             <div class = "booking-icon-cont std-icon-cont">
                                 <div class = "thumbnail booking booking-icon std-icon no-avatar">
-                                    {#<div class="pic-cont std-pic-cont">#}
-                                        {#{% if my_booking.type == 'prereservation' %}#}
-                                            {#<i class="icon fa fa-fw  fa-clock-o"></i>#}
-                                        {#{% elseif my_booking.type == 'reservation' %}#}
-                                            {#<i class="icon fa fa-fw  fa-calendar-o"></i>#}
-                                        {#{% else %}#}
-                                            {#<i class = "fa icon fa-fw fa-question"></i>#}
-                                        {#{% endif %}#}
-                                    {#</div>#}
-                                    <div class="pic-cont">
+
+                                    <div class="pic-cont std-pic-cont">
                                         {% if my_booking.type == 'prereservation' %}
                                             {% if my_booking.activated == 1 %}
                                                     <i class="icon fa fa-fw fa-check"></i>
@@ -214,6 +206,7 @@
             </div>
         </div>
         {% for my_booking in bookings_ended %}
+
             <div id = "b-{{ my_booking.datetime_span.datetimeIdString() }}" class = "profile-hot-booking item std-item booking-ended">
                 <div class = "inner-box">
                     <section class="td icon">
@@ -221,7 +214,7 @@
                             <div class = "booking-icon-cont std-icon-cont">
                                 <div class = "thumbnail booking booking-icon std-icon no-avatar">
 
-                                    <div class="pic-cont">
+                                    <div class="pic-cont std-pic-cont">
                                         {% if my_booking.type == 'prereservation' %}
                                             {% if my_booking.activated == 1 %}
                                                 <i class="icon fa fa-fw fa-check"></i>

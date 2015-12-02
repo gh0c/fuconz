@@ -50,7 +50,27 @@
                                     <input type="text" name="last-name" id="last-name" required
                                            maxlength="255" spellcheck="false" autocomplete="off" tabindex="3"
                                            class = "std-text-input std-input-width" value = "{{ auth_user.last_name }}"/>
-                                    <label id="last-name-label" alt="Ime" placeholder="Prezime" data-info="Prezime"></label>
+                                    <label id="last-name-label" alt="Prezime" placeholder="Prezime" data-info="Prezime"></label>
+                                </div>
+                            </div>
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="neighborhood" id="neighborhood" required
+                                           maxlength="255" spellcheck="false" autocomplete="off" tabindex="4"
+                                           class = "std-text-input std-input-width" value = "{{ auth_user.neighborhood }}"/>
+                                    <label id="last-name-label" alt="Kvart" placeholder="Kvart" data-info="Kvart"></label>
+                                </div>
+                            </div>
+
+                            <div class = "vertical-section text-centered multirow">
+                                <div class = "inner-70pct">
+                                    <input type="text" name="date-of-birth" id="date-of-birth" required
+                                           value = "{{ ( auth_user.date_of_birth )? auth_user.date_of_birth|date("d.m.Y.") : '' }}"
+                                           maxlength="255" spellcheck="false" autocomplete="on" tabindex="5"
+                                           class = "std-text-input std-input-width datepicker"/>
+                                    <label id="date-of-birth-label" class = "" alt="Datum rođenja"
+                                           placeholder="Datum rođenja" data-info="Datum rođenja"></label>
                                 </div>
                             </div>
 
@@ -59,13 +79,13 @@
                                     <div class = "pp-radio-div">
 
                                         <input type="radio" name="sex" value = "M" id = "sex-male"
-                                               class = "rb-input sex " tabindex="4" {{ (auth_user.sex == 'M')? 'checked="true"' : '' }}>
+                                               class = "rb-input sex " tabindex="6" {{ (auth_user.sex == 'M')? 'checked="true"' : '' }}>
                                         <div class = "radio-div-cont first-left">
                                             <label for = "sex-male"><span>Muško</span><i class = "fa fa-fw fa-male"></i></label>
                                         </div>
 
                                         <input type="radio" name="sex" value = "F" id = "sex-female"
-                                               class = "rb-input sex" tabindex="5" {{ (auth_user.sex == 'F')? 'checked="true"' : '' }}>
+                                               class = "rb-input sex" tabindex="7" {{ (auth_user.sex == 'F')? 'checked="true"' : '' }}>
                                         <div class = "radio-div-cont second-left">
                                             <label for = "sex-female"><span>Žensko</span><i class = "fa fa-fw fa-female" ></i></label>
                                         </div>
@@ -126,6 +146,8 @@
                     valSub();
                 }
             });
+
+            $(".datepicker").datepicker( { defaultDate: '10.04.1990.' }, $.datepicker.regional[ "hr" ]);
         });
     </script>
 {% endblock %}

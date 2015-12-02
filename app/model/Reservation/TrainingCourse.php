@@ -147,6 +147,8 @@ class TrainingCourse {
                 $status["success"] = true;
                 return $status;
             } catch (\Exception $e) {
+                $dbh->rollback();
+
                 $status["success"] = false;
                 $status["err"] = $e->getMessage();
                 return $status;

@@ -1,4 +1,4 @@
-@import "../scss/modules/_modules.import";
+@import "modules/modules.import";
 
 #header {
   position: relative;
@@ -112,12 +112,16 @@
 //
       img.soc-net-logo {
         vertical-align: top;
+        @include responsive-w-max(899px) {
+          display: none;
+        }
       }
 
       div.home-cont {
 //        float: left;
 
 //        width: 25em;
+        margin-left: 1em;
         height: 4em;
         display: inline-table;
         & > div {
@@ -149,7 +153,7 @@
         }
 
         .welcome-name {
-          @include responsive-w-max(1150px) {
+          @include responsive-w-max(1149px) {
             display: none;
           }
           width: 16em;
@@ -313,7 +317,10 @@
       .filter {
         display: none;
         overflow: hidden;
-        padding: 8px 20px 8px 240px;
+        padding: 2px 10px 2px 10px;
+        @include responsive-w-min(900px) {
+          padding: 4px 20px 4px 20px;
+        }
       }
 
       .list-tags {
@@ -325,14 +332,41 @@
         li {
           position: relative;
           float: left;
-          margin: 0 12px 6px 2px;
-          line-height: 29px;
+          margin: 1px 6px 1px 6px;
           font-size: 15px;
+
+          .fa {
+            font-size: 25px;
+          }
+
+          @include responsive-w-min(700px) {
+            .fa {
+              font-size: 15px;
+            }
+            margin: 4px 5px 4px 5px;
+          }
+          @include responsive-w-min(800px) {
+            margin: 2px 8px 4px 8px;
+          }
+          @include responsive-w-min(1000px) {
+            margin: 4px 8px 4px 12px;
+          }
+
           a {
             display: block;
-            height: 28px;
-            line-height: 28px;
-            padding: 0 14px;
+//            height: 28px;
+//            line-height: 28px;
+            padding: 8px 15px;
+
+            @include responsive-w-min(700px) {
+              padding: 6px 4px;
+            }
+            @include responsive-w-min(800px) {
+              padding: 6px 10px;
+            }
+            @include responsive-w-min(1000px) {
+              padding: 6px 15px;
+            }
             //          background: #d4d5d6;
             color: $dark-dark-blue;
             @include pp-transition(background-color .25s ease-out, color .25s ease-out);
@@ -343,6 +377,11 @@
                 width: 1.4em;
                 display: inline-block;
                 text-align: center;
+              }
+            }
+            span.link-label-fw {
+              @include responsive-w-max(699px) {
+                display: none;
               }
             }
             .unread-exists {
@@ -379,12 +418,12 @@
 
 
         }
-        li {
-          border-left: 2px dashed $dark-dark-blue;
-        }
-        li:first-child {
-          border-left: none;
-        }
+//        li {
+//          border-left: 2px dashed $dark-dark-blue;
+//        }
+//        li:first-child {
+//          border-left: none;
+//        }
       }
     }
 

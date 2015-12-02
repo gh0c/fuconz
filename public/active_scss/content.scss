@@ -34,6 +34,26 @@
     }
   }
 
+  .main-subtitle-box {
+    width: 100%;
+    background-color: $dark-dark-blue;
+    .flag {
+      @include gradient-pole-black-blue-white-1();
+      height: 4px;
+    }
+    .page-title {
+      text-align: center;
+      font-family: MuseoSans;
+      font-weight: 500;
+      padding: 6px 0 4px 0px;
+      h2{
+        color: $light-blue-gray-light;
+        font-size: 1.5em;
+//        text-transform: uppercase;
+      }
+    }
+  }
+
   .main-content-box {
     width: 100%;
     background-color: $main-content-bg-color;
@@ -177,7 +197,7 @@
     }
 
 
-      .std-item {
+    .std-item {
       .std-icon-holder {
         display: inline-table;
         .std-icon-cont {
@@ -238,7 +258,6 @@
       }
       i {
         font-size: 10em;
-        vertical-align: middle;
         display: inline-block;
         vertical-align: middle;
       }

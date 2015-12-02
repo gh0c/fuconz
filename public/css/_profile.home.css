@@ -662,7 +662,7 @@
   box-sizing: border-box;
   margin: auto;
 }
-.profile-container.main #unread-messages, .profile-container.main #hot-bookings {
+.profile-container.main #unread-messages, .profile-container.main #hot-bookings, .profile-container.main #hot-games {
   vertical-align: top;
   margin-top: 1em;
   display: inline-block;
@@ -670,42 +670,42 @@
   font-weight: 700;
   color: #edf0f4;
 }
-.profile-container.main #unread-messages .std-item.subtitle, .profile-container.main #hot-bookings .std-item.subtitle {
+.profile-container.main #unread-messages .std-item.subtitle, .profile-container.main #hot-bookings .std-item.subtitle, .profile-container.main #hot-games .std-item.subtitle {
   display: inline-block;
   margin: 0 auto 0.5em auto;
 }
-.profile-container.main #unread-messages .std-item.subtitle > div, .profile-container.main #hot-bookings .std-item.subtitle > div {
+.profile-container.main #unread-messages .std-item.subtitle > div, .profile-container.main #hot-bookings .std-item.subtitle > div, .profile-container.main #hot-games .std-item.subtitle > div {
   display: inline-table;
   height: 2em;
   vertical-align: top;
   background-color: #edf0f4;
 }
-.profile-container.main #unread-messages .std-item.subtitle > div:first-of-type, .profile-container.main #hot-bookings .std-item.subtitle > div:first-of-type {
+.profile-container.main #unread-messages .std-item.subtitle > div:first-of-type, .profile-container.main #hot-bookings .std-item.subtitle > div:first-of-type, .profile-container.main #hot-games .std-item.subtitle > div:first-of-type {
   padding-left: 1em;
 }
-.profile-container.main #unread-messages .std-item.subtitle > div:last-of-type, .profile-container.main #hot-bookings .std-item.subtitle > div:last-of-type {
+.profile-container.main #unread-messages .std-item.subtitle > div:last-of-type, .profile-container.main #hot-bookings .std-item.subtitle > div:last-of-type, .profile-container.main #hot-games .std-item.subtitle > div:last-of-type {
   padding-right: 3em;
 }
-.profile-container.main #unread-messages .std-item.subtitle .subtitle-holder, .profile-container.main #hot-bookings .std-item.subtitle .subtitle-holder {
+.profile-container.main #unread-messages .std-item.subtitle .subtitle-holder, .profile-container.main #hot-bookings .std-item.subtitle .subtitle-holder, .profile-container.main #hot-games .std-item.subtitle .subtitle-holder {
   color: #0c131d;
 }
-.profile-container.main #unread-messages .std-item.subtitle .subtitle-holder span, .profile-container.main #hot-bookings .std-item.subtitle .subtitle-holder span {
+.profile-container.main #unread-messages .std-item.subtitle .subtitle-holder span, .profile-container.main #hot-bookings .std-item.subtitle .subtitle-holder span, .profile-container.main #hot-games .std-item.subtitle .subtitle-holder span {
   display: table-cell;
   vertical-align: middle;
   padding: 0px 8px;
 }
-.profile-container.main #unread-messages .std-item.subtitle .icon-holder, .profile-container.main #hot-bookings .std-item.subtitle .icon-holder {
+.profile-container.main #unread-messages .std-item.subtitle .icon-holder, .profile-container.main #hot-bookings .std-item.subtitle .icon-holder, .profile-container.main #hot-games .std-item.subtitle .icon-holder {
   width: 3em;
 }
-.profile-container.main #unread-messages .std-item.subtitle .icon-holder .message-icon-cont .message-icon, .profile-container.main #hot-bookings .std-item.subtitle .icon-holder .message-icon-cont .message-icon {
+.profile-container.main #unread-messages .std-item.subtitle .icon-holder .message-icon-cont .message-icon, .profile-container.main #hot-bookings .std-item.subtitle .icon-holder .message-icon-cont .message-icon, .profile-container.main #hot-games .std-item.subtitle .icon-holder .message-icon-cont .message-icon {
   width: 1.75em;
   height: 1.75em;
 }
-.profile-container.main #unread-messages .std-item.subtitle .icon-holder .message-icon-cont .message-icon .pic-cont > .icon, .profile-container.main #hot-bookings .std-item.subtitle .icon-holder .message-icon-cont .message-icon .pic-cont > .icon {
+.profile-container.main #unread-messages .std-item.subtitle .icon-holder .message-icon-cont .message-icon .pic-cont > .icon, .profile-container.main #hot-bookings .std-item.subtitle .icon-holder .message-icon-cont .message-icon .pic-cont > .icon, .profile-container.main #hot-games .std-item.subtitle .icon-holder .message-icon-cont .message-icon .pic-cont > .icon {
   color: #0c131d;
   font-size: 1em;
 }
-.profile-container.main #unread-messages .external-link-holder, .profile-container.main #hot-bookings .external-link-holder {
+.profile-container.main #unread-messages .external-link-holder, .profile-container.main #hot-bookings .external-link-holder, .profile-container.main #hot-games .external-link-holder {
   display: block;
   width:  - 2em;
   -webkit-transition: all 0.35s ease-out;
@@ -719,7 +719,7 @@
   padding: 3px 0;
   margin: 1em;
 }
-.profile-container.main #unread-messages .external-link-holder:hover, .profile-container.main #hot-bookings .external-link-holder:hover {
+.profile-container.main #unread-messages .external-link-holder:hover, .profile-container.main #hot-bookings .external-link-holder:hover, .profile-container.main #hot-games .external-link-holder:hover {
   background-color: #edf0f4;
   color: #0c131d;
 }
@@ -955,9 +955,6 @@
   width: 2em;
   position: relative;
 }
-.profile-container.main #hot-bookings .std-item.profile-hot-booking section.td.icon .icon-holder .booking-icon-cont .booking-icon .pic-cont > .icon {
-  font-size: 1.5em;
-}
 .profile-container.main #hot-bookings .std-item.profile-hot-booking section.td.icon .icon-holder .booking-icon-cont .booking-icon .overlay-pic-cont {
   position: absolute;
   width: 100%;
@@ -1034,6 +1031,13 @@
   height: 2.375em;
   position: relative;
 }
+.profile-container.main #hot-bookings .std-item.profile-hot-booking section.td.cancelation .icon-holder .cancelation-icon-cont .cancelation-icon .pic-cont > .icon {
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
 .profile-container.main #hot-bookings .std-item.profile-hot-booking section.td.cancelation .icon-holder:hover {
   background-color: #0c131d;
   color: #edf0f4;
@@ -1062,17 +1066,17 @@
 .profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-not-allowed .td.icon .icon-holder .booking-icon {
   height: 2.375em;
 }
-.profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-not-allowed .td.icon .icon-holder .booking-icon .overlay-pic-cont .icon-o {
+.profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-not-allowed .td.icon .icon-holder .booking-icon .pic-cont > .icon {
   font-size: 2em;
   color: #0c131d;
 }
-.profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-not-allowed .td.icon .icon-holder .booking-icon .overlay-pic-cont .icon-o.fa-check {
+.profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-not-allowed .td.icon .icon-holder .booking-icon .pic-cont > .icon.fa-check {
   color: #1f6d4d;
 }
-.profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-not-allowed .td.icon .icon-holder .booking-icon .overlay-pic-cont .icon-o.fa-times {
+.profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-not-allowed .td.icon .icon-holder .booking-icon .pic-cont > .icon.fa-times {
   color: #8d2d24;
 }
-.profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-not-allowed .td.icon .icon-holder .booking-icon .overlay-pic-cont .icon-o.fa-question {
+.profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-not-allowed .td.icon .icon-holder .booking-icon .pic-cont > .icon.fa-question {
   color: rgba(18, 64, 141, .9);
 }
 .profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-ended .td.icon .icon-holder {
@@ -1153,13 +1157,320 @@
 .profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-allowed .td.icon .icon-holder .booking-icon .pic-cont {
   color: white;
 }
+.profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-allowed .td.icon .icon-holder .booking-icon .pic-cont > .icon {
+  font-size: 1.5em;
+}
 .profile-container.main #hot-bookings .std-item.profile-hot-booking.booking-allowed .td.icon .icon-holder .booking-icon .overlay-pic-cont .icon-o {
   color: #edf0f4;
   font-size: 0.85em;
   position: absolute;
   right: -10px;
 }
+.profile-container.main #hot-games {
+  width: 23.5em;
+  text-align: center;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.profile-container.main #hot-games .games-label-holder {
+  text-align: left;
+}
+.profile-container.main #hot-games .games-label-holder .games-label {
+  width: 14em;
+  height: 1.75em;
+  display: inline-table;
+  position: relative;
+  padding: 0 0.5em;
+  box-sizing: border-box;
+  text-align: left;
+  -webkit-transition: all 0.45s ease-out;
+  -moz-transition: all 0.45s ease-out;
+  -o-transition: all 0.45s ease-out;
+  -ms-transition: all 0.45s ease-out;
+  transition: all 0.45s ease-out;
+  background-color: #12408d;
+  color: white;
+}
+.profile-container.main #hot-games .games-label-holder .games-label > span {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 0.8em;
+}
+.profile-container.main #hot-games .profile-stats span {
+  font-size: 0.95em;
+}
+.profile-container.main #hot-games .profile-stats .tr {
+  height: 2em;
+  text-align: left;
+}
+.profile-container.main #hot-games .profile-stats .tr .td {
+  display: inline-table;
+  height: 100%;
+}
+.profile-container.main #hot-games .profile-stats .tr .td span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.profile-container.main #hot-games .profile-stats .td.thl {
+  width: 9em;
+}
+.profile-container.main #hot-games .profile-stats .td.cont {
+  width: 6em;
+  backgroun-color: brown;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game {
+  width: 23.5em;
+  display: block;
+  text-align: center;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game .inner-box {
+  padding: 4px 0 3px 0;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td {
+  border: 0;
+  display: table-cell;
+  vertical-align: top;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon {
+  width: 3em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder {
+  width: 3em;
+  height: 2.375em;
+  background-color: #edf0f4;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder .game-icon-cont .game-icon {
+  width: 2em;
+  position: relative;
+  height: 2.375em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder .game-icon-cont .game-icon .pic-cont > .icon {
+  font-size: 1.9em;
+  color: #0c131d;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder .game-icon-cont .game-icon .pic-cont > .icon.victory {
+  color: #1f6d4d;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder .game-icon-cont .game-icon .pic-cont > .icon.loss {
+  color: #8d2d24;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder .game-icon-cont .game-icon .pic-cont > .icon.draw {
+  color: #eaaf51;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder .game-icon-cont .game-icon .pic-cont > .icon.fa-question {
+  color: rgba(18, 64, 141, .9);
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder .game-icon-cont .game-icon .overlay-pic-cont {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  clip: rect(auto 22px auto auto);
+  /* IE4 to IE7 */
+  clip: rect(auto, 22px, auto, auto);
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder .game-icon-cont .game-icon .overlay-pic-cont .icon-o {
+  font-size: 1.9em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder .game-icon-cont .game-icon .overlay-pic-cont .icon-o.victory {
+  color: #1f6d4d;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder .game-icon-cont .game-icon .overlay-pic-cont .icon-o.loss {
+  color: #8d2d24;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder .game-icon-cont .game-icon .overlay-pic-cont .icon-o.draw {
+  color: #eaaf51;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.icon .icon-holder .game-icon-cont .game-icon .overlay-pic-cont .icon-o.fa-question {
+  color: rgba(18, 64, 141, .9);
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.label {
+  width: 15em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.label span {
+  font-size: 0.95em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.info {
+  width: 2.5em;
+  position: relative;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.info .info-overlay, .profile-container.main #hot-games .std-item.profile-hot-game section.td.info .info-overlay-right {
+  display: none;
+  position: absolute;
+  top: 0;
+  height: 2.375em;
+  z-index: 2;
+  right: 2.5em;
+  color: #0c131d;
+  background-color: #edf0f4;
+  width: 15em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.info .info-overlay .info-holder, .profile-container.main #hot-games .std-item.profile-hot-game section.td.info .info-overlay-right .info-holder {
+  position: relative;
+  display: inline-table;
+  height: 100%;
+  width: 15em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.info .info-overlay .info-holder > div, .profile-container.main #hot-games .std-item.profile-hot-game section.td.info .info-overlay-right .info-holder > div {
+  display: inline-table;
+  width: 15em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.info .info-overlay .info-holder > div span, .profile-container.main #hot-games .std-item.profile-hot-game section.td.info .info-overlay-right .info-holder > div span {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.info .info-overlay .info-holder > span, .profile-container.main #hot-games .std-item.profile-hot-game section.td.info .info-overlay-right .info-holder > span {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.info .icon-holder {
+  width: 2.5em;
+  height: 2.375em;
+  cursor: pointer;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.info .icon-holder .info-icon-cont .info-icon {
+  width: 2em;
+  height: 2.375em;
+  position: relative;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.info .icon-holder .info-icon-cont .info-icon .pic-cont > .icon {
+  color: #eaeef1;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  -o-transition: all 0.15s ease-out;
+  -ms-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.info .icon-holder:hover .pic-cont > .icon {
+  text-shadow: 0px 0px 0.3em #edf0f4;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.ext-link {
+  width: 3em;
+  position: relative;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.ext-link .icon-holder {
+  width: 3em;
+  height: 2.375em;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.ext-link .icon-holder .ext-link-icon-cont .ext-link-icon {
+  width: 2em;
+  height: 2.375em;
+  position: relative;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.ext-link .icon-holder .ext-link-icon-cont .ext-link-icon .pic-cont > .icon {
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.ext-link .icon-holder .ext-link-icon-cont:hover {
+  background-color: #12408d;
+  color: #edf0f4;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game section.td.ext-link .icon-holder .ext-link-icon-cont:hover .pic-cont > .icon {
+  color: #ae2e15;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-ended .td.icon .icon-holder {
+  background-color: #0c131d;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-ended .td.icon .icon-holder .booking-icon {
+  height: 2.375em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-ended .td.icon .icon-holder .booking-icon .pic-cont .icon {
+  color: #edf0f4;
+  font-size: 1.25em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-ended .td.icon .icon-holder .booking-icon .pic-cont .icon.fa-check {
+  color: #1f6d4d;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-ended .td.icon .icon-holder .booking-icon .pic-cont .icon.fa-times {
+  color: #8d2d24;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-ended .td.icon .icon-holder .booking-icon .pic-cont .icon.fa-question {
+  color: #edf0f4;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay, .profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay-right {
+  color: white;
+  background-color: #12408d;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay .info-holder, .profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay-right .info-holder {
+  height: 100%;
+  display: inline-table;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay .info-holder .datetime-holder, .profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay-right .info-holder .datetime-holder, .profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay .info-holder .availability-holder, .profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay-right .info-holder .availability-holder {
+  display: block;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay .info-holder .datetime-holder .datetime, .profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay-right .info-holder .datetime-holder .datetime {
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay .info-holder .datetime-holder .datetime span.time, .profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay-right .info-holder .datetime-holder .datetime span.time {
+  font-weight: 300;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay {
+  right: 2.5em;
+  width: 15em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay .info-holder {
+  width: 15em;
+  text-align: left;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay .info-holder .datetime-holder {
+  width: 15em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay .info-holder .availability-holder {
+  width: 15em;
+  text-align: center;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay .info-holder .availability-holder > span {
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay-right {
+  left: 2.5em;
+  width: 8em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay-right .info-holder {
+  width: 8em;
+  text-align: left;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.info .info-overlay-right .info-holder .datetime-holder {
+  width: 8em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.icon .icon-holder {
+  background-color: #12408d;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.icon .icon-holder .booking-icon {
+  height: 2.375em;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.icon .icon-holder .booking-icon .pic-cont {
+  color: white;
+}
+.profile-container.main #hot-games .std-item.profile-hot-game.booking-allowed .td.icon .icon-holder .booking-icon .pic-cont > .icon {
+  font-size: 1.5em;
+}
 .profile-container.main .general-holder {
   margin: 0 auto;
-  width: 63.5em;
+  width: 33em;
+}
+@media only screen and (min-width: 63.5em) {
+  .profile-container.main .general-holder {
+    width: 63.5em;
+  }
+}
+@media only screen and (min-width: 89em) {
+  .profile-container.main .general-holder {
+    width: 89em;
+  }
 }

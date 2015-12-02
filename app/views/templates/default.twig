@@ -5,41 +5,39 @@
     <title>{% block title %} {% endblock %}</title>
 </head>
 
-
 <body>
+    <div class = "pp-a-box container">
+
+        <!-- sidebar for logged users -->
+        {%  if auth_user.show_sidebar %}
+            {% include 'user/user.sidebar.twig' %}
+        {% endif %}
+
+        <div class = "content-wrap">
+            <div class = "content">
 
 
-<div class = "pp-a-box container">
+                {% include 'templates/std_header.twig'%}
 
-    <!-- sidebar for logged users -->
-    {%  if auth_user.show_sidebar %}
-        {% include 'user/user.sidebar.twig' %}
-    {% endif %}
-
-    <div class = "content-wrap">
-        <div class = "content">
+                <section id = "content">
+                    <!-- main content, will be injected via Twig -->
+                    {% block content %} {% endblock %}
+                </section>
 
 
-            {% include 'templates/std_header.twig'%}
-
-            <section id = "content">
-                <!-- main content, will be injected via Twig -->
-                {% block content %} {% endblock %}
-            </section>
-
-
-            {% include 'templates/std_footer.twig'%}
+                {% include 'templates/std_footer.twig'%}
+            </div>
         </div>
     </div>
-</div>
 
-{% if auth_user.show_sidebar %}
-<script src="public/js/SideslideSidebar/classie.js"></script>
-<script src="public/js/SideslideSidebar/main.js"></script>
-{% endif %}
+    {% if auth_user.show_sidebar %}
+    <script src="public/js/SideslideSidebar/classie.js"></script>
+    <script src="public/js/SideslideSidebar/main.js"></script>
+    {% endif %}
 
 {% include 'templates/partials/foot_info.twig'%}
 
 {% block additional_js %} {% endblock %}
 </body>
+
 </html>

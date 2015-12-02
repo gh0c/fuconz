@@ -3,7 +3,6 @@ use \app\model\User\User;
 use \app\model\User\Player;
 use \app\helpers\Sessions;
 use \app\helpers\Configuration as Cfg;
-use \app\model\Content\ImagesHandler;
 use \app\helpers\Hash;
 
 use \app\model\Reservation\TrainingCourseConstants;
@@ -16,8 +15,30 @@ use \app\helpers\Calendar;
 
 use \app\model\Messages\Logger;
 
+use \app\model\Match\Game;
 
 
+$app->group('/clanovi', function () use ($app, $authenticated_user) {
+
+    $app->group('/susreti', function() use ($app, $authenticated_user){
+
+        $app->get('/utakmica/:game_id', $authenticated_user(), function($game_id) use ($app) {
+            $game = Game::getById($game_id);
+            if($game) {
+                $app->render('user/matches/game.twig', array(
+                    'user' => $app->auth_user,
+                    'game' => $game,
+                    'game_id' => $game->id,
+                    "teams" => array(
+                        "teamOne" => $game->players_team_one,
+                        "teamTwo" => $game->players_team_two
+                    )
+                ));
+            }
+
+        })->name('user.matches.game');
+    });
+});
 
 $app->get('/game', function() use ($app) {
 

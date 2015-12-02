@@ -16,6 +16,7 @@
         $subHeading,
         $switchBtn,
         $switcher,
+        $gameData,
         $team,
         $stubTeam,
         $teamListTeamOne,
@@ -59,6 +60,7 @@
     $subHeading = null;
     $loading = null;
     $switcher = null;
+    $gameData = null;
 
     // dimensions of field: 40em x 20em = 640px x 320px
     positions5playersTeamOne = [
@@ -143,13 +145,6 @@
             dom_PlayersTeamOne.each(function(index) {
                 data.players.teamOne.push({
                     name: $(this).data("name"),
-                    origin: 'Brazil',
-                    height: '1.88m',
-                    shirt: '3',
-                    pos: 'Defence',
-                    dob: '32',
-                    goals: 0,
-                    games: 34,
                     side: "teamOne",
                     x: positionsTeamOne[playersInTeamOneInd][index].x,
                     y: positionsTeamOne[playersInTeamOneInd][index].y,
@@ -176,13 +171,6 @@
             dom_PlayersTeamTwo.each(function(index) {
                 data.players.teamTwo.push({
                     name: $(this).data("name"),
-                    origin: 'Brazil',
-                    height: '1.88m',
-                    shirt: '3',
-                    pos: 'Defence',
-                    dob: '32',
-                    goals: 0,
-                    games: 34,
                     side: "teamTwo",
                     x: positionsTeamOne[playersInTeamTwoInd][index].x,
                     y: positionsTeamOne[playersInTeamTwoInd][index].y,
@@ -361,6 +349,9 @@
             $switcher.velocity({
                 opacity: 0
             }, 0);
+            $gameData.velocity({
+                opacity: 0
+            }, 0);
             $heading.velocity({
                 opacity: 0
             }, 0);
@@ -402,6 +393,9 @@
             anim.fadeInDir($teamListTeamOne, 300, delay + 800, 'block', 0, 30);
 
             anim.fadeInDir($switcher, 400, delay + 900, 'block', 0, 30);
+
+            anim.fadeInDir($gameData, 400, delay + 900, 'block', 0, 30);
+
             delay += 1200;
             delayInc = 30;
 
@@ -663,6 +657,7 @@
         $loadBtn = $('.js-load');
         $heading = $('.js-heading');
         $switcher = $('.js-switcher');
+        $gameData = $('.game-data-holder');
         $closeBtn = $('.js-close');
         $subHeading = $('.js-subheading');
         $terrain = $('.js-terrain');

@@ -16,6 +16,10 @@ class Player extends User
     public $avatar_img_tag = null;
     public $avatar_img_url = "";
 
+
+    public $number_of_apps = null;
+    public $number_of_wins = null;
+
     function __construct($input_data = array())
     {
         parent::__construct($input_data);
@@ -26,6 +30,8 @@ class Player extends User
 //            $this->avatar_img_tag = $this->returnClImageTag("avatar", array("width" => 50, "height" => 50, "crop" => "fill"));
             $this->avatar_img_url = $this->getAvatarURL("avatar", array("width" => 50, "height" => 50, "crop" => "fill"));
         }
+        $this->number_of_apps = parent::numberOfAppearances();
+        $this->number_of_wins = parent::numberOfWins();
 
     }
 
