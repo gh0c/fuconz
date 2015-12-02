@@ -41,7 +41,7 @@ class Prereservation {
             $this->activated = (int) $input_data['activated'];
 
         if ( isset( $input_data['training_course_id'] ) )
-            $this->course_id = (int) $input_data['training_course_id'];
+            $this->training_course_id = (int) $input_data['training_course_id'];
         if ( isset( $input_data['datetime_span_id'] ) ) {
             $this->datetime_span_id = (int) $input_data['datetime_span_id'];
             $this->datetime_span = DatetimeSpan::getById($this->datetime_span_id);
@@ -169,7 +169,7 @@ class Prereservation {
                 $s_course_id);
             $training_course = TrainingCourse::getCourseById($s_course_id);
 
-            $number_of_existing_reservations = Reservation::number_of_reservations_for_datetime_and_course($training_course->id, $datetime_span->id);
+            $number_of_existing_reservations = Reservation::numberOfReservationsForDatetimeAndCourse($datetime_span->id, $training_course->id);
             if($number_of_existing_reservations < $training_course->capacity) {
                 $available_datetime_spans[] = $selected_span;
                 $available_datetime_spans_description_labels[] = $datetime_span->descriptionString();

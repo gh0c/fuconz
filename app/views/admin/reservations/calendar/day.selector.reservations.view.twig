@@ -1,0 +1,31 @@
+
+<div class = "day-container{{ (day_passed) ? ' day-ended' : '' }}">
+
+
+    {% set datetime_spans = datetimes.getByDate(curr_date) %}
+    {% if datetime_spans|length > 0 %}
+        <div class = "booking-slots-exists"></div>
+
+        <div class = "booking-slots">
+            <div class = "bookings-container">
+            {% for span in datetime_spans %}
+
+                <div class = "booking">
+
+                    <a class = "clickable" href = "{{ urlFor('admin.reservations.span.details', {"span_id": span.id}) }}"
+                       title = "{{ span.descriptionString() }}">
+                        <div class = "legend-icon-cont">
+                            <i class = "fa fa-fw fa-calendar-check-o mega" ></i>
+                        </div>
+                        <div class = "duration-cont">
+                            <span class = "times">{{ span.start_time }}</span>
+                        </div>
+                    </a>
+
+                </div>
+
+            {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+</div>

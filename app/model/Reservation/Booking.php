@@ -16,6 +16,16 @@ class Booking
         return null;
     }
 
+
+    public static function getByDatetimeSpan($datetime_span_id)
+    {
+        $reservations = Reservation::getByDatetimeSpan($datetime_span_id);
+        $prereservations = Prereservation::getUnactivatedByDatetimeSpan($datetime_span_id);
+        $all_bookings = array_merge($reservations, $prereservations);
+        usort($all_bookings, array('app\model\Reservation\Booking', "sortByCreatedAt"));
+        return $all_bookings;
+    }
+
     public static function existsForUser($userId)
     {
         if (Reservation::existsForUser($userId) || Prereservation::existsForUser($userId))
@@ -29,6 +39,18 @@ class Booking
     {
         if(strtotime($b->datetime_span->span_start) != strtotime($a->datetime_span->span_start)) {
             return strtotime($b->datetime_span->span_start) - strtotime($a->datetime_span->span_start);
+        }
+        else {
+            if($b->type == "prereservation")
+                return -1;
+            return 1;
+        }
+    }
+
+    private static function sortByCreatedAt($a, $b)
+    {
+        if(strtotime($b->created_at) != strtotime($a->created_at)) {
+            return strtotime($b->created_at) - strtotime($a->created_at);
         }
         else {
             if($b->type == "prereservation")

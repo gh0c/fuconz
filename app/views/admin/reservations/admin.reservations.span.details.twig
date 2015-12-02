@@ -1,0 +1,152 @@
+{% extends "admin/templates/default.twig" %}
+
+{% block title %}
+    Termin {{ span.descriptionString() }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-subtitle-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h2>{{ span.descriptionString() }}</h2>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            <div class = "inner-cont">
+
+
+                {% include "admin/templates/partials/admin_messages.twig" %}
+
+                <div class = "content-column">
+
+                    <div class = "vertical-section text-centered">
+                        <h3>Rezervacije</h3>
+                    </div>
+
+                    <div class = "table-container">
+
+                        <div class = "heading-container">
+                            <div class = "th width-4-and-half-em margin-std-lr">
+                                <h4></h4>
+                            </div><!--
+                            --><div class = "th width-15em margin-std-lr">
+                                <h4>Korisnik</h4>
+                            </div><!--
+                            --><div class = "th width-10em margin-std-lr">
+                                <h4>Prijavljeno</h4>
+                            </div><!--
+
+                            --><div class = "th width-20em margin-std-lr">
+                                <h4>Status</h4>
+                            </div>
+                        </div>
+
+                        <div class = "rows-container">
+
+                            {% for booking in bookings %}
+                                <div class = "tr height-2-and-half-em">
+
+                                    <div class = "td width-4-and-half-em margin-std-lr home-icon-cont text-centered">
+                                        <div class = "thumbnail booking booking-icon">
+                                            <div class="pic-cont std-pic-cont">
+                                                {% if booking.type == 'reservation' %}
+                                                    <i class = "fa icon fa-fw fa-calendar-check-o"></i>
+                                                {% elseif booking.type == 'prereservation' %}
+                                                    <i class = "fa icon fa-fw fa-clock-o"></i>
+                                                {% else %}
+                                                    <i class = "fa icon fa-fw fa-question"></i>
+                                                {% endif %}
+                                            </div>
+                                            {% if booking.type == 'reservation' and booking.triggered == 1%}
+                                                <div class = "overlay-pic-cont std-pic-cont" title = "Aktivirana predbilježba">
+                                                    <i class = "fa fa-fw icon-o fa-exclamation"></i>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div><!--
+                                    --><div class = "td width-15em margin-std-lr text-left">
+                                        <span>{{ booking.user.username }} ({{ booking.user.full_name() }})</span>
+                                    </div><!--
+                                    --><div class = "td width-10em margin-std-lr text-left">
+                                        <span>{{ booking.created_at|date('j.m.Y. H:i') }}</span>
+                                    </div><!--
+                                    --><div class = "td width-20em margin-std-lr text-left">
+                                        {% if booking.type == 'prereservation' %}
+                                            {% if booking.activated == 2 %}
+                                                <span>Otpala predbilježba za popunjeni termin</span>
+                                            {% elseif booking.activated == 1 %}
+                                                <span>Aktivirana predbilježba</span>
+                                            {% else %}
+                                                <span>Predbilježba zasad nepoznatog statusa</span>
+                                            {% endif %}
+                                        {% elseif booking.type == 'reservation' %}
+                                            {% if booking.canceled == 1 %}
+                                                <span>Poništena rezervacija za otkazani temin</span>
+                                            {% elseif booking.canceled == 2 %}
+                                                <span>Potvrđeno održavanje termina</span>
+                                                {% if booking.triggered == 1 %}
+                                                    <br><span>Rezervacija aktivirana predbilježbom</span>
+                                                {% endif %}
+                                            {% else %}
+                                                <span>Rezervacija zasad nepoznatog statusa</span>
+                                            {% endif %}
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+                    {% if logs|length > 0 %}
+                    <div class = "vertical-section text-centered">
+                        <h3>Zapisi o terminu</h3>
+                    </div>
+
+                    <div class = "table-container">
+
+                        <div class = "heading-container">
+                            <div class = "th width-10em margin-std-lr">
+                                <h4>Uneseno</h4>
+                            </div><!--
+                            --><div class = "th width-40em margin-std-lr">
+                                <h4>Zapis</h4>
+                            </div>
+                        </div>
+
+                        <div class = "rows-container">
+
+                        {% for log in logs %}
+                            <div class = "tr ">
+                                <div class = "td-spec width-10em margin-std-lr text-left">
+                                    <span>{{ log.created_at|date('j.m.Y. H:i') }}</span>
+                                </div><!--
+                                --><div class = "td-spec margin-std-lr text-left width-40em">
+                                    <div class = "log-cont">
+                                        {{ text_help.wrapContentWithTags(log.message_body, span.descriptionString(),
+                                            'bold-text', 'span')|raw }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

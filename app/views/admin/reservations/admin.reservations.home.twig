@@ -24,15 +24,16 @@
 
                 {% include "admin/templates/partials/admin_messages.twig" %}
 
+                {% include "calendar/wrapper.twig" %}
 
-                <div class = "pp-content">
-                    <p>
-                        <span>Admin: {{ auth_admin.username }}</span>
-                    </p>
+                <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
 
-                </div>
             </div>
         </div>
     </div>
 
+{% endblock %}
+
+{% block additional_js %}
+    <script type="text/javascript" src="public/js/calendar.js?{{ "now"|date("YmdHis") }}"></script>
 {% endblock %}

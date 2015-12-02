@@ -1,13 +1,13 @@
 <?php
 use \app\model\User\User;
 use \app\model\Reservation\TrainingCourse;
-use app\helpers\Sessions;
-use app\helpers\Configuration as Cfg;
-use app\model\Content\ImagesHandler;
-use app\helpers\Hash;
-use app\model\Admin\Admin;
 
+use \app\model\Reservation\Booking;
+use \app\model\Reservation\DatetimeSpan;
+use \app\model\Reservation\TrainingCourseConstants;
+use \app\helpers\Calendar;
 
+use \app\model\Messages\ActionLog;
 
 $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
 
@@ -17,11 +17,57 @@ $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
 
 
     $app->get('/pocetna', $authenticated_admin(), function () use ($app) {
+
+        $calendar = new Calendar();
+        $course_constants = new TrainingCourseConstants();
+        $course_constants::set_default_values();
+        $datetime_span = new DatetimeSpan();
+
         $app->render('admin/reservations/admin.reservations.home.twig', array(
             'auth_admin' => $app->auth_admin,
             'active_page' => "reservations",
-            'active_item' => "reservations.home"));
+            'active_item' => "reservations.home",
+            'datetimes' => $datetime_span,
+            'course_constants' => $course_constants,
+            'calendar' => $calendar,
+            'calendar_class' => 'reservations-home',
+            'wrapper' => 'calendar/months.standard.twig',
+            'day_selector' => 'admin/reservations/calendar/day.selector.reservations.view.twig',
+            'url_change_view' => $app->urlFor('admin.reservations.home.change-month.post')
+        ));
+
     })->name('admin.reservations.home');
+
+
+
+    $app->post('/pocetna/promjeni-mjesec-kalendara', $authenticated_admin(), function() use ($app) {
+        if($app->request->isAjax()) {
+            $body = $app->request->getBody();
+            $json_data_received = json_decode($body, true);
+
+            $p_selected_date = $json_data_received['date'];
+
+            $calendar = new Calendar();
+            $course_constants = new TrainingCourseConstants();
+            $course_constants::set_custom_values($p_selected_date);
+            $datetime_span = new DatetimeSpan();
+
+            $app->render('calendar/months.standard.twig', array(
+                'auth_admin' => $app->auth_admin,
+                'active_page' => "reservations",
+                'active_item' => "reservations.home",
+                'datetimes' => $datetime_span,
+                'course_constants' => $course_constants,
+                'calendar' => $calendar,
+                'calendar_class' => 'reservations-home',
+                'wrapper' => 'calendar/months.standard.twig',
+                'day_selector' => 'admin/reservations/calendar/day.selector.reservations.view.twig',
+                'url_change_view' => $app->urlFor('admin.reservations.home.change-month.post')
+            ));
+        }
+
+    })->name('admin.reservations.home.change-month.post');
+
 
 
     $app->get('/rezervacijski-termini', $authenticated_admin(), function () use ($app) {
@@ -116,6 +162,43 @@ $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
             'active_page' => "reservations",
             'active_item' => "reservations.user-reservations"));
     })->name('admin.reservations.user-reservations.all');
+
+
+    $app->get('/detalji-rezervacijskog-termina/:span_id', $authenticated_admin(), function ($span_id) use ($app) {
+        $datetime_span = DatetimeSpan::getById($span_id);
+        if (!$datetime_span) {
+            $app->flash('admin_errors',  "Ne postoji traženi termin.");
+            $app->redirect($app->urlFor('admin.reservations.home'));
+        } else {
+            $bookings = Booking::getByDatetimeSpan($span_id);
+            $logs = ActionLog::getActionLogsForDatetimeSpan($datetime_span->id);
+//        var_dump($bookings);
+//        foreach($bookings as $booking) {
+//            var_dump($booking->user->username);
+//            var_dump($booking->created_at);
+//            if($booking->type == "reservation") {
+//                var_dump("Rezervacija: poništena:");
+//                var_dump($booking->canceled);
+//            } else {
+//                var_dump("Predbiljezba: aktivirana:");
+//                var_dump($booking->activated);
+//            }
+//        }
+//        echo "</pre>";
+//
+            $app->render('admin/reservations/admin.reservations.span.details.twig', array(
+                'auth_admin' => $app->auth_admin,
+                'active_page' => "reservations",
+                'active_item' => "reservations.user-reservations",
+                'bookings' => $bookings,
+                'span' => $datetime_span,
+                'logs' => $logs,
+                'text_help' => new \app\helpers\Text()
+            ));
+        }
+
+    })->name('admin.reservations.span.details');
+
 
 });
 ?>

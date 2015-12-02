@@ -173,6 +173,19 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 
 
 
+        $app->get('/aktivnost', $authenticated_user(), function () use ($app) {
+//            $app->render('user/profile/user.avatar_change.twig', array(
+//                'user' => $app->auth,
+//                'active_page' => "user.profile",
+//                'active_item' => "user.profile.avatar-change"
+//            ));
+            $logs = \app\model\Messages\UserLog::getUserLogsLogsForReceiver($app->auth_user->id);
+            echo "<br><h3>Chempo logo</h3><br><pre>";
+            var_dump($logs);
+            echo "</pre>";
+        })->name('user.profile.logs');
+
+
 
         $app->get('/avatar', $authenticated_user(), function () use ($app) {
             $app->render('user/profile/user.avatar_change.twig', array(

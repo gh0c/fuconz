@@ -16,7 +16,8 @@ class Logger
     {
         // Messages
         foreach(Admin::getAdmins() as $admin) {
-            $msg = "<span>" . $user->ssbos("Registrirana je nova članica", "Registriran je novi član") . " {$user->username}</span><br>" .
+            $msg = "<span>" . $user->ssbos("Registrirana je nova članica", "Registriran je novi član") .
+                " </span><span class = 'underline'>{$user->username}</span><br>" .
                 "<span>{$user->full_name()}</span><br>" .
                 "<span>{$user->email}</span>";
             Message::createNew("admin", $admin->id, $msg);
@@ -44,7 +45,7 @@ class Logger
 
         // Action logs
         $msg = "<span>" . $user->ssbos("Registrirana je nova članica", "Registriran je novi član") .
-            " {$user->username} ({$user->full_name()})</span>";
+            "</span><span class = 'underline'>{$user->username}</span><span> ({$user->full_name()})</span>";
         $receivers = array();
         $receivers[] = array("id" => $user->id, "type" => "user");
         ActionLog::createNew($receivers, $msg, "administration");
@@ -121,8 +122,8 @@ class Logger
     {
         $exit_msg = "Uspješna rezervacija!\nRezervacija termina: \n";
 
-        $admin_msg = "<span>{$user->username} je " . $user->ssbos("rezervirala", "rezervirao") . " termine:</span><br><ul>";
-        $action_log_msg = "<span>{$user->username} ({$user->full_name()}) " . $user->ssbos("rezervirala", "rezervirao") . " je termine" .
+        $admin_msg = "<span class = 'underline'>{$user->username}</span><span> je " . $user->ssbos("rezervirala", "rezervirao") . " termine:</span><br><ul>";
+        $action_log_msg = "<span class = 'underline'>{$user->username}</span><span> ({$user->full_name()}) je " . $user->ssbos("rezervirala", "rezervirao") . " termine" .
             " (" . (string)(sizeof($selected_spans)) . "):</span><br><ul>";
         $user_log_msg = "<span>Rezervirali ste termine: </span><br><ul>";
 
@@ -146,10 +147,10 @@ class Logger
 
             $training_course = TrainingCourse::getCourseById($s_course_id);
 
-            $admin_msg .= "<li>" . $datetime_span->descriptionString() . "<br>" . $training_course->title . "</li>";
+            $admin_msg .= "<li><span>" . $datetime_span->descriptionString() . "<br>" . $training_course->title . "</span><li>";
             $exit_msg .=  $datetime_span->descriptionString() . "\n";
-            $action_log_msg .= "<li>" . $datetime_span->descriptionString() . "</li>";
-            $user_log_msg .= "<li>" . $datetime_span->descriptionString() . "</li>";
+            $action_log_msg .= "<li><span>" . $datetime_span->descriptionString() . "</span><li>";
+            $user_log_msg .= "<li><span>" . $datetime_span->descriptionString() . "</span><li>";
 
         }
 
@@ -179,8 +180,8 @@ class Logger
             // both reservation(s) and prereservation(s)
             $exit_msg = "Uspješna rezervacija i predbilježba termina!\nRezervacija termina: \n";
 
-            $admin_msg = "<span>{$user->username} je " . $user->ssbos("rezervirala", "rezervirao") . " termine:</span><br><ul>";
-            $action_log_msg = "<span>{$user->username} ({$user->full_name()} " . $user->ssbos("rezervirala", "rezervirao") . " je termine" .
+            $admin_msg = "<span class = 'underline'>{$user->username}</span><span> je " . $user->ssbos("rezervirala", "rezervirao") . " termine:</span><br><ul>";
+            $action_log_msg = "<span class = 'underline'>{$user->username}</span><span> ({$user->full_name()}) je " . $user->ssbos("rezervirala", "rezervirao") . " termine" .
                 " (" . (string)(sizeof($selected_available_spans)) . "):</span><br><ul>";
             $user_log_msg = "<span>Rezervirali ste termine: </span><br><ul>";
 
@@ -204,10 +205,10 @@ class Logger
 
                 $training_course = TrainingCourse::getCourseById($s_course_id);
 
-                $admin_msg .= "<li>" . $datetime_span->descriptionString() . "<br>" . $training_course->title . "</li>";
+                $admin_msg .= "<li><span>" . $datetime_span->descriptionString() . "<br>" . $training_course->title . "</span></li>";
                 $exit_msg .=  $datetime_span->descriptionString() . "\n";
-                $action_log_msg .= "<li>" . $datetime_span->descriptionString() . "</li>";
-                $user_log_msg .= "<li>" . $datetime_span->descriptionString() . "</li>";
+                $action_log_msg .= "<li><span>" . $datetime_span->descriptionString() . "</span><li>";
+                $user_log_msg .= "<li><span>" . $datetime_span->descriptionString() . "</span><li>";
 
             }
 
@@ -217,8 +218,8 @@ class Logger
 
             $exit_msg .= "\nPredbilježba termina: \n";
 
-            $admin_msg .= "<span>{$user->username} se " . $user->ssbos("predbilježila", "predbilježio") . " za termine:</span><br><ul>";
-            $action_log_msg .= "<span>{$user->username} ({$user->full_name()} " . $user->ssbos("predbilježila", "predbilježio") . " se za termine" .
+            $admin_msg .= "<span class = 'underline'>{$user->username}</span><span> se " . $user->ssbos("predbilježila", "predbilježio") . " za termine:</span><br><ul>";
+            $action_log_msg .= "<span class = 'underline'>{$user->username}</span><span> ({$user->full_name()}) se " . $user->ssbos("predbilježila", "predbilježio") . " za termine" .
                 " (" . (string)(sizeof($selected_full_spans)) . "):</span><br><ul>";
             $user_log_msg .= "<span>Predbilježili ste se za termine: </span><br><ul>";
 
@@ -238,10 +239,10 @@ class Logger
 
                 $training_course = TrainingCourse::getCourseById($s_course_id);
 
-                $admin_msg .= "<li>" . $datetime_span->descriptionString() . "<br>" . $training_course->title . "</li>";
+                $admin_msg .= "<li><span>" . $datetime_span->descriptionString() . "<br>" . $training_course->title . "</span><li>";
                 $exit_msg .=  $datetime_span->descriptionString() . "\n";
-                $action_log_msg .= "<li>" . $datetime_span->descriptionString() . "</li>";
-                $user_log_msg .= "<li>" . $datetime_span->descriptionString() . "</li>";
+                $action_log_msg .= "<li><span>" . $datetime_span->descriptionString() . "</span><li>";
+                $user_log_msg .= "<li><span>" . $datetime_span->descriptionString() . "</span><li>";
 
             }
 
@@ -273,8 +274,8 @@ class Logger
             // only prereservations
             $exit_msg = "Uspješna predbilježba!\nPredbilježba termina: \n";
 
-            $admin_msg = "<span>{$user->username} se " . $user->ssbos("predbilježila", "predbilježio") . " za termine:</span><br><ul>";
-            $action_log_msg = "<span>{$user->username} ({$user->full_name()} " . $user->ssbos("predbilježila", "predbilježio") . " se za termine" .
+            $admin_msg = "<span class = 'underline'>{$user->username}</span><span> se " . $user->ssbos("predbilježila", "predbilježio") . " za termine:</span><br><ul>";
+            $action_log_msg = "<span class = 'underline'>{$user->username}</span><span> ({$user->full_name()}) se " . $user->ssbos("predbilježila", "predbilježio") . " za termine" .
                 " (" . (string)(sizeof($selected_full_spans)) . "):</span><br><ul>";
             $user_log_msg = "<span>Predbilježili ste se za termine: </span><br><ul>";
 
@@ -298,10 +299,10 @@ class Logger
 
                 $training_course = TrainingCourse::getCourseById($s_course_id);
 
-                $admin_msg .= "<li>" . $datetime_span->descriptionString() . "<br>" . $training_course->title . "</li>";
+                $admin_msg .= "<li><span>" . $datetime_span->descriptionString() . "<br>" . $training_course->title . "</span><li>";
                 $exit_msg .=  $datetime_span->descriptionString() . "\n";
-                $action_log_msg .= "<li>" . $datetime_span->descriptionString() . "</li>";
-                $user_log_msg .= "<li>" . $datetime_span->descriptionString() . "</li>";
+                $action_log_msg .= "<li><span>" . $datetime_span->descriptionString() . "</span><li>";
+                $user_log_msg .= "<li><span>" . $datetime_span->descriptionString() . "</span><li>";
 
             }
 
@@ -343,12 +344,12 @@ class Logger
             $msg .= '<span class = "underline"">Rezervacije: </span><br><ul>';
             foreach($reservations as $reservation)
             {
-                $msg .= "<li>" . $reservation->user->username . " (rezervirano: " .
-                    date("j.n.Y. G:i", strtotime($reservation->created_at)) . ")</li>";
+                $msg .= "<li><span class = 'underline'>" . $reservation->user->username . "</span><span> (rezervirano: " .
+                    date("j.n.Y. G:i", strtotime($reservation->created_at)) . ")</span><li>";
 
                 // user message
                 $user_msg = "<span>Termin " . $span->descriptionString() . "<br>(" . $span->training_course->title .
-                    ")<br>otkazan je zbog nedovoljno prijava! (" . count($reservations) . ", potrebno: " .
+                    ")<br>je otkazan zbog nedovoljno prijava! (" . count($reservations) . ", potrebno: " .
                     $span->training_course->min_reservations . ")</span><br>";
                 $user_msg .= "<span>Tvoja rezervacija za taj termin je automatski poništena!</span>";
 
@@ -376,10 +377,9 @@ class Logger
         {
             // User Log
             $user_msg = "<span>Zbog nedovoljnog broja prijava, otkazan je termin " .
-                "za koji ste imali rezervaciju: </span><br><ul><li>" . $span->descriptionString() . "</li></ul>";
+                "za koji ste imali rezervaciju: </span><br><ul><li><span>" . $span->descriptionString() . "</span><li></ul>";
             UserLog::createNew($reservation->user->id, $user_msg, "reservations");
             $receivers[] = array("id" => $reservation->user->id, "type" => "user");
-
         }
         ActionLog::createNew($receivers, $msg, "reservations", $datetimes);
     }
@@ -398,8 +398,8 @@ class Logger
             $msg .= '<span class = "underline">Prijave: </span><br><ul>';
             foreach($reservations as $reservation)
             {
-                $msg .= "<li>" . $reservation->user->username . " (rezervirano: " .
-                    date("j.n.Y. G:i", strtotime($reservation->created_at)) . ")</li>";
+                $msg .= "<li><span class = 'underline'>" . $reservation->user->username . "</span><span> (rezervirano: " .
+                    date("j.n.Y. G:i", strtotime($reservation->created_at)) . ")</span><li>";
 
                 // user message
                 $user_msg .=
@@ -424,8 +424,8 @@ class Logger
         if (count($pre_reservations) > 0) {
             $msg .= '<span class = "underline">Otkazane predbilježbe: </span><br><ul>';
             foreach($pre_reservations as $pre_reservation) {
-                $msg .= "<li>" . $pre_reservation->user->username . " (predbilježeno: " .
-                    date("j.n.Y. G:i", strtotime($reservation->created_at)) . ")</li>";            }
+                $msg .= "<li><span class = 'underline'>" . $pre_reservation->user->username . "</span><span> (predbilježeno: " .
+                    date("j.n.Y. G:i", strtotime($reservation->created_at)) . ")</span><li>";            }
         }
         foreach(Admin::getAdmins() as $admin) {
             Message::createNew("admin", $admin->id, $msg);
@@ -435,9 +435,9 @@ class Logger
         }
         $canceled_pre_resrevation_msg = "<span>Otkazivanje predbilježbe za termin:  <br>".
             $span->descriptionString() . "<br>" .
-            "Broj postojećih prijava (" . count($reservations) . ") ostao je jednak broju mjesta na terminu (" .
+            "Broj postojećih prijava (" . count($reservations) . ") ostao je jednak broju slobodnih mjesta na terminu (" .
             $span->training_course->capacity . ")</span><br>".
-            "<span>Tvoja prebilježba zato nije aktivirana</span>";
+            "<span>Tvoja prebilježba zato nije aktivirana.</span>";
         foreach($pre_reservations as $pre_reservation) {
             Message::createNew("user", $pre_reservation->user->id, $canceled_pre_resrevation_msg);
         }
@@ -457,16 +457,16 @@ class Logger
         foreach($reservations as $reservation)
         {
             // User Log
-            $user_msg = "<span>Zbog doboljnog broja prijava, potvrđen je termin " .
-                "za koji ste imali rezervaciju: </span><br><ul><li>" . $span->descriptionString() . "</li></ul>";
+            $user_msg = "<span>Zbog dovoljnog broja prijava, potvrđen je termin " .
+                "za koji ste imali rezervaciju: </span><br><ul><li><span>" . $span->descriptionString() . "</span><li></ul>";
             UserLog::createNew($reservation->user->id, $user_msg, "reservations");
             $receivers[] = array("id" => $reservation->user->id, "type" => "user");
         }
         foreach($pre_reservations as $pre_reservation)
         {
             // User Log
-            $user_msg = "<span>Zbog doboljnog broja prijava, potvrđen je termin " .
-                "za koji ste imali predbilježbu: </span><br><ul><li>" . $span->descriptionString() . "</li></ul>" .
+            $user_msg = "<span>Zbog dovoljnog broja prijava, potvrđen je termin " .
+                "za koji ste imali predbilježbu: </span><br><ul><li><span>" . $span->descriptionString() . "</span><li></ul>" .
                 "<span>Nije došlo do otkazivanja prijava pa je Vaša predbilježba otpala!</span>";
             UserLog::createNew($pre_reservation->user->id, $user_msg, "reservations");
             $receivers[] = array("id" => $pre_reservation->user->id, "type" => "user");
@@ -480,9 +480,9 @@ class Logger
     public static function logPrereservationCancelation($user, $prereservation)
     {
 
-        $admin_msg = "<span>{$user->username} je " . $user->ssbos("otkazala", "otkazao") . " predbilježbu za termin:</span><br><ul>";
-        $action_log_msg = "<span>{$user->username} ({$user->full_name()}) " . $user->ssbos("otkazala", "otkazao") .
-            " je predbilježbu za termin</span><br><ul>";
+        $admin_msg = "<span class = 'underline'>{$user->username}</span><span> je " . $user->ssbos("otkazala", "otkazao") . " predbilježbu za termin:</span><br><ul>";
+        $action_log_msg = "<span class = 'underline'>{$user->username}</span><span> ({$user->full_name()}) je " . $user->ssbos("otkazala", "otkazao") .
+            " predbilježbu za termin</span><br><ul>";
         $user_log_msg = "<span>Otkazali ste predbilježbu za termin: </span><br><ul>";
 
         //action logs
@@ -490,9 +490,9 @@ class Logger
         $receivers[] = array("id" => $user->id, "type" => "user");
         $datetimes = array();
         $datetimes[] = array("id" => $prereservation->datetime_span->id);
-        $admin_msg .= "<li>" . $prereservation->datetime_span->descriptionString() . "<br>" . $prereservation->datetime_span->training_course->title . "</li>";
-        $action_log_msg .= "<li>" . $prereservation->datetime_span->descriptionString() . "</li>";
-        $user_log_msg .= "<li>" . $prereservation->datetime_span->descriptionString() . "</li>";
+        $admin_msg .= "<li><span>" . $prereservation->datetime_span->descriptionString() . "<br>" . $prereservation->datetime_span->training_course->title . "</span><li>";
+        $action_log_msg .= "<li><span>" . $prereservation->datetime_span->descriptionString() . "</span><li>";
+        $user_log_msg .= "<li><span>" . $prereservation->datetime_span->descriptionString() . "</span><li>";
 
         $admin_msg .= "</ul>";
         $action_log_msg .= "</ul>";
@@ -514,9 +514,9 @@ class Logger
     public static function logClassicReservationCancelation($user, $reservation)
     {
 
-        $admin_msg = "<span>{$user->username} je " . $user->ssbos("otkazala", "otkazao") . " registraciju za termin:</span><br><ul>";
-        $action_log_msg = "<span>{$user->username} ({$user->full_name()}) " . $user->ssbos("otkazala", "otkazao") .
-            " je registraciju za termin</span><br><ul>";
+        $admin_msg = "<span class = 'underline'>{$user->username}</span><span> je " . $user->ssbos("otkazala", "otkazao") . " registraciju za termin:</span><br><ul>";
+        $action_log_msg = "<span class = 'underline'>{$user->username}</span><span> ({$user->full_name()}) je " . $user->ssbos("otkazala", "otkazao") .
+            " registraciju za termin</span><br><ul>";
         $user_log_msg = "<span>Otkazali ste prijavu za termin: </span><br><ul>";
 
         //action logs
@@ -524,9 +524,9 @@ class Logger
         $receivers[] = array("id" => $user->id, "type" => "user");
         $datetimes = array();
         $datetimes[] = array("id" => $reservation->datetime_span->id);
-        $admin_msg .= "<li>" . $reservation->datetime_span->descriptionString() . "<br>" . $reservation->datetime_span->training_course->title . "</li>";
-        $action_log_msg .= "<li>" . $reservation->datetime_span->descriptionString() . "</li>";
-        $user_log_msg .= "<li>" . $reservation->datetime_span->descriptionString() . "</li>";
+        $admin_msg .= "<li><span>" . $reservation->datetime_span->descriptionString() . "<br>" . $reservation->datetime_span->training_course->title . "</span><li>";
+        $action_log_msg .= "<li><span>" . $reservation->datetime_span->descriptionString() . "</span><li>";
+        $user_log_msg .= "<li><span>" . $reservation->datetime_span->descriptionString() . "</span><li>";
 
         $admin_msg .= "</ul>";
         $action_log_msg .= "</ul>";
@@ -548,9 +548,9 @@ class Logger
 
     public static function logReservationCancelationWithTriggeredPrereservationActivation($user, $reservation, $pre_reservation)
     {
-        $admin_msg = "<span>{$user->username} je " . $user->ssbos("otkazala", "otkazao") . " registraciju za termin:</span><br><ul>";
-        $action_log_msg = "<span>{$user->username} ({$user->full_name()}) " . $user->ssbos("otkazala", "otkazao") .
-            " je registraciju za termin</span><br><ul>";
+        $admin_msg = "<span class = 'underline'>{$user->username}</span><span> je " . $user->ssbos("otkazala", "otkazao") . " registraciju za termin:</span><br><ul>";
+        $action_log_msg = "<span class = 'underline'>{$user->username}</span><span> ({$user->full_name()}) je " . $user->ssbos("otkazala", "otkazao") .
+            " registraciju za termin</span><br><ul>";
         $user_log_msg = "<span>Otkazali ste prijavu za termin: </span><br><ul>";
         $new_user_msg = "<span>Aktivirana je tvoja predbilježba za termin! <br>" .
             "Zbog otkazivanja korisničke rezervacije oslobodilo se mjesto i tvoja predbilježba postaje aktivna rezervacija. <br>" .
@@ -564,20 +564,20 @@ class Logger
 
         $datetimes = array();
         $datetimes[] = array("id" => $reservation->datetime_span->id);
-        $admin_msg .= "<li>" . $reservation->datetime_span->descriptionString() . "<br>" . $reservation->datetime_span->training_course->title . "</li>";
-        $action_log_msg .= "<li>" . $reservation->datetime_span->descriptionString() . "</li>";
-        $user_log_msg .= "<li>" . $reservation->datetime_span->descriptionString() . "</li>";
-        $new_user_log_msg .= "<li>" . $reservation->datetime_span->descriptionString() . "</li>";
+        $admin_msg .= "<li><span>" . $reservation->datetime_span->descriptionString() . "<br>" . $reservation->datetime_span->training_course->title . "</span><li>";
+        $action_log_msg .= "<li><span>" . $reservation->datetime_span->descriptionString() . "</span><li>";
+        $user_log_msg .= "<li><span>" . $reservation->datetime_span->descriptionString() . "</span><li>";
+        $new_user_log_msg .= "<li><span>" . $reservation->datetime_span->descriptionString() . "</span><li>";
 
         $admin_msg .= "</ul>" .
             "<span><i class = 'fa fa-fw fa-exclamation'></i> Nakon otkazivanja članske rezervacije " .
             "došlo je do automatske rezervacije zbog postojanja predbilježbe!</span><br><br>" .
-            "<span>" . $pre_reservation->user->username . " je " . $pre_reservation->user->ssbos("imala", "imao") .
+            "<span class = 'underline'>" . $pre_reservation->user->username . "</span><span> je " . $pre_reservation->user->ssbos("imala", "imao") .
             " neaktiviranu predbilježbu prvu po prioritetu za isti taj termin.</span>";
         $action_log_msg .= "</ul>" .
             "<span>Nakon otkazivanja članske rezervacije " .
             "došlo je do automatske rezervacije zbog postojanja predbilježbe!</span><br>" .
-            "<span>" . $pre_reservation->user->username . " je " . $pre_reservation->user->ssbos("imala", "imao") .
+            "<span class = 'underline'>" . $pre_reservation->user->username . "</span><span> je " . $pre_reservation->user->ssbos("imala", "imao") .
             " neaktiviranu predbilježbu prvu po prioritetu za isti taj termin koja postaje nova rezervacija.</span>";
         $user_log_msg .= "</ul>";
         $new_user_log_msg .= "</ul>";

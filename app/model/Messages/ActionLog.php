@@ -179,10 +179,10 @@ class ActionLog
     public static function getActionLogsForDatetimeSpan($datetime_span_id, $limit = 1000000, $order_by = "created_at DESC")
     {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT * FROM action_log JOIN action_log_receiver
-            ON action_log.id = action_log_receiver.action_log_id JOIN action_log_datetime_span
+        $sql = "SELECT * FROM action_log JOIN action_log_datetime_span
             ON action_log.id = action_log_datetime_span.action_log_id
-            WHERE datetime_span_id = :datetime_span_id ORDER BY {$order_by} LIMIT :limit";
+            WHERE action_log_datetime_span.datetime_span_id = :datetime_span_id
+            ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':datetime_span_id', $datetime_span_id, PDO::PARAM_INT);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);

@@ -11,6 +11,10 @@ use \app\model\Reservation\Reservation;
 use \app\model\Reservation\Prereservation;
 
 
+$app->get('/cron-provjera-test', function() use ($app) {
+    Message::createNew("admin", 1, "Cron on..");
+});
+
 
 $app->get('/cron-provjera', function() use ($app) {
     echo '<pre style = "font-family: \'Courier New\', Courier, monospace;">';

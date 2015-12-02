@@ -738,46 +738,49 @@
   display: table-cell;
   vertical-align: middle;
 }
-.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container {
-  height: 4.75em;
-}
-.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container {
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container {
   left: 0;
   width: 100%;
 }
-.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking {
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking {
   display: inline-block;
   width: 28%;
   padding: 1px 2px;
   text-align: center;
 }
-.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont {
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont {
   height: 1.375em;
 }
-.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont .fa {
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont .fa, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont .fa {
   font-size: 0.95em;
 }
-.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .existing-game-icon-cont {
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .existing-game-icon-cont, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking .existing-game-icon-cont {
   color: #0c131d;
   background-color: #edf0f4;
   height: 1.5em;
 }
-.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .existing-game-icon-cont .fa {
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .existing-game-icon-cont .fa, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking .existing-game-icon-cont .fa {
   font-size: 1em;
 }
-.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont {
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont {
   height: 1.15em;
 }
-.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont .times {
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont .times, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont .times {
   font-size: 0.7em;
 }
-.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable.existing-game-link {
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable.existing-game-link, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable.existing-game-link {
   padding: 1px 0 2px 0;
 }
-.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.duration-cont, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.legend-icon-cont {
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.duration-cont, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.duration-cont, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.legend-icon-cont, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.legend-icon-cont {
   background-color: #edf0f4;
   color: #0c131d;
 }
-.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.existing-game-icon-cont {
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.existing-game-icon-cont, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.existing-game-icon-cont {
   color: #12408d;
+}
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container {
+  height: 4.75em;
+}
+.month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container {
+  height: 4.5em;
 }

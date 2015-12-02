@@ -122,13 +122,13 @@ $cell-height: 5em;
   }
 }
 
-
+$cell-height-reservations-home: 4.5em;
 $cell-height-adding-games: 4.75em;
-// adding games CALENDAR
-.month-grid.standard .table-container.standard.adding-games {
+
+.month-grid.standard .table-container.standard.adding-games,
+.month-grid.standard .table-container.standard.reservations-home {
   .td > .active-day {
     .day-container {
-      height: $cell-height-adding-games;
       .booking-slots {
         .bookings-container {
           left: 0;
@@ -178,5 +178,24 @@ $cell-height-adding-games: 4.75em;
     }
   }
 }
+
+// adding games CALENDAR
+.month-grid.standard .table-container.standard.adding-games{
+  .td > .active-day {
+    .day-container {
+      height: $cell-height-adding-games;
+    }
+  }
+}
+
+// reservation courses home CALENDAR
+.month-grid.standard .table-container.standard.reservations-home {
+  .td > .active-day {
+    .day-container {
+      height: $cell-height-reservations-home;
+    }
+  }
+}
+
 
 

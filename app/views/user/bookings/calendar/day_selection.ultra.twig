@@ -64,7 +64,7 @@
                                  data-start-time = "{{ span.start_time_hour }}-{{ span.start_time_minutes }}"
                                  data-course-id = "{{ span.training_course.id }}"
                                  data-description = "{{ span.descriptionString() }}"
-                                 data-availability = "{{ reservation.number_of_reservations_for_datetime_and_course(span.training_course.id, span.id)
+                                 data-availability = "{{ reservation.numberOfReservationsForDatetimeAndCourse(span.id, span.training_course.id)
                                     ~ '/' ~ span.training_course.capacity }}"
                                  data-reservation-time = "{{ span.training_course.reservation_time }}"
                                  id = "slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
