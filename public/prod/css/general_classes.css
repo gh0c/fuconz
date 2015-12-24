@@ -1,0 +1,370 @@
+/*********************
+ BREAKPOINTS
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */.left-fl {
+  float: left;
+}
+.right-fl {
+  float: right;
+}
+.text-centered {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-justified {
+  text-align: justify;
+}
+.bold-text {
+  font-weight: bold;
+}
+.display-none {
+  display: none !important;
+}
+.relative-pos, .pos-relative, .relative-position {
+  position: relative;
+}
+.multirow-inline {
+  display: inline-block;
+  vertical-align: top;
+}
+.black-horiz-spacer-5 {
+  width: 100%;
+  height: 5px;
+  background-color: #000;
+}
+.black-horiz-spacer-10 {
+  width: 100%;
+  height: 10px;
+  background-color: #000;
+}
+.black-horiz-spacer-20 {
+  width: 100%;
+  height: 20px;
+  background-color: #000;
+}
+.inner-70pct-classic {
+  width: 70% !important;
+  margin: 0 auto;
+}
+.inner-80pct-classic {
+  width: 80% !important;
+  margin: 0 auto;
+}
+.inner-70pct {
+  margin: 0 auto;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  width: 100% !important;
+}
+@media only screen and (min-width: 300px) {
+  .inner-70pct {
+    width: auto !important;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .inner-70pct {
+    width: 70% !important;
+    min-width: 690px;
+    padding: 0 1em;
+  }
+}
+.empty-horiz-spacer-5 {
+  width: 100%;
+  height: 5px;
+}
+.empty-horiz-spacer-10 {
+  width: 100%;
+  height: 10px;
+}
+.empty-horiz-spacer-20 {
+  width: 100%;
+  height: 20px;
+}
+.bbb-cross-flag {
+  background: linear-gradient(90deg, transparent 43%, #183293 43%, #183293 57%, transparent 57%), linear-gradient(transparent 13%, #eaeef1 13%, #edf0f4 23%, #183293 23%, #183293 77%, #eaeef1 77%, #edf0f4 86%, transparent 83%), linear-gradient(90deg, #0c131d 39%, #edf0f4 39%, #edf0f4 43%, #183293 43%, #183293 57%, #edf0f4 57%, #edf0f4 61%, #0c131d 61%);
+}
+.bbb-flag-v {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,eaeef1+8,edf0f4+14,183293+14,122b72+86,edf0f4+86,eaeef1+92,0c131d+92,0c131d+100 */
+  background: #0c131d;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #0c131d), color-stop(8%, #0c131d), color-stop(8%, #eaeef1), color-stop(14%, #edf0f4), color-stop(14%, #183293), color-stop(86%, #122b72), color-stop(86%, #edf0f4), color-stop(92%, #eaeef1), color-stop(92%, #0c131d), color-stop(100%, #0c131d));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c131d', endColorstr='#0c131d',GradientType=1);
+  /* IE6-9 */
+}
+.bbb-flag-v.reversed {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,eaeef1+8,edf0f4+14,122b72+14,183293+86,edf0f4+86,eaeef1+92,0c131d+92,0c131d+100 */
+  background: #0c131d;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #122b72 14%, #183293 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #0c131d), color-stop(8%, #0c131d), color-stop(8%, #eaeef1), color-stop(14%, #edf0f4), color-stop(14%, #122b72), color-stop(86%, #183293), color-stop(86%, #edf0f4), color-stop(92%, #eaeef1), color-stop(92%, #0c131d), color-stop(100%, #0c131d));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #122b72 14%, #183293 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #122b72 14%, #183293 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #122b72 14%, #183293 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #122b72 14%, #183293 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c131d', endColorstr='#0c131d',GradientType=1);
+  /* IE6-9 */
+}
+.bbb-flag-h {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,eaeef1+8,edf0f4+14,183293+14,122b72+86,edf0f4+86,eaeef1+92,0c131d+92,0c131d+100 */
+  background: #0c131d;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0c131d), color-stop(8%, #0c131d), color-stop(8%, #eaeef1), color-stop(14%, #edf0f4), color-stop(14%, #183293), color-stop(86%, #122b72), color-stop(86%, #edf0f4), color-stop(92%, #eaeef1), color-stop(92%, #0c131d), color-stop(100%, #0c131d));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c131d', endColorstr='#0c131d',GradientType=0);
+  /* IE6-9 */
+}
+.bbb-flag-v-cibona-blue {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,eaeef1+8,edf0f4+11,12408d+11,12408d+89,edf0f4+89,eaeef1+92,0c131d+92,0c131d+100 */
+  background: #0c131d;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #0c131d), color-stop(8%, #0c131d), color-stop(8%, #eaeef1), color-stop(11%, #edf0f4), color-stop(11%, #12408d), color-stop(89%, #12408d), color-stop(89%, #edf0f4), color-stop(92%, #eaeef1), color-stop(92%, #0c131d), color-stop(100%, #0c131d));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c131d', endColorstr='#0c131d',GradientType=1);
+  /* IE6-9 */
+}
+.white {
+  color: white;
+}
+.white-bg {
+  background-color: white;
+}
+.light-blue-gray-l {
+  color: #edf0f4;
+}
+.light-blue-gray-d {
+  color: #eaeef1;
+}
+.dark-dark-blue {
+  color: #0c131d;
+}
+.dark-blue-light {
+  color: #183293;
+}
+.dark-blue-dark {
+  color: #122b72;
+}
+.light-blue-gray-l-bg {
+  background-color: #edf0f4;
+}
+.light-blue-gray-d-bg {
+  background-color: #eaeef1;
+}
+.dark-dark-blue-bg {
+  background-color: #0c131d;
+}
+.dark-blue-light-bg {
+  background-color: #183293;
+}
+.dark-blue-dark-bg {
+  background-color: #122b72;
+}
+a.underline-link, span.underline {
+  text-decoration: underline;
+}
+.disabled-button, .disabledbutton {
+  pointer-events: none;
+}
+.dashed-spacer {
+  border-bottom: 2px dashed #0c131d;
+  box-sizing: border-box;
+}
+.flexbox {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+@media only screen and (max-width: 767px) {
+  .f-text-fw-only-1x, .f-div-fw-only-1x {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .f-text-non-fw-only-1x, .f-div-non-fw-only-1x {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .f-div-fw-1024 {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .f-div-non-fw-1024 {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .f-div-fw-768 {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .f-div-non-fw-768 {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 559px) {
+  .f-div-fw-560 {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 560px) {
+  .f-div-non-fw-560 {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 499px) {
+  .f-div-fw-500 {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .f-div-non-fw-500 {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 459px) {
+  .f-div-fw-460 {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 460px) {
+  .f-div-non-fw-460 {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 359px) {
+  .f-div-fw-360 {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 360px) {
+  .f-div-non-fw-360 {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .f-div-fw-large-desktop {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .f-div-non-fw-large-desktop {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .f-div-fw-small-desktop {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .f-div-non-fw-small-desktop {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .f-div-fw-tablet {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .f-div-non-fw-tablet {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .f-div-large-desktop-only {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .f-div-small-desktop-only {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .f-div-small-desktop-only {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .f-div-desktop-only {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .f-div-tablet-only {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .f-div-tablet-only {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .f-div-mobile-only {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .f-div-fw-mobile-mid {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .f-div-non-fw-mobile-mid {
+    display: none !important;
+  }
+}

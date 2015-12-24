@@ -1,0 +1,10 @@
+<div class = "f-calendar-selector desc-icon">
+    <span class = "main-legend-icon calendar-icon-holder">
+        <i class = "fa f-std-centered fa-circle back"></i>
+        <i class = "fa sub-legend-icon inner-60 f-std-centered descriptor fa-question"></i>
+
+        {% if f_triggered_reservation and f_triggered_reservation == true %}
+            <i class = "fa sub-legend-icon f-triggered fa-exclamation"></i>
+        {% endif %}
+    </span>
+</div>

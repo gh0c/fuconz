@@ -223,8 +223,10 @@ class TrainingCourse {
 
         $dates = Calendar::dates_span(date("Y-m-d", strtotime($p_date_from)), $repeating,
             date("Y-m-d", strtotime($p_date_until)), $p_repeating_interval, $p_repeating_frequency);
+
         foreach($dates as $date) {
             if($overlappings = DatetimeSpan::return_overlappings($date, $p_start_time, $p_end_time)) {
+
                 if(!isset($validation_result["errors"])) {
                     $validation_result["errors"] = "";
                 }
@@ -234,6 +236,7 @@ class TrainingCourse {
                     $validation_result["errors"] .= $overlap->start_time . " - " . $overlap->end_time ." " .
                         date("d.m.Y.", strtotime($overlap->date)) . "\n";
                 }
+
             }
         }
 

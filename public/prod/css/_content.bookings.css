@@ -1,0 +1,328 @@
+/*********************
+ BREAKPOINTS
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */.std-item.booking {
+  text-align: center;
+  margin: 2px 0;
+  font-family: MuseoSans;
+  font-weight: 600;
+  color: #0c131d;
+  padding-top: 0.125em;
+  padding-bottom: 0.125em;
+  border-bottom: 2px dashed #122b72;
+}
+@media only screen and (min-width: 570px) {
+  .std-item.booking {
+    margin: 4px 0;
+  }
+}
+@media only screen and (min-width: 570px) {
+  .std-item.booking {
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+  }
+}
+.std-item.booking a {
+  color: #0c131d;
+}
+.std-item.booking .section-group-selector {
+  display: block;
+}
+@media only screen and (min-width: 1024px) {
+  .std-item.booking .section-group-selector:nth-of-type(1) {
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .std-item.booking .section-group-selector:nth-of-type(2) {
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .std-item.booking .section-group-selector:nth-of-type(3) {
+    display: inline-block;
+  }
+}
+.std-item.booking .icon-holder .booking-icon-cont .booking-icon, .std-item.booking .status-icon-holder .booking-icon-cont .booking-icon {
+  position: relative;
+}
+.std-item.booking .icon-holder .booking-icon-cont .booking-icon .pic-cont, .std-item.booking .status-icon-holder .booking-icon-cont .booking-icon .pic-cont {
+  border-radius: 50%;
+}
+.std-item.booking .icon-holder .booking-icon-cont .booking-icon .overlay-pic-cont, .std-item.booking .status-icon-holder .booking-icon-cont .booking-icon .overlay-pic-cont {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.std-item.booking .icon-holder .booking-icon-cont .booking-icon .overlay-pic-cont .icon-o, .std-item.booking .status-icon-holder .booking-icon-cont .booking-icon .overlay-pic-cont .icon-o {
+  color: #12408d;
+  font-size: 0.85em;
+  position: absolute;
+  right: -10px;
+}
+.std-item.booking.booking-allowed .icon-holder {
+  background-color: #12408d;
+}
+.std-item.booking.booking-allowed .icon-holder .booking-icon-cont .booking-icon .pic-cont {
+  -webkit-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
+  -moz-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
+  box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
+}
+.std-item.booking.booking-allowed .icon-holder .booking-icon-cont .booking-icon .pic-cont > .icon {
+  color: #edf0f4;
+}
+.std-item.booking.booking-allowed .icon-holder .booking-icon-cont .booking-icon .overlay-pic-cont > .icon-o {
+  color: #edf0f4;
+}
+.std-item.booking.booking-allowed .status-icon-holder .pic-cont > .icon {
+  font-size: 2em;
+  color: #0c131d;
+}
+.std-item.booking.booking-allowed .status-icon-holder .pic-cont > .icon.fa-check {
+  color: #1f6d4d;
+}
+.std-item.booking.booking-allowed .status-icon-holder .pic-cont > .icon.fa-times {
+  color: #8d2d24;
+}
+.std-item.booking.booking-allowed .status-icon-holder .pic-cont > .icon.fa-question {
+  color: rgba(18, 64, 141, .9);
+}
+.std-item.booking.booking-disallowed .icon-holder {
+  background-color: #edf0f4;
+}
+.std-item.booking.booking-disallowed .icon-holder .booking-icon-cont .booking-icon .pic-cont > .icon {
+  color: #0c131d;
+}
+.std-item.booking.booking-disallowed .icon-holder .booking-icon-cont .booking-icon .overlay-pic-cont > .icon-o {
+  color: #0c131d;
+}
+.std-item.booking.booking-disallowed .status-icon-holder {
+  background-color: #edf0f4;
+}
+.std-item.booking.booking-disallowed .status-icon-holder .pic-cont > .icon {
+  font-size: 2em;
+  color: #0c131d;
+}
+.std-item.booking.booking-disallowed .status-icon-holder .pic-cont > .icon.fa-check {
+  color: #1f6d4d;
+}
+.std-item.booking.booking-disallowed .status-icon-holder .pic-cont > .icon.fa-times {
+  color: #8d2d24;
+}
+.std-item.booking.booking-disallowed .status-icon-holder .pic-cont > .icon.fa-question {
+  color: rgba(18, 64, 141, .9);
+}
+.std-item.booking.booking-ended {
+  margin: 1px 0;
+}
+.std-item.booking.booking-ended .icon-holder {
+  background-color: #0c131d;
+}
+.std-item.booking.booking-ended .icon-holder .booking-icon-cont .booking-icon .pic-cont {
+  -webkit-box-shadow: inset 0 0 1.5em 0.125em rgba(250, 235, 225, 0.15), 0 0 1.5em 0.25em rgba(220, 230, 230, 0.35);
+  -moz-box-shadow: inset 0 0 1.5em 0.125em rgba(250, 235, 225, 0.15), 0 0 1.5em 0.25em rgba(220, 230, 230, 0.35);
+  box-shadow: inset 0 0 1.5em 0.125em rgba(250, 235, 225, 0.15), 0 0 1.5em 0.25em rgba(220, 230, 230, 0.35);
+}
+.std-item.booking.booking-ended .icon-holder .booking-icon-cont .booking-icon .pic-cont > .icon {
+  color: #edf0f4;
+}
+.std-item.booking.booking-ended .status-icon-holder {
+  background-color: #0c131d;
+}
+.std-item.booking.booking-ended .status-icon-holder .pic-cont > .icon {
+  font-size: 1.25em;
+  color: #0c131d;
+}
+.std-item.booking.booking-ended .status-icon-holder .pic-cont > .icon.fa-check {
+  color: #1f6d4d;
+}
+.std-item.booking.booking-ended .status-icon-holder .pic-cont > .icon.fa-times {
+  color: #8d2d24;
+}
+.std-item.booking.booking-ended .status-icon-holder .pic-cont > .icon.fa-question {
+  color: rgba(18, 64, 141, .9);
+}
+.std-item.booking section.td.cancelation {
+  position: relative;
+}
+.std-item.booking section.td.cancelation .cancelation-icon-holder {
+  width: 7em;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+.std-item.booking section.td.cancelation .cancelation-icon-holder .cancel-label {
+  width: 6em;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  overflow: hidden;
+  font-size: 0.9em;
+}
+.std-item.booking section.td.cancelation .cancelation-icon-holder .cancelation-icon-cont .cancelation-icon {
+  width: 2em;
+  height: 2em;
+  position: relative;
+}
+.std-item.booking section.td.cancelation .cancelation-icon-holder .cancelation-icon-cont .cancelation-icon .pic-cont > .icon {
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+.std-item.booking section.td.cancelation .cancelation-icon-holder:hover {
+  background-color: #0c131d;
+  color: #edf0f4;
+}
+.std-item.booking section.td.cancelation .cancelation-icon-holder:hover .pic-cont > .icon {
+  color: #ae2e15;
+}
+.std-item.booking section.td.availability {
+  position: relative;
+}
+.std-item.booking section.td.availability .availability-holder {
+  color: #0c131d;
+  text-align: center;
+  width: 6em;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+.std-item.booking section.td.availability .availability-holder:hover {
+  background-color: #0c131d;
+  color: #edf0f4;
+}
+@media only screen and (max-width: 1023px) {
+  .std-item.booking section.td.course-span .span-info-holder .fw-std {
+    display: none;
+  }
+}
+.std-item.booking section.td.course-span .span-info-holder .fw-mid {
+  display: none;
+}
+@media only screen and (min-width: 570px) {
+  .std-item.booking section.td.course-span .span-info-holder .fw-mid {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .std-item.booking section.td.course-span .span-info-holder .fw-mid {
+    display: none;
+  }
+}
+.std-item.booking section.td.course-span .span-info-holder .fw-min {
+  display: block;
+}
+@media only screen and (min-width: 570px) {
+  .std-item.booking section.td.course-span .span-info-holder .fw-min {
+    display: none;
+  }
+}
+.std-item.booking section.td.icon .icon-holder, .std-item.booking section.td.status-icon .icon-holder, .std-item.booking section.td.icon .status-icon-holder, .std-item.booking section.td.status-icon .status-icon-holder {
+  width: 2.25em;
+  height: 2.25em;
+}
+@media only screen and (min-width: 570px) {
+  .std-item.booking section.td.icon .icon-holder, .std-item.booking section.td.status-icon .icon-holder, .std-item.booking section.td.icon .status-icon-holder, .std-item.booking section.td.status-icon .status-icon-holder {
+    width: 2.75em;
+    height: 2.5em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .std-item.booking section.td.icon .icon-holder, .std-item.booking section.td.status-icon .icon-holder, .std-item.booking section.td.icon .status-icon-holder, .std-item.booking section.td.status-icon .status-icon-holder {
+    width: 3em;
+  }
+}
+.std-item.booking section.td.icon .icon-holder .booking-icon, .std-item.booking section.td.status-icon .icon-holder .booking-icon, .std-item.booking section.td.icon .status-icon-holder .booking-icon, .std-item.booking section.td.status-icon .status-icon-holder .booking-icon {
+  width: 1.75em;
+  height: 1.75em;
+}
+@media only screen and (min-width: 570px) {
+  .std-item.booking section.td.icon .icon-holder .booking-icon, .std-item.booking section.td.status-icon .icon-holder .booking-icon, .std-item.booking section.td.icon .status-icon-holder .booking-icon, .std-item.booking section.td.status-icon .status-icon-holder .booking-icon {
+    width: 1.875em;
+    height: 1.875em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .std-item.booking section.td.icon .icon-holder .booking-icon, .std-item.booking section.td.status-icon .icon-holder .booking-icon, .std-item.booking section.td.icon .status-icon-holder .booking-icon, .std-item.booking section.td.status-icon .status-icon-holder .booking-icon {
+    width: 2em;
+    height: 2em;
+  }
+}
+.std-item.booking section.td {
+  text-align: left;
+  padding: 0 0.5em;
+  height: 2.625em;
+}
+@media only screen and (min-width: 1024px) {
+  .std-item.booking section.td {
+    height: 2.875em;
+  }
+}
+.std-item.booking section.td.icon {
+  width: 3.25em;
+}
+@media only screen and (min-width: 570px) {
+  .std-item.booking section.td.icon {
+    width: 3.75em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .std-item.booking section.td.icon {
+    width: 4em;
+  }
+}
+.std-item.booking section.td.course-span {
+  width: 12em;
+}
+@media only screen and (min-width: 570px) {
+  .std-item.booking section.td.course-span {
+    width: 18em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .std-item.booking section.td.course-span {
+    width: 24em;
+  }
+}
+.std-item.booking section.td.status {
+  text-align: center;
+  width: 18em;
+}
+.std-item.booking section.td.status-icon {
+  width: 3.25em;
+}
+@media only screen and (max-width: 569px) {
+  .std-item.booking section.td.status-icon {
+    display: none;
+  }
+}
+@media only screen and (min-width: 570px) {
+  .std-item.booking section.td.status-icon {
+    width: 3.75em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .std-item.booking section.td.status-icon {
+    width: 4em;
+  }
+}
+.std-item.booking section.td.availability {
+  width: 7em;
+}
+.std-item.booking section.td.cancelation {
+  width: 7em;
+}
+@media only screen and (max-width: 767px) {
+  .std-item.booking section.td.cancelation.empty {
+    display: none;
+  }
+}

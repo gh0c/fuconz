@@ -1,0 +1,149 @@
+
+
+
+<nav class="secondary user search open visible">
+    <div class="left-fl">
+        <img src="public/graphics/soc_net.png" class = "soc-net-logo">
+
+        <div class="home-cont">
+
+            <a class = "home-icon-cont" href="{{ urlFor('user.profile.home') }}" title = "Korisničke stranice - {{ auth_user.username }}">
+                {%  set avatar_url = auth_user.getAvatarURL('avatar',
+                    { "width": 42, "height": 42, "crop": "fill"}) %}
+                {%  if avatar_url %}
+                    <div class = "f-thumbnail user yes-avatar">
+                        <div class = "no-show"><i class = "fa fa-home"></i></div>
+                        <div class = "pic-cont">
+                            <img src = "{{ avatar_url }}" />
+                        </div>
+                    </div>
+                {% else %}
+                    <div class = "f-thumbnail user user-icon no-avatar">
+                        <div class = "no-show"><i class = "fa fa-home"></i></div>
+                        <div class="pic-cont">
+                            <i class = "fa fa-user"></i>
+                        </div>
+                    </div>
+                {% endif %}
+            </a>
+
+        </div>
+
+
+        <ul class="menu">
+            <li class="dropdown{% if active_page == "user.profile" %} active{% endif %}" data-filter="profile">
+                <span><i class = "fa fa-cogs link-icon-fw  fa-fw"></i><span class = "link-label-fw"> Profil</span></span>
+            </li><!--
+            --><li class="no-dropdown{% if active_page == "user.reservations" %} active{% endif %}" data-filter="reservation">
+                <a href = "{{ urlFor('user.book-training-course') }}"><i class = "fa fa-calendar-check-o link-icon-fww fa-fw"></i><span class = "link-label-fww"> Rezervacija</span></a>
+            </li><!--
+            --><li class="dropdown{% if active_page == "user.main" %} active {% endif %}" data-filter="user-main">
+                <span>
+                    <i class = "fa fa-user link-icon-fw fa-fw"></i><span class = "link-label-fw"> Korisničke stranice</span>{%  if auth_user.unreadMessagesExists() %}
+                    <script>
+                        var originalDocTitle = document.title;
+                        var prependToTitle = function(prefix) {
+                            document.title = prefix + originalDocTitle;
+                        };
+                        prependToTitle('({{ auth_user.numberOfUnreadMessages() }}) ');
+                        $(document).ready(function(){
+                            // Update number in all browser tabs right away
+                            if (Intercom.supported) {
+                                var intercom = new Intercom();
+                                intercom.emit('numOfMessagesChange', {numberOfUnread: {{ auth_user.numberOfUnreadMessages() }} });
+                            }
+                        });
+
+//                        $(document).on('ready', function() {
+//
+//                        });
+
+                    </script>
+                    <i class = "fa fa-envelope faa-horizontal animated alarm" id = "unread-messages-header-alarm"></i>
+                    {% endif %}
+                </span>
+
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class = "empty-horiz-spacer-5 white-bg"></div>
+
+<nav class="nav-filters user" id="nav-filters">
+
+    <div class="filter filter-profile list-tags ">
+        <ul>
+            <li>
+                <a href="{{ urlFor('user.profile.home') }}"
+                   {% if active_item == "user.profile.home" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-home"></i><span class = "link-label-fw"> Početna</span>
+                </a>
+            </li><!--
+            --><li>
+                <a href="{{ urlFor('user.profile.avatar-change') }}"
+                   {% if active_item == "user.profile.avatar-change" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-file-image-o"></i><span class = "link-label-fw"> Avatar</span>
+                </a>
+            </li><!--
+            --><li>
+                <a href="{{ urlFor('user.profile.profile-data-change') }}"
+                   {% if active_item == "user.profile.profile-data-change" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-wrench"></i><span class = "link-label-fw"> Osobni podaci</span>
+                </a>
+            </li><!--
+            --><li>
+                <a href="{{ urlFor('user.profile.password-change') }}"
+                   {% if active_item == "user.profile.password-change" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-key"></i><span class = "link-label-fw"> Promjena lozinke</span>
+                </a>
+            </li>
+
+
+            {#--><li>#}
+                {#<a href="/" >#}
+                    {#<i class = "fa fa-fw fa-calendar"></i><span class = "link-label-fw"> Aktivnosti</span>#}
+                {#</a>#}
+            {#</li>#}
+        </ul>
+    </div>
+
+
+    <div class="filter filter-user-main list-tags">
+        <ul>
+            <li>
+                <a href="{{ urlFor('user.matches.games.home') }}"
+                   {% if active_item == "user.main.games" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-futbol-o"></i><span class = "link-label-fw"> Moje utakmice</span>
+                </a>
+            </li><!--
+            --><li>
+                <a href="{{ urlFor('user.messages.home') }}"
+                   {% if active_item == "user.main.messages" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-envelope-o{{ (auth_user.unreadMessagesExists())? ' unread-exists' : '' }}"></i>
+                    <span class = "link-label-fw"> Poruke</span><!--
+                    --><span class = "link-label-fw">(</span><!--
+                    --><span class = "num-of-msg link-label-fw{{ (auth_user.unreadMessagesExists())? ' unread-exists' : '' }}" id = "header-number-of-unread">
+                        {{ auth_user.numberOfUnreadMessages() }}
+                    </span><!--
+                    --><span class = "link-label-fw">/</span><!--
+                    --><span class = "num-of-msg link-label-fw">{{ auth_user.numberOfMessages() }}</span><!--
+                    --><span class = "link-label-fw">)</span>
+                </a>
+            </li><!--
+            --><li>
+                <a href="{{ urlFor('user.bookings.home') }}"
+                   {% if active_item == "user.main.bookings" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-book"></i><span class = "link-label-fw"> Moje prijave</span>
+                </a>
+            </li><!--
+            --><li>
+                <a href="{{ urlFor('user.logout') }}">
+                    <i class = "fa fa-fw fa-sign-out link-label-fw"></i> Odjava</a>
+            </li>
+        </ul>
+    </div>
+
+
+</nav>

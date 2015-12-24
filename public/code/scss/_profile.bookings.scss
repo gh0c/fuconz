@@ -1,0 +1,418 @@
+@import 'modules/modules.import';
+
+
+
+$booking-icon-td-w: 3em;
+$booking-label-td-w: 15em;
+$booking-info-td-w: 2.5em;
+$booking-cancelation-td-w: 8em;
+
+$booking-std-row-h: 2.375em;
+#hot-bookings {
+  max-width: $booking-icon-td-w + $booking-label-td-w + $booking-info-td-w + $booking-cancelation-td-w;
+  text-align: center;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  @include responsive-w-min($mobile-mid-bp) {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+
+
+  .std-item {
+    &.profile-hot-booking {
+      max-width: $booking-icon-td-w + $booking-label-td-w - 4em + $booking-info-td-w + $booking-icon-td-w;
+      @include responsive-w-min($mobile-mid-bp) {
+        max-width: $booking-icon-td-w + $booking-label-td-w + $booking-info-td-w + $booking-cancelation-td-w;
+      }
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+
+      .inner-box {
+        padding: 4px 0 3px 0;
+      }
+      section.td {
+        border: 0;
+        display: table-cell;
+        vertical-align: top;
+        &.icon {
+          width: $booking-icon-td-w - 0.5em;
+          @include responsive-w-min($mobile-mid-bp) {
+            width: $booking-icon-td-w;
+          }
+
+          .icon-holder {
+            width: $booking-icon-td-w - 0.5em;
+            @include responsive-w-min($mobile-mid-bp) {
+              width: $booking-icon-td-w;
+            }
+            height: $booking-std-row-h;
+
+            .booking-icon-cont {
+
+              .booking-icon {
+                width: 1.75em;
+                @include responsive-w-min($mobile-mid-bp) {
+                  width: 2em;
+                }
+                position: relative;
+                .pic-cont {
+                  & > .icon {
+                    //                      font-size: 1.5em;
+                  }
+                }
+                .overlay-pic-cont {
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  top: 0;
+                  left: 0;
+                }
+              }
+            }
+          }
+        }
+
+        &.label {
+          max-width: $booking-label-td-w - 4em;
+          padding: 0 0.25em;
+          position: relative;
+          @include responsive-w-min($mobile-mid-bp) {
+            max-width: $booking-label-td-w;
+          }
+          & > span {
+            font-size: 0.95em;
+          }
+
+          .info-overlay, .info-overlay-right {
+            display: none;
+            position: absolute;
+            top: 0;
+            height: 100%;
+          }
+
+          .info-overlay {
+            .info-holder {
+              height: 100%;
+              width: 100%;
+              position: relative;
+
+              display: inline-table;
+              text-align: center;
+
+              & > span {
+                @include font-size(14px);
+              }
+
+              .datetime-holder, .availability-holder {
+                display: inline-table;
+                text-align: center;
+                vertical-align: middle;
+                height: 100%;
+                position: relative;
+              }
+              .datetime-holder {
+                width: 65%;
+                .datetime {
+                  text-align: center;
+                  width: 100%;
+                }
+                & > div {
+                  display: inline-table;
+                  width: 100%;
+                  span {
+                    @include font-size(14px);
+                  }
+                }
+              }
+
+              .availability-holder {
+                width: 35%;
+                text-align: center;
+                @include pp-transition(all 0.32s ease-out);
+                &:hover {
+                  color: $dark-dark-blue;
+                  background-color: $light-blue-gray-light;
+                }
+                & > span {
+                  display: table-cell;
+                  vertical-align: middle;
+                  text-align: center;
+                  @include font-size(14px);
+                  i.fa {
+                    @include font-size(15px);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+
+        &.info {
+          width: $booking-info-td-w;
+          position: relative;
+
+          .icon-holder {
+            width: $booking-info-td-w;
+            height: $booking-std-row-h;
+            cursor: pointer;
+            @include pp-transition(all .25s ease-out);
+
+            .info-icon-cont {
+              .info-icon {
+                width: 2em;
+                height: $booking-std-row-h;
+
+                position: relative;
+                .pic-cont {
+                  & > .icon {
+                    color: $light-blue-gray-dark;
+                    @include pp-transition(all .15s ease-out);
+                  }
+                }
+              }
+            }
+
+          }
+        }
+
+
+        &.cancelation {
+
+          width: $booking-icon-td-w;
+          @include responsive-w-min($mobile-mid-bp) {
+            width: $booking-cancelation-td-w;
+          }
+          position: relative;
+
+          .icon-holder {
+            width: 100%;
+            height: $booking-std-row-h;
+            cursor: pointer;
+            @include pp-transition(all .25s ease-out);
+
+            .cancel-label {
+              text-align: right;
+              vertical-align: middle;
+              display: table-cell;
+              overflow: hidden;
+              font-size: 0.9em;
+            }
+            .cancelation-icon-cont {
+
+              .cancelation-icon {
+                width: 2em;
+                height: $booking-std-row-h;
+                position: relative;
+                .pic-cont {
+                  & > .icon {
+                    @include pp-transition(all .25s ease-out);
+                  }
+                }
+              }
+            }
+            &:hover {
+              background-color: $dark-dark-blue;
+              color: $light-blue-gray-light;
+              .pic-cont > .icon {
+                color: $red-close-icons;
+              }
+            }
+          }
+
+          .info-overlay, .info-overlay-right {
+            display: none;
+            position: absolute;
+            top: 0;
+            height: 100%;
+          }
+
+          .info-overlay-right {
+            color: white;
+            background-color: $cibona-blue;
+            left: 0;
+            width: $booking-icon-td-w;
+            @include responsive-w-min($mobile-mid-bp) {
+              width: 100%;
+              left: 0;
+            }
+            .info-holder {
+              height: 100%;
+              width: 100%;
+              position: relative;
+
+              display: inline-table;
+              text-align: center;
+
+              & > span {
+                @include font-size(14px);
+              }
+
+              .datetime-holder {
+                display: inline-table;
+                text-align: center;
+                vertical-align: middle;
+                height: 100%;
+                position: relative;
+              }
+              .datetime-holder {
+                width: 100%;
+                .datetime {
+                  text-align: center;
+                  width: 100%;
+                }
+                & > div {
+                  display: inline-table;
+                  width: 100%;
+                  span {
+                    @include font-size(14px);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+
+
+      &.booking-not-allowed {
+        .td.label {
+          .info-overlay {
+            color: $dark-dark-blue;
+            background-color: $light-blue-gray-light;
+
+            left: -($booking-icon-td-w - 0.5em);
+            width: calc(100% + (#{$booking-icon-td-w} - 0.5em));
+            @include responsive-w-min($mobile-mid-bp) {
+              width: 100%;
+              left: 0;
+            }
+
+          }
+        }
+
+        .td.info {
+          .icon-holder {
+            &:hover, &.clicked {
+              background-color: $light-blue-gray-dark;
+              .info-icon .pic-cont > .icon {
+                color: $dark-dark-blue;
+              }
+            }
+          }
+        }
+
+        .td.icon .icon-holder{
+          background-color: $light-blue-gray-light;
+
+          .booking-icon {
+            height: $booking-std-row-h;
+
+            .pic-cont {
+              & > .icon {
+                font-size: 2em;
+                color: $dark-dark-blue;
+
+                &.fa-check {
+                  color: $green-badge-transparent-overlay;
+                }
+                &.fa-times {
+                  color: $red-badge-transparent-overlay;
+                }
+                &.fa-question {
+                  color: $cibona-blue-transp10;
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+      &.booking-ended {
+        .td.icon .icon-holder {
+          background-color: $dark-dark-blue;
+
+          .booking-icon {
+            height: $booking-std-row-h;
+
+            .pic-cont {
+              .icon {
+                color: $light-blue-gray-light;
+
+                font-size: 1.25em;
+                &.fa-check {
+                  color: $green-badge-transparent-overlay;
+                }
+                &.fa-times {
+                  color: $red-badge-transparent-overlay;
+                }
+                &.fa-question {
+                  color: $light-blue-gray-light;
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+
+      &.booking-allowed {
+        .td.label {
+
+          .info-overlay {
+            color: white;
+            background-color: $cibona-blue;
+
+            left: -($booking-icon-td-w - 0.5em);
+            width: calc(100% + (#{$booking-icon-td-w} - 0.5em));
+            @include responsive-w-min($mobile-mid-bp) {
+              width: 100%;
+              left: 0;
+            }
+          }
+        }
+
+
+        .td.info {
+          .icon-holder {
+            &:hover, &.clicked {
+              background-color: $cibona-blue;
+              .info-icon .pic-cont > .icon {
+                color: white;
+              }
+            }
+          }
+        }
+
+        .td.icon .icon-holder {
+          background-color: $cibona-blue;
+
+          .booking-icon {
+            height: $booking-std-row-h;
+            .pic-cont {
+              color: white;
+              & > .icon {
+                font-size: 1.5em;
+              }
+            }
+            .overlay-pic-cont {
+              .icon-o {
+                color: $light-blue-gray-light;
+                font-size: 0.85em;
+                position: absolute;
+                right: -10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

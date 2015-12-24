@@ -1,84 +1,57 @@
 
+
 <div class = "day-container{{ (day_passed) ? ' day-ended' : '' }}">
+
+    <div class = "date-container">
+        {% if day_passed %}
+            <i class = "fa fa-times day-ended"></i>
+        {% endif %}
+
+        <span>{{ curr_date|date("j") }}</span>
+    </div>
+
+
+
+
 
 
     {% set datetime_spans = datetimes.getByDate(curr_date) %}
     {% if datetime_spans|length > 0 %}
-        <div class = "booking-slots-exists"></div>
+    <div class = "booking-slots-exists"></div>
 
-        <div class = "booking-slots">
-            <div class = "bookings-container">
-            {% for span in datetime_spans %}
-                {% set games_for_span = game.getGamesByDatetimeSpan(span.id) %}
+    <div class = "booking-slots">
+        <div class = "bookings-container">
+        {% for span in datetime_spans %}
+            {% set games_for_span = game.getGamesByDatetimeSpan(span.id) %}
 
-                <div class = "booking">
-                    {% if games_for_span|length > 0 %}
-                        {% for game_for_span in games_for_span %}
-                            <a class = "clickable existing-game-link" title = "{{ game_for_span.title }}"
-                               href = "{{ urlFor('admin.matches.game.edit', {"game_id": game_for_span.id}) }}">
-                                <div class = "existing-game-icon-cont {{ span_preselected? 'yes':'not' }}-selected">
-                                    <i class = "fa fa-fw fa-futbol-o mega" title = "{{ span.descriptionString() }}"></i>
-                                </div>
-                            </a>
+            <div class = "booking">
+                {% if games_for_span|length > 0 %}
+                    {% for game_for_span in games_for_span %}
+                        <a class = "clickable existing-game-link" title = "{{ game_for_span.title }}"
+                           href = "{{ urlFor('admin.matches.game.edit', {"game_id": game_for_span.id}) }}">
+                            <div class = "existing-game-icon-cont {{ span_preselected? 'yes':'not' }}-selected">
+                                <i class = "fa fa-fw fa-futbol-o mega"></i>
+                            </div>
+                        </a>
 
-                        {% endfor %}
-                    {% endif %}
-                    <a class = "clickable" href = "{{ urlFor('admin.matches.game.new', {"span_id": span.id}) }}">
-                        <div class = "legend-icon-cont">
-                            <i class = "fa fa-fw fa-plus-circle mega" title = "{{ span.descriptionString() }}"></i>
-                        </div>
-                        <div class = "duration-cont">
-                            <span class = "times">{{ span.start_time }}</span>
-                        </div>
-                    </a>
+                    {% endfor %}
+                {% endif %}
+                <a class = "clickable" title = "{{ span.descriptionString() }}"
+                   href = "{{ urlFor('admin.matches.game.new', {"span_id": span.id}) }}">
+                    <div class = "legend-icon-cont">
+                        <i class = "fa fa-fw fa-plus-circle mega" ></i>
+                    </div>
+                    <div class = "duration-cont">
+                        <span class = "times">{{ span.start_time }}</span>
+                    </div>
+                </a>
 
-                </div>
-
-                {#{% set course_passed = span.span_start < "now"|date("Y-m-d H:i:s") %}#}
-                {#{% set course_booking_allowed = ( span.span_start|date("U") - span.training_course.reservation_time ) > "now"|date("U")%}#}
-
-                {#{% if 1 < 2 %} &#123;&#35;No reservations nor pre-reservations&#35;&#125;#}
-
-                    {#{% if not course_passed %} &#123;&#35; Course not over &#35;&#125;#}
-
-                        {#{% if not course_booking_allowed %} &#123;&#35; Booking time ended &#35;&#125;#}
-
-                            {#<div><span title = "{{ ( span.span_start|date("U") - span.training_course.reservation_time )|date("Y-m-d H:i") }}">-C booking ajbok</span></div>#}
-
-                        {#{% else %} &#123;&#35; Course available for booking &#35;&#125;#}
-
-                            {#<div class = "booking" title = "{{ span.training_course.title }}&#10;{{ span.descriptionString() }}"#}
-                                 {#data-date = "{{ curr_date }}" data-description = "{{ span.descriptionString() }}"#}
-                                 {#id = "slot-{{ curr_date }}-{{ slot.start_time }}">#}
-
-                                {#<i class = "fa fa-calendar-check-o" title = "{{ span.descriptionString() }}"></i>#}
-                                {#<span>-{{ span.training_course.title }}</span>#}
-
-                            {#</div>#}
-
-                        {#{% endif %}#}
-
-                    {#{% else %} &#123;&#35; Course finished &#35;&#125;#}
-
-                        {#<span>-C finito</span>#}
-
-                    {#{% endif %}#}
-                {#{% else %}#}
-                    {#{% if 1 < 5 %} &#123;&#35; Course not over &#35;&#125;#}
-                        {#{% if 2 < 5 %} &#123;&#35; Course too soon to cancel (pre-)reservation &#35;&#125;#}
-
-                        {#{% else %} &#123;&#35; Booking cancelation allowed &#35;&#125;#}
-
-                        {#{% endif %}#}
-                    {#{% else %} &#123;&#35; Course with finished &#35;&#125;#}
-
-                    {#{% endif %}#}
-                {#{% endif %}#}
-
-
-
-            {% endfor %}
             </div>
+
+
+        {% endfor %}
         </div>
+    </div>
     {% endif %}
+
 </div>

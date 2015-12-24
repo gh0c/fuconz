@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 date_default_timezone_set( "Europe/Zagreb" );
+set_time_limit ( 50 );
 
 try {
     require 'app/start.php';

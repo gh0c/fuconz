@@ -1,6 +1,17 @@
 
 <div class = "day-container{{ (day_passed) ? ' day-ended' : '' }}">
 
+    <div class = "date-container">
+        {% if day_passed %}
+            <i class = "fa fa-times day-ended"></i>
+        {% endif %}
+
+        <span>{{ curr_date|date("j") }}</span>
+    </div>
+
+
+
+
 
     {% set datetime_spans = datetimes.getByDate(curr_date) %}
     {% if datetime_spans|length > 0 %}
@@ -28,4 +39,5 @@
             </div>
         </div>
     {% endif %}
+
 </div>

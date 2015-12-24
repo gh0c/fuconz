@@ -6,10 +6,10 @@
 
 {% block content %}
 
-    <script type="text/javascript" src="public/js/cloudinary/jquery.ui.widget.js"></script>
-    <script type="text/javascript" src="public/js/cloudinary/jquery.iframe-transport.js"></script>
-    <script type="text/javascript" src="public/js/cloudinary/jquery.fileupload.js"></script>
-    <script type="text/javascript" src="public/js/cloudinary/jquery.cloudinary.js"></script>
+    <script type="text/javascript" src="public/assets/js/cloudinary/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="public/assets/js/cloudinary/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="public/assets/js/cloudinary/jquery.fileupload.js"></script>
+    <script type="text/javascript" src="public/assets/js/cloudinary/jquery.cloudinary.js"></script>
     {{ cloudinary_js_config() }}
 
     <div class = "main-block-cont">
@@ -29,6 +29,8 @@
 
 
         <div class = "main-content-box">
+            {% include "templates/partials/user_messages.twig" %}
+
             <div class = "inner-cont">
                 <div class = "form-container">
 
@@ -37,7 +39,7 @@
                         <div class = "inputs-container">
 
                             <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
+                                <div class = "">
                                     <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
                                     {#<input type="file" accept="image/jpeg,image/gif,image/png" tabindex="1"#}
                                            {#name="avatar-file" id="avatar-file" class = "file-input" required/>#}
@@ -57,7 +59,7 @@
                                         }
                                     }) }}
 
-                                    <div class = "file-div-cont upload">
+                                    <div class = "file-div-cont upload f-maxi-input-width">
                                         <label for = "avatar-file" class = "button-label">
                                             <span>Odaberite datoteku</span>
                                         </label>
@@ -69,8 +71,8 @@
                             </div>
 
 
-                            <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
+                            <div class = "vertical-section text-centered box-new-img-holder display-none">
+                                <div class = "">
                                     <div class = "box">
                                         <div class="uploaded-info-holder">
                                         </div>
@@ -83,31 +85,32 @@
                             <input type="hidden" name="uploaded-img-hash" id = "uploaded-img-hash"/>
 
 
-                            <div class = "vertical-section text-centered ">
-                                <div class ="inner-70pct dashed-spacer empty-horiz-spacer-5"></div>
+                            <div class = "vertical-section text-centered inner-70pct">
+                                <div class =" dashed-spacer empty-horiz-spacer-5"></div>
                             </div>
 
 
                             <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
+                                <div class = "">
+
                                     <input type="checkbox" name="use-fb-avatar" id="use-fb-avatar"
                                            class = "cb-input use-fb-avatar" tabindex="2" {{ (auth_user.use_fb_avatar)? 'checked="true"' : '' }}>
-                                    <div class = "checkbox-div-cont">
-                                        <label for = "use-fb-avatar" alt="Koristi FB avatar" placeholder="Koristi FB avatar"
-                                               data-info="Koristi FB avatar">
+                                    <div class = "checkbox-div-cont f-std-input-width">
+                                        <label for = "use-fb-avatar" data-info="Koristi FB avatar">
                                             <span>Koristi FB profilnu?</span>
                                         </label>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
 
                             <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
+                                <div class = "">
+
                                     <input type="text" name="fb-id" id="fb-id" required
                                            maxlength="255" spellcheck="false" autocomplete="off" tabindex="3"
-                                           class = "std-text-input std-input-width" value = "{{ (auth_user.use_fb_avatar)? auth_user.fb_id : '' }}"/>
-                                    <label id="fb-id-label" alt="Facebook ID" placeholder="Facebook ID" data-info="Facebook ID"></label>
+                                           class = "std-text-input std-input-width" value = "{{ (auth_user.use_fb_avatar or auth_user.fb_id)? auth_user.fb_id : '' }}"/>
+                                    <label id="fb-id-label" for = "fb-id" data-info="Facebook ID"></label>
                                 </div>
                                 <h4>
                                     <a class = "underline-link l-o" style = "font-size: 0.9em" tabindex = "4"
@@ -116,36 +119,36 @@
                             </div>
 
 
-                            <div class = "vertical-section text-centered ">
-                                <div class ="inner-70pct dashed-spacer empty-horiz-spacer-5"></div>
+                            <div class = "vertical-section text-centered inner-70pct">
+                                <div class =" dashed-spacer empty-horiz-spacer-5"></div>
                             </div>
 
 
                             <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
+                                <div class = "">
+
                                     <input type="checkbox" name="delete-avatar" id="delete-avatar"
                                            class = "cb-input delete-avatar" tabindex="5">
-                                    <div class = "checkbox-div-cont">
-                                        <label for = "delete-avatar" alt="Samo izbriši" placeholder="Samo izbriši" data-info="Samo izbriši">
+                                    <div class = "checkbox-div-cont f-std-input-width">
+                                        <label for = "delete-avatar" data-info="Samo izbriši">
                                             <span>Samo izbriši?</span>
                                         </label>
+
                                     </div>
                                 </div>
-
                             </div>
 
                         </div>
 
 
 
-                        {% include "templates/partials/user_messages.twig" %}
 
                         {% include "templates/partials/live_status.container.twig" %}
 
                         <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
 
                         <div class = "submitter-cont">
-                            <div class = "inner-70pct">
+                            <div class = "">
                                 <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="5"
                                      onclick="validateAndSubmitAvatarChange('user-avatar-change')">
                                     <span>SPREMI PROMJENU</span>
@@ -167,14 +170,15 @@
 {% endblock %}
 
 {% block additional_js %}
-    <script src="public/js/avatar_change.js"></script>
+    <script src="public/code/js/avatar_change.js"></script>
+    <script src="public/code/js/validation.js"></script>
 
 
-    <script src="public/js/cloudinary/load-image.min.js"></script>
-    <script src="public/js/cloudinary/canvas-to-blob.min.js"></script>
-    <script src="public/js/cloudinary/jquery.fileupload-process.js"></script>
-    <script src="public/js/cloudinary/jquery.fileupload-image.js"></script>
-    <script src="public/js/cloudinary/jquery.fileupload-validate.js"></script>
+    <script src="public/assets/js/cloudinary/load-image.min.js"></script>
+    <script src="public/assets/js/cloudinary/canvas-to-blob.min.js"></script>
+    <script src="public/assets/js/cloudinary/jquery.fileupload-process.js"></script>
+    <script src="public/assets/js/cloudinary/jquery.fileupload-image.js"></script>
+    <script src="public/assets/js/cloudinary/jquery.fileupload-validate.js"></script>
 
 
     <script>

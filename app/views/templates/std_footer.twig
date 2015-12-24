@@ -11,8 +11,34 @@
             </div>
         </nav>
         <div>
-            <img src = "public/graphics/gh0c_banner.png">
+            <img src = "public/graphics/gh0c_banner_v2.png">
         </div>
     </div>
 
 </footer>
+
+
+<script>
+    $(document).ready(function() {
+        var $footer = $("#footer");
+
+        $footer.css('display', 'block');
+
+        $footer.velocity({
+            translateX: '-=' + 0,
+            translateY: '-=' + 40,
+            translateZ: '-=' + 0
+        }, 0);
+        return $footer.velocity({
+            opacity: 1,
+            translateX: '+=' + 0,
+            translateY: '+=' + 40,
+            translateZ: '+=' + 0
+        }, {
+            easing: null,
+            delay: 200,
+            duration: 600
+        });
+    });
+
+</script>

@@ -86,7 +86,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                 $booking = new Booking();
                 $app->response->headers->set('Content-Type', 'application/json');
 
-                $app->render('user/bookings/calendar/months_navigation.ultra.twig', array(
+                $app->render('calendar/multi.wrapper.twig', array(
                     'user' => $app->auth_user,
                     'active_page' => 'user.reservations',
                     'course_constants' => $course_constants,
@@ -95,7 +95,18 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                     'prereservation' => $prereservation,
                     'booking' => $booking,
                     'datetimes' => $datetime_span,
-                    'pre_selected_spans' => $pre_selected_spans
+                    'pre_selected_spans' => $pre_selected_spans,
+                    'calendar_class_desktop' => 'bookings',
+                    'calendar_class_tablet' => 'bookings',
+                    'calendar_class_mobile' => 'bookings',
+                    'cal_wrapper_desktop' => 'calendar/months.ultra.horizontal.twig',
+                    'cal_wrapper_tablet' => 'calendar/months.standard.twig',
+                    'cal_wrapper_mobile' => 'calendar/months.ultra.vertical.twig',
+                    'url_change_view_desktop' => $app->urlFor('user.booking.change-date-offset.post'),
+                    'url_change_view_tablet' => $app->urlFor('user.booking.change-date-offset.post'),
+                    'url_change_view_mobile' => $app->urlFor('user.booking.change-date-offset.post'),
+                    'day_selector' => 'user/bookings/calendar/day.selector.bookings.ultra.horizontal.twig',
+
                 ));
             }
 
@@ -107,6 +118,10 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
             $calendar = new Calendar();
             $course_constants = new TrainingCourseConstants();
             $course_constants::set_default_values();
+            //
+//            $course_constants::set_custom_values("2015-12-28");
+            //
+            //
             $datetime_span = new DatetimeSpan();
             $reservation = new Reservation();
             $prereservation = new Prereservation();
@@ -119,7 +134,18 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                 'datetimes' => $datetime_span,
                 'reservation' => $reservation,
                 'prereservation' => $prereservation,
-                'booking' => $booking
+                'booking' => $booking,
+                'calendar_class_desktop' => 'bookings',
+                'calendar_class_tablet' => 'bookings',
+                'calendar_class_mobile' => 'bookings',
+                'cal_wrapper_desktop' => 'calendar/months.ultra.horizontal.twig',
+                'cal_wrapper_tablet' => 'calendar/months.standard.twig',
+                'cal_wrapper_mobile' => 'calendar/months.ultra.vertical.twig',
+                'url_change_view_desktop' => $app->urlFor('user.booking.change-date-offset.post'),
+                'url_change_view_tablet' => $app->urlFor('user.booking.change-date-offset.post'),
+                'url_change_view_mobile' => $app->urlFor('user.booking.change-date-offset.post'),
+                'day_selector' => 'user/bookings/calendar/day.selector.bookings.ultra.horizontal.twig',
+
             ));
         })->name('user.book-training-course');
 
@@ -166,9 +192,11 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                             $check_result["prereservations_status_label"]);
                         $app->flash('available_datetime_spans', $check_result["available_datetime_spans"]);
                         $app->flash('available_datetime_spans_description_labels', $check_result["available_datetime_spans_description_labels"]);
+                        $app->flash('available_datetime_spans_description_labels_midi', $check_result["available_datetime_spans_description_labels_midi"]);
                         $app->flash('available_datetime_spans_availibility_labels', $check_result["available_datetime_spans_availibility_labels"]);
                         $app->flash('full_datetime_spans', $check_result["full_datetime_spans"]);
                         $app->flash('full_datetime_spans_description_labels', $check_result["full_datetime_spans_description_labels"]);
+                        $app->flash('full_datetime_spans_description_labels_midi', $check_result["full_datetime_spans_description_labels_midi"]);
                         $app->flash('full_datetime_spans_availibility_labels', $check_result["full_datetime_spans_availibility_labels"]);
 
                         $app->flash('redirected', true);
@@ -260,9 +288,11 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                                     $check_result["prereservations_status_label"]);
                                 $app->flash('available_datetime_spans', $check_result["available_datetime_spans"]);
                                 $app->flash('available_datetime_spans_description_labels', $check_result["available_datetime_spans_description_labels"]);
+                                $app->flash('available_datetime_spans_description_labels_midi', $check_result["available_datetime_spans_description_labels_midi"]);
                                 $app->flash('available_datetime_spans_availibility_labels', $check_result["available_datetime_spans_availibility_labels"]);
                                 $app->flash('full_datetime_spans', $check_result["full_datetime_spans"]);
                                 $app->flash('full_datetime_spans_description_labels', $check_result["full_datetime_spans_description_labels"]);
+                                $app->flash('full_datetime_spans_description_labels_midi', $check_result["full_datetime_spans_description_labels_midi"]);
                                 $app->flash('full_datetime_spans_availibility_labels', $check_result["full_datetime_spans_availibility_labels"]);
 
                                 $app->flash('redirected', true);
@@ -311,6 +341,10 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                                 $check_result_reservations["available_datetime_spans_description_labels"],
                                 $check_result_prereservations["available_datetime_spans_description_labels"]
                             ));
+                            $app->flash('available_datetime_spans_description_labels_midi', array_merge(
+                                $check_result_reservations["available_datetime_spans_description_labels_midi"],
+                                $check_result_prereservations["available_datetime_spans_description_labels_midi"]
+                            ));
                             $app->flash('available_datetime_spans_availibility_labels', array_merge(
                                 $check_result_reservations["available_datetime_spans_availibility_labels"],
                                 $check_result_prereservations["available_datetime_spans_availibility_labels"]
@@ -322,6 +356,10 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                             $app->flash('full_datetime_spans_description_labels', array_merge(
                                 $check_result_reservations["full_datetime_spans_description_labels"],
                                 $check_result_prereservations["full_datetime_spans_description_labels"]
+                            ));
+                            $app->flash('full_datetime_spans_description_labels_midi', array_merge(
+                                $check_result_reservations["full_datetime_spans_description_labels_midi"],
+                                $check_result_prereservations["full_datetime_spans_description_labels_midi"]
                             ));
                             $app->flash('full_datetime_spans_availibility_labels', array_merge(
                                 $check_result_reservations["full_datetime_spans_availibility_labels"],
@@ -346,6 +384,10 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                                 $check_result_reservations["available_datetime_spans_description_labels"],
                                 $check_result_prereservations["available_datetime_spans_description_labels"]
                             ));
+                            $app->flash('available_datetime_spans_description_labels_midi', array_merge(
+                                $check_result_reservations["available_datetime_spans_description_labels_midi"],
+                                $check_result_prereservations["available_datetime_spans_description_labels_midi"]
+                            ));
                             $app->flash('available_datetime_spans_availibility_labels', array_merge(
                                 $check_result_reservations["available_datetime_spans_availibility_labels"],
                                 $check_result_prereservations["available_datetime_spans_availibility_labels"]
@@ -357,6 +399,10 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                             $app->flash('full_datetime_spans_description_labels', array_merge(
                                 $check_result_reservations["full_datetime_spans_description_labels"],
                                 $check_result_prereservations["full_datetime_spans_description_labels"]
+                            ));
+                            $app->flash('full_datetime_spans_description_labels_midi', array_merge(
+                                $check_result_reservations["full_datetime_spans_description_labels_midi"],
+                                $check_result_prereservations["full_datetime_spans_description_labels_midi"]
                             ));
                             $app->flash('full_datetime_spans_availibility_labels', array_merge(
                                 $check_result_reservations["full_datetime_spans_availibility_labels"],
@@ -380,6 +426,10 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                                 $check_result_reservations["available_datetime_spans_description_labels"],
                                 $check_result_prereservations["available_datetime_spans_description_labels"]
                             ));
+                            $app->flash('available_datetime_spans_description_labels_midi', array_merge(
+                                $check_result_reservations["available_datetime_spans_description_labels_midi"],
+                                $check_result_prereservations["available_datetime_spans_description_labels_midi"]
+                            ));
                             $app->flash('available_datetime_spans_availibility_labels', array_merge(
                                 $check_result_reservations["available_datetime_spans_availibility_labels"],
                                 $check_result_prereservations["available_datetime_spans_availibility_labels"]
@@ -391,6 +441,10 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                             $app->flash('full_datetime_spans_description_labels', array_merge(
                                 $check_result_reservations["full_datetime_spans_description_labels"],
                                 $check_result_prereservations["full_datetime_spans_description_labels"]
+                            ));
+                            $app->flash('full_datetime_spans_description_labels_midi', array_merge(
+                                $check_result_reservations["full_datetime_spans_description_labels_midi"],
+                                $check_result_prereservations["full_datetime_spans_description_labels_midi"]
                             ));
                             $app->flash('full_datetime_spans_availibility_labels', array_merge(
                                 $check_result_reservations["full_datetime_spans_availibility_labels"],
@@ -481,13 +535,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                     }
                 }
 
-                $pre_selected_spans = array();
-                if(isset($p_pre_selected_spans)) {
-                    foreach($p_pre_selected_spans as $span){
-                        $datetime = explode(" ", $span);
-                        $pre_selected_spans[$datetime[0]][] = $datetime[1];
-                    }
-                }
+
             }
 
         })->name('user.booking.cancel.post');
@@ -495,7 +543,28 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
     });
 
 
+    $app->get('/detalji-prijava/:span_id', $authenticated_user(), function ($span_id) use ($app) {
+        $datetime_span = DatetimeSpan::getById($span_id);
+        if (!$datetime_span) {
+            $app->flash('errors',  "Ne postoji traženi termin.");
+            $app->redirect($app->urlFor('user.bookings.home'));
+        } else {
+            $bookings = Booking::getByDatetimeSpan($span_id);
+//            $logs = ActionLog::getActionLogsForDatetimeSpan($datetime_span->id);
 
+//
+            $app->render('user/bookings/user.bookings.span.details.twig', array(
+                'user' => $app->auth_user,
+                'active_page' => "user.main",
+                'active_item' => "user.main.bookings",
+                'bookings' => $bookings,
+                'span' => $datetime_span,
+//                'logs' => $logs,
+                'text_help' => new \app\helpers\Text()
+            ));
+        }
+
+    })->name('user.bookings.span.details');
 });
 
 

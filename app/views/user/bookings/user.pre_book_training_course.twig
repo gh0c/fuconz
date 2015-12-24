@@ -19,30 +19,51 @@
         <div class = "black-horiz-spacer-5"></div>
 
         <div class = "main-content-box">
-            <div class = "inner-cont">
-                <div class = "form-container">
 
-                    {% include "templates/partials/user_messages.twig" %}
+            {% include "templates/partials/user_messages.twig" %}
 
-                    <div class = "vertical-section info">
-                        <div class = "inner-70pct">
-                            <div class = "status-container msg status-msg warning-msg">
-                                <i class="status fa fa-info-circle"></i>
-                                <h4>
-                                    Moguće je predbilježiti se za termin treninga! <br>
-                                    U slučaju pravovremenog otkazivanja neke druge online rezervacije (za isti taj termin)
-                                    termin se automatski popunjava u slučaju da postoje predbilježbe za njega.
-                                    Ukoliko tvoja predbilježba postane aktivirana, dobit ćeš poruku sa obavijeti. <br>
-                                    Predbilježbe je, kao i rezervacije, moguće odjaviti do 24 sata prije početka na
-                                    <a href="{{ urlFor('user.profile.home') }}" class="underline-link">članskim stranicama.</a> <br><br>
-                                    <a href="{{ urlFor('user.book-training-course') }}" class="underline-link">Povratak na kalendar
-                                        <i class = "fa fa-fw fa-calendar-check-o"></i></a> <br>
 
-                                </h4>
-                                <i class="status fa"></i>
-                            </div>
+
+            <div class = "inner-cont" style = "display: none;">
+
+                <div class = "horizontal-section info pre-booking special-info inner-70pct">
+                    <div class = "">
+                        <div class = "status-container msg status-msg warning-msg">
+                            <i class="status fa fa-info-circle"></i>
+                            <h4>
+                                Moguće je predbilježiti se za termin treninga! <br>
+                                U slučaju pravovremenog otkazivanja neke druge online rezervacije (za isti taj termin)
+                                termin se automatski popunjava u slučaju da postoje predbilježbe za njega.
+                                Ukoliko tvoja predbilježba postane aktivirana, dobit ćeš poruku sa obavijeti. <br>
+                                Predbilježbe je, kao i rezervacije, moguće odjaviti do 24 sata prije početka na
+                                <a href="{{ urlFor('user.profile.home') }}" class="underline-link">članskim stranicama.</a> <br><br>
+                                <a href="{{ urlFor('user.book-training-course') }}" class="underline-link">Povratak na kalendar
+                                    <i class = "fa fa-fw fa-calendar-check-o"></i></a> <br>
+
+                            </h4>
+                            <i class="status fa close-info fa-ban" title = "Zatvori obavijest"></i>
                         </div>
                     </div>
+                </div>
+
+            </div>
+            <script>
+                $(function() {
+                    var dontShowInfo = Cookies.get("dont-show-pre-booking-info") || false;
+                    console.log(dontShowInfo);
+                    if(!dontShowInfo) {
+                        var $info = $(".info.pre-booking");
+                        $info.parent().slideToggle(700);
+//                        $info.parent().removeClass("display-none");
+                    }
+                });
+            </script>
+
+            <div class = "inner-cont">
+
+                <div class = "form-container">
+
+
 
                     <form method = "post" name = "user-course-pre-booking" id = "user-course-pre-booking"  onsubmit="return false;"
                           action = "{{ urlFor('user.pre-book-training-course.post') }}">
@@ -57,23 +78,54 @@
 
                                 {% for available_span in flash.available_datetime_spans %}
                                     <div class = "selected-span-cont blueprint">
-                                        <div class = "vertical-section text-centered multirow-special">
+
+
+
+                                        <div class = "vertical-section text-centered multirow-special f-div-fw-1024">
                                             <div class = "">
+
                                                 <input type="text" name="selected-spans-description-labels[]" required
-                                                maxlength="255" spellcheck="false" autocomplete="on" readonly
-                                                value = "{{ flash.available_datetime_spans_description_labels[loop.index0] }}"
-                                                class = "large-text-input large-input-width description-label"/>
-                                                <label alt="Odabrani termin" placeholder="Odabrani termin" data-info="Odabrani termin"></label>
+                                                       maxlength="255" spellcheck="false" autocomplete="on" readonly
+                                                       value = "{{ flash.available_datetime_spans_description_labels[loop.index0] }}"
+                                                       class = "large-text-input large-input-width description-label std"/>
+                                                <label data-info="Odabrani termin"></label>
+
                                             </div>
                                         </div>
 
-                                        <div class = "vertical-section text-centered multirow-special">
+                                        <div class = "vertical-section text-centered multirow-special f-div-non-fw-1024">
                                             <div class = "">
+
+                                                <input type="text" name="selected-spans-description-labels-midi[]" required
+                                                       maxlength="255" spellcheck="false" autocomplete="on" readonly
+                                                       value = "{{ flash.available_datetime_spans_description_labels_midi[loop.index0] }}"
+                                                       class = "large-text-input medium-input-width description-label midi"/>
+                                                <label data-info="Odabrani termin"></label>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class = "vertical-section text-centered multirow-special f-div-fw-768">
+                                            <div class = "">
+
                                                 <input type="text" name="selected-spans-availability-labels[]" required
-                                                maxlength="255" spellcheck="false" autocomplete="on" readonly
-                                                value = "{{ flash.available_datetime_spans_availibility_labels[loop.index0] }}"
-                                                class = "small-text-input small-input-width availability-label"/>
-                                                <label alt="Popunjenost" placeholder="Popunjenost termina" data-info="Popunjenost termina"></label>
+                                                       maxlength="255" spellcheck="false" autocomplete="on" readonly
+                                                       value = "{{ flash.available_datetime_spans_availibility_labels[loop.index0] }}"
+                                                       class = "small-text-input micro-input-width availability-label text-centered"/>
+                                                <label data-info="Popunjenost"></label>
+
+                                            </div>
+                                        </div>
+
+                                        <div class = "vertical-section text-centered multirow-special f-div-non-fw-768">
+                                            <div class = "">
+
+                                                <input type="text" name="selected-spans-availability-labels-micro[]" required
+                                                       maxlength="255" spellcheck="false" autocomplete="on" readonly
+                                                       value = "{{ flash.available_datetime_spans_availibility_labels[loop.index0] }}"
+                                                       class = "small-text-input nano-input-width availability-label text-centered"/>
+                                                <label class = "availability-label special-label"></label>
 
                                             </div>
                                         </div>
@@ -94,26 +146,57 @@
 
                                 {% for full_span in flash.full_datetime_spans %}
                                     <div class = "selected-span-cont blueprint">
-                                        <div class = "vertical-section text-centered multirow-special">
+
+                                        <div class = "vertical-section text-centered multirow-special f-div-fw-1024">
                                             <div class = "">
+
                                                 <input type="text" name="selected-spans-description-labels[]" required
                                                        maxlength="255" spellcheck="false" autocomplete="on" readonly
                                                        value = "{{ flash.full_datetime_spans_description_labels[loop.index0] }}"
-                                                       class = "large-text-input large-input-width description-label"/>
-                                                <label alt="Odabrani termin" placeholder="Odabrani termin" data-info="Odabrani termin"></label>
+                                                       class = "large-text-input large-input-width description-label std"/>
+                                                <label data-info="Odabrani termin"></label>
+
                                             </div>
                                         </div>
 
-                                        <div class = "vertical-section text-centered multirow-special">
+                                        <div class = "vertical-section text-centered multirow-special f-div-non-fw-1024">
                                             <div class = "">
+
+                                                <input type="text" name="selected-spans-description-labels-midi[]" required
+                                                       maxlength="255" spellcheck="false" autocomplete="on" readonly
+                                                       value = "{{ flash.full_datetime_spans_description_labels_midi[loop.index0] }}"
+                                                       class = "large-text-input medium-input-width description-label midi"/>
+                                                <label data-info="Odabrani termin"></label>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class = "vertical-section text-centered multirow-special f-div-fw-768">
+                                            <div class = "">
+
                                                 <input type="text" name="selected-spans-availability-labels[]" required
                                                        maxlength="255" spellcheck="false" autocomplete="on" readonly
                                                        value = "{{ flash.full_datetime_spans_availibility_labels[loop.index0] }}"
-                                                       class = "small-text-input small-input-width availability-label"/>
-                                                <label alt="Popunjenost" placeholder="Popunjenost termina" data-info="Popunjenost termina"></label>
+                                                       class = "small-text-input micro-input-width availability-label text-centered"/>
+                                                <label data-info="Popunjenost"></label>
 
                                             </div>
                                         </div>
+
+                                        <div class = "vertical-section text-centered multirow-special f-div-non-fw-768">
+                                            <div class = "">
+
+                                                <input type="text" name="selected-spans-availability-labels-micro[]" required
+                                                       maxlength="255" spellcheck="false" autocomplete="on" readonly
+                                                       value = "{{ flash.full_datetime_spans_availibility_labels[loop.index0] }}"
+                                                       class = "small-text-input nano-input-width availability-label text-centered"/>
+                                                <label class = "availability-label special-label"></label>
+
+                                            </div>
+                                        </div>
+
+
 
                                         <input type="hidden" name="selected-full-spans[]" class = "selected-spans-input"
                                                value = "{{ full_span }}">
@@ -124,27 +207,33 @@
                             {% endif %}
                             </div>
 
+
+                            {# Radiobutton selectors #}
                             {% if flash.available_datetime_spans|length > 0 and flash.full_datetime_spans|length > 0 %}
                             <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
-                                    <div class = "pp-radio-div">
+                                <div class = "">
+
+                                    <div class = "f-radio-div">
 
                                         <input type="radio" name="booking-selection" value = "1" id = "res-and-pre-res"
-                                               class = "rb-input booking-selector " tabindex="1">
-                                        <div class = "radio-div-cont first-left">
+                                               class = "rb-input booking-selector " tabindex="1"><!--
+                                        --><div class = "radio-div-cont first-left f-kilo-input-width">
                                             <label for = "res-and-pre-res">
-                                                <span>Rezerviraj slobodne i predbilježi se za zauzete termine</span>
-                                                <i class = "fa fa-fw fa-calendar"></i> + <i class = "fa fa-fw fa-calendar-o"></i>
+                                                <span class = "f-div-fw-tablet">Rezerviraj slobodne i predbilježi zauzete termine</span>
+                                                <span class = "f-div-non-fw-tablet">Rezervacija i predbilježba</span>
+                                                <i class = "fa fa-fw fa-calendar f-div-fw-tablet"></i> + <i class = "fa fa-fw fa-calendar-o f-div-fw-tablet"></i>
                                             </label>
                                         </div>
                                     </div>
-                                    <div class = "pp-radio-div">
+
+                                    <div class = "f-radio-div">
 
                                         <input type="radio" name="booking-selection" value = "2" id = "res-only"
-                                               class = "rb-input booking-selector" tabindex="2">
-                                        <div class = "radio-div-cont second-left">
+                                               class = "rb-input booking-selector" tabindex="2"><!--
+                                        --><div class = "radio-div-cont second-left f-kilo-input-width">
                                             <label for = "res-only">
-                                                <span>Samo rezerviraj slobodne termine</span>
+                                                <span class = "f-div-fw-tablet">Samo rezerviraj slobodne termine</span>
+                                                <span class = "f-div-non-fw-tablet">Samo rezervacija</span>
                                                 <i class = "fa fa-fw fa-calendar" ></i>
                                             </label>
                                         </div>
@@ -153,14 +242,15 @@
                             </div>
                             {% elseif flash.available_datetime_spans|length == 0 and flash.full_datetime_spans|length > 0 %}
                             <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
-                                    <div class = "pp-radio-div">
+                                <div class = "">
+                                    <div class = "f-radio-div">
 
                                         <input type="radio" name="booking-selection" value = "1" id = "res-and-pre-res"
                                                class = "rb-input booking-selector " tabindex="1">
-                                        <div class = "radio-div-cont first-left">
+                                        <div class = "radio-div-cont first-left f-maxi-input-width">
                                             <label for = "res-and-pre-res">
-                                                <span>Predbilježi se za zauzete termine</span>
+                                                <span class = "f-div-fw-tablet">Predbilježi se za zauzete termine</span>
+                                                <span class = "f-div-non-fw-tablet">Predbilježba zauzetih termina</span>
                                                 <i class = "fa fa-fw fa-calendar-o"></i>
                                             </label>
                                         </div>
@@ -169,14 +259,14 @@
                             </div>
                             {% elseif flash.available_datetime_spans|length > 0 and flash.full_datetime_spans|length == 0 %}
                             <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
-                                    <div class = "pp-radio-div">
+                                <div class = "">
+                                    <div class = "f-radio-div">
 
                                         <input type="radio" name="booking-selection" value = "2" id = "res-only"
                                                class = "rb-input booking-selector " tabindex="1">
-                                        <div class = "radio-div-cont first-left">
+                                        <div class = "radio-div-cont first-left f-maxi-input-width">
                                             <label for = "res-only">
-                                                <span>Rezerviraj slobodne termine termine</span>
+                                                <span>Rezerviraj slobodne termine</span>
                                                 <i class = "fa fa-fw fa-calendar"></i>
                                             </label>
                                         </div>
@@ -185,29 +275,6 @@
                             </div>
                             {% endif %}
 
-                            {#<div class = "selected-span-cont blueprint">#}
-                                {#<div class = "vertical-section text-centered multirow-special">#}
-                                    {#<div class = "">#}
-                                        {#<input type="text" name="selected-spans-description-labels[]" required#}
-                                               {#maxlength="255" spellcheck="false" autocomplete="on" readonly#}
-                                               {#class = "large-text-input large-input-width description-label"/>#}
-                                        {#<label alt="Odabrani termin" placeholder="Odabrani termin" data-info="Odabrani termin"></label>#}
-                                    {#</div>#}
-                                {#</div>#}
-
-                                {#<div class = "vertical-section text-centered multirow-special">#}
-                                    {#<div class = "">#}
-                                        {#<input type="text" name="selected-spans-availability-labels[]" required#}
-                                               {#maxlength="255" spellcheck="false" autocomplete="on" readonly#}
-                                               {#class = "small-text-input small-input-width availability-label"/>#}
-                                        {#<label alt="Popunjenost" placeholder="Popunjenost termina" data-info="Popunjenost termina"></label>#}
-
-                                    {#</div>#}
-                                {#</div>#}
-
-                                {#<input type="hidden" name="selected-spans[]" class = "selected-spans-input" value = "-">#}
-
-                            {#</div>#}
 
 
                             <script>
@@ -232,7 +299,7 @@
                         <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
 
                         <div class = "submitter-cont">
-                            <div class = "inner-70pct">
+                            <div class = "">
                                 <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="3"
                                      onclick="validateAndSubmitUserPreBooking('user-course-pre-booking')">
                                     <span>REZERVACIJA</span>
@@ -273,5 +340,14 @@
 
         });
     </script>
+
+{% endblock %}
+
+
+
+{% block additional_js %}
+    <script src="public/code/js/validation.js"></script>
+    <script type="text/javascript" src="public/code/js/calendar.js?{{ "now"|date("YmdHis") }}"></script>
+    <script type="text/javascript" src="public/assets/js/jquery.mixitup.min.js"></script>
 
 {% endblock %}

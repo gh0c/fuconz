@@ -19,10 +19,10 @@
         <div class = "black-horiz-spacer-5"></div>
 
         <div class = "main-content-box">
+            {% include "admin/templates/partials/admin_messages.twig" %}
+
             <div class = "inner-cont">
 
-
-                {% include "admin/templates/partials/admin_messages.twig" %}
 
                 <div class = "content-column">
                     <div class = "table-container">
@@ -34,10 +34,10 @@
                             --><div class = "th width-15em margin-std-lr">
                                 <h4>Korisničko ime</h4>
                             </div><!--
-                            --><div class = "th width-25em margin-std-lr">
-                                <h4>Email</h4>
+                            --><div class = "th width-15em margin-std-lr">
+                                <h4>Email / Ime i prezime</h4>
                             </div><!--
-                            --><div class = "th width-7em margin-std-lr">
+                            --><div class = "th width-8em margin-std-lr">
                                 <h4></h4>
                             </div>
                         </div>
@@ -70,10 +70,13 @@
                                     --><div class = "td width-15em margin-std-lr text-left">
                                         <span>{{ user.username }}</span>
                                     </div><!--
-                                    --><div class = "td width-20em margin-std-lr text-left">
-                                        <span>{{ user.email }}</span>
+                                    --><div class = "td width-15em margin-std-lr text-left">
+                                        <div>
+                                            <span>{{ user.email }}</span><br>
+                                            <span>{{ user.full_name() }}</span>
+                                        </div>
                                     </div><!--
-                                    --><div class = "td width-7em margin-std-lr text-centered admin-actions-cont">
+                                    --><div class = "td width-8em margin-std-lr text-centered admin-actions-cont">
                                         <div>
                                             <div class = "edit user action" title = "Uredi podatke o članu">
                                                 <a href = "{{ urlFor('admin.users.edit.user', {"user_id":  user.id } ) }}">

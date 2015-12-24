@@ -19,6 +19,8 @@
         <div class = "black-horiz-spacer-5"></div>
 
         <div class = "main-content-box">
+            {% include "admin/templates/partials/admin_messages.twig" %}
+
             <div class = "inner-cont">
                 <div class = "form-container">
 
@@ -29,108 +31,120 @@
 
 
                             <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
-                                    <input type="text" name="span-label" id="span_label" required
+                                <div class = "">
+
+                                    <input type="text" name="span-label" id="span-label" required
                                            maxlength="255" spellcheck="false" autocomplete="off" tabindex="1" readonly
-                                           class = "large-text-input large-input-width description-label"
+                                           class = "large-text-input large-input-width"
                                             value = "{{ datetime_span_label }}"/>
-                                    <label id="datetime-span-label" alt="Termin"
-                                           placeholder="Termin" data-info="Termin"></label>
+                                    <label id="datetime-span-label" for = "span-label" data-info="Termin"></label>
+
                                 </div>
                             </div>
 
-                            <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
+                            
+                            <div class = "vertical-section text-centered">
+                                <div class = "">
+
                                     <input type="text" name="title" id="title" required
                                            maxlength="255" spellcheck="false" autocomplete="off" tabindex="2"
                                            class = "std-text-input std-input-width req"/>
-                                    <label id="title-label" alt="Naziv" class = "req"
-                                           placeholder="Naziv" data-info="Naziv"></label>
+                                    <label for = "title" id="title-label" class = "req" data-info="Naziv"></label>
+
                                 </div>
                             </div>
-                            <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
+
+                            <div class = "vertical-section text-centered">
+                                <div class = "">
+
                                     <input type="text" name="field" id="field" required
                                            maxlength="255" spellcheck="false" autocomplete="off" tabindex="3"
                                            class = "std-text-input std-input-width"/>
-                                    <label id="field-label" class = "" alt="teren" placeholder="teren" data-info="Teren"></label>
-                                </div>
+                                    <label id="field-label" class = "" for = "field" data-info="Teren"></label>
 
+                                </div>
                             </div>
 
                             <input type = "hidden" name = "span-id" required readonly value = "{{ datetime_span_id }}">
 
 
                             <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
+                                <div class = "">
+
                                     <input type="number" name="res-team-one" id="res-team-one"
                                            min="0" tabindex="4" required
                                            class = "small-text-input small-input-width req"/>
-                                    <label id="res-team-one-label" class = "req" alt="Rezultat ekipe 1" placeholder="Rezultat ekipe 1"
-                                           data-info="Rezultat ekipe 1"></label>
+                                    <label id="res-team-one-label" class = "req" for = "res-team-one"
+                                           data-info="Rez ekipe 1"></label>
+
                                 </div>
                             </div>
 
                             <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
+                                <div class = "">
+
                                     <input type="number" name="res-team-two" id="res-team-two"
                                            min="0" tabindex="5" required
                                            class = "small-text-input small-input-width req"/>
-                                    <label id="res-team-one-label" class = "req" alt="Rezultat ekipe 2" placeholder="Rezultat ekipe 2"
-                                           data-info="Rezultat ekipe 2"></label>
+                                    <label id="res-team-one-label" class = "req" for = "res-team-two"
+                                           data-info="Rez ekipe 2"></label>
+
                                 </div>
                             </div>
 
 
-                            <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
-                                    <input type="checkbox" name="after-et" id="after-et" required
+                            <div class = "vertical-section text-centered">
+                                <div class = "">
+
+                                    <input type="checkbox" name="after-et" id="after-et"
                                            class = "cb-input after-et" tabindex="6">
-                                    <div class = "checkbox-div-cont">
-                                        <label for = "after-et" alt="Nakon penala" placeholder="Nakon penala" data-info="Nakon penala">
+                                    <div class = "checkbox-div-cont f-std-input-width">
+                                        <label for = "after-et" data-info="Nakon penala">
                                             <span>Produžetak/Penali?</span>
                                         </label>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
 
                             <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
-                                    <div class = "pp-radio-div multirow-inline">
+                                <div class = "">
+
+                                    <div class = "f-radio-div">
+
                                         <input type="radio" name="winner-selection" value = "1" id = "home-win"
-                                               class = "rb-input winner-selector " tabindex="7">
-                                        <div class = "radio-div-cont first-left">
+                                               class = "rb-input winner-selector " tabindex="7"><!--
+                                        --><div class = "radio-div-cont first-left f-std-input-width">
                                             <label for = "home-win">
                                                 <span>Pobjeda ekipe 1</span>
                                             </label>
-                                        </div>
-                                    </div>
-                                    <div class = "pp-radio-div multirow-inline">
-                                        <input type="radio" name="winner-selection" value = "2" id = "away-win"
-                                               class = "rb-input winner-selector" tabindex="8">
-                                        <div class = "radio-div-cont second-left">
+                                        </div><!--
+
+                                        --><input type="radio" name="winner-selection" value = "2" id = "away-win"
+                                               class = "rb-input winner-selector" tabindex="8"><!--
+                                        --><div class = "radio-div-cont second-left f-std-input-width">
                                             <label for = "away-win">
                                                 <span>Pobjeda ekipe 2</span>
                                             </label>
-                                        </div>
-                                    </div>
-                                    <div class = "pp-radio-div multirow-inline">
-                                        <input type="radio" name="winner-selection" value = "0" id = "draw"
-                                               class = "rb-input winner-selector" tabindex="9">
-                                        <div class = "radio-div-cont second-left">
+                                        </div><!--
+
+                                        --><input type="radio" name="winner-selection" value = "0" id = "draw"
+                                               class = "rb-input winner-selector" tabindex="9"><!--
+                                        --><div class = "radio-div-cont third-left f-std-input-width">
                                             <label for = "draw">
                                                 <span>Neriješeno</span>
                                             </label>
                                         </div>
+
                                     </div>
+
                                 </div>
                             </div>
 
 
 
 
-                            <div class = "vertical-section text-centered multirow multirow-inline players team-one">
+                            <div class = "standard-f-section text-centered multirow multirow-inline players team-one">
                                 <h3>Ekipa 1</h3>
                                 <div class = "submitter-cont">
                                     <div class="submitter submit bbb-flag-v-cibona-blue">
@@ -139,7 +153,7 @@
                                 </div>
 
                                 <div class = "display-none vertical-section text-centered one player-selector">
-                                    <div class = "inner-70pct relative-pos">
+                                    <div class = " relative-pos">
                                         <select name="players-team-one[]"  required
                                                 class = "std-text-input std-input-width">
                                             <option selected disabled hidden value=''></option>
@@ -151,21 +165,22 @@
 
                                         </select>
 
-                                        <label alt="Igrač" placeholder="Igrač" data-info="Igrač"></label>
+                                        <label data-info="Igrač"></label>
                                     </div>
                                 </div>
 
                             </div><!--
 
-                            --><div class = "vertical-section text-centered multirow multirow-inline players team-two">
+                            --><div class = "standard-f-section text-centered multirow multirow-inline players team-two">
                                 <h3>Ekipa 2</h3>
                                 <div class = "submitter-cont">
                                     <div class="submitter submit bbb-flag-v-cibona-blue">
                                         <a data-team = "two" class = "add-player" tabindex = "11">Dodaj igrača</a>
                                     </div>
                                 </div>
+
                                 <div class = "display-none vertical-section text-centered two player-selector">
-                                    <div class = "inner-70pct relative-pos">
+                                    <div class = " relative-pos">
                                         <select name="players-team-two[]" required
                                                 class = "std-text-input std-input-width">
                                             <option selected disabled hidden value=''></option>
@@ -176,7 +191,7 @@
                                             {% endfor %}
                                         </select>
 
-                                        <label alt="Igrač" placeholder="Igrač" data-info="Igrač"></label>
+                                        <label for = "" data-info="Igrač"></label>
                                     </div>
                                 </div>
                             </div>
@@ -184,14 +199,13 @@
                         </div>
 
 
-                        {% include "admin/templates/partials/admin_messages.twig" %}
 
                         {% include "admin/templates/partials/live_status.container.twig" %}
 
                         <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
 
                         <div class = "submitter-cont">
-                            <div class = "inner-70pct">
+                            <div class = "">
                                 <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="12"
                                      onclick="validateAndSubmitGame('game')">
                                     <span>UNESI</span>
@@ -240,6 +254,10 @@
 {% endblock %}
 
 {% block additional_js %}
+    <script src="public/code/js/admin/validation.js"></script>
+
+    <script src="public/code/js/admin/validation_content.js"></script>
+
     <script>
         $(document).on("click", ".add-player", function() {
             var team = $(this).data("team");

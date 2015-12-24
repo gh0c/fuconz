@@ -1,0 +1,170 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    Prijave za termin {{ span.descriptionString() }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-subtitle-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h2>{{ span.descriptionString() }}</h2>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            {% include "templates/partials/user_messages.twig" %}
+
+            <div class = "inner-cont">
+
+
+
+                <div class = "content-column">
+
+                    <div class = "vertical-section text-centered">
+                        <h3>Rezervacije</h3>
+                    </div>
+
+                    <div class = "table-container">
+
+                        <div class = "heading-container">
+                            <div class = "th f-div-fw-500 width-4-and-half-em margin-std-lr">
+                                <h4></h4>
+                            </div><!--
+                            --><div class = "th f-div-non-fw-500 width-3em margin-std-lr">
+                                <h4></h4>
+                            </div><!--
+                            --><div class = "th width-20em f-div-fw-mobile-mid margin-std-lr">
+                                <h4>Korisnik</h4>
+                            </div><!--
+                            --><div class = "th width-12em f-div-non-fw-mobile-mid margin-std-lr">
+                                <h4>Korisnik</h4>
+                            </div><!--
+                            --><div class = "th width-10em f-div-fw-768 margin-std-lr">
+                                <h4>Prijavljeno</h4>
+                            </div><!--
+
+                            --><div class = "th width-20em f-div-fw-1024 margin-std-lr">
+                                <h4>Status</h4>
+                            </div>
+                        </div>
+
+                        <div class = "rows-container">
+
+                            {% for booking in bookings %}
+                                <div class = "tr height-2-and-half-em">
+
+                                    <div class = "td f-div-fw-500 width-4-and-half-em margin-std-lr home-icon-cont text-centered">
+                                        <div class = "thumbnail booking booking-icon">
+                                            <div class="pic-cont std-pic-cont">
+                                                {% if booking.type == 'reservation' %}
+                                                    <i class = "fa icon fa-fw fa-calendar-check-o"></i>
+                                                {% elseif booking.type == 'prereservation' %}
+                                                    <i class = "fa icon fa-fw fa-clock-o"></i>
+                                                {% else %}
+                                                    <i class = "fa icon fa-fw fa-question"></i>
+                                                {% endif %}
+                                            </div>
+                                            {% if booking.type == 'reservation' and booking.triggered == 1%}
+                                                <div class = "overlay-pic-cont std-pic-cont" title = "Aktivirana predbilježba">
+                                                    <i class = "fa fa-fw icon-o fa-exclamation"></i>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div><!--
+                                    --><div class = "td f-div-non-fw-500 width-3em margin-std-lr home-icon-cont text-centered">
+                                        <div class = "thumbnail booking booking-icon">
+                                            <div class="pic-cont std-pic-cont">
+                                                {% if booking.type == 'reservation' %}
+                                                    <i class = "fa icon fa-fw fa-calendar-check-o"></i>
+                                                {% elseif booking.type == 'prereservation' %}
+                                                    <i class = "fa icon fa-fw fa-clock-o"></i>
+                                                {% else %}
+                                                    <i class = "fa icon fa-fw fa-question"></i>
+                                                {% endif %}
+                                            </div>
+                                            {% if booking.type == 'reservation' and booking.triggered == 1%}
+                                                <div class = "overlay-pic-cont std-pic-cont" title = "Aktivirana predbilježba">
+                                                    <i class = "fa fa-fw icon-o fa-exclamation"></i>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div><!--
+
+                                    --><div class = "td width-20em margin-std-lr f-div-fw-mobile-mid text-left">
+                                        <div class = "user">
+                                            {%  set avatar_url = booking.user.getAvatarURL('avatar',
+                                            { "width": 34, "height": 34, "crop": "fill"}) %}
+                                            {%  if avatar_url %}
+                                                <div class = "img-holder"><img src = "{{ avatar_url }}" /></div>
+                                            {% else %}
+                                            <div class = "img-holder"><i class = "fa fa-user"></i></div>
+                                            {% endif %}
+                                            <span>{{ booking.user.username }} ({{ booking.user.full_name() }})</span>
+                                        </div>
+                                    </div><!--
+                                    --><div class = "td width-12em f-div-non-fw-mobile-mid margin-std-lr text-left">
+                                        <div class = "user">
+                                            {%  set avatar_url = booking.user.getAvatarURL('avatar',
+                                            { "width": 34, "height": 34, "crop": "fill"}) %}
+                                            {%  if avatar_url %}
+                                                <div class = "img-holder"><img src = "{{ avatar_url }}" /></div>
+                                            {% else %}
+                                                <div class = "img-holder"><i class = "fa fa-user"></i></div>
+                                            {% endif %}
+                                            <span>{{ booking.user.username }}</span>
+                                        </div>
+                                    </div><!--
+                                    --><div class = "td width-10em f-div-fw-768 margin-std-lr text-left">
+                                        <span>{{ booking.created_at|date('j.m.Y. H:i') }}</span>
+                                    </div><!--
+                                    --><div class = "td width-20em margin-std-lr f-div-fw-1024 text-left">
+                                        {% if booking.type == 'prereservation' %}
+                                            {% if booking.activated == 2 %}
+                                                <span>Otpala predbilježba za popunjeni termin</span>
+                                            {% elseif booking.activated == 1 %}
+                                                <span>Aktivirana predbilježba</span>
+                                            {% else %}
+                                                <span>Predbilježba zasad nepoznatog statusa</span>
+                                            {% endif %}
+                                        {% elseif booking.type == 'reservation' %}
+                                            {% if booking.canceled == 1 %}
+                                                <span>Poništena rezervacija za otkazani temin</span>
+                                            {% elseif booking.canceled == 2 %}
+                                                <span>Potvrđeno održavanje termina
+                                                {% if booking.triggered == 1 %}
+                                                    <br>Rezervacija aktivirana predbilježbom
+                                                {% endif %}
+                                                </span>
+                                            {% else %}
+                                                <span>Rezervacija zasad nepoznatog statusa
+                                                    {% if booking.triggered == 1 %}
+                                                        <br>Rezervacija aktivirana predbilježbom
+                                                    {% endif %}
+                                                </span>
+                                            {% endif %}
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

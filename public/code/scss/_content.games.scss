@@ -1,0 +1,191 @@
+@import 'modules/modules.import';
+
+.std-item {
+  // list of bookings
+  $game-row-height: 2.875em;
+
+  &.game {
+    text-align: center;
+
+//    height: $game-row-height;
+
+    margin: 2px 0;
+
+    @include responsive-w-min(570px) {
+      margin: 4px 0;
+    }
+
+    font-family: MuseoSans;
+    font-weight: 600;
+    color: $dark-dark-blue;
+
+    padding-top: 0.125em;
+    padding-bottom: 0.125em;
+    @include responsive-w-min(570px) {
+      padding-top: 0.25em;
+      padding-bottom: 0.25em;
+    }
+
+    a {
+      color: $dark-dark-blue;
+    }
+
+    .section-group-selector {
+      display: block;
+
+      &:nth-of-type(1) {
+        //        text-align: left;
+//        background-color: rgba(cadetblue, 0.35); /// <<<
+        @include responsive-w-min(768px) {
+          display: inline-block;
+        }
+      }
+      &:nth-of-type(2) {
+        //        text-align: left;
+//        background-color: rgba(maroon, 0.35); /// <<<
+        @include responsive-w-min(768px) {
+          display: inline-block;
+        }
+      }
+
+    }
+
+    .icon-holder {
+      width: 3em;
+      height: 2.375em;
+      .game-icon-cont {
+        background-color: $light-blue-gray-light;
+
+        .game-icon {
+          width: 3em;
+          height: 2.25em;
+          position: relative;
+          .pic-cont {
+            & > .icon {
+              font-size: 1.8em;
+              color: $dark-dark-blue;
+              &.victory {
+                color: $green-badge-transparent-overlay;
+              }
+              &.loss {
+                color: $red-loss;
+              }
+              &.draw {
+                color: $orange-warning;
+              }
+              &.fa-question {
+                color: $cibona-blue-transp10;
+              }
+            }
+          }
+          .overlay-pic-cont {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            clip: rect(auto 30px auto auto); /* IE4 to IE7 */
+            clip: rect(auto, 30px, auto, auto);
+            .icon-o {
+              font-size: 1.8em;
+
+              &.victory {
+                color: $green-badge-transparent-overlay;
+              }
+              &.loss {
+                color: $red-loss;
+              }
+              &.draw {
+                color: $orange-warning;
+              }
+              &.fa-question {
+                color: $cibona-blue-transp10;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ext-link {
+      position: relative;
+
+      .icon-holder {
+        width: 3em;
+        height: 2.375em;
+        //              cursor: pointer;
+        @include pp-transition(all .25s ease-out);
+        .ext-link-icon-cont {
+          cursor: pointer;
+
+          .ext-link-icon {
+            width: 2em;
+            height: 2.25em;
+            position: relative;
+
+          }
+        }
+        .ext-link-icon-cont:hover {
+          background-color: $light-blue-gray-light;
+        }
+      }
+    }
+
+    section.td.course-span {
+      .span-info-holder {
+        .fw-std {
+          @include responsive-w-max(1023px) {
+            display: none;
+          }
+        }
+        .fw-mid {
+          display: none;
+          @include responsive-w-min(570px) {
+            display: block;
+          }
+          @include responsive-w-min(1024px) {
+            display: none;
+          }
+        }
+        .fw-min {
+          display: block;
+          @include responsive-w-min(570px) {
+            display: none;
+          }
+
+        }
+      }
+    }
+
+
+    section.td {
+      text-align: left;
+      padding: 0 .5em;
+      height: $game-row-height - 0.25em;
+
+      @include responsive-w-min(1024px){
+        height: $game-row-height;
+      }
+
+      &.icon {
+        width: 4em;
+      }
+      &.course-span {
+        width: 12em;
+        @include responsive-w-min(570px) {
+          width: 18em;
+        }
+        @include responsive-w-min(1024px) {
+          width: 24em;
+        }
+      }
+      &.result {
+        width: 14em;
+      }
+      &.ext-link {
+        width: 3em;
+      }
+    }
+  }
+
+}

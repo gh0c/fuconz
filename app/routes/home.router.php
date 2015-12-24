@@ -14,4 +14,8 @@ $app->get('/o-stranici', function() use ($app) {
 })->name('about-site');
 
 
+$app->get('/bootstrap-test', function() use ($app) {
+    $app->render('bstest.twig');
+})->name('bs');
+
 ?>

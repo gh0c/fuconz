@@ -1,0 +1,38 @@
+
+
+<div class="calendar-header vertical clearfix-helper">
+
+    <div>
+        <a class="offset-picker-prev navigation-offset-changer standard-offset-changer vertical"
+           data-handler="prev"
+           data-direction-offset = "{{ calendar.days_offset_std() - 2 }}"
+           data-direction = "minus"
+           data-link = "{{ url_change_view }}"
+           data-date = "{{ course_constants.get_day_offset(-calendar.days_offset_std() + 2) }}">
+            <span class="fa fa-chevron-up"></span>
+        </a>
+
+        <div class="offset-picker-title">
+
+            <span class="offset-picker-month">{{ calendar.advanced_month_label(course_constants.read('selected.date')) }}</span>
+        </div>
+
+        <a class="offset-picker-next navigation-offset-changer standard-offset-changer vertical"
+           data-handler="next"
+           data-direction-offset = "{{ calendar.days_offset_std() - 2 }}"
+           data-direction = "plus"
+           data-link = "{{ url_change_view }}"
+           data-date = "{{ course_constants.get_day_offset(calendar.days_offset_std() - 2) }}">
+            <span class="fa fa-chevron-down"></span>
+        </a>
+    </div>
+
+
+
+
+
+
+
+
+</div>
+

@@ -1,65 +1,74 @@
-{% for success in admin_success_msgs %}
-    <div class = "vertical-section info">
-        <div class = "inner-70pct">
-            <div class = "status-container msg success-msg  warning-msg">
-                <i class="status fa fa-check"></i> <h4>{{ success|nl2br }}</h4><i class="status fa"></i>
+{% if admin_success_msgs|length > 0 or flash.admin_success or
+admin_error_msgs|length > 0 or flash.admin_errors or
+admin_statuses_msgs|length > 0 or flash.admin_statuses %}
+
+    <div class = "inner-cont">
+
+        {% for success in admin_success_msgs %}
+            <div class = "horizontal-section info inner-70pct">
+                <div class = "">
+                    <div class = "status-container msg success-msg">
+                        <i class="status fa fa-check"></i> <h4>{{ success|nl2br }}</h4><i class="status fa"></i>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-{% endfor %}
-{% if flash.admin_success %}
-    <div class = "vertical-section info">
-        <div class = "inner-70pct">
-            <div class = "status-container msg success-msg warning-msg">
-                <i class="status fa fa-check"></i> <h4>{{ flash.admin_success|nl2br }}</h4><i class="status fa"></i>
+        {% endfor %}
+        {% if flash.admin_success %}
+            <div class = "horizontal-section info inner-70pct">
+                <div class = "">
+                    <div class = "status-container msg success-msg warning-msg">
+                        <i class="status fa fa-check"></i> <h4>{{ flash.admin_success|nl2br }}</h4><i class="status fa"></i>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-{% endif %}
+        {% endif %}
 
 
 
-{% for error in admin_error_msgs %}
-    <div class = "vertical-section info">
-        <div class = "inner-70pct">
-            <div class = "status-container msg error-msg  warning-msg">
-                <i class="status fa fa-times-circle"></i> <h4>{{ error|nl2br }}</h4><i class="status fa"></i>
+        {% for error in admin_error_msgs %}
+            <div class = "horizontal-section info inner-70pct">
+                <div class = "">
+                    <div class = "status-container msg error-msg ">
+                        <i class="status fa fa-times-circle"></i> <h4>{{ error|nl2br }}</h4><i class="status fa"></i>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-{% endfor %}
-{% if flash.admin_errors %}
-    <div class = "vertical-section info">
-        <div class = "inner-70pct">
-            <div class = "status-container msg error-msg warning-msg">
-                <i class="status fa fa-times-circle"></i> <h4>{{ flash.admin_errors|nl2br }}</h4><i class="status fa"></i>
+        {% endfor %}
+        {% if flash.admin_errors %}
+            <div class = "horizontal-section info inner-70pct">
+                <div class = "">
+                    <div class = "status-container msg error-msg warning-msg">
+                        <i class="status fa fa-times-circle"></i> <h4>{{ flash.admin_errors|nl2br }}</h4><i class="status fa"></i>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-{% endif %}
+        {% endif %}
 
 
-{% for status in admin_status_msgs %}
-    <div class = "vertical-section info">
-        <div class = "inner-70pct">
-            <div class = "status-container msg status-msg warning-msg">
-                <i class="status fa fa-info-circle"></i> <h4>{{ status|nl2br }}</h4><i class="status fa"></i>
+        {% for status in admin_status_msgs %}
+            <div class = "horizontal-section info inner-70pct">
+                <div class = "">
+                    <div class = "status-container msg status-msg warning-msg">
+                        <i class="status fa fa-info-circle"></i> <h4>{{ status|nl2br }}</h4><i class="status fa"></i>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-{% endfor %}
-{% if flash.admin_statuses %}
-    <div class = "vertical-section info">
-        <div class = "inner-70pct">
-            <div class = "status-container msg status-msg warning-msg">
-                <i class="status fa fa-info-circle"></i> <h4>{{ flash.admin_statuses|nl2br }}</h4><i class="status fa"></i>
+        {% endfor %}
+        {% if flash.admin_statuses %}
+            <div class = "horizontal-section info inner-70pct">
+                <div class = "">
+                    <div class = "status-container msg status-msg warning-msg">
+                        <i class="status fa fa-info-circle"></i> <h4>{{ flash.admin_statuses|nl2br }}</h4><i class="status fa"></i>
+                    </div>
+                </div>
             </div>
-        </div>
+
+        {% endif %}
     </div>
 
 {% endif %}

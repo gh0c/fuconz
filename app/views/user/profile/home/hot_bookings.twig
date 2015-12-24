@@ -4,7 +4,7 @@
     <div class = "subtitle std-item">
         <div class = "icon-holder std-icon-holder">
             <div class = "message-icon-cont std-icon-cont">
-                <div class = "thumbnail message message-icon std-icon">
+                <div class = "f-thumbnail message message-icon std-icon">
                     <div class="pic-cont std-pic-cont">
                         <i class = "fa icon fa-fw fa-book"></i>
                     </div>
@@ -30,7 +30,7 @@
                     <section class="td icon">
                         <div class = "icon-holder std-icon-holder">
                             <div class = "booking-icon-cont std-icon-cont">
-                                <div class = "thumbnail booking booking-icon std-icon no-avatar">
+                                <div class = "f-thumbnail booking booking-icon std-icon no-avatar">
 
                                     <div class="pic-cont std-pic-cont">
                                         {% if my_booking.type == 'prereservation' %}
@@ -57,18 +57,9 @@
                         </div>
                     </section><!--
                     --><section class ="td label">
-                        <span>{{ my_booking.datetime_span.descriptionString() }}</span>
-                    </section><!--
-                    --><section class = "td info">
-                        <div class = "icon-holder info std-icon-holder">
-                            <div class = "info-icon-cont std-icon-cont">
-                                <div class = "thumbnail info info-icon std-icon ">
-                                    <div class="pic-cont std-pic-cont">
-                                        <i class = "fa fa-fw icon fa-info-circle"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <span class = "f-div-fw-mobile-mid">{{ my_booking.datetime_span.descriptionString() }}</span>
+                        <span class = "f-div-non-fw-mobile-mid">{{ my_booking.datetime_span.descriptionStringMid() }}</span>
+
                         <div class = "info-overlay">
                             <div class = "info-holder">
                                 {% if my_booking.type == 'prereservation' %}
@@ -83,10 +74,11 @@
                                     {% if my_booking.canceled == 1 %}
                                         <span>Poništena rezervacija za otkazani temin</span>
                                     {% elseif my_booking.canceled == 2 %}
-                                        <span>Potvrđeno održavanje termina</span>
-                                        {% if my_booking.triggered == 1 %}
-                                            <br><span>Rezervacija aktivirana predbilježbom</span>
-                                        {% endif %}
+                                        <span>Potvrđeno održavanje termina
+                                            {% if my_booking.triggered == 1 %}
+                                                <br>Aktivirano predbilježbom!
+                                            {% endif %}
+                                        </span>
                                     {% else %}
                                         <span>Rezervacija zasad nepoznatog statusa</span>
                                     {% endif %}
@@ -94,7 +86,17 @@
                             </div>
 
                         </div>
-
+                    </section><!--
+                    --><section class = "td info">
+                        <div class = "icon-holder info std-icon-holder">
+                            <div class = "info-icon-cont std-icon-cont">
+                                <div class = "f-thumbnail info info-icon std-icon ">
+                                    <div class="pic-cont std-pic-cont">
+                                        <i class = "fa fa-fw icon fa-info-circle"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                 </div>
 
@@ -116,7 +118,7 @@
                     <section class="td icon">
                         <div class = "icon-holder std-icon-holder">
                             <div class = "booking-icon-cont std-icon-cont">
-                                <div class = "thumbnail booking booking-icon std-icon no-avatar">
+                                <div class = "f-thumbnail booking booking-icon std-icon no-avatar">
                                     <div class="pic-cont std-pic-cont">
                                         {% if my_booking.type == 'reservation' %}
                                             <i class = "fa icon fa-fw fa-calendar-check-o"></i>
@@ -136,46 +138,43 @@
                             </div>
                         </div>
                     </section><!--
+
                     --><section class ="td label">
-                        <span>{{ my_booking.datetime_span.descriptionString() }}</span>
+                        <span class = "f-div-fw-mobile-mid">{{ my_booking.datetime_span.descriptionString() }}</span>
+                        <span class = "f-div-non-fw-mobile-mid">{{ my_booking.datetime_span.descriptionStringMid() }}</span>
+
+                        <div class = "info-overlay">
+                            <div class = "info-holder">
+                                <div class = "datetime-holder">
+                                    <div class = "datetime">
+                                        <span>{{ (my_booking.type == 'prereservation')? 'Predbilježeno:' : 'Prijavljeno:' }} </span>
+                                    </div><!--
+                                    --><div>
+                                        <span class = "time">{{ my_booking.created_at|date("j.n.Y.") }} {{ my_booking.created_at|date("H:i") }}</span>
+                                    </div>
+                                </div><!--
+                                --><a class = "availability-holder" href = "{{ urlFor('user.bookings.span.details', {'span_id' : my_booking.datetime_span.id}) }}">
+                                    <span><i class = "fa fa-fw fa-users"></i>{{ '%d%s/%d'|format(my_booking.datetime_span.numberOfReservations(),
+                                        (my_booking.datetime_span.numberOfPrereservations() > 0)? '+' ~ my_booking.datetime_span.numberOfPrereservations() : '',
+                                        my_booking.datetime_span.training_course.capacity)}}
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+
                     </section><!--
+
                     --><section class = "td info">
                         <div class = "icon-holder info std-icon-holder">
                             <div class = "info-icon-cont std-icon-cont">
-                                <div class = "thumbnail info info-icon std-icon ">
+                                <div class = "f-thumbnail info info-icon std-icon ">
                                     <div class="pic-cont std-pic-cont">
                                         <i class = "fa fa-fw icon fa-info-circle"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class = "info-overlay">
-                            <div class = "info-holder">
-                                <div class = "datetime-holder">
-                                    <div class = "datetime">
-                                        <span>{{ (my_booking.type == 'prereservation')? 'Predbilježeno:' : 'Prijavljeno:' }} </span><!--
-                                    --><span class = "time">{{ my_booking.created_at|date("j.n.Y.") }} {{ my_booking.created_at|date("H:i") }}</span>
-                                    </div>
-                                </div>
-                                <div class = "availability-holder">
-                                    <span>Trenutna popunjenost: {{ my_booking.datetime_span.numberOfReservations() ~
-                                        '/' ~ my_booking.datetime_span.training_course.capacity}}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class = "info-overlay-right">
-                            <div class = "info-holder">
-                                <div class = "datetime-holder">
-                                    <div class = "datetime">
-                                        <span>Odjave do:</span><br><!--
-                                    --><span class = "time">{{ (my_booking.datetime_span.span_start|date("U") -
-                                            my_booking.datetime_span.training_course.reservation_time|date("U")) |date("j.n.Y. H:i") }}</span>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
 
                     </section><!--
                     --><section class = "td cancelation">
@@ -184,15 +183,31 @@
                                 data-booking-id = "{{ my_booking.id }}"
                                 data-confirmation-text = "Jeste li sigurni da želite otkazati {{
                                 (my_booking.type == 'prereservation')? 'predbilježbu' : 'rezervaciju' }}? ">
-                            <div class = "cancel-label"><span>Otkaži</span></div>
+                            <div class = "cancel-label f-div-fw-mobile-mid"><span>Otkaži</span></div>
                             <div class = "cancelation-icon-cont std-icon-cont">
-                                <div class = "thumbnail cancelation cancelation-icon std-icon ">
+                                <div class = "f-thumbnail cancelation cancelation-icon std-icon ">
                                     <div class="pic-cont std-pic-cont">
                                         <i class = "fa fa-fw icon fa-ban"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class = "info-overlay-right f-div-fw-mobile-mid">
+                            <div class = "info-holder">
+                                <div class = "datetime-holder">
+                                    <div class = "datetime">
+                                        <span>Odjave do: </span>
+                                    </div><!--
+                                    --><div>
+                                        <span class = "time">{{ (my_booking.datetime_span.span_start|date("U") -
+                                            my_booking.datetime_span.training_course.reservation_time|date("U")) |date("j.n.Y. H:i") }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
                 </div>
 
             </div>
@@ -212,7 +227,7 @@
                     <section class="td icon">
                         <div class = "icon-holder std-icon-holder">
                             <div class = "booking-icon-cont std-icon-cont">
-                                <div class = "thumbnail booking booking-icon std-icon no-avatar">
+                                <div class = "f-thumbnail booking booking-icon std-icon no-avatar">
 
                                     <div class="pic-cont std-pic-cont">
                                         {% if my_booking.type == 'prereservation' %}
@@ -232,14 +247,14 @@
                                                 <i class="icon fa fa-fw fa-question"></i>
                                             {% endif %}
                                         {% endif %}
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section><!--
                     --><section class ="td label">
-                        <span>{{ my_booking.datetime_span.descriptionString() }}</span>
+                        <span class = "f-div-fw-mobile-mid">{{ my_booking.datetime_span.descriptionString() }}</span>
+                        <span class = "f-div-non-fw-mobile-mid">{{ my_booking.datetime_span.descriptionStringMid() }}</span>
                     </section>
                 </div>
 
@@ -250,5 +265,5 @@
 {% endif %}
 
 <a href = "{{ urlFor('user.bookings.home') }}" class = "external-link-holder">
-    <span>Sve rezervacije i prijave</span>
+    <span><i class = "fa fa-fw fa-link"></i> Sve rezervacije i prijave</span>
 </a>

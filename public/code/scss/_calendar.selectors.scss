@@ -1,0 +1,142 @@
+$main-icon-size: 150%;
+
+.f-calendar-selector {
+  width: 2em;
+  height: 2em;
+//  background-color: rgba(cadetblue, .8);
+  margin: 0 auto;
+  span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &.main-legend-icon i.fa:before {
+      font-size: $main-icon-size;
+    }
+
+    i.fa {
+      display: inline-table;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      &.f-std-centered:before {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+
+      &.sub-legend-icon {
+        &.inner-60 {
+          &:before {
+            font-size: ($main-icon-size * 0.6);
+          }
+        }
+      }
+      &.sub-legend-icon.f-offset:before {
+        font-size: ($main-icon-size * 0.5);
+        top: 45%;
+        position: absolute;
+        left: 0;
+        right: 0;
+      }
+      &.sub-legend-icon.f-triggered:before {
+        font-size: ($main-icon-size * 0.5);
+        top: 5%;
+        position: absolute;
+        right: -5%;
+      }
+      &.descriptor {
+        color: lightcoral;
+      }
+      &.descriptor-b {
+        color: lightsalmon;
+        font-size: 130%;
+      }
+
+    }
+  }
+}
+
+
+
+// calendar styles
+
+.month-grid .table-container {
+  &.bookings .day-container .bookings-container {
+    .booking {
+
+      .legend-icon-cont {
+        .yes-canceled {
+          .f-calendar-selector .calendar-icon-holder .descriptor {
+              color: $red-badge-transparent-overlay;
+          }
+        }
+        .not-canceled {
+          .f-calendar-selector .calendar-icon-holder .descriptor {
+            color: $green-badge-transparent-overlay;
+          }
+        }
+        .not-activated {
+          .f-calendar-selector .calendar-icon-holder .descriptor {
+            color: $red-badge-transparent-overlay;
+          }
+        }
+        .null-canceled, .null-activated {
+          .f-calendar-selector .calendar-icon-holder .descriptor {
+            color: $cibona-blue;
+          }
+        }
+      }
+
+
+
+      // available for booking
+      &.available-for-booking:not(.yes-selected):hover {
+        .legend-icon-cont .leader:before {
+          content: "\f192";
+        }
+        .duration-cont .times {
+          text-shadow: 1px 0px 0px black, 1px 1px 0px black, -7px -2px 13px white, 7px 2px 12px white;
+        }
+      }
+      &.available-for-booking.yes-selected {
+        .legend-icon-cont .leader:before {
+          content: '\f058';
+        }
+        .duration-cont .times {
+          span {
+            text-decoration: underline;
+          }
+        }
+        &:hover {
+          color: $red-close-icons;
+          .legend-icon-cont .leader:before {
+            content: '\f057';
+          }
+        }
+      }
+
+
+      &.course-finished {
+        .legend-icon-cont .leader {
+          opacity: .5;
+        }
+        .legend-icon-cont .descriptor-b, .duration-cont {
+          opacity: .5;
+        }
+
+        .legend-icon-cont {
+          .descriptor-b {
+            color: $light-blue-gray-light;
+          }
+        }
+      }
+    }
+  }
+}

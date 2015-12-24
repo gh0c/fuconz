@@ -132,6 +132,11 @@ class DatetimeSpan {
         return Reservation::getNumberByDatetimeSpan($this->id);
     }
 
+    public function numberOfPrereservations()
+    {
+        return Prereservation::getNumberOfUnactivatedByDatetimeSpan($this->id);
+    }
+
 
     public static function getByDate($date) {
         $dbh = DatabaseConnection::getInstance();
@@ -240,6 +245,24 @@ class DatetimeSpan {
         return $description;
     }
 
+    public function descriptionStringMid()
+    {
+        list($year, $month, $day) = explode("-", $this->date);
+
+        $description = sprintf("%02s. %02s. %04s. (%s) od %s sati", $day, $month,
+            $year, Calendar::cro_weekday_label_short(date("w", strtotime($this->date))), $this->start_time);
+
+        return $description;
+    }
+
+    public function descriptionStringMin()
+    {
+        list($year, $month, $day) = explode("-", $this->date);
+
+        $description = sprintf("%02s. %02s. %04s. od %s", $day, $month, $year, $this->start_time);
+
+        return $description;
+    }
 
     public function datetimeIdString()
     {

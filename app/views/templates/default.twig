@@ -6,7 +6,8 @@
 </head>
 
 <body>
-    <div class = "pp-a-box container">
+
+    <div class = "a-level-holder">
 
         <!-- sidebar for logged users -->
         {%  if auth_user.show_sidebar %}
@@ -15,8 +16,6 @@
 
         <div class = "content-wrap">
             <div class = "content">
-
-
                 {% include 'templates/std_header.twig'%}
 
                 <section id = "content">
@@ -24,20 +23,25 @@
                     {% block content %} {% endblock %}
                 </section>
 
-
-                {% include 'templates/std_footer.twig'%}
             </div>
         </div>
+
+        <div class="push"></div>
+
+
     </div>
 
-    {% if auth_user.show_sidebar %}
-    <script src="public/js/SideslideSidebar/classie.js"></script>
-    <script src="public/js/SideslideSidebar/main.js"></script>
-    {% endif %}
+    {% include 'templates/std_footer.twig'%}
+
 
 {% include 'templates/partials/foot_info.twig'%}
 
-{% block additional_js %} {% endblock %}
+{% block additional_js %}
+    {% if auth_user.show_sidebar %}
+        <script src="public/js/SideslideSidebar/classie.js"></script>
+        <script src="public/js/SideslideSidebar/main.js"></script>
+    {% endif %}
+{% endblock %}
 </body>
 
 </html>

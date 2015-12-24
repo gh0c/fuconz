@@ -19,6 +19,8 @@
         <div class = "black-horiz-spacer-5"></div>
 
         <div class = "main-content-box">
+            {% include "templates/partials/user_messages.twig" %}
+
             <div class = "inner-cont">
                 <div class = "form-container">
 
@@ -27,69 +29,79 @@
                         <div class = "inputs-container">
 
                             <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
+                                <div class = "">
+                                    
                                     <input type="text" name="email" id="email" required
                                            maxlength="255" spellcheck="false" autocomplete="on" tabindex="1"
                                            class = "std-text-input std-input-width req" value = "{{ auth_user.email }}"/>
-                                    <label id="email-label" class = "req" alt="E-mail" placeholder="E-mail" data-info="E-mail"></label>
-                                </div>
+                                    
 
+                                    <label for="email" id="email-label" class = "req" data-info="E-mail"></label>
+                                </div>
                             </div>
 
-
                             <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
+                                <div class = "">
+
                                     <input type="text" name="first-name" id="first-name" required
                                            maxlength="255" spellcheck="false" autocomplete="off" tabindex="2"
                                            class = "std-text-input std-input-width" value = "{{ auth_user.first_name }}"/>
-                                    <label id="first-name-label" alt="Ime" placeholder="Ime" data-info="Ime"></label>
+                                    <label id="first-name-label" for = "first-name" data-info="Ime"></label>
+
                                 </div>
                             </div>
+
                             <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
+                                <div class = "">
+
                                     <input type="text" name="last-name" id="last-name" required
                                            maxlength="255" spellcheck="false" autocomplete="off" tabindex="3"
                                            class = "std-text-input std-input-width" value = "{{ auth_user.last_name }}"/>
-                                    <label id="last-name-label" alt="Prezime" placeholder="Prezime" data-info="Prezime"></label>
+                                    <label id="last-name-label" for = "last-name" data-info="Prezime"></label>
+
                                 </div>
                             </div>
 
                             <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
+                                <div class = "">
+
                                     <input type="text" name="neighborhood" id="neighborhood" required
                                            maxlength="255" spellcheck="false" autocomplete="off" tabindex="4"
                                            class = "std-text-input std-input-width" value = "{{ auth_user.neighborhood }}"/>
-                                    <label id="last-name-label" alt="Kvart" placeholder="Kvart" data-info="Kvart"></label>
+                                    <label id="last-name-label" for = "neighborhood" data-info="Kvart"></label>
+
                                 </div>
                             </div>
 
                             <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
+                                <div class = "">
+
                                     <input type="text" name="date-of-birth" id="date-of-birth" required
                                            value = "{{ ( auth_user.date_of_birth )? auth_user.date_of_birth|date("d.m.Y.") : '' }}"
                                            maxlength="255" spellcheck="false" autocomplete="on" tabindex="5"
                                            class = "std-text-input std-input-width datepicker"/>
-                                    <label id="date-of-birth-label" class = "" alt="Datum rođenja"
-                                           placeholder="Datum rođenja" data-info="Datum rođenja"></label>
+                                    <label id="date-of-birth-label" class = "" for = "date-of-birth" data-info="Datum rođenja"></label>
                                 </div>
                             </div>
 
                             <div class = "vertical-section text-centered multirow">
-                                <div class = "inner-70pct">
-                                    <div class = "pp-radio-div">
+                                <div class = "">
+
+                                    <div class = "f-radio-div">
 
                                         <input type="radio" name="sex" value = "M" id = "sex-male"
                                                class = "rb-input sex " tabindex="6" {{ (auth_user.sex == 'M')? 'checked="true"' : '' }}>
-                                        <div class = "radio-div-cont first-left">
+                                        <div class = "radio-div-cont first-left f-midi-input-width">
                                             <label for = "sex-male"><span>Muško</span><i class = "fa fa-fw fa-male"></i></label>
                                         </div>
 
                                         <input type="radio" name="sex" value = "F" id = "sex-female"
                                                class = "rb-input sex" tabindex="7" {{ (auth_user.sex == 'F')? 'checked="true"' : '' }}>
-                                        <div class = "radio-div-cont second-left">
+                                        <div class = "radio-div-cont second-left f-midi-input-width">
                                             <label for = "sex-female"><span>Žensko</span><i class = "fa fa-fw fa-female" ></i></label>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
 
@@ -98,20 +110,19 @@
 
                         </div>
 
-                        {% include "templates/partials/user_messages.twig" %}
 
                         {% include "templates/partials/live_status.container.twig" %}
 
                         <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
 
                         <div class = "submitter-cont">
-                            <div class = "inner-70pct">
-                                <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="6"
+                            <div class = "">
+                                <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="8"
                                      onclick="validateAndSubmitProfileDataChange('user-profile-data-change')">
                                     <span>SPREMI PROMJENU</span>
                                 </div>
                                 <div class="submitter bbb-flag-v-cibona-blue reversed cancel">
-                                    <a href = "{{ urlFor('user.profile.home') }}" tabindex="7">ODUSTANI</a>
+                                    <a href = "{{ urlFor('user.profile.home') }}" tabindex="9">ODUSTANI</a>
                                 </div>
                             </div>
                         </div>
@@ -150,4 +161,11 @@
             $(".datepicker").datepicker( { defaultDate: '10.04.1990.' }, $.datepicker.regional[ "hr" ]);
         });
     </script>
+{% endblock %}
+
+
+{% block additional_js %}
+    <script src="public/code/js/validation.js"></script>
+    <script src="public/assets/js/jquery-ui.min.js"></script>
+    <script src="public/assets/js/datepicker-hr.js"></script>
 {% endblock %}

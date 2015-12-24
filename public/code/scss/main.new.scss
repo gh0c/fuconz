@@ -1,0 +1,69 @@
+@import "modules/modules.import";
+
+@import "reset";
+@import "fonts";
+@import "general_classes";
+
+@import "modules/animations";
+
+html, body, .a-level-holder, .content-wrap {
+//  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+
+  body {
+    padding-top: 58px;  // height of fixed header
+
+    min-height: 100%;
+
+    background-color: white;
+
+    @import 'header.new';
+    @import 'content';
+    @import 'footer.new';
+
+
+    .a-level-holder {
+      min-height: 100%;
+      height: auto !important;
+      height: 100%;
+
+
+
+    }
+
+    .inner-cont {
+      max-width: 74em;
+      margin: 0 auto;
+//      background-color: rgba(blueviolet, 0.2); /// <<<
+    }
+  }
+
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+  border-left: 1px solid $light-blue-gray-dark;
+}
+::-webkit-scrollbar-thumb {
+  @include pp-transition(background-color .30s ease-out, color .30s ease-out);
+  background-color: $cibona-blue;
+  @include rounded(8px);
+  cursor: pointer;
+
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: $cibona-blue-dark-overlay;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: $dark-dark-blue;
+}

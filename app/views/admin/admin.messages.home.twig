@@ -19,11 +19,13 @@
         <div class = "black-horiz-spacer-5"></div>
 
         <div class = "main-content-box">
+
+            {% include "admin/templates/partials/admin_messages.twig" %}
+
             <div class = "inner-cont">
 
-                {% include "admin/templates/partials/admin_messages.twig" %}
 
-                <div  class = "vertical-section text-centered">
+                <div  class = "horizontal-section text-centered">
                     <div class = "inner-70pct">
                         {% if messages|length < 1 %}
                             <span>Nemaš poruka!</span>
@@ -91,6 +93,6 @@
 
 
 {% block additional_js %}
-        <script src="public/js/admin/messages.js"></script>
+        <script src="public/code/js/admin/messages.js"></script>
 
 {% endblock %}

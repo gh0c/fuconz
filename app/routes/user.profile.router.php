@@ -59,8 +59,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 
                 $body = $app->request->getBody();
                 $json_data_received = json_decode($body, true);
-
-                $games = Game::getGamesByPlayer($app->auth_user->id, 5, "datetime_span.datetime_span_start DESC");
+                $games = Game::getGamesByPlayer($app->auth_user->id, 4, "datetime_span.datetime_span_start DESC");
 
                 $app->render('user/profile/home/hot_games.twig', array(
                     'user' => $app->auth_user,
@@ -69,29 +68,6 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                 exit();
             }
         })->name('user.profile.load.games.post');
-
-
-        $app->get('/test-1', $authenticated_user(), function() use ($app) {
-            echo "test<br>";
-            $games = Game::getGamesByPlayer($app->auth_user->id, 5);
-            echo "<pre>";
-//            var_dump($games);echo "</pre>";
-            var_dump($games[0]->playersStatus($app->auth_user->id));echo "</pre>";
-        });
-//        $app->get('/:action', $authenticated_user(), function ($action) use ($app) {
-//            if(in_array($action, array('avatar', 'ikona', 'promjena-lozinke', 'podaci'))) {
-//                $app->pass();
-//            }
-//            else {
-//                $app->flashNow('errors', "Nema tražene stranice!");
-//                $app->render('user/profile/user.action.twig', array(
-//                    'user' => $app->auth_user,
-//                    'action' => $action,
-//                    'active_page' => "user.profile",
-//                ));
-//            }
-//        })->name('user.action');
-
 
 
 
@@ -160,7 +136,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
             } else {
                 // Validation of input data successful
                 if ($app->auth_user->updateProfileData($p_email, $p_first_name, $p_last_name, $p_sex,
-                    $p_neighborhood, date("Y-m-d", strtotime($p_date_of_birth) ))) {
+                    $p_neighborhood, $p_date_of_birth)) {
                     Logger::logUserProfileDataChange($app->auth_user);
                     $app->flash('success', "Uspješna promjena osobnih podataka!");
                     $app->redirect($app->urlFor('user.profile.home'));
@@ -238,9 +214,11 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 
                 } else {
                     $img = Image::getImageByHash($p_uploaded_img_hash);
+
                     if($img) {
                         // delete old images for user
                         $app->auth_user->deleteOldImages();
+                        $app->auth_user->unsetFacebookAvatarUsage();
                         $status = $img->assignImageToEntity($app->auth_user->id, "user", "avatar");
                         if($status["success"]) {
                             $app->flash('success', "Uspješna promjena avatara.");

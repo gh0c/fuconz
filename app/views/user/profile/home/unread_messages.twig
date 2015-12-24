@@ -4,7 +4,7 @@
     <div class = "subtitle std-item">
         <div class = "icon-holder std-icon-holder">
             <div class = "message-icon-cont std-icon-cont">
-                <div class = "thumbnail message message-icon std-icon">
+                <div class = "f-thumbnail message message-icon std-icon">
                     <div class="pic-cont std-pic-cont">
                         <i class = "fa icon fa-fw fa-envelope-o"></i>
                     </div>
@@ -51,5 +51,5 @@
 {% endif %}
 
 <a href = "{{ urlFor('user.messages.home') }}" class = "external-link-holder">
-    <span>Sve moje poruke ({{ auth_user.numberOfMessages() }})</span>
+    <span><i class = "fa fa-fw fa-link"></i> Sve moje poruke ({{ auth_user.numberOfMessages() }})</span>
 </a>

@@ -1,0 +1,201 @@
+@import 'modules/modules.import';
+
+
+
+
+$message-td-w: 28em;
+$has-been-read-status-td-w: 3em;
+
+#unread-messages {
+  max-width: $message-td-w + $has-been-read-status-td-w;
+  text-align: center;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  @include responsive-w-min($mobile-mid-bp) {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+
+  .std-item {
+    &.profile-home-message {
+      max-width: $message-td-w + $has-been-read-status-td-w;
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+
+      .inner-box {
+        padding: 6px 0 4px 0;
+      }
+
+      &:not(:last-of-type) {
+        border-bottom: 2px dashed $light-blue-gray-light;
+      }
+
+
+      section.td {
+        border: 0;
+        display: table-cell;
+        vertical-align: top;
+
+        &.message {
+          max-width: $message-td-w;
+          text-align: left;
+          .time-label-holder {
+            width: 12em;
+            height: 1.75em;
+            display: inline-table;
+            position: relative;
+            padding: 0 0.5em;
+            box-sizing: border-box;
+
+            @include pp-transition(all 0.45s ease-out);
+            color: $dark-dark-blue;
+            > span {
+              display: table-cell;
+              vertical-align: middle;
+              font-size: 0.80em;
+            }
+          }
+
+          .message-holder {
+            padding: 0.25em 0.5em;
+            color: $light-blue-gray-light;
+
+            // styles of message itself:
+            span {
+              font-size: 0.95em;
+              & > span {
+                font-size: 1em;
+              }
+            }
+
+            ol, ul {
+              list-style: square inside none;
+              text-indent: -1em;
+              padding-left: 1em;
+              margin-top: 0.25em;
+              margin-bottom: 0.25em;
+            }
+
+            .std-item.sender {
+              margin-top: 4px;
+              margin-left: 6px;
+              min-width: 6em;
+              padding: 3px 2px 2px 2px;
+              border-top: 1px solid $light-blue-gray-light;
+              display: inline-block;
+            }
+            .msg-sender-icon-holder {
+              width: 2.375em;
+              height: 2.375em;
+              background-color: $light-blue-gray-dark;
+              color: $light-blue-gray-light;
+              margin-left: 6px;
+              @include rounded(10em);
+              .pic-cont > img {
+                @include rounded(10em);
+              }
+            }
+            .sender-label {
+              display: inline-table;
+              height: 2.375em;
+              vertical-align: top;
+              & > span {
+                display: table-cell;
+                vertical-align: middle;
+                padding: 0px 6px;
+                font-size: 0.9em;
+                opacity: 0.9;
+              }
+            }
+
+
+            .std-item.active-booking-user {
+              margin-top: 4px;
+              margin-left: 6px;
+              min-width: 6em;
+              padding: 3px 2px 2px 2px;
+              display: inline-block;
+              vertical-align: top;
+            }
+            .active-booking-user-icon-holder {
+              width: 2.375em;
+              height: 2.375em;
+              background-color: $light-blue-gray-dark;
+              color: $dark-dark-blue;
+              margin-left: 6px;
+              @include rounded(10em);
+              .pic-cont > img {
+                @include rounded(10em);
+              }
+            }
+            .active-booking-user-label {
+              display: inline-table;
+              height: 2.375em;
+              vertical-align: top;
+              & > span {
+                display: table-cell;
+                vertical-align: middle;
+                padding: 0px 6px;
+                font-size: 0.9em;
+              }
+            }
+
+          }
+        }
+
+        &.has-been-read-status {
+          width: $has-been-read-status-td-w;
+          .status-holder {
+            //          background-color: maroon;
+            display: inline-table;
+            width: 100%;
+            height: 100%;
+            a {
+              line-height: 1.75em;
+              width: $has-been-read-status-td-w;
+              cursor: pointer;
+              display: block;
+              position: relative;
+              @include pp-transition(all 0.3s ease-out);
+
+              span {
+                vertical-align: middle;
+                @include pp-transition(all 0.3s ease-out);
+              }
+              span.selector {
+                color: rgba($light-blue-gray-light, .6);
+                font-size: 1.35em;
+                width: 100%;
+                text-align: left;
+                margin-left: .5em;
+              }
+
+              &.active:hover {
+                span.selector {
+                  color: $light-blue-gray-light;
+                  &:not(.fa-spin):before {
+                    content: '\f046';
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &.has-not-been-read {
+        section.td.message .time-label-holder {
+          background-color: $cibona-blue;
+          color: white;
+        }
+      }
+      &.has-been-read {
+        section.td.message .time-label-holder {
+          color: $dark-dark-blue;
+          background-color: $light-blue-gray-light;
+        }
+      }
+    }
+  }
+}

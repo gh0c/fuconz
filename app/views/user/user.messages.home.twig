@@ -20,12 +20,12 @@
 
         <div class = "main-content-box">
 
+            {% include "templates/partials/user_messages.twig" %}
 
             <div class = "inner-cont">
 
-                {% include "templates/partials/user_messages.twig" %}
 
-                <div  class = "vertical-section text-centered">
+                <div  class = "horizontal-section text-centered">
                     <div class = "inner-70pct">
                         {% if messages|length < 1 %}
                             <span>Nemaš poruka!</span>
@@ -93,6 +93,6 @@
 
 
 {% block additional_js %}
-        <script src="public/js/messages.js"></script>
+        <script src="public/code/js/messages.js"></script>
 
 {% endblock %}

@@ -144,7 +144,7 @@ class Game
         }
     }
 
-    public static function getGamesByPlayer($player_id, $limit = 1000000, $order_by = "datetime_span.datetime_span_start ASC") {
+    public static function getGamesByPlayer($player_id, $limit = 1000000, $order_by = "datetime_span.datetime_span_start DESC") {
         $dbh = DatabaseConnection::getInstance();
         $sql = "SELECT game.* FROM game JOIN datetime_span on game.datetime_span_id = datetime_span.id
             JOIN player_game ON game.id = player_game.game_id
@@ -562,8 +562,8 @@ class Game
                 "Unos naziva utakmice je obavezan.";
             return $validation_result;
         }elseif (!isset($p_winner) || !is_numeric($p_winner) || !in_array($p_winner, array(0,1,2)) ||
-            !isset($p_res_team_one) || !is_numeric($p_res_team_one) || $p_res_team_one <= 0  ||
-            !isset($p_res_team_two) || !is_numeric($p_res_team_two) || $p_res_team_two <= 0){
+            !isset($p_res_team_one) || !is_numeric($p_res_team_one) || $p_res_team_one < 0  ||
+            !isset($p_res_team_two) || !is_numeric($p_res_team_two) || $p_res_team_two < 0){
             $validation_result["errors"] = "Nedostaju podaci o rezultatu. \n" .
                 "Rezultati moraju biti nenegativan cijeli broj, a ishod broj iz skupa [1,2,0]";
             return $validation_result;
@@ -618,8 +618,8 @@ class Game
                 "Unos naziva utakmice je obavezan.";
             return $validation_result;
         }elseif (!isset($p_winner) || !is_numeric($p_winner) || !in_array($p_winner, array(0,1,2)) ||
-            !isset($p_res_team_one) || !is_numeric($p_res_team_one) || $p_res_team_one <= 0  ||
-            !isset($p_res_team_two) || !is_numeric($p_res_team_two) || $p_res_team_two <= 0){
+            !isset($p_res_team_one) || !is_numeric($p_res_team_one) || $p_res_team_one < 0  ||
+            !isset($p_res_team_two) || !is_numeric($p_res_team_two) || $p_res_team_two < 0){
             $validation_result["errors"] = "Nedostaju podaci o rezultatu. \n" .
                 "Rezultati moraju biti nenegativan cijeli broj, a ishod broj iz skupa [1,2,0]";
             return $validation_result;

@@ -1,0 +1,79 @@
+
+<div class = "pr horizontal">
+    {% set indices = [1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0] %}
+
+    {% set first_visible_day = course_constants.get_day_offset(calendar.days_offset_left()) %}
+    {% set view_starts_with_weekday = first_visible_day|date("w") %}
+    {% set last_visible_day = course_constants.get_day_offset(calendar.days_offset_right()) %}
+
+    {% set selected_date = course_constants.read("selected.date") %}
+
+    {% set months_break_idx = calendar.months_break(selected_date, calendar.days_offset_left(), calendar.days_offset_right()) %}
+
+    <ul>
+
+        <li>
+
+
+            {% set weekdays_indices = indices[
+                (view_starts_with_weekday + 7 - 1) :
+                ((calendar.days_offset_left()|abs) + 1 + calendar.days_offset_right()) ] %}
+
+            <div class = "month-grid ultra horizontal widget-content">
+                {#Table#}
+                <div class = "table-container special ultra horizontal  {{ calendar_class }}">
+
+
+                    {% set offset_counter = calendar.days_offset_left() %}
+                    {% set today = false %}
+                    {% set today_idx = -1 %}
+                    {% set day_passed = false %}
+                    <div class = "tr"><!--
+
+                        {% for weekday_idx in weekdays_indices %}
+
+                            {% set curr_date = selected_date|date_modify("%+d day"|format(offset_counter))|date("Y-m-d")  %}
+                            {% if (curr_date == course_constants.read('today')) %}
+                                {% set today_idx = loop.index0 %}
+                                {% set today = true %}
+                            {% else %}
+                                {% set today = false %}
+                            {% endif %}
+                            {% set day_passed = (curr_date < course_constants.read('today')) ? true : false %}
+
+                            --><div class = "cell {{ (months_break_idx and months_break_idx == loop.index0)? 'first-day-of-month' : '' }}">
+
+                                <div class = "td">
+                                    <div class = "active-day{{ "%s%s%s"|format((today)?' today' : '',
+                                        (weekday_idx == 0 or weekday_idx == 6) ? ' weekend' : ' working-day', ( weekday_idx == 0 ) ? ' sunday' : '')}}">
+
+                                        {% include day_selector with {
+                                            'curr_date': curr_date, 'day_passed': day_passed ,
+                                            'day_preselected' : day_preselected } %}
+
+                                    </div>
+
+                                </div>
+
+                                <div class="th">
+                                    <div class = "active-day {{ "%s%s%s"|format((today)?' today' : '',
+                                        (weekday_idx == 0 or weekday_idx == 6) ? ' weekend' : ' working-day', ( weekday_idx == 0 ) ? ' sunday' : '')}}">
+                                        <span>{{ calendar.cro_weekday_label_short(weekday_idx) }}</span>
+                                    </div>
+                                </div>
+                            </div><!--
+
+
+                            {% set offset_counter = offset_counter + 1 %}
+                        {% endfor %}
+
+                    --></div>
+
+                </div>
+            </div>
+
+
+        </li>
+
+    </ul>
+</div>

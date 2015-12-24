@@ -1,0 +1,279 @@
+{% set day_preselected = (pre_selected_spans and curr_date in pre_selected_spans|keys)? true : false %}
+
+<div class = "day-container {{ (day_preselected)? 'selected-day' : '' }}  {{ (day_passed) ? 'day-ended' : '' }} day-{{ curr_date }}">
+
+    <div class = "date-container">
+        {% if day_passed %}
+            <i class = "fa fa-times day-ended"></i>
+        {% endif %}
+
+        <span>{{ curr_date|date("j") }}</span>
+    </div>
+
+
+
+    {% set datetime_spans = datetimes.getByDate(curr_date) %}
+    {% if datetime_spans|length > 0 %}
+    <div class = "booking-slots-exists"></div>
+
+    <div class = "booking-slots">
+        <div class = "bookings-container"><!--
+        {% for span in datetime_spans %}
+
+
+            {% set course_passed = span.span_start < "now"|date("Y-m-d H:i:s") %}
+            {% set course_booking_allowed = ( span.span_start|date("U") - span.training_course.reservation_time ) > "now"|date("U")%}
+
+            {% set span_preselected = (day_preselected and
+                (span.start_time_hour ~ '-' ~ span.start_time_minutes) in pre_selected_spans[curr_date])? true : false %}
+
+            {% set my_booking = booking.getByUserAndDatetimeSpan(auth_user.id, span.id)%}
+            {% if my_booking %}
+                {% set booking_exists = true %}
+            {% else %}
+                {% set booking_exists = false %}
+            {% endif %}
+
+
+            {% if not booking_exists %} {#No reservations nor pre-reservations#}
+
+                {% if not course_passed %} {# Course without booking not over #}
+
+                    {% if not course_booking_allowed %} {# Booking time ended for not over course #}
+
+                        --><a class = "booking booking-time-ended
+                            slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}"
+                             title = "{{ span.training_course.title }}&#10;{{ span.descriptionString() }}"
+                             data-date = "{{ curr_date }}"
+                             data-description = "{{ span.descriptionString() }}">
+                            <div class = "legend-icon-cont">
+                                <div class = "">
+                                    {% include 'calendar/selectors/unavailable.without.booking.twig'%}
+                                </div>
+                            </div><!--
+
+                            --><div class = "duration-cont">
+                                <span class = "times">
+                                    <span>{{ span.start_time }}</span><!--
+                                    --><span class = "fw">-{{ span.end_time }}</span>
+                                </span>
+                            </div>
+                        </a><!--
+
+
+                    {% else %} {# Course available for booking #}
+
+                        --><a class = "booking available-for-booking {{ span_preselected? 'yes':'not' }}-selected
+                            slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}"
+                             title = "{{ span.training_course.title }}&#10;{{ span.descriptionString() }}"
+                             data-date = "{{ curr_date }}"
+                             data-start-time = "{{ span.start_time_hour }}-{{ span.start_time_minutes }}"
+                             data-course-id = "{{ span.training_course.id }}"
+                             data-description = "{{ span.descriptionString() }}"
+                             data-description-midi = "{{ span.descriptionStringMid() }}"
+
+                             data-availability = "{{ reservation.numberOfReservationsForDatetimeAndCourse(span.id, span.training_course.id)
+                                ~ '/' ~ span.training_course.capacity }}"
+                             data-reservation-time = "{{ span.training_course.reservation_time }}">
+
+                            <div class = "legend-icon-cont">
+                                <div class = "{{ span_preselected? 'yes':'not' }}-selected">
+                                    {% include 'calendar/selectors/available.without.booking.twig' %}
+                                </div>
+                            </div><!--
+
+                            --><div class = "duration-cont">
+                                <span class = "times">
+                                    <span>{{ span.start_time }}</span><!--
+                                    --><span class = "fw">-{{ span.end_time }}</span>
+                                </span>
+                            </div>
+                        </a><!--
+
+                    {% endif %}
+
+                {% else %} {# Course without booking finished #}
+
+                    --><a class = "booking course-finished
+                        slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}"
+                         data-date = "{{ curr_date }}" data-description = "{{ span.descriptionString() }}">
+                        <div class = "legend-icon-cont">
+                            <div class = "">
+                            {% include 'calendar/selectors/passed.without.booking.twig'%}
+                            </div>
+                        </div><!--
+                        --><div class = "duration-cont">
+                            <span class = "times">
+                                <span>{{ span.start_time }}</span><!--
+                                --><span class = "fw">-{{ span.end_time }}</span>
+                            </span>
+                        </div>
+                    </a><!--
+
+                {% endif %}
+
+
+            {% else %} {# (Pre)reservation exists == any booking exists#}
+
+                {% if not course_passed %} {# Course with booking not over #}
+
+                    {% if not course_booking_allowed %} {# Course with booking too soon to cancel (pre-)reservation #}
+
+                        --><a href = "{{ urlFor('user.bookings.home') }}#b-{{
+                            curr_date}}-{{span.start_time_hour}}-{{ span.start_time_minutes}}"
+                            title = "{{my_booking.menuDisplayString() }}"
+                            class = "booking booking-exists booking-time-ended
+                                slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
+
+                                <div class = "legend-icon-cont">
+
+                                {% if my_booking.type == 'prereservation' %}
+                                    {% if my_booking.activated == 1 %} {# this is the case that shoud not appear #}
+
+                                    {% elseif my_booking.activated == 2 %}
+                                        <div class = "not-activated">
+                                            {% if my_booking.activated %}
+                                                {% include 'calendar/selectors/unavailable.with.canceled.reservation.twig' with {'f_triggered_reservation' : true} %}
+                                            {% else %}
+                                                {% include 'calendar/selectors/unavailable.with.canceled.reservation.twig'%}
+                                            {% endif %}
+                                        </div>
+                                    {% else %}
+
+                                        <div class = "null-activated">
+                                            {% if my_booking.triggered %}
+                                                {% include 'calendar/selectors/unavailable.with.undetermined.reservation.twig' with {'f_triggered_reservation' : true} %}
+                                            {% else %}
+                                                {% include 'calendar/selectors/unavailable.with.undetermined.reservation.twig'%}
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+
+                                {% elseif my_booking.type == 'reservation' %}
+                                    {% if my_booking.canceled == 1 %}
+                                        <div class = "yes-canceled">
+                                            {% if my_booking.triggered %}
+                                                {% include 'calendar/selectors/unavailable.with.canceled.reservation.twig' with {'f_triggered_reservation' : true} %}
+                                            {% else %}
+                                                {% include 'calendar/selectors/unavailable.with.canceled.reservation.twig'%}
+                                            {% endif %}
+                                        </div>
+
+                                    {% elseif my_booking.canceled == 2 %}
+                                        <div class = "not-canceled">
+                                            {% if my_booking.triggered %}
+                                                {% include 'calendar/selectors/unavailable.with.confirmed.reservation.twig' with {'f_triggered_reservation' : true} %}
+                                            {% else %}
+                                                {% include 'calendar/selectors/unavailable.with.confirmed.reservation.twig'%}
+                                            {% endif %}
+                                        </div>
+                                    {% else %}
+                                         <div class = "null-canceled">
+                                            {% if my_booking.triggered %}
+                                                {% include 'calendar/selectors/unavailable.with.undetermined.reservation.twig' with {'f_triggered_reservation' : true} %}
+                                            {% else %}
+                                                {% include 'calendar/selectors/unavailable.with.undetermined.reservation.twig'%}
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                                </div><!--
+
+                                --><div class = "duration-cont">
+                                    <span class = "times">
+                                        <span>{{ span.start_time }}</span><!--
+                                        --><span class = "fw">-{{ span.end_time }}</span>
+                                    </span>
+                                </div>
+                        </a><!--
+
+                    {% else %} {# Booking cancelation still allowed #}
+
+                        --><a href = "{{ urlFor('user.bookings.home') }}#b-{{
+                            curr_date}}-{{span.start_time_hour}}-{{ span.start_time_minutes}}"
+                            title = "{{ (my_booking.type == 'prereservation')? 'Postoji predbilježba' :
+                                (my_booking.type == 'reservation') ? 'Postoji rezervacija' : '-'}}&#10;Prijavljeno: {{ (my_booking.created_at|date("U"))|date("d.m.Y. H:i") }}"
+                            class = "booking booking-exists
+                                slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}">
+
+                                <div class = "legend-icon-cont">
+                                    <div>
+                                    {% if my_booking.type == 'prereservation' %}
+                                        {% include 'calendar/selectors/available.with.prereservation.twig'%}
+                                    {% elseif my_booking.type == 'reservation' %}
+                                        {% if my_booking.triggered %}
+                                            {% include 'calendar/selectors/available.with.reservation.twig' with {'f_triggered_reservation' : true} %}
+                                        {% else %}
+                                            {% include 'calendar/selectors/available.with.reservation.twig'%}
+                                        {% endif %}
+                                    {% endif %}
+                                    </div>
+                                </div><!--
+                                --><div class = "duration-cont">
+                                    <span class = "times">
+                                        <span>{{ span.start_time }}</span><!--
+                                        --><span class = "fw">-{{ span.end_time }}</span>
+                                    </span>
+                                </div>
+                        </a><!--
+                    {% endif %}
+
+                {% else %} {# Course with booking finished #}
+
+                    --><a class = "booking course-finished
+                        slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}"
+                        data-date = "{{ curr_date }}"
+                        data-description = "{{ span.descriptionString() }}"
+                        title = "{{my_booking.myMenuDisplayStringHistory() }}">
+                        <div class = "legend-icon-cont">
+
+                        {% if my_booking.type == 'prereservation' %}
+                            {% if my_booking.activated == 1 %} {# Case improbable #}
+
+                            {% elseif my_booking.activated == 2 %}
+                                <div class = "not-activated">
+                                    {% include 'calendar/selectors/passed.with.canceled.reservation.twig'%}
+                                </div>
+                            {% else %}
+                                <div class = "null-activated">
+                                    {% include 'calendar/selectors/passed.with.undetermined.reservation.twig'%}
+                                </div>
+                            {% endif %}
+
+                        {% elseif my_booking.type == 'reservation' %}
+                            {% if my_booking.canceled == 1 %}
+                                <div class = " yes-canceled">
+                                    {% include 'calendar/selectors/passed.with.canceled.reservation.twig'%}
+                                </div>
+                            {% elseif my_booking.canceled == 2 %}
+                                <div class = "not-canceled">
+                                    {% include 'calendar/selectors/passed.with.confirmed.reservation.twig'%}
+                                </div>
+                            {% else %}
+                                <div class = "null-canceled">
+                                    {% include 'calendar/selectors/passed.with.undetermined.reservation.twig'%}
+                                </div>
+                            {% endif %}
+                        {% endif %}
+
+                        </div><!--
+
+                        --><div class = "duration-cont">
+                            <span class = "times">
+                                <span>{{ span.start_time }}</span><!--
+                                --><span class = "fw">-{{ span.end_time }}</span>
+                            </span>
+                        </div>
+                    </a><!--
+
+                {% endif %}
+
+            {% endif %}
+
+
+
+        {% endfor %}
+        --></div>
+    </div>
+    {% endif %}
+</div>

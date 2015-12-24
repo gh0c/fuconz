@@ -18,14 +18,16 @@
         <div class = "black-horiz-spacer-5"></div>
 
         <div class = "main-content-box">
+
+            {% include "templates/partials/user_messages.twig" %}
+
+
             <div class = "inner-cont">
 
 
-                {% include "templates/partials/user_messages.twig" %}
 
-
-                <div class = "vertical-section text-centered">
-                    <div class = "">
+                <div class = "horizontal-section text-centered">
+                    <div>
                         <section id="cd-google-map">
                             <div id="google-container"></div>
                             <div id="cd-zoom-in"></div>
@@ -40,7 +42,11 @@
         </div>
     </div>
 
-
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="public/js/gmaps.main.js"></script> <!-- Resource jQuery -->
+    <script src="public/code/js/gmaps.main.js"></script> <!-- Resource jQuery -->
+
+{% endblock %}
+
+{% block additional_js %}
+
 {% endblock %}

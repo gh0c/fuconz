@@ -1,44 +1,58 @@
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top main">
+        <div class="">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class = "fa fa-fw fa-bars f-icon-menu"></i>
+                </button>
+                <a class="navbar-brand" href="#"><img src="public/graphics/fuconz_natpis_v3.png"/> </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
 
+                <ul class = "menu nav navbar-nav navbar-right">
+                    {% if auth_admin %}
+                        <li>
+                            <a href = "{{ urlFor("admin.home") }}" target="_blank" title="Admin panel">
+                                <i class = "fa fa-fw fa-cogs"></i><span class = "label-fw"> Admin</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    <li>
+                        <a href = "{{ urlFor("about-site") }}">O stranici</a>
+                    </li>
+                    <li>
+                        <a href = "{{ urlFor("location") }}">Di halamo</a>
+                    </li>
+                    {% if auth_user %}
+                        <li class = "user-sign">
+                            <a href = "{{ urlFor('user.profile.home') }}" title="{{ auth_user.ssbos("Prijavljena članica", "Prijavljeni član") }} {{ auth_user.username }}">
+                                {%  set avatar_url = auth_user.getAvatarURL('avatar',
+                                { "width": 38, "height": 38, "crop": "fill"}) %}
+                                {%  if avatar_url %}
+                                    <div class = "img-holder"><img src = "{{ avatar_url }}" /></div>
+                                {% else %}
+                                    <i class = "fa fa-user"></i>
+                                {% endif %}
+                                <span class = "label-fw"> {{ auth_user.full_name }}</span>
+                            </a>
+                        </li>
+                        <li class = "auth"><a href="{{ urlFor('user.logout') }}">Odjava</a></li>
+                    {% else %}
+                        <li class = "user-sign" title="Niste prijavljeni">
+                            <i class = "fa fa-user-secret"></i>
+                            <span class = "label-fw"> Niste prijavljeni</span>
+                        </li>
+                        <li class = "auth"><a href="{{ urlFor('user.login') }}">Prijava</a></li>
+                        <li class = "auth"><a href="{{ urlFor('user.registration') }}">Registracija</a></li>
 
-<header id = "header">
-    <nav class = "main">
-        <div class = "logo">
-            <strong>
-                <a href="{{ urlFor('home') }}" title="Fuconž.net - Početna">Social network</a>
-            </strong>
+                    {% endif %}
+                </ul>
+            </div><!--/.nav-collapse -->
         </div>
-
-
-        <ul class = "menu right-fl">
-            {% if auth_admin %}
-            <li>
-                <a href = "{{ urlFor("admin.home") }}" target="_blank" title="Admin panel"><i class = "fa fa-fw fa-cogs"></i></a>
-            </li>
-            {% endif %}
-            <li>
-                <a href = "{{ urlFor("about-site") }}">O stranici</a>
-            </li>
-            <li>
-                <a href = "{{ urlFor("location") }}">Di halamo</a>
-            </li>
-            {% if auth_user %}
-                <li class = "user-sign" title="{{ auth_user.ssbos("Prijavljena članica", "Prijavljeni član") }} {{ auth_user.username }}">
-                    <i class = "fa fa-user"></i>
-                </li>
-                <li class = "auth"><a href="{{ urlFor('user.logout') }}">Odjava</a></li>
-            {% else %}
-                <li class = "user-sign" title="Niste prijavljeni">
-                    <i class = "fa fa-user-secret"></i>
-                </li>
-                <li class = "auth"><a href="{{ urlFor('user.login') }}">Prijava</a></li>
-                <li class = "auth"><a href="{{ urlFor('user.registration') }}">Registracija</a></li>
-
-            {% endif %}
-        </ul>
-
     </nav>
-    {% if auth_user %}
-        {% include 'user/user.header.twig' %}
-    {% endif %}
 
+    {% if auth_user %}
+        {% include 'user/header.twig' %}
+    {% endif %}
 </header>

@@ -1,0 +1,118 @@
+@import "modules/modules.import";
+
+.home-container.main {
+  &.mega {
+    @include gradient-horizontal-bbb-flag-cibona-blue;
+
+    //        min-height: 24em;
+    padding: 2em 0;
+    position: relative;
+    & > div.main-img-holder {
+      //          min-height: 18em;
+      //          min-width: 960px;
+      margin-top: 3em;
+      margin-bottom: 3em;
+      opacity: 0;
+      overflow:hidden;
+      position: relative;
+      //          & > img {
+      //            float: right;
+      //          }
+      &.active::before {
+        content: "";
+        background-position-x: 80%;
+
+        background-image: url("../../graphics/background.jpg");
+        opacity: 0.3;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: 0;
+      }
+    }
+
+    .homepage-cont-holder {
+      z-index: 5;
+      margin: 0 auto;
+      color: white;
+      padding: 1em 0;
+      @include responsive-w-min(380px) {
+        padding: 1em;
+      }
+      opacity: 0;
+
+      .subtitle-std {
+        padding: 1em 0;
+        max-width: 650px;
+        width: 100%;
+        margin: 0 auto;
+        @include font-size(14px);
+
+        @include responsive-w-min(288px) {
+          padding: 1em 1em;
+          min-width: 256px;
+
+        }
+        @include responsive-w-min(400px) {
+          width: 75%;
+          min-width: 368px;
+        }
+
+        box-sizing: border-box;
+        &.lev1 {
+          background-color: rgba($cibona-blue, .8);
+          color: $light-blue-gray-light;
+          font-family: MuseoSans;
+          font-weight: 600;
+          text-transform: uppercase;
+          h4 {
+            @include font-size(14px);
+            @include responsive-w-min(25em) {
+              @include font-size(15px);
+            }
+          }
+        }
+        &.lev2 {
+          background-color: $light-blue-gray-light;
+          color: $dark-dark-blue;
+          padding: 0.5em 1em;
+        }
+
+        &.lev3 {
+          text-align: center;
+          padding: 0.2em 0.5em 1em 0.5em;
+          i.fa {
+            font-size: 3em;
+            color: $light-blue-gray-light;
+
+            &:first-of-type {
+              font-size: 2.9em;
+              transform: rotateZ(20deg);
+              padding: 0.2em 0.1em 0.1em 0.4em;
+            }
+            &:nth-of-type(2) {
+              transform: rotateZ(5deg);
+              padding: 0.1em 0.3em 0em 0.5em;
+            }
+            &:nth-of-type(3) {
+              transform: rotateZ(345deg);
+              padding: 0.1em 0.1em 0em 0.6em;
+              font-size: 2em;
+            }
+            &:nth-of-type(4) {
+              transform: rotateZ(20deg);
+              padding: 0.0em 0.0em 0em 0.3em;
+              font-size: 3.2em;
+            }
+            &:nth-of-type(5) {
+              padding: 0.3em 0.2em 0em 0.4em;
+              font-size: 2.7em;
+            }
+          }
+        }
+      }
+    }
+  }
+}

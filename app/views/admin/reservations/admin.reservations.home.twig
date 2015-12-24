@@ -19,10 +19,10 @@
         <div class = "black-horiz-spacer-5"></div>
 
         <div class = "main-content-box">
+            {% include "admin/templates/partials/admin_messages.twig" %}
+
             <div class = "inner-cont">
 
-
-                {% include "admin/templates/partials/admin_messages.twig" %}
 
                 {% include "calendar/wrapper.twig" %}
 
@@ -35,5 +35,7 @@
 {% endblock %}
 
 {% block additional_js %}
-    <script type="text/javascript" src="public/js/calendar.js?{{ "now"|date("YmdHis") }}"></script>
+    <script type="text/javascript" src="public/code/js/calendar.js?{{ "now"|date("YmdHis") }}"></script>
+    <script type="text/javascript" src="public/code/js/admin/validation.js?{{ "now"|date("YmdHis") }}"></script>
+
 {% endblock %}

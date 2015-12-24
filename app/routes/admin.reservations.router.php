@@ -172,19 +172,7 @@ $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
         } else {
             $bookings = Booking::getByDatetimeSpan($span_id);
             $logs = ActionLog::getActionLogsForDatetimeSpan($datetime_span->id);
-//        var_dump($bookings);
-//        foreach($bookings as $booking) {
-//            var_dump($booking->user->username);
-//            var_dump($booking->created_at);
-//            if($booking->type == "reservation") {
-//                var_dump("Rezervacija: poništena:");
-//                var_dump($booking->canceled);
-//            } else {
-//                var_dump("Predbiljezba: aktivirana:");
-//                var_dump($booking->activated);
-//            }
-//        }
-//        echo "</pre>";
+
 //
             $app->render('admin/reservations/admin.reservations.span.details.twig', array(
                 'auth_admin' => $app->auth_admin,

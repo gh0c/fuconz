@@ -1,0 +1,213 @@
+/*********************
+ BREAKPOINTS
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */.month-grid.ultra.horizontal .table-container.ultra.horizontal * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell {
+  border: 0;
+  display: inline-block;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+@media only screen and (min-width: 992px) {
+  .month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell {
+    margin-left: 2px;
+    margin-right: 1px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell {
+    margin-left: 4px;
+    margin-right: 2px;
+  }
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell.first-day-of-month {
+  margin-left: 0;
+}
+@media only screen and (min-width: 992px) {
+  .month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell.first-day-of-month {
+    padding-left: 1px;
+    border-left: 1px dashed #edf0f4;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell.first-day-of-month {
+    padding-left: 2px;
+    border-left: 2px dashed #edf0f4;
+  }
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .th {
+  margin-top: 0.1em;
+  text-align: center;
+  font-weight: bold;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .th > .active-day {
+  border-top: 3px solid #12408d;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .th > .active-day.today {
+  background: #12408d;
+  color: #edf0f4;
+  -webkit-background-size: 60px 60px;
+  -moz-background-size: 60px 60px;
+  background-size: 60px 60px;
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  border-top: 3px solid #edf0f4;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .th > .active-day.weekend:not(.today) {
+  border-top: 3px solid #0f3678;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .td {
+  text-align: center;
+  font-weight: 300;
+  vertical-align: bottom;
+  margin-bottom: 6px;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .td > .active-day, .month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .td > .inactive-day {
+  height: 100%;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .td > .active-day {
+  background: #12408d;
+  color: #edf0f4;
+  border-top: 3px dashed transparent;
+  box-sizing: border-box;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .td > .active-day.today {
+  -webkit-background-size: 60px 60px;
+  -moz-background-size: 60px 60px;
+  background-size: 60px 60px;
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  border-top: 3px solid #edf0f4;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .td > .active-day.weekend:not(.today) {
+  background-color: #0f3678;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .td > .active-day .day-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .td > .active-day .day-container.day-ended {
+  background-color: rgba(0, 0, 0, .3);
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .td > .active-day .date-container {
+  font-size: 1.2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  padding: 1px;
+  z-index: 9;
+  width: 40%;
+  height: 15%;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal .tr .cell .td > .active-day .date-container .day-ended {
+  position: absolute;
+  padding: 0;
+  font-size: 1.7em;
+  top: -3px;
+  right: 3px;
+  text-align: right;
+  color: rgba(175, 20, 5, 0.70);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.template-blueprint .tr .cell .td, .month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td {
+  height: 10em;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.template-blueprint .tr .cell {
+  width: 4em;
+}
+@media only screen and (min-width: 992px) {
+  .month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell {
+    width: 3.375em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell {
+    width: 4em;
+  }
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container.selected-day {
+  background-color: #eaeef1;
+  color: #0c131d;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container.selected-day .booking-slots .bookings-container .booking.available-for-booking:not(.yes-selected):hover .duration-cont .times, .month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container.selected-day .booking-slots .bookings-container .booking.booking-time-ended:hover .duration-cont .times {
+  text-shadow: 1px 0px 0px #edf0f4, 1px 1px 0px #edf0f4, -7px -2px 13px #0c131d, 7px 2px 12px #0c131d;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container.selected-day .booking-time-ended .legend-icon-cont .calendar-icon-holder .back {
+  color: #edf0f4;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container:not(.selected-day) .bookings-container a:not(.yes-selected):hover .duration-cont {
+  text-shadow: 1px 0 0 black, 1px 1px 0 black, -7px -2px 13px white, 7px 2px 12px white;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots {
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 12;
+  text-align: left;
+  overflow: hidden;
+  width: 100%;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container > a {
+  display: block;
+  width: 100%;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container .booking {
+  text-align: center;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container .booking > div {
+  width: 100%;
+  display: inline-table;
+  vertical-align: bottom;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container .booking > div > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder {
+  position: relative;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container .booking.available-for-booking .legend-icon-cont .calendar-icon-holder .leader {
+  font-size: 140%;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container .booking.not-selected, .month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container .booking.yes-selected {
+  cursor: pointer;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container .booking .legend-icon-cont {
+  height: 2.6em;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container .booking .duration-cont {
+  height: 1.4em;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container .booking .duration-cont .times {
+  font-size: 0.7em;
+  font-weight: 600;
+}
+.month-grid.ultra.horizontal .table-container.ultra.horizontal.bookings .tr .cell .td .day-container .booking-slots .bookings-container .booking .duration-cont .times > .fw {
+  display: none;
+}

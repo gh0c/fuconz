@@ -1,0 +1,33 @@
+/*********************
+ BREAKPOINTS
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */#footer {
+  background-color: #0c131d;
+  padding-top: 15px;
+  text-align: center;
+  color: #bbb;
+  display: none;
+}
+#footer nav.footer {
+  padding: 8px 20px 6px 20px;
+  border-top: 1px solid #bbb;
+}
+#footer nav.footer > div {
+  width: 100%;
+}
+#footer nav.footer .signature {
+  font-family: MuseoSans;
+  color: white;
+  padding: 6px 10px 2px 10px;
+}
+#footer nav.footer .signature span.fuconz {
+  font-weight: 600;
+}
+#footer nav.footer .signature .fa {
+  padding: 0 1em 0 0.2em;
+}
+.a-level-holder {
+  margin: 0 auto -7em;
+}
+#footer, .a-level-holder .push {
+  height: 7em;
+}

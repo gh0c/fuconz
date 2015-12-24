@@ -1,0 +1,17 @@
+<div class = "desktop f-div-desktop-only">
+    {% include "calendar/wrapper.dynamic.twig" with {
+    'wrapper': cal_wrapper_desktop, 'calendar_class': calendar_class_desktop,
+    'url_change_view': url_change_view_desktop } %}
+</div>
+
+<div class = "tablet f-div-tablet-only">
+    {% include "calendar/wrapper.dynamic.twig" with {
+    'wrapper': cal_wrapper_tablet, 'calendar_class': calendar_class_tablet,
+    'url_change_view': url_change_view_tablet } %}
+</div>
+
+<div class = "mobile f-div-mobile-only">
+    {% include "calendar/wrapper.dynamic.twig" with {
+    'wrapper': cal_wrapper_mobile, 'calendar_class': calendar_class_mobile,
+    'url_change_view': url_change_view_mobile } %}
+</div>

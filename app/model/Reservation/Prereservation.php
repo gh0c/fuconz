@@ -57,6 +57,28 @@ class Prereservation {
     }
 
 
+    public function menuDisplayString()
+    {
+        if($this->activated == 1) {
+            return "Aktivirana predbilježba";
+        } else if ($this->activated == 2) {
+            return "Otpala predbilježba";
+        } else {
+            return "Predbilježba zasad nepoznatog statusa";
+        }
+    }
+
+    public function myMenuDisplayStringHistory()
+    {
+        if($this->activated == 1) {
+            return "Imali ste aktiviranu predbilježbu";
+        } else if ($this->activated == 2) {
+            return "Imali ste neaktiviranu predbilježbu";
+        } else {
+            return "Imali ste predbilježbu nepoznatog statusa";
+        }
+    }
+
     public static function create_new($course, $datetime_span, $user, $training_type = 1) {
         $dbh = DatabaseConnection::getInstance();
         $sql = "INSERT INTO pre_reservation (user_id, datetime_span_id, training_course_id, training_type_id, created_at)
@@ -151,10 +173,12 @@ class Prereservation {
 //
         $available_datetime_spans = array();
         $available_datetime_spans_description_labels = array();
+        $available_datetime_spans_description_labels_midi = array();
         $available_datetime_spans_availability_labels = array();
 
         $full_datetime_spans = array();
         $full_datetime_spans_description_labels = array();
+        $full_datetime_spans_description_labels_midi = array();
         $full_datetime_spans_availability_labels = array();
 
         for ($i = 0; $i < sizeof($p_selected_spans); $i++) {
@@ -173,6 +197,7 @@ class Prereservation {
             if($number_of_existing_reservations < $training_course->capacity) {
                 $available_datetime_spans[] = $selected_span;
                 $available_datetime_spans_description_labels[] = $datetime_span->descriptionString();
+                $available_datetime_spans_description_labels_midi[] = $datetime_span->descriptionStringMid();
                 $available_datetime_spans_availability_labels[] = "" . $number_of_existing_reservations . "/" . $training_course->capacity;
                 $prereservations_unnecessary = true;
                 $pre_reservations_status_label .= sprintf("Više nije popunjen termin %s. Popunjenost %d/%d \n",
@@ -180,6 +205,7 @@ class Prereservation {
             } else {
                 $full_datetime_spans[] = $selected_span;
                 $full_datetime_spans_description_labels[] = $datetime_span->descriptionString();
+                $full_datetime_spans_description_labels_midi[] = $datetime_span->descriptionStringMid();
                 $full_datetime_spans_availability_labels[] = "" . $number_of_existing_reservations . "/" . $training_course->capacity;
             }
         }
@@ -189,9 +215,11 @@ class Prereservation {
             $validation_result["reservations"] = false;
             $validation_result["available_datetime_spans"] = $available_datetime_spans;
             $validation_result["available_datetime_spans_description_labels"] = $available_datetime_spans_description_labels;
+            $validation_result["available_datetime_spans_description_labels_midi"] = $available_datetime_spans_description_labels_midi;
             $validation_result["available_datetime_spans_availibility_labels"] = $available_datetime_spans_availability_labels;
             $validation_result["full_datetime_spans"] = $full_datetime_spans;
             $validation_result["full_datetime_spans_description_labels"] = $full_datetime_spans_description_labels;
+            $validation_result["full_datetime_spans_description_labels_midi"] = $full_datetime_spans_description_labels_midi;
             $validation_result["full_datetime_spans_availibility_labels"] = $full_datetime_spans_availability_labels;
             return $validation_result;
         } else {
@@ -200,9 +228,11 @@ class Prereservation {
             $validation_result["reservations_status_label"] = $pre_reservations_status_label;
             $validation_result["available_datetime_spans"] = $available_datetime_spans;
             $validation_result["available_datetime_spans_description_labels"] = $available_datetime_spans_description_labels;
+            $validation_result["available_datetime_spans_description_labels_midi"] = $available_datetime_spans_description_labels_midi;
             $validation_result["available_datetime_spans_availibility_labels"] = $available_datetime_spans_availability_labels;
             $validation_result["full_datetime_spans"] = $full_datetime_spans;
             $validation_result["full_datetime_spans_description_labels"] = $full_datetime_spans_description_labels;
+            $validation_result["full_datetime_spans_description_labels_midi"] = $full_datetime_spans_description_labels_midi;
             $validation_result["full_datetime_spans_availibility_labels"] = $full_datetime_spans_availability_labels;
             return $validation_result;
         }
@@ -464,6 +494,46 @@ class Prereservation {
         }
     }
 
+
+    public static function getNumberByDatetimeSpan($datetime_span_id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT COUNT(*) AS number FROM pre_reservation WHERE
+          datetime_span_id = :datetime_span_id";
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':datetime_span_id', (int)$datetime_span_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return (int)$row["number"];
+        }
+        else {
+            return null;
+        }
+    }
+
+    public static function getNumberOfUnactivatedByDatetimeSpan($datetime_span_id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+
+        $sql = "SELECT COUNT(*) AS number FROM pre_reservation WHERE
+          datetime_span_id = :datetime_span_id AND activated <> 1";
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':datetime_span_id', (int)$datetime_span_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return (int)$row["number"];
+        }
+        else {
+            return null;
+        }
+    }
 
     public static function getByUserAndDatetimeSpan($user_id, $datetime_span_id)
     {

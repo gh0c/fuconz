@@ -78,7 +78,6 @@ class Booking
         $reservations = Reservation::getByUser($user_id, $order_by);
         $prereservations = Prereservation::getUnactivatedByUser($user_id, $order_by);
         $all_bookings = array_merge($reservations, $prereservations);
-
         foreach ($all_bookings as $booking ) {
             if($booking->datetime_span->span_start < date("Y-m-d H:i:s")) {
                 $ended[] = $booking;
@@ -92,7 +91,6 @@ class Booking
         usort($ended, array('app\model\Reservation\Booking', "sortByDatetimeSpanStart"));
         usort($booking_not_allowed, array('app\model\Reservation\Booking', "sortByDatetimeSpanStart"));
         usort($booking_allowed, array('app\model\Reservation\Booking', "sortByDatetimeSpanStart"));
-
         return array($booking_allowed, $booking_not_allowed, $ended);
     }
 
@@ -142,7 +140,6 @@ class Booking
                 usort($ended, array('app\model\Reservation\Booking', "sortByDatetimeSpanStart"));
                 $limit_ended = (($total - $limit_ended - $o_allowed_size) > $limit_ended) ? $limit_ended : ($total - $o_not_allowed_size - $o_allowed_size);
                 $ended = array_slice($ended, 0, $limit_ended);
-                $o_ended_size = sizeof($ended);
 
             }
         }

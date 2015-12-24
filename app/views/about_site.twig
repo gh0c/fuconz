@@ -6,55 +6,199 @@
 
 {% block content %}
 
+    <!-- styling like this (not extracted in some separated .css file) is done for this and this page only-->
+
+
+
     <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-subtitle-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h2>Ovo su stranice na kojima ekiponž dogovara fuconž</h2>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
 
         <div class = "main-content-box">
-            <div class = "inner-cont">
+
+            {% include "templates/partials/user_messages.twig" %}
+
+            <div class = "inner-cont" style = "font-family: MuseoSans; font-weight: 700; line-height: 1.6em;">
 
 
-                {% include "templates/partials/user_messages.twig" %}
 
 
-                <div class = "subtitle-std lev1 inner-70pct text-centered">
-                    <h4>Ovo su stranice na kojima ekiponž dogovara fuconž</h4>
+                <div class = "vertical-section inner-70pct text-centered">
+
+                        <span style="font-size: 1.1em;">Osnovni ciljevi:</span>
+
+                </div>
+                <div class = "vertical-section inner-70pct text-justified">
+
+                    <i class="fa fa-futbol-o fa-fw fa-2x fa-pull-left" style="color:rgb(40, 80, 140); position:relative; top: 0.2em;"></i><span>Tekme<br><!--
+                            -->Nakon svake utakmice registriranim članovima koji su sudjelovali na njoj pridružuje se nastup u njoj, <!--
+                            -->nastupi se zbrajaju kao i rezultati. Automatski se vodi izračun članovog broja ukupnih pobjeda (takozvanih <u>ratova</u>) <!--
+                            -->kao i pojedinačnih pobjeda na terminu (takozvanih <u>bitaka</u>). <i class = "fa fa-smile-o"></i> <br><!--
+                            -->S obzirom da nam fali točna statistika dosadašnjih termina o točnim rezultatima svake bitke, taj podatak zanemarujemo...</span>
+                </div>
+                <div class = "vertical-section inner-70pct text-justified">
+
+                    <i class="fa fa-pie-chart fa-fw fa-2x fa-pull-left" style="color:rgb(40, 80, 140); position:relative; top: 0.2em;"></i><span>Statistike<br><!--
+                            -->S obzirom na dobro formiranu bazu podataka i njeno ažuriranje nakon svake utakmice, <!--
+                            -->iz unesenih podataka opisanih u prošlom paragrafu moguće je izračunavati neke prosjeke, rezultate, bodovanja i slično. <!--
+                            -->Cilj <u>nije</u> oformiti nekakvu utrku za biti najbolji po pojedinačnim statistikama u tablicama koje će biti dostupne <!--
+                            -->na stranici kao interesantan statistički prilog, ali s obzirom na promjene ekipa iz termina u termin takvo svođenje <!--
+                            -->praćenja učinka na osobnoj razini čini mi se jedino logično. Ako smislite nekaj bolje, svakako predložite.</span>
+                </div>
+                <div class = "vertical-section inner-70pct text-justified">
+
+                        <i class="fa fa-calendar-check-o fa-fw fa-2x fa-pull-left" style="color:rgb(40, 80, 140); position:relative; top: 0.2em;"></i><span>Prijave na termin<br><!--
+                            -->Još jedan očajnički pokušaj pronalaska efikasnog načina za dogovor oko prisutnosti na pojedinom terminu za fucu: <!--
+                            -->korisnici u kalendaru odabiru termin po principu "ko prvi" dok se termin ne popuni, ko izvisi se predbilježava <!--
+                            -->za slučaj da netko otkaže. Prijave i otkazivanja moraju se obaviti u određeno vrijeme prije početka termina. <!--
+                            -->U slučaju otkazivanja, onaj tko ima predbilježbu prvu po redu upada na slobodno mjesto. <!--
+                            -->Sustav automatski provjerava je li vrijeme za prijavu isteklo i javlja svima koji imaju aktivnu <!--
+                            -->rezervaciju da je termin potvrđen. Ako u tom trenutku nema dovoljno prijava, svima se javlja da termin otpada.</span>
+                </div>
+                <div class = "vertical-section inner-70pct text-justified">
+
+                        <i class="fa fa-comments-o fa-fw fa-2x fa-pull-left" style="color:rgb(40, 80, 140); position:relative; top: 0.2em;"></i><span>Komunikacija (<!--
+                            --></span><span style="color: rgba(200, 25, 10,1);">Tek u pripremi!</span>)<br><!--
+                            --><span>Ideja je realizirati neki jednostavni chat (barem neke privatne poruke od korisnika do korisnika), <!--
+                            -->a ovisno o zahtjevnosti izvedbe tako nečega možda i mogućnost grupnih razgovora.</span>
+                </div>
+                <div class = "vertical-section inner-70pct text-justified">
+
+                    <i class="fa fa-question fa-fw fa-2x fa-pull-left" style="color:rgb(40, 80, 140); position:relative; top: 0.2em;"></i>
+                            <span>Svi savjeti i vaše ideje su i više nego dobrodošli. Ja imam još planova i maštarija, <!--
+                            -->ali za neko pretjerano brutaliziranje za napravit kaos od stranice treba malo više znanja i punu više vremena. <br><!--
+                            -->Jedna ideja: Osposobiti sustav ocjenjivanja igrača <!--
+                            --><i class = "fa fa-fw fa-star-o" style="color:rgb(40, 80, 140);"></i>
+                                <i class = "fa fa-fw fa-star-half-o" style="color:rgb(40, 80, 140);"></i>
+                                <i class = "fa fa-fw fa-star" style="color:rgb(40, 80, 140);"></i> <!--
+                            -->gdje anonimno daješ ocjenu suigračima nakon svakog termina. Izvlačenje statistika iz takvih pizdarija...
+                            </span>
                 </div>
 
-                <div class = "subtitle-std lev1 inner-70pct text-left">
-                    <span>Stranica je nastala iz dobre volje i viška slobodnog vremena.</span><br>
-                    <span>Cijelo vrijeme se nadograđuje aplikacija koja se vrti u pozadini, ispravljaju se <i>bugovi</i> i sređuje dizajn.</span><br>
-                    <span></span><br>
-                    <span>Stranica je postavljena na besplatnom <a class = "underline-link" target="_blank" href = "https://www.heroku.com/">
-                            Heroku developerskom hostingu</a>, a za upload slika (npr. avatara i ostalih grafičkih elemenata koji nisu "hardkodirani")
-                            korišten je odličan servis za upload, pohranu i manipulaciju slika <a class = "underline-link" target="_blank"
-                            href = "cloudinary.com">Cloudinary</a>.</span><br>
-                    <br>
-                    <span>Važna <strong>napomena</strong>: stranica nema skoro nikakvu ciljano napravljenu prilagodbu za mobitele i ostale gluparije
-                        (<i>Responsive design</i>). Trganje layouta pri pokušaju otvaranja putem bilo čega ekrana manjeg od ~1000 pixela u širinu je itekako očekivano.
-                        To se u dogledno vrijeme sasvim sigurno neće promijeniti.</span><br><br>
-                    <span>
-                        Stranica je primarno napravljena uz testiranje u <strong><i class = "fa fa-chrome"></i> Chromeu</strong>, ali izgled bi trebao biti prihvatljive sličnosti i u još nekim preglednicima. <br>
-                        To se <u>ne</u> odnosi na stare Internet Explorere, u tom smeću pouzdano mogu tvrditi da prikaz svega na stranici neće funkcionirati kako treba.
-                        </span><br><br>
-                    <span><strong>Ovo je više napravljeno više iz zafrkancije, čisto kao odmak od ovisnosti o židovima s facebooka i meni za vježbu.</strong><br>
-                        Ipak, stranica je pristojne tehnološke zahtjevnosti što je rezultiralo nekim zgodnim funkcionalnostima koje sam sklepao.<br>
-                        Šifre za prijavu koje koristite ni u jednom trenutku nisu zapisane u izvornom obliku nego kripritano, uz dodatni sloj zaštite.<br>
-                        Općenito, stranica što se sigurnosti tiče posjeduje i više od minimalnih zahtjeva kad su u pitanju registracija i autentifikacija korisnika.<br>
-                        Svejedno, vrijedi napomenuti da ne lupetate neke generičke lako "lomljive" šifre, kao niti one koje koristite na drugim stranicama.
-                        <br>Pro tip: puno je zajebanije (<i>skoro</i> pa nemoguće u životnom vijeku bilo koga od nas uz postojeću tehnologiju) <i>brute force</i>
-                        načinom probiti šifru tipa "dobitćešgaupak-okolosvudajetama" nego "22111990Gh0C" ili "dNMN:Kfdsa!kd929)".<br>
-                    </span><br>
-                    <span>Možda omogućim nekakvo automatsko odašiljanje mailova s obavijestima pa bi bilo dobro da kod registracije unesete aktivnu mail adresu.</span><br><br>
-                    <span>Kao i ostatak stranice, updateat ću ovaj odlomak sa eventualnim nadopunama, pojašnjenjima oko korištenja stranice itd.<br>
-                        Svi prijedlozi su i više nego dobrodošli, ja imam još puno ideja za čiju realizaciju ipak treba još malo više vremena i znanja od ovog mog.<br>
-                        Ako vam stranica upadne u neke glitcheve, beskonačne loadinge, pojave vam se errori ili exceptioni - svakako mi prijavite.
-                        Do toga ne bi trebalo dolaziti, eventualna potpuna nedostupnost je jedino moguća zbog hostinga (ipak je besplatan) ili stavljanja nove verzije.<br>
-                    </span><br><span>Još jedna <strong>napomena</strong>: Zbog načina uploadanja nove verzije na hosting, moguće je
-                    da se prebrišu neke postojeće postavke pa recimo onaj "<u>zapamti me</u>" prilikom prijave uzmite u obzir uvjetno
-                        jer je moguće da ćete se morati ponovno prijaviti unosom korisničkog imena i šifre čak i kada to neće imati smisla...</span><br>
-                    <span>Trudit ću se te upgradeove objavljivat samo kad ih lokalno dovoljno istestiram i nakupim dovoljno novotarija da budu vrijedne uploada.</span><br><br>
+                <div class = "empty-horiz-spacer-20"></div>
+                <div class = "vertical-section inner-70pct empty-horiz-spacer-10 dashed-spacer"></div>
+                <div class = "empty-horiz-spacer-10"></div>
 
-                    <span><strong>gh0c</strong></span><br>
-                    <a href="mailto:ghoc.hrx@gmail.com" class = "underline-link"><i class = "fa fa-fw fa-envelope-o"></i> Gmail</a>
+
+                <div class = "vertical-section inner-70pct text-justified">
+                    <i class = "fa fa-code fa-2x"></i><br>
+                    <span>Stranica je postavljena na besplatnom <a class = "underline-link" target="_blank" href = "https://byet.host/">Byethost hostingu</a>, <!--
+                    -->a za upload slika (npr. avatara i ostalih grafičkih elemenata koji nisu "hardkodirani") <!--
+                    -->korišten je odličan servis za upload, pohranu i manipulaciju slika <a class = "underline-link" target="_blank" href = "cloudinary.com">Cloudinary</a>.
+                    </span><br>
+                    <span>Napisana je u PHP-u (korištenjem Slim microframeworka u kombinaciji s Twig predlošcima). <!--
+                        -->Za ispravno učitavanje nužno je imati omogućeno izvršavanje JavaScripta u kojem je napisan dio funkcionalnosti prikaza sadržaja korisniku.
+                    </span>
+                </div>
+
+                <div class = "vertical-section inner-70pct text-justified">
+
+                    <span>Ovo je napravljeno više iz zafrkancije, čisto kao odmak od ovisnosti o židovima s facebooka i meni za vježbu.</span><br>
+                    <span class="fa-stack fa-lg fa-pull-right">
+                      <i class="fa fa-user-secret fa-stack-2x" style="color:rgb(40, 80, 140)"></i>
+                      <i class="fa fa-lightbulb-o fa-stack-1x text-danger"
+                         style = "color: rgba(220, 190, 20,1 );
+                         font-size: 1.35em;
+                         top: -0.90em;
+                         left: 0.35em;"></i>
+                    </span>
+                    <span>
+                        Ipak, stranica je pristojne tehnološke zahtjevnosti što je rezultiralo nekim zgodnim funkcionalnostima koje sam sklepao. <!--
+                        -->Jedna od njih je i admin panel (kojem nemate pristup) preko kojeg moderiram podatke o utakmicama, unosim termine i <!--
+                        -->pratim korisničku aktivnost; sve preko web sučelja da ne moram ručno unositi u bazu podataka ili nešto slično...
+                    </span>
+                </div>
+
+                <div class = "empty-horiz-spacer-20"></div>
+
+
+                <div class = "vertical-section inner-70pct text-justified">
+                    <i class = "fa fa-key fa-2x fa-pull-left" style = "color:rgb(40, 80, 140); position: relative; top: 0.25em;"></i>
+                    <span>Šifre za prijavu koje koristite ni u jednom trenutku nisu zapisane u izvornom obliku nego kripritano, uz dodatni sloj zaštite. <!--
+                        -->Općenito, stranica što se sigurnosti tiče posjeduje i više od minimalnih zahtjeva kad su u pitanju registracija i autentifikacija korisnika.<br><!--
+                        -->Svejedno, vrijedi napomenuti da ne lupetate neke generičke lako "lomljive" šifre, kao niti one koje koristite na drugim stranicama.
+                    </span>
+                </div>
+
+                <div class = "vertical-section inner-70pct text-justified">
+                    <span class="fa-stack fa-lg fa-pull-left">
+                      <i class="fa fa-mobile fa-stack-2x" style="color:rgb(40, 80, 140)"></i>
+                      <i class="fa fa-ban fa-stack-2x text-danger"
+                         style = "color: rgba(200, 25, 10,1 );
+                         font-size: 1.8em;
+                         top: 0.25em;"></i>
+                    </span>
+                    <span>Stranica nema skoro nikakvu ciljano napravljenu prilagodbu za mobitele i ostale gluparije (responsive design). <!--
+                        -->Grafički kostur stranice prilagođen je pregledavanju na desktopu širine 1280px ili većem. <br><!--
+                        -->Zbog toga je očekivano trganje layouta pri pokušaju otvaranja putem bilo čega ekrana ne šireg od cca. 1000 piksela.<br><!--
+                        -->To se u dogledno vrijeme sasvim sigurno neće značajno promijeniti! (<!--
+                        --></span><span style="color: rgba(200, 25, 10,1);">A možda i nije tako sigurno!</span><span>)
+                    </span>
+
+                </div>
+
+                <div class = "empty-horiz-spacer-5"></div>
+
+                <div class = "vertical-section inner-70pct text-justified">
+                    <i class = "fa fa-fw fa-2x fa-pull-right fa-chrome" style = "color:rgb(40, 80, 140); position:relative; top: 0.2em;"></i>
+                    {#<span class="fa-stack fa-lg fa-pull-right">#}
+                      {#<i class="fa fa-internet-explorer fa-stack-1x" style="color:rgb(50, 110, 230)"></i>#}
+                      {#<i class="fa fa-ban fa-stack-1x text-danger"#}
+                         {#style = "color: rgba(200, 25, 10,1 );#}
+                         {#font-size: 1.25em;#}
+                         {#top: 0.10em;"></i>#}
+                    {#</span>#}
+                    <span>Stranica je primarno napravljena uz testiranje u Chromeu, ali izgled bi trebao biti prihvatljive sličnosti i u zadnjim verzijama ostalih preglednika. <!--
+                        -->To se <u>ne</u> odnosi na stare <i class = "fa fa-internet-explorer"></i> Internet Explorere, <!--
+                        -->u tom smeću pouzdano mogu tvrditi da prikaz svega na stranici neće funkcionirati kako treba!
+                    </span>
+
+                </div>
+
+                <div class = "empty-horiz-spacer-10"></div>
+
+
+                <div class = "vertical-section inner-70pct text-justified">
+                    <span><i class = "fa fa-fw fa-exclamation-triangle"></i> Zbog načina uploadanja nove verzije na hosting, moguće je <!--
+                        -->da se prebrišu neke postojeće postavke pa recimo onaj <u>zapamti me</u> prilikom prijave uzmite u obzir uvjetno <!--
+                        -->jer je moguće da ćete se morati ponovno prijaviti unosom korisničkog imena i šifre čak i kada to neće imati smisla...<br><!--
+                        -->Cijelo vrijeme se nadograđuje aplikacija koja se vrti u pozadini, <!--
+                        -->ispravljaju se <i class = "fa fa-bug" style="color:rgb(40, 80, 140);"></i> bugovi i sređuje dizajn.<br><!--
+                        -->Trudit ću se te upgradeove objavljivat samo kad ih lokalno dovoljno istestiram i nakupim dovoljno novotarija da budu vrijedne uploada.</span>
+                </div>
+
+                <div class = "empty-horiz-spacer-20"></div>
+
+
+                <div class = "vertical-section inner-70pct text-centered">
+                    <span>Stranica je nastala iz dobre volje i viška slobodnog vremena.</span><i class = "fa fa-fw fa-heart" style = "color: rgba(220, 35, 30,1 );"></i>
+                </div>
+
+                <div class = "empty-horiz-spacer-5"></div>
+
+                <div class = "vertical-section inner-70pct text-center">
+                    <div>
+                        <div style = "background-image:url('public/graphics/gh0c_banner.png');
+                            height: 50px;
+                            background-repeat: no-repeat;
+                            text-align: right;
+                            background-color: black;
+                            width: 120px;
+                            background-position-x: 100%;
+                            background-position-y: -5px;
+                            margin: 0 auto;
+                            position: relative;">
+
+                        </div>
+                    </div>
                 </div>
 
             </div>

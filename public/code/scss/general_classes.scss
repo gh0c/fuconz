@@ -1,0 +1,349 @@
+@import "modules/_modules.import";
+
+
+.left-fl {
+  float: left;
+}
+.right-fl {
+  float: right;
+}
+
+.text-centered {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-justified {
+  text-align: justify;
+}
+
+
+.bold-text {
+  font-weight: bold;
+}
+
+
+.display-none {
+  display: none !important;
+}
+
+
+.relative-pos, .pos-relative, .relative-position {
+  position: relative;
+}
+
+
+.multirow-inline {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+.black-horiz-spacer-5 {
+  @include horizontal-spacer(5px, #000000);
+}
+
+.black-horiz-spacer-10 {
+  @include horizontal-spacer(10px, #000000);
+}
+
+.black-horiz-spacer-20 {
+  @include horizontal-spacer(20px, #000000);
+}
+
+
+.inner-70pct-classic {
+  @include inner-centered-stretched(70%);
+}
+.inner-80pct-classic {
+  @include inner-centered-stretched(80%);
+}
+
+.inner-70pct {
+  margin: 0 auto;
+
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  width: 100% !important;
+//  background-color: rebeccapurple; /// <<<
+//  @include gradient-status-bg(60px, 0.15); /// <<<
+
+
+  @include responsive-w-min(300px) {
+    width: auto !important;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  @include responsive-w-min(768px) {
+    width: 70% !important;
+    min-width: 690px;
+    padding: 0 1em;
+  }
+}
+
+
+.empty-horiz-spacer-5 {
+  width: 100%;
+  height: 5px;
+}
+
+.empty-horiz-spacer-10 {
+  width: 100%;
+  height: 10px;
+}
+
+.empty-horiz-spacer-20 {
+  width: 100%;
+  height: 20px;
+}
+
+
+.bbb-cross-flag {
+  @include gradient-dinamo-cross-flag();
+}
+.bbb-flag-v {
+  @include gradient-vertical-bbb-flag();
+}
+.bbb-flag-v.reversed {
+  @include gradient-vertical-bbb-flag-reversed();
+}
+.bbb-flag-h {
+  @include gradient-horizontal-bbb-flag();
+}
+
+.bbb-flag-v-cibona-blue {
+  @include gradient-vertical-bbb-flag-cibona-blue();
+}
+
+.white {
+  color: white;
+}
+.white-bg {
+  background-color: white;
+}
+
+.light-blue-gray-l {
+  color: $light-blue-gray-light;
+}
+
+.light-blue-gray-d {
+  color: $light-blue-gray-dark;
+}
+
+.dark-dark-blue {
+  color: $dark-dark-blue;
+}
+
+.dark-blue-light {
+  color: $dark-blue-light;
+}
+
+.dark-blue-dark {
+  color: $dark-blue-dark;
+}
+
+.light-blue-gray-l-bg {
+  background-color: $light-blue-gray-light;
+}
+
+.light-blue-gray-d-bg {
+  background-color: $light-blue-gray-dark;
+}
+
+.dark-dark-blue-bg {
+  background-color: $dark-dark-blue;
+}
+
+.dark-blue-light-bg {
+  background-color: $dark-blue-light;
+}
+
+.dark-blue-dark-bg {
+  background-color: $dark-blue-dark;
+}
+
+a.underline-link, span.underline {
+  text-decoration: underline;
+}
+
+.disabled-button, .disabledbutton {
+  pointer-events:none;
+}
+
+.dashed-spacer {
+  border-bottom: 2px dashed $dark-dark-blue;
+  box-sizing: border-box;
+}
+
+.flexbox {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+
+// Responsive elements
+.f-text-fw-only-1x, .f-div-fw-only-1x {
+  @include responsive-w-max(767px) {
+    display: none !important;
+  }
+}
+.f-text-non-fw-only-1x, .f-div-non-fw-only-1x {
+  @include responsive-w-min(768px) {
+    display: none !important;
+  }
+}
+
+.f-div-fw-1024 {
+  @include responsive-w-max(1023px) {
+    display: none !important;
+  }
+}
+.f-div-non-fw-1024 {
+  @include responsive-w-min(1024px) {
+    display: none !important;
+  }
+}
+
+.f-div-fw-768 {
+  @include responsive-w-max(767px) {
+    display: none !important;
+  }
+}
+.f-div-non-fw-768 {
+  @include responsive-w-min(768px) {
+    display: none !important;
+  }
+}
+
+.f-div-fw-560 {
+  @include responsive-w-max(559px) {
+    display: none !important;
+  }
+}
+.f-div-non-fw-560 {
+  @include responsive-w-min(560px) {
+    display: none !important;
+  }
+}
+
+.f-div-fw-500 {
+  @include responsive-w-max(499px) {
+    display: none !important;
+  }
+}
+.f-div-non-fw-500 {
+  @include responsive-w-min(500px) {
+    display: none !important;
+  }
+}
+
+.f-div-fw-460 {
+  @include responsive-w-max(459px) {
+    display: none !important;
+  }
+}
+.f-div-non-fw-460 {
+  @include responsive-w-min(460px) {
+    display: none !important;
+  }
+}
+.f-div-fw-360 {
+  @include responsive-w-max(359px) {
+    display: none !important;
+  }
+}
+.f-div-non-fw-360 {
+  @include responsive-w-min(360px) {
+    display: none !important;
+  }
+}
+
+.f-div-fw-large-desktop {
+  @include responsive-w-max($large-desktop-bp - 1px) {
+    display: none !important;
+  }
+}
+.f-div-non-fw-large-desktop {
+  @include responsive-w-min($large-desktop-bp) {
+    display: none !important;
+  }
+}
+
+.f-div-fw-small-desktop {
+  @include responsive-w-max($small-desktop-bp - 1px) {
+    display: none !important;
+  }
+}
+.f-div-non-fw-small-desktop {
+  @include responsive-w-min($small-desktop-bp) {
+    display: none !important;
+  }
+}
+
+.f-div-fw-tablet {
+  @include responsive-w-max($tablet-bp - 1px) {
+    display: none !important;
+  }
+}
+.f-div-non-fw-tablet {
+  @include responsive-w-min($tablet-bp) {
+    display: none !important;
+  }
+}
+
+
+.f-div-large-desktop-only {
+  @include responsive-w-max($large-desktop-bp - 1px) {
+    display: none !important;
+  }
+}
+
+.f-div-small-desktop-only {
+  @include responsive-w-max($small-desktop-bp - 1px) {
+    display: none !important;
+  }
+  @include responsive-w-min($large-desktop-bp) {
+    display: none !important;
+  }
+}
+
+.f-div-desktop-only {
+  @include responsive-w-max($small-desktop-bp - 1px) {
+    display: none !important;
+  }
+}
+
+.f-div-tablet-only {
+  @include responsive-w-max($tablet-bp - 1px) {
+    display: none !important;
+  }
+  @include responsive-w-min($small-desktop-bp) {
+    display: none !important;
+  }
+
+}
+
+.f-div-mobile-only {
+  @include responsive-w-min($tablet-bp) {
+    display: none !important;
+  }
+}
+
+
+.f-div-fw-mobile-mid {
+  @include responsive-w-max($mobile-mid-bp - 1px) {
+    display: none !important;
+  }
+}
+.f-div-non-fw-mobile-mid {
+  @include responsive-w-min($mobile-mid-bp) {
+    display: none !important;
+  }
+}

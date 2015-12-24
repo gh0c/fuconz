@@ -1,0 +1,23 @@
+
+{% include 'calendar/selectors/available.without.booking.twig' %}
+{% include 'calendar/selectors/unavailable.without.booking.twig' %}
+{% include 'calendar/selectors/available.with.reservation.twig' %}
+{% include 'calendar/selectors/available.with.prereservation.twig' %}
+
+{% include 'calendar/selectors/available.with.reservation.twig' with {'f_triggered_reservation' : true} %}
+
+
+{% include 'calendar/selectors/unavailable.with.confirmed.reservation.twig' %}
+{% include 'calendar/selectors/unavailable.with.canceled.reservation.twig' %}
+{% include 'calendar/selectors/unavailable.with.undetermined.reservation.twig' %}
+
+
+{% include 'calendar/selectors/unavailable.with.confirmed.reservation.twig' with {'f_triggered_reservation' : true} %}
+{% include 'calendar/selectors/unavailable.with.canceled.reservation.twig' with {'f_triggered_reservation' : true} %}
+{% include 'calendar/selectors/unavailable.with.undetermined.reservation.twig' with {'f_triggered_reservation' : true} %}
+
+{% include 'calendar/selectors/passed.without.booking.twig' %}
+
+{% include 'calendar/selectors/passed.with.confirmed.reservation.twig' %}
+{% include 'calendar/selectors/passed.with.canceled.reservation.twig' %}
+{% include 'calendar/selectors/passed.with.undetermined.reservation.twig' %}

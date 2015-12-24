@@ -49,7 +49,7 @@ class Reservation {
         }
 
         if ( isset( $input_data['triggered'] ) )
-            $this->triggered = (int) $input_data['triggered'];
+            $this->triggered = (int)$input_data['triggered'];
 
         if ( isset( $input_data['created_at'] ) )
             $this->created_at = $input_data['created_at'];
@@ -57,6 +57,27 @@ class Reservation {
     }
 
 
+    public function menuDisplayString()
+    {
+        if($this->canceled == 1) {
+            return "Otkazana rezervacija";
+        } else if ($this->canceled == 2) {
+            return "Potvrđena rezervacija";
+        } else {
+            return "Rezervacija zasad nepoznatog statusa";
+        }
+    }
+
+    public function myMenuDisplayStringHistory()
+    {
+        if($this->canceled == 1) {
+            return "Imali ste otkazanu rezervaciju";
+        } else if ($this->canceled == 2) {
+            return "Imali ste potvrđenu rezervaciju";
+        } else {
+            return "Imali ste rezervaciju nepoznatog statusa";
+        }
+    }
 
 
     public static function getById($id)
@@ -192,10 +213,13 @@ class Reservation {
 //
         $available_datetime_spans = array();
         $available_datetime_spans_description_labels = array();
+        $available_datetime_spans_description_labels_midi = array();
+
         $available_datetime_spans_availability_labels = array();
 
         $full_datetime_spans = array();
         $full_datetime_spans_description_labels = array();
+        $full_datetime_spans_description_labels_midi = array();
         $full_datetime_spans_availability_labels = array();
 
         for ($i = 0; $i < sizeof($p_selected_spans); $i++) {
@@ -214,10 +238,13 @@ class Reservation {
             if($number_of_existing_reservations < $training_course->capacity) {
                 $available_datetime_spans[] = $selected_span;
                 $available_datetime_spans_description_labels[] = $datetime_span->descriptionString();
+                $available_datetime_spans_description_labels_midi[] = $datetime_span->descriptionStringMid();
+
                 $available_datetime_spans_availability_labels[] = "" . $number_of_existing_reservations . "/" . $training_course->capacity;
             } else {
                 $full_datetime_spans[] = $selected_span;
                 $full_datetime_spans_description_labels[] = $datetime_span->descriptionString();
+                $full_datetime_spans_description_labels_midi[] = $datetime_span->descriptionStringMid();
                 $full_datetime_spans_availability_labels[] = "" . $number_of_existing_reservations . "/" . $training_course->capacity;
                 $prereservations_necessary = true;
                 $pre_reservations_status_label .= sprintf("Popunjen je termin %s. - Popunjenost: %d/%d \n",
@@ -230,9 +257,11 @@ class Reservation {
             $validation_result["prereservations"] = false;
             $validation_result["available_datetime_spans"] = $available_datetime_spans;
             $validation_result["available_datetime_spans_description_labels"] = $available_datetime_spans_description_labels;
+            $validation_result["available_datetime_spans_description_labels_midi"] = $available_datetime_spans_description_labels_midi;
             $validation_result["available_datetime_spans_availibility_labels"] = $available_datetime_spans_availability_labels;
             $validation_result["full_datetime_spans"] = $full_datetime_spans;
             $validation_result["full_datetime_spans_description_labels"] = $full_datetime_spans_description_labels;
+            $validation_result["full_datetime_spans_description_labels_midi"] = $full_datetime_spans_description_labels_midi;
             $validation_result["full_datetime_spans_availibility_labels"] = $full_datetime_spans_availability_labels;
             return $validation_result;
         } else {
@@ -241,9 +270,11 @@ class Reservation {
             $validation_result["prereservations_status_label"] = $pre_reservations_status_label;
             $validation_result["available_datetime_spans"] = $available_datetime_spans;
             $validation_result["available_datetime_spans_description_labels"] = $available_datetime_spans_description_labels;
+            $validation_result["available_datetime_spans_description_labels_midi"] = $available_datetime_spans_description_labels_midi;
             $validation_result["available_datetime_spans_availibility_labels"] = $available_datetime_spans_availability_labels;
             $validation_result["full_datetime_spans"] = $full_datetime_spans;
             $validation_result["full_datetime_spans_description_labels"] = $full_datetime_spans_description_labels;
+            $validation_result["full_datetime_spans_description_labels_midi"] = $full_datetime_spans_description_labels_midi;
             $validation_result["full_datetime_spans_availibility_labels"] = $full_datetime_spans_availability_labels;
             return $validation_result;
         }

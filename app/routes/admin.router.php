@@ -21,7 +21,7 @@ $app->group('/admin', function () use ($app, $authenticated_admin) {
         $app->render('admin/admin.home.twig', array(
             'auth_admin' => $app->auth_admin,
             'active_page' => "admin",
-            'active_item' => "admin.pocetna"));
+            'active_item' => "admin.home"));
     })->name('admin.home');
 
 

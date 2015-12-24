@@ -1,0 +1,128 @@
+//@import "compass";
+
+//@mixin animation($animate...) {
+//  $max: length($animate);
+//  $animations: '';
+//
+//  @for $i from 1 through $max {
+//    $animations: #{$animations + nth($animate, $i)};
+//
+//    @if $i < $max {
+//      $animations: #{$animations + ", "};
+//    }
+//  }
+//  -webkit-animation: $animations;
+//  -moz-animation:    $animations;
+//  -o-animation:      $animations;
+//  animation:         $animations;
+//}
+
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+
+// Keyframes -- animations
+@include keyframes(horizontal-alarm-frames) {
+  10%, 14%, 18%, 22%, 35%, 39%, 43%, 47% {
+    @include pp-transform(scale(1));
+  }
+  12%, 16%, 20%  {
+    @include pp-transform(scale(1.2));
+  }
+  37% {
+    @include pp-transform(scale(1.4));
+  }
+  41%{
+     @include pp-transform(scale(1.5));
+  }
+  45% {
+    @include pp-transform(scale(1.6));
+  }
+}
+
+
+@include keyframes(alarm-text-shadow-red-frames) {
+  18%, 22%, 43%, 47% {
+    text-shadow: none
+  }
+  20%, 45% {
+    text-shadow:
+      0px 0px 25px red;
+  }
+}
+//
+//
+//@include keyframes(ring-frames) {
+//  0% {
+//    @include pp-transform(rotate(-15deg));
+//  }
+//
+//  2% {
+//    @include pp-transform(rotate(15deg));
+//  }
+//
+//  4% {
+//    @include pp-transform(rotate(-18deg));
+//  }
+//
+//  6% {
+//    @include pp-transform(rotate(18deg));
+//  }
+//
+//  8% {
+//    @include pp-transform(rotate(-22deg));
+//  }
+//
+//  10% {
+//    @include pp-transform(rotate(22deg));
+//  }
+//
+//  12% {
+//    @include pp-transform(rotate(-18deg));
+//  }
+//
+//  14% {
+//    @include pp-transform(rotate(18deg));
+//  }
+//
+//  16% {
+//    @include pp-transform(rotate(-12deg));
+//  }
+//
+//  18% {
+//    @include pp-transform(rotate(12deg));
+//  }
+//
+//  20% {
+//    @include pp-transform(rotate(0deg));
+//  }
+//}
+
+
+
+//
+
+//@-webkit-keyframes highlight-anchored {
+//  0% {background-color: rgba(0, 0, 0, 0);}
+//  10% {background-color: rgba(36, 97, 115, 1);}
+//  100% {background-color: initial;}
+//}
+//
+//@-moz-keyframes highlight-anchored {
+//  0% {background-color: rgba(0, 0, 0, .1);}
+//  10% {background-color: rgba(36, 97, 115, 1);}
+//  100% {background-color: rgba(0, 0, 0, .1);}
+//}

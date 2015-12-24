@@ -9,7 +9,8 @@
         <div class="header"><!--
             {% for weekday_idx in weekdays_indices %}
             --><div class="th">
-                <span>{{ calendar.cro_weekday_label(weekday_idx) }}</span>
+                <span class = "f-div-non-fw-768">{{ calendar.cro_weekday_label_short(weekday_idx) }}</span>
+                <span class = "f-div-fw-768">{{ calendar.cro_weekday_label(weekday_idx) }}</span>
             </div><!--
             {% endfor %}
         --></div>
@@ -25,15 +26,10 @@
                 {% if day_counter > 0 and day_counter <= days_in_month%}
                  --><div class = "td">
                         <div class = "active-day{{ ( curr_date == course_constants.read('today') ) ? ' today' : ''}}{{ (weekday_idx == 0 or weekday_idx == 6) ? ' weekend' : ' working-day' }}">
-                            <div class = "date-container">
-                                {% if day_passed %}
-                                    <i class = "fa fa-times day-ended"></i>
-                                {% endif %}
-
-                                <span>{{ curr_date|date("j") }}</span>
-                            </div>
                             {%  include day_selector with {'day_counter' : day_counter, 'curr_date' : curr_date, 'day_passed' : day_passed} %}
-                            {#{% include 'user/bookings/calendar/day_selection.twig' with {'day_counter':day_counter, 'curr_date': curr_date}%}#}
+
+
+
                         </div>
                     </div><!--
 

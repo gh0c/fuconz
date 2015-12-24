@@ -1,0 +1,280 @@
+/*********************
+ BREAKPOINTS
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */.month-grid.standard .table-container.standard {
+  width: 100%;
+}
+.month-grid.standard .table-container.standard .header .th, .month-grid.standard .table-container.standard .tr .td {
+  border: 0;
+  display: inline-block;
+  width: 13.5%;
+  margin: 1px;
+}
+@media only screen and (min-width: 768px) {
+  .month-grid.standard .table-container.standard .header .th, .month-grid.standard .table-container.standard .tr .td {
+    margin: 2px;
+  }
+}
+.month-grid.standard .table-container.standard .header {
+  text-align: center;
+}
+.month-grid.standard .table-container.standard .header .th {
+  padding-top: 0.7em;
+  padding-bottom: 0.5em;
+  text-align: center;
+}
+.month-grid.standard .table-container.standard .tr {
+  text-align: center;
+}
+.month-grid.standard .table-container.standard .tr .td {
+  text-align: center;
+  font-weight: 300;
+  vertical-align: bottom;
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day, .month-grid.standard .table-container.standard .tr .td > .inactive-day {
+  height: 100%;
+  position: relative;
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day {
+  background: #12408d;
+  color: #edf0f4;
+  box-sizing: border-box;
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day.today {
+  -webkit-background-size: 60px 60px;
+  -moz-background-size: 60px 60px;
+  background-size: 60px 60px;
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day.weekend:not(.today) {
+  background-color: #0f3678;
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day .date-container {
+  font-size: 1em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  padding: 1px;
+  z-index: 9;
+  width: 25%;
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day .date-container .day-ended {
+  position: absolute;
+  padding: 0;
+  font-size: 1.5em;
+  top: -3px;
+  right: 5px;
+  text-align: right;
+  color: rgba(175, 20, 5, 0.70);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+@media only screen and (max-width: 767px) {
+  .month-grid.standard .table-container.standard .tr .td > .active-day .date-container {
+    width: 30%;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .month-grid.standard .table-container.standard .tr .td > .active-day .date-container {
+    font-size: 1.1em;
+  }
+  .month-grid.standard .table-container.standard .tr .td > .active-day .date-container .day-ended {
+    font-size: 1.6em;
+  }
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day .day-container {
+  position: relative;
+  width: 100%;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day .day-container.day-ended {
+  background-color: rgba(0, 0, 0, .25);
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day .day-container .booking-slots-exists {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day .day-container .booking-slots {
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 12;
+  text-align: left;
+  overflow: hidden;
+  width: 100%;
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day .day-container .booking-slots .bookings-container {
+  position: absolute;
+  bottom: 0;
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable {
+  cursor: pointer;
+  display: block;
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable > div {
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  width: 100%;
+  display: inline-table;
+  vertical-align: bottom;
+}
+.month-grid.standard .table-container.standard .tr .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable > div > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+.month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container {
+  left: 0;
+  width: 100%;
+}
+.month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking {
+  display: inline-block;
+  padding: 1px 2px;
+  text-align: center;
+}
+.month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont {
+  height: 1.375em;
+}
+.month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont .fa, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont .fa, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont .fa {
+  font-size: 0.95em;
+}
+.month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking .existing-game-icon-cont, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .existing-game-icon-cont, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking .existing-game-icon-cont {
+  color: #0c131d;
+  background-color: #edf0f4;
+  height: 1.3em;
+}
+.month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking .existing-game-icon-cont .fa, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .existing-game-icon-cont .fa, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking .existing-game-icon-cont .fa {
+  font-size: 0.85em;
+}
+.month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont {
+  height: 1.15em;
+}
+.month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont .times, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont .times, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont .times {
+  font-size: 0.7em;
+}
+.month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable.existing-game-link, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable.existing-game-link, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable.existing-game-link {
+  padding: 1px 0 2px 0;
+}
+.month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.duration-cont, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.duration-cont, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.duration-cont, .month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.legend-icon-cont, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.legend-icon-cont, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.legend-icon-cont {
+  background-color: #edf0f4;
+  color: #0c131d;
+}
+.month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.existing-game-icon-cont, .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.existing-game-icon-cont, .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.existing-game-icon-cont {
+  background-color: #12408d;
+  color: #edf0f4;
+}
+.month-grid.standard .table-container.standard.reservations-home .td .day-container .booking-slots .bookings-container .booking, .month-grid.standard .table-container.standard.adding-games .td .day-container .booking-slots .bookings-container .booking, .month-grid.standard .table-container.standard.template-blueprint .td .day-container .booking-slots .bookings-container .booking {
+  width: 30%;
+}
+.month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container {
+  height: 4.75em;
+}
+.month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container {
+  height: 4.75em;
+}
+.month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container {
+  height: 4.5em;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container {
+  height: 4.5em;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container.selected-day {
+  background-color: #eaeef1;
+  color: #0c131d;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container.selected-day .booking-slots .bookings-container .booking.available-for-booking:not(.yes-selected):hover .duration-cont .times, .month-grid.standard .table-container.standard.bookings .td > .active-day .day-container.selected-day .booking-slots .bookings-container .booking.booking-time-ended:hover .duration-cont .times {
+  text-shadow: 1px 0px 0px #edf0f4, 1px 1px 0px #edf0f4, -7px -2px 13px #0c131d, 7px 2px 12px #0c131d;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container.selected-day .booking-time-ended .legend-icon-cont .calendar-icon-holder .back {
+  color: #edf0f4;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container:not(.selected-day) .bookings-container a:not(.yes-selected):hover .duration-cont {
+  text-shadow: 1px 0 0 black, 1px 1px 0 black, -7px -2px 13px white, 7px 2px 12px white;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots {
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 12;
+  text-align: left;
+  overflow: hidden;
+  width: 100%;
+}
+@media only screen and (max-width: 991px) {
+  .month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots {
+    font-size: 0.95em;
+  }
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container > a {
+  display: inline-block;
+  width: 100%;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking {
+  text-align: center;
+  width: 42%;
+}
+@media only screen and (max-width: 767px) {
+  .month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking {
+    min-width: 42%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking {
+    width: 32%;
+  }
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking > div {
+  width: 100%;
+  display: inline-table;
+  vertical-align: bottom;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking > div > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking > div .calendar-icon-holder {
+  position: relative;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking.not-selected, .month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking.yes-selected {
+  cursor: pointer;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking.available-for-booking .legend-icon-cont .calendar-icon-holder .leader {
+  font-size: 140%;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking .legend-icon-cont {
+  height: 2.6em;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont {
+  height: 1.4em;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont .times {
+  font-size: 0.7em;
+  display: inherit;
+  font-weight: 600;
+}
+.month-grid.standard .table-container.standard.bookings .td > .active-day .day-container .booking-slots .bookings-container .booking .duration-cont .times > .fw {
+  display: none;
+}

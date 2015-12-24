@@ -4,7 +4,7 @@
     <div class = "subtitle std-item">
         <div class = "icon-holder std-icon-holder">
             <div class = "message-icon-cont std-icon-cont">
-                <div class = "thumbnail message message-icon std-icon">
+                <div class = "f-thumbnail message message-icon std-icon">
                     <div class="pic-cont std-pic-cont">
                         <i class = "fa icon fa-fw fa-futbol-o"></i>
                     </div>
@@ -18,11 +18,7 @@
     </div>
 
 
-    {#<div class = "games-label-holder">#}
-        {#<div class = "games-label">#}
-            {#<span>Zadnje utakmice</span>#}
-        {#</div>#}
-    {#</div>#}
+
     {% for my_game in games %}
 
         <div id = "g-{{ my_game.id }}" class = "profile-hot-game item std-item game-{{ my_game.playersStatusLabel(auth_user.id) }}">
@@ -31,7 +27,7 @@
                 <section class="td icon">
                     <div class = "icon-holder std-icon-holder">
                         <div class = "game-icon-cont std-icon-cont">
-                            <div class = "thumbnail game game-icon std-icon no-avatar">
+                            <div class = "f-thumbnail game game-icon std-icon no-avatar">
 
                                 <div class="pic-cont std-pic-cont">
                                     {% if my_game.playersStatus(auth_user.id) == 1 and not my_game.after_extra_time %}
@@ -61,19 +57,9 @@
                 </section><!--
 
                 --><section class ="td label">
-                    <span>{{ my_game.datetime_span.descriptionString() }}</span>
-                </section><!--
+                    <span class = "f-div-fw-mobile-mid">{{ my_game.datetime_span.descriptionString() }}</span>
+                    <span class = "f-div-non-fw-mobile-mid">{{ my_game.datetime_span.descriptionStringMid() }}</span>
 
-                --><section class = "td info">
-                    <div class = "icon-holder info std-icon-holder">
-                        <div class = "info-icon-cont std-icon-cont">
-                            <div class = "thumbnail info info-icon std-icon ">
-                                <div class="pic-cont std-pic-cont">
-                                    <i class = "fa fa-fw icon fa-info-circle"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class = "info-overlay">
                         <div class = "info-holder">
                             <div>
@@ -82,16 +68,28 @@
                             <div>
                                 <span>{{ my_game.resultDescriptionStringFromPlayersPerspective(auth_user.id) }}</span>
                             </div>
-
                         </div>
                     </div>
+                </section><!--
+
+                --><section class = "td info">
+                    <div class = "icon-holder info std-icon-holder">
+                        <div class = "info-icon-cont std-icon-cont">
+                            <div class = "f-thumbnail info info-icon std-icon ">
+                                <div class="pic-cont std-pic-cont">
+                                    <i class = "fa fa-fw icon fa-info-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </section><!--
 
                 --><section class = "td ext-link">
                     <div class = "icon-holder std-icon-holder">
                         <a class = "ext-link-icon-cont std-icon-cont" target="_blank"
                            href = "{{ urlFor('user.matches.game', {'game_id': my_game.id}) }}">
-                            <div class = "thumbnail ext-link ext-link-icon std-icon ">
+                            <div class = "f-thumbnail ext-link ext-link-icon std-icon ">
                                 <div class="pic-cont std-pic-cont">
                                     <i class = "fa fa-fw icon fa-external-link"></i>
                                 </div>
@@ -107,13 +105,17 @@
 
 {% endif %}
 
-<a href = "{{ urlFor('user.bookings.home') }}" class = "external-link-holder">
-    <span>Sve moje utakmice ({{ auth_user.numberOfAppearances() }})</span>
+<a href = "{{ urlFor('user.matches.games.home') }}" class = "external-link-holder">
+    <span><i class = "fa fa-fw fa-link"></i> Sve moje utakmice ({{ auth_user.numberOfAppearances() }})</span>
 </a>
+
+
+
+{% if games|length > 0 %}
 
 <div class = "games-label-holder">
     <div class = "games-label">
-        <span>Statistitka mojih nastupa</span>
+        <span><i class = "fa fa-fw fa-bar-chart"></i> Statistitka mojih nastupa</span>
     </div>
 </div>
 
@@ -121,27 +123,47 @@
     <div class = "tr">
         <div class = "td thl">
             <span>Broj nastupa:</span>
-        </div>
-        <div class = "td cont">
+        </div><!--
+        --><div class = "td cont">
             <span>{{ auth_user.numberOfAppearances() }}</span>
-        </div>
-    </div>
+        </div><!--
 
-    <div class = "tr">
-        <div class = "td thl">
+        --><div class = "td thl">
             <span>Broj pobjeda:</span>
-        </div>
-        <div class = "td cont">
+        </div><!--
+        --><div class = "td cont">
             <span>{{ auth_user.numberOfWins() }}</span>
         </div>
     </div>
 
+
     <div class = "tr">
-        <div class = "td thl">
-            <span>Omjer rezultata:</span>
-        </div>
-        <div class = "td cont">
+        <div class = "td thl thl-big">
+            <span>Omjer dobivenih susreta:</span>
+        </div><!--
+        --><div class = "td cont">
             <span>{{ auth_user.totalResultsRatioString() }}</span>
         </div>
     </div>
+
+    <div class = "tr">
+        <div class = "td thl thl-big">
+            <span>Dobivenih susreta po nastupu:</span>
+        </div><!--
+        --><div class = "td cont">
+            <span>{{ auth_user.totalResultsPercentageOfWins() }}</span>
+        </div>
+    </div>
+
+    <div class = "tr">
+        <div class = "td thl thl-big">
+            <span>Izgubljenih susreta po nastupu:</span>
+        </div><!--
+        --><div class = "td cont">
+            <span>{{ auth_user.totalResultsPercentageOfLosses() }}</span>
+        </div>
+    </div>
+
 </div>
+
+{% endif %}

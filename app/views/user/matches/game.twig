@@ -18,15 +18,14 @@
         <div class = "black-horiz-spacer-5"></div>
 
         <div class = "main-content-box">
-            <div class = "inner-cont">
-                {% include "templates/partials/user_messages.twig" %}
-            </div>
+            {% include "templates/partials/user_messages.twig" %}
+
             <div class = "game-cont mega match-container main" id = "main-game-cont">
                 <input type="hidden" name="game-id" value="{{ game_id }}" />
 
                 <section class="main">
                     <div class = "inner-cont loading-info-cont">
-                        <div class = "vertical-section text-centered">
+                        <div class = "horizontal-section text-centered">
                             <div class = "inner-70pct">
                                 <div class = "loading js-loading">Učitavanje...
                                     <i class = "fuconz-spinner fa fa-fw fa-spinner fa-spin"></i>
@@ -34,6 +33,7 @@
                             </div>
                         </div>
                     </div>
+
                     <main>
                         <div class = "game-data-holder">
                             <div class = "tr">
@@ -42,7 +42,9 @@
                                         <span>Termin:</span>
                                     </div><!--
                                     --><div class = "td">
-                                        <span>{{ game.datetime_span.descriptionString() }}</span>
+                                        <span class = "fw-std">{{ game.datetime_span.descriptionString() }}</span>
+                                        <span class = "fw-mid">{{ game.datetime_span.descriptionStringMid() }}</span>
+                                        <span class = "fw-min">{{ game.datetime_span.descriptionStringMin() }}</span>
                                     </div>
                                 </div>
 
@@ -60,7 +62,7 @@
 
                             <div class = "tr result">
                                 <div>
-                                    <div class = "td left-th">
+                                    <div class = "td left-th f-div-fw-mobile-mid">
                                         <span>Rezultat:</span>
                                     </div>
                                     <div class = "td">
@@ -73,7 +75,7 @@
                                 {% set my_status = game.playersStatus(auth_user.id) %}
                                 {% if my_status != 4 %}
                                 <div>
-                                    <div class = "td left-th">
+                                    <div class = "td left-th f-div-fw-mobile-mid">
                                         <span>Moj ishod u utakmici:</span>
                                     </div>
                                     <div class = "td std-item">
@@ -161,7 +163,7 @@
                                                  data-name = "{{ player.username }}" data-x = "" data-y = "">
 
                                                 <div class="player__placeholder"><i class = "fa fa-fw fa-user"></i></div>
-                                                <div class="player__label"><span>{{ player.username }}</span></div>
+                                                {#<div class="player__label"><span>{{ player.username }}</span></div>#}
 
                                             </div>
                                         {% endfor %}
@@ -175,6 +177,8 @@
                                         {% for player in teams[teamSide] %}
                                             {%  set avatar_url = player.getAvatarURL('avatar',
                                             { "width": 50, "height": 50, "crop": "fill"}) %}
+                                            {%  set avatar_midi_url = player.getAvatarURL('avatar',
+                                            { "width": 42, "height": 42, "crop": "fill"}) %}
 
                                             <div class = "player js-player {{ teamSide }}" data-side = "{{ teamSide }}"
                                                  data-name = "{{ player.username }}" data-x = "" data-y = ""
@@ -186,9 +190,18 @@
 
                                                 <div class="player__card">
                                                     <div class = "name"><h3>{{ player.username }}</h3></div>
+                                                    {% if player.full_name() %}
+                                                        <div class = "full-name">
+                                                            <span>{{ player.full_name() }}</span>
+                                                        </div>
+                                                    {% endif %}
                                                     <ul class="player__card__list">
-                                                        <li><span>Starost</span><br/>{{ (player.date_of_birth)? player.age() ~ 'g' : '-' }}</li><!--
-                                                        --><li><span>Kvart</span><br/>{{ (player.neighborhood)?: '-' }}</li>
+                                                        <li>
+                                                            <span>Starost</span><br/>{{ (player.date_of_birth)? player.age() ~ 'g' : '-' }}
+                                                        </li><!--
+                                                        --><li>
+                                                            <span>Kvart</span><br/>{{ (player.neighborhood)?: '-' }}
+                                                        </li>
                                                     </ul>
                                                     <ul class="player__card__list player__card__list--last">
                                                         <li><span>Nastupa</span><br/>{{ player.number_of_apps }}</li><!--
@@ -196,7 +209,7 @@
                                                     </ul>
                                                 </div>
 
-                                                <div class="player__img std-item">
+                                                <div class="player__img std-item f-div-fw-560">
                                                     <div class = "icon-holder std-icon-holder">
                                                         <div class = "user-avatar-cont std-icon-cont">
                                                             <div class = "thumbnail user user-icon std-icon no-avatar">
@@ -212,6 +225,24 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <div class="player__img midi std-item f-div-non-fw-560">
+                                                    <div class = "icon-holder std-icon-holder">
+                                                        <div class = "user-avatar-cont std-icon-cont">
+                                                            <div class = "thumbnail user user-icon std-icon no-avatar">
+                                                                <div class="pic-cont std-pic-cont">
+                                                                    {% if avatar_midi_url %}
+                                                                        <span class="v-align-helper"></span><!--
+                                                                    --><img src = "{{ avatar_midi_url }}">
+                                                                    {% else %}
+                                                                        <i class = "fa icon fa-fw fa-male"></i>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
 
                                                 <div class = "holder">
                                                     <span class="player__label">{{ player.username }}</span>
@@ -240,7 +271,7 @@
 
 
 {% block additional_js %}
-    <script src="public/js/velocity.min.js"></script>
+    {#<script src="public/js/velocity.min.js"></script>#}
 
-    <script src="public/js/match/game.js"></script>
+    <script src="public/code/js/game.js"></script>
 {% endblock %}

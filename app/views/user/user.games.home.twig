@@ -1,0 +1,116 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    Utakmice
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Moje Utakmice</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+
+            {% include "templates/partials/user_messages.twig" %}
+
+            <div class = "inner-cont">
+
+
+                {% if games|length < 1 %}
+                    <div  class = "vertical-section text-centered">
+
+                        <div class = "inner-70pct">
+                            <span>Zasad nema unesenih utakmica u kojima si sudjelovao</span>
+                        </div>
+                    </div>
+                {% else %}
+
+                    <div  class = "horizontal-section text-centered">
+                        {% for game in games %}
+                            {% set my_status = game.playersStatus(auth_user.id) %}
+
+                            <div id = "g-{{ game.id }}" class = "game item std-item">
+
+                                <div class = "section-group-selector">
+
+                                    <section class="td icon inline-cont">
+                                        <div class = "icon-holder std-icon-holder">
+                                            <div class = "game-icon-cont std-icon-cont">
+                                                <div class = "thumbnail game game-icon std-icon">
+                                                    <div class="pic-cont std-pic-cont">
+                                                        {% if my_status == 1 and not game.after_extra_time %}
+                                                            <i class = "fa icon victory fa-fw fa-flag"></i>
+                                                        {% elseif my_status == 2  and not game.after_extra_time %}
+                                                            <i class = "fa icon loss fa-fw fa-flag"></i>
+                                                        {% elseif my_status == 3 or game.after_extra_time %}
+                                                            <i class = "fa icon draw fa-fw fa-flag-o"></i>
+                                                        {% endif %}
+                                                    </div>
+
+                                                    {% if game.after_extra_time %}
+                                                        <div class = "overlay-pic-cont std-pic-cont">
+                                                            {% if my_status == 1 %}
+                                                                <i class = "fa icon icon-o victory fa-fw fa-flag"></i>
+                                                            {% elseif my_status == 2 %}
+                                                                <i class = "fa icon icon-o loss fa-fw fa-flag"></i>
+                                                            {% endif %}
+                                                        </div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section><!--
+
+                                    --><section class="td result inline-cont">
+                                        <div class = "result-holder">
+                                            <span>{{ game.resultDescriptionStringFromPlayersPerspective(auth_user.id) }}</span>
+                                        </div>
+                                    </section>
+
+                                </div><!--
+
+                                --><div class = "section-group-selector">
+
+                                    <section class="td course-span inline-cont">
+                                        <div class = "span-info-holder">
+                                            <span class = "fw-std">{{ game.datetime_span.descriptionString() }}<br></span>
+                                            <span class = "fw-mid">{{ game.datetime_span.descriptionStringMid() }}<br></span>
+                                            <span class = "fw-min">{{ game.datetime_span.descriptionStringMin() }}<br></span>
+                                            <span>{{ game.title }}</span>
+                                        </div>
+                                    </section><!--
+                                    --><section class = "td ext-link inline-cont">
+                                        <div class = "icon-holder std-icon-holder">
+                                            <a class = "ext-link-icon-cont std-icon-cont" target="_blank"
+                                               href = "{{ urlFor('user.matches.game', {'game_id': game.id}) }}">
+                                                <div class = "thumbnail ext-link ext-link-icon std-icon ">
+                                                    <div class="pic-cont std-pic-cont">
+                                                        <i class = "fa fa-fw icon fa-external-link"></i>
+                                                    </div>
+                                                </div>
+
+                                            </a>
+                                        </div>
+                                    </section>
+                                </div>
+
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -26,21 +26,21 @@
 
                 <div class = "content-column">
 
-                    {#<div class = "submitter-cont">#}
-                        {#<div class = "inner-70pct">#}
+                    <div class = "submitter-cont">
+                        <div class = "inner-70pct">
 
-                            {#<div class="submitter submit bbb-flag-v-cibona-blue">#}
-                                {#<a href = "{{ urlFor('admin.reservations.training_course.new') }}">Dodaj novi termin</a>#}
-                            {#</div>#}
-                        {#</div>#}
-                    {#</div>#}
+                            <div class="submitter submit bbb-flag-v-cibona-blue">
+                                <a href = "{{ urlFor('admin.matches.games.add') }}">Dodaj novu utakmicu</a>
+                            </div>
+                        </div>
+                    </div>
 
 
                     <div class = "table-container">
 
                         <div class = "heading-container">
 
-                            <div class = "th width-12em margin-std-lr">
+                            <div class = "th width-10em margin-std-lr">
                                 <h4>Naziv</h4>
                             </div>
 
@@ -50,6 +50,10 @@
 
                             <div class = "th width-10em margin-std-lr">
                                 <h4>Rezultat</h4>
+                            </div>
+
+                            <div class = "th width-28em margin-std-lr">
+                                <h4>Igrači</h4>
                             </div>
 
                             <div class = "th width-7em margin-std-lr">
@@ -63,7 +67,7 @@
                                 <div class = "tr height-3-and-half-em">
 
 
-                                    <div class = "td width-12em margin-std-lr text-left">
+                                    <div class = "td width-10em margin-std-lr text-left">
                                         <span>{{ game.title }}</span>
                                     </div>
 
@@ -73,6 +77,12 @@
 
                                     <div class = "td width-10em margin-std-lr text-left">
                                         <span>{{ game.result() }} {{ game.resultDescriptionString() }}</span>
+                                    </div>
+
+                                    <div class = "td width-28em margin-std-lr text-left">
+                                        <span>{% for u1 in game.players_team_one %} - {{ u1.username }}{% endfor %}<br>
+                                        {% for u2 in game.players_team_two %} - {{ u2.username }}{% endfor %}</span>
+
                                     </div>
 
 

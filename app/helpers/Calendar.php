@@ -315,10 +315,10 @@ class Calendar
 
 
 
-    public static function months_break($date) {
+    public static function months_break($date, $offset_left, $offset_right) {
 
-        $first_day_in_view = self::shift_day_month_year($date, self::days_offset_left(), 0, 0);
-        $last_day_in_view = self::shift_day_month_year($date, self::days_offset_right(), 0, 0);
+        $first_day_in_view = self::shift_day_month_year($date, $offset_left, 0, 0);
+        $last_day_in_view = self::shift_day_month_year($date, $offset_right, 0, 0);
 
         list($year_1st, $month_1st, $day_1st) = explode("-", $first_day_in_view);
         list($year_nth, $month_nth, $day_nth) = explode("-", $last_day_in_view);

@@ -19,6 +19,10 @@
         <div class = "black-horiz-spacer-5"></div>
 
         <div class = "main-content-box">
+
+            {% include "templates/partials/user_messages.twig" %}
+
+
             <div class = "inner-cont">
                 <div class = "form-container">
 
@@ -28,53 +32,51 @@
 
 
                             <div class = "vertical-section text-centered ">
-                                <div class = "inner-70pct">
+                                <div class = "">
+
                                     <input type="text" name="username" id="username" required
                                            maxlength="255" spellcheck="false" autocomplete="off" tabindex="1"
                                            class = "std-text-input std-input-width req"/>
-                                    <label id="username-label" class = "req" alt="Korisničko ime" placeholder="Korisničko ime" data-info="Korisničko ime"></label>
-                                </div>
+                                    <label id="username-label" class = "req" for = "username" data-info="Korisničko ime"></label>
 
+                                </div>
                             </div>
 
                             <div class = "vertical-section text-centered ">
-                                <div class = "inner-70pct">
+                                <div class = "">
+
                                     <input type="password" name="password" id="password" required
                                            maxlength="255" spellcheck="false" autocomplete="off" tabindex="2"
                                            class = "std-text-input std-input-width req"/>
-                                    <label id="password-label" class = "req" alt="Lozinka" placeholder="Lozinka" data-info="Lozinka"></label>
+                                    <label id="password-label" class = "req" for = "password" data-info="Lozinka"></label>
+
                                 </div>
                             </div>
 
                             <div class = "vertical-section text-centered">
-                                <div class = "inner-70pct">
+                                <div class = "">
+
                                     <input type="checkbox" name="remember-me" id="remember-me"
                                            class = "cb-input remember-me " tabindex="3">
-                                    <div class = "checkbox-div-cont">
-                                        <label for = "remember-me" alt="Zapamti me" placeholder="Zapamti me" data-info="Zapamti me">
+                                    <div class = "checkbox-div-cont f-std-input-width">
+                                        <label for = "remember-me" data-info="Zapamti me">
                                             <span>Zapamti me?</span>
                                         </label>
                                     </div>
+
                                 </div>
-
                             </div>
-
-
-
 
                         </div>
 
 
-
-
-                        {% include "templates/partials/user_messages.twig" %}
 
                         {% include "templates/partials/live_status.container.twig" %}
 
                         <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
 
                         <div class = "submitter-cont">
-                            <div class = "inner-70pct">
+                            <div class = "">
                                 <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="4"
                                      onclick="validateAndSubmitLogin('user-login')">
                                     <span>PRIJAVA</span>
@@ -115,4 +117,8 @@
         });
     </script>
 
+{% endblock %}
+
+{% block additional_js %}
+    <script src="public/code/js/validation.js"></script>
 {% endblock %}

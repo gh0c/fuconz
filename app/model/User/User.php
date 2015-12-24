@@ -130,7 +130,21 @@ class User
 
 
     public function full_name()  {
-        return ($this->first_name . " " . $this->last_name);
+        $full_name = "";
+        if (isset($this->first_name) && $this->first_name != "") {
+            $full_name .= $this->first_name;
+            if (isset($this->last_name) && $this->last_name != "") {
+                $full_name .= " " . $this->last_name;
+            }
+        } else if (isset($this->last_name) && $this->last_name != "") {
+            $full_name .= $this->last_name;
+        }
+
+        if($full_name != "") {
+            return $full_name;
+        } else {
+            return null;
+        }
     }
 
 
@@ -566,6 +580,7 @@ class User
         $dbh = DatabaseConnection::getInstance();
         $sql = "UPDATE users SET email = :email, first_name = :first_name, last_name = :last_name, sex = :sex,
             neighborhood = :neighborhood, date_of_birth = :dob WHERE id = :id";
+
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':sex', $sex, PDO::PARAM_STR);
         $stmt->bindParam(':first_name', $first_name, PDO::PARAM_STR);
@@ -573,7 +588,12 @@ class User
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
         $stmt->bindParam(':neighborhood', $neighborhood, PDO::PARAM_STR);
-        $stmt->bindParam(':dob', $date_of_birth, PDO::PARAM_STR);
+        if(!isset($date_of_birth) || $date_of_birth == "") {
+            $stmt->bindValue(':dob', null, PDO::PARAM_NULL);
+        } else {
+            $date_of_birth = date("Y-m-d", strtotime($date_of_birth));
+            $stmt->bindParam(':dob', $date_of_birth, PDO::PARAM_STR);
+        }
 
         try {
             $stmt->execute();
@@ -621,6 +641,22 @@ class User
         return sprintf("%d:%d", $results_for, $results_against);
     }
 
+
+    public function totalResultsPercentageOfWins()
+    {
+        list($results_for, $results_against) = Game::playerTotalResultsRatio($this->id);
+        $number_of_apps = $this->numberOfAppearances();
+        return sprintf("%.3f", $results_for/$number_of_apps);
+    }
+
+    public function totalResultsPercentageOfLosses()
+    {
+        list($results_for, $results_against) = Game::playerTotalResultsRatio($this->id);
+        $number_of_apps = $this->numberOfAppearances();
+        return sprintf("%.3f", $results_against/$number_of_apps);
+    }
+
+
     public static function validateNew($p_username, $p_email, $p_password, $p_password_repeated,
                                        $first_name = null, $last_name = null, $sex = null) {
         $validation_result = array();
@@ -660,22 +696,28 @@ class User
         if(!isset($p_email) || $p_email === "" ) {
             $validation_result["errors"] = "Prilikom promjene osobnih podataka obavezan je unos e-mail adrese!";
             return $validation_result;
-        } else if (isset($dob) && !Calendar::validate_date($dob, "d.m.Y.")) {
-            $validation_result["errors"] = "Neispravan datum rođenja: {$dob}";
-            return $validation_result;
-        }else {
-            if ($existing_user = self::getUserByEmail($p_email)) {
-                if($existing_user->id != $user->id) {
-                    $validation_result["errors"] = "E-mail na koji se registrirate mora biti jedinstven. \n".
-                        "Već postoji korisnik sa e-mail adresom {$p_email}.";
-                    return $validation_result;
-                } else {
-                    $validation_result["validated"] = true;
-                }
+        }
+        if (isset($dob) && ($dob !== "")) {
+            list($d, $m, $y) = explode(".", $dob);
+            $formated_date = sprintf("%02d.%02d.%04d.", (int)$d, (int)$m, (int)$y);
+            if(!Calendar::validate_date($formated_date, "d.m.Y.")) {
+                $validation_result["errors"] = "Neispravan datum rođenja: {$dob}\nOdaberite u kalendaru ili unesite u formatu DD.MM.GGGG.";
+                return $validation_result;
+            }
+        }
+
+        if ($existing_user = self::getUserByEmail($p_email)) {
+            if($existing_user->id != $user->id) {
+                $validation_result["errors"] = "E-mail na koji se registrirate mora biti jedinstven. \n".
+                    "Već postoji korisnik sa e-mail adresom {$p_email}.";
+                return $validation_result;
             } else {
                 $validation_result["validated"] = true;
             }
+        } else {
+            $validation_result["validated"] = true;
         }
+
         return $validation_result;
     }
 
