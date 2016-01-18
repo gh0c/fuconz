@@ -36,7 +36,9 @@
   position: relative;
 }
 
-
+.strike {
+  text-decoration: line-through;
+}
 .multirow-inline {
   display: inline-block;
   vertical-align: top;
@@ -179,6 +181,16 @@ a.underline-link, span.underline {
   box-sizing: border-box;
 }
 
+
+.inline-table {
+  display: inline-table !important;
+  height: 100%;
+  & > * {
+    display: table-cell !important;
+    vertical-align: middle;
+  }
+}
+
 .flexbox {
   display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -188,25 +200,28 @@ a.underline-link, span.underline {
 }
 
 
+
 // Responsive elements
+
+
 .f-text-fw-only-1x, .f-div-fw-only-1x {
-  @include responsive-w-max(767px) {
+  @include responsive-w-max($tablet-bp - 1px) {
     display: none !important;
   }
 }
 .f-text-non-fw-only-1x, .f-div-non-fw-only-1x {
-  @include responsive-w-min(768px) {
+  @include responsive-w-min($tablet-bp) {
     display: none !important;
   }
 }
 
 .f-div-fw-1024 {
-  @include responsive-w-max(1023px) {
+  @include responsive-w-max($breakpoint-1 - 1px) {
     display: none !important;
   }
 }
 .f-div-non-fw-1024 {
-  @include responsive-w-min(1024px) {
+  @include responsive-w-min($breakpoint-1) {
     display: none !important;
   }
 }
@@ -344,6 +359,17 @@ a.underline-link, span.underline {
 }
 .f-div-non-fw-mobile-mid {
   @include responsive-w-min($mobile-mid-bp) {
+    display: none !important;
+  }
+}
+
+.f-div-fw-mobile-large {
+  @include responsive-w-max($mobile-large-bp - 1px) {
+    display: none !important;
+  }
+}
+.f-div-non-fw-mobile-large {
+  @include responsive-w-min($mobile-large-bp) {
     display: none !important;
   }
 }

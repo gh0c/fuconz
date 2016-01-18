@@ -1,0 +1,197 @@
+
+<div class="chat-overlay-wrap">
+
+    <input type="hidden" name="populate-users-url" id = "populate-users-url" value="{{ urlFor('user.chat.load.users.post') }}" />
+    <input type="hidden" name="populate-chat-rooms-url" id = "populate-chat-rooms-url" value="{{ urlFor('user.chat.load.chat-rooms.post') }}" />
+    <input type="hidden" name="populate-chat-rooms-and-users-url" id = "populate-chat-rooms-and-users-url" value="{{ urlFor('user.chat.load.chat-rooms-and-users.post') }}" />
+    <input type="hidden" name="populate-chat-room-messages-url" id = "populate-chat-room-messages-url" value="{{ urlFor('user.chat.load.chat-room-messages.post') }}" />
+    <input type="hidden" name="populate-chat-room-url" id = "populate-chat-room-url" value="{{ urlFor('user.chat.load.chat-room.post') }}" />
+
+    <input type="hidden" name="create-chat-room-messages-url" id = "create-chat-room-messages-url" value="{{ urlFor('user.chat.create.chat-room-messages.post') }}" />
+    <input type="hidden" name="create-chat-room-url" id = "create-chat-room-url" value="{{ urlFor('user.chat.create.chat-room.post') }}" />
+
+    <input type="hidden" name="initiate-chat-url" id = "initiate-chat-url" value="{{ urlFor('user.chat.initiate.new.post') }}" />
+    <input type="hidden" name="append-message-to-chat-url" id = "append-message-to-chat-url" value="{{ urlFor('user.chat.append.new.post') }}" />
+
+    <input type = "hidden" name = "check-chat-status-url" id = "check-chat-status-url" value = "{{ urlFor('user.chat.check-status.post') }}" />
+    <input type = "hidden" name = "check-initial-chat-status-url" id = "check-initial-chat-status-url" value = "{{ urlFor('user.chat.check-initial-status.post') }}" />
+
+    <input type = "hidden" name = "refresh-chat-status-url" id = "refresh-chat-status-url" value = "{{ urlFor('user.chat.refresh-status.post') }}" />
+
+    <input type = "hidden" name = "fetch-new-messages-url" id = "fetch-new-messages-url" value = "{{ urlFor('user.chat.fetch-new-messages.post') }}" />
+
+    <div class = "filter-section-desc-holder">
+
+        <nav class = "section-desc-filters" id = "section-desc-filters">
+
+            <div class="filter filter-chat-rooms">
+                <div class = "inline-table">
+                    <span>Svi otvoreni razgovori</span>
+                </div>
+            </div>
+
+            <div class="filter filter-users">
+                <div class = "inline-table">
+                    <span>Svi korisnici</span>
+                </div>
+            </div>
+
+            <div class="filter filter-current-chat ">
+                <div class = "inline-table current-chat-room-container empty">
+                    {#<span>Razgovor: </span><span>Jura 3 pandura</span>#}
+                </div>
+            </div>
+
+            <div class="filter filter-chat-info">
+                <div class = "inline-table">
+                    <span>Informacije</span>
+                </div>
+            </div>
+
+        </nav>
+
+    </div>
+
+
+
+    <div class = "chat-content-holder scroll-pane pane-standard">
+
+        <nav class="chat-nav-filters chat" id="chat-nav-filters">
+
+            <div class="filter filter-chat-rooms list-tags">
+                <div class = "chat-rooms-container empty">
+
+                </div>
+            </div>
+
+
+            <div class="filter filter-users list-tags">
+                <div class = "users-container empty">
+
+                </div>
+            </div>
+
+
+            <div class = "filter filter-current-chat list-tags">
+                <div class = "current-chat-messages-container empty">
+
+
+                </div>
+            </div>
+
+
+            <div class="filter filter-chat-info list-tags">
+                <div class = "chat-info-container">
+
+                    <div class = "inner-cont">
+                        <div class = "vertical-section inner-70pct text-justified">
+                            <div class = "empty-horiz-spacer-20"></div>
+
+                            <div >
+                                <i class="fa fa-comments fa-fw fa-2x fa-pull-left"></i>
+                                <span>Disclaimer: Chat je u teškoj fazi improvizacije i isprobavanja. </span><br>
+                                <span>Zasad nisu implementirani skoro nikakvi mehanizmi oporavka od pogrešaka. </span>
+                                <span>Korištene tehnike su kompromis koji bi trebao biti dovoljan za pristojnu funkcionalnost, </span>
+                                <span>a imajući na umu da je sve ovo na besplatom hostu koji ne podržava brdo zahtjeva na server svakih nekoliko milisekundi.</span><br>
+                                <span>Zato su moguća štekanja, mali vremenski razmaci između trenutka tvog slanja poruke i njenog prikaza kao i malo veći vremenski razmaci </span>
+                                <span>od trenutka tuđeg slanja poruke do njenog prikaza tebi.</span>
+                            </div>
+                            <div class = "empty-horiz-spacer-10"></div>
+                            <div>
+                                <span class="fa-stack fa-lg fa-pull-left" style = "font-size: 0.9em; margin-right: 0.4em;">
+                                  <i class="fa fa-desktop fa-stack-2x"></i>
+                                  <i class="fa fa-question fa-stack-2x text-danger"
+                                     style = "color: rgba(250, 205, 10, 1);
+                                     font-size: 1.8em;
+                                     top: 0.05em;
+                                     left: 0.2em;"></i>
+                                </span>
+                                <span>U ovom slučaju, stvari su od starta posložene kao prilagodba za mobitele jer ekipa na njima visi više neg lima na sisi.</span><br>
+                                <span>To možda prouzroči loše iskorišten prostor na velikim ekranima kaj je nešto čime ću se još malo pozabavit. </span>
+                                <span>Kod chata mi je funkcionalnost prioritet... </span>
+                            </div>
+                            <div class = "empty-horiz-spacer-10"></div>
+                            <div>
+                                <span>Legenda simbola u izbornicima korisnika i razgovora:</span>
+                                <ul class = "text-left">
+                                    <li><i class = "fa fa-fw fa-file-o"></i> - Nemaš nepročitanih poruka u otvorenom razgovoru</li>
+                                    <li><i class = "fa fa-fw fa-file-text"></i> - Imaš nepročitanih poruka</li>
+                                    <li><i class = "fa fa-fw fa-circle-thin"></i> - Nemaš otvoren razgovor s korisnikom</li>
+
+                                </ul>
+                            </div>
+                            <div class = "empty-horiz-spacer-10"></div>
+                            <div>
+                                <span>Chat zasad ne funkcionira previše pametno kada je otvoreno više tabova Fuconža.</span>
+                                <span>Ako je moguće, izbjegavajte paljenje više tabova, nije ovo ni Facebook ni Pornhub, samo će se povećati broj zahtjeva na server a time raste i broj mogućih zastoja.</span><br>
+                                <span>Zasad još nije dovoljno testirano da mogu garantirati da neke od poruka neće biti progutane u "stvarnom vremenu". </span>
+                                <span>Tek kada ručno refreshate stranicu poruke bi trebale biti poredane i popunjene stvarnim redoslijedom slanja.</span><br>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </nav>
+    </div>
+
+
+
+
+
+
+    <div class = "status-info-holder">
+        <div class = "req-status-container">
+            <div class = "req-status-info">
+                <div class = "version-title">
+                    <span>Chat beta v0.02</span><i class = "fa fa-fw fa-circle-thin faa-pulsation-a req-status no-req"></i>
+                </div><!--
+            --></div>
+        </div>
+    </div>
+
+
+
+    <nav class="chat-menu-bottom">
+        <ul class = "chat-menu-items">
+            <li class="no-dropdown all-chat-rooms" data-filter="chat-rooms">
+                <a class = "chat-opener">
+                    <i class = "fa fa-comments-o link-icon-fww fa-fw"></i><span class = "f-div-fw-tablet"> Svi razgovori</span>
+                </a>
+            </li><!--
+            --><li class="no-dropdown all-users" data-filter="users">
+                <a class = "chat-opener" >
+                    <i class = "fa fa-users link-icon-fww fa-fw"></i><span class = "f-div-fw-tablet"> Korisnici</span>
+                </a>
+            </li><!--
+            --><li class="no-dropdown current-chat-room" data-filter="current-chat">
+                <a class = "chat-opener">
+                    <i class = "fa fa-commenting link-icon-fww fa-fw"></i><span class = "f-div-fw-tablet"> Zadnji razgovor</span>
+                </a>
+            </li><!--
+            --><li class="no-dropdown" data-filter="chat-info">
+                <a class = "chat-opener">
+                    <i class = "fa fa-info link-icon-fww fa-fw"></i><span class = "f-div-fw-tablet"> Info</span>
+                </a>
+            </li><!--
+            --><li class="" data-filter="close">
+                <a class = "chat-opener closing-chat-btn" id="close-chat-overlay-button" title = "Zatvori chat izbornik">
+                    <i class = "fa fa-times-circle link-icon-fww fa-fw"></i><span class = "f-div-fw-tablet"> Zatvori chat</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    {#<div class="close-button" id="close-chat-overlay-button" title = "Zatvori izbornik">#}
+        {#<div>#}
+            {#<span class = "f-div-fw-mobile-mid">Zatvori chat izbornik </span><span class = "f-div-non-fw-mobile-mid">Zatvori </span> <i class="fa fa-fw fa-times-circle"></i>#}
+        {#</div>#}
+    {#</div>#}
+
+    <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
+
+</div>
+
+

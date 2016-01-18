@@ -144,6 +144,8 @@
 }
 
 @mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -o-calc(#{$expression});
   #{$property}: -webkit-calc(#{$expression});
   #{$property}: calc(#{$expression});
 }
@@ -179,3 +181,11 @@ $large-desktop-bp: 1200px;
 $mobile-small-bp: 320px;
 $mobile-mid-bp: 480px;
 $mobile-large-bp: 560px;
+$mobile-huge-bp: 640px;
+
+$mobile-h-small-bp: 480px;
+$mobile-h-medium-bp: 540px;
+$mobile-h-large-bp: 640px;
+
+$header-height: 3.625em;
+$footer-height: 7em;

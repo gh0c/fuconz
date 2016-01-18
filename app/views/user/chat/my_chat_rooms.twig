@@ -1,0 +1,64 @@
+
+<div>
+    {% if chat_rooms|length > 0 %}
+        {% for chat_room in chat_rooms %}
+            <a class = "chat-room opener" data-chat-room-hash = "{{ chat_room.hash }}">
+                <div class = "unread-messages-info">
+                    {% if chat_room.userHaveUnreadMessages(auth_user.id) %}
+                        <i class = "fa fa-fw fa-file-text faa-horizontal alert-unread"></i>
+                    {% else %}
+                        <i class = "fa fa-fw fa-file-o"></i>
+                    {% endif %}
+                </div><!--
+
+                --><div class = "chat-room-info">
+                    <div class = "participants-holder"><!--
+
+                        {#<span class = "">{{ chat_room.name }}</span>#}
+
+                        {% set participants = chat_room.participantsWithoutMe(auth_user.id) %}
+
+                        {% for participant in participants %}
+
+                            --><div class = "participant">
+                                {%  set avatar_url = participant.getAvatarURL('avatar',
+                                { "width": 28, "height": 28, "crop": "fill"}) %}
+                                <div class = "img-av-holder">
+                                    {%  if avatar_url %}
+                                        <img src = "{{ avatar_url }}" />
+                                    {% else %}
+                                        <i class = "fa fa-user"></i>
+                                    {% endif %}
+                                </div>
+                                <span>{{ participant.username }}</span>
+                                <span class = "f-div-fw-tablet">({{ participant.full_name }})</span>
+                            </div><!--
+
+                        {% endfor %}
+
+
+                    --></div><!--
+                    --><div class = "fa-stack hot-msg-card">
+                        {% if chat_room.numberOfUsersUnreadMessages(auth_user.id) > 0%}
+                        <i class="fa fa-circle fa-stack-2x msg-card"></i>
+                        <i class="fa fa-stack-1x number">{{ chat_room.numberOfUsersUnreadMessages(auth_user.id) }}</i>
+                        {% endif %}
+                    </div>
+                </div><!--
+
+                --><div class = "desc-info f-div-fw-mobile-mid">
+                    <i class = "fa fa-commenting-o"></i>
+                </div>
+
+
+
+
+
+            </a>
+        {% endfor %}
+    {% else %}
+        <div>
+            <span> Nemate otvorenih razgovora</span>
+        </div>
+    {% endif %}
+</div>

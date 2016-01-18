@@ -1,0 +1,38 @@
+<div class = "chat-room-holder" data-chat-room-hash = "{{ chat_room.hash }}">
+
+
+    <div class = "chat-room-info">
+        <div><!--
+
+            {#<span class = "">{{ chat_room.name }}</span>#}
+
+            {% set participants = chat_room.participantsWithoutMe(auth_user.id) %}
+
+            {% for participant in participants %}
+
+                {#--><div class = "participant">#}
+                    {#{%  set avatar_url = participant.getAvatarURL('avatar',#}
+                    {#{ "width": 28, "height": 28, "crop": "fill"}) %}#}
+                    {#<div class = "img-av-holder">#}
+                        {#{%  if avatar_url %}#}
+                            {#<img src = "{{ avatar_url }}" />#}
+                        {#{% else %}#}
+                            {#<i class = "fa fa-user"></i>#}
+                        {#{% endif %}#}
+                    {#</div>#}
+                    {#<span>{{ participant.username }}</span>#}
+                    {#<span class = "f-div-fw-tablet">({{ participant.full_name }})</span>#}
+                {#</div><!--#}
+
+
+            {% endfor %}
+            --><span>Tu bi trebao osvanut malo efektniji izbornik za šaltanje otvorenih razgovora</span><!--
+
+        --></div>
+    </div>
+
+
+
+
+</div>
+

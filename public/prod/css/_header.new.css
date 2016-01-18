@@ -11,9 +11,26 @@
   background-image: none;
 }
 .navbar-default .navbar-brand {
-  padding: 4px 15px;
+  font-size: initial;
+  padding: 0.25rem 1rem;
   margin: 0;
-  height: 58px;
+  height: 3.625em;
+}
+@media only screen and (max-width: 479px) {
+  .navbar-default .navbar-brand {
+    padding: 4px 12px;
+    width: 10em;
+  }
+}
+.navbar-default .navbar-brand .img-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.navbar-default .navbar-brand img {
+  vertical-align: middle;
+  max-width: 100%;
+  display: inline-block;
 }
 .navbar-default .navbar-nav.menu {
   font-family: MuseoSans;
@@ -217,6 +234,11 @@ nav.secondary.user div.home-cont {
     display: none;
   }
 }
+@media only screen and (max-width: 359px) {
+  nav.secondary.user div.home-cont {
+    width: 100%;
+  }
+}
 nav.secondary.user div.home-cont > a {
   display: block;
 }
@@ -249,6 +271,7 @@ nav.secondary.user div.home-cont .home-icon-cont .user {
   width: 3em;
   height: 3em;
   position: relative;
+  margin: 0 auto;
   -webkit-border-radius: 5em;
   -moz-border-radius: 5em;
   border-radius: 5em;
@@ -329,7 +352,7 @@ nav.secondary.user ul.menu > li.open:not(.active) a, nav.secondary.user ul.menu 
 }
 @media only screen and (min-width: 480px) {
   nav.secondary.user ul.menu > li .link-icon-fww {
-    font-size: 1.2;
+    font-size: 1.2em;
   }
 }
 @media only screen and (max-width: 399px) {
@@ -344,13 +367,14 @@ nav.secondary.user ul.menu li > a, nav.secondary.user ul.menu li > span {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  cursor: pointer;
   color: #0c131d;
   -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
   -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
   -o-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
   -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
   transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
-  padding: 0 18px 0 8px;
+  padding: 0 18px 0 0.5em;
 }
 @media only screen and (min-width: 480px) {
   nav.secondary.user ul.menu li > a, nav.secondary.user ul.menu li > span {
@@ -361,7 +385,7 @@ nav.secondary.user ul.menu li > a:hover, nav.secondary.user ul.menu li > span:ho
   color: white;
   background-color: #0c131d;
 }
-@media only screen and (max-width: 569px) {
+@media only screen and (max-width: 639px) {
   nav.secondary.user ul.menu li > a span.link-label-fw, nav.secondary.user ul.menu li > span span.link-label-fw {
     display: none;
   }
@@ -372,11 +396,11 @@ nav.secondary.user ul.menu li > a:hover, nav.secondary.user ul.menu li > span:ho
   }
 }
 nav.secondary.user ul.menu li.no-dropdown a {
-  padding: 0 20px 0 20px;
+  padding: 0 1.25em 0 1.25em;
 }
 @media only screen and (min-width: 400px) {
   nav.secondary.user ul.menu li.no-dropdown a {
-    padding: 0 10px 0 10px;
+    padding: 0 1em 0 1em;
   }
 }
 nav.secondary.user li.dropdown > span:after {
@@ -422,6 +446,36 @@ nav.secondary.user li.dropdown > span .alarm.faa-horizontal {
   -moz-animation: horizontal-alarm-frames 6s ease infinite, alarm-text-shadow-red-frames 6s ease infinite;
   -o-animation: horizontal-alarm-frames 6s ease infinite, alarm-text-shadow-red-frames 6s ease infinite;
   animation: horizontal-alarm-frames 6s ease infinite, alarm-text-shadow-red-frames 6s ease infinite;
+}
+nav.secondary.user li.dropdown > span .alarm.faa-horizontal-2 {
+  -webkit-animation: horizontal-alarm-frames 3s ease infinite, alarm-text-shadow-red-frames 3s ease infinite;
+  -moz-animation: horizontal-alarm-frames 3s ease infinite, alarm-text-shadow-red-frames 3s ease infinite;
+  -o-animation: horizontal-alarm-frames 3s ease infinite, alarm-text-shadow-red-frames 3s ease infinite;
+  animation: horizontal-alarm-frames 3s ease infinite, alarm-text-shadow-red-frames 3s ease infinite;
+}
+nav.secondary.user li.no-dropdown > a .alarm {
+  position: absolute;
+  left: 40px;
+  top: 20%;
+  font-size: 0.7em;
+  color: orangered;
+}
+@media only screen and (min-width: 400px) {
+  nav.secondary.user li.no-dropdown > a .alarm {
+    left: 36px;
+  }
+}
+nav.secondary.user li.no-dropdown > a .alarm.faa-horizontal {
+  -webkit-animation: horizontal-alarm-frames 6s ease infinite, alarm-text-shadow-red-frames 6s ease infinite;
+  -moz-animation: horizontal-alarm-frames 6s ease infinite, alarm-text-shadow-red-frames 6s ease infinite;
+  -o-animation: horizontal-alarm-frames 6s ease infinite, alarm-text-shadow-red-frames 6s ease infinite;
+  animation: horizontal-alarm-frames 6s ease infinite, alarm-text-shadow-red-frames 6s ease infinite;
+}
+nav.secondary.user li.no-dropdown > a .alarm.faa-horizontal-2 {
+  -webkit-animation: horizontal-alarm-frames 2s ease infinite, alarm-text-shadow-red-frames 2s ease infinite;
+  -moz-animation: horizontal-alarm-frames 2s ease infinite, alarm-text-shadow-red-frames 2s ease infinite;
+  -o-animation: horizontal-alarm-frames 2s ease infinite, alarm-text-shadow-red-frames 2s ease infinite;
+  animation: horizontal-alarm-frames 2s ease infinite, alarm-text-shadow-red-frames 2s ease infinite;
 }
 nav.secondary.user li.dropdown.active > span, nav.secondary.user li.no-dropdown.active a {
   border-bottom: 2px solid #12408d;

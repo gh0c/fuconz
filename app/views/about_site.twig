@@ -26,7 +26,7 @@
 
             {% include "templates/partials/user_messages.twig" %}
 
-            <div class = "inner-cont" style = "font-family: MuseoSans; font-weight: 700; line-height: 1.6em;">
+            <div class = "inner-cont" style = "font-family: MuseoSans; font-weight: 600; line-height: 1.6em;">
 
 
 
@@ -87,6 +87,10 @@
                 <div class = "vertical-section inner-70pct empty-horiz-spacer-10 dashed-spacer"></div>
                 <div class = "empty-horiz-spacer-10"></div>
 
+                <div class = "vertical-section inner-70pct text-justified">
+                    <span style = "font-size: 0.7em; opacity: 0.3;">Ako itko ikad pogleda HTML kod ove stranice - namjerno je napravljena ovak retardirano s hardkodiranim stilovima!</span>
+                </div>
+                <div class = "empty-horiz-spacer-10"></div>
 
                 <div class = "vertical-section inner-70pct text-justified">
                     <i class = "fa fa-code fa-2x"></i><br>
@@ -122,7 +126,7 @@
 
                 <div class = "vertical-section inner-70pct text-justified">
                     <i class = "fa fa-key fa-2x fa-pull-left" style = "color:rgb(40, 80, 140); position: relative; top: 0.25em;"></i>
-                    <span>Šifre za prijavu koje koristite ni u jednom trenutku nisu zapisane u izvornom obliku nego kripritano, uz dodatni sloj zaštite. <!--
+                    <span>Šifre za prijavu koje koristite ni u jednom trenutku nisu zapisane u izvornom obliku nego hashirano, uz dodatni sloj zaštite. <!--
                         -->Općenito, stranica što se sigurnosti tiče posjeduje i više od minimalnih zahtjeva kad su u pitanju registracija i autentifikacija korisnika.<br><!--
                         -->Svejedno, vrijedi napomenuti da ne lupetate neke generičke lako "lomljive" šifre, kao niti one koje koristite na drugim stranicama.
                     </span>
@@ -136,10 +140,11 @@
                          font-size: 1.8em;
                          top: 0.25em;"></i>
                     </span>
-                    <span>Stranica nema skoro nikakvu ciljano napravljenu prilagodbu za mobitele i ostale gluparije (responsive design). <!--
+                    <span>[OLD]Stranica nema skoro nikakvu ciljano napravljenu prilagodbu za mobitele i ostale gluparije (responsive design). <!--
                         -->Grafički kostur stranice prilagođen je pregledavanju na desktopu širine 1280px ili većem. <br><!--
-                        -->Zbog toga je očekivano trganje layouta pri pokušaju otvaranja putem bilo čega ekrana ne šireg od cca. 1000 piksela.<br><!--
-                        -->To se u dogledno vrijeme sasvim sigurno neće značajno promijeniti! (<!--
+                        -->Zbog toga je očekivano trganje layouta pri pokušaju otvaranja putem bilo čega ekrana ne šireg od cca. 1000 piksela.[/OLD]<br><!--
+                        -->To se u dogledno vrijeme </span><span class = "strike">sasvim sigurno neće</span><span style="color: rgba(200, 25, 10,1);"> možda</span><!--
+                        --><span> značajno promijeni</span><span class = "strike">ti</span><span>! (<!--
                         --></span><span style="color: rgba(200, 25, 10,1);">A možda i nije tako sigurno!</span><span>)
                     </span>
 

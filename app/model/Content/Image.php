@@ -1,12 +1,9 @@
 <?php
 namespace app\model\Content;
 
-use app\helpers\Configuration as Cfg;
-use app\model\Database\DatabaseConnection;
-use app\helpers\Hash;
-use app\helpers\General;
+use \app\model\Database\DatabaseConnection;
+use \app\helpers\Hash;
 use \PDO;
-use \PDOException;
 
 class Image
 {

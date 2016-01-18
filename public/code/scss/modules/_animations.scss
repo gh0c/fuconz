@@ -63,6 +63,23 @@
       0px 0px 25px red;
   }
 }
+
+@include keyframes(pulsate-frames) {
+  0% {
+    @include pp-transform(scale(0.2, 0.2));
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    @include pp-transform(scale(1.1, 1.1));
+  }
+  100% {
+    @include pp-transform(scale(1.35, 1.35));
+    opacity: 0.3;
+  }
+}
 //
 //
 //@include keyframes(ring-frames) {

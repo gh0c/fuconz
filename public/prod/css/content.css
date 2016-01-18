@@ -487,6 +487,11 @@ a.ui-datepicker-next {
   text-transform: uppercase;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
+@media only screen and (max-width: 480px) {
+  #content .main-title-box .page-title h1 {
+    font-size: 1.75em;
+  }
+}
 #content .main-subtitle-box {
   width: 100%;
   background-color: #0c131d;
@@ -757,7 +762,7 @@ a.ui-datepicker-next {
     padding: 0.375em 2.5em;
   }
 }
-#content .main-content-box .form-container .std-text-input, #content .main-content-box .form-container .large-text-input, #content .main-content-box .form-container .medium-text-input, #content .main-content-box .form-container .small-text-input {
+#content .main-content-box .form-container .std-text-input, #content .main-content-box .form-container .large-text-input, #content .main-content-box .form-container .medium-text-input, #content .main-content-box .form-container .small-text-input, #content .main-content-box .form-container .std-textarea-input {
   font-family: MuseoSans;
   font-weight: 600;
   width: 100%;
@@ -775,6 +780,12 @@ a.ui-datepicker-next {
   outline: none;
   color: #0c131d;
   height: 40px;
+}
+#content .main-content-box .form-container .std-text-input, #content .main-content-box .form-container .large-text-input, #content .main-content-box .form-container .medium-text-input, #content .main-content-box .form-container .small-text-input {
+  height: 40px;
+}
+#content .main-content-box .form-container .std-textarea-input {
+  height: 120px;
 }
 #content .main-content-box .form-container select.std-text-input, #content .main-content-box .form-container select.medium-text-input, #content .main-content-box .form-container select.small-text-input, #content .main-content-box .form-container select.large-text-input {
   cursor: pointer;
@@ -884,7 +895,7 @@ a.ui-datepicker-next {
     width: 100%;
   }
 }
-#content .main-content-box .form-container .std-text-input + label, #content .main-content-box .form-container .large-text-input + label, #content .main-content-box .form-container .medium-text-input + label, #content .main-content-box .form-container .small-text-input + label {
+#content .main-content-box .form-container .std-text-input + label, #content .main-content-box .form-container .large-text-input + label, #content .main-content-box .form-container .medium-text-input + label, #content .main-content-box .form-container .small-text-input + label, #content .main-content-box .form-container .std-textarea-input + label {
   font-family: 'Raleway', Arial, sans-serif;
   font-weight: 100;
   display: inline-table;
@@ -899,7 +910,7 @@ a.ui-datepicker-next {
   bottom: 0.375em;
   margin: 0 auto;
 }
-#content .main-content-box .form-container .std-text-input + label:before, #content .main-content-box .form-container .large-text-input + label:before, #content .main-content-box .form-container .medium-text-input + label:before, #content .main-content-box .form-container .small-text-input + label:before {
+#content .main-content-box .form-container .std-text-input + label:before, #content .main-content-box .form-container .large-text-input + label:before, #content .main-content-box .form-container .medium-text-input + label:before, #content .main-content-box .form-container .small-text-input + label:before, #content .main-content-box .form-container .std-textarea-input + label:before {
   content: attr(data-info);
   display: inline-block;
   line-height: 18px;
@@ -919,13 +930,13 @@ a.ui-datepicker-next {
   left: 48px;
   top: 10px;
 }
-#content .main-content-box .form-container .std-text-input + label.special-label, #content .main-content-box .form-container .large-text-input + label.special-label, #content .main-content-box .form-container .medium-text-input + label.special-label, #content .main-content-box .form-container .small-text-input + label.special-label {
+#content .main-content-box .form-container .std-text-input + label.special-label, #content .main-content-box .form-container .large-text-input + label.special-label, #content .main-content-box .form-container .medium-text-input + label.special-label, #content .main-content-box .form-container .small-text-input + label.special-label, #content .main-content-box .form-container .std-textarea-input + label.special-label {
   font-family: FontAwesome;
 }
-#content .main-content-box .form-container .std-text-input + label.special-label.availability-label:before, #content .main-content-box .form-container .large-text-input + label.special-label.availability-label:before, #content .main-content-box .form-container .medium-text-input + label.special-label.availability-label:before, #content .main-content-box .form-container .small-text-input + label.special-label.availability-label:before {
+#content .main-content-box .form-container .std-text-input + label.special-label.availability-label:before, #content .main-content-box .form-container .large-text-input + label.special-label.availability-label:before, #content .main-content-box .form-container .medium-text-input + label.special-label.availability-label:before, #content .main-content-box .form-container .small-text-input + label.special-label.availability-label:before, #content .main-content-box .form-container .std-textarea-input + label.special-label.availability-label:before {
   content: "\f0c0";
 }
-#content .main-content-box .form-container .std-text-input + label:after, #content .main-content-box .form-container .large-text-input + label:after, #content .main-content-box .form-container .medium-text-input + label:after, #content .main-content-box .form-container .small-text-input + label:after {
+#content .main-content-box .form-container .std-text-input + label:after, #content .main-content-box .form-container .large-text-input + label:after, #content .main-content-box .form-container .medium-text-input + label:after, #content .main-content-box .form-container .small-text-input + label:after, #content .main-content-box .form-container .std-textarea-input + label:after {
   content: '\0020';
   display: inline-block;
   line-height: 18px;
@@ -936,7 +947,7 @@ a.ui-datepicker-next {
   -ms-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   color: #122b72;
-  width: 2em;
+  width: 2.5em;
   font-family: FontAwesome;
   position: absolute;
   text-align: center;
@@ -944,18 +955,18 @@ a.ui-datepicker-next {
   right: 0;
   top: 10px;
 }
-#content .main-content-box .form-container .std-text-input + label.req:after, #content .main-content-box .form-container .large-text-input + label.req:after, #content .main-content-box .form-container .medium-text-input + label.req:after, #content .main-content-box .form-container .small-text-input + label.req:after {
+#content .main-content-box .form-container .std-text-input + label.req:after, #content .main-content-box .form-container .large-text-input + label.req:after, #content .main-content-box .form-container .medium-text-input + label.req:after, #content .main-content-box .form-container .small-text-input + label.req:after, #content .main-content-box .form-container .std-textarea-input + label.req:after {
   content: '\f12a';
   color: #bf1a1a;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
-#content .main-content-box .form-container .std-text-input:focus, #content .main-content-box .form-container .large-text-input:focus, #content .main-content-box .form-container .medium-text-input:focus, #content .main-content-box .form-container .small-text-input:focus {
+#content .main-content-box .form-container .std-text-input:focus, #content .main-content-box .form-container .large-text-input:focus, #content .main-content-box .form-container .medium-text-input:focus, #content .main-content-box .form-container .small-text-input:focus, #content .main-content-box .form-container .std-textarea-input:focus {
   border-color: #183293;
   -webkit-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
   -moz-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
   box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
 }
-#content .main-content-box .form-container .std-text-input:valid + label:before, #content .main-content-box .form-container .large-text-input:valid + label:before, #content .main-content-box .form-container .medium-text-input:valid + label:before, #content .main-content-box .form-container .small-text-input:valid + label:before, #content .main-content-box .form-container .std-text-input:focus + label:before, #content .main-content-box .form-container .large-text-input:focus + label:before, #content .main-content-box .form-container .medium-text-input:focus + label:before, #content .main-content-box .form-container .small-text-input:focus + label:before, #content .main-content-box .form-container .std-text-input:read-only + label:before, #content .main-content-box .form-container .large-text-input:read-only + label:before, #content .main-content-box .form-container .medium-text-input:read-only + label:before, #content .main-content-box .form-container .small-text-input:read-only + label:before, #content .main-content-box .form-container .std-text-input[readonly] + label:before, #content .main-content-box .form-container .large-text-input[readonly] + label:before, #content .main-content-box .form-container .medium-text-input[readonly] + label:before, #content .main-content-box .form-container .small-text-input[readonly] + label:before, #content .main-content-box .form-container .std-text-input[readonly=""] + label:before, #content .main-content-box .form-container .large-text-input[readonly=""] + label:before, #content .main-content-box .form-container .medium-text-input[readonly=""] + label:before, #content .main-content-box .form-container .small-text-input[readonly=""] + label:before {
+#content .main-content-box .form-container .std-text-input:valid + label:before, #content .main-content-box .form-container .large-text-input:valid + label:before, #content .main-content-box .form-container .medium-text-input:valid + label:before, #content .main-content-box .form-container .small-text-input:valid + label:before, #content .main-content-box .form-container .std-textarea-input:valid + label:before, #content .main-content-box .form-container .std-text-input:focus + label:before, #content .main-content-box .form-container .large-text-input:focus + label:before, #content .main-content-box .form-container .medium-text-input:focus + label:before, #content .main-content-box .form-container .small-text-input:focus + label:before, #content .main-content-box .form-container .std-textarea-input:focus + label:before, #content .main-content-box .form-container .std-text-input:read-only + label:before, #content .main-content-box .form-container .large-text-input:read-only + label:before, #content .main-content-box .form-container .medium-text-input:read-only + label:before, #content .main-content-box .form-container .small-text-input:read-only + label:before, #content .main-content-box .form-container .std-textarea-input:read-only + label:before, #content .main-content-box .form-container .std-text-input[readonly] + label:before, #content .main-content-box .form-container .large-text-input[readonly] + label:before, #content .main-content-box .form-container .medium-text-input[readonly] + label:before, #content .main-content-box .form-container .small-text-input[readonly] + label:before, #content .main-content-box .form-container .std-textarea-input[readonly] + label:before, #content .main-content-box .form-container .std-text-input[readonly=""] + label:before, #content .main-content-box .form-container .large-text-input[readonly=""] + label:before, #content .main-content-box .form-container .medium-text-input[readonly=""] + label:before, #content .main-content-box .form-container .small-text-input[readonly=""] + label:before, #content .main-content-box .form-container .std-textarea-input[readonly=""] + label:before {
   -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
   -webkit-transform: translate(-28px, -20px) scale(0.9, 0.9);
@@ -965,7 +976,7 @@ a.ui-datepicker-next {
   font-style: normal;
   border-left: 1px solid #183293;
 }
-#content .main-content-box .form-container .std-text-input[readonly=""] + label:before, #content .main-content-box .form-container .large-text-input[readonly=""] + label:before, #content .main-content-box .form-container .medium-text-input[readonly=""] + label:before, #content .main-content-box .form-container .small-text-input[readonly=""] + label:before {
+#content .main-content-box .form-container .std-text-input[readonly=""] + label:before, #content .main-content-box .form-container .large-text-input[readonly=""] + label:before, #content .main-content-box .form-container .medium-text-input[readonly=""] + label:before, #content .main-content-box .form-container .small-text-input[readonly=""] + label:before, #content .main-content-box .form-container .std-textarea-input[readonly=""] + label:before {
   -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
   -webkit-transform: translate(-28px, -20px) scale(0.9, 0.9);
@@ -1314,6 +1325,7 @@ a.ui-datepicker-next {
   width: 100%;
   text-align: center;
   min-height: 3em;
+  height: 3em;
   border-bottom: 2px dashed #0c131d;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -1377,8 +1389,9 @@ a.ui-datepicker-next {
   font-family: MuseoSans;
   font-weight: 600;
   text-align: center;
-  padding: 0.3em 1em 0.3em 1em;
+  padding: 0.25em 1em 0.25em 1em;
   min-height: 3em;
+  height: 3em;
   line-height: 125%;
   font-size: 16px;
 }
@@ -1401,10 +1414,12 @@ a.ui-datepicker-next {
 }
 #content .main-content-box div.info .status-container.msg {
   min-height: 3em;
+  height: 3em;
   vertical-align: middle;
 }
 #content .main-content-box div.info .status-container.msg > h4 {
   min-height: 2em;
+  height: 2em;
   vertical-align: middle;
   display: table-cell;
   color: #0c131d;
@@ -1791,6 +1806,12 @@ a.ui-datepicker-next {
   margin-right: 2px;
 }
 @media only screen and (min-width: 500px) {
+  #content .main-content-box .table-container .margin-std-lr {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
+}
+@media only screen and (min-width: 1280px) {
   #content .main-content-box .table-container .margin-std-lr {
     margin-left: 0.5em;
     margin-right: 0.5em;
@@ -2853,27 +2874,6 @@ a.ui-datepicker-next {
   display: table-cell;
   vertical-align: middle;
 }
-#content .main-content-box .loading-gif-div {
-  z-index: 80;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  color: #12408d;
-}
-#content .main-content-box .loading-gif-div:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-#content .main-content-box .loading-gif-div i {
-  font-size: 10em;
-  display: inline-block;
-  vertical-align: middle;
-}
 #content .main-content-box .std-item.message {
   display: inline-block;
   padding-top: 4px;
@@ -3780,6 +3780,9 @@ a.ui-datepicker-next {
   background-color: #edf0f4;
   color: #0c131d;
 }
+#content .main-content-box .profile-container.main #unread-messages .external-link-holder span, #content .main-content-box .profile-container.main #hot-bookings .external-link-holder span, #content .main-content-box .profile-container.main #hot-games .external-link-holder span {
+  padding: 1px 4px;
+}
 #content .main-content-box .profile-container.main #unread-messages {
   max-width: 31em;
   text-align: center;
@@ -3810,7 +3813,7 @@ a.ui-datepicker-next {
   vertical-align: top;
 }
 #content .main-content-box .profile-container.main #unread-messages .std-item.profile-home-message section.td.message {
-  max-width: 28em;
+  width: 28em;
   text-align: left;
 }
 #content .main-content-box .profile-container.main #unread-messages .std-item.profile-home-message section.td.message .time-label-holder {
@@ -5807,4 +5810,25 @@ a.ui-datepicker-next {
 }
 #content .main-content-box .month-grid .table-container.bookings .day-container .bookings-container .booking.course-finished .legend-icon-cont .descriptor-b {
   color: #edf0f4;
+}
+.loading-gif-div {
+  z-index: 1100;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #12408d;
+}
+.loading-gif-div:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.loading-gif-div i {
+  font-size: 10em;
+  display: inline-block;
+  vertical-align: middle;
 }

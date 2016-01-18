@@ -102,6 +102,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ urlFor('admin.messages.broadcast.new') }}"
+                           {% if active_item == "admin.broadcast-message" %}class = "active"{% endif %}>
+                            <span class = "link-label-fw">Pošalji svima</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/" >
                             <span class = "link-label-fw">Povijest aktivnosti</span>
                         </a>

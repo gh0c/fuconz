@@ -39,7 +39,7 @@ $has-been-read-status-td-w: 3em;
         vertical-align: top;
 
         &.message {
-          max-width: $message-td-w;
+          width: $message-td-w;
           text-align: left;
           .time-label-holder {
             width: 12em;

@@ -41,7 +41,7 @@
     padding: 0.375em 2.5em;
   }
 }
-.form-container .std-text-input, .form-container .large-text-input, .form-container .medium-text-input, .form-container .small-text-input {
+.form-container .std-text-input, .form-container .large-text-input, .form-container .medium-text-input, .form-container .small-text-input, .form-container .std-textarea-input {
   font-family: MuseoSans;
   font-weight: 600;
   width: 100%;
@@ -59,6 +59,12 @@
   outline: none;
   color: #0c131d;
   height: 40px;
+}
+.form-container .std-text-input, .form-container .large-text-input, .form-container .medium-text-input, .form-container .small-text-input {
+  height: 40px;
+}
+.form-container .std-textarea-input {
+  height: 120px;
 }
 .form-container select.std-text-input, .form-container select.medium-text-input, .form-container select.small-text-input, .form-container select.large-text-input {
   cursor: pointer;
@@ -168,7 +174,7 @@
     width: 100%;
   }
 }
-.form-container .std-text-input + label, .form-container .large-text-input + label, .form-container .medium-text-input + label, .form-container .small-text-input + label {
+.form-container .std-text-input + label, .form-container .large-text-input + label, .form-container .medium-text-input + label, .form-container .small-text-input + label, .form-container .std-textarea-input + label {
   font-family: 'Raleway', Arial, sans-serif;
   font-weight: 100;
   display: inline-table;
@@ -183,7 +189,7 @@
   bottom: 0.375em;
   margin: 0 auto;
 }
-.form-container .std-text-input + label:before, .form-container .large-text-input + label:before, .form-container .medium-text-input + label:before, .form-container .small-text-input + label:before {
+.form-container .std-text-input + label:before, .form-container .large-text-input + label:before, .form-container .medium-text-input + label:before, .form-container .small-text-input + label:before, .form-container .std-textarea-input + label:before {
   content: attr(data-info);
   display: inline-block;
   line-height: 18px;
@@ -203,13 +209,13 @@
   left: 48px;
   top: 10px;
 }
-.form-container .std-text-input + label.special-label, .form-container .large-text-input + label.special-label, .form-container .medium-text-input + label.special-label, .form-container .small-text-input + label.special-label {
+.form-container .std-text-input + label.special-label, .form-container .large-text-input + label.special-label, .form-container .medium-text-input + label.special-label, .form-container .small-text-input + label.special-label, .form-container .std-textarea-input + label.special-label {
   font-family: FontAwesome;
 }
-.form-container .std-text-input + label.special-label.availability-label:before, .form-container .large-text-input + label.special-label.availability-label:before, .form-container .medium-text-input + label.special-label.availability-label:before, .form-container .small-text-input + label.special-label.availability-label:before {
+.form-container .std-text-input + label.special-label.availability-label:before, .form-container .large-text-input + label.special-label.availability-label:before, .form-container .medium-text-input + label.special-label.availability-label:before, .form-container .small-text-input + label.special-label.availability-label:before, .form-container .std-textarea-input + label.special-label.availability-label:before {
   content: "\f0c0";
 }
-.form-container .std-text-input + label:after, .form-container .large-text-input + label:after, .form-container .medium-text-input + label:after, .form-container .small-text-input + label:after {
+.form-container .std-text-input + label:after, .form-container .large-text-input + label:after, .form-container .medium-text-input + label:after, .form-container .small-text-input + label:after, .form-container .std-textarea-input + label:after {
   content: '\0020';
   display: inline-block;
   line-height: 18px;
@@ -220,7 +226,7 @@
   -ms-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   color: #122b72;
-  width: 2em;
+  width: 2.5em;
   font-family: FontAwesome;
   position: absolute;
   text-align: center;
@@ -228,18 +234,18 @@
   right: 0;
   top: 10px;
 }
-.form-container .std-text-input + label.req:after, .form-container .large-text-input + label.req:after, .form-container .medium-text-input + label.req:after, .form-container .small-text-input + label.req:after {
+.form-container .std-text-input + label.req:after, .form-container .large-text-input + label.req:after, .form-container .medium-text-input + label.req:after, .form-container .small-text-input + label.req:after, .form-container .std-textarea-input + label.req:after {
   content: '\f12a';
   color: #bf1a1a;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
-.form-container .std-text-input:focus, .form-container .large-text-input:focus, .form-container .medium-text-input:focus, .form-container .small-text-input:focus {
+.form-container .std-text-input:focus, .form-container .large-text-input:focus, .form-container .medium-text-input:focus, .form-container .small-text-input:focus, .form-container .std-textarea-input:focus {
   border-color: #183293;
   -webkit-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
   -moz-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
   box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
 }
-.form-container .std-text-input:valid + label:before, .form-container .large-text-input:valid + label:before, .form-container .medium-text-input:valid + label:before, .form-container .small-text-input:valid + label:before, .form-container .std-text-input:focus + label:before, .form-container .large-text-input:focus + label:before, .form-container .medium-text-input:focus + label:before, .form-container .small-text-input:focus + label:before, .form-container .std-text-input:read-only + label:before, .form-container .large-text-input:read-only + label:before, .form-container .medium-text-input:read-only + label:before, .form-container .small-text-input:read-only + label:before, .form-container .std-text-input[readonly] + label:before, .form-container .large-text-input[readonly] + label:before, .form-container .medium-text-input[readonly] + label:before, .form-container .small-text-input[readonly] + label:before, .form-container .std-text-input[readonly=""] + label:before, .form-container .large-text-input[readonly=""] + label:before, .form-container .medium-text-input[readonly=""] + label:before, .form-container .small-text-input[readonly=""] + label:before {
+.form-container .std-text-input:valid + label:before, .form-container .large-text-input:valid + label:before, .form-container .medium-text-input:valid + label:before, .form-container .small-text-input:valid + label:before, .form-container .std-textarea-input:valid + label:before, .form-container .std-text-input:focus + label:before, .form-container .large-text-input:focus + label:before, .form-container .medium-text-input:focus + label:before, .form-container .small-text-input:focus + label:before, .form-container .std-textarea-input:focus + label:before, .form-container .std-text-input:read-only + label:before, .form-container .large-text-input:read-only + label:before, .form-container .medium-text-input:read-only + label:before, .form-container .small-text-input:read-only + label:before, .form-container .std-textarea-input:read-only + label:before, .form-container .std-text-input[readonly] + label:before, .form-container .large-text-input[readonly] + label:before, .form-container .medium-text-input[readonly] + label:before, .form-container .small-text-input[readonly] + label:before, .form-container .std-textarea-input[readonly] + label:before, .form-container .std-text-input[readonly=""] + label:before, .form-container .large-text-input[readonly=""] + label:before, .form-container .medium-text-input[readonly=""] + label:before, .form-container .small-text-input[readonly=""] + label:before, .form-container .std-textarea-input[readonly=""] + label:before {
   -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
   -webkit-transform: translate(-28px, -20px) scale(0.9, 0.9);
@@ -249,7 +255,7 @@
   font-style: normal;
   border-left: 1px solid #183293;
 }
-.form-container .std-text-input[readonly=""] + label:before, .form-container .large-text-input[readonly=""] + label:before, .form-container .medium-text-input[readonly=""] + label:before, .form-container .small-text-input[readonly=""] + label:before {
+.form-container .std-text-input[readonly=""] + label:before, .form-container .large-text-input[readonly=""] + label:before, .form-container .medium-text-input[readonly=""] + label:before, .form-container .small-text-input[readonly=""] + label:before, .form-container .std-textarea-input[readonly=""] + label:before {
   -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
   -webkit-transform: translate(-28px, -20px) scale(0.9, 0.9);
@@ -598,6 +604,7 @@ div.info .status-container {
   width: 100%;
   text-align: center;
   min-height: 3em;
+  height: 3em;
   border-bottom: 2px dashed #0c131d;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -661,8 +668,9 @@ div.info .status-container h4 {
   font-family: MuseoSans;
   font-weight: 600;
   text-align: center;
-  padding: 0.3em 1em 0.3em 1em;
+  padding: 0.25em 1em 0.25em 1em;
   min-height: 3em;
+  height: 3em;
   line-height: 125%;
   font-size: 16px;
 }
@@ -685,10 +693,12 @@ div.info .status-container.live.successful-validation h4, div.info .status-conta
 }
 div.info .status-container.msg {
   min-height: 3em;
+  height: 3em;
   vertical-align: middle;
 }
 div.info .status-container.msg > h4 {
   min-height: 2em;
+  height: 2em;
   vertical-align: middle;
   display: table-cell;
   color: #0c131d;

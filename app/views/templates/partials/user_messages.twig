@@ -75,7 +75,6 @@
 
 <script>
     $(document).on("click", ".info:not(.special-info) .status-container .close-info.fa", function(){
-        console.log("clicked closing info");
         var $clicked = $(this);
         var $containerSection = $clicked.closest(".horizontal-section.info");
         var $mainInfoStatusesCont = $containerSection.closest(".inner-cont");
@@ -91,7 +90,6 @@
     });
 
     $(document).on("click", ".special-info.pre-booking .status-container .close-info.fa", function(){
-        console.log("clicked closing prebooking info");
         var $clicked = $(this);
         var selection =  confirm("Ne prikazuj ovu obavijest kod sljedećeg otvaranja ove stranice?");
 

@@ -1,0 +1,48 @@
+<div>
+    {% for user in users %}
+        {% set my_chat_with_user = auth_user.chatConversationWith(user.id) %}
+
+        <a class = "user chat-active {{ (my_chat_with_user) ? ' opener' : 'creator' }}"
+            {% if my_chat_with_user %}
+            data-chat-room-hash = "{{ my_chat_with_user.hash }}"
+            {% endif %}
+           data-user-id = "{{ user.id }}"
+        >
+
+            <div class = "user-info">
+                <div>
+                    {%  set avatar_url = user.getAvatarURL('avatar',
+                    { "width": 30, "height": 30, "crop": "fill"}) %}
+                    {%  if avatar_url %}
+                        <div class = "img-holder"><img src = "{{ avatar_url }}" /></div>
+                    {% else %}
+                        <div class = "img-holder"><i class = "fa fa-user"></i></div>
+                    {% endif %}
+                    <span class = "f-div-fw-mobile-mid">{{ user.username }} ({{ user.full_name() }})</span>
+                    <span class = "f-div-non-fw-mobile-mid">{{ user.username }}</span>
+                </div>
+            </div>
+
+            <div class = "existing-conversation-info">
+                {% if my_chat_with_user %}
+                    {% if my_chat_with_user.userHaveUnreadMessages(auth_user.id) %}
+                        {#<i class = "fa fa-circle unread ico-m"></i>#}
+                        <i class = "fa fa-file-text unread-overlay-anim"></i>
+
+                        <div class = "fa-stack hot-msg-card">
+                            <i class="fa fa-circle fa-stack-2x msg-card"></i>
+                            <i class="fa fa-stack-1x number">{{ my_chat_with_user.numberOfUsersUnreadMessages(auth_user.id) }}</i>
+                        </div>
+
+                    {% else %}
+                        <i class = "fa fa-file-o no-unread ico-m"></i>
+                    {% endif %}
+                {% else %}
+                    <i class = "fa not-exist fa-circle-thin ico-m"></i>
+                {% endif %}
+
+            </div>
+
+        </a>
+    {% endfor %}
+</div>

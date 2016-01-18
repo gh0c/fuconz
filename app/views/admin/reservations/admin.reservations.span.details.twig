@@ -119,12 +119,12 @@
                                             <span>{{ booking.user.username }}</span>
                                         </div>
                                     </div><!--
-                                    --><div class = "td width-10em margin-std-lr text-left">
-                                        <span>{{ booking.created_at|date('j.m.Y. H:i') }}</span>
-                                    </div><!--
+
+
                                     --><div class = "td width-10em f-div-fw-768 margin-std-lr text-left">
                                         <span>{{ booking.created_at|date('j.m.Y. H:i') }}</span>
                                     </div><!--
+
                                     --><div class = "td width-20em margin-std-lr f-div-fw-1024 text-left">
                                         {% if booking.type == 'prereservation' %}
                                             {% if booking.activated == 2 %}

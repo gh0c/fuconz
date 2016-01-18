@@ -96,7 +96,7 @@
 
 
         var startLoading = (function(url) {
-            console.log("Req started " + url.toString());
+//            console.log("Req started " + url.toString());
             return $.ajax({
                 url: url,
                 type: "POST",
@@ -108,7 +108,7 @@
 
 
         var displayRequestReply = (function(reply, url, container) {
-            console.log("Req ended call " + url.toString());
+//            console.log("Req ended call " + url.toString());
             if(displayError(reply)) {return;}
 
             container.html(reply);

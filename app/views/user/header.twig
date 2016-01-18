@@ -31,15 +31,23 @@
 
 
         <ul class="menu">
-            <li class="dropdown{% if active_page == "user.profile" %} active{% endif %}" data-filter="profile">
+           <li class="no-dropdown" data-filter="chat">
+                <a class = "chat-opener" id = "open-chat-menu-button">
+                    <i class = "fa fa-comments-o link-icon-fww fa-fw"></i><span class = "link-label-fww"> Chat</span>
+                    {%  if auth_user.numberOfHotChatrooms() > 0 %}
+                    <i class = "fa fa-file-text faa-horizontal animated alarm" id = "unread-chat-messages-header-alarm"></i>
+                    {% endif %}
+                </a>
+            </li><!--
+            --><li class="dropdown{% if active_page == "user.profile" %} active{% endif %}" data-filter="profile">
                 <span><i class = "fa fa-cogs link-icon-fw  fa-fw"></i><span class = "link-label-fw"> Profil</span></span>
             </li><!--
             --><li class="no-dropdown{% if active_page == "user.reservations" %} active{% endif %}" data-filter="reservation">
-                <a href = "{{ urlFor('user.book-training-course') }}"><i class = "fa fa-calendar-check-o link-icon-fww fa-fw"></i><span class = "link-label-fww"> Rezervacija</span></a>
+                <a href = "{{ urlFor('user.book-training-course') }}"><i class = "fa fa-calendar-check-o link-icon-fww fa-fw"></i><span class = "link-label-fw"> Rezervacija</span></a>
             </li><!--
             --><li class="dropdown{% if active_page == "user.main" %} active {% endif %}" data-filter="user-main">
                 <span>
-                    <i class = "fa fa-user link-icon-fw fa-fw"></i><span class = "link-label-fw"> Korisničke stranice</span>{%  if auth_user.unreadMessagesExists() %}
+                    <i class = "fa fa-user link-icon-fw fa-fw"></i><span class = "link-label-fw"> Korisnik</span>{%  if auth_user.unreadMessagesExists() %}
                     <script>
                         var originalDocTitle = document.title;
                         var prependToTitle = function(prefix) {
@@ -115,7 +123,7 @@
             <li>
                 <a href="{{ urlFor('user.matches.games.home') }}"
                    {% if active_item == "user.main.games" %}class = "active"{% endif %}>
-                    <i class = "fa fa-fw fa-futbol-o"></i><span class = "link-label-fw"> Moje utakmice</span>
+                    <i class = "fa fa-fw fa-futbol-o"></i><span class = "link-label-fw"> Utakmice</span>
                 </a>
             </li><!--
             --><li>
@@ -135,7 +143,7 @@
             --><li>
                 <a href="{{ urlFor('user.bookings.home') }}"
                    {% if active_item == "user.main.bookings" %}class = "active"{% endif %}>
-                    <i class = "fa fa-fw fa-book"></i><span class = "link-label-fw"> Moje prijave</span>
+                    <i class = "fa fa-fw fa-book"></i><span class = "link-label-fw"> Prijave</span>
                 </a>
             </li><!--
             --><li>

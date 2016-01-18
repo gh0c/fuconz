@@ -1,4 +1,4 @@
-<footer id = "footer">
+<footer id = "footer" class = "display-none">
 
     <div class = "inner-cont">
         <nav class = "footer">
@@ -21,24 +21,28 @@
 <script>
     $(document).ready(function() {
         var $footer = $("#footer");
+        $footer.removeClass("display-none");
 
-        $footer.css('display', 'block');
-
-        $footer.velocity({
-            translateX: '-=' + 0,
-            translateY: '-=' + 40,
-            translateZ: '-=' + 0
-        }, 0);
-        return $footer.velocity({
-            opacity: 1,
-            translateX: '+=' + 0,
-            translateY: '+=' + 40,
-            translateZ: '+=' + 0
-        }, {
-            easing: null,
-            delay: 200,
-            duration: 600
-        });
     });
+
+//
+//        $footer.css('display', 'block');
+//
+//        $footer.velocity({
+//            translateX: '-=' + 0,
+//            translateY: '-=' + 40,
+//            translateZ: '-=' + 0
+//        }, 0);
+//        return $footer.velocity({
+//            opacity: 1,
+//            translateX: '+=' + 0,
+//            translateY: '+=' + 40,
+//            translateZ: '+=' + 0
+//        }, {
+//            easing: null,
+//            delay: 200,
+//            duration: 600
+//        });
+//    });
 
 </script>

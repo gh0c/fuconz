@@ -380,6 +380,12 @@
 }
 @media only screen and (min-width: 500px) {
   .table-container .margin-std-lr {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .table-container .margin-std-lr {
     margin-left: 0.5em;
     margin-right: 0.5em;
   }

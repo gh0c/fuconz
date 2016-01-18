@@ -16,10 +16,18 @@ html {
   width: 100%;
   height: 100%;
 
+  //overflow: hidden; // -- Overlay
+
+  @import 'chat';
+
+  @import 'jscrollpane';
+
   body {
-    padding-top: 58px;  // height of fixed header
+    padding-top: $header-height;  // height of fixed header
 
     min-height: 100%;
+//    overflow: hidden;  // -- Overlay
+    position: relative;
 
     background-color: white;
 
@@ -33,7 +41,9 @@ html {
       height: auto !important;
       height: 100%;
 
+      overflow: hidden;  // -- Overlay
 
+      position: relative;
 
     }
 

@@ -1,0 +1,119 @@
+@import 'modules/modules.import';
+
+
+.chat-content-holder {
+
+  nav.chat.chat-nav-filters {
+    //      position: absolute;
+    width: 100%;
+    display: none;
+//    height: auto;
+    font-family: MuseoSans;
+    font-weight: 600;
+    z-index: 29;
+
+    overflow: hidden;
+    max-height: 100%;
+    position: relative;
+    height: 100%;
+
+
+    .filter {
+      //        @include gradient-dark-blue-radial();
+//      background: $cibona-blue;
+      display: none;
+      overflow: hidden;
+      text-align: left;
+      max-height: 100%;
+      height: 100%;
+      /* position: absolute; */
+      width: 100%;
+      &:before {
+        display: table;
+        content: " ";
+      }
+    }
+
+
+    .filter.filter-users .users-container ,
+    .filter.filter-chat-rooms .chat-rooms-container {
+      .user,
+      .chat-room {
+        cursor: pointer;
+        color: $light-blue-gray-light;
+        display: block;
+
+//        margin-left: auto;
+//        margin-right: auto;
+        @include pp-transition(background-color .25s ease-out, color .25s ease-out);
+
+        &:hover, &:focus {
+          background-color: $light-blue-gray-dark;
+          color: $dark-dark-blue;
+        }
+
+        .user-info {
+          display: inline-table;
+          height: 100%;
+          vertical-align: bottom;
+
+          & > * {
+            display: table-cell;
+            vertical-align: middle;
+          }
+
+          & > div {
+            & > span {
+              vertical-align: top;
+              display: inline-block;
+              font-size: 90%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+
+.filter-section-desc-holder {
+
+  width: 100%;
+
+  .section-desc-filters {
+    width: 100%;
+    display: none;
+    font-family: MuseoSans;
+    font-weight: 600;
+    z-index: 29;
+
+    color: white;
+
+    .filter {
+      //        @include gradient-dark-blue-radial();
+      background:$cibona-blue;
+      border-bottom: 1px solid $dark-dark-blue;
+
+      display: none;
+      overflow: hidden;
+      text-align: center;
+      &:before {
+        display: table;
+        content: " ";
+      }
+
+      span {
+        font-family: 'Raleway',Arial,sans-serif;
+        font-weight: 100;
+        font-size: 0.875em;
+      }
+    }
+  }
+}
+
+@import 'chat.users';
+@import 'chat.chat_rooms';
+@import 'chat.active_chat_room';
+@import 'chat.info';

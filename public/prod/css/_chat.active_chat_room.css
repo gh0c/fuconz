@@ -1,0 +1,436 @@
+/*********************
+ BREAKPOINTS
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container {
+  height: 100%;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container > div {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  left: 0;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 480px) {
+  .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container > div {
+    max-width: 26em;
+  }
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder {
+  background: #edf0f4;
+  color: #0c131d;
+  display: block;
+  overflow: hidden;
+  text-align: left;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+@media only screen and (min-height: 640px) and (min-width: 768px) {
+  .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder {
+    max-height: 26em;
+  }
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder:before {
+  display: table;
+  content: " ";
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container {
+  display: block;
+  height: 2.25em;
+  border-bottom: 2px solid #0c131d;
+  overflow: hidden;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title {
+  padding: 0 5px;
+  display: block;
+  overflow: hidden;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participant {
+  position: relative;
+  display: inline-block;
+  padding-left: 0.125em;
+  padding-right: 0.125em;
+  border-left: 1px solid #edf0f4;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participant:first-of-type {
+  border-left: 1px solid transparent;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participant span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.9em;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participant .img-av-holder {
+  width: 22px;
+  height: 22px;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  margin-right: 0.25em;
+  margin-left: 0.0625em;
+  -webkit-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  -moz-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participant .img-av-holder img {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 1px;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participant .img-av-holder > i {
+  display: inline-table;
+  height: 100%;
+  font-size: 14px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participant .img-av-holder > i:before {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title > span {
+  font-size: 0.9em;
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .img-avatar-holder {
+  display: inline-block;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container {
+  height: -moz-calc(100% - 2.25em - 3.75em);
+  height: -o-calc(100% - 2.25em - 3.75em);
+  height: -webkit-calc(100% - 2.25em - 3.75em);
+  height: calc(100% - 2.25em - 3.75em);
+  vertical-align: bottom;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  border-bottom: 4px solid #0c131d;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-sender > section, .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section {
+  display: inline-block;
+  position: relative;
+  vertical-align: bottom;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-sender > section.av-holder, .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.av-holder {
+  width: 25%;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-sender > section.msg-b-holder, .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder {
+  width: 75%;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.av-holder {
+  text-align: center;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.av-holder .img-av-holder {
+  width: 26px;
+  height: 26px;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  position: relative;
+  bottom: 3px;
+  -webkit-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  -moz-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.av-holder .img-av-holder img {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 2px;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.av-holder .img-av-holder > i {
+  display: inline-table;
+  height: 100%;
+  font-size: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.av-holder .img-av-holder > i:before {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body {
+  position: relative;
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding: 2px 5px 3px 5px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  margin-bottom: 2px;
+  border: 1px solid transparent;
+  min-width: 60%;
+  max-width: 90%;
+  display: inline-table;
+  min-height: 28px;
+}
+@media only screen and (max-width: 479px) {
+  .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body {
+    min-width: 65%;
+    max-width: 95%;
+  }
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body > * {
+  vertical-align: middle;
+  display: table-cell;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body.last-in-a-row:after {
+  position: absolute;
+  display: block;
+  content: '';
+  height: 1px;
+  width: 1px;
+  margin: auto;
+  box-sizing: content-box;
+  bottom: 6px;
+  border: solid 4px transparent;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.my-m > section.msg-b-holder {
+  padding-right: 1.25em;
+  text-align: left;
+}
+@media only screen and (max-width: 479px) {
+  .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.my-m > section.msg-b-holder {
+    padding-right: 1em;
+  }
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.my-m > section.msg-b-holder .message-body {
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(24, 50, 147, .2);
+  padding-right: 1.25em;
+  -webkit-border-top-right-radius: 18px;
+  -moz-border-radius-topright: 18px;
+  border-top-right-radius: 18px;
+  -webkit-border-bottom-right-radius: 18px;
+  -moz-border-radius-bottomright: 18px;
+  border-bottom-right-radius: 18px;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.my-m > section.msg-b-holder .message-body.last-in-a-row:after {
+  border-right: solid 4px rgba(24, 50, 147, .2);
+  left: -9px;
+  right: auto;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.my-m > section.av-holder .img-av-holder {
+  left: 15%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.not-my-m > section.msg-b-holder {
+  padding-left: 1.25em;
+  text-align: right;
+}
+@media only screen and (max-width: 479px) {
+  .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.not-my-m > section.msg-b-holder {
+    padding-left: 1em;
+  }
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.not-my-m > section.msg-b-holder .message-body {
+  text-align: left;
+  background-color: rgba(24, 50, 147, 0.08);
+  border-color: rgba(18, 43, 114, .2);
+  padding-left: 1.25em;
+  -webkit-border-top-left-radius: 18px;
+  -moz-border-radius-topleft: 18px;
+  border-top-left-radius: 18px;
+  -webkit-border-bottom-left-radius: 18px;
+  -moz-border-radius-bottomleft: 18px;
+  border-bottom-left-radius: 18px;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.not-my-m > section.msg-b-holder .message-body.last-in-a-row:after {
+  border-left: solid 4px rgba(18, 43, 114, .2);
+  right: -9px;
+  left: auto;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.not-my-m > section.av-holder .img-av-holder {
+  right: 15%;
+  background-color: rgba(24, 50, 147, 0.1);
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-sender {
+  margin-top: 3px;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-sender .sender-username {
+  text-align: right;
+  padding-right: 1em;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-sender .sender-username span {
+  font-size: 12px;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-sender.i-am-sender .sender-username {
+  text-align: left;
+  padding-left: 1em;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message {
+  background: white;
+  height: 3.75em;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder, .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder {
+  display: inline-table;
+  line-height: normal;
+  vertical-align: middle;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder {
+  cursor: text;
+  max-height: 80px;
+  min-height: 16px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 0.5em;
+  position: relative;
+  width: 72%;
+  height: 100%;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder textarea {
+  font-size: 13px;
+  position: relative;
+  padding: 4px 8px 8px 4px;
+  width: 94%;
+  resize: none;
+  min-height: 16px;
+  height: 44px;
+  top: 8px;
+  box-shadow: 1px 1px 4px lightgrey;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder textarea:focus {
+  box-shadow: 1px 1px 4px darkgrey;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder {
+  display: inline-block;
+  width: 6%;
+  vertical-align: top;
+  text-align: center;
+  height: 44px;
+  top: 8px;
+  position: relative;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder .light {
+  font-size: 0.625em;
+  color: blueviolet;
+  -webkit-transition: color 0.6s ease-out;
+  -moz-transition: color 0.6s ease-out;
+  -o-transition: color 0.6s ease-out;
+  -ms-transition: color 0.6s ease-out;
+  transition: color 0.6s ease-out;
+  vertical-align: top;
+  padding: 2px 0;
+  margin: 0;
+  position: relative;
+  display: block;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder .light.no {
+  color: rgba(255, 255, 255, 0);
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder .light.act {
+  color: dodgerblue;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder .light.pend {
+  color: orange;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder .light.canc {
+  color: rgba(255, 0, 0, .7);
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder .light.end {
+  color: lightseagreen;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder {
+  width: 28%;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont {
+  padding: 3px 0.25em;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont > div {
+  font-family: MuseoSans;
+  font-weight: 600;
+  text-align: center;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter {
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  border: 1px solid black;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 480px) {
+  .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter {
+    -webkit-border-radius: 1.5em;
+    -moz-border-radius: 1.5em;
+    border-radius: 1.5em;
+  }
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter.submit {
+  min-width: 3.5em;
+}
+@media only screen and (min-width: 480px) {
+  .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter.submit {
+    width: 6.5em;
+  }
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter.submit span {
+  font-size: 0.9em;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter span, .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter a {
+  color: #edf0f4;
+  padding: 0.25em 0.25em;
+  display: block;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter i.fa {
+  padding: 0.375em 0;
+  color: #edf0f4;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter i.fa:before {
+  font-size: 1.25em;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter.bbb-flag-v-cibona-blue.submit:hover, .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter.bbb-flag-v-cibona-blue.submit:focus {
+  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8), 0 0 16px #122b72;
+  -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8), 0 0 16px #122b72;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8), 0 0 16px #122b72;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter.bbb-flag-v-cibona-blue.submit:active {
+  -webkit-box-shadow: inset 0 0 12px #000, 0 0 18px #122b72;
+  -moz-box-shadow: inset 0 0 12px #000, 0 0 18px #122b72;
+  box-shadow: inset 0 0 12px #000, 0 0 18px #122b72;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter.bbb-flag-v-cibona-blue.submit:active span, .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter.bbb-flag-v-cibona-blue.submit:active a, .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter.bbb-flag-v-cibona-blue.submit:active i {
+  color: white;
+}
+.filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container {
+  border-left: 5px solid #0c131d;
+  border-right: 5px solid #0c131d;
+  font-size: 0.75em;
+  padding: 0 1em;
+}

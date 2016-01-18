@@ -1,0 +1,28 @@
+<div class = "chat-room-holder" data-chat-cr-user-id = "{{ user.id }}">
+
+
+    <div class = "chat-room-info">
+        <div>
+            {#<div class = "participant">#}
+                {#{%  set avatar_url = user.getAvatarURL('avatar',#}
+                {#{ "width": 28, "height": 28, "crop": "fill"}) %}#}
+                {#<div class = "img-av-holder">#}
+                    {#{%  if avatar_url %}#}
+                        {#<img src = "{{ avatar_url }}" />#}
+                    {#{% else %}#}
+                        {#<i class = "fa fa-user"></i>#}
+                    {#{% endif %}#}
+                {#</div>#}
+                {#<span>{{ user.username }}</span>#}
+                {#<span class = "f-div-fw-tablet">({{ user.full_name }})</span>#}
+            {#</div>#}
+            <span>Tu bi trebao osvanut malo efektniji izbornik za šaltanje otvorenih razgovora</span>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+

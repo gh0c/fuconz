@@ -1,0 +1,117 @@
+<div id = "chatrooms-holder">
+    <div>
+        {% if chat_rooms|length > 0 %}
+            {% for chat_room in chat_rooms %}
+                <a class = "chat-room opener" data-chat-room-hash = "{{ chat_room.hash }}">
+                    <div class = "unread-messages-info">
+                        {% if chat_room.userHaveUnreadMessages(auth_user.id) %}
+                            <i class = "fa fa-fw fa-file-text faa-horizontal alert-unread"></i>
+                        {% else %}
+                            <i class = "fa fa-fw fa-file-o"></i>
+                        {% endif %}
+                    </div><!--
+
+                    --><div class = "chat-room-info">
+                        <div class = "participants-holder"><!--
+
+                            {#<span class = "">{{ chat_room.name }}</span>#}
+
+                            {% set participants = chat_room.participantsWithoutMe(auth_user.id) %}
+
+                            {% for participant in participants %}
+
+                                --><div class = "participant">
+                                    {%  set avatar_url = participant.getAvatarURL('avatar',
+                                    { "width": 28, "height": 28, "crop": "fill"}) %}
+                                    <div class = "img-av-holder">
+                                        {%  if avatar_url %}
+                                            <img src = "{{ avatar_url }}" />
+                                        {% else %}
+                                            <i class = "fa fa-user"></i>
+                                        {% endif %}
+                                    </div>
+                                    <span>{{ participant.username }}</span>
+                                    <span class = "f-div-fw-tablet">({{ participant.full_name }})</span>
+                                </div><!--
+
+                            {% endfor %}
+
+
+                        --></div><!--
+                        --><div class = "fa-stack hot-msg-card">
+                            {% if chat_room.numberOfUsersUnreadMessages(auth_user.id) > 0%}
+                            <i class="fa fa-circle fa-stack-2x msg-card"></i>
+                            <i class="fa fa-stack-1x number">{{ chat_room.numberOfUsersUnreadMessages(auth_user.id) }}</i>
+                            {% endif %}
+                        </div>
+                    </div><!--
+
+                    --><div class = "desc-info f-div-fw-mobile-mid">
+                        <i class = "fa fa-commenting-o"></i>
+                    </div>
+
+
+
+
+
+                </a>
+            {% endfor %}
+        {% else %}
+            <div>
+                <span> Nemate otvorenih razgovora</span>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<div id = "users-holder">
+
+    <div>
+        {% for user in users %}
+            {% set my_chat_with_user = auth_user.chatConversationWith(user.id) %}
+
+            <a class = "user chat-active {{ (my_chat_with_user) ? ' opener' : 'creator' }}"
+                    {% if my_chat_with_user %}
+                        data-chat-room-hash = "{{ my_chat_with_user.hash }}"
+                    {% endif %}
+               data-user-id = "{{ user.id }}"
+                    >
+
+                <div class = "user-info">
+                    <div>
+                        {%  set avatar_url = user.getAvatarURL('avatar',
+                        { "width": 30, "height": 30, "crop": "fill"}) %}
+                        {%  if avatar_url %}
+                            <div class = "img-holder"><img src = "{{ avatar_url }}" /></div>
+                        {% else %}
+                            <div class = "img-holder"><i class = "fa fa-user"></i></div>
+                        {% endif %}
+                        <span class = "f-div-fw-mobile-mid">{{ user.username }} ({{ user.full_name() }})</span>
+                        <span class = "f-div-non-fw-mobile-mid">{{ user.username }}</span>
+                    </div>
+                </div>
+
+                <div class = "existing-conversation-info">
+                    {% if my_chat_with_user %}
+                        {% if my_chat_with_user.userHaveUnreadMessages(auth_user.id) %}
+                            {#<i class = "fa fa-circle unread ico-m"></i>#}
+                            <i class = "fa fa-file-text unread-overlay-anim"></i>
+
+                            <div class = "fa-stack hot-msg-card">
+                                <i class="fa fa-circle fa-stack-2x msg-card"></i>
+                                <i class="fa fa-stack-1x number">{{ my_chat_with_user.numberOfUsersUnreadMessages(auth_user.id) }}</i>
+                            </div>
+
+                        {% else %}
+                            <i class = "fa fa-file-o no-unread ico-m"></i>
+                        {% endif %}
+                    {% else %}
+                        <i class = "fa not-exist fa-circle-thin ico-m"></i>
+                    {% endif %}
+
+                </div>
+
+            </a>
+        {% endfor %}
+    </div>
+</div>

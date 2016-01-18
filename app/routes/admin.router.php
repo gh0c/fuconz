@@ -5,7 +5,7 @@ use app\helpers\Configuration as Cfg;
 use app\helpers\Hash;
 use app\model\Admin\Admin;
 use \app\model\Messages\Message;
-
+use \app\model\Messages\Logger;
 
 
 $app->group('/admin', function () use ($app, $authenticated_admin) {
@@ -25,7 +25,7 @@ $app->group('/admin', function () use ($app, $authenticated_admin) {
     })->name('admin.home');
 
 
-    $app->post('/load-messages', $authenticated_admin(), function() use ($app) {
+    $app->post('/ucitaj-poruke', $authenticated_admin(), function() use ($app) {
         if($app->request->isAjax()) {
 
             $body = $app->request->getBody();
@@ -108,5 +108,23 @@ $app->group('/admin', function () use ($app, $authenticated_admin) {
     })->name('admin.home.messages.change-read-status.post');
 
 
+    $app->get('/slanje-masovne-poruke/', $authenticated_admin(), function() use ($app) {
+        $app->render('admin/communication/broadcast.message.new.twig', array(
+            'admin' => $app->auth_admin,
+            'active_page' => "admin",
+            'active_item' => "admin.broadcast-message"
+        ));
+    })->name('admin.messages.broadcast.new');
+
+    $app->post('/slanje-masovne-poruke/', $authenticated_admin(), function() use ($app) {
+        $p_message = $app->request->post("message-body");
+        $sent_msg = Logger::logAdminBroadcastMessage($p_message);
+
+        $app->flash('admin_success', "Uspješno je poslana poruka svim članovima!");
+        $app->flash('sent_msg', $sent_msg);
+
+        $app->redirect($app->urlFor('admin.messages.broadcast.new'));
+
+    })->name('admin.messages.broadcast.new.post');
 });
 ?>

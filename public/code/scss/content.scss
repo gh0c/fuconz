@@ -35,7 +35,7 @@
       font-family: MuseoSans;
       font-weight: 600;
       padding: 8px .75em 6px .75em;
-      @include responsive-w-min(768px) {
+      @include responsive-w-min($tablet-bp) {
         padding: 10px 1em 8px 1em;
       }
       h1{
@@ -43,6 +43,9 @@
         font-size: 2em;
         text-transform: uppercase;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        @include responsive-w-max($mobile-mid-bp) {
+          font-size: 1.75em;
+        }
 
       }
     }
@@ -275,27 +278,7 @@
 
     }
 
-    .loading-gif-div {
-      z-index: 80;
-      text-align: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      color: $cibona-blue;
-      &:before {
-        content: '';
-        display: inline-block;
-        height: 100%;
-        vertical-align: middle;
-      }
-      i {
-        font-size: 10em;
-        display: inline-block;
-        vertical-align: middle;
-      }
-    }
+
 
 
 
@@ -316,6 +299,27 @@
 
 }
 
+.loading-gif-div {
+  z-index: 1100;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: $cibona-blue;
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  i {
+    font-size: 10em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
 
 
 

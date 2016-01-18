@@ -1,0 +1,155 @@
+<div class = "chat-conversation-holder" data-chat-conversation-hash = "{{ chat_room.hash }}">
+    <div class = "chatroom-title-container">
+        <div class = "chatroom-title inline-table">
+            {% set participants = chat_room.participantsWithoutMe(auth_user.id) %}
+            {% if participants|length > 1 %}
+                {% for participant in participants %}
+                    <div class = "participant-holder">
+                        <div class = "participant">
+                            {%  set avatar_url = participant.getAvatarURL('avatar',
+                            { "width": 20, "height": 20, "crop": "fill"}) %}
+                            <div class = "img-av-holder">
+                                {%  if avatar_url %}
+                                    <img src = "{{ avatar_url }}" />
+                                {% else %}
+                                    <i class = "fa fa-user"></i>
+                                {% endif %}
+                            </div>
+                            <span>{{ participant.username }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                {% for participant in participants %}
+                    <div class = "participant-holder">
+                        <div class = "participant">
+                            {%  set avatar_url = participant.getAvatarURL('avatar',
+                            { "width": 20, "height": 20, "crop": "fill"}) %}
+                            <div class = "img-av-holder">
+                                {%  if avatar_url %}
+                                    <img src = "{{ avatar_url }}" />
+                                {% else %}
+                                    <i class = "fa fa-user"></i>
+                                {% endif %}
+                            </div>
+                            <span>{{ participant.username }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+
+
+    <div class = "messages-container">
+    {% for message in chat_messages %}
+
+        <div class = "msg-m" id = "cm-{{ message.datetimeIdString() }}" data-author-id = "{{ message.sender.id }}">
+
+            {% if message.sender.id == auth_user.id %}
+
+                {% if (not(chat_messages[loop.index0 - 1]) or chat_messages[loop.index0 - 1].sender.id != message.sender.id) %}
+                    <div class = "msg-sender i-am-sender">
+                        <section class = "av-holder"></section><!--
+                        --><section class = "msg-b-holder">
+                            <div class = "sender-username">
+                                <span>{{ message.sender.username }}</span>
+                            </div>
+                        </section>
+                    </div>
+                {% endif %}
+
+                <div class = "msg-s my-m">
+                    {% set last_msg_in_r = not(chat_messages[loop.index0 + 1]) or chat_messages[loop.index0 + 1].sender.id != message.sender.id %}
+                    <section class = "av-holder">
+                        {% if (last_msg_in_r) %}
+                            {%  set avatar_url = message.sender.getAvatarURL('avatar',
+                            { "width": 22, "height": 22, "crop": "fill"}) %}
+                            <div class = "img-av-holder">
+                                {%  if avatar_url %}
+                                    <img src = "{{ avatar_url }}" />
+                                {% else %}
+                                    <i class = "fa fa-user"></i>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </section><!--
+
+                    --><section class = "msg-b-holder">
+                        <div class = "message-body{{ (last_msg_in_r)? ' last-in-a-row': ' not-last-in-a-row' }}">
+                            <div>
+                                <span>{{ message.message_body|raw|nl2br }}</span>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+
+            {% else %}
+
+                {% if (not(chat_messages[loop.index0 - 1]) or chat_messages[loop.index0 - 1].sender.id != message.sender.id) %}
+                    <div class = "msg-sender">
+                        <section class = "msg-b-holder">
+                            <div class = "sender-username">
+                                <span>{{ message.sender.username }}</span>
+                            </div>
+                        </section><!--
+                        --><section class = "av-holder"></section>
+                    </div>
+                {% endif %}
+
+                <div class = "msg-s not-my-m">
+                    {% set last_msg_in_r = not(chat_messages[loop.index0 + 1]) or chat_messages[loop.index0 + 1].sender.id != message.sender.id %}
+
+                    <section class = "msg-b-holder">
+                        <div class = "message-body{{ (last_msg_in_r)? ' last-in-a-row': ' not-last-in-a-row' }}">
+                            <div>
+                                <span>{{ message.message_body|raw|nl2br }}</span>
+                            </div>
+                        </div>
+                    </section><!--
+
+                    --><section class = "av-holder">
+                        {% if (last_msg_in_r) %}
+                            {%  set avatar_url = message.sender.getAvatarURL('avatar',
+                            { "width": 22, "height": 22, "crop": "fill"}) %}
+                            <div class = "img-av-holder">
+                                {%  if avatar_url %}
+                                    <img src = "{{ avatar_url }}" />
+                                {% else %}
+                                    <i class = "fa fa-user"></i>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </section>
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    {% endfor %}
+
+    </div>
+
+
+    <div class = "submit-message">
+        <div class = "textarea-holder">
+            <textarea placeholder="Tvoja poruka..." spellcheck="false" class = "textarea-submitter appending"></textarea><!--
+            --><div class = "lights-holder">
+                {#<i class = "light l-1 no fa fa-fw fa-circle"></i>#}
+            </div>
+        </div><!--
+        --><div class = "submitter-holder">
+            <div class = "submitter-cont">
+                <div class = "">
+                    <div class = "submitter submit bbb-flag-v-cibona-blue appender">
+                        <span class = "f-div-fw-mobile-mid">POŠALJI</span>
+                        <i class = "f-div-non-fw-mobile-mid fa fa-fw fa-envelope-o"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

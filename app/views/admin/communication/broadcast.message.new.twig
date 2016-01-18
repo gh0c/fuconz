@@ -1,0 +1,129 @@
+{% extends "admin/templates/default.twig" %}
+
+{% block title %}
+    Broadcast
+{% endblock %}
+
+{% block content %}
+
+
+    <div class = "main-block-cont">
+        <div class = "black-horiz-spacer-10"></div>
+
+        <div class = "main-title-box">
+            <div class = "inner-cont flag"></div>
+            <div class = "inner-cont page-title">
+                <h1>Slanje poruke svim članovima</h1>
+            </div>
+        </div>
+        <div class = "black-horiz-spacer-5"></div>
+
+        <div class = "main-content-box">
+            {% include "admin/templates/partials/admin_messages.twig" %}
+
+            {% if flash.sent_msg %}
+            <div class="horizontal-section text-centered">
+                <div class="inner-70pct">
+
+                    <div class="message item std-item has-been-read">
+                        <section class="td icon">
+                            <div class="icon-holder std-icon-holder">
+                                <div class="message-icon-cont std-icon-cont">
+                                    <div class="thumbnail message message-icon std-icon">
+                                        <div class="pic-cont std-pic-cont">
+                                            <i class="fa icon fa-fw fa-envelope-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section><!--
+
+                        --><section class="td message">
+                            <div class="message-holder">
+                                {{ flash.sent_msg | raw }}
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class = "inner-cont">
+                <div class = "form-container">
+
+                    <form method = "post" name = "admin-broadcast-new-message" id = "admin-broadcast-new-message"  onsubmit="return false;"
+                          action = "{{ urlFor('admin.messages.broadcast.new.post') }}">
+                        <div class = "inputs-container">
+
+
+                            <div class = "vertical-section text-centered ">
+                                <div class = "">
+
+                                    <textarea name="message-body" id="message-body" required
+                                            spellcheck="false" tabindex="1"
+                                           class = "std-textarea-input large-input-width req"></textarea>
+                                    <label id="message-body-label" class = "req" for = "message-body" data-info="Poruka"></label>
+
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+                        {% include "admin/templates/partials/live_status.container.twig" %}
+
+                        <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
+
+                        <div class = "submitter-cont">
+                            <div class = "">
+                                <div class = "submitter submit bbb-flag-v-cibona-blue" tabindex="2"
+                                     onclick="validateAndSubmitBroadcastNewMessage('admin-broadcast-new-message')">
+                                    <span>SLANJE</span>
+                                </div>
+                                <div class="submitter bbb-flag-v-cibona-blue reversed cancel">
+                                    <a href = "{{ urlFor('home') }}" tabindex="3">ODUSTANI</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            function valSub() {
+                if(formSubmittingActive == true) {
+                    validateAndSubmitBroadcastNewMessage('admin-broadcast-new-message');
+                    return false;
+                }
+            }
+//            $('#admin-broadcast-new-message').keydown(function(e) {
+//                if (e.keyCode == 13) {
+//                    valSub();
+//                }
+//            });
+            $('.submitter.submit').keydown(function(e) {
+
+                if (e.keyCode == 13) {
+                    valSub();
+                }
+            });
+        });
+    </script>
+
+{% endblock %}
+
+{% block additional_js %}
+    <script src="public/code/js/admin/validation_content.js"></script>
+    <script src="public/code/js/admin/validation.js"></script>
+
+{% endblock %}

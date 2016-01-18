@@ -27,6 +27,9 @@
 .relative-pos, .pos-relative, .relative-position {
   position: relative;
 }
+.strike {
+  text-decoration: line-through;
+}
 .multirow-inline {
   display: inline-block;
   vertical-align: top;
@@ -211,6 +214,14 @@ a.underline-link, span.underline {
   border-bottom: 2px dashed #0c131d;
   box-sizing: border-box;
 }
+.inline-table {
+  display: inline-table !important;
+  height: 100%;
+}
+.inline-table > * {
+  display: table-cell !important;
+  vertical-align: middle;
+}
 .flexbox {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -365,6 +376,16 @@ a.underline-link, span.underline {
 }
 @media only screen and (min-width: 480px) {
   .f-div-non-fw-mobile-mid {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 559px) {
+  .f-div-fw-mobile-large {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 560px) {
+  .f-div-non-fw-mobile-large {
     display: none !important;
   }
 }

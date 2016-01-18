@@ -222,6 +222,8 @@
 
                     --><a class = "booking course-finished
                         slot-{{ curr_date }}-{{ span.start_time_hour }}-{{ span.start_time_minutes }}-{{ span.training_course.id }}"
+                        href = "{{ urlFor('user.bookings.home') }}#b-{{
+                          curr_date}}-{{span.start_time_hour}}-{{ span.start_time_minutes}}"
                         data-date = "{{ curr_date }}"
                         data-description = "{{ span.descriptionString() }}"
                         title = "{{my_booking.myMenuDisplayStringHistory() }}">

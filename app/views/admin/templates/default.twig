@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% include 'admin/templates/partials/head_info.twig'%}
-    <title>{% block title %} {% endblock %}</title>
+    {% include 'templates/partials/head_info.twig'%}
+    <title>Admin | {% block title %}{% endblock %}</title>
 </head>
 
 
@@ -34,7 +34,7 @@
     {% include 'templates/std_footer.twig'%}
 
 
-{% include 'admin/templates/partials/foot_info.twig'%}
+{% include 'templates/partials/foot_info.twig'%}
 
 {% block additional_js %} {% endblock %}
 

@@ -30,7 +30,7 @@
   vertical-align: top;
 }
 #unread-messages .std-item.profile-home-message section.td.message {
-  max-width: 28em;
+  width: 28em;
   text-align: left;
 }
 #unread-messages .std-item.profile-home-message section.td.message .time-label-holder {

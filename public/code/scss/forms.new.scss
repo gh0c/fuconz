@@ -1,6 +1,7 @@
 @import "modules/_modules.import";
 
 $std-input-height: 40px;
+$std-textarea-height: 120px;
 
 $std-input-width: 24em;
 $large-input-width: 32em;
@@ -78,7 +79,8 @@ $label-padding-left-delta: 28px;
   .std-text-input,
   .large-text-input,
   .medium-text-input,
-  .small-text-input {
+  .small-text-input,
+  .std-textarea-input{
     font-family: MuseoSans;
     font-weight: 600;
 
@@ -95,6 +97,17 @@ $label-padding-left-delta: 28px;
     outline: none;
     color: $dark-dark-blue;
     height: $std-input-height;
+  }
+
+  .std-text-input,
+  .large-text-input,
+  .medium-text-input,
+  .small-text-input {
+
+    height: $std-input-height;
+  }
+  .std-textarea-input {
+    height: $std-textarea-height;
   }
 
 
@@ -192,7 +205,8 @@ $label-padding-left-delta: 28px;
   .std-text-input + label,
   .large-text-input + label,
   .medium-text-input + label,
-  .small-text-input + label {
+  .small-text-input + label,
+  .std-textarea-input + label {
     //    background-color: rgba(0, 190, 60, .45); /// <<<<
     font-family: 'Raleway',Arial,sans-serif;
     font-weight: 100;
@@ -246,7 +260,7 @@ $label-padding-left-delta: 28px;
       @include pp-transition(0.3s ease-in-out);
 
       color: $dark-blue-dark;
-      width: 2em;
+      width: 2.5em;
       font-family: FontAwesome;
       position: absolute;
       text-align: center;
@@ -269,7 +283,8 @@ $label-padding-left-delta: 28px;
   .std-text-input,
   .large-text-input,
   .medium-text-input,
-  .small-text-input {
+  .small-text-input,
+  .std-textarea-input {
     &:focus {
       border-color: $dark-blue-light;
       @include box-shadow(inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1),
@@ -312,7 +327,7 @@ $label-padding-left-delta: 28px;
 
   input[type="radio"].rb-input,
   input[type="checkbox"].cb-input,
-  input[type="file"].file-input{
+  input[type="file"].file-input {
 
     & + .radio-div-cont, & + .checkbox-div-cont, & + .file-div-cont {
       font-family: MuseoSans;
@@ -666,6 +681,7 @@ div.info {
     width: 100%;
     text-align: center;
     min-height: $message-line-height;
+    height: $message-line-height;
     border-bottom: 2px dashed $dark-dark-blue;
     //    border-top: 2px dashed $dark-dark-blue;
     @include pp-transition(all 0.5s ease);
@@ -728,8 +744,9 @@ div.info {
       font-family: MuseoSans;
       font-weight: 600;
       text-align: center;
-      padding: 0.3em 1em 0.3em 1em;
+      padding: 0.25em 1em 0.25em 1em;
       min-height: $message-line-height;
+      height: $message-line-height;
       line-height: 125%;
       font-size: 16px;
     }
@@ -760,10 +777,12 @@ div.info {
 
     &.msg {
       min-height: 3em;
+      height: 3em;
       vertical-align: middle;
 
       & > h4 {
         min-height: 2em;
+        height: 2em;
         vertical-align: middle;
         display: table-cell;
         //        padding-right: 0;

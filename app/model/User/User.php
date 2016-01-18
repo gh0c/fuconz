@@ -6,9 +6,11 @@ use app\model\Content\Image;
 use app\model\Database\DatabaseConnection;
 use \app\model\Messages\Message;
 use app\helpers\Hash;
+use \app\model\Chat\ChatRoom;
+use \app\model\Chat\ChatMessage;
+
 use app\helpers\General;
 use \PDO;
-use \PDOException;
 use \app\model\Match\Game;
 use \app\helpers\Calendar;
 
@@ -174,6 +176,29 @@ class User
         $sql = "SELECT * FROM users WHERE active = 1 ORDER BY {$order_by} LIMIT :limit";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $list = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $user = new User($row);
+                $list[] = $user;
+            }
+            return $list;
+        }
+        else {
+            return array();
+        }
+
+    }
+
+
+    public static function getActiveUsersWithoutMe($id, $limit = 1000000, $order_by = "username ASC") {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "SELECT * FROM users WHERE active = 1 AND id <> :id ORDER BY {$order_by} LIMIT :limit";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
@@ -478,7 +503,7 @@ class User
     public function deleteOldImages()
     {
 //        $this->deleteImage("avatar");
-        $status = Image::deleteAssociationsForEntityWithFlag($this->id, "user", "avatar");
+        Image::deleteAssociationsForEntityWithFlag($this->id, "user", "avatar");
     }
 
 
@@ -500,15 +525,7 @@ class User
         $stmt->bindParam(':new_pass', $hashed_pass, PDO::PARAM_STR);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
 
-        try {
-            $stmt->execute();
-            $status["success"] = true;
-            return $status;
-        } catch (\Exception $e) {
-            $status["success"] = false;
-            $status["err"] = $e->getMessage();
-            return $status;
-        }
+
     }
 
 
@@ -622,6 +639,19 @@ class User
     public function numberOfMessages()
     {
         return Message::numberOfMessagesForReceiver($this->id, "user");
+    }
+
+
+
+
+    public function chatConversationWith($user_id)
+    {
+        return ChatRoom::getSingleByTwoUsers($this->id, $user_id);
+    }
+
+    public function numberOfHotChatrooms()
+    {
+        return ChatRoom::numberOfHotChatrooms($this->id);
     }
 
 

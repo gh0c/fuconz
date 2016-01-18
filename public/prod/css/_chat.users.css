@@ -1,0 +1,140 @@
+/*********************
+ BREAKPOINTS
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */.chat-content-holder nav.chat-nav-filters .filter.filter-users {
+  background: #12408d;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user {
+  width: 90%;
+  max-width: 30em;
+  border-right: 1px solid #eaeef1;
+  height: 3em;
+  margin-bottom: 0.25em;
+  position: relative;
+}
+@media only screen and (min-height: 640px) {
+  .chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user {
+    margin-bottom: 0.375em;
+    height: 3.375em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .user-info {
+  display: inline-table;
+  height: 100%;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .user-info > div {
+  padding: 0 0 0 6px;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .user-info > div .img-holder {
+  width: 36px;
+  height: 36px;
+  -webkit-border-radius: 4em;
+  -moz-border-radius: 4em;
+  border-radius: 4em;
+  -webkit-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  -moz-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  text-align: center;
+  display: inline-block;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .user-info > div .img-holder img {
+  -webkit-border-radius: 4em;
+  -moz-border-radius: 4em;
+  border-radius: 4em;
+  position: relative;
+  top: 3px;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .user-info > div .img-holder > i {
+  display: inline-table;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .user-info > div .img-holder > i:before {
+  font-size: 24px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .user-info > div > i {
+  display: inline-table;
+  height: 100%;
+  font-size: 24px;
+  padding: 6px 0;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .user-info > div > i:before {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .user-info > div > span {
+  height: 36px;
+  padding: 0 0 0 6px;
+  line-height: 36px;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .existing-conversation-info {
+  display: inline-table;
+  height: 100%;
+  overflow: hidden;
+  vertical-align: bottom;
+  right: 0.25em;
+  top: 0;
+  width: 2em;
+  text-align: center;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .existing-conversation-info > i.fa.ico-m {
+  display: table-cell;
+  vertical-align: middle;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .existing-conversation-info > i.fa.ico-m.not-exist {
+  opacity: 0.15;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .existing-conversation-info > i.fa.ico-m.unread {
+  color: white;
+  font-size: 1.25em;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .existing-conversation-info > i.fa.unread-overlay-anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-table;
+  -webkit-animation: horizontal-alarm-frames 6s ease infinite;
+  -moz-animation: horizontal-alarm-frames 6s ease infinite;
+  -o-animation: horizontal-alarm-frames 6s ease infinite;
+  animation: horizontal-alarm-frames 6s ease infinite;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .existing-conversation-info > i.fa.unread-overlay-anim:before {
+  display: table-cell;
+  vertical-align: middle;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .existing-conversation-info .hot-msg-card {
+  position: absolute;
+  top: 15%;
+  right: -2%;
+  z-index: 5;
+  font-size: 0.625em;
+}
+@media only screen and (min-width: 480px) {
+  .chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .existing-conversation-info .hot-msg-card {
+    right: -7%;
+  }
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .existing-conversation-info .hot-msg-card .msg-card {
+  color: orangered;
+  margin: 0;
+}
+.chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .existing-conversation-info .hot-msg-card .number {
+  margin: 0;
+  font-size: 1.125em;
+  color: white;
+  font-family: MuseoSans;
+  font-weight: 600;
+}

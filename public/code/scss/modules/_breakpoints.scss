@@ -63,3 +63,20 @@ $L:     1170px;
   @media only screen and (min-height: $canvas) { @content; }
 
 }
+
+
+@mixin responsive-w-h-min($canvas-w, $canvas-h) {
+  @media only screen and (min-height: $canvas-h) and (min-width: $canvas-w) { @content; }
+}
+
+@mixin responsive-w-h-max($canvas-w, $canvas-h) {
+  @media only screen and (max-height: $canvas-h) and (max-width: $canvas-w) { @content; }
+}
+
+@mixin responsive-w-max-h-min($canvas-w, $canvas-h) {
+  @media only screen and (min-height: $canvas-h) and (max-width: $canvas-w) { @content; }
+}
+
+@mixin responsive-w-min-h-max($canvas-w, $canvas-h) {
+  @media only screen and (max-height: $canvas-h) and (min-width: $canvas-w) { @content; }
+}

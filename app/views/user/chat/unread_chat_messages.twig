@@ -1,0 +1,90 @@
+
+{% for message in chat_messages %}
+
+    <div class = "msg-m" id = "cm-{{ message.datetimeIdString() }}"  data-author-id = "{{ message.sender.id }}">
+
+        {% if message.sender.id == auth_user.id %}
+
+            {% if (not(chat_messages[loop.index0 - 1]) or chat_messages[loop.index0 - 1].sender.id != message.sender.id) %}
+                <div class = "msg-sender i-am-sender">
+                    <section class = "av-holder"></section><!--
+                    --><section class = "msg-b-holder">
+                        <div class = "sender-username">
+                            <span>{{ message.sender.username }}</span>
+                        </div>
+                    </section>
+                </div>
+            {% endif %}
+
+            <div class = "msg-s my-m">
+                {% set last_msg_in_r = not(chat_messages[loop.index0 + 1]) or chat_messages[loop.index0 + 1].sender.id != message.sender.id %}
+                <section class = "av-holder">
+                    {% if (last_msg_in_r) %}
+                        {%  set avatar_url = message.sender.getAvatarURL('avatar',
+                        { "width": 22, "height": 22, "crop": "fill"}) %}
+                        <div class = "img-av-holder">
+                            {%  if avatar_url %}
+                                <img src = "{{ avatar_url }}" />
+                            {% else %}
+                                <i class = "fa fa-user"></i>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </section><!--
+
+                --><section class = "msg-b-holder">
+                    <div class = "message-body{{ (last_msg_in_r)? ' last-in-a-row': ' not-last-in-a-row' }}">
+                        <div>
+                            <span>{{ message.message_body|raw|nl2br }}</span>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+        {% else %}
+
+            {% if (not(chat_messages[loop.index0 - 1]) or chat_messages[loop.index0 - 1].sender.id != message.sender.id) %}
+                <div class = "msg-sender">
+                    <section class = "msg-b-holder">
+                        <div class = "sender-username">
+                            <span>{{ message.sender.username }}</span>
+                        </div>
+                    </section><!--
+                    --><section class = "av-holder"></section>
+                </div>
+            {% endif %}
+
+            <div class = "msg-s not-my-m">
+                {% set last_msg_in_r = not(chat_messages[loop.index0 + 1]) or chat_messages[loop.index0 + 1].sender.id != message.sender.id %}
+
+                <section class = "msg-b-holder">
+                    <div class = "message-body{{ (last_msg_in_r)? ' last-in-a-row': ' not-last-in-a-row' }}">
+                        <div>
+                            <span>{{ message.message_body|raw|nl2br }}</span>
+                        </div>
+                    </div>
+                </section><!--
+
+                --><section class = "av-holder">
+                    {% if (last_msg_in_r) %}
+                        {%  set avatar_url = message.sender.getAvatarURL('avatar',
+                        { "width": 22, "height": 22, "crop": "fill"}) %}
+                        <div class = "img-av-holder">
+                            {%  if avatar_url %}
+                                <img src = "{{ avatar_url }}" />
+                            {% else %}
+                                <i class = "fa fa-user"></i>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </section>
+            </div>
+
+        {% endif %}
+
+    </div>
+
+{% endfor %}
+
+

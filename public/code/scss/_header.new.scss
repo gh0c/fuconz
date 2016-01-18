@@ -13,9 +13,26 @@
   background-color: $cibona-blue;
   background-image: none;
   .navbar-brand {
-    padding: 4px 15px;
+    font-size: initial;
+    padding: 0.25rem 1rem;
     margin: 0;
-    height: 58px;
+    height: $header-height;
+
+    @include responsive-w-max($mobile-mid-bp - 1px) {
+      padding: 4px 12px;
+      width: 10em;
+    }
+
+    .img-helper {
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    img {
+      vertical-align: middle;
+      max-width: 100%;
+      display: inline-block;
+    }
   }
   .navbar-nav.menu {
     font-family: MuseoSans;
@@ -197,6 +214,9 @@ nav.secondary.user {
     @include responsive-w-min($tablet-bp) {
       display: none;
     }
+    @include responsive-w-max(359px) {
+      width: 100%;
+    }
 
     padding: 0.5em 1em;
 
@@ -238,6 +258,7 @@ nav.secondary.user {
         width: 3em;
         height: 3em;
         position: relative;
+        margin: 0 auto;
         @include rounded($opener-button-border-radius);
       }
 
@@ -324,7 +345,7 @@ nav.secondary.user {
       }
       .link-icon-fww {
         @include responsive-w-min($mobile-mid-bp) {
-          font-size:1.2;
+          font-size:1.2em;
         }
         @include responsive-w-max(399px) {
           font-size: 1.2em;
@@ -338,10 +359,10 @@ nav.secondary.user {
       line-height: 4em;
       @include box-sizing(border-box);
       //          border-bottom: 2px dashed transparent;
-
+      cursor: pointer;
       color: $dark-dark-blue;
       @include pp-transition(background-color .25s ease-out, color .25s ease-out, border .25s ease-out);
-      padding: 0 18px 0 8px;
+      padding: 0 18px 0 0.5em;
 
       @include responsive-w-min($mobile-mid-bp) {
         padding: 0 25px 0 10px;
@@ -354,7 +375,7 @@ nav.secondary.user {
       }
 
       span.link-label-fw {
-        @include responsive-w-max(569px) {
+        @include responsive-w-max($mobile-huge-bp - 1px) {
           display: none;
         }
       }
@@ -365,9 +386,9 @@ nav.secondary.user {
       }
     }
     li.no-dropdown a {
-      padding: 0 20px 0 20px;
+      padding: 0 1.25em 0 1.25em;
       @include responsive-w-min(400px) {
-        padding: 0 10px 0 10px;
+        padding: 0 1em 0 1em;
       }
     }
   }
@@ -423,9 +444,33 @@ nav.secondary.user {
       &.faa-horizontal {
         @include pp-animation(horizontal-alarm-frames 6s ease infinite, alarm-text-shadow-red-frames 6s ease infinite);
       }
-
+      &.faa-horizontal-2 {
+        @include pp-animation(horizontal-alarm-frames 3s ease infinite, alarm-text-shadow-red-frames 3s ease infinite);
+      }
     }
   }
+
+  li.no-dropdown > a {
+
+    .alarm {
+      position: absolute;
+      left: 40px;
+      @include responsive-w-min(400px) {
+        left: 36px;
+      }
+      top: 20%;
+      font-size: .7em;
+      color: orangered;
+      &.faa-horizontal {
+        @include pp-animation(horizontal-alarm-frames 6s ease infinite, alarm-text-shadow-red-frames 6s ease infinite);
+      }
+      &.faa-horizontal-2 {
+        @include pp-animation(horizontal-alarm-frames 2s ease infinite, alarm-text-shadow-red-frames 2s ease infinite);
+      }
+    }
+  }
+
+
 
   li.dropdown.active > span,
   li.no-dropdown.active a{

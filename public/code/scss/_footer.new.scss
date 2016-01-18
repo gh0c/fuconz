@@ -1,6 +1,5 @@
 @import "modules/modules.import";
 
-$footer-height: 7em;
 
 
 
@@ -9,7 +8,7 @@ $footer-height: 7em;
   padding-top: 15px;
   text-align: center;
   color: #BBB;
-  display: none;
+//  display: none;
 
 
   nav.footer {
@@ -27,6 +26,7 @@ $footer-height: 7em;
       }
       .fa {
         padding: 0 1em 0 .2em;
+
       }
     }
   }

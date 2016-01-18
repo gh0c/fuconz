@@ -144,3 +144,22 @@ function validateAndSubmitGame(formName) {
         myForm.submit();
     }, 1000);
 }
+
+
+function validateAndSubmitBroadcastNewMessage(formName) {
+    if(!haltFormSubmitting()) {
+        return false;
+    }
+    var myForm = document.forms[formName];
+
+    expandInfoPanel("Provjera ispravnosti formata unesenih podataka");
+
+    setTimeout (function() {
+        if (myForm["message-body"].value == "" ) {
+            if (!errorStatus("Niste upisali poruku!", myForm["message-body"])) {
+                return false;
+            }
+        }
+        myForm.submit();
+    }, 1000);
+}

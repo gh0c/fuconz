@@ -6,13 +6,14 @@
 </head>
 
 <body>
+    {% if auth_user %}
+        {% include 'user/chat.overlay.twig' %}
+    {% endif %}
+
 
     <div class = "a-level-holder">
 
-        <!-- sidebar for logged users -->
-        {%  if auth_user.show_sidebar %}
-            {% include 'user/user.sidebar.twig' %}
-        {% endif %}
+
 
         <div class = "content-wrap">
             <div class = "content">
@@ -36,11 +37,14 @@
 
 {% include 'templates/partials/foot_info.twig'%}
 
+{% if auth_user %}
+    <script src="public/code/js/chat/chat_menu.js"></script>
+    <script src="public/code/js/chat/chat_sections.js"></script>
+
+{% endif %}
+
 {% block additional_js %}
-    {% if auth_user.show_sidebar %}
-        <script src="public/js/SideslideSidebar/classie.js"></script>
-        <script src="public/js/SideslideSidebar/main.js"></script>
-    {% endif %}
+
 {% endblock %}
 </body>
 

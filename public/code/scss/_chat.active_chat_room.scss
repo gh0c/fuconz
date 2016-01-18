@@ -1,0 +1,495 @@
+@import 'modules/modules.import';
+
+.chat-content-holder nav.chat-nav-filters .filter.filter-current-chat {
+  .current-chat-messages-container {
+    height: 100%;
+
+    & > div {
+      position: absolute;
+      display: block;
+      bottom: 0;
+      right: 0;
+      max-height: 100%;
+
+      height: 100%;
+
+      width: 100%;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+
+      @include responsive-w-min($mobile-mid-bp) {
+        max-width: 26em;
+      }
+
+      left: 0;
+      margin: 0 auto;
+//      @include responsive-w-max($mobile-huge-bp - 1px) {
+//        left: 0;
+//        margin: 0 auto;
+//      }
+    }
+
+    .chat-conversation-holder {
+      background:$light-blue-gray-light;
+      color: $dark-dark-blue;
+
+      display: block;
+      overflow: hidden;
+      text-align: left;
+      height: 100%;
+
+      // aim for desktop
+      @include responsive-w-h-min($tablet-bp, $mobile-h-large-bp) {
+        max-height: 26em;
+      }
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      &:before {
+        display: table;
+        content: " ";
+      }
+
+      $chat-room-title-cont-h: 2.25em;
+      $submitter-area-cont-h: 3.75em;
+
+      .chatroom-title-container {
+        display: block;
+        height: $chat-room-title-cont-h;
+        border-bottom: 2px solid $dark-dark-blue;
+        overflow: hidden;
+
+        .chatroom-title {
+          padding: 0 5px;
+          display: block;
+          overflow: hidden;
+
+          $participant-av-h: 20px;
+          $participant-av-cont-h: 22px;
+          $participant-av-border-r: 2em;
+          $participant-av-icon-size: 14px;
+
+
+          .participant {
+            //            height: 100%;
+            position: relative;
+            display: inline-block;
+
+            padding-left: 0.125em;
+            padding-right: 0.125em;
+
+            border-left: 1px solid $light-blue-gray-light;
+            &:first-of-type {
+                border-left: 1px solid transparent;
+            }
+            span {
+              display: inline-block;
+              vertical-align: middle;
+              font-size: 0.9em;
+
+            }
+            .img-av-holder {
+              width: $participant-av-cont-h;
+              height: $participant-av-cont-h;
+              @include rounded($participant-av-border-r);
+
+              margin-right: 0.25em;
+              margin-left: 0.0625em;
+
+
+              @include box-shadow(inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1),
+                0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40));
+              text-align: center;
+              display: inline-block;
+              vertical-align: middle;
+              position: relative;
+              img {
+                @include rounded($participant-av-border-r);
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+
+                top: ($participant-av-cont-h - $participant-av-h)/2;
+              }
+              & > i {
+                display: inline-table;
+                height: 100%;
+                font-size: $participant-av-icon-size;
+
+                padding-top: ($participant-av-h - $participant-av-icon-size)/2;
+                padding-bottom: ($participant-av-h - $participant-av-icon-size)/2;
+
+                &:before {
+                  position: relative;
+                  display: table-cell;
+                  vertical-align: middle;
+                }
+              }
+            }
+          }
+
+          & > span {
+            font-size: 0.9em;
+            display: inline-block;
+            width: 100%;
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden !important;
+            text-overflow: ellipsis;
+          }
+          .img-avatar-holder {
+            display: inline-block;
+          }
+        }
+      }
+
+      .messages-container {
+        @include calc(height, 100% - #{$chat-room-title-cont-h} - #{$submitter-area-cont-h});
+
+        vertical-align: bottom;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        border-bottom: 4px solid $dark-dark-blue;
+
+        .msg-m {
+          .msg-sender, .msg-s {
+            & > section {
+              display: inline-block;
+              position: relative;
+              vertical-align: bottom;
+            }
+            & > section.av-holder {
+              width: 25%;
+            }
+            & > section.msg-b-holder {
+              width: 75%;
+            }
+          }
+
+          .msg-s {
+            & > section.av-holder {
+              text-align: center;
+              $msg-sender-avatar-h: 22px;
+              $msg-sender-avatar-cont-h: 26px;
+              $msg-sender-avatar-border-radius: 2em;
+              .img-av-holder {
+                width: $msg-sender-avatar-cont-h;
+                height: $msg-sender-avatar-cont-h;
+                @include rounded($msg-sender-avatar-border-radius);
+                position: relative;
+                bottom: 3px;
+
+                @include box-shadow(inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1),
+                  0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40));
+                text-align: center;
+                display: inline-block;
+                vertical-align: middle;
+                img {
+                  @include rounded($msg-sender-avatar-border-radius);
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  margin: 0 auto;
+                  top: ($msg-sender-avatar-cont-h - $msg-sender-avatar-h)/2;
+                }
+                & > i {
+                  display: inline-table;
+                  height: 100%;
+                  font-size: 20px;
+                  padding-top: ($msg-sender-avatar-cont-h - 20px)/2;
+                  padding-bottom: ($msg-sender-avatar-cont-h - 20px)/2;
+                  &:before {
+                    position: relative;
+                    display: table-cell;
+                    vertical-align: middle;
+                  }
+                }
+              }
+            }
+
+            $message-body-bubble-border-radius: 6px;
+            $message-body-bubble-border-r-big: 18px;
+            & > section.msg-b-holder {
+
+              .message-body {
+                position: relative;
+                @include font-size(14px);
+
+                padding: 2px 5px 3px 5px;
+                @include rounded($message-body-bubble-border-radius);
+                margin-bottom: 2px;
+                border: 1px solid transparent;
+
+                min-width: 60%;
+                max-width: 90%;
+                @include responsive-w-max($mobile-mid-bp - 1px) {
+                  min-width: 65%;
+                  max-width: 95%;
+                }
+                display: inline-table;
+
+                min-height: 28px;
+
+                & > * {
+                  vertical-align: middle;
+                  display: table-cell;
+                }
+
+                &.last-in-a-row:after {
+                  position: absolute;
+                  display: block;
+                  content: '';
+                  height: 1px;
+                  width: 1px;
+                  margin: auto;
+                  box-sizing: content-box;
+//                  top: 0;
+//                  bottom: 0;
+                  bottom: $message-body-bubble-border-radius;
+                  border: solid 4px transparent;
+
+                }
+              }
+            }
+
+            &.my-m {
+              & > section.msg-b-holder {
+                padding-right: 1.25em;
+                @include responsive-w-max($mobile-mid-bp - 1px) {
+                  padding-right: 1em;
+                }
+                text-align: left;
+                .message-body {
+                  text-align: left;
+                  background-color: rgba(white, 0.9);
+                  border-color: rgba($dark-blue-light, .2);
+                  padding-right: 1.25em;
+                  @include rounded-ne($message-body-bubble-border-r-big);
+                  @include rounded-se($message-body-bubble-border-r-big);
+
+                  &.last-in-a-row:after {
+                    border-right: solid 4px rgba($dark-blue-light, .2);
+                    left: -9px;
+                    right: auto;
+                  }
+                }
+              }
+              & > section.av-holder {
+                .img-av-holder {
+                  left: 15%;
+                  background-color: rgba(white, 0.9);
+
+                }
+              }
+            }
+
+            &.not-my-m {
+              & > section.msg-b-holder {
+                padding-left: 1.25em;
+                @include responsive-w-max($mobile-mid-bp - 1px) {
+                  padding-left: 1em;
+                }
+                text-align: right;
+                .message-body {
+                  text-align: left;
+                  background-color: rgba($dark-blue-light, 0.08);
+                  border-color: rgba($dark-blue-dark, .2);
+                  padding-left: 1.25em;
+                  @include rounded-nw($message-body-bubble-border-r-big);
+                  @include rounded-sw($message-body-bubble-border-r-big);
+                  &.last-in-a-row:after {
+
+                    border-left: solid 4px rgba($dark-blue-dark, .2);
+                    right: -9px;
+                    left: auto;
+                  }
+                }
+              }
+              & > section.av-holder {
+                .img-av-holder {
+                  right: 15%;
+                  background-color: rgba($dark-blue-light, 0.1);
+
+                }
+              }
+            }
+          }
+
+          .msg-sender {
+            margin-top: 3px;
+
+            .sender-username {
+              text-align: right;
+              padding-right: 1em;
+              span{
+                font-size: 12px;
+              }
+            }
+
+            &.i-am-sender {
+              .sender-username {
+                text-align: left;
+                padding-left: 1em;
+              }
+            }
+          }
+        }
+      }
+
+
+
+      .submit-message {
+        background: white;
+        height:$submitter-area-cont-h;
+        .textarea-holder,
+        .submitter-holder {
+          display: inline-table;
+          line-height: normal;
+          vertical-align: middle;
+        }
+
+        .textarea-holder {
+
+          cursor: text;
+          max-height: 80px;
+          min-height: 16px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          padding: 0 0.5em;
+          position: relative;
+          width: 72%;
+          height: 100%;
+          textarea {
+            font-size: 13px;
+            position: relative;
+            padding: 4px 8px 8px 4px;
+            width: 94%;
+            resize: none;
+            min-height: 16px;
+            height: 44px;
+            top: 8px;
+            box-shadow: 1px 1px 4px lightgrey;
+
+            &:focus {
+              box-shadow: 1px 1px 4px darkgrey;
+            }
+          }
+          .lights-holder {
+            display: inline-block;
+            width: 6%;
+            vertical-align: top;
+            text-align: center;
+            height: 44px;
+            top: 8px;
+            position: relative;
+            .light {
+              font-size: .625em;
+              color: blueviolet;
+              @include pp-transition(color .6s ease-out);
+              vertical-align: top;
+              padding: 2px 0;
+              margin: 0;
+              position: relative;
+              display: block;
+
+              &.no {
+                color: rgba(white, 0);
+              }
+              &.act {
+                color: dodgerblue;
+              }
+              &.pend {
+                color: orange;
+              }
+              &.canc {
+                color: rgba(red, .7);
+              }
+              &.end {
+                color: lightseagreen;
+              }
+            }
+          }
+        }
+
+        .submitter-holder {
+          width: 28%;
+//          background-color: darkcyan;
+
+          .submitter-cont {
+            padding: 3px 0.25em;
+            & > div {
+              font-family: MuseoSans;
+              font-weight: 600;
+              text-align: center;
+            }
+
+            .submitter {
+              text-align: center;
+              cursor: pointer;
+              display: inline-block;
+              @include pp-transition(all 0.10s ease-in);
+//              @include rounded(0.5em);
+              @include responsive-w-min($mobile-mid-bp) {
+                @include rounded(1.5em);
+              }
+              border: 1px solid black;
+              @include box-sizing(border-box);
+              &.submit {
+                min-width: 3.5em;
+                @include responsive-w-min($mobile-mid-bp) {
+                  width: 6.5em;
+                }
+                span {
+                  font-size: 0.9em;
+                }
+              }
+              span, a{
+                color: $light-blue-gray-light;
+                padding: 0.25em 0.25em;
+                display: block;
+                //      height: 100%;
+              }
+              i.fa {
+                padding: 0.375em 0;
+                color: $light-blue-gray-light;
+                &:before {
+                  font-size: 1.25em;
+                }
+              }
+
+              &.bbb-flag-v-cibona-blue.submit {
+                &:hover, &:focus {
+                  @include box-shadow(inset 0 0 8px rgba(0,0,0,0.8), 0 0 16px $dark-blue-dark);
+                }
+                &:active {
+                  @include box-shadow(inset 0 0 12px rgba(0,0,0,1), 0 0 18px $dark-blue-dark);
+                  span, a, i {
+                    color: white;
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+
+.filter-section-desc-holder nav.section-desc-filters {
+
+  .filter.filter-current-chat {
+//    background-color: rosybrown;
+    .current-chat-room-container {
+      border-left: 5px solid $dark-dark-blue;
+      border-right: 5px solid $dark-dark-blue;
+      font-size: 0.75em;
+      padding: 0 1em;
+    }
+  }
+}

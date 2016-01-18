@@ -13,5 +13,7 @@ try {
     require 'app/start.php';
     $app->run();
 
-} catch (\Exception $e) {echo "Greška: " . $e->getMessage();}
+} catch (\Exception $e) {
+    echo "<pre>Greška: <br>" . $e->getMessage() ."</pre>";
+}
 

@@ -33,7 +33,7 @@
                     </div>
                 </section><!--
 
-            --><section class = "td has-been-read-status">
+                --><section class = "td has-been-read-status">
                     <div class = "status-holder">
                         {% if message.has_been_read == 0 %}
                             <a class="has-been-read-status-changer active"
@@ -48,6 +48,8 @@
             </div>
         </div>
     {% endfor %}
+
+
 {% endif %}
 
 <a href = "{{ urlFor('user.messages.home') }}" class = "external-link-holder">

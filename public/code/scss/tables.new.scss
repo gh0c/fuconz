@@ -381,10 +381,13 @@ $message-line-height: 3em;
     margin-left: 2px;
     margin-right: 2px;
     @include responsive-w-min(500px) {
+      margin-left: 0.25em;
+      margin-right: 0.25em;
+    }
+    @include responsive-w-min($breakpoint-2) {
       margin-left: 0.5em;
       margin-right: 0.5em;
     }
-
 
   }
 

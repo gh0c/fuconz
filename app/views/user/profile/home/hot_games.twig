@@ -35,7 +35,7 @@
                                     {% elseif my_game.playersStatus(auth_user.id) == 2  and not my_game.after_extra_time %}
                                         <i class = "fa icon loss fa-fw fa-flag"></i>
                                     {% elseif my_game.playersStatus(auth_user.id) == 3 or my_game.after_extra_time %}
-                                        <i class = "fa icon draw fa-fw fa-flag-o"></i>
+                                        <i class = "fa icon draw fa-fw fa-flag"></i>
                                     {% else %}
                                         <i class="icon fa fa-fw fa-question"></i>
                                     {% endif %}

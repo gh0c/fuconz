@@ -35,7 +35,7 @@ class CsrfMiddleware extends Middleware
                 if (isset($json_data_received[$this->key])) {
                     $submittedToken = $json_data_received[$this->key] ?: '';
                 } else {
-                    $submittedToken = '';
+                    $submittedToken = '...';
                 }
 
             } else {
@@ -45,8 +45,10 @@ class CsrfMiddleware extends Middleware
                 if($this->app->request->isAjax()) {
                     header('Content-Type: application/json');
                     echo json_encode(array(
-                        "error" =>"Nepodudaranje ili nepostojanje CSRF tokena. Vjerojatno je stavljena nova verzija aplikacije koja je prebrisala stare postavke.".
-                            "Pokušaj refreshati stranicu (i to na način da lupiš enter u address-baru u pregledniku, a ne samo F5 ili refresh)\nJavi ako se problem nastavi. Hvala."
+                        "error" =>"AJAX poziv - pogreška: Nepodudaranje ili nepostojanje CSRF tokena. \n" .
+                            "Vjerojatno je stavljena nova verzija aplikacije koja je prebrisala stare postavke.".
+                            "Pokušaj refreshati stranicu (i to na način da lupiš enter u address-baru u pregledniku, ".
+                            "a ne samo F5 ili refresh)\nJavi ako se problem nastavi. Hvala."
                     ));
                     exit();
                 } else {

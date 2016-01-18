@@ -56,6 +56,33 @@ class Logger
     }
 
 
+    public static function logAdminBroadcastMessage($msg)
+    {
+        //append admin signature
+        $msg .= "<br>".
+            "<div class='std-item sender'>".
+            "<div class = 'msg-sender-icon-holder std-icon-holder'>" .
+            "<div class = 'msg-avatar-cont std-icon-cont'>".
+            "<div class = 'thumbnail sender msg-icon std-icon no-avatar'>" .
+            "<div class='pic-cont std-pic-cont'>".
+            "<span class='v-align-helper'></span><img src='public/graphics/admin.jpg'/>".
+            "</div>".
+            "</div>".
+            "</div>".
+            "</div>" .
+            "<div class = 'sender-label'><span>Admin Gh0C</span></div>".
+            "</div>";
+        $all_users = User::getUsers();
+        foreach($all_users as $user) {
+            Message::createNew("user", $user->id, $msg);
+        }
+
+        return $msg;
+
+    }
+
+
+
     public static function logClassicUserLogin($user)
     {
         // Messages

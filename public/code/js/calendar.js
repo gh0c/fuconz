@@ -198,20 +198,24 @@ var removeGifs = (function(){
     var $containers = $(".calendar-container");
 
     var gifs = $(".loading-gif-div");
-    $containers.find("> *").css("opacity", "initial");
+    $containers.find("> *").css("opacity", "1");
     gifs.remove();
     $containers.removeClass("disabled-button");
 });
 
 
 var disableForm = (function(form) {
-    form.addClass("disabled-button");
+    if (form.length > 0){
+        form.addClass("disabled-button");
+    }
     appendGifs();
 });
 
 var reEnableForm = (function(form) {
     removeGifs();
-    form.removeClass("disabled-button");
+    if (form.length > 0){
+        form.removeClass("disabled-button");
+    }
     enableFormSubmiting();
 });
 

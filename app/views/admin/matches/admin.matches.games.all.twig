@@ -19,10 +19,13 @@
         <div class = "black-horiz-spacer-5"></div>
 
         <div class = "main-content-box">
-            <div class = "inner-cont">
+
+            {% include "admin/templates/partials/admin_messages.twig" %}
 
 
-                {% include "admin/templates/partials/admin_messages.twig" %}
+            <div class = "inner-cont-beta">
+
+
 
                 <div class = "content-column">
 
@@ -42,21 +45,21 @@
 
                             <div class = "th width-10em margin-std-lr">
                                 <h4>Naziv</h4>
-                            </div>
+                            </div><!--
 
-                            <div class = "th width-12em margin-std-lr">
+                            --><div class = "th width-10em margin-std-lr">
                                 <h4>Termin</h4>
-                            </div>
+                            </div><!--
 
-                            <div class = "th width-10em margin-std-lr">
+                            --><div class = "th width-10em margin-std-lr">
                                 <h4>Rezultat</h4>
-                            </div>
+                            </div><!--
 
-                            <div class = "th width-28em margin-std-lr">
+                            --><div class = "th width-32em margin-std-lr">
                                 <h4>Igrači</h4>
-                            </div>
+                            </div><!--
 
-                            <div class = "th width-7em margin-std-lr">
+                            --><div class = "th width-7em margin-std-lr">
                                 <h4></h4>
                             </div>
                         </div>
@@ -69,24 +72,24 @@
 
                                     <div class = "td width-10em margin-std-lr text-left">
                                         <span>{{ game.title }}</span>
-                                    </div>
+                                    </div><!--
 
-                                    <div class = "td width-12em margin-std-lr text-left">
-                                        <span>{{ game.datetime_span.descriptionString() }}</span>
-                                    </div>
+                                    --><div class = "td width-10em margin-std-lr text-left">
+                                        <span>{{ game.datetime_span.descriptionStringMid() }}</span>
+                                    </div><!--
 
-                                    <div class = "td width-10em margin-std-lr text-left">
+                                    --><div class = "td width-10em margin-std-lr text-left">
                                         <span>{{ game.result() }} {{ game.resultDescriptionString() }}</span>
-                                    </div>
+                                    </div><!--
 
-                                    <div class = "td width-28em margin-std-lr text-left">
+                                    --><div class = "td width-32em margin-std-lr text-left">
                                         <span>{% for u1 in game.players_team_one %} - {{ u1.username }}{% endfor %}<br>
                                         {% for u2 in game.players_team_two %} - {{ u2.username }}{% endfor %}</span>
 
-                                    </div>
+                                    </div><!--
 
 
-                                    <div class = "td width-7em margin-std-lr text-centered admin-actions-cont">
+                                    --><div class = "td width-7em margin-std-lr text-centered admin-actions-cont">
                                         <div>
                                             <div class = "edit game action" title = "Uredi podatke o utakmici">
                                                 <a href = "{{ urlFor('admin.matches.game.edit', {"game_id": game.id}) }}">

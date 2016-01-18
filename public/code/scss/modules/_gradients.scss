@@ -118,6 +118,18 @@
 
 }
 
+
+@mixin gradient-horizontal-bbb-flag-cibona-blue-transp {
+  background-image: transparent; /* Old browsers */
+  background-image: -moz-linear-gradient(top,  rgba(12,19,29,1) 0%, rgba(12,19,29,1) 8%, rgba(234,238,241,1) 8%, rgba(237,240,244,1) 11%, rgba(18,64,141,0) 11%, rgba(18,64,141,0) 89%, rgba(237,240,244,1) 89%, rgba(234,238,241,1) 92%, rgba(12,19,29,1) 92%, rgba(12,19,29,1) 100%); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(12,19,29,1)), color-stop(8%,rgba(12,19,29,1)), color-stop(8%,rgba(234,238,241,1)), color-stop(11%,rgba(237,240,244,1)), color-stop(11%,rgba(18,64,141,0)), color-stop(89%,rgba(18,64,141,0)), color-stop(89%,rgba(237,240,244,1)), color-stop(92%,rgba(234,238,241,1)), color-stop(92%,rgba(12,19,29,1)), color-stop(100%,rgba(12,19,29,1))); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top,  rgba(12,19,29,1) 0%,rgba(12,19,29,1) 8%,rgba(234,238,241,1) 8%,rgba(237,240,244,1) 11%,rgba(18,64,141,0) 11%,rgba(18,64,141,0) 89%,rgba(237,240,244,1) 89%,rgba(234,238,241,1) 92%,rgba(12,19,29,1) 92%,rgba(12,19,29,1) 100%); /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(top,  rgba(12,19,29,1) 0%,rgba(12,19,29,1) 8%,rgba(234,238,241,1) 8%,rgba(237,240,244,1) 11%,rgba(18,64,141,0) 11%,rgba(18,64,141,0) 89%,rgba(237,240,244,1) 89%,rgba(234,238,241,1) 92%,rgba(12,19,29,1) 92%,rgba(12,19,29,1) 100%); /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(top,  rgba(12,19,29,1) 0%,rgba(12,19,29,1) 8%,rgba(234,238,241,1) 8%,rgba(237,240,244,1) 11%,rgba(18,64,141,0) 11%,rgba(18,64,141,0) 89%,rgba(237,240,244,1) 89%,rgba(234,238,241,1) 92%,rgba(12,19,29,1) 92%,rgba(12,19,29,1) 100%); /* IE10+ */
+  background-image: linear-gradient(to bottom,  rgba(12,19,29,1) 0%,rgba(12,19,29,1) 8%,rgba(234,238,241,1) 8%,rgba(237,240,244,1) 11%,rgba(18,64,141,0) 11%,rgba(18,64,141,0) 89%,rgba(237,240,244,1) 89%,rgba(234,238,241,1) 92%,rgba(12,19,29,1) 92%,rgba(12,19,29,1) 100%); /* W3C */
+
+}
+
 @mixin gradient-vertical-bbb-flag-white {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,12408d+8,12408d+11,ffffff+11,ffffff+89,12408d+89,12408d+92,0c131d+92,0c131d+100 */
   background: rgb(12,19,29); /* Old browsers */
