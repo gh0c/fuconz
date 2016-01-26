@@ -67,17 +67,17 @@
 @include keyframes(pulsate-frames) {
   0% {
     @include pp-transform(scale(0.2, 0.2));
-    opacity: 0.3;
+    opacity: 0.0;
   }
   50% {
     opacity: 1.0;
   }
-  100% {
+  80% {
     @include pp-transform(scale(1.1, 1.1));
   }
   100% {
     @include pp-transform(scale(1.35, 1.35));
-    opacity: 0.3;
+    opacity: 0.0;
   }
 }
 //

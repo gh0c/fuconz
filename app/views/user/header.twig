@@ -47,7 +47,8 @@
             </li><!--
             --><li class="dropdown{% if active_page == "user.main" %} active {% endif %}" data-filter="user-main">
                 <span>
-                    <i class = "fa fa-user link-icon-fw fa-fw"></i><span class = "link-label-fw"> Korisnik</span>{%  if auth_user.unreadMessagesExists() %}
+                    <i class = "fa fa-user link-icon-fw fa-fw"></i><span class = "link-label-fw"> Korisnik</span>
+                    {%  if auth_user.unreadMessagesExists() %}
                     <script>
                         var originalDocTitle = document.title;
                         var prependToTitle = function(prefix) {

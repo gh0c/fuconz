@@ -1,0 +1,513 @@
+.fuconz-emoticon.std-chat {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-indent: -10000px;
+  background-image: url('../../graphics/chat/emoticons.png');
+  text-align: left;
+  background-repeat: no-repeat;
+}
+.fuconz-emoticon.std-chat.f-emoticon-smile {
+  background-position: 0 0;
+}
+.fuconz-emoticon.std-chat.f-emoticon-sad-smile {
+  background-position: 0 -29px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-big-smile {
+  background-position: 0 -58px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-cool {
+  background-position: 0 -87px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-surprised {
+  background-position: 0 -116px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-wink {
+  background-position: 0 -145px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-crying {
+  background-position: 0 -174px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-sweating {
+  background-position: 0 -203px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-speechless {
+  background-position: 0 -232px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-kiss {
+  background-position: 0 -261px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-tongue-out {
+  background-position: 0 -290px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-blush {
+  background-position: 0 -319px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-wondering {
+  background-position: 0 -348px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-sleepy {
+  background-position: 0 -377px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-dull {
+  background-position: 0 -406px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-in-love {
+  background-position: 0 -435px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-evil-grin {
+  background-position: 0 -464px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-talking {
+  background-position: 0 -493px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-yawn {
+  background-position: 0 -522px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-puke {
+  background-position: 0 -551px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-doh {
+  background-position: 0 -580px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-angry {
+  background-position: 0 -609px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-speechless-1 {
+  background-position: 0 -638px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-it-wasnt-me {
+  background-position: 0 -667px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-kiss-1 {
+  background-position: 0 -696px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-party {
+  background-position: 0 -725px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-tongue-out-1 {
+  background-position: 0 -754px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-wondering-1 {
+  background-position: 0 -783px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-worried {
+  background-position: 0 -812px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-mmm {
+  background-position: 0 -841px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-sleepy-1 {
+  background-position: 0 -870px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-dull-1 {
+  background-position: 0 -899px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-nerd {
+  background-position: 0 -928px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-evil-grin-1 {
+  background-position: 0 -957px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-lips-sealed {
+  background-position: 0 -986px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-hi {
+  background-position: 0 -1015px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-call {
+  background-position: 0 -1044px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-devil {
+  background-position: 0 -1073px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-angel {
+  background-position: 0 -1102px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-angry-1 {
+  background-position: 0 -1131px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-envy {
+  background-position: 0 -1160px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-worried-1 {
+  background-position: 0 -1189px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-nerd-1 {
+  background-position: 0 -1218px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-wait {
+  background-position: 0 -1247px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-bear {
+  background-position: 0 -1276px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-lips-sealed-1 {
+  background-position: 0 -1305px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-make-up {
+  background-position: 0 -1334px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-giggle {
+  background-position: 0 -1363px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-clapping {
+  background-position: 0 -1392px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-thinking {
+  background-position: 0 -1421px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-bow {
+  background-position: 0 -1450px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-rofl {
+  background-position: 0 -1479px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-whew {
+  background-position: 0 -1508px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-happy {
+  background-position: 0 -1537px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-smirk {
+  background-position: 0 -1566px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-nod {
+  background-position: 0 -1595px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-shake {
+  background-position: 0 -1624px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-punch {
+  background-position: 0 -1653px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-emo {
+  background-position: 0 -1682px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-yes {
+  background-position: 0 -1711px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-no {
+  background-position: 0 -1740px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-handshake {
+  background-position: 0 -1769px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-skype {
+  background-position: 0 -1798px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-heart {
+  background-position: 0 -1827px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-broken-heart {
+  background-position: 0 -1856px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-mail {
+  background-position: 0 -1885px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-flower {
+  background-position: 0 -1914px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-rain {
+  background-position: 0 -1943px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-sun {
+  background-position: 0 -1972px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-time {
+  background-position: -29px 0;
+}
+.fuconz-emoticon.std-chat.f-emoticon-music {
+  background-position: -29px -29px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-movie {
+  background-position: -29px -58px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-phone {
+  background-position: -29px -87px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-coffee {
+  background-position: -29px -116px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-pizza {
+  background-position: -29px -145px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-cash {
+  background-position: -29px -174px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-muscle {
+  background-position: -29px -203px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-cake {
+  background-position: -29px -232px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-beer {
+  background-position: -29px -261px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-drink {
+  background-position: -29px -290px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-dance {
+  background-position: -29px -319px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-ninja {
+  background-position: -29px -348px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-star {
+  background-position: -29px -377px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-mooning {
+  background-position: -29px -406px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-middlefinger {
+  background-position: -29px -435px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-bandit {
+  background-position: -29px -464px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-drunk {
+  background-position: -29px -493px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-smoke {
+  background-position: -29px -522px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-toivo {
+  background-position: -29px -551px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-rock {
+  background-position: -29px -580px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-headbang {
+  background-position: -29px -609px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-bug {
+  background-position: -29px -638px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-fubar {
+  background-position: -29px -666px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-poolparty {
+  background-position: -29px -695px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-swear {
+  background-position: -29px -724px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-tmi {
+  background-position: -29px -753px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-heidy {
+  background-position: -29px -782px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-myspace {
+  background-position: -29px -811px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-malthe {
+  background-position: -29px -840px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-tauri {
+  background-position: -29px -869px;
+}
+.fuconz-emoticon.std-chat.f-emoticon-priidu {
+  background-position: -29px -898px;
+}
+.fuconz-emoticon.big-chat {
+  display: block;
+  width: 128px;
+  height: 128px;
+  text-indent: -10000px;
+  background-repeat: no-repeat;
+  text-align: left;
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-wink {
+  background-image: url('../../graphics/chat/big/02_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-mad-in-love {
+  background-image: url('../../graphics/chat/big/06_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-embarassed {
+  background-image: url('../../graphics/chat/big/07_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-hilarious {
+  background-image: url('../../graphics/chat/big/13_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-make-face {
+  background-image: url('../../graphics/chat/big/14_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-frown {
+  background-image: url('../../graphics/chat/big/16_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-cool {
+  background-image: url('../../graphics/chat/big/17_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-very-sad {
+  background-image: url('../../graphics/chat/big/19_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-geek {
+  background-image: url('../../graphics/chat/big/20_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-this-is-sparta {
+  background-image: url('../../graphics/chat/big/21_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-are-you-kidding-me {
+  background-image: url('../../graphics/chat/big/23_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-evil-plan {
+  background-image: url('../../graphics/chat/big/27_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-wtf {
+  background-image: url('../../graphics/chat/big/28_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-angry {
+  background-image: url('../../graphics/chat/big/34_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-whoopsy {
+  background-image: url('../../graphics/chat/big/35_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-furious {
+  background-image: url('../../graphics/chat/big/36_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-doh {
+  background-image: url('../../graphics/chat/big/44_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-exhausting {
+  background-image: url('../../graphics/chat/big/46_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-wierdo {
+  background-image: url('../../graphics/chat/big/49_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-grimace {
+  background-image: url('../../graphics/chat/big/57_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-yawn {
+  background-image: url('../../graphics/chat/big/62_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-cry {
+  background-image: url('../../graphics/chat/big/68_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-oh-no {
+  background-image: url('../../graphics/chat/big/70_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-rose-for-you {
+  background-image: url('../../graphics/chat/big/77_y.png');
+}
+.fuconz-emoticon.big-chat.f-b-emoticon-running-eyes {
+  background-image: url('../../graphics/chat/big/78_y.png');
+}
+.fuconz-emoticon.meme-chat {
+  display: block;
+  width: 100px;
+  height: 100px;
+  text-indent: -10000px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-align: left;
+  background-position: center center;
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-baby-troll {
+  background-image: url('../../graphics/chat/meme/baby_troll_troll_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-cereal-guy {
+  background-image: url('../../graphics/chat/meme/cereal_guy_newspaper_guy_cereal_guy_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-close-enough {
+  background-image: url('../../graphics/chat/meme/close_enough_luck_yeah_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-cuteness {
+  background-image: url('../../graphics/chat/meme/cuteness_overload_happy_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-derpina {
+  background-image: url('../../graphics/chat/meme/derpina_happy_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-not-impressed {
+  background-image: url('../../graphics/chat/meme/dude_come_on_annoyed_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-derpina-rage {
+  background-image: url('../../graphics/chat/meme/female_rage_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-forever-alone {
+  background-image: url('../../graphics/chat/meme/forever_alone_sad_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-genius {
+  background-image: url('../../graphics/chat/meme/genius_misc_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-badass {
+  background-image: url('../../graphics/chat/meme/got_a_badass_over_here_misc_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-grandma {
+  background-image: url('../../graphics/chat/meme/grandma_misc_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-gtfo {
+  background-image: url('../../graphics/chat/meme/gtfo_luck_yeah_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-hitler {
+  background-image: url('../../graphics/chat/meme/hitler_angry_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-hmm-determined {
+  background-image: url('../../graphics/chat/meme/hmm_determined_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-i-see {
+  background-image: url('../../graphics/chat/meme/i_see_what_you_did_there_happy_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-if-you-know-what-i-mean {
+  background-image: url('../../graphics/chat/meme/if_you_know_what_i_mean_neutral_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-jackie-wtf {
+  background-image: url('../../graphics/chat/meme/jackie_chan_misc_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-lololo {
+  background-image: url('../../graphics/chat/meme/lol_laughing_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-surprised {
+  background-image: url('../../graphics/chat/meme/long_neck_surprised_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-mother-of-god {
+  background-image: url('../../graphics/chat/meme/mother_of_god_neutral_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-nerd {
+  background-image: url('../../graphics/chat/meme/nerd_misc_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-no-angry {
+  background-image: url('../../graphics/chat/meme/no_angry_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-not-okay {
+  background-image: url('../../graphics/chat/meme/not_okay_determined_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-pedobear {
+  background-image: url('../../graphics/chat/meme/pedobear_misc_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-poker-face {
+  background-image: url('../../graphics/chat/meme/poker_face_neutral_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-hmm-questioning {
+  background-image: url('../../graphics/chat/meme/questioning_pondering_determined_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-not-bad-obama {
+  background-image: url('../../graphics/chat/meme/really_not_bad_obama_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-reservoir-fuuus {
+  background-image: url('../../graphics/chat/meme/reservoir_fuuus_2_panel_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-scared-yao {
+  background-image: url('../../graphics/chat/meme/scared_yao_luck_that_ditch_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-stoned {
+  background-image: url('../../graphics/chat/meme/stoned_inhale_trees_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-fffuuu {
+  background-image: url('../../graphics/chat/meme/super_rage_rage_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-suspicious {
+  background-image: url('../../graphics/chat/meme/suspicious_neutral_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-thumbs-up {
+  background-image: url('../../graphics/chat/meme/thumbs_up_happy_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-trollface {
+  background-image: url('../../graphics/chat/meme/troll_face_troll_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-ahaha {
+  background-image: url('../../graphics/chat/meme/wait_surprised_meme.jpg');
+}
+.fuconz-emoticon.meme-chat.f-m-emoticon-y-u-no {
+  background-image: url('../../graphics/chat/meme/y_u_no_angry_meme.jpg');
+}

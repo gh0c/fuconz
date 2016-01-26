@@ -1,8 +1,8 @@
 @import "modules/modules.import";
 
-@import "reset";
-@import "fonts";
-@import "general_classes";
+//@import "reset";
+//@import "fonts";
+//@import "general_classes";
 
 @import "modules/animations";
 
@@ -18,9 +18,9 @@ html {
 
   //overflow: hidden; // -- Overlay
 
-  @import 'chat';
+  @import 'main_includes/chat';
 
-  @import 'jscrollpane';
+  @import 'main_includes/jscrollpane';
 
   body {
     padding-top: $header-height;  // height of fixed header
@@ -31,9 +31,9 @@ html {
 
     background-color: white;
 
-    @import 'header.new';
-    @import 'content';
-    @import 'footer.new';
+    @import 'main_includes/header';
+    @import 'main_includes/content';
+    @import 'main_includes/footer';
 
 
     .a-level-holder {

@@ -7,6 +7,8 @@ use \app\model\User\User;
 use \app\model\Database\DatabaseConnection;
 use \PDO;
 
+use \app\helpers\Text;
+
 class ChatMessage
 {
 
@@ -30,8 +32,12 @@ class ChatMessage
             $this->sender_id = (int) $input_data['sender_id'];
             $this->sender = User::getUserById($this->sender_id);
         }
-        if ( isset( $input_data['message_body'] ) )
-            $this->message_body = $input_data['message_body'];
+        if ( isset( $input_data['message_body'] ) ) {
+            // raw string from DB to chat display
+
+            $this->message_body = Text::toChatString($input_data['message_body']);
+        }
+
 
         if ( isset( $input_data['created_at'] ) )
             $this->created_at = $input_data['created_at'];

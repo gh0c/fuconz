@@ -1,0 +1,347 @@
+@import '../modules/_modules.import';
+
+$cell-width-special: 4.25em;
+//$cell-height: 5em;
+
+
+$height-bp-1: 320px;
+$height-bp-2: 560px;
+
+
+.month-grid.ultra.vertical {
+  .table-container.ultra.vertical {
+
+    * {
+      @include box-sizing(content-box);
+    }
+    .tr {
+      text-align: left;
+      position: relative;
+      width: 100%;
+      .cell {
+        position: relative;
+        width: 100%;
+        border: 0;
+        display: block;
+        padding-left: 2px;
+        padding-right: 2px;
+        float: left;
+        @include box-sizing(border-box);
+        @include responsive-h-min($height-bp-1) {
+          border-top: 1px dashed transparent;
+          padding-top: 0px;
+          padding-bottom: 0px;
+        }
+        @include responsive-h-min($height-bp-2) {
+          border-top: 1px dashed transparent;
+          padding-top: 1px;
+          padding-bottom: 1px;
+        }
+
+        &.first-day-of-month {
+          @include responsive-h-min($height-bp-1) {
+            border-top: 1px dashed $light-blue-gray-light;
+          }
+          @include responsive-h-min($height-bp-2) {
+            border-top: 1px dashed $light-blue-gray-light;
+          }
+        }
+
+        .th, .td {
+          height: 100%;
+          vertical-align: top;
+          display: inline-block;
+          @include box-sizing(border-box);
+        }
+
+        .th {
+          padding-right: 0.1em;
+
+          text-align: center;
+          font-weight: bold;
+          width: 3em;
+
+          & > .active-day, & > .inactive-day {
+            height: 100%;
+            display: inline-table;
+            width: 100%;
+            & > * {
+              display: table-cell;
+              vertical-align: middle;
+            }
+          }
+          & > .active-day {
+            border-left: 3px solid $cibona-blue;
+            padding-left: 0.1em;
+            padding-right: 0.1em;
+            &.today {
+              background: $cibona-blue;
+              color: $light-blue-gray-light;
+              @include gradient-status-bg(60px, 0.15);
+              border-left: 3px solid $light-blue-gray-light;
+            }
+            &.weekend:not(.today) {
+              border-left: 3px solid $cibona-blue-dark-overlay;
+            }
+          }
+        }
+
+        .td {
+          text-align: left;
+          font-weight: 300;
+          padding-left: 6px;
+
+          & > .active-day, & > .inactive-day {
+            height: 100%;
+          }
+          & > .active-day {
+            background: $cibona-blue;
+            color: $light-blue-gray-light;
+            border-right: 3px dashed transparent;
+            box-sizing: border-box;
+
+            &.today {
+              @include gradient-status-bg(60px, 0.15);
+              border-right: 3px solid $light-blue-gray-light;
+            }
+            &.weekend:not(.today) {
+              background-color: $cibona-blue-dark-overlay;
+            }
+
+            .day-container {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              @include pp-transition(background-color .25s ease-out, color .25s ease-out);
+              &.day-ended {
+                background-color: rgba(0, 0, 0, .3);
+              }
+            }
+
+            .date-container {
+              @include responsive-w-min($mobile-mid-bp) {
+                font-size: 1.2em;
+              }
+              position: absolute;
+              top: 0;
+              left: 0;
+              text-align: left;
+              padding: 2px 1px 2px 4px;
+              z-index: 9;
+
+              width: 15%;
+              min-width: 30px;
+              height: 40%;
+              @include responsive-w-min($mobile-mid-bp) {
+                padding: 2px 2px 2px 6px;
+              }
+
+              .day-ended {
+                position: absolute;
+                padding: 0;
+                font-size: 1.6em;
+                top: -3px;
+                left: 1px;
+                text-align: right;
+
+                color: $red-transparent-overlay;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+$cell-height-special-template-blueprint: 3em;
+
+$cell-height-special-reservations-bp1: 2.625em;
+$cell-height-special-reservations-bp2: 3em;
+
+$cell-width-special-1: 84%;
+
+.month-grid.ultra.vertical .table-container.ultra.vertical {
+  width: 100%;
+  &.template-blueprint, &.bookings{
+    .tr .cell {
+      .td {
+        width: $cell-width-special-1;
+      }
+      .th {
+        width: (100% - $cell-width-special-1);
+      }
+    }
+  }
+
+
+  &.template-blueprint {
+    .tr .cell {
+      height: $cell-height-special-template-blueprint;
+    }
+  }
+
+  &.bookings {
+    .tr .cell {
+      @include responsive-h-min($height-bp-1) {
+        height: $cell-height-special-reservations-bp1;
+//        background-color: rgba(cadetblue, .4); /// <<<
+      }
+      @include responsive-h-min($height-bp-2) {
+        height: $cell-height-special-reservations-bp2;
+//        background-color: rgba(darkcyan, .4); /// <<<
+      }
+
+      .td .day-container {
+
+        &.selected-day {
+          background-color: $light-blue-gray-dark;
+          color: $dark-dark-blue;
+          .booking-slots .bookings-container .booking {
+            &.available-for-booking:not(.yes-selected):hover,
+            &.booking-time-ended:hover {
+              .duration-cont .times {
+                text-shadow: 1px 0px 0px $light-blue-gray-light, 1px 1px 0px $light-blue-gray-light,
+                -7px -2px 13px $dark-dark-blue, 7px 2px 12px $dark-dark-blue;
+              }
+            }
+          }
+          .booking-time-ended .legend-icon-cont .calendar-icon-holder .back {
+            color: $light-blue-gray-light;
+          }
+        }
+
+        &:not(.selected-day) {
+          .bookings-container {
+
+            a:not(.yes-selected):hover {
+              .duration-cont {
+                text-shadow: 1px 0 0 black,1px 1px 0 black,-7px -2px 13px white,7px 2px 12px white;
+              }
+            }
+          }
+        }
+
+
+
+        .booking-slots {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 12;
+          text-align: right;
+          overflow: hidden;
+
+          .bookings-container {
+            position: absolute;
+            right: 0;
+            height: 100%;
+//            background-color: rgba(brown, .7); /// <<<
+
+            & > a {
+              display: inline-block;
+              height: 100%;
+
+
+            }
+
+            .booking {
+              text-align: center;
+              display: inline-block;
+              height: 100%;
+
+              @include responsive-w-max($mobile-mid-bp - 1px) {
+                width: 2.75rem;
+                padding-left: 12px;
+                padding-right: 3px;
+              }
+
+              & > div {
+                @include responsive-w-max($mobile-mid-bp - 1px) {
+                  width: 100%;
+                  text-align: center;
+                  display: inline-table;
+                }
+                @include responsive-w-min($mobile-mid-bp) {
+                  display: inline-table;
+                  height: 100%;
+                  vertical-align: bottom;
+
+                  .legend-icon-cont .calendar-icon-holder,
+                  .duration-cont .times {
+                    font-size: 110%;
+                  }
+                }
+
+                & > * {
+                  display: table-cell;
+                  vertical-align: middle;
+                }
+              }
+
+              &.not-selected,
+              &.yes-selected{
+                cursor: pointer;
+              }
+
+
+
+              .legend-icon-cont {
+                height:70%;
+                @include responsive-w-min($mobile-mid-bp) {
+                  height: 100%;
+                  float: right;
+                  padding-left: 3px;
+                  padding-right: 3px;
+                }
+                @include responsive-w-max($mobile-mid-bp - 1px) {
+                  font-size: 80%;
+                }
+                .calendar-icon-holder {
+                  position: relative;
+//                  overflow: hidden;
+                  @include responsive-w-min($mobile-mid-bp) {
+                    height: 100%;
+                  }
+                }
+              }
+              &.available-for-booking {
+                .legend-icon-cont .calendar-icon-holder .leader {
+                  font-size: 140%;
+                }
+              }
+
+
+              .duration-cont {
+                height: 30%;
+                @include responsive-w-min($mobile-mid-bp) {
+                  height: 100%;
+                  padding-left: 16px;
+                  padding-right: 4px;
+                }
+                .times {
+                  font-size: 0.7em;
+                  font-weight: 600;
+
+                  @include responsive-w-min($mobile-mid-bp) {
+                    width: 3rem;
+                    text-align: right;
+                  }
+                  & > .fw {
+                    display: none;
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -180,8 +180,7 @@ $app->group('/admin/rezervacije', function () use ($app, $authenticated_admin) {
                 'active_item' => "reservations.user-reservations",
                 'bookings' => $bookings,
                 'span' => $datetime_span,
-                'logs' => $logs,
-                'text_help' => new \app\helpers\Text()
+                'logs' => $logs
             ));
         }
 

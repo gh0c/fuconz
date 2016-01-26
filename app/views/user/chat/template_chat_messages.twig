@@ -1,0 +1,112 @@
+<div class = "chat-conversation-holder"
+     data-chat-temp-user-id = "{{ user.id }}" >
+
+    <div class = "chatroom-title-container">
+        <div class = "chatroom-title-holder">
+            <div class = "chatroom-title">
+                <span>Započni chat: {{ user.username }}</span>
+            </div>
+        </div><!--
+
+
+        --><div class = "chatroom-menus-holder">
+            <ul class = "chatroom-menus">
+                {#<li class = "open-messages-menu">#}
+                    {#<a class = "inline-table">#}
+                        {#<i class = "fa fa-bars"></i>#}
+                    {#</a>#}
+                {#</li><!--#}
+                <li class = "close-chatroom">
+                    <a class = "inline-table close-chatroom">
+                        <i class = "fa fa-times"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class = "messages-menu-overlay-wrap">
+        <nav class = "chat-messages-menu">
+            <ul class = "messages-menu-items">
+                <li class = "no-dropdown big-emoticons" data-filter="big-emoticons">
+                    <a class = "open-menu-item">
+                        <i class = "fa fa-fw fa-smile-o"></i>
+                    </a>
+                </li><!--
+                --><li class = "no-dropdown meme-emoticons" data-filter="meme-emoticons">
+                    <a class = "open-menu-item">
+                        <i class = "fa fa-fw fa-frown-o"></i>
+                    </a>
+                </li><!--
+                --><li class = "no-dropdown add-user" data-filter="add-user">
+                    <a class = "open-menu-item">
+                        <i class = "fa fa-fw fa-user-plus"></i>
+                    </a>
+                </li><!--
+
+                --><li class = "no-dropdown placeholder-1" data-filter="p1">
+                    <a class = "open-menu-item">
+                        <i class = "fa fa-fw fa-cog"></i>
+                    </a>
+                </li>
+
+
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class = "messages-menu-items-scroll-pane">
+        <nav class="messages-menu-filter-items">
+
+            <div class="filter-item filter-big-emoticons">
+                <div class = "big-emoticons-container emoticons-container empty">
+                    <div>
+                        <i class = "fa fa-spin fa-spinner"></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="filter-item filter-meme-emoticons">
+                <div class = "meme-emoticons-container emoticons-container empty">
+                    <div>
+                        <i class = "fa fa-spin fa-spinner"></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class = "filter-item filter-add-user">
+                <span>Uskoro!</span>
+
+            </div>
+        </nav>
+    </div>
+
+
+    <div class = "messages-scroll-pane">
+        <div class = "messages-container">
+        </div>
+    </div>
+
+    <div class = "submit-message">
+        <div class = "textarea-holder">
+            <textarea placeholder="Tvoja poruka..." spellcheck="false" class = "textarea-submitter creating"></textarea><!--
+            --><div class = "lights-holder">
+                {#<i class = "light l-1 no fa fa-fw fa-circle"></i>#}
+            </div>
+        </div><!--
+        --><div class = "submitter-holder">
+            <div class = "submitter-cont">
+                <div class = "">
+                    <div class = "submitter submit bbb-flag-v-cibona-blue creator">
+                        <span class = "f-div-fw-mobile-mid">POŠALJI</span>
+                        <i class = "f-div-non-fw-mobile-mid fa fa-fw fa-envelope-o"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

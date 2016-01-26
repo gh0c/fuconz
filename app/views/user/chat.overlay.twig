@@ -4,10 +4,12 @@
     <input type="hidden" name="populate-users-url" id = "populate-users-url" value="{{ urlFor('user.chat.load.users.post') }}" />
     <input type="hidden" name="populate-chat-rooms-url" id = "populate-chat-rooms-url" value="{{ urlFor('user.chat.load.chat-rooms.post') }}" />
     <input type="hidden" name="populate-chat-rooms-and-users-url" id = "populate-chat-rooms-and-users-url" value="{{ urlFor('user.chat.load.chat-rooms-and-users.post') }}" />
-    <input type="hidden" name="populate-chat-room-messages-url" id = "populate-chat-room-messages-url" value="{{ urlFor('user.chat.load.chat-room-messages.post') }}" />
+
+    {#<input type="hidden" name="populate-chat-room-messages-url" id = "populate-chat-room-messages-url" value="{{ urlFor('user.chat.load.chat-room-messages.post') }}" />#}
     <input type="hidden" name="populate-chat-room-url" id = "populate-chat-room-url" value="{{ urlFor('user.chat.load.chat-room.post') }}" />
 
-    <input type="hidden" name="create-chat-room-messages-url" id = "create-chat-room-messages-url" value="{{ urlFor('user.chat.create.chat-room-messages.post') }}" />
+
+    {#<input type="hidden" name="create-chat-room-messages-url" id = "create-chat-room-messages-url" value="{{ urlFor('user.chat.create.chat-room-messages.post') }}" />#}
     <input type="hidden" name="create-chat-room-url" id = "create-chat-room-url" value="{{ urlFor('user.chat.create.chat-room.post') }}" />
 
     <input type="hidden" name="initiate-chat-url" id = "initiate-chat-url" value="{{ urlFor('user.chat.initiate.new.post') }}" />
@@ -19,6 +21,40 @@
     <input type = "hidden" name = "refresh-chat-status-url" id = "refresh-chat-status-url" value = "{{ urlFor('user.chat.refresh-status.post') }}" />
 
     <input type = "hidden" name = "fetch-new-messages-url" id = "fetch-new-messages-url" value = "{{ urlFor('user.chat.fetch-new-messages.post') }}" />
+
+
+    <div class = "display-none" id = "big-emoticons-holder"><!--
+        {% for emo, val in config.read("emoticons.big") %}
+        --><div class = "emoticon-wrap">
+            <div class = "emoticon-link" data-emot-code="{{ val['codes'][0] }}">
+
+                <div class = "emoticon-img-holder">
+                    {{ text_help.wrapBigEmoticonWithTags(val['codes'][0], emo)|raw }}
+                </div>
+                <div class = "emoticon-title">
+                    <span class = "code">{{ val['codes'][0] }}</span><br>
+                </div>
+            </div>
+        </div><!--
+        {% endfor %}
+    --></div>
+
+    <div class = "display-none" id = "meme-emoticons-holder"><!--
+        {% for emo, val in config.read("emoticons.meme") %}
+        --><div class = "emoticon-wrap">
+            <div class = "emoticon-link" data-emot-code="{{ val['codes'][0] }}">
+
+                <div class = "emoticon-img-holder">
+                    {{ text_help.wrapMemeEmoticonWithTags(val['codes'][0], emo)|raw }}
+                </div>
+                <div class = "emoticon-title">
+                    <span class = "code">{{ val['codes'][0] }}</span><br>
+                </div>
+            </div>
+        </div><!--
+        {% endfor %}
+    --></div>
+
 
     <div class = "filter-section-desc-holder">
 
@@ -39,6 +75,7 @@
             <div class="filter filter-current-chat ">
                 <div class = "inline-table current-chat-room-container empty">
                     {#<span>Razgovor: </span><span>Jura 3 pandura</span>#}
+                    <span>[Mjesto za budući izbornik]</span>
                 </div>
             </div>
 
@@ -127,6 +164,27 @@
                                 <span>Zasad još nije dovoljno testirano da mogu garantirati da neke od poruka neće biti progutane u "stvarnom vremenu". </span>
                                 <span>Tek kada ručno refreshate stranicu poruke bi trebale biti poredane i popunjene stvarnim redoslijedom slanja.</span><br>
                             </div>
+                            <div class = "empty-horiz-spacer-20"></div>
+                            <div>
+                                <span>TODO lista:</span>
+                                <ul class = "text-left">
+                                    <li>
+                                        <span>Izbornik otvorenih razgovora.</span>
+                                    <li>
+                                    <li>
+                                        <span>Opet, stvari na Chromeu zgledaju OK.
+                                            Kakva je situacija na mobitelima, ne znam, osim kolko mi neki jednostavni dostupni i besplatni emulatori pokažu.
+                                            Firefox ima manjih različitosti, ništa bitnije. IE je u banani, klasika.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>Dodavanje više osoba u započeti razgovor.</span>
+                                    <li>
+                                    <li>
+                                        <span>"Komunikacija" među otvorenim tabovima da se ne duplaju zahtjevi na server.</span>
+                                    <li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -145,7 +203,8 @@
         <div class = "req-status-container">
             <div class = "req-status-info">
                 <div class = "version-title">
-                    <span>Chat beta v0.02</span><i class = "fa fa-fw fa-circle-thin faa-pulsation-a req-status no-req"></i>
+                    <span>Chat beta v0.03</span><!--
+                    --><i class = "fa fa-fw fa-circle faa-pulsation-a a-1 req-status no-req"></i>
                 </div><!--
             --></div>
         </div>

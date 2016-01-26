@@ -1,519 +1,6 @@
 /*********************
  BREAKPOINTS
- *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 *//* CSS reset */body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, button {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-h1, h2, h3, h4, h5, h6 {
-  font-weight: inherit;
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-fieldset, img {
-  border: 0;
-}
-address, caption, cite, code, dfn, th, var {
-  font-style: normal;
-  font-weight: normal;
-}
-a, a:hover {
-  text-decoration: none;
-}
-ol, ul {
-  list-style: none;
-}
-caption, th {
-  text-align: left;
-}
-/*h1, h2, h3, h4, h5, h6*//*{*//*font-size: 100%;*//*font-weight: normal;*//*}*/q:before, q:after {
-  content: '';
-}
-abbr, acronym {
-  border: 0;
-}
-section, header, footer {
-  display: block;
-}
-:focus {
-  outline: none;
-}
-/* Normal */@font-face {
-  font-family: 'MuseoSans';
-  src: url('../../font/museo-sans/museosans_300-webfont.eot');
-  src: url('../../font/museo-sans/museosans_300-webfont.eot?#iefix') format('embedded-opentype'), url('../../font/museo-sans/museosans_300-webfont.woff') format('woff'), url('../../font/museo-sans/museosans_300-webfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'MuseoSans';
-  src: url('../../font/museo-sans/museosans_300_italic-webfont.eot');
-  src: url('../../font/museo-sans/museosans_300_italic-webfont.eot?#iefix') format('embedded-opentype'), url('../../font/museo-sans/museosans_300_italic-webfont.woff') format('woff'), url('../../font/museo-sans/museosans_300_italic-webfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'MuseoSans';
-  src: url('../../font/museo-sans/museosans_500-webfont-webfont.eot');
-  src: url('../../font/museo-sans/museosans_500-webfont-webfont.eot?#iefix') format('embedded-opentype'), url('../../font/museo-sans/museosans_500-webfont-webfont.woff') format('woff'), url('../../font/museo-sans/museosans_500-webfont-webfont.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-/* Thin */@font-face {
-  font-family: 'MuseoSans';
-  src: url('../../font/museo-sans/museosans_100-webfont.eot');
-  src: url('../../font/museo-sans/museosans_100-webfont.eot?#iefix') format('embedded-opentype'), url('../../font/museo-sans/museosans_100-webfont.woff') format('woff'), url('../../font/museo-sans/museosans_100-webfont.ttf') format('truetype');
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'MuseoSans';
-  src: url('../../font/museo-sans/museosans_500-webfont-webfont.eot');
-  src: url('../../font/museo-sans/museosans_500-webfont-webfont.eot?#iefix') format('embedded-opentype'), url('../../font/museo-sans/museosans_500-webfont-webfont.woff') format('woff'), url('../../font/museo-sans/museosans_500-webfont-webfont.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-/* Bold */@font-face {
-  font-family: 'MuseoSans';
-  src: url('../../font/museo-sans/museosans_700-webfont.eot');
-  src: url('../../font/museo-sans/museosans_700-webfont.eot?#iefix') format('embedded-opentype'), url('../../font/museo-sans/museosans_700-webfont.woff') format('woff'), url('../../font/museo-sans/museosans_700-webfont.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-/* Extra-Bold */@font-face {
-  font-family: 'MuseoSans';
-  src: url('../../font/museo-sans/museosans_900-webfont.eot');
-  src: url('../../font/museo-sans/museosans_900-webfont.eot?#iefix') format('embedded-opentype'), url('../../font/museo-sans/museosans_900-webfont.woff') format('woff'), url('../../font/museo-sans/museosans_900-webfont.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'MuseoSans';
-  src: url('../../font/museo-sans/museosans_900_italic-webfont.eot');
-  src: url('../../font/museo-sans/museosans_900_italic-webfont.eot?#iefix') format('embedded-opentype'), url('../../font/museo-sans/museosans_900_italic-webfont.woff') format('woff'), url('../../font/museo-sans/museosans_900_italic-webfont.ttf') format('truetype');
-  font-weight: 900;
-  font-style: italic;
-}
-/* Regular */@font-face {
-  font-family: 'MuseoSans_regular';
-  src: url('../../font/museo-sans/museo300-regular-webfont.eot');
-  src: url('../../font/museo-sans/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../font/museo-sans/museo300-regular-webfont.woff') format('woff'), url('../../font/museo-sans/museo300-regular-webfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'MuseoSans_regular';
-  src: url('../../font/museo-sans/museo500-regular-webfont.eot');
-  src: url('../../font/museo-sans/museo500-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../font/museo-sans/museo500-regular-webfont.woff') format('woff'), url('../../font/museo-sans/museo500-regular-webfont.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'MuseoSans_regular';
-  src: url('../../font/museo-sans/museo700-regular-webfont.eot');
-  src: url('../../font/museo-sans/museo700-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../font/museo-sans/museo700-regular-webfont.woff') format('woff'), url('../../font/museo-sans/museo700-regular-webfont.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-/*********************
- BREAKPOINTS
- *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */.left-fl {
-  float: left;
-}
-.right-fl {
-  float: right;
-}
-.text-centered {
-  text-align: center;
-}
-.text-left {
-  text-align: left;
-}
-.text-right {
-  text-align: right;
-}
-.text-justified {
-  text-align: justify;
-}
-.bold-text {
-  font-weight: bold;
-}
-.display-none {
-  display: none !important;
-}
-.relative-pos, .pos-relative, .relative-position {
-  position: relative;
-}
-.strike {
-  text-decoration: line-through;
-}
-.multirow-inline {
-  display: inline-block;
-  vertical-align: top;
-}
-.black-horiz-spacer-5 {
-  width: 100%;
-  height: 5px;
-  background-color: #000;
-}
-.black-horiz-spacer-10 {
-  width: 100%;
-  height: 10px;
-  background-color: #000;
-}
-.black-horiz-spacer-20 {
-  width: 100%;
-  height: 20px;
-  background-color: #000;
-}
-.inner-70pct-classic {
-  width: 70% !important;
-  margin: 0 auto;
-}
-.inner-80pct-classic {
-  width: 80% !important;
-  margin: 0 auto;
-}
-.inner-70pct {
-  margin: 0 auto;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  width: 100% !important;
-}
-@media only screen and (min-width: 300px) {
-  .inner-70pct {
-    width: auto !important;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .inner-70pct {
-    width: 70% !important;
-    min-width: 690px;
-    padding: 0 1em;
-  }
-}
-.empty-horiz-spacer-5 {
-  width: 100%;
-  height: 5px;
-}
-.empty-horiz-spacer-10 {
-  width: 100%;
-  height: 10px;
-}
-.empty-horiz-spacer-20 {
-  width: 100%;
-  height: 20px;
-}
-.bbb-cross-flag {
-  background: linear-gradient(90deg, transparent 43%, #183293 43%, #183293 57%, transparent 57%), linear-gradient(transparent 13%, #eaeef1 13%, #edf0f4 23%, #183293 23%, #183293 77%, #eaeef1 77%, #edf0f4 86%, transparent 83%), linear-gradient(90deg, #0c131d 39%, #edf0f4 39%, #edf0f4 43%, #183293 43%, #183293 57%, #edf0f4 57%, #edf0f4 61%, #0c131d 61%);
-}
-.bbb-flag-v {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,eaeef1+8,edf0f4+14,183293+14,122b72+86,edf0f4+86,eaeef1+92,0c131d+92,0c131d+100 */
-  background: #0c131d;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #0c131d), color-stop(8%, #0c131d), color-stop(8%, #eaeef1), color-stop(14%, #edf0f4), color-stop(14%, #183293), color-stop(86%, #122b72), color-stop(86%, #edf0f4), color-stop(92%, #eaeef1), color-stop(92%, #0c131d), color-stop(100%, #0c131d));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* IE10+ */
-  background: linear-gradient(to right, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c131d', endColorstr='#0c131d',GradientType=1);
-  /* IE6-9 */
-}
-.bbb-flag-v.reversed {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,eaeef1+8,edf0f4+14,122b72+14,183293+86,edf0f4+86,eaeef1+92,0c131d+92,0c131d+100 */
-  background: #0c131d;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #122b72 14%, #183293 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #0c131d), color-stop(8%, #0c131d), color-stop(8%, #eaeef1), color-stop(14%, #edf0f4), color-stop(14%, #122b72), color-stop(86%, #183293), color-stop(86%, #edf0f4), color-stop(92%, #eaeef1), color-stop(92%, #0c131d), color-stop(100%, #0c131d));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #122b72 14%, #183293 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #122b72 14%, #183293 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #122b72 14%, #183293 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* IE10+ */
-  background: linear-gradient(to right, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #122b72 14%, #183293 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c131d', endColorstr='#0c131d',GradientType=1);
-  /* IE6-9 */
-}
-.bbb-flag-h {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,eaeef1+8,edf0f4+14,183293+14,122b72+86,edf0f4+86,eaeef1+92,0c131d+92,0c131d+100 */
-  background: #0c131d;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0c131d), color-stop(8%, #0c131d), color-stop(8%, #eaeef1), color-stop(14%, #edf0f4), color-stop(14%, #183293), color-stop(86%, #122b72), color-stop(86%, #edf0f4), color-stop(92%, #eaeef1), color-stop(92%, #0c131d), color-stop(100%, #0c131d));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 14%, #183293 14%, #122b72 86%, #edf0f4 86%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c131d', endColorstr='#0c131d',GradientType=0);
-  /* IE6-9 */
-}
-.bbb-flag-v-cibona-blue {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c131d+0,0c131d+8,eaeef1+8,edf0f4+11,12408d+11,12408d+89,edf0f4+89,eaeef1+92,0c131d+92,0c131d+100 */
-  background: #0c131d;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #0c131d), color-stop(8%, #0c131d), color-stop(8%, #eaeef1), color-stop(11%, #edf0f4), color-stop(11%, #12408d), color-stop(89%, #12408d), color-stop(89%, #edf0f4), color-stop(92%, #eaeef1), color-stop(92%, #0c131d), color-stop(100%, #0c131d));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* IE10+ */
-  background: linear-gradient(to right, #0c131d 0%, #0c131d 8%, #eaeef1 8%, #edf0f4 11%, #12408d 11%, #12408d 89%, #edf0f4 89%, #eaeef1 92%, #0c131d 92%, #0c131d 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c131d', endColorstr='#0c131d',GradientType=1);
-  /* IE6-9 */
-}
-.white {
-  color: white;
-}
-.white-bg {
-  background-color: white;
-}
-.light-blue-gray-l {
-  color: #edf0f4;
-}
-.light-blue-gray-d {
-  color: #eaeef1;
-}
-.dark-dark-blue {
-  color: #0c131d;
-}
-.dark-blue-light {
-  color: #183293;
-}
-.dark-blue-dark {
-  color: #122b72;
-}
-.light-blue-gray-l-bg {
-  background-color: #edf0f4;
-}
-.light-blue-gray-d-bg {
-  background-color: #eaeef1;
-}
-.dark-dark-blue-bg {
-  background-color: #0c131d;
-}
-.dark-blue-light-bg {
-  background-color: #183293;
-}
-.dark-blue-dark-bg {
-  background-color: #122b72;
-}
-a.underline-link, span.underline {
-  text-decoration: underline;
-}
-.disabled-button, .disabledbutton {
-  pointer-events: none;
-}
-.dashed-spacer {
-  border-bottom: 2px dashed #0c131d;
-  box-sizing: border-box;
-}
-.inline-table {
-  display: inline-table !important;
-  height: 100%;
-}
-.inline-table > * {
-  display: table-cell !important;
-  vertical-align: middle;
-}
-.flexbox {
-  display: -webkit-box;
-  /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;
-  /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;
-  /* TWEENER - IE 10 */
-  display: -webkit-flex;
-  /* NEW - Chrome */
-  display: flex;
-  /* NEW, Spec - Opera 12.1, Firefox 20+ */
-}
-@media only screen and (max-width: 767px) {
-  .f-text-fw-only-1x, .f-div-fw-only-1x {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .f-text-non-fw-only-1x, .f-div-non-fw-only-1x {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 1023px) {
-  .f-div-fw-1024 {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .f-div-non-fw-1024 {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .f-div-fw-768 {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .f-div-non-fw-768 {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 559px) {
-  .f-div-fw-560 {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 560px) {
-  .f-div-non-fw-560 {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 499px) {
-  .f-div-fw-500 {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 500px) {
-  .f-div-non-fw-500 {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 459px) {
-  .f-div-fw-460 {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 460px) {
-  .f-div-non-fw-460 {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 359px) {
-  .f-div-fw-360 {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 360px) {
-  .f-div-non-fw-360 {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 1199px) {
-  .f-div-fw-large-desktop {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .f-div-non-fw-large-desktop {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .f-div-fw-small-desktop {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .f-div-non-fw-small-desktop {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .f-div-fw-tablet {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .f-div-non-fw-tablet {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 1199px) {
-  .f-div-large-desktop-only {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .f-div-small-desktop-only {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .f-div-small-desktop-only {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .f-div-desktop-only {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .f-div-tablet-only {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .f-div-tablet-only {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .f-div-mobile-only {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 479px) {
-  .f-div-fw-mobile-mid {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 480px) {
-  .f-div-non-fw-mobile-mid {
-    display: none !important;
-  }
-}
-@media only screen and (max-width: 559px) {
-  .f-div-fw-mobile-large {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 560px) {
-  .f-div-non-fw-mobile-large {
-    display: none !important;
-  }
-}
-@-webkit-keyframes horizontal-alarm-frames {
+ *********************//* "X" icons hover *//* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */@-webkit-keyframes horizontal-alarm-frames {
   10%, 14%, 18%, 22%, 35%, 39%, 43%, 47% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -658,12 +145,12 @@ a.underline-link, span.underline {
     -webkit-transform: scale(0.2, 0.2);
     -ms-transform: scale(0.2, 0.2);
     transform: scale(0.2, 0.2);
-    opacity: 0.3;
+    opacity: 0;
   }
   50% {
     opacity: 1;
   }
-  100% {
+  80% {
     -webkit-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
@@ -672,7 +159,7 @@ a.underline-link, span.underline {
     -webkit-transform: scale(1.35, 1.35);
     -ms-transform: scale(1.35, 1.35);
     transform: scale(1.35, 1.35);
-    opacity: 0.3;
+    opacity: 0;
   }
 }
 @-moz-keyframes pulsate-frames {
@@ -680,12 +167,12 @@ a.underline-link, span.underline {
     -webkit-transform: scale(0.2, 0.2);
     -ms-transform: scale(0.2, 0.2);
     transform: scale(0.2, 0.2);
-    opacity: 0.3;
+    opacity: 0;
   }
   50% {
     opacity: 1;
   }
-  100% {
+  80% {
     -webkit-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
@@ -694,7 +181,7 @@ a.underline-link, span.underline {
     -webkit-transform: scale(1.35, 1.35);
     -ms-transform: scale(1.35, 1.35);
     transform: scale(1.35, 1.35);
-    opacity: 0.3;
+    opacity: 0;
   }
 }
 @-o-keyframes pulsate-frames {
@@ -702,12 +189,12 @@ a.underline-link, span.underline {
     -webkit-transform: scale(0.2, 0.2);
     -ms-transform: scale(0.2, 0.2);
     transform: scale(0.2, 0.2);
-    opacity: 0.3;
+    opacity: 0;
   }
   50% {
     opacity: 1;
   }
-  100% {
+  80% {
     -webkit-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
@@ -716,7 +203,7 @@ a.underline-link, span.underline {
     -webkit-transform: scale(1.35, 1.35);
     -ms-transform: scale(1.35, 1.35);
     transform: scale(1.35, 1.35);
-    opacity: 0.3;
+    opacity: 0;
   }
 }
 @keyframes pulsate-frames {
@@ -724,12 +211,12 @@ a.underline-link, span.underline {
     -webkit-transform: scale(0.2, 0.2);
     -ms-transform: scale(0.2, 0.2);
     transform: scale(0.2, 0.2);
-    opacity: 0.3;
+    opacity: 0;
   }
   50% {
     opacity: 1;
   }
-  100% {
+  80% {
     -webkit-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
@@ -738,7 +225,7 @@ a.underline-link, span.underline {
     -webkit-transform: scale(1.35, 1.35);
     -ms-transform: scale(1.35, 1.35);
     transform: scale(1.35, 1.35);
-    opacity: 0.3;
+    opacity: 0;
   }
 }
 html, body, .a-level-holder, .content-wrap {
@@ -862,7 +349,6 @@ html .chat-overlay-wrap .status-info-holder {
   display: block;
   position: absolute;
   top: 0;
-  padding-left: 0.5em;
   overflow: hidden;
 }
 html .chat-overlay-wrap .status-info-holder .req-status-container {
@@ -890,7 +376,8 @@ html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-in
 }
 html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .version-title {
   float: left;
-  width: 8em;
+  width: 7em;
+  padding-left: 0.25em;
 }
 html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .version-title span {
   font-size: 0.625em;
@@ -933,11 +420,53 @@ html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-in
   font-size: 0.5em;
   vertical-align: middle;
 }
-html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.faa-pulsation-a {
+html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.faa-pulsation-a.a-1 {
+  -webkit-animation: pulsate-frames 0.55s ease infinite;
+  -moz-animation: pulsate-frames 0.55s ease infinite;
+  -o-animation: pulsate-frames 0.55s ease infinite;
+  animation: pulsate-frames 0.55s ease infinite;
+}
+html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.faa-pulsation-a.a-2 {
+  -webkit-animation: pulsate-frames 85s ease infinite;
+  -moz-animation: pulsate-frames 85s ease infinite;
+  -o-animation: pulsate-frames 85s ease infinite;
+  animation: pulsate-frames 85s ease infinite;
+}
+html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.faa-pulsation-a.a-3 {
   -webkit-animation: pulsate-frames 1.25s ease infinite;
   -moz-animation: pulsate-frames 1.25s ease infinite;
   -o-animation: pulsate-frames 1.25s ease infinite;
   animation: pulsate-frames 1.25s ease infinite;
+}
+html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.faa-pulsation-a.a-4 {
+  -webkit-animation: pulsate-frames 1.8s ease infinite;
+  -moz-animation: pulsate-frames 1.8s ease infinite;
+  -o-animation: pulsate-frames 1.8s ease infinite;
+  animation: pulsate-frames 1.8s ease infinite;
+}
+html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.faa-pulsation-a.a-5 {
+  -webkit-animation: pulsate-frames 2.5s ease infinite;
+  -moz-animation: pulsate-frames 2.5s ease infinite;
+  -o-animation: pulsate-frames 2.5s ease infinite;
+  animation: pulsate-frames 2.5s ease infinite;
+}
+html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.faa-pulsation-a.a-6 {
+  -webkit-animation: pulsate-frames 3.5s ease infinite;
+  -moz-animation: pulsate-frames 3.5s ease infinite;
+  -o-animation: pulsate-frames 3.5s ease infinite;
+  animation: pulsate-frames 3.5s ease infinite;
+}
+html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.faa-pulsation-a.a-7 {
+  -webkit-animation: pulsate-frames 5s ease infinite;
+  -moz-animation: pulsate-frames 5s ease infinite;
+  -o-animation: pulsate-frames 5s ease infinite;
+  animation: pulsate-frames 5s ease infinite;
+}
+html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.faa-pulsation-a.a-8 {
+  -webkit-animation: pulsate-frames 8s ease infinite;
+  -moz-animation: pulsate-frames 8s ease infinite;
+  -o-animation: pulsate-frames 8s ease infinite;
+  animation: pulsate-frames 8s ease infinite;
 }
 html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.no-req {
   color: rgba(255, 255, 255, 0.5);
@@ -949,7 +478,7 @@ html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-in
   color: rgba(255, 165, 0, .9);
 }
 html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.canc-req {
-  color: rgba(255, 0, 0, .7);
+  color: rgba(255, 0, 0, .9);
 }
 html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.end-req {
   color: dodgerblue;
@@ -967,7 +496,7 @@ html .chat-overlay-wrap .chat-menu-bottom ul.chat-menu-items li {
 }
 html .chat-overlay-wrap .chat-menu-bottom ul.chat-menu-items > li {
   text-align: center;
-  display: inline-table;
+  display: inline-block;
   width: 20%;
   vertical-align: bottom;
 }
@@ -1138,6 +667,20 @@ html .chat-overlay-wrap .chat-content-holder.scroll-pane > .jspContainer > .jspP
   vertical-align: bottom;
   display: table-cell;
   height: 100%;
+}
+html .chat-overlay-wrap .chat-content-holder.scroll-pane > .jspContainer > .jspVerticalBar > .jspTrack {
+  border-left: 2px solid #12408d;
+  border-right: 2px solid #12408d;
+  background-color: #12408d;
+}
+html .chat-overlay-wrap .chat-content-holder.scroll-pane > .jspContainer > .jspVerticalBar > .jspTrack .jspDrag {
+  background-color: white;
+}
+html .chat-overlay-wrap .chat-content-holder.scroll-pane > .jspContainer > .jspVerticalBar > .jspTrack .jspDrag:hover {
+  background-color: #edf0f4;
+}
+html .chat-overlay-wrap .chat-content-holder.scroll-pane > .jspContainer > .jspVerticalBar > .jspTrack .jspDrag:active {
+  background-color: #0c131d;
 }
 html .chat-overlay-wrap a:hover, html .chat-overlay-wrap a:focus {
   outline: none;
@@ -1337,6 +880,7 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-users .users-conta
   height: 100%;
   overflow: hidden;
   vertical-align: bottom;
+  position: absolute;
   right: 0.25em;
   top: 0;
   width: 2em;
@@ -1354,9 +898,6 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-users .users-conta
   font-size: 1.25em;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-users .users-container .user .existing-conversation-info > i.fa.unread-overlay-anim {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   display: inline-table;
@@ -1588,6 +1129,7 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
   padding: 0 5px;
   display: block;
   overflow: hidden;
+  height: 100%;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participant {
   position: relative;
@@ -1604,7 +1146,15 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
   vertical-align: middle;
   font-size: 0.9em;
 }
-html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participant .img-av-holder {
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participants-holder span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.9em;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participants-holder .participants-names {
+  display: inline-block;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .img-av-holder {
   width: 22px;
   height: 22px;
   -webkit-border-radius: 2em;
@@ -1620,7 +1170,7 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
   vertical-align: middle;
   position: relative;
 }
-html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participant .img-av-holder img {
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .img-av-holder img {
   -webkit-border-radius: 2em;
   -moz-border-radius: 2em;
   border-radius: 2em;
@@ -1630,14 +1180,14 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
   margin: 0 auto;
   top: 1px;
 }
-html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participant .img-av-holder > i {
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .img-av-holder > i {
   display: inline-table;
   height: 100%;
   font-size: 14px;
   padding-top: 3px;
   padding-bottom: 3px;
 }
-html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .participant .img-av-holder > i:before {
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .img-av-holder > i:before {
   position: relative;
   display: table-cell;
   vertical-align: middle;
@@ -1650,19 +1200,258 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
   white-space: nowrap;
   overflow: hidden !important;
   text-overflow: ellipsis;
+  height: 100%;
+  vertical-align: middle;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title > span:before {
+  display: inline-block;
+  height: 100%;
+  content: "";
+  vertical-align: middle;
+  position: relative;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title .img-avatar-holder {
   display: inline-block;
 }
-html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container {
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-menus-holder {
+  width: 25%;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title-holder {
+  width: 75%;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-title-holder, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-menus-holder {
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-menus {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-menus li {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-menus li > a {
+  width: 100%;
+  height: 100%;
+  color: #12408d;
+  -webkit-transition: color 0.25s ease-out, background-color 0.25s ease-out;
+  -moz-transition: color 0.25s ease-out, background-color 0.25s ease-out;
+  -o-transition: color 0.25s ease-out, background-color 0.25s ease-out;
+  -ms-transition: color 0.25s ease-out, background-color 0.25s ease-out;
+  transition: color 0.25s ease-out, background-color 0.25s ease-out;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-menus li > a:hover {
+  color: #0c131d;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-menus li > a i.fa {
+  font-size: 1.125em;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-menus li.close-chatroom > a:hover {
+  color: #ae2e15;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-menus li.open > a, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .chatroom-title-container .chatroom-menus li.open > span {
+  background-color: #0c131d;
+  color: #edf0f4;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane {
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  /* older webkit */
+  -moz-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -o-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  /* custom */
+  z-index: 25;
+  background-color: rgba(0, 0, 0, .6);
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap {
+  height: 2.25em;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 2.25em;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu {
+  height: 100%;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items {
+  width: 100%;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items li {
+  position: relative;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li {
+  text-align: center;
+  display: inline-block;
+  width: 25%;
+  vertical-align: bottom;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li a {
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li a:hover, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li a:focus {
+  background-color: #eaeef1;
+  color: #0c131d;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li a.closing-chat-btn:hover, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li a.closing-chat-btn:focus {
+  color: #ae2e15;
+  background-color: #eaeef1;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li > a, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li > span {
+  cursor: pointer;
+  display: block;
+  height: 2.25em;
+  line-height: 2.25em;
+  background-color: #0c131d;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li > a i.fa, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li > span i.fa {
+  width: 100%;
+  display: inline-table;
+  vertical-align: top;
+  text-align: center;
+  height: 100%;
+  font-size: 1.5em;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li > a i.fa:before, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li > span i.fa:before {
+  display: table-cell;
+  vertical-align: middle;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li.open > a, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-overlay-wrap .chat-messages-menu ul.messages-menu-items > li.open > span {
+  background-color: #12408d;
+  color: white;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane {
+  height: -moz-calc(100% - 2.25em - 3.75em - 2.25em);
+  height: -o-calc(100% - 2.25em - 3.75em - 2.25em);
+  height: -webkit-calc(100% - 2.25em - 3.75em - 2.25em);
+  height: calc(100% - 2.25em - 3.75em - 2.25em);
+  position: absolute;
+  width: 100%;
+  top: 4.5em;
+  left: 0;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .jspTrack {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: transparent;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .jspTrack .jspDrag {
+  background-color: white;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .jspTrack .jspDrag:hover {
+  background-color: #edf0f4;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .jspTrack .jspDrag:active {
+  background-color: #12408d;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items {
+  width: 100%;
+  display: none;
+  font-family: MuseoSans;
+  font-weight: 600;
+  z-index: 29;
+  overflow: hidden;
+  max-height: 100%;
+  position: relative;
+  height: 100%;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item {
+  display: none;
+  overflow: hidden;
+  text-align: left;
+  max-height: 100%;
+  height: 100%;
+  /* position: absolute; */
+  width: 100%;
+  color: #edf0f4;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .big-emoticons-container, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .meme-emoticons-container {
+  padding: 4px 0;
+  text-align: center;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .big-emoticons-container .emoticon-wrap, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .meme-emoticons-container .emoticon-wrap {
+  display: inline-block;
+  height: 92px;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: top;
+  margin-bottom: 4px;
+  width: 8.125em;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .big-emoticons-container .emoticon-wrap .emoticon-link, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .meme-emoticons-container .emoticon-wrap .emoticon-link {
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  cursor: pointer;
+  color: #edf0f4;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2px;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .big-emoticons-container .emoticon-wrap .emoticon-link:hover, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .meme-emoticons-container .emoticon-wrap .emoticon-link:hover {
+  background-color: #eaeef1;
+  color: #ae2e15;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .big-emoticons-container .emoticon-wrap .emoticon-link:active, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .meme-emoticons-container .emoticon-wrap .emoticon-link:active {
+  background-color: #12408d;
+  color: white;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .big-emoticons-container .emoticon-wrap .emoticon-link .emoticon-img-holder .fuconz-emoticon, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .meme-emoticons-container .emoticon-wrap .emoticon-link .emoticon-img-holder .fuconz-emoticon {
+  width: 64px;
+  height: 64px;
+  background-size: contain;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .big-emoticons-container .emoticon-wrap .emoticon-link .emoticon-img-holder span, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .meme-emoticons-container .emoticon-wrap .emoticon-link .emoticon-img-holder span {
+  padding: 0;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .big-emoticons-container .emoticon-wrap .emoticon-link .emoticon-title, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane .messages-menu-filter-items .filter-item .meme-emoticons-container .emoticon-wrap .emoticon-link .emoticon-title {
+  font-size: 0.75em;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder.show-menu .messages-menu-overlay-wrap, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder.show-menu .messages-menu-items-scroll-pane {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  /* older webkit */
+  -moz-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -o-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  /* custom */
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-scroll-pane {
   height: -moz-calc(100% - 2.25em - 3.75em);
   height: -o-calc(100% - 2.25em - 3.75em);
   height: -webkit-calc(100% - 2.25em - 3.75em);
   height: calc(100% - 2.25em - 3.75em);
-  vertical-align: bottom;
-  overflow-x: auto;
-  padding-bottom: 6px;
   border-bottom: 4px solid #0c131d;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-scroll-pane .jspTrack {
+  background: transparent;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container {
+  vertical-align: bottom;
+  padding-bottom: 6px;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-sender > section, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section {
   display: inline-block;
@@ -1717,28 +1506,55 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body {
   position: relative;
-  font-size: 14px;
-  font-size: 0.875rem;
-  padding: 2px 5px 3px 5px;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  padding: 2px 5px 2px 5px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
   margin-bottom: 2px;
   border: 1px solid transparent;
-  min-width: 60%;
-  max-width: 90%;
+  min-width: 65%;
+  max-width: 100%;
   display: inline-table;
-  min-height: 28px;
+  min-height: 30px;
 }
-@media only screen and (max-width: 479px) {
+@media only screen and (min-width: 320px) {
   html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body {
-    min-width: 65%;
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+@media only screen and (min-width: 480px) {
+  html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body {
+    min-width: 60%;
     max-width: 95%;
+  }
+}
+@media only screen and (min-height: 540px) {
+  html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body {
+    min-height: 32px;
   }
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body > * {
   vertical-align: middle;
   display: table-cell;
+  width: 100%;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body > * span {
+  vertical-align: middle;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  word-break: break-word;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body > * a {
+  color: #122b72;
+  display: block;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body > * a:hover {
+  color: #ae2e15;
+  text-decoration: underline;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section.msg-b-holder .message-body.last-in-a-row:after {
   position: absolute;
@@ -1757,7 +1573,7 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
 }
 @media only screen and (max-width: 479px) {
   html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.my-m > section.msg-b-holder {
-    padding-right: 1em;
+    padding-right: 0.875em;
   }
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.my-m > section.msg-b-holder .message-body {
@@ -1787,7 +1603,7 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
 }
 @media only screen and (max-width: 479px) {
   html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.not-my-m > section.msg-b-holder {
-    padding-left: 1em;
+    padding-left: 0.875em;
   }
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s.not-my-m > section.msg-b-holder .message-body {
@@ -1849,7 +1665,7 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
   font-size: 13px;
   position: relative;
   padding: 4px 8px 8px 4px;
-  width: 94%;
+  width: 92%;
   resize: none;
   min-height: 16px;
   height: 44px;
@@ -1861,29 +1677,29 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder {
   display: inline-block;
-  width: 6%;
+  width: 8%;
   vertical-align: top;
   text-align: center;
   height: 44px;
   top: 8px;
   position: relative;
+  overflow: hidden;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder .light {
   font-size: 0.625em;
   color: blueviolet;
-  -webkit-transition: color 0.6s ease-out;
-  -moz-transition: color 0.6s ease-out;
-  -o-transition: color 0.6s ease-out;
-  -ms-transition: color 0.6s ease-out;
-  transition: color 0.6s ease-out;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  -ms-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
   vertical-align: top;
   padding: 2px 0;
-  margin: 0;
   position: relative;
-  display: block;
+  display: block !important;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder .light.no {
-  color: rgba(255, 255, 255, 0);
+  color: rgba(255, 255, 255, 0.0);
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder .light.act {
   color: dodgerblue;
@@ -1892,7 +1708,7 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
   color: orange;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder .light.canc {
-  color: rgba(255, 0, 0, .7);
+  color: darkred;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .textarea-holder .lights-holder .light.end {
   color: lightseagreen;
@@ -1988,17 +1804,15 @@ html .jspVerticalBar {
   position: absolute;
   top: 0;
   right: 0;
-  width: 15px;
+  width: 14px;
   height: 100%;
-  background: red;
 }
 html .jspHorizontalBar {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 15px;
-  background: red;
+  height: 14px;
 }
 html .jspCap {
   display: none;
@@ -2009,7 +1823,14 @@ html .jspHorizontalBar .jspCap {
 html .jspTrack {
   background: white;
   position: relative;
-  border-left: 1px solid #eaeef1;
+}
+html .jspVerticalBar .jspTrack {
+  border-left: 3px solid #eaeef1;
+  border-right: 3px solid #eaeef1;
+}
+html .jspHorizontalBar .jspTrack {
+  border-top: 3px solid #eaeef1;
+  border-bottom: 3px solid #eaeef1;
 }
 html .jspDrag {
   background-color: #12408d;
@@ -2029,6 +1850,9 @@ html .jspDrag {
 html .jspDrag:hover {
   background-color: #0f3678;
 }
+html .jspDrag:active {
+  background-color: #0c131d;
+}
 html .jspHorizontalBar .jspTrack, html .jspHorizontalBar .jspDrag {
   float: left;
   height: 100%;
@@ -2046,10 +1870,10 @@ html .jspArrow.jspDisabled {
   background: #80808d;
 }
 html .jspVerticalBar .jspArrow {
-  height: 15px;
+  height: 14px;
 }
 html .jspHorizontalBar .jspArrow {
-  width: 15px;
+  width: 14px;
   float: left;
   height: 100%;
 }
@@ -2827,7 +2651,7 @@ html body .ui-state-highlight, html body .ui-widget-content .ui-state-highlight,
 }
 html body .ui-state-error, html body .ui-widget-content .ui-state-error, html body .ui-widget-header .ui-state-error {
   border: 1px solid #cd0a0a;
-  background: #a32d00 url("../../prod/css/images/ui-bg_dots-small_30_a32d00_2x2.png") 50% 50% repeat;
+  background: #a32d00 url("../../../prod/css/images/ui-bg_dots-small_30_a32d00_2x2.png") 50% 50% repeat;
   color: #fff;
 }
 html body .ui-state-error a, html body .ui-widget-content .ui-state-error a, html body .ui-widget-header .ui-state-error a {
@@ -3347,7 +3171,7 @@ html body #content .main-content-box .vertical-section h4 a {
   transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
   padding: 0 0.1em;
   cursor: pointer;
-  font-width: bold;
+  font-style: bold;
 }
 html body #content .main-content-box .vertical-section h4 a:hover, html body #content .main-content-box .vertical-section h4 a:focus {
   color: white;
@@ -3384,7 +3208,7 @@ html body #content .main-content-box .horizontal-section h4 a {
   transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
   padding: 0 0.1em;
   cursor: pointer;
-  font-width: bold;
+  font-style: bold;
 }
 html body #content .main-content-box .horizontal-section h4 a:hover, html body #content .main-content-box .horizontal-section h4 a:focus {
   color: white;
@@ -3431,7 +3255,7 @@ html body #content .main-content-box .standard-f-section h4 a {
   transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
   padding: 0 0.1em;
   cursor: pointer;
-  font-width: bold;
+  font-style: bold;
 }
 html body #content .main-content-box .standard-f-section h4 a:hover, html body #content .main-content-box .standard-f-section h4 a:focus {
   color: white;
@@ -3682,7 +3506,27 @@ html body #content .main-content-box .form-container .std-text-input:focus, html
   -moz-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
   box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 1.3em 0.2em rgba(50, 40, 40, 0.40);
 }
-html body #content .main-content-box .form-container .std-text-input:valid + label:before, html body #content .main-content-box .form-container .large-text-input:valid + label:before, html body #content .main-content-box .form-container .medium-text-input:valid + label:before, html body #content .main-content-box .form-container .small-text-input:valid + label:before, html body #content .main-content-box .form-container .std-textarea-input:valid + label:before, html body #content .main-content-box .form-container .std-text-input:focus + label:before, html body #content .main-content-box .form-container .large-text-input:focus + label:before, html body #content .main-content-box .form-container .medium-text-input:focus + label:before, html body #content .main-content-box .form-container .small-text-input:focus + label:before, html body #content .main-content-box .form-container .std-textarea-input:focus + label:before, html body #content .main-content-box .form-container .std-text-input:read-only + label:before, html body #content .main-content-box .form-container .large-text-input:read-only + label:before, html body #content .main-content-box .form-container .medium-text-input:read-only + label:before, html body #content .main-content-box .form-container .small-text-input:read-only + label:before, html body #content .main-content-box .form-container .std-textarea-input:read-only + label:before, html body #content .main-content-box .form-container .std-text-input[readonly] + label:before, html body #content .main-content-box .form-container .large-text-input[readonly] + label:before, html body #content .main-content-box .form-container .medium-text-input[readonly] + label:before, html body #content .main-content-box .form-container .small-text-input[readonly] + label:before, html body #content .main-content-box .form-container .std-textarea-input[readonly] + label:before, html body #content .main-content-box .form-container .std-text-input[readonly=""] + label:before, html body #content .main-content-box .form-container .large-text-input[readonly=""] + label:before, html body #content .main-content-box .form-container .medium-text-input[readonly=""] + label:before, html body #content .main-content-box .form-container .small-text-input[readonly=""] + label:before, html body #content .main-content-box .form-container .std-textarea-input[readonly=""] + label:before {
+html body #content .main-content-box .form-container .std-text-input:valid + label:before, html body #content .main-content-box .form-container .large-text-input:valid + label:before, html body #content .main-content-box .form-container .medium-text-input:valid + label:before, html body #content .main-content-box .form-container .small-text-input:valid + label:before, html body #content .main-content-box .form-container .std-textarea-input:valid + label:before {
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transform: translate(-28px, -20px) scale(0.9, 0.9);
+  -ms-transform: translate(-28px, -20px) scale(0.9, 0.9);
+  transform: translate(-28px, -20px) scale(0.9, 0.9);
+  opacity: 1;
+  font-style: normal;
+  border-left: 1px solid #183293;
+}
+html body #content .main-content-box .form-container .std-text-input:focus + label:before, html body #content .main-content-box .form-container .large-text-input:focus + label:before, html body #content .main-content-box .form-container .medium-text-input:focus + label:before, html body #content .main-content-box .form-container .small-text-input:focus + label:before, html body #content .main-content-box .form-container .std-textarea-input:focus + label:before {
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transform: translate(-28px, -20px) scale(0.9, 0.9);
+  -ms-transform: translate(-28px, -20px) scale(0.9, 0.9);
+  transform: translate(-28px, -20px) scale(0.9, 0.9);
+  opacity: 1;
+  font-style: normal;
+  border-left: 1px solid #183293;
+}
+html body #content .main-content-box .form-container .std-text-input:read-only + label:before, html body #content .main-content-box .form-container .large-text-input:read-only + label:before, html body #content .main-content-box .form-container .medium-text-input:read-only + label:before, html body #content .main-content-box .form-container .small-text-input:read-only + label:before, html body #content .main-content-box .form-container .std-textarea-input:read-only + label:before {
   -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
   -webkit-transform: translate(-28px, -20px) scale(0.9, 0.9);
@@ -3693,6 +3537,16 @@ html body #content .main-content-box .form-container .std-text-input:valid + lab
   border-left: 1px solid #183293;
 }
 html body #content .main-content-box .form-container .std-text-input[readonly=""] + label:before, html body #content .main-content-box .form-container .large-text-input[readonly=""] + label:before, html body #content .main-content-box .form-container .medium-text-input[readonly=""] + label:before, html body #content .main-content-box .form-container .small-text-input[readonly=""] + label:before, html body #content .main-content-box .form-container .std-textarea-input[readonly=""] + label:before {
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transform: translate(-28px, -20px) scale(0.9, 0.9);
+  -ms-transform: translate(-28px, -20px) scale(0.9, 0.9);
+  transform: translate(-28px, -20px) scale(0.9, 0.9);
+  opacity: 1;
+  font-style: normal;
+  border-left: 1px solid #183293;
+}
+html body #content .main-content-box .form-container .std-text-input[readonly] + label:before, html body #content .main-content-box .form-container .large-text-input[readonly] + label:before, html body #content .main-content-box .form-container .medium-text-input[readonly] + label:before, html body #content .main-content-box .form-container .small-text-input[readonly] + label:before, html body #content .main-content-box .form-container .std-textarea-input[readonly] + label:before {
   -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
   -webkit-transform: translate(-28px, -20px) scale(0.9, 0.9);
@@ -5524,7 +5378,7 @@ html body #content .main-content-box #cd-zoom-in, html body #content .main-conte
   background-color: rgba(18, 64, 141, .9);
   background-repeat: no-repeat;
   background-size: 32px 64px;
-  background-image: url('../../graphics/cd-icon-controller.svg');
+  background-image: url('../../../graphics/cd-icon-controller.svg');
 }
 .no-touch html body #content .main-content-box #cd-zoom-in:hover, .no-touch html body #content .main-content-box #cd-zoom-out:hover {
   background-color: #12408d;

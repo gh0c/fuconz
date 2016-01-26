@@ -3,13 +3,12 @@
 use Slim\Slim;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
-use Slim\Middleware\SessionCookie;
+//use Slim\Middleware\SessionCookie;
 
-use Noodlehaus\Config;
 use RandomLib\Factory as RandomLib;
-use app\helpers\Configuration;
-use app\helpers\Hash;
-use app\model\Middleware;
+use \app\helpers\Configuration;
+use \app\helpers\Hash;
+use \app\model\Middleware;
 
 
 session_cache_limiter(false);
@@ -134,6 +133,7 @@ $app->get('/cpl', function() use ($app) {
 })->name('compile');
 
 //
+
 
 $app->auth = false;
 

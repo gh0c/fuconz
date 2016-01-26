@@ -558,9 +558,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                 'active_page' => "user.main",
                 'active_item' => "user.main.bookings",
                 'bookings' => $bookings,
-                'span' => $datetime_span,
-//                'logs' => $logs,
-                'text_help' => new \app\helpers\Text()
+                'span' => $datetime_span
             ));
         }
 

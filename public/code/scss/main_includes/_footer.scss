@@ -1,0 +1,41 @@
+@import "../modules/_modules.import";
+
+
+
+
+#footer {
+  background-color: $dark-dark-blue;
+  padding-top: 15px;
+  text-align: center;
+  color: #BBB;
+//  display: none;
+
+
+  nav.footer {
+    padding: 8px 20px 6px 20px;
+    border-top: 1px solid #BBB;
+    & > div {
+      width: 100%;
+    }
+    .signature {
+      font-family: MuseoSans;
+      color: white;
+      padding: 6px 10px 2px 10px;
+      span.fuconz {
+        font-weight: 600;
+      }
+      .fa {
+        padding: 0 1em 0 .2em;
+
+      }
+    }
+  }
+}
+
+.a-level-holder {
+  margin: 0 auto -$footer-height;
+}
+
+#footer, .a-level-holder .push {
+  height: $footer-height;
+}

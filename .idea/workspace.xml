@@ -22,22 +22,13 @@
     <favorites_list name="fuconz" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.4940669">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
           <file leaf-file-name="calendar.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/js/calendar.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="206" column="35" selection-start="7558" selection-end="7558" vertical-scroll-proportion="0.0" vertical-offset="3274" max-vertical-offset="7667">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="general_classes.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/code/scss/general_classes.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="192" column="0" selection-start="2852" selection-end="2852" vertical-scroll-proportion="0.0" vertical-offset="2958" max-vertical-offset="6460">
+                <state line="119" column="44" selection-start="4620" selection-end="4683" vertical-scroll-proportion="0.0" vertical-offset="1897" max-vertical-offset="7667">
                   <folding />
                 </state>
               </provider>
@@ -52,10 +43,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="unread_messages.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/profile/home/unread_messages.twig">
+          <file leaf-file-name="forms.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/forms.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="46" column="22" selection-start="1970" selection-end="1970" vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="1054">
+                <state line="345" column="17" selection-start="8432" selection-end="8432" vertical-scroll-proportion="0.0" vertical-offset="11166" max-vertical-offset="14314">
                   <folding />
                 </state>
               </provider>
@@ -64,7 +55,7 @@
           <file leaf-file-name="bookings.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/js/bookings.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="149" column="37" selection-start="4862" selection-end="5050" vertical-scroll-proportion="0.0" vertical-offset="2179" max-vertical-offset="2839">
+                <state line="137" column="49" selection-start="4710" selection-end="4710" vertical-scroll-proportion="0.0" vertical-offset="1928" max-vertical-offset="2839">
                   <folding />
                 </state>
               </provider>
@@ -73,7 +64,7 @@
           <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/js/game.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="658" column="13" selection-start="20785" selection-end="20789" vertical-scroll-proportion="0.0" vertical-offset="11186" max-vertical-offset="11798">
+                <state line="658" column="13" selection-start="20785" selection-end="20789" vertical-scroll-proportion="0.0" vertical-offset="10887" max-vertical-offset="11798">
                   <folding />
                 </state>
               </provider>
@@ -88,72 +79,56 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="default.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/admin/templates/default.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="36" column="48" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="799">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="active_users.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/user/chat/active_users.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="38" column="31" selection-start="1865" selection-end="1865" vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="901">
+                <state line="38" column="31" selection-start="1865" selection-end="1865" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="901">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="user.book_training_course.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/bookings/user.book_training_course.twig">
+          <file leaf-file-name="chat_room.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/chat/chat_room.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="106" column="36" selection-start="4791" selection-end="5168" vertical-scroll-proportion="0.0" vertical-offset="1802" max-vertical-offset="3077">
+                <state line="31" column="10" selection-start="1227" selection-end="1227" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="748">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="header.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/header.twig">
+          <file leaf-file-name="new_chat_room.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/chat/new_chat_room.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="58" column="53" selection-start="3167" selection-end="3167" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="2754">
+                <state line="18" column="94" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0" vertical-offset="173" max-vertical-offset="578">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="window_comm.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/code/js/window_comm.js">
+          <file leaf-file-name="registration.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/authentication/registration.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+                <state line="106" column="101" selection-start="5181" selection-end="5210" vertical-scroll-proportion="0.0" vertical-offset="1802" max-vertical-offset="3111">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="my_chat_rooms.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/chat/my_chat_rooms.twig">
+          <file leaf-file-name="menu_dropdown.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/js/menu_dropdown.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="63" column="6" selection-start="0" selection-end="2538" vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1173">
-                  <folding>
-                    <marker date="1453046897061" expanded="true" signature="5:2537" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="170:2396" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="223:538" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="543:561" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="593:2224" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="649:1792" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="654:917" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="946:1718" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="1177:1510" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="1723:1784" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="1797:1818" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="1857:2201" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="2229:2247" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="2294:2374" placeholder="..." />
-                    <marker date="1453046897061" expanded="true" signature="2446:2514" placeholder="..." />
-                  </folding>
+                <state line="1" column="47" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="578">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="about_site.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/about_site.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="144" column="147" selection-start="10160" selection-end="10160" vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="3706">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -161,52 +136,169 @@
           <file leaf-file-name="chat_messages.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/user/chat/chat_messages.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="144" column="42" selection-start="6615" selection-end="6615" vertical-scroll-proportion="0.0" vertical-offset="2188" max-vertical-offset="2720">
+                <state line="125" column="31" selection-start="5041" selection-end="5078" vertical-scroll-proportion="0.0" vertical-offset="1343" max-vertical-offset="4267">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="appended_new_message.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/chat/appended_new_message.twig">
+          <file leaf-file-name="BeforeMiddleware.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Middleware/BeforeMiddleware.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="48" column="70" selection-start="1906" selection-end="1906" vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="2193">
+                <state line="68" column="37" selection-start="2728" selection-end="2728" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1734">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="admin_messages.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/admin/templates/partials/admin_messages.twig">
+          <file leaf-file-name="ch_menu.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/js/ch_menu.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="79" selection-start="494" selection-end="499" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1343">
+                <state line="45" column="16" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1071">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="chat_sections.js" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/code/js/chat/chat_sections.js">
+          <file leaf-file-name="profile.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/js/profile.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="960" column="0" selection-start="38664" selection-end="38664" vertical-scroll-proportion="0.50564337" vertical-offset="16096" max-vertical-offset="20570">
+                <state line="107" column="0" selection-start="2883" selection-end="2883" vertical-scroll-proportion="0.0" vertical-offset="1525" max-vertical-offset="3281">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="my_chat_rooms_and_users.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/chat/my_chat_rooms_and_users.twig">
+          <file leaf-file-name="homepage.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/js/homepage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="73" column="46" selection-start="3062" selection-end="3062" vertical-scroll-proportion="0.0" vertical-offset="998" max-vertical-offset="2091">
+                <state line="29" column="25" selection-start="643" selection-end="656" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="833">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="unread_chat_messages.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/chat/unread_chat_messages.twig">
+          <file leaf-file-name="std_footer.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/templates/std_footer.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="3" column="94" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1632">
+                <state line="18" column="0" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="901">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="chat.router.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/routes/chat.router.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="299" column="0" selection-start="10713" selection-end="10713" vertical-scroll-proportion="0.0" vertical-offset="4621" max-vertical-offset="8891">
+                  <folding>
+                    <marker date="1453509928593" expanded="true" signature="2099:2604" placeholder="..." />
+                    <marker date="1453509928593" expanded="true" signature="2223:2306" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ChatMessage.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Chat/ChatMessage.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="37" column="80" selection-start="918" selection-end="918" vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="5304">
+                  <folding>
+                    <marker date="1453499644714" expanded="true" signature="1390:1439" placeholder="SELECT * FRO..chat_message..." />
+                    <marker date="1453499644714" expanded="true" signature="1939:2040" placeholder="SELECT * FRO..chat_message..." />
+                    <marker date="1453499644714" expanded="true" signature="2756:2857" placeholder="SELECT * FRO..chat_message..." />
+                    <marker date="1453499644714" expanded="true" signature="3619:3726" placeholder="SELECT * FRO..chat_message..." />
+                    <marker date="1453499644714" expanded="true" signature="4456:4716" placeholder="SELECT * FRO..chat_message..." />
+                    <marker date="1453499644714" expanded="true" signature="4552:4669" placeholder="SELECT last_..chat_room_user..." />
+                    <marker date="1453499644714" expanded="true" signature="5508:5639" placeholder="SELECT * FRO..chat_message..." />
+                    <marker date="1453499644714" expanded="true" signature="6346:6444" placeholder="SELECT * FRO..chat_message..." />
+                    <marker date="1453499644714" expanded="true" signature="6913:6997" placeholder="SELECT COUNT..chat_message..." />
+                    <marker date="1453499644714" expanded="true" signature="7452:7510" placeholder="SELECT COUNT..chat_message..." />
+                    <marker date="1453499644714" expanded="true" signature="7999:8151" placeholder="INSERT INTO ..." />
+                    <marker date="1453499644714" expanded="true" signature="8743:8790" placeholder="DELETE FROM ..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Text.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/helpers/Text.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="151" column="5" selection-start="4483" selection-end="4483" vertical-scroll-proportion="0.0" vertical-offset="1765" max-vertical-offset="2737">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ChatRoom.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Chat/ChatRoom.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="181" column="27" selection-start="6215" selection-end="6215" vertical-scroll-proportion="0.0" vertical-offset="3077" max-vertical-offset="8194">
+                  <folding>
+                    <marker date="1453110419974" expanded="true" signature="1132:1178" placeholder="SELECT * FRO..chat_room..." />
+                    <marker date="1453110419974" expanded="true" signature="1612:1662" placeholder="SELECT * FRO..chat_room..." />
+                    <marker date="1453110419974" expanded="true" signature="2157:2346" placeholder="INSERT INTO ..." />
+                    <marker date="1453110419974" expanded="true" signature="3284:3481" placeholder="INSERT INTO ..." />
+                    <marker date="1453110419974" expanded="true" signature="4052:4289" placeholder="INSERT INTO ..." />
+                    <marker date="1453110419974" expanded="true" signature="4972:5209" placeholder="INSERT INTO ..." />
+                    <marker date="1453110419974" expanded="true" signature="6332:6405" placeholder="SELECT * FRO..chat_room..." />
+                    <marker date="1453110419974" expanded="true" signature="7039:7236" placeholder="SELECT chat_..chat_room..." />
+                    <marker date="1453110419974" expanded="true" signature="7866:7983" placeholder="SELECT user_..chat_room_user..." />
+                    <marker date="1453110419974" expanded="true" signature="8867:8971" placeholder="SELECT SUM(u..chat_room_user..." />
+                    <marker date="1453110419974" expanded="true" signature="9427:9671" placeholder="SELECT COUNT..chat_message..." />
+                    <marker date="1453110419974" expanded="true" signature="9508:9625" placeholder="SELECT last_..chat_room_user..." />
+                    <marker date="1453110419974" expanded="true" signature="10197:10500" placeholder="UPDATE chat_..." />
+                    <marker date="1453110419974" expanded="true" signature="10323:10404" placeholder="SELECT MAX(i..chat_message..." />
+                    <marker date="1453110419974" expanded="true" signature="11155:11354" placeholder="UPDATE chat_..." />
+                    <marker date="1453110419974" expanded="true" signature="12110:12380" placeholder="SELECT chat_..chat_room..." />
+                    <marker date="1453110419974" expanded="true" signature="13468:13649" placeholder="INSERT INTO ..." />
+                    <marker date="1453110419974" expanded="true" signature="14273:14376" placeholder="UPDATE chat_..." />
+                    <marker date="1453110419974" expanded="true" signature="14770:14959" placeholder="UPDATE chat_..." />
+                    <marker date="1453110419974" expanded="true" signature="15548:15702" placeholder="UPDATE chat_..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/User/User.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="648" column="42" selection-start="19961" selection-end="19961" vertical-scroll-proportion="0.0" vertical-offset="11016" max-vertical-offset="14467">
+                  <folding>
+                    <marker date="1453066956144" expanded="true" signature="4663:4716" placeholder="SELECT * FRO..users..." />
+                    <marker date="1453066956144" expanded="true" signature="5309:5379" placeholder="SELECT * FRO..users..." />
+                    <marker date="1453066956144" expanded="true" signature="5987:6071" placeholder="SELECT * FRO..users..." />
+                    <marker date="1453066956144" expanded="true" signature="6906:6948" placeholder="SELECT * FRO..users..." />
+                    <marker date="1453066956144" expanded="true" signature="7339:7401" placeholder="SELECT * FRO..users..." />
+                    <marker date="1453066956144" expanded="true" signature="7844:7912" placeholder="SELECT * FRO..users..." />
+                    <marker date="1453066956144" expanded="true" signature="8336:8368" placeholder="DELETE FROM ..." />
+                    <marker date="1453066956144" expanded="true" signature="8751:8843" placeholder="UPDATE users..." />
+                    <marker date="1453066956144" expanded="true" signature="9231:9323" placeholder="UPDATE users..." />
+                    <marker date="1453066956144" expanded="true" signature="9729:9795" placeholder="SELECT * FRO..users..." />
+                    <marker date="1453066956144" expanded="true" signature="10182:10224" placeholder="SELECT * FRO..users..." />
+                    <marker date="1453066956144" expanded="true" signature="15264:15316" placeholder="UPDATE users..." />
+                    <marker date="1453066956144" expanded="true" signature="15633:15701" placeholder="UPDATE users..." />
+                    <marker date="1453066956144" expanded="true" signature="16299:16351" placeholder="UPDATE users..." />
+                    <marker date="1453066956144" expanded="true" signature="16838:17036" placeholder="INSERT INTO ..." />
+                    <marker date="1453066956144" expanded="true" signature="18361:18533" placeholder="UPDATE users..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.profile.router.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="28" column="26" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="6749">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/config.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="490" column="9" selection-start="11140" selection-end="11140" vertical-scroll-proportion="0.8038331" vertical-offset="7617" max-vertical-offset="8568">
                   <folding />
                 </state>
               </provider>
@@ -215,431 +307,233 @@
         </leaf>
       </split-first>
       <split-second>
-        <splitter split-orientation="horizontal" split-proportion="0.5645264">
-          <split-first>
-            <leaf>
-              <file leaf-file-name="forms.new.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/forms.new.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="683" column="24" selection-start="15576" selection-end="15576" vertical-scroll-proportion="0.0" vertical-offset="11087" max-vertical-offset="13651">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="chat.router.php" pinned="false" current="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/app/routes/chat.router.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="340" column="27" selection-start="11893" selection-end="11893" vertical-scroll-proportion="-0.08056872" vertical-offset="5780" max-vertical-offset="9129">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="new_chat_creation.twig" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/views/user/chat/new_chat_creation.twig">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="28" column="0" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.0" vertical-offset="173" max-vertical-offset="595">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="Text.php" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/helpers/Text.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="47" column="0" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.0" vertical-offset="479" max-vertical-offset="969">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="chat_room.twig" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/views/user/chat/chat_room.twig">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="35" column="0" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="748">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="new_chat_room.twig" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/views/user/chat/new_chat_room.twig">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="18" column="94" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="578">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/model/User/User.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="395" column="40" selection-start="11719" selection-end="11725" vertical-scroll-proportion="0.0" vertical-offset="6715" max-vertical-offset="14467">
-                      <folding>
-                        <marker date="1453066956144" expanded="true" signature="4663:4716" placeholder="SELECT * FRO..users..." />
-                        <marker date="1453066956144" expanded="true" signature="5309:5379" placeholder="SELECT * FRO..users..." />
-                        <marker date="1453066956144" expanded="true" signature="5987:6071" placeholder="SELECT * FRO..users..." />
-                        <marker date="1453066956144" expanded="true" signature="6906:6948" placeholder="SELECT * FRO..users..." />
-                        <marker date="1453066956144" expanded="true" signature="7339:7401" placeholder="SELECT * FRO..users..." />
-                        <marker date="1453066956144" expanded="true" signature="7844:7912" placeholder="SELECT * FRO..users..." />
-                        <marker date="1453066956144" expanded="true" signature="8336:8368" placeholder="DELETE FROM ..." />
-                        <marker date="1453066956144" expanded="true" signature="8751:8843" placeholder="UPDATE users..." />
-                        <marker date="1453066956144" expanded="true" signature="9231:9323" placeholder="UPDATE users..." />
-                        <marker date="1453066956144" expanded="true" signature="9729:9795" placeholder="SELECT * FRO..users..." />
-                        <marker date="1453066956144" expanded="true" signature="10182:10224" placeholder="SELECT * FRO..users..." />
-                        <marker date="1453066956144" expanded="true" signature="15264:15316" placeholder="UPDATE users..." />
-                        <marker date="1453066956144" expanded="true" signature="15633:15701" placeholder="UPDATE users..." />
-                        <marker date="1453066956144" expanded="true" signature="16299:16351" placeholder="UPDATE users..." />
-                        <marker date="1453066956144" expanded="true" signature="16838:17036" placeholder="INSERT INTO ..." />
-                        <marker date="1453066956144" expanded="true" signature="18361:18533" placeholder="UPDATE users..." />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_chat.chat_rooms.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/_chat.chat_rooms.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="100" column="8" selection-start="2837" selection-end="3342" vertical-scroll-proportion="0.0" vertical-offset="1700" max-vertical-offset="2890">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="registration.twig" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/views/authentication/registration.twig">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="106" column="101" selection-start="5181" selection-end="5210" vertical-scroll-proportion="0.0" vertical-offset="1802" max-vertical-offset="3111">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="ChatRoom.php" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/model/Chat/ChatRoom.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="257" column="15" selection-start="8546" selection-end="8546" vertical-scroll-proportion="0.0" vertical-offset="4369" max-vertical-offset="7650">
-                      <folding>
-                        <marker date="1452936927984" expanded="true" signature="1132:1178" placeholder="SELECT * FRO..chat_room..." />
-                        <marker date="1452936927984" expanded="true" signature="1612:1662" placeholder="SELECT * FRO..chat_room..." />
-                        <marker date="1452936927984" expanded="true" signature="2157:2346" placeholder="INSERT INTO ..." />
-                        <marker date="1452936927984" expanded="true" signature="3284:3481" placeholder="INSERT INTO ..." />
-                        <marker date="1452936927984" expanded="true" signature="4052:4289" placeholder="INSERT INTO ..." />
-                        <marker date="1452936927984" expanded="true" signature="4972:5209" placeholder="INSERT INTO ..." />
-                        <marker date="1452936927984" expanded="true" signature="6332:6934" placeholder="SELECT * FRE..." />
-                        <marker date="1452936927984" expanded="true" signature="6332:6405" placeholder="SELECT * FRO..chat_room..." />
-                        <marker date="1452936927984" expanded="true" signature="7039:7236" placeholder="SELECT chat_..chat_room..." />
-                        <marker date="1452936927984" expanded="true" signature="7866:7983" placeholder="SELECT user_..chat_room_user..." />
-                        <marker date="1452936927984" expanded="true" signature="8728:8832" placeholder="SELECT SUM(u..chat_room_user..." />
-                        <marker date="1452936927984" expanded="true" signature="9288:9532" placeholder="SELECT COUNT..chat_message..." />
-                        <marker date="1452936927984" expanded="true" signature="9313:9519" placeholder="select * fro..chat_message..." />
-                        <marker date="1452936927984" expanded="true" signature="9369:9486" placeholder="SELECT last_..chat_room_user..." />
-                        <marker date="1452936927984" expanded="true" signature="10058:10326" placeholder="UPDATE chat_..." />
-                        <marker date="1452936927984" expanded="true" signature="10083:10326" placeholder="SELECT COUNT..chat_message..." />
-                        <marker date="1452936927984" expanded="true" signature="10184:10265" placeholder="SELECT MAX(i..chat_message..." />
-                        <marker date="1452936927984" expanded="true" signature="11021:11291" placeholder="SELECT chat_..chat_room..." />
-                        <marker date="1452936927984" expanded="true" signature="12379:12560" placeholder="INSERT INTO ..." />
-                        <marker date="1452936927984" expanded="true" signature="13184:13287" placeholder="UPDATE chat_..." />
-                        <marker date="1452936927984" expanded="true" signature="13681:13870" placeholder="UPDATE chat_..." />
-                        <marker date="1452936927984" expanded="true" signature="13687:13817" placeholder="INSERT INTO ..." />
-                        <marker date="1452936927984" expanded="true" signature="14459:14613" placeholder="UPDATE chat_..." />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="menu_dropdown.js" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/js/menu_dropdown.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="1" column="47" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="578">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="ChatMessage.php" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/model/Chat/ChatMessage.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="138" column="60" selection-start="4161" selection-end="4194" vertical-scroll-proportion="0.0" vertical-offset="2346" max-vertical-offset="5202">
-                      <folding>
-                        <marker date="1453033389575" expanded="true" signature="1282:1331" placeholder="SELECT * FRO..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="1831:1932" placeholder="SELECT * FRO..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="2648:2749" placeholder="SELECT * FRO..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="3511:3618" placeholder="SELECT * FRO..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="4348:4608" placeholder="SELECT * FRO..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="4444:4561" placeholder="SELECT last_..chat_room_user..." />
-                        <marker date="1453033389575" expanded="true" signature="5400:5531" placeholder="SELECT * FRO..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="6238:6336" placeholder="SELECT * FRO..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="6805:6889" placeholder="SELECT COUNT..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="7344:7402" placeholder="SELECT COUNT..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="7891:8043" placeholder="INSERT INTO ..." />
-                        <marker date="1453033389575" expanded="true" signature="8635:8682" placeholder="DELETE FROM ..." />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="chat.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/chat.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="201" column="34" selection-start="4398" selection-end="4398" vertical-scroll-proportion="0.0" vertical-offset="3247" max-vertical-offset="7616">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_animations.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_animations.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="79" column="16" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0" vertical-offset="1105" max-vertical-offset="2567">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_chat.overlay.menu.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/_chat.overlay.menu.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="3" column="9" selection-start="37" selection-end="45" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2108">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="about_site.twig" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/views/about_site.twig">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="144" column="147" selection-start="10160" selection-end="10160" vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="3706">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_chat.users.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/_chat.users.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="97" column="22" selection-start="2463" selection-end="2463" vertical-scroll-proportion="0.0" vertical-offset="1649" max-vertical-offset="2822">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_chat.info.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/_chat.info.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="7" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="272">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="chat_menu.js" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/js/chat/chat_menu.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="15" column="35" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1071">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_chat.active_chat_room.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/_chat.active_chat_room.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="365" column="12" selection-start="10624" selection-end="10624" vertical-scroll-proportion="0.0" vertical-offset="6080" max-vertical-offset="8517">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file leaf-file-name="content.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/content.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="46" column="28" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="547" max-vertical-offset="5661">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="match.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/match.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="13" column="26" selection-start="228" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="5270">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="main.new.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/main.new.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="73" column="22" selection-start="1285" selection-end="1332" vertical-scroll-proportion="0.0" vertical-offset="1241" max-vertical-offset="1428">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_profile.home.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/_profile.home.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="137" column="25" selection-start="2906" selection-end="2906" vertical-scroll-proportion="0.0" vertical-offset="1993" max-vertical-offset="3009">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_profile.messages.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/_profile.messages.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="41" column="10" selection-start="790" selection-end="790" vertical-scroll-proportion="0.0" vertical-offset="530" max-vertical-offset="3502">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="profile.js" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/js/profile.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="98" column="21" selection-start="2582" selection-end="2589" vertical-scroll-proportion="0.0" vertical-offset="1525" max-vertical-offset="3281">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_mixins.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_mixins.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="161" column="19" selection-start="3519" selection-end="3519" vertical-scroll-proportion="0.0" vertical-offset="2737" max-vertical-offset="3349">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_footer.new.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/_footer.new.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="11" column="0" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="782">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="std_footer.twig" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/views/templates/std_footer.twig">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="25" column="7" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="901">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="admin.matches.games.all.twig" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/views/admin/matches/admin.matches.games.all.twig">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="76" column="64" selection-start="2463" selection-end="2463" vertical-scroll-proportion="0.0" vertical-offset="1261" max-vertical-offset="2278">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="user.profile.router.php" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="28" column="26" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="6749">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="ChatMessage.php" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/model/Chat/ChatMessage.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="66" column="6" selection-start="1649" selection-end="1650" vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="5202">
-                      <folding>
-                        <marker date="1453033389575" expanded="true" signature="1282:1331" placeholder="SELECT * FRO..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="1831:1932" placeholder="SELECT * FRO..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="2648:2749" placeholder="SELECT * FRO..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="3511:3618" placeholder="SELECT * FRO..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="5400:5531" placeholder="SELECT * FRO..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="6805:6889" placeholder="SELECT COUNT..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="7344:7402" placeholder="SELECT COUNT..chat_message..." />
-                        <marker date="1453033389575" expanded="true" signature="7891:8043" placeholder="INSERT INTO ..." />
-                        <marker date="1453033389575" expanded="true" signature="8635:8682" placeholder="DELETE FROM ..." />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="validation.js" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/js/admin/validation.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="397" column="1" selection-start="11802" selection-end="11802" vertical-scroll-proportion="0.0" vertical-offset="6749" max-vertical-offset="7055">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="validation_content.js" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/js/admin/validation_content.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="158" column="74" selection-start="5753" selection-end="5753" vertical-scroll-proportion="0.0" vertical-offset="2442" max-vertical-offset="2890">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="tables.new.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/tables.new.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="234" column="2" selection-start="4630" selection-end="5733" vertical-scroll-proportion="0.0" vertical-offset="3876" max-vertical-offset="6783">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_header.new.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/_header.new.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="463" column="6" selection-start="9919" selection-end="10065" vertical-scroll-proportion="0.0" vertical-offset="7871" max-vertical-offset="10982">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="_content.messages.scss" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/code/scss/_content.messages.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="220" column="13" selection-start="5777" selection-end="5777" vertical-scroll-proportion="0.0" vertical-offset="3624" max-vertical-offset="4420">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="admin.matches.router.php" pinned="false" current="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/routes/admin.matches.router.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="58" column="12" selection-start="2282" selection-end="2437" vertical-scroll-proportion="0.0" vertical-offset="986" max-vertical-offset="4726">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="chat.overlay.twig" pinned="false" current="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/app/views/user/chat.overlay.twig">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="127" column="157" selection-start="7467" selection-end="7467" vertical-scroll-proportion="0.91943127" vertical-offset="1720" max-vertical-offset="3400">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
+        <leaf>
+          <file leaf-file-name="main.new.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/main.new.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="4" column="15" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1428">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="general_classes.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/general_classes.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6460">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="head_info.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/templates/partials/head_info.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="41" column="39" selection-start="1696" selection-end="1696" vertical-scroll-proportion="-26.807692" vertical-offset="0" max-vertical-offset="816">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="foot_info.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/templates/partials/foot_info.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="42" column="58" selection-start="1675" selection-end="1675" vertical-scroll-proportion="-27.461538" vertical-offset="0" max-vertical-offset="833">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_mixins.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_mixins.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="180" column="0" selection-start="3723" selection-end="3739" vertical-scroll-proportion="0.0" vertical-offset="2449" max-vertical-offset="3349">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="jscrollpane.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/jscrollpane.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="116" column="16" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0" vertical-offset="1442" max-vertical-offset="2329">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ch.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/code/js/ch.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="479" column="41" selection-start="17674" selection-end="17674" vertical-scroll-proportion="0.39211392" vertical-offset="7785" max-vertical-offset="25619">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="slick.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/slick.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1785">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="slick-theme.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/slick-theme.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3332">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="default.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/templates/default.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="41" column="0" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="952">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_animations.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_animations.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="77" column="8" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2567">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_chat.chat_rooms.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.chat_rooms.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="159" column="27" selection-start="4086" selection-end="4092" vertical-scroll-proportion="0.0" vertical-offset="2028" max-vertical-offset="2890">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="chat.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/chat.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="207" column="19" selection-start="4652" selection-end="4652" vertical-scroll-proportion="0.0" vertical-offset="3266" max-vertical-offset="8347">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_chat.info.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.info.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="7" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="272">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_chat.active_chat_room.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.active_chat_room.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="353" column="42" selection-start="9172" selection-end="9172" vertical-scroll-proportion="0.0" vertical-offset="5493" max-vertical-offset="13940">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_header.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/_header.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="361" column="8" selection-start="7787" selection-end="7788" vertical-scroll-proportion="0.0" vertical-offset="5850" max-vertical-offset="10982">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_chat.users.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.users.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="120" column="0" selection-start="2890" selection-end="2890" vertical-scroll-proportion="0.0" vertical-offset="1630" max-vertical-offset="2788">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="calendar.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/calendar.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="307" column="22" selection-start="6200" selection-end="6200" vertical-scroll-proportion="0.0" vertical-offset="3924" max-vertical-offset="5321">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_chat.overlay.menu.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.overlay.menu.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="118" column="20" selection-start="2314" selection-end="2314" vertical-scroll-proportion="0.0" vertical-offset="1233" max-vertical-offset="2108">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="content.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/content.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="34" column="13" selection-start="613" selection-end="620" vertical-scroll-proportion="0.0" vertical-offset="291" max-vertical-offset="5610">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="emoticons.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/emoticons.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="306" column="0" selection-start="13431" selection-end="13431" vertical-scroll-proportion="0.0" vertical-offset="5202" max-vertical-offset="5457">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="match.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/match.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="154" column="13" selection-start="2978" selection-end="2985" vertical-scroll-proportion="0.0" vertical-offset="2327" max-vertical-offset="5270">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="chat.overlay.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/chat.overlay.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="75" column="70" selection-start="3860" selection-end="3887" vertical-scroll-proportion="-6.5384617" vertical-offset="1105" max-vertical-offset="4403">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="template_chat_messages.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/chat/template_chat_messages.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="18" column="16" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1989">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="avatar_change.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/js/avatar_change.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="73" column="25" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0" vertical-offset="622" max-vertical-offset="3553">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
       </split-second>
     </splitter>
   </component>
@@ -651,57 +545,57 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/code/scss/modules/_gradients.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/_profile.home.scss" />
-        <option value="$PROJECT_DIR$/app/views/admin/templates/partials/head_info.twig" />
-        <option value="$PROJECT_DIR$/app/views/templates/partials/head_info.twig" />
-        <option value="$PROJECT_DIR$/app/views/admin/templates/default.twig" />
-        <option value="$PROJECT_DIR$/public/code/scss/forms.new.scss" />
-        <option value="$PROJECT_DIR$/public/code/js/menu_dropdown.js" />
-        <option value="$PROJECT_DIR$/public/code/js/chat/chat_menu.js" />
-        <option value="$PROJECT_DIR$/app/views/templates/default.twig" />
-        <option value="$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.span.details.twig" />
-        <option value="$PROJECT_DIR$/public/assets/js/jquery.jscrollPane.js" />
-        <option value="$PROJECT_DIR$/public/code/scss/jscrollpane.scss" />
-        <option value="$PROJECT_DIR$/app/views/user/bookings/user.book_training_course.twig" />
-        <option value="$PROJECT_DIR$/public/code/scss/modules/_mixins.scss" />
-        <option value="$PROJECT_DIR$/app/helpers/Text.php" />
-        <option value="$PROJECT_DIR$/public/assets/css/bootstrap.min.css" />
-        <option value="$PROJECT_DIR$/app/views/user/chat/new_chat_creation.twig" />
-        <option value="$PROJECT_DIR$/public/code/scss/modules/_breakpoints.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/_chat.overlay.menu.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/_chat.info.scss" />
-        <option value="$PROJECT_DIR$/app/model/Middleware/CsrfMiddleware.php" />
-        <option value="$PROJECT_DIR$/public/code/js/profile.js" />
-        <option value="$PROJECT_DIR$/public/code/scss/general_classes.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/modules/_colors.scss" />
-        <option value="$PROJECT_DIR$/app/views/about_site.twig" />
-        <option value="$PROJECT_DIR$/public/code/scss/_header.new.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/_chat.chat_rooms.scss" />
-        <option value="$PROJECT_DIR$/app/views/user/chat/new_chat_room.twig" />
-        <option value="$PROJECT_DIR$/app/views/user/chat/chat_room.twig" />
-        <option value="$PROJECT_DIR$/public/code/scss/content.scss" />
-        <option value="$PROJECT_DIR$/app/views/user/chat/active_users.twig" />
-        <option value="$PROJECT_DIR$/app/views/user/header.twig" />
-        <option value="$PROJECT_DIR$/app/views/templates/partials/user_messages.twig" />
-        <option value="$PROJECT_DIR$/public/code/scss/_chat.users.scss" />
-        <option value="$PROJECT_DIR$/app/model/Chat/ChatRoom.php" />
-        <option value="$PROJECT_DIR$/public/assets/js/howler.min.js" />
-        <option value="$PROJECT_DIR$/app/views/templates/partials/foot_info.twig" />
-        <option value="$PROJECT_DIR$/app/model/Chat/ChatMessage.php" />
-        <option value="$PROJECT_DIR$/app/views/user/chat/unread_chat_messages.twig" />
-        <option value="$PROJECT_DIR$/app/views/user/chat/my_chat_rooms.twig" />
-        <option value="$PROJECT_DIR$/app/views/user/chat/appended_new_message.twig" />
         <option value="$PROJECT_DIR$/app/views/user/chat/my_chat_rooms_and_users.twig" />
         <option value="$PROJECT_DIR$/public/code/js/calendar.js" />
-        <option value="$PROJECT_DIR$/app/views/user/chat/chat_messages.twig" />
-        <option value="$PROJECT_DIR$/public/code/scss/chat.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/modules/_animations.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/_chat.active_chat_room.scss" />
-        <option value="$PROJECT_DIR$/app/views/user/chat.overlay.twig" />
         <option value="$PROJECT_DIR$/app/model/User/User.php" />
+        <option value="$PROJECT_DIR$/public/code/scss/modules/_animations.scss" />
+        <option value="$PROJECT_DIR$/app/model/Chat/ChatRoom.php" />
+        <option value="$PROJECT_DIR$/app/views/user/header.twig" />
+        <option value="$PROJECT_DIR$/public/code/scss/forms.new.scss" />
+        <option value="$PROJECT_DIR$/app/views/templates/std_footer.twig" />
+        <option value="$PROJECT_DIR$/app/views/user/chat/load_chat_room.twig" />
+        <option value="$PROJECT_DIR$/public/code/scss/jscrollpane.scss" />
         <option value="$PROJECT_DIR$/public/code/js/chat/chat_sections.js" />
+        <option value="$PROJECT_DIR$/app/views/user/chat/load_chat_room_template.twig" />
+        <option value="$PROJECT_DIR$/public/code/scss/_chat.active_chat_room.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/_chat.users.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/_chat.emoticons.std.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/chat.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/calendar.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/calendar/_calendar.ultra.horizontal.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/content.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/match.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/emotocions.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/main_includes/content.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/match/_match.field.scss" />
+        <option value="$PROJECT_DIR$/app/model/Chat/ChatMessage.php" />
+        <option value="$PROJECT_DIR$/public/prod/css/emoticons.css" />
+        <option value="$PROJECT_DIR$/public/code/scss/emoticons/emoticons.std.scss" />
         <option value="$PROJECT_DIR$/app/routes/chat.router.php" />
+        <option value="$PROJECT_DIR$/public/code/scss/main_includes/jscrollpane.scss" />
+        <option value="$PROJECT_DIR$/app/start.php" />
+        <option value="$PROJECT_DIR$/public/code/scss/modules/_modules.import.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/main.new.scss" />
+        <option value="$PROJECT_DIR$/app/routes/admin.reservations.router.php" />
+        <option value="$PROJECT_DIR$/app/routes/user.bookings.router.php" />
+        <option value="$PROJECT_DIR$/app/model/Middleware/BeforeMiddleware.php" />
+        <option value="$PROJECT_DIR$/public/code/scss/chat/_chat.users.scss" />
+        <option value="$PROJECT_DIR$/public/code/js/homepage.js" />
+        <option value="$PROJECT_DIR$/public/code/scss/main_includes/_homepage.scss" />
+        <option value="$PROJECT_DIR$/app/helpers/Text.php" />
+        <option value="$PROJECT_DIR$/app/views/user/chat.overlay.twig" />
+        <option value="$PROJECT_DIR$/public/code/scss/emoticons.scss" />
+        <option value="$PROJECT_DIR$/app/views/user/chat/chat_messages.twig" />
+        <option value="$PROJECT_DIR$/public/code/js/chat/chat.js" />
+        <option value="$PROJECT_DIR$/app/config.php" />
+        <option value="$PROJECT_DIR$/public/code/scss/chat/_chat.active_chat_room.scss" />
+        <option value="$PROJECT_DIR$/app/views/user/chat/template_chat_messages.twig" />
+        <option value="$PROJECT_DIR$/public/code/js/avatar_change.js" />
+        <option value="$PROJECT_DIR$/app/views/templates/default.twig" />
+        <option value="$PROJECT_DIR$/public/code/scss/main_includes/chat.scss" />
+        <option value="$PROJECT_DIR$/app/views/templates/partials/foot_info.twig" />
+        <option value="$PROJECT_DIR$/app/views/templates/partials/head_info.twig" />
+        <option value="$PROJECT_DIR$/public/code/js/ch.js" />
       </list>
     </option>
   </component>
@@ -738,7 +632,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -786,6 +679,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="prod" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prod" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prod" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="min" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -855,7 +814,89 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="match" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main_includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emoticons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -878,10 +919,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1741,8 +1778,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1758,18 +1814,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views\user\chat" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss" />
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\assets\js" />
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views\user\chat" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\model\Chat" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views\admin\communication" />
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss\modules" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\js" />
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\js\chat" />
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views\calendar" />
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss" />
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code" />
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss\main_includes" />
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss\match" />
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss\profile" />
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss\content" />
     </key>
   </component>
   <component name="RunManager">
@@ -1849,7 +1905,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19009584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17039403" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1867,21 +1923,21 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2588997" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2616034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16822916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19595315" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1903,405 +1959,347 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_breakpoints.scss">
+    <entry file="file://$PROJECT_DIR$/public/prod/css/emoticons.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="7" selection-start="1258" selection-end="1276" vertical-scroll-proportion="0.35545024" vertical-offset="989" max-vertical-offset="1479" />
+        <state line="36" column="1" selection-start="945" selection-end="945" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="5610" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/profile/home/hot_games.twig">
+    <entry file="file://$PROJECT_DIR$/app/views/user/chat/load_chat_room.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="78" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="2958">
+        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="898" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/chat/load_chat_room_template.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="35" selection-start="67" selection-end="67" vertical-scroll-proportion="0.018888889" vertical-offset="0" max-vertical-offset="900" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/emoticons/emoticons.std.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/chat.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="299" column="0" selection-start="10713" selection-end="10713" vertical-scroll-proportion="0.0" vertical-offset="4621" max-vertical-offset="8891">
+          <folding>
+            <marker date="1453509928593" expanded="true" signature="2099:2604" placeholder="..." />
+            <marker date="1453509928593" expanded="true" signature="2223:2306" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="26" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="6749">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/admin.router.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="16" selection-start="2977" selection-end="3191" vertical-scroll-proportion="0.21800947" vertical-offset="1200" max-vertical-offset="2210" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="913" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/start.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="30" selection-start="459" selection-end="465" vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="2686" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/js/ch_menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="16" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/filters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="926" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/filters/user.filters.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1564" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.632469" vertical-offset="561" max-vertical-offset="1564" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Middleware/CsrfMiddleware.php">
+    <entry file="file://$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.span.details.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1571" selection-end="1571" vertical-scroll-proportion="-0.040767387" vertical-offset="765" max-vertical-offset="1241" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-4.1777434" vertical-offset="2703" max-vertical-offset="3570" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/js/admin/validation.js">
+    <entry file="file://$PROJECT_DIR$/app/model/Middleware/BeforeMiddleware.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="397" column="1" selection-start="11802" selection-end="11802" vertical-scroll-proportion="0.0" vertical-offset="6438" max-vertical-offset="7055">
+        <state line="68" column="37" selection-start="2728" selection-end="2728" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1734">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat/new_chat_creation.twig">
+    <entry file="file://$PROJECT_DIR$/app/routes/user.bookings.router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.0" vertical-offset="173" max-vertical-offset="595">
-          <folding />
-        </state>
+        <state line="561" column="0" selection-start="32880" selection-end="32880" vertical-scroll-proportion="0.5795981" vertical-offset="8941" max-vertical-offset="9588" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/general_classes.scss">
+    <entry file="file://$PROJECT_DIR$/app/routes/admin.reservations.router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="0" selection-start="2852" selection-end="2852" vertical-scroll-proportion="0.0" vertical-offset="2958" max-vertical-offset="6460">
-          <folding />
-        </state>
+        <state line="176" column="55" selection-start="8193" selection-end="8193" vertical-scroll-proportion="0.46213293" vertical-offset="2557" max-vertical-offset="3213" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/js/menu_dropdown.js">
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/forms.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="47" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_colors.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="257" selection-end="257" vertical-scroll-proportion="-0.65384614" vertical-offset="255" max-vertical-offset="969" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/about_site.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="147" selection-start="10160" selection-end="10160" vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="3706">
+        <state line="345" column="17" selection-start="8432" selection-end="8432" vertical-scroll-proportion="0.0" vertical-offset="11166" max-vertical-offset="14314">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/code/js/profile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="21" selection-start="2582" selection-end="2589" vertical-scroll-proportion="0.0" vertical-offset="1525" max-vertical-offset="3281">
+        <state line="107" column="0" selection-start="2883" selection-end="2883" vertical-scroll-proportion="0.0" vertical-offset="1525" max-vertical-offset="3281">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/tables.new.scss">
+    <entry file="file://$PROJECT_DIR$/public/code/js/homepage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="234" column="2" selection-start="4630" selection-end="5733" vertical-scroll-proportion="0.0" vertical-offset="3876" max-vertical-offset="6783">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat/new_chat_room.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="94" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="578">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat/chat_room.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.0" vertical-offset="326" max-vertical-offset="748">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_mixins.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="19" selection-start="3519" selection-end="3519" vertical-scroll-proportion="0.0" vertical-offset="2927" max-vertical-offset="3349">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/content.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="28" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="547" max-vertical-offset="5661">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/_chat.chat_rooms.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="8" selection-start="2837" selection-end="3342" vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="2890">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/templates/partials/user_messages.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="0" selection-start="3446" selection-end="3446" vertical-scroll-proportion="0.5534884" vertical-offset="1326" max-vertical-offset="2023" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/jscrollpane.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="20" selection-start="56" selection-end="56" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="2176" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/_chat.overlay.menu.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="9" selection-start="37" selection-end="45" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2108">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/_chat.info.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/_chat.users.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="22" selection-start="2463" selection-end="2463" vertical-scroll-proportion="0.0" vertical-offset="1465" max-vertical-offset="2822">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Chat/ChatRoom.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="15" selection-start="8546" selection-end="8546" vertical-scroll-proportion="0.0" vertical-offset="4369" max-vertical-offset="7650">
-          <folding>
-            <marker date="1452936927984" expanded="true" signature="1132:1178" placeholder="SELECT * FRO..chat_room..." />
-            <marker date="1452936927984" expanded="true" signature="1612:1662" placeholder="SELECT * FRO..chat_room..." />
-            <marker date="1452936927984" expanded="true" signature="2157:2346" placeholder="INSERT INTO ..." />
-            <marker date="1452936927984" expanded="true" signature="3284:3481" placeholder="INSERT INTO ..." />
-            <marker date="1452936927984" expanded="true" signature="4052:4289" placeholder="INSERT INTO ..." />
-            <marker date="1452936927984" expanded="true" signature="4972:5209" placeholder="INSERT INTO ..." />
-            <marker date="1452936927984" expanded="true" signature="6332:6934" placeholder="SELECT * FRE..." />
-            <marker date="1452936927984" expanded="true" signature="6332:6405" placeholder="SELECT * FRO..chat_room..." />
-            <marker date="1452936927984" expanded="true" signature="7039:7236" placeholder="SELECT chat_..chat_room..." />
-            <marker date="1452936927984" expanded="true" signature="7866:7983" placeholder="SELECT user_..chat_room_user..." />
-            <marker date="1452936927984" expanded="true" signature="8728:8832" placeholder="SELECT SUM(u..chat_room_user..." />
-            <marker date="1452936927984" expanded="true" signature="9288:9532" placeholder="SELECT COUNT..chat_message..." />
-            <marker date="1452936927984" expanded="true" signature="9313:9519" placeholder="select * fro..chat_message..." />
-            <marker date="1452936927984" expanded="true" signature="9369:9486" placeholder="SELECT last_..chat_room_user..." />
-            <marker date="1452936927984" expanded="true" signature="10058:10326" placeholder="UPDATE chat_..." />
-            <marker date="1452936927984" expanded="true" signature="10083:10326" placeholder="SELECT COUNT..chat_message..." />
-            <marker date="1452936927984" expanded="true" signature="10184:10265" placeholder="SELECT MAX(i..chat_message..." />
-            <marker date="1452936927984" expanded="true" signature="11021:11291" placeholder="SELECT chat_..chat_room..." />
-            <marker date="1452936927984" expanded="true" signature="12379:12560" placeholder="INSERT INTO ..." />
-            <marker date="1452936927984" expanded="true" signature="13184:13287" placeholder="UPDATE chat_..." />
-            <marker date="1452936927984" expanded="true" signature="13681:13870" placeholder="UPDATE chat_..." />
-            <marker date="1452936927984" expanded="true" signature="13687:13817" placeholder="INSERT INTO ..." />
-            <marker date="1452936927984" expanded="true" signature="14459:14613" placeholder="UPDATE chat_..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/howler.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12129" selection-start="12275" selection-end="12275" vertical-scroll-proportion="0.34537247" vertical-offset="0" max-vertical-offset="443" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/templates/partials/foot_info.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.7985782" vertical-offset="360" max-vertical-offset="799" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/templates/std_footer.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="7" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="901">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/_header.new.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="463" column="6" selection-start="9919" selection-end="10065" vertical-scroll-proportion="0.0" vertical-offset="7637" max-vertical-offset="10982">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/bookings/user.book_training_course.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="36" selection-start="4791" selection-end="5168" vertical-scroll-proportion="0.0" vertical-offset="1802" max-vertical-offset="3077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/forms.new.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="683" column="24" selection-start="15576" selection-end="15576" vertical-scroll-proportion="0.0" vertical-offset="11087" max-vertical-offset="13651">
+        <state line="29" column="25" selection-start="643" selection-end="656" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Chat/ChatMessage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="60" selection-start="4161" selection-end="4194" vertical-scroll-proportion="0.0" vertical-offset="2346" max-vertical-offset="5202">
+        <state line="37" column="80" selection-start="918" selection-end="918" vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="5304">
           <folding>
-            <marker date="1453033389575" expanded="true" signature="1282:1331" placeholder="SELECT * FRO..chat_message..." />
-            <marker date="1453033389575" expanded="true" signature="1831:1932" placeholder="SELECT * FRO..chat_message..." />
-            <marker date="1453033389575" expanded="true" signature="2648:2749" placeholder="SELECT * FRO..chat_message..." />
-            <marker date="1453033389575" expanded="true" signature="3511:3618" placeholder="SELECT * FRO..chat_message..." />
-            <marker date="1453033389575" expanded="true" signature="4348:4608" placeholder="SELECT * FRO..chat_message..." />
-            <marker date="1453033389575" expanded="true" signature="4444:4561" placeholder="SELECT last_..chat_room_user..." />
-            <marker date="1453033389575" expanded="true" signature="5400:5531" placeholder="SELECT * FRO..chat_message..." />
-            <marker date="1453033389575" expanded="true" signature="6238:6336" placeholder="SELECT * FRO..chat_message..." />
-            <marker date="1453033389575" expanded="true" signature="6805:6889" placeholder="SELECT COUNT..chat_message..." />
-            <marker date="1453033389575" expanded="true" signature="7344:7402" placeholder="SELECT COUNT..chat_message..." />
-            <marker date="1453033389575" expanded="true" signature="7891:8043" placeholder="INSERT INTO ..." />
-            <marker date="1453033389575" expanded="true" signature="8635:8682" placeholder="DELETE FROM ..." />
+            <marker date="1453499644714" expanded="true" signature="1390:1439" placeholder="SELECT * FRO..chat_message..." />
+            <marker date="1453499644714" expanded="true" signature="1939:2040" placeholder="SELECT * FRO..chat_message..." />
+            <marker date="1453499644714" expanded="true" signature="2756:2857" placeholder="SELECT * FRO..chat_message..." />
+            <marker date="1453499644714" expanded="true" signature="3619:3726" placeholder="SELECT * FRO..chat_message..." />
+            <marker date="1453499644714" expanded="true" signature="4456:4716" placeholder="SELECT * FRO..chat_message..." />
+            <marker date="1453499644714" expanded="true" signature="4552:4669" placeholder="SELECT last_..chat_room_user..." />
+            <marker date="1453499644714" expanded="true" signature="5508:5639" placeholder="SELECT * FRO..chat_message..." />
+            <marker date="1453499644714" expanded="true" signature="6346:6444" placeholder="SELECT * FRO..chat_message..." />
+            <marker date="1453499644714" expanded="true" signature="6913:6997" placeholder="SELECT COUNT..chat_message..." />
+            <marker date="1453499644714" expanded="true" signature="7452:7510" placeholder="SELECT COUNT..chat_message..." />
+            <marker date="1453499644714" expanded="true" signature="7999:8151" placeholder="INSERT INTO ..." />
+            <marker date="1453499644714" expanded="true" signature="8743:8790" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/templates/partials/admin_messages.twig">
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/_homepage.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="79" selection-start="494" selection-end="499" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1343">
+        <state line="38" column="19" selection-start="894" selection-end="894" vertical-scroll-proportion="0.7177778" vertical-offset="0" max-vertical-offset="2091" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_modules.import.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="23" selection-start="103" selection-end="103" vertical-scroll-proportion="0.075555556" vertical-offset="0" max-vertical-offset="900" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/Text.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="5" selection-start="4483" selection-end="4483" vertical-scroll-proportion="0.0" vertical-offset="1765" max-vertical-offset="2737">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat/my_chat_rooms.twig">
+    <entry file="file://$PROJECT_DIR$/app/views/user/chat/new_chat_creation.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="6" selection-start="0" selection-end="2538" vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1173">
-          <folding>
-            <marker date="1453046897061" expanded="true" signature="5:2537" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="170:2396" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="223:538" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="543:561" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="593:2224" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="649:1792" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="654:917" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="946:1718" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="1177:1510" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="1723:1784" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="1797:1818" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="1857:2201" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="2229:2247" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="2294:2374" placeholder="..." />
-            <marker date="1453046897061" expanded="true" signature="2446:2514" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat/my_chat_rooms_and_users.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="46" selection-start="3062" selection-end="3062" vertical-scroll-proportion="0.0" vertical-offset="998" max-vertical-offset="2091">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/js/calendar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="35" selection-start="7558" selection-end="7558" vertical-scroll-proportion="0.0" vertical-offset="3274" max-vertical-offset="7667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat/unread_chat_messages.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="94" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1632">
+        <state line="29" column="6" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.5558061" vertical-offset="0" max-vertical-offset="887">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/chat/chat_messages.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="42" selection-start="6615" selection-end="6615" vertical-scroll-proportion="0.0" vertical-offset="2188" max-vertical-offset="2720">
+        <state line="125" column="31" selection-start="5041" selection-end="5078" vertical-scroll-proportion="0.0" vertical-offset="1343" max-vertical-offset="4267">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/chat.scss">
+    <entry file="file://$PROJECT_DIR$/public/assets/js/slick.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="34" selection-start="4398" selection-end="4398" vertical-scroll-proportion="0.0" vertical-offset="3247" max-vertical-offset="7616">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="913" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="490" column="9" selection-start="11140" selection-end="11140" vertical-scroll-proportion="0.8038331" vertical-offset="7617" max-vertical-offset="8568">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main.new.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="15" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/general_classes.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6460">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="180" column="0" selection-start="3723" selection-end="3739" vertical-scroll-proportion="0.0" vertical-offset="2449" max-vertical-offset="3349">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/jscrollpane.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="16" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0" vertical-offset="1442" max-vertical-offset="2329">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/templates/default.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="952">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_animations.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="16" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0" vertical-offset="1105" max-vertical-offset="2567">
+        <state line="77" column="8" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2567">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/_chat.active_chat_room.scss">
+    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.chat_rooms.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="365" column="12" selection-start="10624" selection-end="10624" vertical-scroll-proportion="0.0" vertical-offset="6080" max-vertical-offset="8517">
+        <state line="159" column="27" selection-start="4086" selection-end="4092" vertical-scroll-proportion="0.0" vertical-offset="2028" max-vertical-offset="2890">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/intercom.js">
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/chat.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.4473684" vertical-offset="204" max-vertical-offset="7106" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/js/window_comm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+        <state line="207" column="19" selection-start="4652" selection-end="4652" vertical-scroll-proportion="0.0" vertical-offset="3266" max-vertical-offset="8347">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/templates/std_header.twig">
+    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.info.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="23" selection-start="606" selection-end="606" vertical-scroll-proportion="0.4348837" vertical-offset="0" max-vertical-offset="1156" />
+        <state line="7" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="272">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/header.twig">
+    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.active_chat_room.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="53" selection-start="3167" selection-end="3167" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="2754">
+        <state line="353" column="42" selection-start="9172" selection-end="9172" vertical-scroll-proportion="0.0" vertical-offset="5493" max-vertical-offset="13940">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/_header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="361" column="8" selection-start="7787" selection-end="7788" vertical-scroll-proportion="0.0" vertical-offset="5850" max-vertical-offset="10982">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.users.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="0" selection-start="2890" selection-end="2890" vertical-scroll-proportion="0.0" vertical-offset="1630" max-vertical-offset="2788">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/calendar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="307" column="22" selection-start="6200" selection-end="6200" vertical-scroll-proportion="0.0" vertical-offset="3924" max-vertical-offset="5321">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.overlay.menu.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="20" selection-start="2314" selection-end="2314" vertical-scroll-proportion="0.0" vertical-offset="1233" max-vertical-offset="2108">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/content.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="13" selection-start="613" selection-end="620" vertical-scroll-proportion="0.0" vertical-offset="291" max-vertical-offset="5610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/emoticons.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="306" column="0" selection-start="13431" selection-end="13431" vertical-scroll-proportion="0.0" vertical-offset="5202" max-vertical-offset="5457">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/match.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="154" column="13" selection-start="2978" selection-end="2985" vertical-scroll-proportion="0.0" vertical-offset="2327" max-vertical-offset="5270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/chat/template_chat_messages.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="16" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1989">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/js/avatar_change.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="25" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0" vertical-offset="622" max-vertical-offset="3553">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/slick.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1785">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/slick-theme.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3332">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/templates/partials/foot_info.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="58" selection-start="1675" selection-end="1675" vertical-scroll-proportion="-27.461538" vertical-offset="0" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/templates/partials/head_info.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="39" selection-start="1696" selection-end="1696" vertical-scroll-proportion="-26.807692" vertical-offset="0" max-vertical-offset="816">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/chat.overlay.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="157" selection-start="7467" selection-end="7467" vertical-scroll-proportion="0.91943127" vertical-offset="1771" max-vertical-offset="3451">
+        <state line="75" column="70" selection-start="3860" selection-end="3887" vertical-scroll-proportion="-6.5384617" vertical-offset="1105" max-vertical-offset="4403">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/User/User.php">
+    <entry file="file://$PROJECT_DIR$/public/code/js/ch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="395" column="40" selection-start="11719" selection-end="11725" vertical-scroll-proportion="0.0" vertical-offset="6715" max-vertical-offset="14467">
-          <folding>
-            <marker date="1453066956144" expanded="true" signature="4663:4716" placeholder="SELECT * FRO..users..." />
-            <marker date="1453066956144" expanded="true" signature="5309:5379" placeholder="SELECT * FRO..users..." />
-            <marker date="1453066956144" expanded="true" signature="5987:6071" placeholder="SELECT * FRO..users..." />
-            <marker date="1453066956144" expanded="true" signature="6906:6948" placeholder="SELECT * FRO..users..." />
-            <marker date="1453066956144" expanded="true" signature="7339:7401" placeholder="SELECT * FRO..users..." />
-            <marker date="1453066956144" expanded="true" signature="7844:7912" placeholder="SELECT * FRO..users..." />
-            <marker date="1453066956144" expanded="true" signature="8336:8368" placeholder="DELETE FROM ..." />
-            <marker date="1453066956144" expanded="true" signature="8751:8843" placeholder="UPDATE users..." />
-            <marker date="1453066956144" expanded="true" signature="9231:9323" placeholder="UPDATE users..." />
-            <marker date="1453066956144" expanded="true" signature="9729:9795" placeholder="SELECT * FRO..users..." />
-            <marker date="1453066956144" expanded="true" signature="10182:10224" placeholder="SELECT * FRO..users..." />
-            <marker date="1453066956144" expanded="true" signature="15264:15316" placeholder="UPDATE users..." />
-            <marker date="1453066956144" expanded="true" signature="15633:15701" placeholder="UPDATE users..." />
-            <marker date="1453066956144" expanded="true" signature="16299:16351" placeholder="UPDATE users..." />
-            <marker date="1453066956144" expanded="true" signature="16838:17036" placeholder="INSERT INTO ..." />
-            <marker date="1453066956144" expanded="true" signature="18361:18533" placeholder="UPDATE users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_8.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="962" column="9" selection-start="30821" selection-end="30821" vertical-scroll-proportion="0.7156398" vertical-offset="16052" max-vertical-offset="18734" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat/active_users.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="31" selection-start="1865" selection-end="1865" vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="901">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat/appended_new_message.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="70" selection-start="1906" selection-end="1906" vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="2193">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/chat.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="340" column="27" selection-start="11893" selection-end="11893" vertical-scroll-proportion="-0.08056872" vertical-offset="5780" max-vertical-offset="9129">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/js/chat/chat_sections.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="960" column="0" selection-start="38664" selection-end="38664" vertical-scroll-proportion="0.50564337" vertical-offset="16096" max-vertical-offset="20570">
+        <state line="479" column="41" selection-start="17674" selection-end="17674" vertical-scroll-proportion="0.39211392" vertical-offset="7785" max-vertical-offset="25619">
           <folding />
         </state>
       </provider>

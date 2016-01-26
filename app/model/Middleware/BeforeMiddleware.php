@@ -2,6 +2,7 @@
 
 namespace app\model\Middleware;
 
+use app\helpers\Text;
 use Slim\Middleware;
 use app\helpers\Configuration;
 use app\helpers\Sessions;
@@ -64,7 +65,8 @@ class BeforeMiddleware extends Middleware
         // jukebox with quotes and config class with static methods
         $this->app->view()->appendData(array(
             'jukebox' => new Jukebox($this->app->auth_user),
-            'config' => new Configuration()
+            'config' => new Configuration(),
+            'text_help' => new Text()
         ));
     }
 

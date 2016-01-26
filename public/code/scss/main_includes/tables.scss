@@ -1,0 +1,394 @@
+@import "../modules/_modules.import";
+
+
+$std-input-height: 2.5em;
+$message-line-height: 3em;
+
+.table-container {
+  font-family: MuseoSans;
+  font-weight: 600;
+  display: inline-block;
+  vertical-align: top;
+
+  .heading-container {
+    width: 100%;
+
+    margin-bottom: 15px;
+
+    .th {
+      display: inline-table;
+
+      text-align: center;
+      min-height: $message-line-height;
+      border-bottom: 2px dashed $dark-dark-blue;
+      @include pp-transition(all 0.5s ease);
+
+      vertical-align: middle;
+
+      h4 {
+
+        text-align: center;
+        line-height: 125%;
+        @include font-size(16px);
+        min-height: 2em;
+        vertical-align: middle;
+        display: table-cell;
+        padding-right: 0;
+        color: $dark-dark-blue;
+      }
+    }
+  }
+
+  .rows-container {
+
+    .tr {
+      @include box-sizing(border-box);
+      font-size: 1em;
+      padding: 1px 0.75em;
+      @include responsive-w-min(500px) {
+        padding: 0.125em 1.5em 0.2em 1.5em;
+
+      }
+      border: 1px solid $dark-blue-dark;
+      border-radius: 100em;
+      resize: none;
+      outline: none;
+      color: $dark-dark-blue;
+
+      //      display: inline-table;
+
+      margin-bottom: 0.35em;
+
+      @include box-sizing(content-box);
+    }
+    .td {
+
+      font-family: 'Raleway',Arial,sans-serif;
+      font-weight: initial;
+    }
+
+    .td {
+      display: inline-table;
+      height: 100%;
+      overflow: hidden;
+      vertical-align: bottom;
+      @include pp-transition(all 0.5s ease);
+      & > * {
+        display: table-cell;
+        vertical-align: middle;
+
+      }
+
+    }
+
+    .td-spec {
+      font-family: 'Raleway',Arial,sans-serif;
+      font-weight: initial;
+      display: inline-table;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em; /* Adjusts for spacing */
+      }
+      & > * {
+        display: table-cell;
+        vertical-align: middle;
+
+      }
+    }
+  }
+
+
+  .home-icon-cont {
+
+    .thumbnail {
+      position: relative;
+      .pic-cont .fa
+      {
+        display: inline-table;
+        height: 100%;
+        &:before {
+          vertical-align: middle;
+          display: table-cell;
+        }
+      }
+
+      &.user-icon {
+        color: $light-blue-gray-light;
+      }
+    }
+
+    .thumbnail.no-avatar {
+      //      @include box-shadow(0 0 6px 0 rgba(102,102,102,.4));
+      @include box-shadow(1px 1px 4px rgba(102,102,102,.4));
+      @include gradient-vertical-bbb-flag-cibona-blue();
+    }
+    .thumbnail.yes-avatar {
+      //      @include gradient-vertical-black-white-flag();
+      @include gradient-vertical-bbb-flag-cibona-blue();
+
+      @include box-shadow(1px 1px 4px rgba(102,102,102,.4));
+    }
+
+    $user-icon-button-border-radius: 0;
+    /* ICON */
+    .user {
+      width: 4.5em;
+      height: 3.5em;
+      @include rounded($user-icon-button-border-radius);
+    }
+    .booking {
+      width: 4.5em;
+      height: 2.5em;
+      @include rounded($user-icon-button-border-radius);
+    }
+    .pic-cont {
+      //      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+    .overlay-pic-cont {
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      .icon-o {
+        position:absolute;
+        right: -5px;
+        font-size: 1.25em;
+      }
+    }
+
+    .pic-cont, .no-show {
+      position: absolute;
+    }
+
+    .no-show
+    {
+      z-index: 30;
+      width: 100%;
+      height: 100%;
+      top: 0; left:0;
+    }
+
+    .thumbnail > .no-show {
+      height: 100%;
+      background-color: rgba(0,0,0,.7);
+      @include rounded($user-icon-button-border-radius);
+      font-size: 1.0em;
+      display: inline-table;
+    }
+
+    .thumbnail > .no-show {
+
+      visibility:hidden;
+      opacity:0;
+      @include pp-transition(visibility 0s linear 0.3s, opacity 0.3s linear);
+    }
+
+    .thumbnail > .no-show i {
+      opacity: .85;
+      color:white;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 2em;
+    }
+
+    .thumbnail .pic-cont .fa {
+      font-size: 2em;
+    }
+
+    .thumbnail .pic-cont .fa:before{
+      vertical-align: middle;
+      display: table-cell;
+    }
+
+    a {
+      display: inline-block;
+      text-align: center;
+    }
+    a:hover > .thumbnail .no-show {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      text-align: center;
+
+      visibility:visible;
+      opacity:1;
+      transition-delay:0s;
+    }
+  }
+
+  /* END ICON */
+
+  .user {
+    padding: 0 0 0 6px;
+    .img-holder {
+      width: 36px;
+      height: 36px;
+      border-radius: 5em;
+      @include box-shadow(inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1),
+        0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40));
+      text-align: center;
+      display: inline-block;
+      img {
+        border-radius: 5em;
+        position: relative;
+        top: 1px;
+      }
+      & > i {
+        display: inline-table;
+        //        padding: 0 15px;
+        height: 100%;
+        font-size: 24px;
+        padding: 6px 0;
+
+        &:before {
+          position: relative;
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    & > i {
+      display: inline-table;
+      //        padding: 0 15px;
+      height: 100%;
+      font-size: 24px;
+      padding: 6px 0;
+
+      &:before {
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+
+    & > span {
+      vertical-align: top;
+      height: 36px;
+      display: inline-block;
+      padding: 0 0 0 6px;
+      line-height: 36px;
+    }
+  }
+
+  .admin-actions-cont {
+    div.action {
+      display: inline-block;
+    }
+    a {
+      display: inline-block;
+      i {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  .width-3em {
+    width: 3em;
+  }
+
+  .width-4em {
+    width: 4em;
+  }
+  .width-4-and-half-em {
+    width: 4.5em;
+  }
+
+  .width-5em {
+    width: 5em;
+  }
+  .width-7em {
+    width: 7em;
+  }
+  .width-8em {
+    width: 8em;
+  }
+  .width-10em {
+    width: 10em;
+  }
+  .width-12em {
+    width: 12em;
+  }
+  .width-15em {
+    width: 15em;
+  }
+  .width-18em {
+    width: 18em;
+  }
+  .width-20em {
+    width: 20em;
+  }
+  .width-22em {
+    width: 22em;
+  }
+  .width-25em {
+    width: 25em;
+  }
+  .width-28em {
+    width: 28em;
+  }
+  .width-30em {
+    width: 30em;
+  }
+  .width-32em {
+    width: 32em;
+  }
+  .width-35em {
+    width: 35em;
+  }
+  .width-40em {
+    width: 40em;
+  }
+
+  .height-3-and-half-em{
+    height: 3.5em;
+  }
+  .height-2-and-half-em {
+    height: 2.5em;
+  }
+  .height-2-and-3-fourths-em {
+    height: 2.75em;
+  }
+
+  .margin-r-1em {
+    margin-right: 1em;
+  }
+  .margin-l-1em {
+    margin-right: 1em;
+  }
+  .margin-r-2em {
+    margin-right: 2em;
+  }
+  .margin-l-1em {
+    margin-right: 2em;
+  }
+
+  .margin-std-lr {
+    margin-left: 2px;
+    margin-right: 2px;
+    @include responsive-w-min(500px) {
+      margin-left: 0.25em;
+      margin-right: 0.25em;
+    }
+    @include responsive-w-min($breakpoint-2) {
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+    }
+
+  }
+
+}

@@ -33,14 +33,11 @@ $(document).ready(function(){
 
             .on('cloudinarydone', function (e, data) {
                 if(communicationWithServer) {
-                    console.log("Already set oncloudinarydone");
                     return;
                 }
                 communicationWithServer = true;
-                console.log("On cloudinary done...");
                 infoPanelSuccess("Upload završen.", true);
                 var url = $(this).data("submit-url");
-    //                                                $.post('url', data.result);
                 var csrfKeyName = $(this).data("csrf-key-name");
                 var csrfToken = $("input[name=" + csrfKeyName + "]").val();
 
@@ -50,7 +47,6 @@ $(document).ready(function(){
                 params[csrfKeyName] = csrfToken;
 
                 infoPanelSuccess("Pohrana u bazu...");
-                console.log("--Zahtjev");
                 var request = $.ajax({
                     url: url,
                     type: "POST",
@@ -60,8 +56,6 @@ $(document).ready(function(){
                 });
 
                 request.done(function( reply ) {
-                    console.log(reply);
-                    console.log("zahtjev gotov");
 
                     if(reply.error != null) {
                         errorStatus("Greška! " + reply.error);
@@ -78,6 +72,7 @@ $(document).ready(function(){
                             errorStatus("Neka greška!!");
 
                         }
+                        communicationWithServer = false;
 
                     }
 

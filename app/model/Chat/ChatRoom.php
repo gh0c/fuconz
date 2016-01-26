@@ -251,6 +251,11 @@ class ChatRoom
         }
     }
 
+    public function usersUnread($user_id)
+    {
+        return ChatMessage::getUsersUnreadMessagesForChatRoom($this->id, $user_id);
+    }
+
 
 
     public function lastMessage()
@@ -308,7 +313,8 @@ class ChatRoom
               SELECT MAX(id) FROM chat_message
               WHERE chat_room_id = :chat_room_id
             )
-            WHERE chat_room_id = :chat_room_id";
+            WHERE chat_room_id = :chat_room_id
+            AND user_id = :user_id";
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':unread', 0, PDO::PARAM_INT);
 
@@ -326,6 +332,32 @@ class ChatRoom
         }
     }
 
+
+    public function refreshUnreadStatusForUserWithMsg($user_id, $msg_id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "UPDATE chat_room_user SET
+            user_have_unread_messages = :unread,
+            last_read_message_id = :msg_id
+            WHERE chat_room_id = :chat_room_id
+            AND user_id = :user_id";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindValue(':unread', 0, PDO::PARAM_INT);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+        $stmt->bindParam(':msg_id', $msg_id, PDO::PARAM_INT);
+        $stmt->bindParam(':chat_room_id', $this->id, PDO::PARAM_INT);
+
+        try {
+            $stmt->execute();
+            $status["success"] = true;
+            return $status;
+        } catch (\Exception $e) {
+            $status["success"] = false;
+            $status["err"] = $e->getMessage();
+            return $status;
+        }
+    }
 
 
     public static function getHotForUser($id, $limit = 1000, $order_by = "chat_room_user.last_read_message_id")
