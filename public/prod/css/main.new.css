@@ -427,10 +427,10 @@ html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-in
   animation: pulsate-frames 0.55s ease infinite;
 }
 html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.faa-pulsation-a.a-2 {
-  -webkit-animation: pulsate-frames 85s ease infinite;
-  -moz-animation: pulsate-frames 85s ease infinite;
-  -o-animation: pulsate-frames 85s ease infinite;
-  animation: pulsate-frames 85s ease infinite;
+  -webkit-animation: pulsate-frames 0.85s ease infinite;
+  -moz-animation: pulsate-frames 0.85s ease infinite;
+  -o-animation: pulsate-frames 0.85s ease infinite;
+  animation: pulsate-frames 0.85s ease infinite;
 }
 html .chat-overlay-wrap .status-info-holder .req-status-container .req-status-info .req-status.faa-pulsation-a.a-3 {
   -webkit-animation: pulsate-frames 1.25s ease infinite;
@@ -618,7 +618,7 @@ html .chat-overlay-wrap .filter-section-desc-holder .section-desc-filters .filte
   }
 }
 html .chat-overlay-wrap .filter-section-desc-holder .section-desc-filters .filter.filter-current-chat {
-  height: 2.5em;
+  height: 3em;
 }
 html .chat-overlay-wrap .chat-content-holder.scroll-pane {
   width: 100%;
@@ -626,14 +626,12 @@ html .chat-overlay-wrap .chat-content-holder.scroll-pane {
 }
 html .chat-overlay-wrap .chat-content-holder.scroll-pane:not(.pane-current-chat) {
   height: -moz-calc(100% - 3em - 1.5em);
-  height: -o-calc(100% - 3em - 1.5em);
   height: -webkit-calc(100% - 3em - 1.5em);
   height: calc(100% - 3em - 1.5em);
 }
 @media only screen and (min-height: 540px) {
   html .chat-overlay-wrap .chat-content-holder.scroll-pane:not(.pane-current-chat) {
     height: -moz-calc(100% - 4em - 1.5em);
-    height: -o-calc(100% - 4em - 1.5em);
     height: -webkit-calc(100% - 4em - 1.5em);
     height: calc(100% - 4em - 1.5em);
   }
@@ -641,23 +639,20 @@ html .chat-overlay-wrap .chat-content-holder.scroll-pane:not(.pane-current-chat)
 @media only screen and (min-height: 640px) {
   html .chat-overlay-wrap .chat-content-holder.scroll-pane:not(.pane-current-chat) {
     height: -moz-calc(100% - 4em - 2em);
-    height: -o-calc(100% - 4em - 2em);
     height: -webkit-calc(100% - 4em - 2em);
     height: calc(100% - 4em - 2em);
   }
 }
 html .chat-overlay-wrap .chat-content-holder.scroll-pane.pane-current-chat {
-  height: -moz-calc(100% - 3em - 2.5em);
-  height: -o-calc(100% - 3em - 2.5em);
-  height: -webkit-calc(100% - 3em - 2.5em);
-  height: calc(100% - 3em - 2.5em);
+  height: -moz-calc(100% - 3em - 3em);
+  height: -webkit-calc(100% - 3em - 3em);
+  height: calc(100% - 3em - 3em);
 }
 @media only screen and (min-height: 540px) {
   html .chat-overlay-wrap .chat-content-holder.scroll-pane.pane-current-chat {
-    height: -moz-calc(100% - 4em - 2.5em);
-    height: -o-calc(100% - 4em - 2.5em);
-    height: -webkit-calc(100% - 4em - 2.5em);
-    height: calc(100% - 4em - 2.5em);
+    height: -moz-calc(100% - 4em - 3em);
+    height: -webkit-calc(100% - 4em - 3em);
+    height: calc(100% - 4em - 3em);
   }
 }
 html .chat-overlay-wrap .chat-content-holder.scroll-pane > .jspContainer {
@@ -782,7 +777,6 @@ html .filter-section-desc-holder .section-desc-filters {
   color: white;
 }
 html .filter-section-desc-holder .section-desc-filters .filter {
-  background: #12408d;
   border-bottom: 1px solid #0c131d;
   display: none;
   overflow: hidden;
@@ -1335,7 +1329,6 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-menu-items-scroll-pane {
   height: -moz-calc(100% - 2.25em - 3.75em - 2.25em);
-  height: -o-calc(100% - 2.25em - 3.75em - 2.25em);
   height: -webkit-calc(100% - 2.25em - 3.75em - 2.25em);
   height: calc(100% - 2.25em - 3.75em - 2.25em);
   position: absolute;
@@ -1441,10 +1434,8 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-scroll-pane {
   height: -moz-calc(100% - 2.25em - 3.75em);
-  height: -o-calc(100% - 2.25em - 3.75em);
   height: -webkit-calc(100% - 2.25em - 3.75em);
   height: calc(100% - 2.25em - 3.75em);
-  border-bottom: 4px solid #0c131d;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-scroll-pane .jspTrack {
   background: transparent;
@@ -1452,6 +1443,9 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container {
   vertical-align: bottom;
   padding-bottom: 6px;
+}
+html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m {
+  margin-bottom: 2px;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-sender > section, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .messages-container .msg-m .msg-s > section {
   display: inline-block;
@@ -1512,7 +1506,6 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
-  margin-bottom: 2px;
   border: 1px solid transparent;
   min-width: 65%;
   max-width: 100%;
@@ -1642,6 +1635,7 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
   padding-left: 1em;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message {
+  border-top: 2px solid #0c131d;
   background: white;
   height: 3.75em;
 }
@@ -1781,11 +1775,231 @@ html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .curr
 html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter.bbb-flag-v-cibona-blue.submit:active span, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter.bbb-flag-v-cibona-blue.submit:active a, html .chat-content-holder nav.chat-nav-filters .filter.filter-current-chat .current-chat-messages-container .chat-conversation-holder .submit-message .submitter-holder .submitter-cont .submitter.bbb-flag-v-cibona-blue.submit:active i {
   color: white;
 }
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat {
+  background-color: #12408d;
+  /*********************
+ BREAKPOINTS
+ *********************/
+  /* "X" icons hover */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider {
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content {
+  margin: auto;
+  padding: 0 30px;
+  width: auto;
+  max-width: 860px;
+  height: 86%;
+  top: 7%;
+  position: relative;
+  /* Arrows */
+}
+@media only screen and (min-height: 480px) {
+  html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content {
+    padding: 0 20px;
+  }
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-slider {
+  margin: 0 auto;
+  height: 100%;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-slide {
+  cursor: pointer;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  background-color: #122b72;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-slide:hover {
+  background-color: #eaeef1;
+  color: #0c131d;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-slide:active {
+  color: #ae2e15;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-slide.slick-current {
+  background-color: #183293;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-list {
+  height: 100%;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-track {
+  height: 100%;
+  margin: 0 auto;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-prev, html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-next {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 30px;
+  min-width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+@media only screen and (min-height: 480px) {
+  html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-prev, html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-next {
+    width: 20px;
+  }
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-prev:hover, html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-next:hover, html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-prev:focus, html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-next:focus {
+  outline: none;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-prev:hover:before, html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-next:hover:before, html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-prev:focus:before, html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-next:focus:before {
+  color: #eaeef1;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-prev.slick-disabled:before, html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-next.slick-disabled:before {
+  opacity: 0.2;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-prev:before, html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-next:before {
+  font-family: FontAwesome;
+  font-size: 18px;
+  line-height: 1;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-prev {
+  left: -30px;
+}
+@media only screen and (min-height: 480px) {
+  html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-prev {
+    left: -20px;
+  }
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-prev:before {
+  content: '\f104';
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-next {
+  right: -30px;
+}
+@media only screen and (min-height: 480px) {
+  html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-next {
+    right: -20px;
+  }
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .open-chats-slider .s-content .slick-next:before {
+  content: '\f105';
+}
 html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container {
-  border-left: 5px solid #0c131d;
-  border-right: 5px solid #0c131d;
   font-size: 0.75em;
-  padding: 0 1em;
+  height: 100%;
+  width: 100%;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title {
+  padding: 0 5px;
+  display: block;
+  overflow: hidden;
+  height: 100%;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title span {
+  font-family: MuseoSans;
+  font-weight: 600;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title .participant {
+  position: relative;
+  display: inline-block;
+  padding-left: 0.125em;
+  padding-right: 0.125em;
+  border-left: 1px solid #edf0f4;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title .participant:first-of-type {
+  border-left: 1px solid transparent;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title .participant span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.9em;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title .participants-holder span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.9em;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title .participants-holder .participants-names {
+  display: inline-block;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title .img-av-holder {
+  width: 22px;
+  height: 22px;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  margin-right: 0.25em;
+  margin-left: 0.0625em;
+  -webkit-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  -moz-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  text-align: center;
+  display: block;
+  vertical-align: middle;
+  position: relative;
+  margin: 0 auto;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title .img-av-holder img {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 1px;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title .img-av-holder > i {
+  display: inline-table;
+  height: 100%;
+  font-size: 14px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title .img-av-holder > i:before {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title > span {
+  font-size: 0.9em;
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  height: 100%;
+  vertical-align: middle;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title > span:before {
+  display: inline-block;
+  height: 100%;
+  content: "";
+  vertical-align: middle;
+  position: relative;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title > span i.fa {
+  margin-right: 0.5em;
+}
+html .filter-section-desc-holder nav.section-desc-filters .filter.filter-current-chat .current-chat-room-container .chatroom-title .img-avatar-holder {
+  display: inline-block;
 }
 html .chat-content-holder nav.chat-nav-filters .filter.filter-chat-info {
   background: #12408d;
@@ -1951,8 +2165,14 @@ html body {
   /* "X" icons hover */
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */
 }
+@media only screen and (max-height: 539px) and (max-width: 479px) {
+  html body {
+    padding-top: 2.875em;
+  }
+}
 html body .navbar {
   -webkit-backface-visibility: hidden;
+  min-height: 40px;
 }
 html body .navbar-fixed-top {
   border-width: 0;
@@ -1971,6 +2191,13 @@ html body .navbar-default .navbar-brand {
   html body .navbar-default .navbar-brand {
     padding: 4px 12px;
     width: 10em;
+  }
+}
+@media only screen and (max-height: 539px) and (max-width: 479px) {
+  html body .navbar-default .navbar-brand {
+    padding: 4px 12px;
+    width: 10em;
+    height: 2.875em;
   }
 }
 html body .navbar-default .navbar-brand .img-helper {
@@ -2135,6 +2362,13 @@ html body .navbar-default .navbar-toggle {
   color: #edf0f4;
   border-color: transparent;
 }
+@media only screen and (max-height: 539px) and (max-width: 479px) {
+  html body .navbar-default .navbar-toggle {
+    padding: 7px 10px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+}
 html body .navbar-default .navbar-toggle:not(.collapsed) {
   background-color: #0f3678;
 }
@@ -2143,6 +2377,11 @@ html body .navbar-default .navbar-toggle:not(.collapsed) .f-icon-menu:before {
 }
 html body .navbar-default .navbar-toggle .f-icon-menu {
   font-size: 20px;
+}
+@media only screen and (max-height: 539px) and (max-width: 479px) {
+  html body .navbar-default .navbar-toggle .f-icon-menu {
+    font-size: 18px;
+  }
 }
 html body .navbar-default .navbar-toggle:hover, html body .navbar-default .navbar-toggle:focus {
   background-color: #eaeef1;
@@ -2178,16 +2417,26 @@ html body nav.secondary.user img.soc-net-logo {
 }
 html body nav.secondary.user div.home-cont {
   display: inline-block;
-  padding: 0.5em 1em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 @media only screen and (min-width: 768px) {
   html body nav.secondary.user div.home-cont {
     display: none;
   }
 }
-@media only screen and (max-width: 359px) {
+@media only screen and (max-width: 540px) {
   html body nav.secondary.user div.home-cont {
-    width: 100%;
+    padding-left: 0.375em;
+    padding-right: 0.375em;
+  }
+}
+@media only screen and (min-height: 540px) {
+  html body nav.secondary.user div.home-cont {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
   }
 }
 html body nav.secondary.user div.home-cont > a {
@@ -2219,8 +2468,8 @@ html body nav.secondary.user div.home-cont .home-icon-cont .f-thumbnail.user-ico
   color: #edf0f4;
 }
 html body nav.secondary.user div.home-cont .home-icon-cont .user {
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
   position: relative;
   margin: 0 auto;
   -webkit-border-radius: 5em;
@@ -2246,7 +2495,7 @@ html body nav.secondary.user div.home-cont .home-icon-cont .f-thumbnail > .no-sh
   -webkit-border-radius: 5em;
   -moz-border-radius: 5em;
   border-radius: 5em;
-  font-size: 1.9em;
+  font-size: 1.75em;
   display: inline-table;
 }
 html body nav.secondary.user div.home-cont .home-icon-cont .f-thumbnail > .no-show {
@@ -2293,7 +2542,7 @@ html body nav.secondary.user ul.menu > li.open:not(.active) a, html body nav.sec
 }
 @media only screen and (min-width: 480px) {
   html body nav.secondary.user ul.menu > li .link-icon-fw {
-    font-size: 1.2;
+    font-size: 1.2em;
   }
 }
 @media only screen and (max-width: 569px) {
@@ -2313,8 +2562,8 @@ html body nav.secondary.user ul.menu > li.open:not(.active) a, html body nav.sec
 }
 html body nav.secondary.user ul.menu li > a, html body nav.secondary.user ul.menu li > span {
   display: block;
-  height: 4em;
-  line-height: 4em;
+  height: 3em;
+  line-height: 3em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -2326,6 +2575,12 @@ html body nav.secondary.user ul.menu li > a, html body nav.secondary.user ul.men
   -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
   transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
   padding: 0 18px 0 0.5em;
+}
+@media only screen and (min-height: 540px) {
+  html body nav.secondary.user ul.menu li > a, html body nav.secondary.user ul.menu li > span {
+    height: 3.5em;
+    line-height: 3.5em;
+  }
 }
 @media only screen and (min-width: 480px) {
   html body nav.secondary.user ul.menu li > a, html body nav.secondary.user ul.menu li > span {
@@ -2347,11 +2602,11 @@ html body nav.secondary.user ul.menu li > a:hover, html body nav.secondary.user 
   }
 }
 html body nav.secondary.user ul.menu li.no-dropdown a {
-  padding: 0 1.25em 0 1.25em;
+  padding: 0 0.875em 0 0.875em;
 }
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 425px) {
   html body nav.secondary.user ul.menu li.no-dropdown a {
-    padding: 0 1em 0 1em;
+    padding: 0 0.75em 0 0.75em;
   }
 }
 html body nav.secondary.user li.dropdown > span:after {
@@ -3069,6 +3324,11 @@ html body #content .main-subtitle-box .page-title h2 {
 html body #content .main-content-box {
   width: 100%;
   background-color: white;
+  /*********************
+ BREAKPOINTS
+ *********************/
+  /* "X" icons hover */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edf0f4+0,eaeef1+100 */
   /*********************
  BREAKPOINTS
  *********************/
@@ -4020,7 +4280,7 @@ html body #content .main-content-box .table-container .heading-container .th {
   transition: all 0.5s ease;
   vertical-align: middle;
 }
-html body #content .main-content-box .table-container .heading-container .th h4 {
+html body #content .main-content-box .table-container .heading-container .th h4, html body #content .main-content-box .table-container .heading-container .th a {
   text-align: center;
   line-height: 125%;
   font-size: 16px;
@@ -4296,6 +4556,12 @@ html body #content .main-content-box .table-container .admin-actions-cont a {
 html body #content .main-content-box .table-container .admin-actions-cont a i {
   font-size: 1.5em;
 }
+html body #content .main-content-box .table-container .width-2em {
+  width: 2em;
+}
+html body #content .main-content-box .table-container .width-2-and-half-em {
+  width: 2.5em;
+}
 html body #content .main-content-box .table-container .width-3em {
   width: 3em;
 }
@@ -4307,6 +4573,9 @@ html body #content .main-content-box .table-container .width-4-and-half-em {
 }
 html body #content .main-content-box .table-container .width-5em {
   width: 5em;
+}
+html body #content .main-content-box .table-container .width-6em {
+  width: 6em;
 }
 html body #content .main-content-box .table-container .width-7em {
   width: 7em;
@@ -4320,6 +4589,12 @@ html body #content .main-content-box .table-container .width-10em {
 html body #content .main-content-box .table-container .width-12em {
   width: 12em;
 }
+html body #content .main-content-box .table-container .width-13em {
+  width: 13em;
+}
+html body #content .main-content-box .table-container .width-14em {
+  width: 14em;
+}
 html body #content .main-content-box .table-container .width-15em {
   width: 15em;
 }
@@ -4331,6 +4606,9 @@ html body #content .main-content-box .table-container .width-20em {
 }
 html body #content .main-content-box .table-container .width-22em {
   width: 22em;
+}
+html body #content .main-content-box .table-container .width-24em {
+  width: 24em;
 }
 html body #content .main-content-box .table-container .width-25em {
   width: 25em;
@@ -4375,7 +4653,7 @@ html body #content .main-content-box .table-container .margin-std-lr {
   margin-left: 2px;
   margin-right: 2px;
 }
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 480px) {
   html body #content .main-content-box .table-container .margin-std-lr {
     margin-left: 0.25em;
     margin-right: 0.25em;
@@ -5400,6 +5678,1154 @@ html body #content .main-content-box #cd-zoom-in {
 }
 html body #content .main-content-box #cd-zoom-out {
   background-position: 50% -32px;
+}
+html body #content .main-content-box .stats-container.main.mega {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#183293+0,122b72+100 */
+  background: #183293;
+  /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #183293 0, #122b72 100%);
+  /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #183293 0, #122b72 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #183293 0, #122b72 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#183293', endColorstr='#122b72',GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+html body #content .main-content-box .stats-container.main.mega * {
+  box-sizing: border-box;
+}
+html body #content .main-content-box .stats-container.main nav .secondary {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  font-family: MuseoSans;
+  font-weight: 600;
+  text-transform: none;
+}
+html body #content .main-content-box .stats-container.main nav .secondary ul.menu {
+  display: inline-block;
+}
+html body #content .main-content-box .stats-container.main nav .secondary ul.menu li {
+  position: relative;
+}
+html body #content .main-content-box .stats-container.main nav .secondary ul.menu > li.open a, html body #content .main-content-box .stats-container.main nav .secondary ul.menu > li.open > span {
+  background-color: #0c131d;
+  color: #edf0f4;
+}
+html body #content .main-content-box .stats-container.main nav .secondary ul.menu > li.open:not(.active) a, html body #content .main-content-box .stats-container.main nav .secondary ul.menu > li.open:not(.active) > span {
+  border-bottom: 2px solid #0c131d;
+}
+@media only screen and (min-width: 480px) {
+  html body #content .main-content-box .stats-container.main nav .secondary ul.menu > li .link-icon-fw {
+    font-size: 1.2;
+  }
+}
+@media only screen and (max-width: 569px) {
+  html body #content .main-content-box .stats-container.main nav .secondary ul.menu > li .link-icon-fw {
+    font-size: 1.2em;
+  }
+}
+@media only screen and (min-width: 480px) {
+  html body #content .main-content-box .stats-container.main nav .secondary ul.menu > li .link-icon-fww {
+    font-size: 1.2em;
+  }
+}
+@media only screen and (max-width: 399px) {
+  html body #content .main-content-box .stats-container.main nav .secondary ul.menu > li .link-icon-fww {
+    font-size: 1.2em;
+  }
+}
+html body #content .main-content-box .stats-container.main nav .secondary ul.menu li > a, html body #content .main-content-box .stats-container.main nav .secondary ul.menu li > span {
+  display: block;
+  height: 2.5em;
+  line-height: 2.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #0c131d;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out, border 0.25s ease-out;
+  padding: 0 18px 0 0.5em;
+}
+@media only screen and (min-width: 480px) {
+  html body #content .main-content-box .stats-container.main nav .secondary ul.menu li > a, html body #content .main-content-box .stats-container.main nav .secondary ul.menu li > span {
+    padding: 0 25px 0 10px;
+  }
+}
+html body #content .main-content-box .stats-container.main nav .secondary ul.menu li > a:hover, html body #content .main-content-box .stats-container.main nav .secondary ul.menu li > span:hover, html body #content .main-content-box .stats-container.main nav .secondary ul.menu li > a:focus, html body #content .main-content-box .stats-container.main nav .secondary ul.menu li > span:focus {
+  color: white;
+  background-color: #0c131d;
+}
+@media only screen and (max-width: 639px) {
+  html body #content .main-content-box .stats-container.main nav .secondary ul.menu li > a span.link-label-fw, html body #content .main-content-box .stats-container.main nav .secondary ul.menu li > span span.link-label-fw {
+    display: none;
+  }
+}
+@media only screen and (max-width: 399px) {
+  html body #content .main-content-box .stats-container.main nav .secondary ul.menu li > a span.link-label-fww, html body #content .main-content-box .stats-container.main nav .secondary ul.menu li > span span.link-label-fww {
+    display: none;
+  }
+}
+html body #content .main-content-box .stats-container.main nav .secondary ul.menu li.no-dropdown a {
+  padding: 0 1.25em 0 1.25em;
+}
+@media only screen and (min-width: 400px) {
+  html body #content .main-content-box .stats-container.main nav .secondary ul.menu li.no-dropdown a {
+    padding: 0 1em 0 1em;
+  }
+}
+html body #content .main-content-box .stats-container.main nav .secondary li.dropdown > span:after {
+  content: '';
+  position: relative;
+  font-family: FontAwesome;
+  right: -8px;
+}
+@media only screen and (min-width: 480px) {
+  html body #content .main-content-box .stats-container.main nav .secondary li.dropdown > span:after {
+    right: -15px;
+  }
+}
+html body #content .main-content-box .stats-container.main nav .secondary li.dropdown > span:after {
+  content: '\f107';
+}
+html body #content .main-content-box .stats-container.main nav .secondary li.open.dropdown > span:after {
+  content: '\f106';
+}
+html body #content .main-content-box .stats-container.main nav .secondary li.dropdown:hover > span:after, html body #content .main-content-box .stats-container.main nav .secondary li.dropdown:focus > span:after {
+  content: '\f103';
+}
+html body #content .main-content-box .stats-container.main nav .secondary li.open.dropdown:hover > span:after, html body #content .main-content-box .stats-container.main nav .secondary li.open.dropdown:focus > span:after {
+  content: '\f102';
+}
+html body #content .main-content-box .stats-container.main nav .secondary > div {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+html body #content .main-content-box .stats-container.main nav .secondary li.dropdown > span {
+  padding-right: 30px;
+  cursor: pointer;
+}
+html body #content .main-content-box .stats-container.main nav .secondary li.dropdown.active > span, html body #content .main-content-box .stats-container.main nav .secondary li.no-dropdown.active a {
+  border-bottom: 2px solid #12408d;
+  color: #12408d;
+}
+html body #content .main-content-box .stats-container.main nav .nav-sort-filters {
+  position: absolute;
+  width: 100%;
+  display: none;
+  height: auto;
+  font-size: 15px;
+  font-family: MuseoSans;
+  font-weight: 600;
+  background-color: white;
+  z-index: 29;
+  overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+  html body #content .main-content-box .stats-container.main nav .nav-sort-filters {
+    border-bottom: 2px solid #0c131d;
+  }
+}
+html body #content .main-content-box .stats-container.main nav .nav-sort-filters .filter {
+  display: none;
+  overflow: hidden;
+  text-align: right;
+  padding: 2px 0;
+}
+html body #content .main-content-box .stats-container.main nav .nav-sort-filters .filter:before {
+  display: table;
+  content: " ";
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main nav .nav-sort-filters .filter {
+    padding: 3px 0;
+  }
+}
+html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags {
+  overflow: hidden;
+}
+html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags ul {
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags ul {
+    float: right;
+  }
+}
+html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags li {
+  position: relative;
+  font-size: 15px;
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags li {
+    float: left;
+    margin: 0 8px;
+  }
+}
+html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags li .fa {
+  font-size: 18px;
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags li .fa {
+    font-size: 15px;
+  }
+}
+html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags li a {
+  display: block;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-color: transparent;
+  border-left-width: 3px;
+  border-right-width: 3px;
+  padding: 10px 15px;
+  color: #0c131d;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags li a {
+    padding: 8px 15px;
+  }
+}
+html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags li a span {
+  padding: 0 2px;
+}
+html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags li a span.num-of-msg {
+  width: 1.4em;
+  display: inline-block;
+  text-align: center;
+}
+html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags li a.active {
+  border-color: #12408d;
+  color: #12408d;
+}
+html body #content .main-content-box .stats-container.main nav .nav-sort-filters .list-tags li a:hover {
+  background-color: #12408d;
+  color: #edf0f4;
+}
+html body #content .main-content-box .stats-container.main nav .secondary {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 9;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+html body #content .main-content-box .stats-container.main .statistics-overlay {
+  position: relative;
+}
+html body #content .main-content-box .stats-container.main .statistics-overlay .content-column {
+  overflow: hidden;
+}
+@media only screen and (max-width: 420px) {
+}
+html body #content .main-content-box .stats-container.main .statistics-overlay .loading-gif-div {
+  color: #eaeef1;
+}
+html body #content .main-content-box .stats-container.main .statistics-overlay .loading-gif-div i {
+  font-size: 4em;
+  vertical-align: top;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container {
+  font-family: MuseoSans;
+  font-weight: 600;
+  display: inline-block;
+  vertical-align: top;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .heading-container {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+@media only screen and (min-height: 540px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container .heading-container {
+    margin-bottom: 0.625em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .heading-container .th {
+  display: inline-block;
+  height: 2em;
+  border-bottom: 1px solid #edf0f4;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .heading-container .th h4, html body #content .main-content-box .stats-container.main .rankings-table-container .heading-container .th a {
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 100%;
+  padding-right: 0;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .heading-container .th > * {
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .heading-container .th > *:before {
+  content: "";
+  vertical-align: middle;
+  display: inline-block;
+  height: 100%;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr {
+  border: 1px solid #122b72;
+  display: block;
+  position: relative;
+  border-radius: 10em;
+  height: 2em;
+  margin-bottom: 0.125em;
+  padding: 1px 0.25em;
+}
+@media only screen and (min-height: 540px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr {
+    height: 2.125em;
+  }
+}
+@media only screen and (min-height: 540px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr {
+    margin-bottom: 0.25em;
+  }
+}
+@media only screen and (min-width: 480px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr {
+    padding: 1px 0.5em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr.i-am-user {
+  background-color: #122b72;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr .td {
+  font-family: 'Raleway', Arial, sans-serif;
+  font-weight: initial;
+  display: inline-block;
+  height: 100%;
+  overflow: hidden;
+  vertical-align: bottom;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr .td > div {
+  height: 100%;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr .td > div:before {
+  content: "";
+  vertical-align: middle;
+  display: inline-block;
+  height: 100%;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr .td > div > * {
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-user {
+  width: 8em;
+}
+@media only screen and (min-width: 320px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-user {
+    width: 10em;
+  }
+}
+@media only screen and (min-width: 375px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-user {
+    width: 13em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-user {
+    width: 15em;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-user, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-user {
+    width: 24em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-losses, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-losses, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-losses {
+  width: 3em;
+}
+@media only screen and (max-width: 639px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-losses, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-losses, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-losses {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-draws .long-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-draws .long-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-draws .long-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-losses .long-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-losses .long-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-losses .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-losses, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-losses, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-losses {
+    width: 4.5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-draws .short-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-draws .short-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-draws .short-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-losses .short-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-losses .short-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-losses .short-name {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-wins, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-wins {
+  width: 3em;
+}
+@media only screen and (max-width: 479px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-wins, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-wins {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-wins .long-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-wins .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-wins, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-wins {
+    width: 4.5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-wins .short-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-wins .short-name {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-results-ratio, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-results-ratio {
+  width: 6em;
+}
+@media only screen and (max-width: 1023px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-results-ratio, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-results-ratio {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-recent-form {
+  width: 8em;
+}
+@media only screen and (min-width: 425px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-recent-form {
+    width: 8.5em;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-recent-form {
+    width: 9.5em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-points {
+  width: 2.5em;
+}
+@media only screen and (max-width: 424px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-points {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-points {
+    width: 3em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-points .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-points {
+    width: 4.5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .data-points .short-name {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-points {
+  width: 4em;
+}
+@media only screen and (max-width: 559px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-points .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-points {
+    width: 6em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-points .short-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-points {
+    width: 7.5em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-appearances {
+  width: 3.5em;
+}
+@media only screen and (max-width: 424px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-appearances {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-appearances {
+    width: 4.5em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-appearances .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-appearances {
+    width: 6.5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-pts .data-appearances .short-name {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-points-percentage {
+  width: 4em;
+}
+@media only screen and (max-width: 559px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-points-percentage .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-points-percentage {
+    width: 5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-points-percentage .short-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-points-percentage {
+    width: 7em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-points {
+  width: 3em;
+}
+@media only screen and (max-width: 767px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-points .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-points {
+    width: 5.5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-points .short-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-points {
+    width: 6em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-appearances {
+  width: 3em;
+}
+@media only screen and (max-width: 424px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-appearances {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-appearances {
+    width: 3.5em;
+  }
+}
+@media only screen and (max-width: 991px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-appearances .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-appearances {
+    width: 6em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-appearances .short-name {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-wins {
+  width: 3em;
+}
+@media only screen and (max-width: 479px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-wins {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 991px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-wins .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-wins {
+    width: 4.5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-wins .short-name {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-losses {
+  width: 3em;
+}
+@media only screen and (max-width: 639px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-losses {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 991px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-draws .long-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-losses .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-losses {
+    width: 4.5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-draws .short-name, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-losses .short-name {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-results-ratio {
+  width: 6em;
+}
+@media only screen and (max-width: 1199px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-pctg-of-pts .data-results-ratio {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-wins {
+  width: 4em;
+}
+@media only screen and (max-width: 559px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-wins .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-wins {
+    width: 5.5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-wins .short-name {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-points {
+  width: 3.5em;
+}
+@media only screen and (max-width: 559px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-points .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-points {
+    width: 5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-points .short-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-points {
+    width: 6.5em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-appearances {
+  width: 3.5em;
+}
+@media only screen and (max-width: 479px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-appearances {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-appearances {
+    width: 4.5em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-appearances .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-appearances {
+    width: 6em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-wins .data-appearances .short-name {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-appearances {
+  width: 3.5em;
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-appearances {
+    width: 4.5em;
+  }
+}
+@media only screen and (max-width: 639px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-appearances .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 640px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-appearances {
+    width: 6.5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-appearances .short-name {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-points {
+  width: 4em;
+}
+@media only screen and (max-width: 424px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-points {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 559px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-points .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-points {
+    width: 6em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-points .short-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-apps .data-points {
+    width: 7.5em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td span {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+@media only screen and (min-width: 480px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td span {
+    font-size: 15px;
+    font-size: 0.9375rem;
+  }
+}
+@media only screen and (min-width: 640px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td span {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td.data-user .user {
+  width: 100%;
+}
+@media only screen and (max-width: 374px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td.data-user .user .data-avatar {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td.data-user .user .data-avatar.img-holder {
+  width: 26px;
+  height: 26px;
+  border-radius: 5em;
+  -webkit-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  -moz-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  text-align: center;
+  display: inline-block;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td.data-user .user .data-avatar.img-holder > img {
+  border-radius: 5em;
+  position: relative;
+  top: 1px;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td.data-user .user .data-avatar.img-holder > i {
+  display: inline-table;
+  height: 100%;
+  font-size: 18px;
+  font-size: 1.125rem;
+  padding: 6px 0;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td.data-user .user .data-avatar.img-holder > i:before {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+@media only screen and (max-width: 991px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td.data-user .user .data-full-name {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td.data-user .user .data-username, html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td.data-user .user .data-full-name {
+  display: inline-block;
+  padding-left: 6px;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td.data-user .user .data-username {
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  margin: 0;
+  text-align: left;
+  max-width: -moz-calc(100% - 36px);
+  max-width: -webkit-calc(100% - 36px);
+  max-width: calc(100% - 36px);
+}
+@media only screen and (max-width: 374px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container:not(.no-sort) .rows-container .tr .td.data-user .user .data-username {
+    max-width: 100%;
+    padding-left: 0;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+}
+@media only screen and (min-width: 425px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder {
+    width: 22px;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder {
+    width: 24px;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .pic-cont > .icon, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont > .icon-o {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+@media only screen and (min-width: 425px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .pic-cont > .icon, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont > .icon-o {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .pic-cont > .icon, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont > .icon-o {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .pic-cont > .icon.victory, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont > .icon-o.victory {
+  color: #1f6d4d;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .pic-cont > .icon.loss, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont > .icon-o.loss {
+  color: #be2323;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .pic-cont > .icon.draw, html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont > .icon-o.draw {
+  color: #eaaf51;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  clip: rect(auto 11px auto auto);
+  clip: rect(auto, 11px, auto, auto);
+}
+@media only screen and (min-width: 425px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont {
+    clip: rect(auto 13px auto auto);
+    clip: rect(auto, 13px, auto, auto);
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.sort-by-num-of-recent-pts .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont {
+    clip: rect(auto 16px auto auto);
+    clip: rect(auto, 16px, auto, auto);
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-user {
+  width: 10em;
+}
+@media only screen and (min-width: 320px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-user {
+    width: 16em;
+  }
+}
+@media only screen and (min-width: 375px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-user {
+    width: 15em;
+  }
+}
+@media only screen and (min-width: 375px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-user {
+    width: 20em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-user {
+    width: 25em;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-user {
+    width: 28em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-wins, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-losses {
+  width: 3em;
+}
+@media only screen and (max-width: 767px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-wins .long-name, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-draws .long-name, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-losses .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-wins, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-losses {
+    width: 5.5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-wins .short-name, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-draws .short-name, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-losses .short-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-wins, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-draws, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-losses {
+    width: 6.5em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-points, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-appearances {
+  width: 3.5em;
+}
+@media only screen and (max-width: 559px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-points .long-name, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-appearances .long-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-points, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-appearances {
+    width: 5.5em;
+  }
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-points .short-name, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-appearances .short-name {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-points, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-appearances {
+    width: 7.5em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-results-ratio {
+  width: 6em;
+}
+@media only screen and (max-width: 1023px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .data-results-ratio {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr {
+  border: 1px solid white;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr.height-3-and-half-em {
+  height: 3.5em;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td span {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+@media only screen and (min-width: 480px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td span {
+    font-size: 15px;
+    font-size: 0.9375rem;
+  }
+}
+@media only screen and (min-width: 640px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td span {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-user .user {
+  width: 100%;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-user .user .data-avatar.img-holder {
+  width: 26px;
+  height: 26px;
+  border-radius: 5em;
+  -webkit-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  -moz-box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  box-shadow: inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1), 0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40);
+  text-align: center;
+  display: inline-block;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-user .user .data-avatar.img-holder > img {
+  border-radius: 5em;
+  position: relative;
+  top: 1px;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-user .user .data-avatar.img-holder > i {
+  display: inline-table;
+  height: 100%;
+  font-size: 18px;
+  font-size: 1.125rem;
+  padding: 6px 0;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-user .user .data-avatar.img-holder > i:before {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+@media only screen and (max-width: 767px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-user .user .data-full-name {
+    display: none !important;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-user .user .data-username, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-user .user .data-full-name {
+  display: inline-block;
+  padding-left: 6px;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-user .user .data-username {
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  margin: 0;
+  text-align: left;
+  max-width: -moz-calc(100% - 36px);
+  max-width: -webkit-calc(100% - 36px);
+  max-width: calc(100% - 36px);
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .data-recent-form {
+  width: 16em;
+}
+@media only screen and (min-width: 425px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .data-recent-form {
+    width: 20em;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .data-recent-form {
+    width: 25em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder {
+  position: relative;
+  display: inline-block;
+  width: 3em;
+}
+@media only screen and (min-width: 425px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder {
+    width: 4em;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder {
+    width: 4.5em;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .pic-cont > .icon, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont > .icon-o {
+  font-size: 22px;
+  font-size: 1.375rem;
+}
+@media only screen and (min-width: 425px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .pic-cont > .icon, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont > .icon-o {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .pic-cont > .icon, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont > .icon-o {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .pic-cont > .icon.victory, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont > .icon-o.victory {
+  color: #1f6d4d;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .pic-cont > .icon.loss, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont > .icon-o.loss {
+  color: #be2323;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .pic-cont > .icon.draw, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont > .icon-o.draw {
+  color: #eaaf51;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  clip: rect(auto 28px auto auto);
+  clip: rect(auto, 28px, auto, auto);
+}
+@media only screen and (min-width: 425px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont {
+    clip: rect(auto 38px auto auto);
+    clip: rect(auto, 38px, auto, auto);
+  }
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .rows-container .tr .td.data-recent-form .recent-game-icon-holder .overlay-pic-cont {
+    clip: rect(auto 43px auto auto);
+    clip: rect(auto, 43px, auto, auto);
+  }
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .heading-container .th a span, html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .heading-container .th a i {
+  color: white;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .heading-container .th a {
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -moz-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -ms-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container.no-sort .heading-container .th a:hover {
+  color: #edf0f4;
+  background-color: #122b72;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .legend {
+  font-family: 'Raleway', Arial, sans-serif;
+  font-weight: initial;
+  color: white;
+  margin-top: 1em;
+  padding: 0.5em;
+  font-size: 14px;
+  border-top: 1px solid #edf0f4;
+  text-align: left;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .legend div[class^='data-'], html body #content .main-content-box .stats-container.main .rankings-table-container .legend div[class*=' data-'] {
+  width: auto !important;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .margin-std-lr {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+@media only screen and (min-width: 640px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container .margin-std-lr {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html body #content .main-content-box .stats-container.main .rankings-table-container .margin-std-lr {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
 }
 html body #content .main-content-box .std-item .std-icon-holder {
   display: inline-table;
@@ -7625,6 +9051,7 @@ html body #content .main-content-box .calendar-widget-holder .month-grid.standar
 }
 html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable.existing-game-link, html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable.existing-game-link, html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable.existing-game-link {
   padding: 1px 0 2px 0;
+  display: inline-block;
 }
 html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.duration-cont, html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.duration-cont, html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.duration-cont, html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.legend-icon-cont, html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.adding-games .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.legend-icon-cont, html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.reservations-home .td > .active-day .day-container .booking-slots .bookings-container .booking > .clickable:hover > div.legend-icon-cont {
   background-color: #edf0f4;
@@ -7635,7 +9062,7 @@ html body #content .main-content-box .calendar-widget-holder .month-grid.standar
   color: #edf0f4;
 }
 html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.reservations-home .td .day-container .booking-slots .bookings-container .booking, html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.adding-games .td .day-container .booking-slots .bookings-container .booking, html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.template-blueprint .td .day-container .booking-slots .bookings-container .booking {
-  width: 30%;
+  width: 40%;
 }
 html body #content .main-content-box .calendar-widget-holder .month-grid.standard .table-container.standard.template-blueprint .td > .active-day .day-container {
   height: 4.75em;

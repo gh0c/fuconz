@@ -59,7 +59,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
 
                 $body = $app->request->getBody();
                 $json_data_received = json_decode($body, true);
-                $games = Game::getGamesByPlayer($app->auth_user->id, 4, "datetime_span.datetime_span_start DESC");
+                $games = Game::getGamesByPlayer($app->auth_user->id, 4, "datetime_span.datetime_span_start DESC, id DESC");
 
                 $app->render('user/profile/home/hot_games.twig', array(
                     'user' => $app->auth_user,
@@ -128,7 +128,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                 $p_first_name, $p_last_name, $p_sex, $p_date_of_birth);
 
             if(!($validation_result["validated"])) {
-                // valudation failed
+                // validation failed
                 if(isset($validation_result["errors"])) {
                     $app->flash('errors',  $validation_result["errors"]);
                 }

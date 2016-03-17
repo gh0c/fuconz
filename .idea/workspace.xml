@@ -22,13 +22,13 @@
     <favorites_list name="fuconz" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.5289525">
       <split-first>
         <leaf>
           <file leaf-file-name="calendar.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/js/calendar.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="119" column="44" selection-start="4620" selection-end="4683" vertical-scroll-proportion="0.0" vertical-offset="1897" max-vertical-offset="7667">
+                <state line="209" column="5" selection-start="7632" selection-end="7632" vertical-scroll-proportion="0.0" vertical-offset="4034" max-vertical-offset="7667">
                   <folding />
                 </state>
               </provider>
@@ -37,7 +37,7 @@
           <file leaf-file-name="hot_games.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/user/profile/home/hot_games.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="37" column="78" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="2958">
+                <state line="171" column="44" selection-start="6770" selection-end="6770" vertical-scroll-proportion="0.0" vertical-offset="2071" max-vertical-offset="3026">
                   <folding />
                 </state>
               </provider>
@@ -46,7 +46,7 @@
           <file leaf-file-name="forms.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/forms.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="345" column="17" selection-start="8432" selection-end="8432" vertical-scroll-proportion="0.0" vertical-offset="11166" max-vertical-offset="14314">
+                <state line="759" column="28" selection-start="18042" selection-end="18044" vertical-scroll-proportion="0.0" vertical-offset="12616" max-vertical-offset="14314">
                   <folding />
                 </state>
               </provider>
@@ -55,7 +55,7 @@
           <file leaf-file-name="bookings.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/js/bookings.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="137" column="49" selection-start="4710" selection-end="4710" vertical-scroll-proportion="0.0" vertical-offset="1928" max-vertical-offset="2839">
+                <state line="137" column="49" selection-start="4710" selection-end="4710" vertical-scroll-proportion="0.0" vertical-offset="1926" max-vertical-offset="2839">
                   <folding />
                 </state>
               </provider>
@@ -73,7 +73,25 @@
           <file leaf-file-name="user_login.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/authentication/user_login.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="106" column="29" selection-start="4225" selection-end="4234" vertical-scroll-proportion="0.0" vertical-offset="1598" max-vertical-offset="2193">
+                <state line="55" column="28" selection-start="2206" selection-end="2901" vertical-scroll-proportion="0.0" vertical-offset="592" max-vertical-offset="2193">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admin.reservations.training_course.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.training_course.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="246" column="0" selection-start="12109" selection-end="12109" vertical-scroll-proportion="0.0" vertical-offset="3380" max-vertical-offset="4318">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admin.matches.games.add.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/admin/matches/admin.matches.games.add.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="36" column="0" selection-start="844" selection-end="1103" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="782">
                   <folding />
                 </state>
               </provider>
@@ -97,10 +115,19 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="game.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/matches/game.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="112" column="54" selection-start="6219" selection-end="6278" vertical-scroll-proportion="0.0" vertical-offset="1153" max-vertical-offset="4794">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="new_chat_room.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/user/chat/new_chat_room.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="18" column="94" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0" vertical-offset="173" max-vertical-offset="578">
+                <state line="18" column="94" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="578">
                   <folding />
                 </state>
               </provider>
@@ -118,7 +145,7 @@
           <file leaf-file-name="menu_dropdown.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/js/menu_dropdown.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1" column="47" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="578">
+                <state line="1" column="47" selection-start="0" selection-end="944" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="578">
                   <folding />
                 </state>
               </provider>
@@ -136,16 +163,7 @@
           <file leaf-file-name="chat_messages.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/user/chat/chat_messages.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="125" column="31" selection-start="5041" selection-end="5078" vertical-scroll-proportion="0.0" vertical-offset="1343" max-vertical-offset="4267">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="BeforeMiddleware.php" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/model/Middleware/BeforeMiddleware.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="68" column="37" selection-start="2728" selection-end="2728" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1734">
+                <state line="3" column="11" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="4267">
                   <folding />
                 </state>
               </provider>
@@ -190,11 +208,8 @@
           <file leaf-file-name="chat.router.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/routes/chat.router.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="299" column="0" selection-start="10713" selection-end="10713" vertical-scroll-proportion="0.0" vertical-offset="4621" max-vertical-offset="8891">
-                  <folding>
-                    <marker date="1453509928593" expanded="true" signature="2099:2604" placeholder="..." />
-                    <marker date="1453509928593" expanded="true" signature="2223:2306" placeholder="..." />
-                  </folding>
+                <state line="9" column="60" selection-start="267" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="8891">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -202,7 +217,7 @@
           <file leaf-file-name="ChatMessage.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/model/Chat/ChatMessage.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="37" column="80" selection-start="918" selection-end="918" vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="5304">
+                <state line="63" column="63" selection-start="1663" selection-end="1665" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="5304">
                   <folding>
                     <marker date="1453499644714" expanded="true" signature="1390:1439" placeholder="SELECT * FRO..chat_message..." />
                     <marker date="1453499644714" expanded="true" signature="1939:2040" placeholder="SELECT * FRO..chat_message..." />
@@ -217,6 +232,15 @@
                     <marker date="1453499644714" expanded="true" signature="7999:8151" placeholder="INSERT INTO ..." />
                     <marker date="1453499644714" expanded="true" signature="8743:8790" placeholder="DELETE FROM ..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Booking.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Reservation/Booking.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="67" column="31" selection-start="2177" selection-end="2274" vertical-scroll-proportion="0.0" vertical-offset="852" max-vertical-offset="2686">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -263,25 +287,34 @@
           <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/model/User/User.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="648" column="42" selection-start="19961" selection-end="19961" vertical-scroll-proportion="0.0" vertical-offset="11016" max-vertical-offset="14467">
+                <state line="676" column="50" selection-start="20625" selection-end="20625" vertical-scroll-proportion="-8.294118" vertical-offset="10882" max-vertical-offset="18496">
                   <folding>
-                    <marker date="1453066956144" expanded="true" signature="4663:4716" placeholder="SELECT * FRO..users..." />
-                    <marker date="1453066956144" expanded="true" signature="5309:5379" placeholder="SELECT * FRO..users..." />
-                    <marker date="1453066956144" expanded="true" signature="5987:6071" placeholder="SELECT * FRO..users..." />
-                    <marker date="1453066956144" expanded="true" signature="6906:6948" placeholder="SELECT * FRO..users..." />
-                    <marker date="1453066956144" expanded="true" signature="7339:7401" placeholder="SELECT * FRO..users..." />
-                    <marker date="1453066956144" expanded="true" signature="7844:7912" placeholder="SELECT * FRO..users..." />
-                    <marker date="1453066956144" expanded="true" signature="8336:8368" placeholder="DELETE FROM ..." />
-                    <marker date="1453066956144" expanded="true" signature="8751:8843" placeholder="UPDATE users..." />
-                    <marker date="1453066956144" expanded="true" signature="9231:9323" placeholder="UPDATE users..." />
-                    <marker date="1453066956144" expanded="true" signature="9729:9795" placeholder="SELECT * FRO..users..." />
-                    <marker date="1453066956144" expanded="true" signature="10182:10224" placeholder="SELECT * FRO..users..." />
-                    <marker date="1453066956144" expanded="true" signature="15264:15316" placeholder="UPDATE users..." />
-                    <marker date="1453066956144" expanded="true" signature="15633:15701" placeholder="UPDATE users..." />
-                    <marker date="1453066956144" expanded="true" signature="16299:16351" placeholder="UPDATE users..." />
-                    <marker date="1453066956144" expanded="true" signature="16838:17036" placeholder="INSERT INTO ..." />
-                    <marker date="1453066956144" expanded="true" signature="18361:18533" placeholder="UPDATE users..." />
+                    <marker date="1458218976738" expanded="true" signature="4663:4716" placeholder="SELECT * FRO..users..." />
+                    <marker date="1458218976738" expanded="true" signature="5309:5379" placeholder="SELECT * FRO..users..." />
+                    <marker date="1458218976738" expanded="true" signature="5987:6071" placeholder="SELECT * FRO..users..." />
+                    <marker date="1458218976738" expanded="true" signature="6906:6948" placeholder="SELECT * FRO..users..." />
+                    <marker date="1458218976738" expanded="true" signature="7339:7401" placeholder="SELECT * FRO..users..." />
+                    <marker date="1458218976738" expanded="true" signature="7844:7912" placeholder="SELECT * FRO..users..." />
+                    <marker date="1458218976738" expanded="true" signature="8336:8368" placeholder="DELETE FROM ..." />
+                    <marker date="1458218976738" expanded="true" signature="8751:8843" placeholder="UPDATE users..." />
+                    <marker date="1458218976738" expanded="true" signature="9231:9323" placeholder="UPDATE users..." />
+                    <marker date="1458218976738" expanded="true" signature="9729:9795" placeholder="SELECT * FRO..users..." />
+                    <marker date="1458218976738" expanded="true" signature="10182:10224" placeholder="SELECT * FRO..users..." />
+                    <marker date="1458218976738" expanded="true" signature="15264:15316" placeholder="UPDATE users..." />
+                    <marker date="1458218976738" expanded="true" signature="15633:15701" placeholder="UPDATE users..." />
+                    <marker date="1458218976738" expanded="true" signature="16299:16351" placeholder="UPDATE users..." />
+                    <marker date="1458218976738" expanded="true" signature="16838:17036" placeholder="INSERT INTO ..." />
+                    <marker date="1458218976738" expanded="true" signature="18361:18533" placeholder="UPDATE users..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.filters.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/filters/user.filters.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="5" column="0" selection-start="65" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1581">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -289,16 +322,115 @@
           <file leaf-file-name="user.profile.router.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="28" column="26" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="6749">
+                <state line="61" column="41" selection-start="2404" selection-end="2528" vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="6749">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="user.router.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/routes/user.router.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="std_header.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/templates/std_header.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1156">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="header.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/header.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="69" column="29" selection-start="3568" selection-end="3568" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="2890">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.stats.router.php" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/routes/user.stats.router.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="18" column="0" selection-start="554" selection-end="554" vertical-scroll-proportion="0.26832017" vertical-offset="0" max-vertical-offset="1785">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="by_num_of_recent_points.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_num_of_recent_points.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="124" column="26" selection-start="5706" selection-end="6023" vertical-scroll-proportion="-14.384615" vertical-offset="1734" max-vertical-offset="2924">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="by_num_of_points.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_num_of_points.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="113" column="8" selection-start="4091" selection-end="5170" vertical-scroll-proportion="-11.115385" vertical-offset="1632" max-vertical-offset="2567">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="by_num_of_wins.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_num_of_wins.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="78" column="20" selection-start="3106" selection-end="3343" vertical-scroll-proportion="-26.153847" vertical-offset="646" max-vertical-offset="2278">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="home.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/stats/home.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="314" column="96" selection-start="15231" selection-end="15243" vertical-scroll-proportion="-10.960784" vertical-offset="4779" max-vertical-offset="7004">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_profile.games.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/profile/_profile.games.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="50" column="7" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="4981">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="by_pct_of_points.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_pct_of_points.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="145" column="23" selection-start="5632" selection-end="5632" vertical-scroll-proportion="-26.384615" vertical-offset="1779" max-vertical-offset="2788">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/config.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="490" column="9" selection-start="11140" selection-end="11140" vertical-scroll-proportion="0.8038331" vertical-offset="7617" max-vertical-offset="8568">
+                <state line="483" column="21" selection-start="11012" selection-end="11012" vertical-scroll-proportion="0.0" vertical-offset="7617" max-vertical-offset="8568">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="by_num_of_appearances.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_num_of_appearances.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="18" column="12" selection-start="374" selection-end="534" vertical-scroll-proportion="-9.807693" vertical-offset="51" max-vertical-offset="1530">
                   <folding />
                 </state>
               </provider>
@@ -311,7 +443,7 @@
           <file leaf-file-name="main.new.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/scss/main.new.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="4" column="15" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1428">
+                <state line="37" column="36" selection-start="767" selection-end="767" vertical-scroll-proportion="-1.4230769" vertical-offset="592" max-vertical-offset="1479">
                   <folding />
                 </state>
               </provider>
@@ -320,7 +452,7 @@
           <file leaf-file-name="general_classes.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/scss/general_classes.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6460">
+                <state line="109" column="0" selection-start="1563" selection-end="1585" vertical-scroll-proportion="-14.307693" vertical-offset="1481" max-vertical-offset="7361">
                   <folding />
                 </state>
               </provider>
@@ -329,7 +461,7 @@
           <file leaf-file-name="head_info.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/templates/partials/head_info.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="41" column="39" selection-start="1696" selection-end="1696" vertical-scroll-proportion="-26.807692" vertical-offset="0" max-vertical-offset="816">
+                <state line="43" column="0" selection-start="1725" selection-end="1725" vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="833">
                   <folding />
                 </state>
               </provider>
@@ -338,7 +470,16 @@
           <file leaf-file-name="foot_info.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/templates/partials/foot_info.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="42" column="58" selection-start="1675" selection-end="1675" vertical-scroll-proportion="-27.461538" vertical-offset="0" max-vertical-offset="833">
+                <state line="39" column="0" selection-start="1560" selection-end="1560" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="833">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="chat.overlay.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/chat.overlay.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="77" column="53" selection-start="3988" selection-end="4005" vertical-scroll-proportion="0.0" vertical-offset="1136" max-vertical-offset="4590">
                   <folding />
                 </state>
               </provider>
@@ -347,7 +488,7 @@
           <file leaf-file-name="_mixins.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_mixins.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="180" column="0" selection-start="3723" selection-end="3739" vertical-scroll-proportion="0.0" vertical-offset="2449" max-vertical-offset="3349">
+                <state line="189" column="0" selection-start="3864" selection-end="3878" vertical-scroll-proportion="0.0" vertical-offset="2908" max-vertical-offset="3808">
                   <folding />
                 </state>
               </provider>
@@ -362,28 +503,98 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ch.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="ch.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/js/ch.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="479" column="41" selection-start="17674" selection-end="17674" vertical-scroll-proportion="0.39211392" vertical-offset="7785" max-vertical-offset="25619">
+                <state line="1408" column="0" selection-start="55442" selection-end="55544" vertical-scroll-proportion="0.0" vertical-offset="23368" max-vertical-offset="26707">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="slick.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/code/scss/slick.scss">
+          <file leaf-file-name="tests.router.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/routes/tests.router.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1785">
+                <state line="38" column="34" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1037">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="slick-theme.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/code/scss/slick-theme.scss">
+          <file leaf-file-name="registration.router.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/routes/registration.router.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3332">
+                <state line="30" column="9" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1054">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Game.php" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/model/Match/Game.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="302" column="21" selection-start="10554" selection-end="10554" vertical-scroll-proportion="0.54988396" vertical-offset="4541" max-vertical-offset="14671">
+                  <folding>
+                    <marker date="1458240127467" expanded="true" signature="3282:3414" placeholder="SELECT game...game..." />
+                    <marker date="1458240127467" expanded="true" signature="3966:4007" placeholder="SELECT * FRO..game..." />
+                    <marker date="1458240127467" expanded="true" signature="4496:4727" placeholder="SELECT game...game..." />
+                    <marker date="1458240127467" expanded="true" signature="5432:5603" placeholder="SELECT game...game..." />
+                    <marker date="1458240127467" expanded="true" signature="6244:6378" placeholder="SELECT COUNT..game..." />
+                    <marker date="1458240127467" expanded="true" signature="6843:7403" placeholder="SELECT SUM(r..SUM..." />
+                    <marker date="1458240127467" expanded="true" signature="6930:7143" placeholder="SELECT SUM(g..game..." />
+                    <marker date="1458240127467" expanded="true" signature="7176:7389" placeholder="SELECT SUM(g..game..." />
+                    <marker date="1458240127467" expanded="true" signature="7916:8970" placeholder="SELECT SUM(r..SUM..." />
+                    <marker date="1458240127467" expanded="true" signature="8018:8346" placeholder="SELECT SUM(a..*..." />
+                    <marker date="1458240127467" expanded="true" signature="8122:8346" placeholder="SELECT game...game..." />
+                    <marker date="1458240127467" expanded="true" signature="9468:9649" placeholder="SELECT COUNT..game..." />
+                    <marker date="1458240127467" expanded="true" signature="10122:10530" placeholder="SELECT COUNT..*..." />
+                    <marker date="1458240127467" expanded="true" signature="10166:10390" placeholder="SELECT game...game..." />
+                    <marker date="1458240127467" expanded="true" signature="10995:11194" placeholder="SELECT COUNT..game..." />
+                    <marker date="1458240127467" expanded="true" signature="11673:12106" placeholder="SELECT COUNT..*..." />
+                    <marker date="1458240127467" expanded="true" signature="11717:11941" placeholder="SELECT game...game..." />
+                    <marker date="1458240127467" expanded="true" signature="12565:12719" placeholder="SELECT COUNT..game..." />
+                    <marker date="1458240127467" expanded="true" signature="13192:13597" placeholder="SELECT COUNT..*..." />
+                    <marker date="1458240127467" expanded="true" signature="13236:13460" placeholder="SELECT game...game..." />
+                    <marker date="1458240127467" expanded="true" signature="14057:14248" placeholder="SELECT COUNT..game..." />
+                    <marker date="1458240127467" expanded="true" signature="14722:15147" placeholder="SELECT COUNT..*..." />
+                    <marker date="1458240127467" expanded="true" signature="14766:14990" placeholder="SELECT game...game..." />
+                    <marker date="1458240127467" expanded="true" signature="16108:16275" placeholder="SELECT playe..game..." />
+                    <marker date="1458240127467" expanded="true" signature="19917:19956" placeholder="DELETE FROM ..." />
+                    <marker date="1458240127467" expanded="true" signature="20155:20203" placeholder="DELETE FROM ..." />
+                    <marker date="1458240127467" expanded="true" signature="20865:21079" placeholder="INSERT INTO ..." />
+                    <marker date="1458240127467" expanded="true" signature="22146:22282" placeholder="INSERT INTO ..." />
+                    <marker date="1458240127467" expanded="true" signature="22870:23006" placeholder="INSERT INTO ..." />
+                    <marker date="1458240127467" expanded="true" signature="24148:24348" placeholder="UPDATE game ..." />
+                    <marker date="1458240127467" expanded="true" signature="25070:25113" placeholder="DELETE FROM ..." />
+                    <marker date="1458240127467" expanded="true" signature="25546:25682" placeholder="INSERT INTO ..." />
+                    <marker date="1458240127467" expanded="true" signature="26271:26407" placeholder="INSERT INTO ..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DatetimeSpan.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Reservation/DatetimeSpan.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="247" column="33" selection-start="7419" selection-end="7419" vertical-scroll-proportion="-24.192308" vertical-offset="3570" max-vertical-offset="4862">
+                  <folding>
+                    <element signature="e#41#67#0" expanded="true" />
+                    <marker date="1458217714880" expanded="true" signature="2123:2234" placeholder="SELECT * FRO..datetime_span..." />
+                    <marker date="1458217714880" expanded="true" signature="2817:2928" placeholder="SELECT * FRO..datetime_span..." />
+                    <marker date="1458217714880" expanded="true" signature="3605:3661" placeholder="UPDATE datet..." />
+                    <marker date="1458217714880" expanded="true" signature="4338:4472" placeholder="SELECT * FRO..datetime_span..." />
+                    <marker date="1458217714880" expanded="true" signature="5222:5319" placeholder="SELECT * FRO..datetime_span..." />
+                    <marker date="1458217714880" expanded="true" signature="5983:6102" placeholder="SELECT * FRO..datetime_span..." />
+                    <marker date="1458217714880" expanded="true" signature="6634:6684" placeholder="SELECT * FRO..datetime_span..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admin.authentication.router.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/routes/admin.authentication.router.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="43" column="0" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="1241">
                   <folding />
                 </state>
               </provider>
@@ -392,25 +603,7 @@
           <file leaf-file-name="default.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/templates/default.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="41" column="0" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="952">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_animations.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_animations.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="77" column="8" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2567">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_chat.chat_rooms.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.chat_rooms.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="159" column="27" selection-start="4086" selection-end="4092" vertical-scroll-proportion="0.0" vertical-offset="2028" max-vertical-offset="2890">
+                <state line="41" column="0" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0" vertical-offset="52" max-vertical-offset="952">
                   <folding />
                 </state>
               </provider>
@@ -419,7 +612,7 @@
           <file leaf-file-name="chat.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/chat.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="207" column="19" selection-start="4652" selection-end="4652" vertical-scroll-proportion="0.0" vertical-offset="3266" max-vertical-offset="8347">
+                <state line="366" column="29" selection-start="8651" selection-end="8651" vertical-scroll-proportion="0.0" vertical-offset="6542" max-vertical-offset="8296">
                   <folding />
                 </state>
               </provider>
@@ -428,16 +621,7 @@
           <file leaf-file-name="_chat.info.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.info.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="272">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_chat.active_chat_room.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.active_chat_room.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="353" column="42" selection-start="9172" selection-end="9172" vertical-scroll-proportion="0.0" vertical-offset="5493" max-vertical-offset="13940">
+                <state line="0" column="33" selection-start="0" selection-end="38" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
                   <folding />
                 </state>
               </provider>
@@ -446,7 +630,16 @@
           <file leaf-file-name="_header.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/_header.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="361" column="8" selection-start="7787" selection-end="7788" vertical-scroll-proportion="0.0" vertical-offset="5850" max-vertical-offset="10982">
+                <state line="224" column="31" selection-start="5011" selection-end="5016" vertical-scroll-proportion="0.0" vertical-offset="3521" max-vertical-offset="11611">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_breakpoints.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_breakpoints.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="52" column="7" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0" vertical-offset="566" max-vertical-offset="1479">
                   <folding />
                 </state>
               </provider>
@@ -461,28 +654,101 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="calendar.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/calendar.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="307" column="22" selection-start="6200" selection-end="6200" vertical-scroll-proportion="0.0" vertical-offset="3924" max-vertical-offset="5321">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_chat.overlay.menu.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.overlay.menu.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="118" column="20" selection-start="2314" selection-end="2314" vertical-scroll-proportion="0.0" vertical-offset="1233" max-vertical-offset="2108">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="content.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/content.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="13" selection-start="613" selection-end="620" vertical-scroll-proportion="0.0" vertical-offset="291" max-vertical-offset="5610">
+                <state line="302" column="16" selection-start="6224" selection-end="6224" vertical-scroll-proportion="-18.76923" vertical-offset="4646" max-vertical-offset="5661">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="stats.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/stats.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="1018" column="45" selection-start="22178" selection-end="22178" vertical-scroll-proportion="-43.076923" vertical-offset="16186" max-vertical-offset="20808">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_colors.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_colors.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="12" column="1" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="969">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="stats.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/js/stats.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="117" column="0" selection-start="3800" selection-end="3800" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="2924">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.bookings.router.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/routes/user.bookings.router.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="509" column="56" selection-start="30560" selection-end="30560" vertical-scroll-proportion="0.0" vertical-offset="8653" max-vertical-offset="9809">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.bookings.span.details.twig" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/user/bookings/user.bookings.span.details.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="162" column="22" selection-start="688" selection-end="9621" vertical-scroll-proportion="0.0" vertical-offset="2020" max-vertical-offset="2975">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tables.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/tables.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="376" column="2" selection-start="6811" selection-end="6856" vertical-scroll-proportion="-17.76923" vertical-offset="5930" max-vertical-offset="7123">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Prereservation.php" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/model/Reservation/Prereservation.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="12" column="6" selection-start="206" selection-end="206" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="11203">
+                  <folding>
+                    <marker date="1450822799228" expanded="true" signature="2388:2595" placeholder="INSERT INTO ..." />
+                    <marker date="1450822799228" expanded="true" signature="12745:12958" placeholder="INSERT INTO ..." />
+                    <marker date="1450822799228" expanded="true" signature="13791:13843" placeholder="SELECT * FRO..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="14394:14436" placeholder="DELETE FROM ..." />
+                    <marker date="1450822799228" expanded="true" signature="14829:15006" placeholder="SELECT COUNT..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="15700:15766" placeholder="SELECT COUNT..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="16351:16536" placeholder="SELECT pre_r..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="17172:17392" placeholder="SELECT pre_r..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="18042:18240" placeholder="SELECT pre_r..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="18958:19191" placeholder="SELECT pre_r..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="19877:20021" placeholder="SELECT COUNT..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="20582:20681" placeholder="SELECT COUNT..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="21187:21305" placeholder="SELECT COUNT..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="21809:21914" placeholder="SELECT * FRO..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="22494:22618" placeholder="SELECT * FRO..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="23203:23306" placeholder="SELECT * FRO..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="23965:24087" placeholder="SELECT * FRO..pre_reservation..." />
+                    <marker date="1450822799228" expanded="true" signature="24724:24788" placeholder="UPDATE pre_r..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="calendar.scss" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/calendar.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="175" column="29" selection-start="3569" selection-end="3569" vertical-scroll-proportion="0.0" vertical-offset="2161" max-vertical-offset="5321">
                   <folding />
                 </state>
               </provider>
@@ -491,7 +757,7 @@
           <file leaf-file-name="emoticons.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/code/scss/emoticons.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="306" column="0" selection-start="13431" selection-end="13431" vertical-scroll-proportion="0.0" vertical-offset="5202" max-vertical-offset="5457">
+                <state line="306" column="0" selection-start="13431" selection-end="13431" vertical-scroll-proportion="0.0" vertical-offset="4570" max-vertical-offset="5457">
                   <folding />
                 </state>
               </provider>
@@ -506,28 +772,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="chat.overlay.twig" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/user/chat.overlay.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="75" column="70" selection-start="3860" selection-end="3887" vertical-scroll-proportion="-6.5384617" vertical-offset="1105" max-vertical-offset="4403">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="template_chat_messages.twig" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/user/chat/template_chat_messages.twig">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="18" column="16" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1989">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="avatar_change.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/code/js/avatar_change.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="73" column="25" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0" vertical-offset="622" max-vertical-offset="3553">
                   <folding />
                 </state>
               </provider>
@@ -545,57 +793,57 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/user/chat/my_chat_rooms_and_users.twig" />
-        <option value="$PROJECT_DIR$/public/code/js/calendar.js" />
-        <option value="$PROJECT_DIR$/app/model/User/User.php" />
-        <option value="$PROJECT_DIR$/public/code/scss/modules/_animations.scss" />
-        <option value="$PROJECT_DIR$/app/model/Chat/ChatRoom.php" />
-        <option value="$PROJECT_DIR$/app/views/user/header.twig" />
-        <option value="$PROJECT_DIR$/public/code/scss/forms.new.scss" />
-        <option value="$PROJECT_DIR$/app/views/templates/std_footer.twig" />
-        <option value="$PROJECT_DIR$/app/views/user/chat/load_chat_room.twig" />
-        <option value="$PROJECT_DIR$/public/code/scss/jscrollpane.scss" />
-        <option value="$PROJECT_DIR$/public/code/js/chat/chat_sections.js" />
-        <option value="$PROJECT_DIR$/app/views/user/chat/load_chat_room_template.twig" />
-        <option value="$PROJECT_DIR$/public/code/scss/_chat.active_chat_room.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/_chat.users.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/_chat.emoticons.std.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/chat.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/calendar.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/calendar/_calendar.ultra.horizontal.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/content.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/match.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/emotocions.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/main_includes/content.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/match/_match.field.scss" />
-        <option value="$PROJECT_DIR$/app/model/Chat/ChatMessage.php" />
-        <option value="$PROJECT_DIR$/public/prod/css/emoticons.css" />
-        <option value="$PROJECT_DIR$/public/code/scss/emoticons/emoticons.std.scss" />
-        <option value="$PROJECT_DIR$/app/routes/chat.router.php" />
-        <option value="$PROJECT_DIR$/public/code/scss/main_includes/jscrollpane.scss" />
-        <option value="$PROJECT_DIR$/app/start.php" />
-        <option value="$PROJECT_DIR$/public/code/scss/modules/_modules.import.scss" />
-        <option value="$PROJECT_DIR$/public/code/scss/main.new.scss" />
         <option value="$PROJECT_DIR$/app/routes/admin.reservations.router.php" />
-        <option value="$PROJECT_DIR$/app/routes/user.bookings.router.php" />
         <option value="$PROJECT_DIR$/app/model/Middleware/BeforeMiddleware.php" />
         <option value="$PROJECT_DIR$/public/code/scss/chat/_chat.users.scss" />
         <option value="$PROJECT_DIR$/public/code/js/homepage.js" />
         <option value="$PROJECT_DIR$/public/code/scss/main_includes/_homepage.scss" />
         <option value="$PROJECT_DIR$/app/helpers/Text.php" />
-        <option value="$PROJECT_DIR$/app/views/user/chat.overlay.twig" />
         <option value="$PROJECT_DIR$/public/code/scss/emoticons.scss" />
-        <option value="$PROJECT_DIR$/app/views/user/chat/chat_messages.twig" />
         <option value="$PROJECT_DIR$/public/code/js/chat/chat.js" />
         <option value="$PROJECT_DIR$/app/config.php" />
-        <option value="$PROJECT_DIR$/public/code/scss/chat/_chat.active_chat_room.scss" />
         <option value="$PROJECT_DIR$/app/views/user/chat/template_chat_messages.twig" />
         <option value="$PROJECT_DIR$/public/code/js/avatar_change.js" />
         <option value="$PROJECT_DIR$/app/views/templates/default.twig" />
-        <option value="$PROJECT_DIR$/public/code/scss/main_includes/chat.scss" />
         <option value="$PROJECT_DIR$/app/views/templates/partials/foot_info.twig" />
+        <option value="$PROJECT_DIR$/public/assets/js/slick.orig.js" />
+        <option value="$PROJECT_DIR$/app/views/user/chat/chat_messages.twig" />
         <option value="$PROJECT_DIR$/app/views/templates/partials/head_info.twig" />
+        <option value="$PROJECT_DIR$/app/views/user/chat.overlay.twig" />
+        <option value="$PROJECT_DIR$/public/code/scss/chat/_chat.overlay.menu.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/slick-theme.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/main_includes/chat.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/chat/_chat.active_chat_room.scss" />
+        <option value="$PROJECT_DIR$/public/assets/js/slick.js" />
+        <option value="$PROJECT_DIR$/app/helpers/Calendar.php" />
         <option value="$PROJECT_DIR$/public/code/js/ch.js" />
+        <option value="$PROJECT_DIR$/public/code/scss/chat/slick-theme.scss" />
+        <option value="$PROJECT_DIR$/app/routes/tests.router.php" />
+        <option value="$PROJECT_DIR$/app/routes/user.profile.router.php" />
+        <option value="$PROJECT_DIR$/public/code/scss/main_includes/content.scss" />
+        <option value="$PROJECT_DIR$/public/code/js/calendar.js" />
+        <option value="$PROJECT_DIR$/app/routes/user.bookings.router.php" />
+        <option value="$PROJECT_DIR$/public/code/scss/calendar/_calendar.standard.scss" />
+        <option value="$PROJECT_DIR$/app/views/user/profile/home/hot_games.twig" />
+        <option value="$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.training_course.twig" />
+        <option value="$PROJECT_DIR$/public/code/scss/main_includes/tables.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/modules/_mixins.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/general_classes.scss" />
+        <option value="$PROJECT_DIR$/app/views/user/header.twig" />
+        <option value="$PROJECT_DIR$/public/code/scss/main_includes/_header.scss" />
+        <option value="$PROJECT_DIR$/public/code/scss/main.new.scss" />
+        <option value="$PROJECT_DIR$/public/code/js/stats.js" />
+        <option value="$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_pct_of_points.twig" />
+        <option value="$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_num_of_appearances.twig" />
+        <option value="$PROJECT_DIR$/app/model/Reservation/DatetimeSpan.php" />
+        <option value="$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_num_of_points.twig" />
+        <option value="$PROJECT_DIR$/app/model/User/User.php" />
+        <option value="$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_num_of_recent_points.twig" />
+        <option value="$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_num_of_wins.twig" />
+        <option value="$PROJECT_DIR$/app/routes/user.stats.router.php" />
+        <option value="$PROJECT_DIR$/public/code/scss/main_includes/stats.scss" />
+        <option value="$PROJECT_DIR$/app/views/user/stats/home.twig" />
+        <option value="$PROJECT_DIR$/app/model/Match/Game.php" />
       </list>
     </option>
   </component>
@@ -632,6 +880,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -792,6 +1041,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="profile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -897,6 +1172,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="chat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="calendar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1043,6 +1344,62 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stats" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fuconz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stats" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sorted_rankings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1346,88 +1703,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="reservations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1454,119 +1729,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reservations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="calendar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="matches" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="matches" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="calendar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="communication" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fuconz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="authentication" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1798,11 +1961,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="options.lastSelected" value="editor.preferences.tabs" />
@@ -1814,18 +1976,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss" />
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views\user\stats\sorted_rankings" />
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss\main_includes" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\assets\js" />
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views\user\chat" />
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\model\Chat" />
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\app\views\admin\communication" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss\chat" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\js" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss\main_includes" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss\match" />
       <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss\profile" />
-      <recent name="C:\Program Files (x86)\Apache Software Foundation\Apache2.2\htdocs\fuconz\public\code\scss\content" />
     </key>
   </component>
   <component name="RunManager">
@@ -1905,7 +2067,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17039403" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13099042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1924,8 +2086,8 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2588997" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2588997" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1934,10 +2096,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19595315" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12886049" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1959,116 +2121,16 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/prod/css/emoticons.css">
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/calendar.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="1" selection-start="945" selection-end="945" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="5610" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat/load_chat_room.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="898" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat/load_chat_room_template.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="35" selection-start="67" selection-end="67" vertical-scroll-proportion="0.018888889" vertical-offset="0" max-vertical-offset="900" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/emoticons/emoticons.std.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/chat.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="299" column="0" selection-start="10713" selection-end="10713" vertical-scroll-proportion="0.0" vertical-offset="4621" max-vertical-offset="8891">
-          <folding>
-            <marker date="1453509928593" expanded="true" signature="2099:2604" placeholder="..." />
-            <marker date="1453509928593" expanded="true" signature="2223:2306" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="26" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="6749">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="913" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/start.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="30" selection-start="459" selection-end="465" vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="2686" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/js/ch_menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="16" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/filters.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="926" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/filters/user.filters.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.632469" vertical-offset="561" max-vertical-offset="1564" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.span.details.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-4.1777434" vertical-offset="2703" max-vertical-offset="3570" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Middleware/BeforeMiddleware.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="37" selection-start="2728" selection-end="2728" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/user.bookings.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="561" column="0" selection-start="32880" selection-end="32880" vertical-scroll-proportion="0.5795981" vertical-offset="8941" max-vertical-offset="9588" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/admin.reservations.router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="55" selection-start="8193" selection-end="8193" vertical-scroll-proportion="0.46213293" vertical-offset="2557" max-vertical-offset="3213" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/forms.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="345" column="17" selection-start="8432" selection-end="8432" vertical-scroll-proportion="0.0" vertical-offset="11166" max-vertical-offset="14314">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/js/profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="0" selection-start="2883" selection-end="2883" vertical-scroll-proportion="0.0" vertical-offset="1525" max-vertical-offset="3281">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/js/homepage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="25" selection-start="643" selection-end="656" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+        <state line="175" column="29" selection-start="3569" selection-end="3569" vertical-scroll-proportion="0.0" vertical-offset="2161" max-vertical-offset="5321">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Chat/ChatMessage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="80" selection-start="918" selection-end="918" vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="5304">
+        <state line="63" column="63" selection-start="1663" selection-end="1665" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="5304">
           <folding>
             <marker date="1453499644714" expanded="true" signature="1390:1439" placeholder="SELECT * FRO..chat_message..." />
             <marker date="1453499644714" expanded="true" signature="1939:2040" placeholder="SELECT * FRO..chat_message..." />
@@ -2086,164 +2148,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/_homepage.scss">
+    <entry file="file://$PROJECT_DIR$/app/model/Reservation/Booking.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="19" selection-start="894" selection-end="894" vertical-scroll-proportion="0.7177778" vertical-offset="0" max-vertical-offset="2091" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_modules.import.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="23" selection-start="103" selection-end="103" vertical-scroll-proportion="0.075555556" vertical-offset="0" max-vertical-offset="900" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/Text.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="5" selection-start="4483" selection-end="4483" vertical-scroll-proportion="0.0" vertical-offset="1765" max-vertical-offset="2737">
+        <state line="67" column="31" selection-start="2177" selection-end="2274" vertical-scroll-proportion="0.0" vertical-offset="852" max-vertical-offset="2686">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat/new_chat_creation.twig">
+    <entry file="file://$PROJECT_DIR$/public/code/js/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="6" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.5558061" vertical-offset="0" max-vertical-offset="887">
+        <state line="209" column="5" selection-start="7632" selection-end="7632" vertical-scroll-proportion="0.0" vertical-offset="4034" max-vertical-offset="7667">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat/chat_messages.twig">
+    <entry file="file://$PROJECT_DIR$/public/code/js/ch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="31" selection-start="5041" selection-end="5078" vertical-scroll-proportion="0.0" vertical-offset="1343" max-vertical-offset="4267">
+        <state line="1408" column="0" selection-start="55442" selection-end="55544" vertical-scroll-proportion="0.0" vertical-offset="23368" max-vertical-offset="26707">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/slick.min.js">
+    <entry file="file://$PROJECT_DIR$/app/model/Reservation/Prereservation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="913" />
+        <state line="12" column="6" selection-start="206" selection-end="206" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="11203">
+          <folding>
+            <marker date="1450822799228" expanded="true" signature="2388:2595" placeholder="INSERT INTO ..." />
+            <marker date="1450822799228" expanded="true" signature="12745:12958" placeholder="INSERT INTO ..." />
+            <marker date="1450822799228" expanded="true" signature="13791:13843" placeholder="SELECT * FRO..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="14394:14436" placeholder="DELETE FROM ..." />
+            <marker date="1450822799228" expanded="true" signature="14829:15006" placeholder="SELECT COUNT..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="15700:15766" placeholder="SELECT COUNT..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="16351:16536" placeholder="SELECT pre_r..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="17172:17392" placeholder="SELECT pre_r..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="18042:18240" placeholder="SELECT pre_r..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="18958:19191" placeholder="SELECT pre_r..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="19877:20021" placeholder="SELECT COUNT..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="20582:20681" placeholder="SELECT COUNT..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="21187:21305" placeholder="SELECT COUNT..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="21809:21914" placeholder="SELECT * FRO..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="22494:22618" placeholder="SELECT * FRO..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="23203:23306" placeholder="SELECT * FRO..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="23965:24087" placeholder="SELECT * FRO..pre_reservation..." />
+            <marker date="1450822799228" expanded="true" signature="24724:24788" placeholder="UPDATE pre_r..." />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config.php">
+    <entry file="file://$PROJECT_DIR$/app/routes/user.bookings.router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="490" column="9" selection-start="11140" selection-end="11140" vertical-scroll-proportion="0.8038331" vertical-offset="7617" max-vertical-offset="8568">
+        <state line="509" column="56" selection-start="30560" selection-end="30560" vertical-scroll-proportion="0.0" vertical-offset="8653" max-vertical-offset="9809">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/main.new.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/user/bookings/user.bookings.span.details.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="15" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1428">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/general_classes.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6460">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_mixins.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="0" selection-start="3723" selection-end="3739" vertical-scroll-proportion="0.0" vertical-offset="2449" max-vertical-offset="3349">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/jscrollpane.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="16" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0" vertical-offset="1442" max-vertical-offset="2329">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/templates/default.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="952">
+        <state line="162" column="22" selection-start="688" selection-end="9621" vertical-scroll-proportion="0.0" vertical-offset="2020" max-vertical-offset="2975">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_animations.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="8" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2567">
+        <state line="77" column="8" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.037777778" vertical-offset="1275" max-vertical-offset="2567">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.chat_rooms.scss">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="27" selection-start="4086" selection-end="4092" vertical-scroll-proportion="0.0" vertical-offset="2028" max-vertical-offset="2890">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="926" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/gmp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="450" column="9" selection-start="15724" selection-end="15724" vertical-scroll-proportion="8.6245775" vertical-offset="0" max-vertical-offset="10999" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/user.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="913">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/user.profile.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="41" selection-start="2404" selection-end="2528" vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="6749">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/profile/_profile.games.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="7" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="4981">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/calendar/_calendar.standard.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="193" column="17" selection-start="5143" selection-end="5143" vertical-scroll-proportion="0.33294663" vertical-offset="2994" max-vertical-offset="6358">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/slick.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1991" column="22" selection-start="58874" selection-end="58886" vertical-scroll-proportion="0.0" vertical-offset="33847" max-vertical-offset="46665" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/slick.orig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1402" column="21" selection-start="0" selection-end="81082" vertical-scroll-proportion="0.0" vertical-offset="23834" max-vertical-offset="46546" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_colors.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="1" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/chat.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="207" column="19" selection-start="4652" selection-end="4652" vertical-scroll-proportion="0.0" vertical-offset="3266" max-vertical-offset="8347">
+        <state line="366" column="29" selection-start="8651" selection-end="8651" vertical-scroll-proportion="0.0" vertical-offset="6542" max-vertical-offset="8296">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.info.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/user/profile/home/hot_games.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="272">
+        <state line="171" column="44" selection-start="6770" selection-end="6770" vertical-scroll-proportion="0.0" vertical-offset="2071" max-vertical-offset="3026">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.active_chat_room.scss">
+    <entry file="file://$PROJECT_DIR$/app/filters/user.filters.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="353" column="42" selection-start="9172" selection-end="9172" vertical-scroll-proportion="0.0" vertical-offset="5493" max-vertical-offset="13940">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/_header.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="361" column="8" selection-start="7787" selection-end="7788" vertical-scroll-proportion="0.0" vertical-offset="5850" max-vertical-offset="10982">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.users.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="0" selection-start="2890" selection-end="2890" vertical-scroll-proportion="0.0" vertical-offset="1630" max-vertical-offset="2788">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/calendar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="307" column="22" selection-start="6200" selection-end="6200" vertical-scroll-proportion="0.0" vertical-offset="3924" max-vertical-offset="5321">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.overlay.menu.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="20" selection-start="2314" selection-end="2314" vertical-scroll-proportion="0.0" vertical-offset="1233" max-vertical-offset="2108">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/content.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="13" selection-start="613" selection-end="620" vertical-scroll-proportion="0.0" vertical-offset="291" max-vertical-offset="5610">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/emoticons.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="306" column="0" selection-start="13431" selection-end="13431" vertical-scroll-proportion="0.0" vertical-offset="5202" max-vertical-offset="5457">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/match.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="13" selection-start="2978" selection-end="2985" vertical-scroll-proportion="0.0" vertical-offset="2327" max-vertical-offset="5270">
+        <state line="5" column="0" selection-start="65" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1581">
           <folding />
         </state>
       </provider>
@@ -2255,52 +2299,266 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/js/avatar_change.js">
+    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.overlay.menu.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="25" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0" vertical-offset="622" max-vertical-offset="3553">
+        <state line="51" column="33" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.9774521" vertical-offset="0" max-vertical-offset="2091">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/slick.scss">
+    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.active_chat_room.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1785">
+        <state line="145" column="19" selection-start="3772" selection-end="3772" vertical-scroll-proportion="0.994363" vertical-offset="1583" max-vertical-offset="16116">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/scss/slick-theme.scss">
+    <entry file="file://$PROJECT_DIR$/public/code/scss/chat/_chat.chat_rooms.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3332">
+        <state line="158" column="8" selection-start="4042" selection-end="4125" vertical-scroll-proportion="0.88500565" vertical-offset="1901" max-vertical-offset="2890">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/templates/partials/foot_info.twig">
+    <entry file="file://$PROJECT_DIR$/app/views/authentication/user_login.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="58" selection-start="1675" selection-end="1675" vertical-scroll-proportion="-27.461538" vertical-offset="0" max-vertical-offset="833">
+        <state line="55" column="28" selection-start="2206" selection-end="2901" vertical-scroll-proportion="0.0" vertical-offset="592" max-vertical-offset="2193">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/templates/partials/head_info.twig">
+    <entry file="file://$PROJECT_DIR$/app/views/admin/matches/admin.matches.games.add.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="39" selection-start="1696" selection-end="1696" vertical-scroll-proportion="-26.807692" vertical-offset="0" max-vertical-offset="816">
+        <state line="36" column="0" selection-start="844" selection-end="1103" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="782">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/chat.overlay.twig">
+    <entry file="file://$PROJECT_DIR$/app/views/admin/reservations/admin.reservations.training_course.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="70" selection-start="3860" selection-end="3887" vertical-scroll-proportion="-6.5384617" vertical-offset="1105" max-vertical-offset="4403">
+        <state line="246" column="0" selection-start="12109" selection-end="12109" vertical-scroll-proportion="0.0" vertical-offset="3380" max-vertical-offset="4318">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/code/js/ch.js">
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/forms.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="479" column="41" selection-start="17674" selection-end="17674" vertical-scroll-proportion="0.39211392" vertical-offset="7785" max-vertical-offset="25619">
+        <state line="759" column="28" selection-start="18042" selection-end="18044" vertical-scroll-proportion="0.0" vertical-offset="12616" max-vertical-offset="14314">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/header.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="29" selection-start="3568" selection-end="3568" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="2890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="0" selection-start="3864" selection-end="3878" vertical-scroll-proportion="0.0" vertical-offset="2908" max-vertical-offset="3808">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/modules/_breakpoints.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="7" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0" vertical-offset="566" max-vertical-offset="1479">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/_header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="224" column="31" selection-start="5011" selection-end="5016" vertical-scroll-proportion="0.0" vertical-offset="3521" max-vertical-offset="11611">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/matches/game.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="54" selection-start="6219" selection-end="6278" vertical-scroll-proportion="0.0" vertical-offset="1153" max-vertical-offset="4794">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/js/stats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="0" selection-start="3800" selection-end="3800" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="2924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Reservation/DatetimeSpan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="247" column="33" selection-start="7419" selection-end="7419" vertical-scroll-proportion="-24.192308" vertical-offset="3570" max-vertical-offset="4862">
+          <folding>
+            <element signature="e#41#67#0" expanded="true" />
+            <marker date="1458217714880" expanded="true" signature="2123:2234" placeholder="SELECT * FRO..datetime_span..." />
+            <marker date="1458217714880" expanded="true" signature="2817:2928" placeholder="SELECT * FRO..datetime_span..." />
+            <marker date="1458217714880" expanded="true" signature="3605:3661" placeholder="UPDATE datet..." />
+            <marker date="1458217714880" expanded="true" signature="4338:4472" placeholder="SELECT * FRO..datetime_span..." />
+            <marker date="1458217714880" expanded="true" signature="5222:5319" placeholder="SELECT * FRO..datetime_span..." />
+            <marker date="1458217714880" expanded="true" signature="5983:6102" placeholder="SELECT * FRO..datetime_span..." />
+            <marker date="1458217714880" expanded="true" signature="6634:6684" placeholder="SELECT * FRO..datetime_span..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/js/bookings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="49" selection-start="4710" selection-end="4710" vertical-scroll-proportion="0.0" vertical-offset="1926" max-vertical-offset="2839">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/content.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="302" column="16" selection-start="6224" selection-end="6224" vertical-scroll-proportion="-18.76923" vertical-offset="4646" max-vertical-offset="5661">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main.new.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="36" selection-start="767" selection-end="767" vertical-scroll-proportion="-1.4230769" vertical-offset="592" max-vertical-offset="1479">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_pct_of_points.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="145" column="23" selection-start="5632" selection-end="5632" vertical-scroll-proportion="-26.384615" vertical-offset="1779" max-vertical-offset="2788">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/tables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="376" column="2" selection-start="6811" selection-end="6856" vertical-scroll-proportion="-17.76923" vertical-offset="5930" max-vertical-offset="7123">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_num_of_appearances.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="12" selection-start="374" selection-end="534" vertical-scroll-proportion="-9.807693" vertical-offset="51" max-vertical-offset="1530">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_num_of_wins.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="20" selection-start="3106" selection-end="3343" vertical-scroll-proportion="-26.153847" vertical-offset="646" max-vertical-offset="2278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_num_of_points.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="8" selection-start="4091" selection-end="5170" vertical-scroll-proportion="-11.115385" vertical-offset="1632" max-vertical-offset="2567">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/stats/sorted_rankings/by_num_of_recent_points.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="26" selection-start="5706" selection-end="6023" vertical-scroll-proportion="-14.384615" vertical-offset="1734" max-vertical-offset="2924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/general_classes.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="0" selection-start="1563" selection-end="1585" vertical-scroll-proportion="-14.307693" vertical-offset="1481" max-vertical-offset="7361">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/User/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="676" column="50" selection-start="20625" selection-end="20625" vertical-scroll-proportion="-8.294118" vertical-offset="10882" max-vertical-offset="18496">
+          <folding>
+            <marker date="1458218976738" expanded="true" signature="4663:4716" placeholder="SELECT * FRO..users..." />
+            <marker date="1458218976738" expanded="true" signature="5309:5379" placeholder="SELECT * FRO..users..." />
+            <marker date="1458218976738" expanded="true" signature="5987:6071" placeholder="SELECT * FRO..users..." />
+            <marker date="1458218976738" expanded="true" signature="6906:6948" placeholder="SELECT * FRO..users..." />
+            <marker date="1458218976738" expanded="true" signature="7339:7401" placeholder="SELECT * FRO..users..." />
+            <marker date="1458218976738" expanded="true" signature="7844:7912" placeholder="SELECT * FRO..users..." />
+            <marker date="1458218976738" expanded="true" signature="8336:8368" placeholder="DELETE FROM ..." />
+            <marker date="1458218976738" expanded="true" signature="8751:8843" placeholder="UPDATE users..." />
+            <marker date="1458218976738" expanded="true" signature="9231:9323" placeholder="UPDATE users..." />
+            <marker date="1458218976738" expanded="true" signature="9729:9795" placeholder="SELECT * FRO..users..." />
+            <marker date="1458218976738" expanded="true" signature="10182:10224" placeholder="SELECT * FRO..users..." />
+            <marker date="1458218976738" expanded="true" signature="15264:15316" placeholder="UPDATE users..." />
+            <marker date="1458218976738" expanded="true" signature="15633:15701" placeholder="UPDATE users..." />
+            <marker date="1458218976738" expanded="true" signature="16299:16351" placeholder="UPDATE users..." />
+            <marker date="1458218976738" expanded="true" signature="16838:17036" placeholder="INSERT INTO ..." />
+            <marker date="1458218976738" expanded="true" signature="18361:18533" placeholder="UPDATE users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/code/scss/main_includes/stats.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1018" column="45" selection-start="22178" selection-end="22178" vertical-scroll-proportion="-43.076923" vertical-offset="16186" max-vertical-offset="20808">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/user/stats/home.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="314" column="96" selection-start="15231" selection-end="15243" vertical-scroll-proportion="-10.960784" vertical-offset="4779" max-vertical-offset="7004">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes/user.stats.router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="554" selection-end="554" vertical-scroll-proportion="0.26832017" vertical-offset="0" max-vertical-offset="1785">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Match/Game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="302" column="21" selection-start="10554" selection-end="10554" vertical-scroll-proportion="0.54988396" vertical-offset="4541" max-vertical-offset="14671">
+          <folding>
+            <marker date="1458240127467" expanded="true" signature="3282:3414" placeholder="SELECT game...game..." />
+            <marker date="1458240127467" expanded="true" signature="3966:4007" placeholder="SELECT * FRO..game..." />
+            <marker date="1458240127467" expanded="true" signature="4496:4727" placeholder="SELECT game...game..." />
+            <marker date="1458240127467" expanded="true" signature="5432:5603" placeholder="SELECT game...game..." />
+            <marker date="1458240127467" expanded="true" signature="6244:6378" placeholder="SELECT COUNT..game..." />
+            <marker date="1458240127467" expanded="true" signature="6843:7403" placeholder="SELECT SUM(r..SUM..." />
+            <marker date="1458240127467" expanded="true" signature="6930:7143" placeholder="SELECT SUM(g..game..." />
+            <marker date="1458240127467" expanded="true" signature="7176:7389" placeholder="SELECT SUM(g..game..." />
+            <marker date="1458240127467" expanded="true" signature="7916:8970" placeholder="SELECT SUM(r..SUM..." />
+            <marker date="1458240127467" expanded="true" signature="8018:8346" placeholder="SELECT SUM(a..*..." />
+            <marker date="1458240127467" expanded="true" signature="8122:8346" placeholder="SELECT game...game..." />
+            <marker date="1458240127467" expanded="true" signature="9468:9649" placeholder="SELECT COUNT..game..." />
+            <marker date="1458240127467" expanded="true" signature="10122:10530" placeholder="SELECT COUNT..*..." />
+            <marker date="1458240127467" expanded="true" signature="10166:10390" placeholder="SELECT game...game..." />
+            <marker date="1458240127467" expanded="true" signature="10995:11194" placeholder="SELECT COUNT..game..." />
+            <marker date="1458240127467" expanded="true" signature="11673:12106" placeholder="SELECT COUNT..*..." />
+            <marker date="1458240127467" expanded="true" signature="11717:11941" placeholder="SELECT game...game..." />
+            <marker date="1458240127467" expanded="true" signature="12565:12719" placeholder="SELECT COUNT..game..." />
+            <marker date="1458240127467" expanded="true" signature="13192:13597" placeholder="SELECT COUNT..*..." />
+            <marker date="1458240127467" expanded="true" signature="13236:13460" placeholder="SELECT game...game..." />
+            <marker date="1458240127467" expanded="true" signature="14057:14248" placeholder="SELECT COUNT..game..." />
+            <marker date="1458240127467" expanded="true" signature="14722:15147" placeholder="SELECT COUNT..*..." />
+            <marker date="1458240127467" expanded="true" signature="14766:14990" placeholder="SELECT game...game..." />
+            <marker date="1458240127467" expanded="true" signature="16108:16275" placeholder="SELECT playe..game..." />
+            <marker date="1458240127467" expanded="true" signature="19917:19956" placeholder="DELETE FROM ..." />
+            <marker date="1458240127467" expanded="true" signature="20155:20203" placeholder="DELETE FROM ..." />
+            <marker date="1458240127467" expanded="true" signature="20865:21079" placeholder="INSERT INTO ..." />
+            <marker date="1458240127467" expanded="true" signature="22146:22282" placeholder="INSERT INTO ..." />
+            <marker date="1458240127467" expanded="true" signature="22870:23006" placeholder="INSERT INTO ..." />
+            <marker date="1458240127467" expanded="true" signature="24148:24348" placeholder="UPDATE game ..." />
+            <marker date="1458240127467" expanded="true" signature="25070:25113" placeholder="DELETE FROM ..." />
+            <marker date="1458240127467" expanded="true" signature="25546:25682" placeholder="INSERT INTO ..." />
+            <marker date="1458240127467" expanded="true" signature="26271:26407" placeholder="INSERT INTO ..." />
+          </folding>
         </state>
       </provider>
     </entry>

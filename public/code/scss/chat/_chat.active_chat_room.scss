@@ -432,7 +432,7 @@
 
       .messages-scroll-pane {
         @include calc(height, 100% - #{$chat-room-title-cont-h} - #{$submitter-area-cont-h});
-        border-bottom: 4px solid $dark-dark-blue;
+
 
         .jspTrack {
           background: transparent;
@@ -448,6 +448,7 @@
 
 
         .msg-m {
+          margin-bottom: 2px;
           .msg-sender, .msg-s {
             & > section {
               display: inline-block;
@@ -516,7 +517,7 @@
 
                 padding: 2px 5px 2px 5px;
                 @include rounded($message-body-bubble-border-radius);
-                margin-bottom: 2px;
+//                margin-bottom: 2px;
                 border: 1px solid transparent;
 
                 min-width: 65%;
@@ -658,6 +659,7 @@
 
 
       .submit-message {
+        border-top: 2px solid $dark-dark-blue;
         background: white;
         height:$submitter-area-cont-h;
         .textarea-holder,
@@ -800,15 +802,141 @@
 }
 
 
+
+
 .filter-section-desc-holder nav.section-desc-filters {
 
   .filter.filter-current-chat {
 //    background-color: rosybrown;
+
+
+    background-color: $cibona-blue;
+//    @include gradient-horizontal-bbb-flag-cibona-blue-transp();
+
+
+    @import 'slick-theme';
+
+
     .current-chat-room-container {
-      border-left: 5px solid $dark-dark-blue;
-      border-right: 5px solid $dark-dark-blue;
       font-size: 0.75em;
-      padding: 0 1em;
+//      padding: 0 1em;
+      height: 100%;
+      width: 100%;
+
+
+      .chatroom-title {
+        padding: 0 5px;
+        display: block;
+        overflow: hidden;
+        height: 100%;
+
+        $participant-av-h: 20px;
+        $participant-av-cont-h: 22px;
+        $participant-av-border-r: 2em;
+        $participant-av-icon-size: 14px;
+
+        span {
+          font-family: MuseoSans;
+          font-weight: 600;
+        }
+        .participant {
+          //            height: 100%;
+          position: relative;
+          display: inline-block;
+
+          padding-left: 0.125em;
+          padding-right: 0.125em;
+
+          border-left: 1px solid $light-blue-gray-light;
+          &:first-of-type {
+            border-left: 1px solid transparent;
+          }
+          span {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0.9em;
+          }
+        }
+
+        .participants-holder {
+          span {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0.9em;
+          }
+          .participants-names {
+            display: inline-block;
+          }
+        }
+
+        .img-av-holder {
+          width: $participant-av-cont-h;
+          height: $participant-av-cont-h;
+          @include rounded($participant-av-border-r);
+
+          margin-right: 0.25em;
+          margin-left: 0.0625em;
+
+
+          @include box-shadow(inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1),
+            0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40));
+          text-align: center;
+          display: block;
+          vertical-align: middle;
+          position: relative;
+          margin: 0 auto;
+          img {
+            @include rounded($participant-av-border-r);
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+
+            top: ($participant-av-cont-h - $participant-av-h)/2;
+          }
+          & > i {
+            display: inline-table;
+            height: 100%;
+            font-size: $participant-av-icon-size;
+
+            padding-top: ($participant-av-h - $participant-av-icon-size)/2;
+            padding-bottom: ($participant-av-h - $participant-av-icon-size)/2;
+
+            &:before {
+              position: relative;
+              display: table-cell;
+              vertical-align: middle;
+            }
+          }
+        }
+
+        & > span {
+          font-size: 0.9em;
+          display: inline-block;
+          width: 100%;
+          max-width: 100%;
+          white-space: nowrap;
+          overflow: hidden !important;
+          text-overflow: ellipsis;
+          height: 100%;
+          vertical-align: middle;
+
+          &:before {
+            display: inline-block;
+            height: 100%;
+            content: "";
+            vertical-align: middle;
+            position: relative;
+          }
+
+          i.fa {
+            margin-right: 0.5em;
+          }
+        }
+        .img-avatar-holder {
+          display: inline-block;
+        }
+      }
     }
   }
 }

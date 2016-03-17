@@ -109,17 +109,20 @@
                                 <div class ="dashed-spacer empty-horiz-spacer-5"></div>
                             </div>
 
-                            <div class = "vertical-section text-centered multirow">
+
+
+                            <div class = "vertical-section text-centered">
                                 <div class = "inner-70pct">
+
                                     <input type="checkbox" name="repeating" id="repeating" required
                                            class = "cb-input repeating" tabindex="8">
-                                    <div class = "checkbox-div-cont">
-                                        <label for = "repeating" alt="Ponavljanje" placeholder="Ponavljanje" data-info="Ponavljanje">
+                                    <div class = "checkbox-div-cont f-std-input-width">
+                                        <label for = "repeating" data-info="Ponavljanje">
                                             <span>Ponavljanje?</span>
                                         </label>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
 
 
@@ -236,5 +239,11 @@
 
     </script>
 
+
+{% endblock %}
+
+
+{% block additional_js %}
+    <script type="text/javascript" src="public/code/js/admin/validation.js?{{ "now"|date("YmdHis") }}"></script>
 
 {% endblock %}

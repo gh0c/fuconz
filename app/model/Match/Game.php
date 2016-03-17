@@ -144,7 +144,7 @@ class Game
         }
     }
 
-    public static function getGamesByPlayer($player_id, $limit = 1000000, $order_by = "datetime_span.datetime_span_start DESC") {
+    public static function getGamesByPlayer($player_id, $limit = 1000000, $order_by = "datetime_span.datetime_span_start DESC, game.id DESC") {
         $dbh = DatabaseConnection::getInstance();
         $sql = "SELECT game.* FROM game JOIN datetime_span on game.datetime_span_id = datetime_span.id
             JOIN player_game ON game.id = player_game.game_id
@@ -198,7 +198,6 @@ class Game
         $stmt->bindParam(':user_id', $player_id, PDO::PARAM_INT);
 
         $stmt->execute();
-        $stmt->execute();
         if ($stmt->rowCount() > 0) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             return (int)$row["number"];
@@ -217,7 +216,7 @@ class Game
           SELECT SUM(game.res_team_one) AS res_for, SUM(game.res_team_two) AS res_against FROM game JOIN player_game ON game.id = player_game.game_id
             WHERE player_game.user_id = :user_id AND player_game.team = 1
             UNION ALL
-          SELECT SUM(game.res_team_two) AS res_for, SUM(game.res_team_one) AS resagainst FROM game JOIN player_game ON game.id = player_game.game_id
+          SELECT SUM(game.res_team_two) AS res_for, SUM(game.res_team_one) AS res_against FROM game JOIN player_game ON game.id = player_game.game_id
             WHERE player_game.user_id = :user_id AND player_game.team = 2
           ) a";
         $stmt = $dbh->prepare($sql);
@@ -234,15 +233,51 @@ class Game
     }
 
 
-    public static function numberOfPlayerWins($player_id)
+    public static function playerRecentResultsRatio($player_id, $limit)
     {
         $dbh = DatabaseConnection::getInstance();
-        $sql = "SELECT COUNT(*) AS number FROM game JOIN player_game ON game.id = player_game.game_id
-            WHERE player_game.user_id = :user_id AND player_game.team = game.winner";
+        $sql = "SELECT SUM(res_for) AS number_for,
+            SUM(res_against) AS number_against FROM (
+            (SELECT SUM(a.res_team_one) AS res_for,
+            SUM(a.res_team_two) AS res_against
+            FROM (SELECT game.*, player_game.* FROM game
+            JOIN datetime_span ON game.datetime_span_id = datetime_span.id
+            JOIN player_game ON game.id = player_game.game_id
+            WHERE player_game.user_id = :user_id
+            ORDER BY datetime_span.datetime_span_start DESC, game.id DESC
+            LIMIT {$limit}) as a where team = 1)
+            UNION ALL
+            (SELECT SUM(b.res_team_two) AS res_for,
+            SUM(b.res_team_one) AS res_against
+            FROM (SELECT game.*, player_game.* FROM game
+            JOIN datetime_span ON game.datetime_span_id = datetime_span.id
+            JOIN player_game ON game.id = player_game.game_id
+            WHERE player_game.user_id = :user_id
+            ORDER BY datetime_span.datetime_span_start DESC, game.id DESC
+            LIMIT {$limit}) as b where team = 2)
+          ) c";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':user_id', $player_id, PDO::PARAM_INT);
 
         $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return array((int)$row["number_for"], (int)$row["number_against"]);
+        }
+        else {
+            return null;
+        }
+    }
+
+    public static function numberOfPlayerWins($player_id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "SELECT COUNT(*) AS number FROM game
+            JOIN player_game ON game.id = player_game.game_id
+            WHERE player_game.user_id = :user_id AND player_game.team = game.winner";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $player_id, PDO::PARAM_INT);
+
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -254,6 +289,168 @@ class Game
     }
 
 
+    public static function numberOfRecentPlayerWins($player_id, $limit)
+    {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "SELECT COUNT(*) AS number FROM
+            (SELECT game.*, player_game.* FROM game
+            JOIN datetime_span ON game.datetime_span_id = datetime_span.id
+            JOIN player_game ON game.id = player_game.game_id
+            WHERE player_game.user_id = :user_id
+            ORDER BY datetime_span.datetime_span_start DESC, game.id DESC
+            LIMIT {$limit}) AS al
+            WHERE winner = team";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $player_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return (int)$row["number"];
+        }
+        else {
+            return null;
+        }
+    }
+
+    public static function numberOfPlayerWinsAfterET($player_id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "SELECT COUNT(*) AS number FROM game JOIN player_game ON game.id = player_game.game_id
+            WHERE player_game.user_id = :user_id AND player_game.team = game.winner AND game.after_extra_time = 1";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $player_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return (int)$row["number"];
+        }
+        else {
+            return null;
+        }
+    }
+
+    public static function numberOfRecentPlayerWinsAfterET($player_id, $limit)
+    {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "SELECT COUNT(*) AS number FROM
+            (SELECT game.*, player_game.* FROM game
+            JOIN datetime_span ON game.datetime_span_id = datetime_span.id
+            JOIN player_game ON game.id = player_game.game_id
+            WHERE player_game.user_id = :user_id
+            ORDER BY datetime_span.datetime_span_start DESC, game.id DESC
+            LIMIT {$limit}) AS al
+            WHERE winner = team AND after_extra_time = 1";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $player_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return (int)$row["number"];
+        }
+        else {
+            return null;
+        }
+    }
+
+    public static function numberOfPlayerDraws($player_id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "SELECT COUNT(*) AS number FROM game JOIN player_game ON game.id = player_game.game_id
+            WHERE player_game.user_id = :user_id AND game.winner = 0";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $player_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return (int)$row["number"];
+        }
+        else {
+            return null;
+        }
+    }
+
+    public static function numberOfRecentPlayerDraws($player_id, $limit)
+    {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "SELECT COUNT(*) AS number FROM
+            (SELECT game.*, player_game.* FROM game
+            JOIN datetime_span ON game.datetime_span_id = datetime_span.id
+            JOIN player_game ON game.id = player_game.game_id
+            WHERE player_game.user_id = :user_id
+            ORDER BY datetime_span.datetime_span_start DESC, game.id DESC
+            LIMIT {$limit}) AS al
+            WHERE winner = 0";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $player_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return (int)$row["number"];
+        }
+        else {
+            return null;
+        }
+    }
+
+    public static function numberOfPlayerLosses($player_id)
+    {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "SELECT COUNT(*) AS number FROM game JOIN player_game ON game.id = player_game.game_id
+            WHERE player_game.user_id = :user_id AND player_game.team <> game.winner AND game.winner <> 0";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $player_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return (int)$row["number"];
+        }
+        else {
+            return null;
+        }
+    }
+
+    public static function numberOfRecentPlayerLosses($player_id, $limit)
+    {
+        $dbh = DatabaseConnection::getInstance();
+        $sql = "SELECT COUNT(*) AS number FROM
+            (SELECT game.*, player_game.* FROM game
+            JOIN datetime_span ON game.datetime_span_id = datetime_span.id
+            JOIN player_game ON game.id = player_game.game_id
+            WHERE player_game.user_id = :user_id
+            ORDER BY datetime_span.datetime_span_start DESC, game.id DESC
+            LIMIT {$limit}) AS al
+            WHERE team <> winner AND winner <> 0";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':user_id', $player_id, PDO::PARAM_INT);
+
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return (int)$row["number"];
+        }
+        else {
+            return null;
+        }
+    }
+
+    public static function numberOfPlayerPoints($player_id)
+    {
+        return self::numberOfPlayerWins($player_id)*3 -
+            self::numberOfPlayerWinsAfterET($player_id) +
+            self::numberOfPlayerDraws($player_id);
+    }
+    public static function numberOfRecentPlayerPoints($player_id, $limit)
+    {
+        return self::numberOfRecentPlayerWins($player_id, $limit)*3 -
+        self::numberOfRecentPlayerWinsAfterET($player_id, $limit) +
+        self::numberOfRecentPlayerDraws($player_id, $limit);
+    }
 
     public function populatePlayers()
     {

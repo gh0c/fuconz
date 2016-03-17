@@ -2,7 +2,7 @@
 
 .navbar {
   -webkit-backface-visibility: hidden;
-
+  min-height: 40px;
 }
 
 .navbar-fixed-top {
@@ -21,6 +21,12 @@
     @include responsive-w-max($mobile-mid-bp - 1px) {
       padding: 4px 12px;
       width: 10em;
+    }
+
+    @include responsive-w-h-max($mobile-mid-bp - 1px, $bp-mob-h-1 - 1px) {
+      padding: 4px 12px;
+      width: 10em;
+      height: $header-height - 0.75em;
     }
 
     .img-helper {
@@ -160,6 +166,12 @@
     color: $light-blue-gray-light;
     border-color: transparent;
 
+    @include responsive-w-h-max($mobile-mid-bp - 1px, $bp-mob-h-1 - 1px) {
+      padding: 7px 10px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+
     &:not(.collapsed) {
       background-color: $cibona-blue-dark-overlay;
       .f-icon-menu:before {
@@ -169,6 +181,9 @@
 
     .f-icon-menu {
       font-size: 20px;
+      @include responsive-w-h-max($mobile-mid-bp - 1px, $bp-mob-h-1 - 1px) {
+        font-size: 18px;
+      }
     }
 
     &:hover, &:focus {
@@ -207,6 +222,9 @@ nav.secondary.user {
     @include responsive-w-max($tablet-bp - 1px) {
       display: none;
     }
+//    @include responsive-h-max($bp-mob-h-1 - 1px) {
+//      display: none;
+//    }
   }
 
   div.home-cont {
@@ -214,11 +232,22 @@ nav.secondary.user {
     @include responsive-w-min($tablet-bp) {
       display: none;
     }
-    @include responsive-w-max(359px) {
-      width: 100%;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    padding-left: 1em;
+    padding-right: 1em;
+    @include responsive-w-max($bp-mob-h-1) {
+//      width: 100%;
+      padding-left: 0.375em;
+      padding-right: 0.375em;
     }
 
-    padding: 0.5em 1em;
+
+    @include responsive-h-min($bp-mob-h-1) {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+    }
+
 
     & > a {
       display: block;
@@ -255,8 +284,8 @@ nav.secondary.user {
       }
 
       .user {
-        width: 3em;
-        height: 3em;
+        width: 2.5em;
+        height: 2.5em;
         position: relative;
         margin: 0 auto;
         @include rounded($opener-button-border-radius);
@@ -279,7 +308,7 @@ nav.secondary.user {
         height: 100%;
         background-color: rgba(0,0,0,.7);
         @include rounded($opener-button-border-radius);
-        font-size: 1.9em;
+        font-size: 1.75em;
         display: inline-table;
       }
 
@@ -337,7 +366,7 @@ nav.secondary.user {
       }
       .link-icon-fw {
         @include responsive-w-min($mobile-mid-bp) {
-          font-size:1.2;
+          font-size: 1.2em;
         }
         @include responsive-w-max(569px) {
           font-size: 1.2em;
@@ -355,8 +384,16 @@ nav.secondary.user {
     }
     li > a, li > span {
       display: block;
-      height: 4em;
-      line-height: 4em;
+      height: 3em;
+      line-height: 3em;
+      @include responsive-h-min($bp-mob-h-1) {
+        height: 3.5em;
+        line-height: 3.5em;
+      }
+
+
+
+
       @include box-sizing(border-box);
       //          border-bottom: 2px dashed transparent;
       cursor: pointer;
@@ -386,9 +423,9 @@ nav.secondary.user {
       }
     }
     li.no-dropdown a {
-      padding: 0 1.25em 0 1.25em;
-      @include responsive-w-min(400px) {
-        padding: 0 1em 0 1em;
+      padding: 0 0.875em 0 0.875em;
+      @include responsive-w-min($bp-mob-w-2) {
+        padding: 0 0.75em 0 0.75em;
       }
     }
   }

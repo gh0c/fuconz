@@ -24,6 +24,9 @@ html {
 
   body {
     padding-top: $header-height;  // height of fixed header
+    @include responsive-w-h-max($mobile-mid-bp - 1px, $bp-mob-h-1 - 1px) {
+      padding-top: $header-height - 0.75em;
+    }
 
     min-height: 100%;
 //    overflow: hidden;  // -- Overlay

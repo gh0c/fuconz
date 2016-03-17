@@ -655,6 +655,8 @@ class User
     }
 
 
+
+
     public function numberOfAppearances()
     {
         return Game::numberOfPlayerAppearances($this->id);
@@ -664,6 +666,59 @@ class User
     {
         return Game::numberOfPlayerWins($this->id);
     }
+    public function numberOfRecentWins($num_of_games)
+    {
+        return Game::numberOfRecentPlayerWins($this->id, $num_of_games);
+    }
+    public function numberOfWinsAfterET()
+    {
+        return Game::numberOfPlayerWinsAfterET($this->id);
+    }
+    public function numberOfRecentWinsAfterET($num_of_games)
+    {
+        return Game::numberOfRecentPlayerWinsAfterET($this->id, $num_of_games);
+    }
+    public function numberOfLosses()
+    {
+        return Game::numberOfPlayerLosses($this->id);
+    }
+    public function numberOfRecentLosses($num_of_games)
+    {
+        return Game::numberOfRecentPlayerLosses($this->id, $num_of_games);
+    }
+    public function numberOfDraws()
+    {
+        return Game::numberOfPlayerDraws($this->id);
+    }
+    public function numberOfRecentDraws($num_of_games)
+    {
+        return Game::numberOfRecentPlayerDraws($this->id, $num_of_games);
+    }
+    public function numberOfPoints()
+    {
+        return Game::numberOfPlayerPoints($this->id);
+    }
+    public function numberOfRecentPoints($num_of_games)
+    {
+        return Game::numberOfRecentPlayerPoints($this->id, $num_of_games);
+    }
+
+    public function percentageOfPoints()
+    {
+        if($this->numberOfAppearances() === 0)
+            return 0;
+
+        return 100*($this->numberOfPoints() / ($this->numberOfAppearances()*3));
+    }
+
+    public function percentageOfRecentPoints($num_of_games)
+    {
+        if($this->numberOfAppearances() === 0)
+            return 0;
+        if($this->numberOfAppearances() < $num_of_games)
+            return 100*($this->numberOfPoints() / ($this->numberOfAppearances()*3));
+        return 100*($this->numberOfRecentPoints($num_of_games) / ($num_of_games*3));
+    }
 
     public function totalResultsRatioString()
     {
@@ -672,10 +727,36 @@ class User
     }
 
 
+    public function resultsFor()
+    {
+        list($results_for, $results_against) = Game::playerTotalResultsRatio($this->id);
+        return $results_for;
+    }
+    public function resultsAgainst()
+    {
+        list($results_for, $results_against) = Game::playerTotalResultsRatio($this->id);
+        return $results_against;
+    }
+
+
+    public function recentResultsFor($num_of_games)
+    {
+        list($results_for, $results_against) = Game::playerRecentResultsRatio($this->id, $num_of_games);
+        return $results_for;
+    }
+    public function recentResultsAgainst($num_of_games)
+    {
+        list($results_for, $results_against) = Game::playerRecentResultsRatio($this->id, $num_of_games);
+        return $results_against;
+    }
+
+
     public function totalResultsPercentageOfWins()
     {
         list($results_for, $results_against) = Game::playerTotalResultsRatio($this->id);
         $number_of_apps = $this->numberOfAppearances();
+        if ($number_of_apps === 0)
+            return sprintf("%.3f", 0);
         return sprintf("%.3f", $results_for/$number_of_apps);
     }
 
@@ -683,8 +764,12 @@ class User
     {
         list($results_for, $results_against) = Game::playerTotalResultsRatio($this->id);
         $number_of_apps = $this->numberOfAppearances();
+        if ($number_of_apps === 0)
+            return sprintf("%.3f", 0);
         return sprintf("%.3f", $results_against/$number_of_apps);
     }
+
+
 
 
     public static function validateNew($p_username, $p_email, $p_password, $p_password_repeated,
@@ -841,6 +926,169 @@ class User
         }
         return $string2;
     }
+
+
+    public static function getUsersByNumberOfAppearances()
+    {
+        $all_users = self::getUsers();
+        usort($all_users, array('app\model\User\User', "sortByNumberOfApps"));
+        return $all_users;
+
+    }
+
+    /**
+     * @param User $a
+     * @param User $b
+     * @return integer
+     */
+    public static function sortByNumberOfApps($a, $b)
+    {
+        if($b->numberOfAppearances() != $a->numberOfAppearances()) {
+            return $b->numberOfAppearances() - $a->numberOfAppearances();
+        }
+        else {
+            return 1;
+        }
+    }
+
+
+    public static function getUsersByNumberOfWins()
+    {
+        $all_users = self::getUsers();
+        usort($all_users, array('app\model\User\User', "sortByNumberOfWins"));
+        return $all_users;
+
+    }
+    /**
+     * @param User $a
+     * @param User $b
+     * @return integer
+     */
+    public static function sortByNumberOfWins($a, $b)
+    {
+        if($b->numberOfWins() != $a->numberOfWins()) {
+            return $b->numberOfWins() - $a->numberOfWins();
+        }
+        else {
+            if($b->numberOfWinsAfterET() != $a->numberOfWinsAfterET()) {
+                return $a->numberOfWinsAfterET() - $b->numberOfWinsAfterET();
+            }
+            else {
+                return self::sortByNumberOfApps($b, $a);
+            }
+        }
+    }
+
+
+    public static function getUsersByNumberOfPoints()
+    {
+        $all_users = self::getUsers();
+        usort($all_users, array('app\model\User\User', "sortByNumberOfPoints"));
+        return $all_users;
+
+    }
+    /**
+     * @param User $a
+     * @param User $b
+     * @return integer
+     */
+    public static function sortByNumberOfPoints($a, $b)
+    {
+        if($b->numberOfPoints() != $a->numberOfPoints()) {
+            return $b->numberOfPoints() - $a->numberOfPoints();
+        }
+        else {
+            return self::sortByNumberOfWins($a, $b);
+        }
+    }
+
+    /**
+     * @param User $a
+     * @param User $b
+     * @return integer
+     */
+    public static function sortByNumberOfRecentApps($a, $b)
+    {
+        if($b->numberOfAppearances() != $a->numberOfAppearances()) {
+            return $b->numberOfAppearances() - $a->numberOfAppearances();
+        }
+        else {
+            return 1;
+        }
+    }
+
+    /**
+     * @param User $a
+     * @param User $b
+     * @param integer $num_of_games
+     * @return integer
+     */
+    public static function sortByNumberOfRecentWins($a, $b, $num_of_games)
+    {
+        if($b->numberOfRecentWins($num_of_games) != $a->numberOfRecentWins($num_of_games)) {
+            return $b->numberOfRecentWins($num_of_games) - $a->numberOfRecentWins($num_of_games);
+        }
+        else {
+            return self::sortByNumberOfRecentApps($a, $b);
+        }
+    }
+
+    public static function getUsersByPercentageOfPoints()
+    {
+        $all_users = self::getUsers();
+        usort($all_users, array('app\model\User\User', "sortByPercentageOfPoints"));
+        return $all_users;
+
+    }
+    /**
+     * @param User $a
+     * @param User $b
+     * @return integer
+     */
+    public static function sortByPercentageOfPoints($a, $b)
+    {
+        if($b->percentageOfPoints() != $a->percentageOfPoints()) {
+            $diff = $b->percentageOfPoints() - $a->percentageOfPoints();
+            return ($diff > 0) - ($diff < 0);
+        }
+        else {
+            return self::sortByNumberOfPoints($a, $b);
+        }
+    }
+
+    /**
+     * @param User $a
+     * @param User $b
+     * @param integer $num_of_games
+     * @return integer
+     */
+    public static function sortByPercentageOfRecentPoints($a, $b, $num_of_games)
+    {
+        if($b->percentageOfRecentPoints($num_of_games) != $a->percentageOfRecentPoints($num_of_games)) {
+            $diff = $b->percentageOfRecentPoints($num_of_games) - $a->percentageOfRecentPoints($num_of_games);
+            return ($diff > 0) - ($diff < 0);
+        }
+        else {
+            return self::sortByNumberOfRecentWins($a, $b, $num_of_games);
+        }
+    }
+
+    public static function getUsersByNumberOfRecentPoints($num_of_games)
+    {
+        $all_users = self::getUsers();
+
+
+        usort($all_users, function(User $a, User $b) use ($num_of_games) {
+            if($b->numberOfRecentPoints($num_of_games) != $a->numberOfRecentPoints($num_of_games)) {
+                return $b->numberOfRecentPoints($num_of_games) - $a->numberOfRecentPoints($num_of_games);
+            }
+            else {
+                return User::sortByPercentageOfRecentPoints($a, $b, $num_of_games);
+            }
+        });
+        return $all_users;
+    }
+
 
 }
 ?>

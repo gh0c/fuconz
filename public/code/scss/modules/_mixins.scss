@@ -145,7 +145,6 @@
 
 @mixin calc($property, $expression) {
   #{$property}: -moz-calc(#{$expression});
-  #{$property}: -o-calc(#{$expression});
   #{$property}: -webkit-calc(#{$expression});
   #{$property}: calc(#{$expression});
 }
@@ -183,9 +182,38 @@ $mobile-mid-bp: 480px;
 $mobile-large-bp: 560px;
 $mobile-huge-bp: 640px;
 
+
 $mobile-h-small-bp: 480px;
 $mobile-h-medium-bp: 540px;
 $mobile-h-large-bp: 640px;
 
 $header-height: 3.625em;
 $footer-height: 7em;
+
+
+
+// NEW
+
+
+// width breakpoints
+$bp-mob-w-0: 320px;
+$bp-mob-w-1: 375px;
+$bp-mob-w-2: 425px;
+$bp-mob-w-3: 480px;
+$bp-mob-w-4: 560px;
+$bp-mob-w-5: 640px;
+
+
+$bp-tab-w-0: 768px;
+
+
+$bp-des-w-0: 992px;
+$bp-des-w-1: 1024px;
+$bp-des-w-2: 1200px;
+$bp-des-w-3: 1280px;
+
+
+// height breakpoints
+$bp-mob-h-0: 480px;
+$bp-mob-h-1: 540px;
+$bp-mob-h-2: 640px;

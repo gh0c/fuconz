@@ -1,0 +1,1219 @@
+@import '../modules/_modules.import';
+
+
+.stats-container.main {
+  &.mega {
+    @include gradient-dark-blue-radial;
+    * {
+      box-sizing: border-box;
+    }
+  }
+
+
+  nav .secondary {
+    position: relative;
+    width: 100%;
+
+
+
+    background-color: #ffffff;
+    font-family: MuseoSans;
+    font-weight: 600;
+    text-transform: none;
+    //
+
+    ul.menu {
+      display: inline-block;
+    }
+
+    ul.menu {
+      li {
+        position: relative;
+      }
+
+      & > li {
+        &.open {
+          a, & > span {
+            background-color: $dark-dark-blue;
+            color: $light-blue-gray-light;
+          }
+          &:not(.active) {
+            a, & > span {
+              border-bottom: 2px solid $dark-dark-blue;
+            }
+          }
+        }
+        .link-icon-fw {
+          @include responsive-w-min($mobile-mid-bp) {
+            font-size:1.2;
+          }
+          @include responsive-w-max(569px) {
+            font-size: 1.2em;
+          }
+        }
+        .link-icon-fww {
+          @include responsive-w-min($mobile-mid-bp) {
+            font-size:1.2em;
+          }
+          @include responsive-w-max(399px) {
+            font-size: 1.2em;
+          }
+        }
+
+      }
+      li > a, li > span {
+        display: block;
+        height: 2.5em;
+        line-height: 2.5em;
+        @include box-sizing(border-box);
+        //          border-bottom: 2px dashed transparent;
+        cursor: pointer;
+        color: $dark-dark-blue;
+        @include pp-transition(background-color .25s ease-out, color .25s ease-out, border .25s ease-out);
+        padding: 0 18px 0 0.5em;
+
+        @include responsive-w-min($mobile-mid-bp) {
+          padding: 0 25px 0 10px;
+        }
+
+        &:hover, &:focus {
+          color: white;
+          background-color: $dark-dark-blue;
+
+        }
+
+        span.link-label-fw {
+          @include responsive-w-max($mobile-huge-bp - 1px) {
+            display: none;
+          }
+        }
+        span.link-label-fww {
+          @include responsive-w-max(399px) {
+            display: none;
+          }
+        }
+      }
+      li.no-dropdown a {
+        padding: 0 1.25em 0 1.25em;
+        @include responsive-w-min(400px) {
+          padding: 0 1em 0 1em;
+        }
+      }
+    }
+
+
+    li.dropdown > span:after {
+      content: '';
+      position: relative;
+      //        @include pp-transition(all .25s ease-out);
+      font-family: FontAwesome;
+      right: -8px;
+      @include responsive-w-min($mobile-mid-bp) {
+        right: -15px;
+      }
+    }
+
+    li.dropdown > span:after {
+      content: '\f107';
+    }
+
+    li.open.dropdown > span:after {
+      content: '\f106';
+    }
+
+    li.dropdown:hover, li.dropdown:focus {
+      & > span:after {
+        content: '\f103';
+      }
+    }
+    li.open.dropdown:hover, li.open.dropdown:focus {
+      & > span:after {
+        content: '\f102';
+      }
+    }
+
+    & > div {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+
+    li.dropdown > span {
+      padding-right: 30px;
+      cursor: pointer;
+
+    }
+
+
+
+    li.dropdown.active > span,
+    li.no-dropdown.active a{
+
+      border-bottom: 2px solid $cibona-blue;
+      //          border-top: 3px solid $cibona-blue;
+      color: $cibona-blue;
+
+    }
+  }
+
+
+
+  nav .nav-sort-filters {
+    position: absolute;
+    width: 100%;
+    display: none;
+    height: auto;
+    font-size: 15px;
+    font-family: MuseoSans;
+    font-weight: 600;
+    background-color: white;
+    z-index: 29;
+    @include responsive-w-max(767px) {
+      border-bottom: 2px solid $dark-dark-blue;
+    }
+
+    overflow: hidden;
+
+    .filter {
+      display: none;
+      overflow: hidden;
+      text-align: right;
+      &:before {
+        display: table;
+        content: " ";
+      }
+      //    padding: 2px 10px 2px 10px;
+      padding: 2px 0;
+      @include responsive-w-min($tablet-bp) {
+        padding: 3px 0;
+      }
+    }
+
+    .list-tags {
+      overflow: hidden;
+      //    float: right;
+      ul {
+        overflow: hidden;
+        @include responsive-w-min($tablet-bp) {
+          float: right;
+        }
+      }
+      li {
+        position: relative;
+        //      float: left;
+        //      margin: 1px 6px 1px 6px;
+        font-size: 15px;
+        display: block;
+        @include responsive-w-min($tablet-bp) {
+          float:left;
+          margin: 0 8px;
+        }
+
+        .fa {
+          font-size: 18px;
+          @include responsive-w-min($tablet-bp) {
+            font-size: 15px;
+          }
+        }
+
+
+
+
+        a {
+          display: block;
+          //            height: 28px;
+          //            line-height: 28px;
+          border-left-style: solid;
+          border-right-style: solid;
+          border-color: transparent;
+          border-left-width: 3px;
+          border-right-width: 3px;
+
+          padding: 10px 15px;
+          @include responsive-w-min($tablet-bp) {
+            padding: 8px 15px;
+          }
+          color: $dark-dark-blue;
+          @include pp-transition(background-color .25s ease-out, color .25s ease-out);
+
+          span {
+            padding: 0 2px;
+            &.num-of-msg {
+              width: 1.4em;
+              display: inline-block;
+              text-align: center;
+            }
+          }
+
+        }
+
+
+        a.active {
+          //        background-color: $cibona-blue;
+          border-color: $cibona-blue;
+          color: $cibona-blue;
+        }
+        a:hover {
+          background-color: $cibona-blue;
+          color: $light-blue-gray-light;
+        }
+
+
+      }
+    }
+  }
+
+
+  nav .secondary {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    z-index: 9;
+    @include pp-transition(all .25s ease-out);
+
+  }
+
+
+
+
+
+
+
+  .statistics-overlay {
+    position: relative;
+    .content-column {
+      overflow: hidden;
+    }
+    @include responsive-w-max(420px) {
+      .content-column:not(.unresponsive) {
+//        font-size: 0.9em;
+      }
+    }
+    .loading-gif-div {
+      color: $light-blue-gray-dark;
+      i {
+        font-size: 4em;
+        vertical-align: top;
+      }
+    }
+  }
+
+
+
+
+
+  // new ...
+  .rankings-table-container {
+    font-family: MuseoSans;
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: top;
+
+    .heading-container {
+      width: 100%;
+      margin-bottom: 0.5em;
+      @include responsive-h-min($bp-mob-h-1) {
+        margin-bottom: 0.625em;
+      }
+
+      .th {
+        display: inline-block;
+        height: 2em;
+        border-bottom: 1px solid $light-blue-gray-light;
+        @include pp-transition(all 0.25s ease);
+
+
+        h4, a {
+
+          text-align: center;
+          @include font-size(14px);
+//          min-height: 1.5em;
+          line-height: 100%;
+          padding-right: 0;
+        }
+
+        & > * {
+          color: white;
+          display: inline-block;
+          vertical-align: middle;
+          height: 100%;
+          &:before {
+            content: "";
+            vertical-align: middle;
+            display: inline-block;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .rows-container {
+      .tr {
+        border: 1px solid $dark-blue-dark;
+        display: block;
+        position: relative;
+        border-radius: 10em;
+
+
+        height: 2em;
+        @include responsive-h-min($bp-mob-h-1) {
+          height: 2.125em;
+        }
+
+        margin-bottom: 0.125em;
+        @include responsive-h-min($bp-mob-h-1) {
+          margin-bottom: 0.25em;
+        }
+
+        padding: 1px 0.25em;
+        @include responsive-w-min($bp-mob-w-3) {
+          padding: 1px 0.5em;
+        }
+
+
+
+        &.i-am-user {
+          background-color: $dark-blue-dark;
+        }
+
+
+        .td {
+          font-family: 'Raleway',Arial,sans-serif;
+          font-weight: initial;
+
+          display: inline-block;
+          height: 100%;
+          overflow: hidden;
+          vertical-align: bottom;
+          @include pp-transition(all 0.25s ease);
+
+          & > div {
+            height: 100%;
+            &:before {
+              content: "";
+              vertical-align: middle;
+              display: inline-block;
+              height: 100%;
+            }
+            & > * {
+              color: white;
+              display: inline-block;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+
+
+
+
+
+
+    // responsive elements
+
+    // common ....
+
+
+
+    // specific for multiple tables
+
+    &.sort-by-num-of-recent-pts,
+    &.sort-by-num-of-pts,
+    &.sort-by-pctg-of-pts,
+    &.sort-by-num-of-apps,
+    &.sort-by-num-of-wins {
+
+      .data-user {
+        width: 8em;
+        @include responsive-w-min($bp-mob-w-0) {
+          width: 10em;
+        }
+        @include responsive-w-min($bp-mob-w-1) {
+          width: 13em;
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 15em;
+        }
+        @include responsive-w-min($bp-des-w-0) {
+          width: 24em;
+        }
+      }
+
+    }
+
+    &.sort-by-num-of-recent-pts,
+    &.sort-by-num-of-pts,
+    &.sort-by-num-of-wins {
+      .data-draws, .data-losses {
+        @include responsive-w-max($bp-mob-w-5 - 1px) {
+          display:none !important;
+        }
+        width: 3em;
+
+        @include responsive-w-max($bp-tab-w-0 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 4.5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+      }
+    }
+
+
+    &.sort-by-num-of-recent-pts,
+    &.sort-by-num-of-pts,
+    {
+      .data-wins {
+        @include responsive-w-max($bp-mob-w-3 - 1px) {
+          display:none !important;
+        }
+        width: 3em;
+
+        @include responsive-w-max($bp-tab-w-0 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 4.5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+      }
+
+
+      .data-results-ratio {
+        @include responsive-w-max($bp-des-w-1 - 1px) {
+          display:none !important;
+        }
+        width: 6em;
+
+      }
+
+
+    }
+
+
+    // specific for each table
+
+    &.sort-by-num-of-recent-pts {
+
+      .data-recent-form {
+        width: 8em;
+        @include responsive-w-min($bp-mob-w-2) {
+          width: 8.5em;
+        }
+        @include responsive-w-min($bp-mob-w-4) {
+          width: 9.5em;
+        }
+      }
+
+      .data-points {
+        @include responsive-w-max($bp-mob-w-2 - 1px) {
+          display:none !important;
+        }
+        width: 2.5em;
+        @include responsive-w-min($bp-mob-w-4) {
+          width: 3em;
+        }
+        @include responsive-w-max($bp-tab-w-0 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 4.5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+      }
+
+    }
+
+    &.sort-by-num-of-pts {
+
+      .data-points {
+        width: 4em;
+
+        @include responsive-w-max($bp-mob-w-4 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-mob-w-4) {
+          width: 6em;
+          .short-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 7.5em;
+        }
+      }
+
+      .data-appearances {
+        @include responsive-w-max($bp-mob-w-2 - 1px) {
+          display:none !important;
+        }
+        width: 3.5em;
+        @include responsive-w-min($bp-mob-w-4) {
+          width: 4.5em;
+        }
+        @include responsive-w-max($bp-tab-w-0 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 6.5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+      }
+
+    }
+
+
+    &.sort-by-pctg-of-pts {
+      .data-points-percentage {
+        width: 4em;
+
+        @include responsive-w-max($bp-mob-w-4 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-mob-w-4) {
+          width: 5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 7em;
+        }
+      }
+
+      .data-points {
+        width: 3em;
+
+        @include responsive-w-max($bp-tab-w-0 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 5.5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-des-w-0) {
+          width: 6em;
+        }
+      }
+
+      .data-appearances {
+        @include responsive-w-max($bp-mob-w-2 - 1px) {
+          display:none !important;
+        }
+        width: 3em;
+        @include responsive-w-min($bp-mob-w-4) {
+          width: 3.5em;
+        }
+
+        @include responsive-w-max($bp-des-w-0 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-des-w-0) {
+          width: 6em;
+          .short-name {
+            display:none !important;
+          }
+        }
+      }
+
+
+      .data-wins {
+        @include responsive-w-max($bp-mob-w-3 - 1px) {
+          display:none !important;
+        }
+        width: 3em;
+
+        @include responsive-w-max($bp-des-w-0 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-des-w-0) {
+          width: 4.5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+      }
+
+      .data-draws, .data-losses {
+        @include responsive-w-max($bp-mob-w-5 - 1px) {
+          display:none !important;
+        }
+        width: 3em;
+
+        @include responsive-w-max($bp-des-w-0 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-des-w-0) {
+          width: 4.5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+      }
+
+
+      .data-results-ratio {
+        @include responsive-w-max($bp-des-w-2 - 1px) {
+          display:none !important;
+        }
+        width: 6em;
+
+      }
+    }
+
+
+    &.sort-by-num-of-wins {
+
+      .data-wins {
+        width: 4em;
+
+        @include responsive-w-max($bp-mob-w-4 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-mob-w-4) {
+          width: 5.5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+
+      }
+
+      .data-points {
+        width: 3.5em;
+
+        @include responsive-w-max($bp-mob-w-4 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-mob-w-4) {
+          width: 5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 6.5em;
+        }
+      }
+
+      .data-appearances {
+        @include responsive-w-max($bp-mob-w-3 - 1px) {
+          display:none !important;
+        }
+        width: 3.5em;
+        @include responsive-w-min($bp-mob-w-4) {
+          width: 4.5em;
+        }
+        @include responsive-w-max($bp-tab-w-0 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 6em;
+          .short-name {
+            display:none !important;
+          }
+        }
+      }
+
+    }
+
+
+    &.sort-by-num-of-apps {
+
+      .data-appearances {
+        width: 3.5em;
+        @include responsive-w-min($bp-mob-w-4) {
+          width: 4.5em;
+        }
+        @include responsive-w-max($bp-mob-w-5 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-mob-w-5) {
+          width: 6.5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+      }
+
+      .data-points {
+        @include responsive-w-max($bp-mob-w-2 - 1px) {
+          display:none !important;
+        }
+        width: 4em;
+        @include responsive-w-max($bp-mob-w-4 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-mob-w-4) {
+          width: 6em;
+          .short-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 7.5em;
+        }
+      }
+
+    }
+
+
+
+    // end of responsive elements
+
+
+
+
+    // "table data" elements
+
+
+    // common
+    &:not(.no-sort) {
+      .rows-container .tr {
+
+        .td span{
+          @include font-size(14px);
+          @include responsive-w-min($bp-mob-w-3) {
+            @include font-size(15px);
+          }
+          @include responsive-w-min($bp-mob-w-5) {
+            @include font-size(16px);
+          }
+        }
+
+        .td.data-user {
+          .user {
+            width: 100%;
+            .data-avatar {
+              @include responsive-w-max($bp-mob-w-1 - 1px) {
+                display:none !important;
+              }
+
+              &.img-holder {
+                width: 26px;
+                height: 26px;
+                border-radius: 5em;
+                @include box-shadow(inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1),
+                  0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40));
+                text-align: center;
+                display: inline-block;
+
+                & > img {
+                  border-radius: 5em;
+                  position: relative;
+                  top: 1px;
+                }
+                & > i {
+                  display: inline-table;
+                  height: 100%;
+                  @include font-size(18px);
+                  padding: 6px 0;
+
+                  &:before {
+                    position: relative;
+                    display: table-cell;
+                    vertical-align: middle;
+                  }
+                }
+              }
+            }
+
+            .data-full-name {
+              @include responsive-w-max($bp-des-w-0 - 1px) {
+                display:none !important;
+              }
+            }
+
+            .data-username,
+            .data-full-name {
+              display: inline-block;
+              padding-left: 6px;
+            }
+
+            .data-username {
+              white-space: nowrap;
+              overflow: hidden!important;
+              text-overflow: ellipsis;
+              margin: 0;
+              text-align: left;
+              @include calc(max-width, "100% - 36px");
+              @include responsive-w-max($bp-mob-w-1 - 1px) {
+                max-width: 100%;
+                padding-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+
+
+
+    // specific for each table
+
+    &.sort-by-num-of-recent-pts {
+      .rows-container .tr {
+
+
+
+        .td.data-recent-form {
+          .recent-game-icon-holder {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            @include responsive-w-min($bp-mob-w-2) {
+              width: 22px;
+            }
+            @include responsive-w-min($bp-mob-w-4) {
+              width: 24px;
+            }
+
+            .pic-cont > .icon,
+            .overlay-pic-cont > .icon-o {
+              @include font-size(14px);
+              @include responsive-w-min($bp-mob-w-2) {
+                @include font-size(16px);
+              }
+              @include responsive-w-min($bp-mob-w-4) {
+                @include font-size(18px);
+              }
+              &.victory {
+                color: $green-badge-transparent-overlay;
+              }
+              &.loss {
+                color: $red-loss;
+              }
+              &.draw {
+                color: $orange-warning;
+              }
+            }
+
+            .overlay-pic-cont {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+
+              clip: rect(auto 11px auto auto);
+              clip: rect(auto, 11px, auto, auto);
+              @include responsive-w-min($bp-mob-w-2) {
+                clip: rect(auto 13px auto auto);
+                clip: rect(auto, 13px, auto, auto);
+              }
+              @include responsive-w-min($bp-mob-w-4) {
+                clip: rect(auto 16px auto auto);
+                clip: rect(auto, 16px, auto, auto);
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    &.no-sort {
+      .data-user {
+        width: 10em;
+        @include responsive-w-min($bp-mob-w-0) {
+          width: 16em;
+        }
+        @include responsive-w-min($bp-mob-w-1) {
+          width: 15em;
+        }
+        @include responsive-w-min($bp-mob-w-1) {
+          width: 20em;
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 25em;
+        }
+        @include responsive-w-min($bp-des-w-0) {
+          width: 28em;
+        }
+      }
+
+      .data-wins, .data-draws, .data-losses {
+
+        width: 3em;
+
+        @include responsive-w-max($bp-tab-w-0 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 5.5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-des-w-0) {
+          width: 6.5em;
+        }
+      }
+
+      .data-points, .data-appearances {
+
+        width: 3.5em;
+        @include responsive-w-max($bp-mob-w-4 - 1px) {
+          .long-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-mob-w-4) {
+          width: 5.5em;
+          .short-name {
+            display:none !important;
+          }
+        }
+        @include responsive-w-min($bp-tab-w-0) {
+          width: 7.5em;
+        }
+      }
+
+      .data-results-ratio {
+        @include responsive-w-max($bp-des-w-1 - 1px) {
+          display:none !important;
+        }
+        width: 6em;
+
+      }
+
+
+      .rows-container .tr {
+        border: 1px solid white;
+        &.height-3-and-half-em{
+          height: 3.5em;
+        }
+        .td span{
+          @include font-size(14px);
+          @include responsive-w-min($bp-mob-w-3) {
+            @include font-size(15px);
+          }
+          @include responsive-w-min($bp-mob-w-5) {
+            @include font-size(16px);
+          }
+        }
+
+
+
+
+
+
+        .td.data-user {
+          .user {
+            width: 100%;
+            .data-avatar {
+
+              &.img-holder {
+                width: 26px;
+                height: 26px;
+                border-radius: 5em;
+                @include box-shadow(inset 0px 0px 1.5em 0.125em rgba(250, 235, 225, 0.1),
+                  0px 0px 0.375em 0.15em rgba(50, 40, 40, 0.40));
+                text-align: center;
+                display: inline-block;
+
+                & > img {
+                  border-radius: 5em;
+                  position: relative;
+                  top: 1px;
+                }
+                & > i {
+                  display: inline-table;
+                  height: 100%;
+                  @include font-size(18px);
+                  padding: 6px 0;
+
+                  &:before {
+                    position: relative;
+                    display: table-cell;
+                    vertical-align: middle;
+                  }
+                }
+              }
+            }
+
+            .data-full-name {
+              @include responsive-w-max($bp-tab-w-0 - 1px) {
+                display:none !important;
+              }
+            }
+
+            .data-username,
+            .data-full-name {
+              display: inline-block;
+              padding-left: 6px;
+            }
+
+            .data-username {
+              white-space: nowrap;
+              overflow: hidden!important;
+              text-overflow: ellipsis;
+              margin: 0;
+              text-align: left;
+              @include calc(max-width, "100% - 36px");
+
+            }
+          }
+        }
+
+        .data-recent-form {
+          width: 16em;
+          @include responsive-w-min($bp-mob-w-2) {
+            width: 20em;
+          }
+          @include responsive-w-min($bp-mob-w-4) {
+            width: 25em;
+          }
+        }
+
+        .td.data-recent-form {
+          .recent-game-icon-holder {
+            position: relative;
+            display: inline-block;
+            width: 3em;
+            @include responsive-w-min($bp-mob-w-2) {
+              width: 4em;
+            }
+            @include responsive-w-min($bp-mob-w-4) {
+              width: 4.5em;
+            }
+
+            .pic-cont > .icon,
+            .overlay-pic-cont > .icon-o {
+              @include font-size(22px);
+              @include responsive-w-min($bp-mob-w-2) {
+                @include font-size(24px);
+              }
+              @include responsive-w-min($bp-mob-w-4) {
+                @include font-size(30px);
+              }
+              &.victory {
+                color: $green-badge-transparent-overlay;
+              }
+              &.loss {
+                color: $red-loss;
+              }
+              &.draw {
+                color: $orange-warning;
+              }
+            }
+
+            .overlay-pic-cont {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+
+              clip: rect(auto 28px auto auto);
+              clip: rect(auto, 28px, auto, auto);
+              @include responsive-w-min($bp-mob-w-2) {
+                clip: rect(auto 38px auto auto);
+                clip: rect(auto, 38px, auto, auto);
+              }
+              @include responsive-w-min($bp-mob-w-4) {
+                clip: rect(auto 43px auto auto);
+                clip: rect(auto, 43px, auto, auto);
+              }
+            }
+          }
+        }
+
+      }
+      .heading-container .th a span,
+      .heading-container .th a i {
+        color: white;
+      }
+
+      .heading-container .th a {
+        @include pp-transition(background-color .25s ease-out, color .25s ease-out);
+        &:hover {
+          color: $light-blue-gray-light;
+          background-color: $dark-blue-dark;
+        }
+      }
+    }
+
+
+    .legend {
+      font-family: 'Raleway',Arial,sans-serif;
+      font-weight: initial;
+      color: white;
+      margin-top: 1em;
+      padding: 0.5em;
+      font-size: 14px;
+      border-top: 1px solid $light-blue-gray-light;
+
+      text-align: left;
+
+      div[class^='data-'],div[class*=' data-']{
+        width: auto !important;
+      }
+
+    }
+
+    .margin-std-lr {
+      margin-left: 2px;
+      margin-right: 2px;
+      @include responsive-w-min($bp-mob-w-5) {
+        margin-left: 0.25em;
+        margin-right: 0.25em;
+      }
+      @include responsive-w-min($bp-des-w-2) {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+      }
+    }
+
+  }
+  // end of new
+
+
+
+}

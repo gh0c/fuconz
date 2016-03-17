@@ -1,0 +1,81 @@
+.open-chats-slider {
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+.open-chats-slider .s-content:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.open-chats-slider .s-content {
+  margin: auto;
+  padding: 0 20px;
+  width: auto;
+  height: 100%;
+  /* Arrows */
+}
+.open-chats-slider .s-content .slick-slider {
+  margin: 0 auto;
+  height: 100%;
+}
+.open-chats-slider .s-content .slick-slide {
+  background-color: brown;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+.open-chats-slider .s-content .slick-list {
+  height: 100%;
+}
+.open-chats-slider .s-content .slick-track {
+  height: 100%;
+  margin: 0 auto;
+}
+.open-chats-slider .s-content .slick-prev, .open-chats-slider .s-content .slick-next {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 6%;
+  min-width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+.open-chats-slider .s-content .slick-prev:hover, .open-chats-slider .s-content .slick-next:hover, .open-chats-slider .s-content .slick-prev:focus, .open-chats-slider .s-content .slick-next:focus {
+  outline: none;
+  background: transparent;
+  color: transparent;
+}
+.open-chats-slider .s-content .slick-prev:hover:before, .open-chats-slider .s-content .slick-next:hover:before, .open-chats-slider .s-content .slick-prev:focus:before, .open-chats-slider .s-content .slick-next:focus:before {
+  opacity: 1;
+}
+.open-chats-slider .s-content .slick-prev.slick-disabled:before, .open-chats-slider .s-content .slick-next.slick-disabled:before {
+  opacity: 0.2;
+}
+.open-chats-slider .s-content .slick-prev:before, .open-chats-slider .s-content .slick-next:before {
+  font-family: FontAwesome;
+  font-size: 18px;
+  line-height: 1;
+  color: red;
+  opacity: 0.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.open-chats-slider .s-content .slick-prev {
+  left: -6%;
+}
+.open-chats-slider .s-content .slick-prev:before {
+  content: '\f190';
+}
+.open-chats-slider .s-content .slick-next {
+  right: -6%;
+}
+.open-chats-slider .s-content .slick-next:before {
+  content: '\f18e';
+}

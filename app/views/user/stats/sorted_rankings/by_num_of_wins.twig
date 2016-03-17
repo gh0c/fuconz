@@ -1,0 +1,129 @@
+
+
+
+<div class = "content-column">
+
+    <div class = "vertical-section text-centered">
+        <h3>Sortirano po broju pobjeda</h3>
+    </div>
+
+    <div class = "rankings-table-container sort-by-num-of-wins">
+
+        <div class = "heading-container">
+
+            <div class = "th margin-std-lr data-user">
+                <h4>Igrač</h4>
+            </div><!--
+
+            --><div class = "th margin-std-lr data-wins">
+                <h4 class = "short-name">P</h4><h4 class = "long-name">Pobjede</h4>
+            </div><!--
+
+            --><div class = "th margin-std-lr data-draws">
+                <h4 class = "short-name">N</h4><h4 class = "long-name">Neriješene</h4>
+            </div><!--
+
+            --><div class = "th margin-std-lr data-losses">
+                <h4 class = "short-name">I</h4><h4 class = "long-name">Izgubljene</h4>
+            </div><!--
+
+            --><div class = "th margin-std-lr data-appearances">
+                <h4 class = "short-name">OS</h4><h4 class = "long-name">Nastupi</h4>
+            </div><!--
+
+            --><div class = "th margin-std-lr data-points">
+                <h4 class = "short-name">B</h4><h4 class = "long-name">Bodovi</h4>
+            </div>
+
+
+        </div>
+
+        <div class = "rows-container">
+
+            {% for user in users %}
+                <div class = "tr height-2-and-half-em {{ (auth_user.id == user.id)? 'i-am-user':'' }}">
+
+                    <div class = "td data-user margin-std-lr text-left">
+                        <div class = "user"><!--
+                            {%  set avatar_url = user.getAvatarURL('avatar',
+                            { "width": 24, "height": 24, "crop": "fill"}) %}
+                            --><div class = "img-holder data-avatar">
+                                {%  if avatar_url %}
+                                    <img src = "{{ avatar_url }}" />
+                                {% else %}
+                                    <i class = "fa fa-user"></i>
+                                {% endif %}
+                            </div><!--
+                            --><span class = "data-username">{{ user.username }}</span><!--
+                            --><span class = "data-full-name">({{ user.full_name() }})</span>
+                        </div>
+                    </div><!--
+
+                    --><div class = "td data-wins text-center margin-std-lr">
+                        <div><!--
+                            --><span>{{ user.numberOfWins() }} ({{ user.numberOfWinsAfterET() }})</span>
+                        </div>
+                    </div><!--
+
+                    --><div class = "td data-draws text-center margin-std-lr">
+                        <div><!--
+                            --><span>{{ user.numberOfDraws() }}</span>
+                        </div>
+                    </div><!--
+
+                    --><div class = "td data-losses text-center margin-std-lr">
+                        <div><!--
+                            --><span>{{ user.numberOfLosses() }}</span>
+                        </div>
+                    </div><!--
+                    --><div class = "td data-appearances text-center margin-std-lr">
+                        <div><!--
+                            --><span>{{ user.numberOfAppearances() }}</span>
+                        </div>
+                    </div><!--
+                    --><div class = "td data-points text-center margin-std-lr">
+                        <div><!--
+                            --><span>{{ user.numberOfPoints() }}</span>
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div class = "legend">
+
+
+            <div class = "data-wins">
+                <span class = "short-name">
+                    <span class = "bold-text">P</span><span> - pobjede</span>
+                </span>
+            </div>
+            <div class = "data-draws">
+                <span class = "short-name">
+                    <span class = "bold-text">N</span><span> - neriješene</span>
+                </span>
+            </div>
+            <div class = "data-losses">
+                <span class = "short-name">
+                    <span class = "bold-text">I</span><span> - izgubljene</span>
+                </span>
+            </div>
+            <div class = "data-appearances">
+                <span class = "short-name">
+                    <span class = "bold-text">OS</span><span> - odigrani susreti</span>
+                </span>
+            </div>
+            <div class = "data-points">
+                <span class = "short-name">
+                    <span class = "bold-text">B</span><span> - bodovi</span>
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>

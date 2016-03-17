@@ -26,7 +26,7 @@ class Calendar
                 // Check the number of days in the month/year, with the day set to 1.
                 $tmp_date = date("Y-m", mktime(1, 0, 0, $month, 1, $year + $delta_years));
                 list($new_year, $new_month) = explode("-", $tmp_date);
-                $days_in_month = number_of_days_in_month($new_year, $new_month);
+                $days_in_month = self::number_of_days_in_month($new_year, $new_month);
                 // Lower the day value if it exceeds the number of days in the new month/year.
                 if ($days_in_month < $day) { $day = $days_in_month; }
                 $date = $new_year . '-' . $month . '-' . $day;

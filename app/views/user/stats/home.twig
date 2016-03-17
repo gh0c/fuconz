@@ -1,0 +1,407 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    Statistike
+{% endblock %}
+
+{% block content %}
+
+<div class = "main-block-cont">
+    <div class = "black-horiz-spacer-10"></div>
+
+    <div class = "main-subtitle-box">
+        <div class = "inner-cont flag"></div>
+        <div class = "inner-cont page-title">
+            <h2>Statistike</h2>
+        </div>
+    </div>
+    <div class = "black-horiz-spacer-5"></div>
+
+    <div class = "main-content-box">
+        {% include "templates/partials/user_messages.twig" %}
+
+        <div class = "stats-cont mega stats-container main" id = "main-stats-cont">
+
+            <nav class = "sort-criteria-nav">
+                <div class="secondary sort">
+                    <div>
+
+                        <ul class="menu">
+                            <li class="dropdown" data-filter="sort-criteria">
+                            <span>
+                                <i class = "fa fa-fw fa-sort-numeric-asc"></i> <span>Kriterij sortiranja</span>
+                            </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                {#<div class = "empty-horiz-spacer-5 white-bg"></div>#}
+
+                <div class="nav-sort-filters" id="nav-sort-filters">
+
+                    <div class="filter filter-sort-criteria list-tags ">
+                        <ul>
+
+                            <li>
+                                <a data-criteria-url="{{ urlFor('user.stats.sort.number-of-points.post') }}">
+                                    <span class = "link-label-fw">Broj bodova</span>
+                                </a>
+                            </li><!--
+                            --><li>
+                                <a data-criteria-url="{{ urlFor('user.stats.sort.number-of-appearances.post') }}">
+                                    <span class = "link-label-fw">Broj utakmica</span>
+                                </a>
+                            </li><!--
+                            --><li>
+                                <a data-criteria-url="{{ urlFor('user.stats.sort.number-of-wins.post') }}">
+                                    <span class = "link-label-fw">Broj pobjeda</span>
+                                </a>
+                            </li><!--
+                            --><li>
+                                <a data-criteria-url="{{ urlFor('user.stats.sort.percentage-of-points.post') }}">
+                                    <span class = "link-label-fw">Postotak bodova</span>
+                                </a>
+                            </li><!--
+                            --><li>
+                                <a data-criteria-url="{{ urlFor('user.stats.sort.number-of-recent-points.post') }}">
+                                    <span class = "link-label-fw">Forma</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+
+
+
+
+            <div class = "statistics-overlay">
+
+                <div class = "statistics-container">
+                    {% set user = auth_user %}
+                    <section id = "stats">
+
+
+                        <div class = "content-column">
+
+
+                            <div class = "vertical-section text-centered">
+                                <h3>Statistika mojih nastupa</h3>
+                            </div>
+
+                            <div class = "rankings-table-container no-sort">
+
+                                <div class = "rows-container">
+                                    <div class = "tr ">
+
+                                        <div class = "td data-user margin-std-lr text-center">
+                                            <div class = "user"><!--
+                                                {%  set avatar_url = user.getAvatarURL('avatar',
+                                                { "width": 24, "height": 24, "crop": "fill"}) %}
+                                                --><div class = "img-holder data-avatar">
+                                                    {%  if avatar_url %}
+                                                        <img src = "{{ avatar_url }}" />
+                                                    {% else %}
+                                                        <i class = "fa fa-user"></i>
+                                                    {% endif %}
+                                                </div><!--
+                                                --><span class = "data-username">{{ user.username }}</span><!--
+                                                --><span class = "data-full-name">({{ user.full_name() }})</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class = "heading-container">
+
+                                    <div class = "th margin-std-lr">
+                                        <a href = "{{ urlFor('user.profile.profile-data-change') }}">
+                                            <span>Osobni podaci</span> <i class = "fa fa-fw fa-wrench"></i>
+                                        </a>
+                                    </div><!--
+                                    --><div class = "th margin-std-lr">
+                                        <a href = "{{ urlFor('user.profile.avatar-change') }}">
+                                            <span>Avatar</span> <i class = "fa fa-fw fa-file-image-o"></i>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                                <div class = "empty-horiz-spacer-20"></div>
+
+
+                                <div class = "heading-container">
+
+                                    <div class = "th margin-std-lr data-appearances">
+                                        <h4 class = "short-name">OS</h4><h4 class = "long-name">Nastupi</h4>
+                                    </div><!--
+
+
+                                    --><div class = "th margin-std-lr data-wins">
+                                        <h4 class = "short-name">P</h4><h4 class = "long-name">Pobjede</h4>
+                                    </div><!--
+
+                                    --><div class = "th margin-std-lr data-draws">
+                                        <h4 class = "short-name">N</h4><h4 class = "long-name">Neriješene</h4>
+                                    </div><!--
+
+                                    --><div class = "th margin-std-lr data-losses">
+                                        <h4 class = "short-name">I</h4><h4 class = "long-name">Izgubljene</h4>
+                                    </div><!--
+
+                                    --><div class = "th margin-std-lr data-results-ratio">
+                                        <h4 class = "long-name">Omjer</h4>
+                                    </div><!--
+
+
+                                    --><div class = "th margin-std-lr data-points">
+                                        <h4 class = "short-name">B</h4><h4 class = "long-name">Bodovi</h4>
+                                    </div>
+
+                                </div>
+
+                                <div class = "rows-container">
+                                    <div class = "tr height-2-and-half-em">
+                                        <div class = "td data-appearances text-center margin-std-lr">
+                                            <div><!--
+                                                --><span>{{ user.numberOfAppearances() }}</span>
+                                            </div>
+                                        </div><!--
+
+
+                                        --><div class = "td data-wins text-center margin-std-lr">
+                                            <div><!--
+                                                --><span>{{ user.numberOfWins() }} ({{ user.numberOfWinsAfterET() }})</span>
+                                            </div>
+                                        </div><!--
+
+                                        --><div class = "td data-draws text-center margin-std-lr">
+                                            <div><!--
+                                                --><span>{{ user.numberOfDraws() }}</span>
+                                            </div>
+                                        </div><!--
+
+                                        --><div class = "td data-losses text-center margin-std-lr">
+                                            <div><!--
+                                                --><span>{{ user.numberOfLosses() }}</span>
+                                            </div>
+                                        </div><!--
+
+
+
+
+                                        --><div class = "td data-results-ratio text-center margin-std-lr">
+                                            <div><!--
+                                                --><span>{{ user.resultsFor() }}:{{ user.resultsAgainst() }}</span>
+                                            </div>
+                                        </div><!--
+
+                                        --><div class = "td data-points text-center margin-std-lr">
+                                            <div><!--
+                                                --><span>{{ user.numberOfPoints() }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class = "empty-horiz-spacer-20"></div>
+
+
+
+                        <div class = "content-column">
+
+                            <div class = "rankings-table-container no-sort">
+
+                            {% if games|length > 0 %}
+                                <div class = "heading-container">
+
+                                    <div class = "th margin-std-lr">
+                                        <h4>Forma (zadnjih {{ num_of_games }}):</h4>
+                                    </div>
+                                </div>
+
+                                <div class = "rows-container">
+
+                                    <div class = "tr height-3-and-half-em">
+
+                                        <div class = "td data-recent-form text-center margin-std-lr">
+                                            <div class = "recent-games-icons"><!--
+                                            {% for my_game in games %}
+                                                --><div class = "recent-game-icon-holder"
+                                                    title = "{{ my_game.resultDescriptionStringFromPlayersPerspective(user.id) }}&#013;{{  my_game.datetime_span.stdDayMonth() }}">
+
+                                                    <div class="pic-cont">
+                                                        {% if my_game.playersStatus(user.id) == 1 and not my_game.after_extra_time %}
+                                                            <i class = "fa icon victory fa-fw fa-flag"></i>
+                                                        {% elseif my_game.playersStatus(user.id) == 2  and not my_game.after_extra_time %}
+                                                            <i class = "fa icon loss fa-fw fa-flag"></i>
+                                                        {% elseif my_game.playersStatus(user.id) == 3 or my_game.after_extra_time %}
+                                                            <i class = "fa icon draw fa-fw fa-flag"></i>
+                                                        {% else %}
+                                                            <i class="icon fa fa-fw fa-question"></i>
+                                                        {% endif %}
+                                                    </div>
+
+                                                    {% if my_game.after_extra_time %}
+                                                        <div class = "overlay-pic-cont std-pic-cont">
+                                                            {% if my_game.playersStatus(user.id) == 1 %}
+                                                                <i class = "fa icon icon-o victory fa-fw fa-flag"></i>
+                                                            {% elseif my_game.playersStatus(user.id) == 2 %}
+                                                                <i class = "fa icon icon-o loss fa-fw fa-flag"></i>
+                                                            {% endif %}
+                                                        </div>
+                                                    {% endif %}
+                                                    <div class = "date-cont text-center">
+
+                                                        <span>{{ my_game.datetime_span.stdDayMonth() }}</span>
+
+                                                    </div>
+                                                </div><!--
+
+                                            {% endfor %}
+                                            --></div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class = "heading-container">
+
+
+                                    <div class = "th margin-std-lr data-wins">
+                                        <h4 class = "short-name">P</h4><h4 class = "long-name">Pobjede</h4>
+                                    </div><!--
+
+                                    --><div class = "th margin-std-lr data-draws">
+                                        <h4 class = "short-name">N</h4><h4 class = "long-name">Neriješene</h4>
+                                    </div><!--
+
+                                    --><div class = "th margin-std-lr data-losses">
+                                        <h4 class = "short-name">I</h4><h4 class = "long-name">Izgubljene</h4>
+                                    </div><!--
+
+
+                                    --><div class = "th margin-std-lr data-results-ratio">
+                                        <h4 class = "long-name">Omjer</h4>
+                                    </div><!--
+
+
+                                    --><div class = "th margin-std-lr data-points">
+                                        <h4 class = "short-name">B</h4><h4 class = "long-name">Bodovi</h4>
+                                    </div>
+
+                                </div>
+
+                                <div class = "rows-container">
+                                    <div class = "tr height-2-and-half-em">
+
+
+                                        <div class = "td data-wins text-center margin-std-lr">
+                                            <div><!--
+                                                --><span>{{ user.numberOfRecentWins(num_of_games) }} ({{ user.numberOfRecentWinsAfterET(num_of_games) }})</span>
+                                            </div>
+                                        </div><!--
+
+                                        --><div class = "td data-draws text-center margin-std-lr">
+                                            <div><!--
+                                                --><span>{{ user.numberOfRecentDraws(num_of_games) }}</span>
+                                            </div>
+                                        </div><!--
+
+                                        --><div class = "td data-losses text-center margin-std-lr">
+                                            <div><!--
+                                                --><span>{{ user.numberOfRecentLosses(num_of_games) }}</span>
+                                            </div>
+                                        </div><!--
+
+                                        --><div class = "td data-results-ratio text-center margin-std-lr">
+                                            <div><!--
+                                                --><span>{{ user.recentResultsFor(num_of_games) }}:{{ user.recentResultsAgainst(num_of_games) }}</span>
+                                            </div>
+                                        </div><!--
+
+                                        --><div class = "td data-points text-center margin-std-lr">
+                                            <div><!--
+                                                --><span>{{ user.numberOfRecentPoints(num_of_games) }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                            {% endif %}
+
+                                <div class = "legend">
+
+                                    <div class = "data-appearances">
+                                        <span class = "short-name">
+                                            <span class = "bold-text">OS</span><span> - odigrani susreti</span>
+                                        </span>
+                                    </div>
+                                    <div class = "data-wins">
+                                        <span class = "short-name">
+                                            <span class = "bold-text">P</span><span> - pobjede</span>
+                                        </span>
+                                    </div>
+                                    <div class = "data-draws">
+                                        <span class = "short-name">
+                                            <span class = "bold-text">N</span><span> - neriješene</span>
+                                        </span>
+                                    </div>
+                                    <div class = "data-losses">
+                                        <span class = "short-name">
+                                            <span class = "bold-text">I</span><span> - izgubljene</span>
+                                        </span>
+                                    </div>
+                                    <div class = "data-points">
+                                        <span class = "short-name">
+                                            <span class = "bold-text">B</span><span> - bodovi</span>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                    </section>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block additional_js %}
+    {#<script src="public/js/velocity.min.js"></script>#}
+
+    <script src="public/code/js/stats.js"></script>
+{% endblock %}

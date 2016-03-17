@@ -25,7 +25,7 @@ $message-line-height: 3em;
 
       vertical-align: middle;
 
-      h4 {
+      h4, a {
 
         text-align: center;
         line-height: 125%;
@@ -66,6 +66,7 @@ $message-line-height: 3em;
       font-family: 'Raleway',Arial,sans-serif;
       font-weight: initial;
     }
+
 
     .td {
       display: inline-table;
@@ -297,6 +298,13 @@ $message-line-height: 3em;
     }
   }
 
+
+  .width-2em {
+    width: 2em;
+  }
+  .width-2-and-half-em {
+    width: 2.5em;
+  }
   .width-3em {
     width: 3em;
   }
@@ -311,6 +319,9 @@ $message-line-height: 3em;
   .width-5em {
     width: 5em;
   }
+  .width-6em {
+    width: 6em;
+  }
   .width-7em {
     width: 7em;
   }
@@ -323,6 +334,12 @@ $message-line-height: 3em;
   .width-12em {
     width: 12em;
   }
+  .width-13em {
+    width: 13em;
+  }
+  .width-14em {
+    width: 14em;
+  }
   .width-15em {
     width: 15em;
   }
@@ -334,6 +351,9 @@ $message-line-height: 3em;
   }
   .width-22em {
     width: 22em;
+  }
+  .width-24em {
+    width: 24em;
   }
   .width-25em {
     width: 25em;
@@ -380,7 +400,7 @@ $message-line-height: 3em;
   .margin-std-lr {
     margin-left: 2px;
     margin-right: 2px;
-    @include responsive-w-min(500px) {
+    @include responsive-w-min($mobile-mid-bp) {
       margin-left: 0.25em;
       margin-right: 0.25em;
     }

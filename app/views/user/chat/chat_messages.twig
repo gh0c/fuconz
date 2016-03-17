@@ -1,7 +1,7 @@
 <div class = "chat-conversation-holder"
      data-conv-hash = "{{ chat_room.hash }}">
     <div class = "chatroom-title-container">
-        <div class = "chatroom-title-holder">
+        <div class = "chatroom-title-holder" data-conv-hash = "{{ chat_room.hash }}">
             {% set participants = chat_room.participantsWithoutMe(auth_user.id) %}
             {% if participants|length > 1 %}
             <div class = "chatroom-title">

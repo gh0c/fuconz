@@ -1,0 +1,138 @@
+
+@import '../modules/_modules.import';
+
+
+.open-chats-slider {
+  width:100%;
+  position: relative;
+  height: 100%;
+
+  .s-content:after {
+    clear:both;
+    content:"";
+    display:table;
+  }
+  .s-content{
+    margin:auto;
+    padding:0 30px;
+    @include responsive-h-min($mobile-mid-bp) {
+      padding:0 20px;
+    }
+    width:auto;
+    max-width: 860px;
+    height: 86%;
+    top: 7%;
+    position: relative;
+
+
+
+    .slick-slider {
+      margin: 0 auto;
+      height: 100%;
+    }
+    .slick-slide {
+
+      cursor: pointer;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+
+      background-color: $dark-blue-dark;
+//      @include gradient-horizontal-bbb-flag-cibona-blue-transp();
+
+      @include pp-transition(background-color .25s ease-out, color .25s ease-out);
+
+      &:hover {
+        background-color: $light-blue-gray-dark;
+        color: $dark-dark-blue;
+      }
+      &:active {
+        color: $red-close-icons;
+      }
+
+      &.slick-current {
+        background-color: $dark-blue-light;
+      }
+    }
+
+    .slick-list {
+      height: 100%;
+    }
+    .slick-track {
+      height: 100%;
+      margin: 0 auto;
+
+    }
+
+    /* Arrows */
+
+    .slick-prev,
+    .slick-next {
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 30px;
+      @include responsive-h-min($mobile-mid-bp) {
+        width: 20px;
+      }
+      min-width: 20px;
+      line-height: 0px;
+      font-size: 0px;
+      cursor: pointer;
+      background: transparent;
+      color: transparent;
+      top: 0;
+
+      padding: 0;
+      border: none;
+      outline: none;
+      &:hover, &:focus {
+        outline: none;
+        &:before {
+          color: $light-blue-gray-dark;
+        }
+
+      }
+      &.slick-disabled:before {
+        opacity: 0.2;
+      }
+    }
+
+    .slick-prev:before, .slick-next:before {
+      font-family: FontAwesome;
+      font-size: 18px;
+      line-height: 1;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .slick-prev {
+      left: -30px;
+      @include responsive-h-min($mobile-mid-bp) {
+        left: -20px;
+      }
+      &:before {
+        content: '\f104';
+
+      }
+    }
+
+    .slick-next {
+      right: -30px;
+      @include responsive-h-min($mobile-mid-bp) {
+        right: -20px;
+      }
+      &:before {
+        content: '\f105';
+      }
+    }
+
+
+  }
+
+
+
+}
+
+
+

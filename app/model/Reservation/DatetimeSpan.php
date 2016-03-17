@@ -245,6 +245,15 @@ class DatetimeSpan {
         return $description;
     }
 
+    public function stdDayMonth()
+    {
+        list($year, $month, $day) = explode("-", $this->date);
+
+        $description = sprintf("%s.%s.", $day, $month);
+
+        return $description;
+    }
+
     public function descriptionStringMid()
     {
         list($year, $month, $day) = explode("-", $this->date);

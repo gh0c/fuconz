@@ -294,6 +294,12 @@
         },
         memeEmoticonsContainer : function($chatConvHolder) {
             return $chatConvHolder.find(".messages-menu-filter-items .filter-meme-emoticons .meme-emoticons-container");
+        },
+
+
+        openChatsMenuSlick : function() {
+            return $('#section-desc-filters')
+                .find('.current-chat-room-container .open-chats-slider .slider-holder');
         }
     };
 
@@ -301,6 +307,8 @@
     var chatView = {
 
         openChatRooms : {},
+
+        openChatsSlickMenuInitialised : false,
 
 
         switchOpenFilter : function($clickedMenuBtn) {
@@ -360,33 +368,58 @@
         },
 
 
-        initSlickMenu : function() {
-            $('#section-desc-filters').find('.current-chat-room-container').slick({
-                centerMode: true,
-                centerPadding: '60px',
+
+        initSlickMenu : function($holder) {
+
+
+            var openChatsMenuSlick = chatLayout.openChatsMenuSlick();
+            openChatsMenuSlick.append($holder);
+
+            openChatsMenuSlick.slick({
                 slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                centerPadding: '50px',
+                centerMode: true,
+                swipeToSlide: true,
                 responsive: [
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 3
-                        }
-                    },
                     {
                         breakpoint: 480,
                         settings: {
-                            arrows: false,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            centerPadding: '30px',
                             centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 1
+                            swipeToSlide: true
                         }
                     }
                 ]
+
             });
+
+            chatView.openChatsSlickMenuInitialised = true;
+
+
         },
+
+
+        addToSlickMenu : function($holder) {
+
+            var openChatsMenuSlick = chatLayout.openChatsMenuSlick();
+
+            if(!chatView.openChatsSlickMenuInitialised) {
+                console.log("initialising");
+
+                chatView.initSlickMenu($holder);
+            } else {
+                console.log("adding");
+                openChatsMenuSlick.slick('slickAdd',$holder);
+            }
+
+        },
+
+
 
 
         initUserList : function() {
@@ -462,7 +495,7 @@
         },
 
 
-        openChatRoom : function(hash) {
+        openChatRoom : function(hash, dontChangeView) {
             chatProcessor.refreshReadStatusOfChatRoom(hash);
 
             var $currentChatContainer = chatLayout.currentChatContainer();
@@ -477,7 +510,6 @@
 
                 chatFunctions.populateChat(hash);
 
-                chatView.initSlickMenu();
             } else {
                 var $existingChatRoomMessages = $currentChatContainer.find(
                     ".chat-conversation-holder[data-conv-hash*='" + hash + "']");
@@ -494,6 +526,7 @@
                             setTimeout(function() {
                                 if(hash in chatView.openChatRooms) {
                                     chatView.openChatRooms[hash]['messagesScroll'].reinitialise();
+
                                 }
                             }, 150);
                             $existingChatRoomMessages.closest(".conversation-container")
@@ -501,7 +534,11 @@
 
                         }
                     );
-                    $('nav.chat-menu-bottom .no-dropdown.current-chat-room').click();
+
+                    if(typeof dontChangeView == 'undefined' || dontChangeView == false) {
+                        $('nav.chat-menu-bottom .no-dropdown.current-chat-room').click();
+                    }
+
 
                     scrollApi.reinitialise();
                     setTimeout(function() {
@@ -736,6 +773,9 @@
                 };
 
 
+
+
+
                 chatView.displayChatRoom(
                     $currentChatContainer,
                     $allConversationMessages.closest(".conversation-container"),
@@ -745,6 +785,11 @@
                             chatView.openChatRooms[hash]['messagesScroll'].reinitialise();
                             chatView.openChatRooms[hash]['messagesScroll'].scrollToBottom();
                             chatView.openChatRooms[hash]['messagesMenuScroll'].reinitialise();
+
+                            var $chatRoomTitleHolder = $newChatMessages
+                                .find(".chatroom-title-holder")
+                                .clone();
+                            chatView.addToSlickMenu($chatRoomTitleHolder);
                         }, 150);
                         $chatMessages.closest(".conversation-container")
                             .attr("data-myorder", chatLayout.newMyOrder());
@@ -1332,7 +1377,7 @@
                 }
             }
             chatLayout.changeNoActivityStatus(noActivity);
-            console.log("Next request in " + nextRequest.toString() + "secs");
+//            console.log("Next request in " + nextRequest.toString() + "secs");
             return nextRequest*1000;
         }
     };
@@ -1495,6 +1540,25 @@
             setTimeout(function() {
                 $chatConvHolder.find(".submit-message .submitter.appender").click();
             }, 1000);
+        });
+
+
+        $(document).on("click", '.s-content .chatroom-title-holder.slick-slide', function() {
+            console.log("Click now");
+
+
+            var openChatsMenuSlick = chatLayout.openChatsMenuSlick();
+
+            console.log("Curr idx: " + openChatsMenuSlick.slick("slickCurrentSlide"));
+            var clickedSlideSlickIdx = $(this).data("slick-index");
+            console.log("Slide clicked idx: " + $(this).data("slick-index"));
+            openChatsMenuSlick.slick("slickGoTo", clickedSlideSlickIdx);
+
+            var hash = $(this).data("conv-hash");
+            chatView.openChatRoom(hash, true);
+
+            console.log("New curr idx: " + openChatsMenuSlick.slick("slickCurrentSlide"));
+
         });
 
     });

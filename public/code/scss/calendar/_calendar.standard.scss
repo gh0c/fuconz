@@ -181,6 +181,7 @@ $cell-height-adding-games: 4.75em;
             & > .clickable {
               &.existing-game-link {
                 padding: 1px 0 2px 0;
+                display: inline-block;
               }
               &:hover > div{
                 &.duration-cont, &.legend-icon-cont {
@@ -206,7 +207,7 @@ $cell-height-adding-games: 4.75em;
   .td .day-container {
       .booking-slots .bookings-container {
           .booking {
-            width: 30%;
+            width: 40%;
           }
       }
   }

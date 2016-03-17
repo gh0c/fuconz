@@ -9,7 +9,7 @@
 
             <a class = "home-icon-cont" href="{{ urlFor('user.profile.home') }}" title = "Korisničke stranice - {{ auth_user.username }}">
                 {%  set avatar_url = auth_user.getAvatarURL('avatar',
-                    { "width": 42, "height": 42, "crop": "fill"}) %}
+                    { "width": 34, "height": 34, "crop": "fill"}) %}
                 {%  if avatar_url %}
                     <div class = "f-thumbnail user yes-avatar">
                         <div class = "no-show"><i class = "fa fa-home"></i></div>
@@ -78,7 +78,7 @@
 
 </nav>
 
-<div class = "empty-horiz-spacer-5 white-bg"></div>
+<div class = "empty-horiz-spacer-resp-5 white-bg"></div>
 
 <nav class="nav-filters user" id="nav-filters">
 
@@ -121,10 +121,17 @@
 
     <div class="filter filter-user-main list-tags">
         <ul>
+
             <li>
                 <a href="{{ urlFor('user.matches.games.home') }}"
                    {% if active_item == "user.main.games" %}class = "active"{% endif %}>
                     <i class = "fa fa-fw fa-futbol-o"></i><span class = "link-label-fw"> Utakmice</span>
+                </a>
+            </li><!--
+            --><li>
+                <a href="{{ urlFor('user.stats.home') }}"
+                   {% if active_item == "user.main.stats" %}class = "active"{% endif %}>
+                    <i class = "fa fa-fw fa-area-chart"></i><span class = "link-label-fw"> Statistike</span>
                 </a>
             </li><!--
             --><li>
