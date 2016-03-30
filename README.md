@@ -1,20 +1,33 @@
 Fuconž
 ===================
-**Social network ** created by gh0c
 > Mjesto na kojem ekiponž dogovara fuconž
 
-**Idea: **
-: Booking football courses
-: Communication
-: Review of football matches
-: User stats... 
-: Basis for some further upgrades and possibilities
+
+Goals: 
+ - Booking football courses
+ - Communication
+ - Review of football matches
+ - User stats... 
+ - Basis for some further upgrades and possibilities
 
 
 ----------
 
-###User panel
- - <i class = "icon-key"></i> Registration and authentication
- - <i class = "icon-cog"></i> Profile manipulation
- - <i class = "icon-calendar"></i> Bookings
- - <i class = "icon-"></i> PMs and chat
+###User accounts
+ - Registration and authentication
+ - Profile data manipulation
+  * Avatar
+  * Personal info
+ - Bookings
+ - Simple chat
+ - User
+  * My games
+  * My bookings
+  * My messages
+  * Statistics
+
+###Admin panel
+ - Managing bookings, administration of all football courses
+ - Managing games played
+ - Managing list of users (data, activity...)
+
