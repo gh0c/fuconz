@@ -30,7 +30,3 @@ Goals:
  - Managing bookings, administration of all football courses
  - Managing games played
  - Managing list of users (data, activity...)
-<<<<<<< HEAD
-=======
-
->>>>>>> d649a935fe29adf4496dba383b2af98acb9e8efe
