@@ -1,0 +1,124 @@
+{% extends "templates/default.twig" %}
+
+{% block title %}
+    Test
+{% endblock %}
+
+{% block content %}
+
+<div class = "main-block-cont">
+    <div class = "black-horiz-spacer-10"></div>
+
+    <div class = "main-subtitle-box">
+        <div class = "inner-cont flag"></div>
+        <div class = "inner-cont page-title">
+            <h2>Test nasumičnog biranja!</h2>
+        </div>
+    </div>
+    <div class = "black-horiz-spacer-5"></div>
+
+    <div class = "main-content-box">
+        {% include "templates/partials/user_messages.twig" %}
+        <div class = "text-center">
+            <div class = "stats-cont mega stats-container main random-sort-simulation" >
+                <div class = "inner-cont">
+                    <div class = "form-container">
+                        <form>
+                            <div class = "inputs-container">
+
+                                <div class = "text-centered players team-one">
+                                    <p>Ekipa:</p>
+                                    <div class = "submitter-cont">
+                                        <div class="submitter submit bbb-flag-v-cibona-blue">
+                                            <a data-team = "one" class = "add-player" tabindex = "10">Dodaj igrača</a>
+                                        </div>
+                                    </div>
+
+                                    <div class = "display-none vertical-section condensed text-centered one player-selector">
+                                        <div class = " relative-pos">
+                                            <select name="players-team-one[]" required
+                                                    class = "std-text-input condensed std-input-width"><!--
+                                            --><option selected disabled hidden value=''></option><!--
+                                            {% for user in users %}
+                                                --><option value = "{{ user.id }}">
+                                                    {{ user.username }} ({{ user.full_name() }})
+                                                </option><!--
+                                            {% endfor %}
+
+                                        --></select><!--
+
+                                        {#--><label data-info="Igrač"></label><!--#}
+                                    --></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+
+
+                        <div class = "empty-horiz-spacer-5 white-bg"></div>
+                        <div class = "submitter-cont">
+                            <div class="submitter submit bbb-flag-v-cibona-blue">
+                                <a class = "start-call" data-submit-url = "{{ urlFor('user.randomize-selection-simulation.post') }}">
+                                    Provedi biranje
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "statistics-overlay">
+
+                        <div class = "statistics-container">
+                            {% set user = auth_user %}
+                            <section id = "stats">
+                            </section>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <input type = "hidden" name = "csrf-token" value = "{{ csrf_token }}">
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block additional_js %}
+
+    <script src="public/code/js/stats.js"></script>
+
+    <script>
+        $(document).on("click", ".add-player", function() {
+            var team = $(this).data("team");
+
+            var divCloned = $(".player-selector." + team ).first().clone();
+
+            divCloned.removeClass("display-none");
+
+            removeSelectionIcon = document.createElement("i");
+            removeSelectionIcon.className = "fa fa-fw fa-times-circle remove-selection";
+            removeSelectionIcon.title = "Izbriši odabir";
+
+            divCloned.children().first().append(removeSelectionIcon);
+            divCloned.appendTo('.players.team-' + team + '').slideDown(700, function() {
+            });
+            divCloned.find("select").focus();
+
+        });
+
+
+        $(document).on("click", ".player-selector .remove-selection", function() {
+            $(this).closest(".player-selector").slideUp(800, function(){
+                $(this).remove();
+            });
+
+        });
+
+    </script>
+{% endblock %}

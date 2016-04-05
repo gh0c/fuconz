@@ -124,7 +124,6 @@ $app->group('/admin/susreti', function () use ($app, $authenticated_admin) {
 
         $validation_result = Game::validateNew($p_title, $p_datetime_span_id, $p_winner, $p_res_team_one, $p_res_team_two,
             $p_players_team_one, $p_players_team_two, $p_field);
-        var_dump($validation_result);
 
         if(!($validation_result["validated"])) {
             // valudation failed

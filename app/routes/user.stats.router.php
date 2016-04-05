@@ -40,8 +40,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                     exit();
                 }
             })->name('user.stats.sort.number-of-appearances.post');
-        });
-        $app->group('/sortiranje', function() use ($app, $authenticated_user){
+
             $app->post('/broj-pobjeda', $authenticated_user(), function() use ($app) {
                 if($app->request->isAjax()) {
                     $users = User::getUsersByNumberOfWins();
@@ -52,8 +51,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                     exit();
                 }
             })->name('user.stats.sort.number-of-wins.post');
-        });
-        $app->group('/sortiranje', function() use ($app, $authenticated_user){
+
             $app->post('/broj-bodova', $authenticated_user(), function() use ($app) {
                 if($app->request->isAjax()) {
                     $users = User::getUsersByNumberOfPoints();
@@ -64,8 +62,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                     exit();
                 }
             })->name('user.stats.sort.number-of-points.post');
-        });
-        $app->group('/sortiranje', function() use ($app, $authenticated_user){
+
             $app->post('/postotak-bodova', $authenticated_user(), function() use ($app) {
                 if($app->request->isAjax()) {
                     $users = User::getUsersByPercentageOfPoints();
@@ -76,8 +73,7 @@ $app->group('/clanovi', function () use ($app, $authenticated_user) {
                     exit();
                 }
             })->name('user.stats.sort.percentage-of-points.post');
-        });
-        $app->group('/sortiranje', function() use ($app, $authenticated_user){
+
             $app->post('/forma', $authenticated_user(), function() use ($app) {
                 if($app->request->isAjax()) {
                     $num_of_games = 6;

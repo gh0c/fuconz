@@ -29,7 +29,7 @@ $label-padding-left-delta: 28px;
   //  font-size: 0.95em;
 
   padding: 1em 0;
-  @include responsive-w-min(560px) {
+  @include responsive-w-min($bp-mob-w-4) {
     padding: 1em 0.25em;
   }
   @include responsive-w-min($tablet-bp) {
@@ -57,22 +57,37 @@ $label-padding-left-delta: 28px;
 
     & > div {
       width: 100%;
-      padding: 0.375em 0;
+      padding: 0.25em 0;
 //      background-color: rgba(80, 95, 120, .2); /// <<<
 
       position: relative;
-      @include responsive-w-min(560px) {
-        padding: 0.375em $padding-w1;
+      @include responsive-w-min($bp-mob-w-4) {
+        padding: 0.25em $padding-w1;
       }
-      @include responsive-w-min(1024px) {
-        padding: 0.375em $padding-w2;
+      @include responsive-w-min($bp-des-w-1) {
+        padding: 0.25em $padding-w2;
       }
       //      @include responsive-w-min(1024px) {
       //        padding: 0.375em $padding-w3;
       //      }
     }
+    &.condensed {
+      & > div {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        @include responsive-w-min($bp-mob-w-4) {
+          padding-top: 2px;
+          padding-bottom: 2px;
+        }
+        @include responsive-w-min($bp-des-w-1) {
+          padding-top: 2px;
+          padding-bottom: 2px;
+        }
 
+      }
+    }
   }
+
 
 
   // inputs
@@ -105,6 +120,11 @@ $label-padding-left-delta: 28px;
   .small-text-input {
 
     height: $std-input-height;
+
+    &.condensed {
+      height: $std-input-height - 8px;
+      padding:   2px 1.5em 2px $input-padding-left;
+    }
   }
   .std-textarea-input {
     height: $std-textarea-height;
@@ -138,6 +158,8 @@ $label-padding-left-delta: 28px;
         width:100%;
       }
     }
+
+
   }
 
   .std-input-width {
@@ -202,82 +224,124 @@ $label-padding-left-delta: 28px;
     }
   }
 
-  .std-text-input + label,
-  .large-text-input + label,
-  .medium-text-input + label,
-  .small-text-input + label,
-  .std-textarea-input + label {
-    //    background-color: rgba(0, 190, 60, .45); /// <<<<
-    font-family: 'Raleway',Arial,sans-serif;
-    font-weight: 100;
-    display: inline-table;
-    pointer-events: none;
-
-    padding: 0;
-    position: absolute;
-    text-align: left;
-
-    height: $std-input-height;
-    top: 0.375em;
-    left: 0;
-    right: 0;
-    bottom: 0.375em;
-    margin: 0 auto;
-
-
-    &:before {
-      content: attr(data-info);
-      display: inline-block;
-      line-height: $label-line-height;
-      white-space: nowrap;
-      @include pp-transition(0.3s ease-in-out);
-      background-color: white;
-      color: $dark-blue-dark;
-      text-align: left;
-      padding: 1px 6px;
-      font-style: italic;
-      opacity: 0.7;
-      position: relative;
-      left: $label-padding-left-delta + $input-padding-left;
-      //      background-color: rgba(195, 20, 30, .8); /// <<<
-      top: ($std-input-height/2 - ($label-line-height/2 + 1px));
+  select.medium-input-width,
+  select.medium-input-width + label{
+    @include responsive-w-max($medium-input-width + 5em) {
+      @include calc(width, "100% - 4em");
     }
-    &.special-label {
-      font-family: FontAwesome;
-      &.availability-label {
-        &:before {
-          content: "\f0c0";
+  }
+  select.std-input-width,
+  select.std-input-width + label {
+    @include responsive-w-max($std-input-width + 5em) {
+      @include calc(width, "100% - 4em");
+    }
+  }
+  select.large-input-width,
+  select.large-input-width + label {
+    @include responsive-w-max($large-input-width + 5em) {
+      @include calc(width, "100% - 4em");
+    }
+  }
+
+
+
+  .std-text-input,
+  .large-text-input,
+  .medium-text-input,
+  .small-text-input,
+  .std-textarea-input {
+    //    background-color: rgba(0, 190, 60, .45); /// <<<<
+
+    & + label {
+      font-family: 'Raleway',Arial,sans-serif;
+      font-weight: 100;
+      display: inline-table;
+      pointer-events: none;
+
+      padding: 0;
+      position: absolute;
+      text-align: left;
+
+      height: $std-input-height;
+
+      left: 0;
+      right: 0;
+      bottom: 0.25em;
+      top: 0.25em;
+      margin: 0 auto;
+
+
+
+
+      &:before {
+        content: attr(data-info);
+        display: inline-block;
+        line-height: $label-line-height;
+        white-space: nowrap;
+        @include pp-transition(0.3s ease-in-out);
+        background-color: white;
+        color: $dark-blue-dark;
+        text-align: left;
+        padding: 1px 6px;
+        font-style: italic;
+        opacity: 0.7;
+        position: relative;
+        left: $label-padding-left-delta + $input-padding-left;
+        //      background-color: rgba(195, 20, 30, .8); /// <<<
+        top: ($std-input-height/2 - ($label-line-height/2 + 1px));
+      }
+      &.special-label {
+        font-family: FontAwesome;
+        &.availability-label {
+          &:before {
+            content: "\f0c0";
+          }
         }
+      }
+
+      &:after {
+        content: '\0020';
+
+        display: inline-block;
+        line-height: $label-line-height;
+        white-space: nowrap;
+        @include pp-transition(0.3s ease-in-out);
+
+        color: $dark-blue-dark;
+        width: 2.5em;
+        font-family: FontAwesome;
+        position: absolute;
+        text-align: center;
+        padding: 1px 6px;
+
+        right: 0;
+        top: ($std-input-height/2 - ($label-line-height/2 + 1px));
+      }
+
+      &.req:after {
+        //      content: '\f069';
+        content: '\f12a';
+        color: $red-required;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+
       }
     }
 
-    &:after {
-      content: '\0020';
-
-      display: inline-block;
-      line-height: $label-line-height;
-      white-space: nowrap;
-      @include pp-transition(0.3s ease-in-out);
-
-      color: $dark-blue-dark;
-      width: 2.5em;
-      font-family: FontAwesome;
-      position: absolute;
-      text-align: center;
-      padding: 1px 6px;
-
-      right: 0;
-      top: ($std-input-height/2 - ($label-line-height/2 + 1px));
+    &.condensed {
+      & + label {
+        height: $std-input-height - 8px;
+        bottom: 2px;
+        top: 2px;
+      }
     }
 
-    &.req:after {
-      //      content: '\f069';
-      content: '\f12a';
-      color: $red-required;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  }
 
-    }
-
+  select.std-text-input + label,
+  select.large-text-input + label,
+  select.medium-text-input + label,
+  select.small-text-input + label {
+    left: -3em;
   }
 
   .std-text-input,
@@ -611,14 +675,17 @@ $label-padding-left-delta: 28px;
     .remove-selection {
 
       position: relative;
-      width: 2em;
-      font-size: 1.5em;
+      width: 3em;
+
       /* top: 0.5em; */
       cursor: pointer;
       display: inline-block;
       /* left: 4em; */
       z-index: 5;
-
+      &:before {
+        font-size: 1.5em;
+        vertical-align: middle;
+      }
       &:hover {
         color: $red-close-icons;
       }
@@ -627,10 +694,13 @@ $label-padding-left-delta: 28px;
 
   .player-selector {
     .remove-selection {
-      position: absolute;
-      width: 2em;
-      font-size: 1.5em;
-      top: .5em;
+      position: relative;
+      width: 3em;
+      &:before {
+        font-size: 1.5em;
+        vertical-align: middle;
+      }
+//      top: .5em;
 //      right: -50px;
       cursor: pointer;
       &:hover {
@@ -823,7 +893,7 @@ div.info {
         vertical-align: middle;
         display: table-cell;
         //        padding-right: 0;
-        color: $dark-dark-blue;
+//        color: $dark-dark-blue;
         &.successful-validation {
           color: $light-blue-gray-light;
         }

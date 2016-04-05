@@ -4,6 +4,7 @@
 .stats-container.main {
   &.mega {
     @include gradient-dark-blue-radial;
+    color: white;
     * {
       box-sizing: border-box;
     }
@@ -376,6 +377,18 @@
           background-color: $dark-blue-dark;
         }
 
+        &.team-one-pl {
+          background-color: $light-blue-gray-dark;
+          .td > div > * {
+            color: $dark-dark-blue;
+          }
+        }
+        &.team-two-pl {
+          .td > div > * {
+            color: $light-blue-gray-light;
+          }
+          background-color: $dark-dark-blue;
+        }
 
         .td {
           font-family: 'Raleway',Arial,sans-serif;
@@ -383,7 +396,6 @@
 
           display: inline-block;
           height: 100%;
-          overflow: hidden;
           vertical-align: bottom;
           @include pp-transition(all 0.25s ease);
 

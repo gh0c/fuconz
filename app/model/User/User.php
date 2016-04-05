@@ -928,20 +928,13 @@ class User
     }
 
 
-    public static function getUsersByNumberOfAppearances()
-    {
-        $all_users = self::getUsers();
-        usort($all_users, array('app\model\User\User', "sortByNumberOfApps"));
-        return $all_users;
-
-    }
 
     /**
      * @param User $a
      * @param User $b
      * @return integer
      */
-    public static function sortByNumberOfApps($a, $b)
+    public static function sortByNumberOfAppearances($a, $b)
     {
         if($b->numberOfAppearances() != $a->numberOfAppearances()) {
             return $b->numberOfAppearances() - $a->numberOfAppearances();
@@ -950,15 +943,22 @@ class User
             return 1;
         }
     }
+    public static function sortUsersByNumberOfAppearances($users)
+    {
+        usort($users, array('app\model\User\User', "sortByNumberOfAppearances"));
+        return $users;
+    }
 
 
-    public static function getUsersByNumberOfWins()
+    public static function getUsersByNumberOfAppearances()
     {
         $all_users = self::getUsers();
-        usort($all_users, array('app\model\User\User', "sortByNumberOfWins"));
-        return $all_users;
-
+        return self::sortUsersByNumberOfAppearances($all_users);
     }
+
+
+
+
     /**
      * @param User $a
      * @param User $b
@@ -974,19 +974,24 @@ class User
                 return $a->numberOfWinsAfterET() - $b->numberOfWinsAfterET();
             }
             else {
-                return self::sortByNumberOfApps($b, $a);
+                return self::sortByNumberOfAppearances($b, $a);
             }
         }
     }
-
-
-    public static function getUsersByNumberOfPoints()
+    public static function sortUsersByNumberOfWins($users)
+    {
+        usort($users, array('app\model\User\User', "sortByNumberOfWins"));
+        return $users;
+    }
+    public static function getUsersByNumberOfWins()
     {
         $all_users = self::getUsers();
-        usort($all_users, array('app\model\User\User', "sortByNumberOfPoints"));
-        return $all_users;
+        return self::sortUsersByNumberOfWins($all_users);
 
     }
+
+
+
     /**
      * @param User $a
      * @param User $b
@@ -1001,13 +1006,26 @@ class User
             return self::sortByNumberOfWins($a, $b);
         }
     }
+    public static function sortUsersByNumberOfPoints($users)
+    {
+        usort($users, array('app\model\User\User', "sortByNumberOfPoints"));
+        return $users;
+    }
+    public static function getUsersByNumberOfPoints()
+    {
+        $all_users = self::getUsers();
+        return self::sortUsersByNumberOfPoints($all_users);
+    }
+
+
+
 
     /**
      * @param User $a
      * @param User $b
      * @return integer
      */
-    public static function sortByNumberOfRecentApps($a, $b)
+    public static function sortByNumberOfRecentAppearancess($a, $b)
     {
         if($b->numberOfAppearances() != $a->numberOfAppearances()) {
             return $b->numberOfAppearances() - $a->numberOfAppearances();
@@ -1016,6 +1034,7 @@ class User
             return 1;
         }
     }
+
 
     /**
      * @param User $a
@@ -1029,17 +1048,11 @@ class User
             return $b->numberOfRecentWins($num_of_games) - $a->numberOfRecentWins($num_of_games);
         }
         else {
-            return self::sortByNumberOfRecentApps($a, $b);
+            return self::sortByNumberOfRecentAppearancess($a, $b);
         }
     }
 
-    public static function getUsersByPercentageOfPoints()
-    {
-        $all_users = self::getUsers();
-        usort($all_users, array('app\model\User\User', "sortByPercentageOfPoints"));
-        return $all_users;
 
-    }
     /**
      * @param User $a
      * @param User $b
@@ -1055,6 +1068,18 @@ class User
             return self::sortByNumberOfPoints($a, $b);
         }
     }
+    public static function sortUsersByPercentageOfPoints($users)
+    {
+        usort($users, array('app\model\User\User', "sortByPercentageOfPoints"));
+        return $users;
+    }
+    public static function getUsersByPercentageOfPoints()
+    {
+        $all_users = self::getUsers();
+        return self::sortUsersByPercentageOfPoints($all_users);
+    }
+
+
 
     /**
      * @param User $a
@@ -1073,22 +1098,117 @@ class User
         }
     }
 
-    public static function getUsersByNumberOfRecentPoints($num_of_games)
+
+    public static function sortUsersByNumberOfRecentPoints($users, $num_of_games)
     {
-        $all_users = self::getUsers();
-
-
-        usort($all_users, function(User $a, User $b) use ($num_of_games) {
+        usort($users, function(User $a, User $b) use ($num_of_games) {
             if($b->numberOfRecentPoints($num_of_games) != $a->numberOfRecentPoints($num_of_games)) {
                 return $b->numberOfRecentPoints($num_of_games) - $a->numberOfRecentPoints($num_of_games);
             }
             else {
-                return User::sortByPercentageOfRecentPoints($a, $b, $num_of_games);
+                return User::sortByNumberOfRecentWins($a, $b, $num_of_games);
             }
         });
-        return $all_users;
+        return $users;
     }
 
+    public static function getUsersByNumberOfRecentPoints($num_of_games)
+    {
+        $all_users = self::getUsers();
+        return self::sortUsersByNumberOfRecentPoints($all_users, $num_of_games);
+    }
+
+
+
+    public static function validateRandomUsersSplit($p_players_team_one) {
+        $validation_result = array();
+        $validation_result["validated"] = false;
+        $users = array();
+
+
+        if (!isset($p_players_team_one) || count($p_players_team_one) < 1 ) {
+            $validation_result["errors"] = "Ekipa mora imati neke igrače...";
+            return $validation_result;
+        }
+        if ((count($p_players_team_one)%2)) {
+            $validation_result["errors"] = "Odaberi paran broj igrača!";
+            return $validation_result;
+        }
+        $vals_cnt = array_count_values($p_players_team_one);
+        foreach ($p_players_team_one as $player_one) {
+            if(!($u = User::getUserById((int)$player_one))) {
+                $validation_result["errors"] = "Ne postoji igrač ekipe 1 sa identifikatorom {$player_one}";
+                return $validation_result;
+            } elseif ($vals_cnt[$player_one] != 1) {
+                $validation_result["errors"] = "Više puta si izabrao igrača: " . $u->username . "!";
+                return $validation_result;
+            } else {
+                $users[] = $u;
+            }
+        }
+
+        $validation_result["validated"] = true;
+        $validation_result["users"] = $users;
+        return $validation_result;
+    }
+
+    public static function splitUsersRandom($users)
+    {
+        $sorted_users = self::sortUsersByPercentageOfPoints($users);
+        $copy_of_sorted = $sorted_users;
+
+        $teams = array(array(), array());
+        $teams_ids = array(array(), array());
+
+        $side = 0;
+        while (sizeof($copy_of_sorted) > 0) {
+            $max_value = sizeof($copy_of_sorted) - 1;
+
+            $index_1 = rand(0, $max_value);
+            $teams[$side%2][] = $copy_of_sorted[$index_1];
+            $teams_ids[$side%2][] = $copy_of_sorted[$index_1]->id;
+
+            if(isset($copy_of_sorted[$index_1-1]) && isset($copy_of_sorted[$index_1+1])) {
+                $allowed_values = array($index_1-1, $index_1+1);
+            } else {
+                if (isset($copy_of_sorted[$index_1-1])) {
+                    if (isset($copy_of_sorted[$index_1-2])) {
+                        $allowed_values = array($index_1-1, $index_1-2);
+                    } else {
+                        $allowed_values = array($index_1-1);
+                    }
+                } elseif (isset($copy_of_sorted[$index_1+1])) {
+                    if (isset($copy_of_sorted[$index_1+2])) {
+                        $allowed_values = array($index_1+1, $index_1+2);
+                    } else {
+                        $allowed_values = array($index_1+1);
+                    }
+                } else {
+                    $allowed_values = array($index_1);
+                }
+            }
+            $side += 1;
+
+
+            $index_2 = $allowed_values[rand(0, sizeof($allowed_values) - 1)];
+            $teams[$side%2][] = $copy_of_sorted[$index_2];
+            $teams_ids[$side%2][] = $copy_of_sorted[$index_2]->id;
+
+            unset($copy_of_sorted[$index_1]);
+            unset($copy_of_sorted[$index_2]);
+            $copy_of_sorted = array_values($copy_of_sorted);
+
+            $side += 1;
+        }
+
+        return array(
+            "sorted_users" => $sorted_users,
+            "teams" => $teams,
+            "teams_ids" => $teams_ids
+
+        );
+
+    }
 
 }
 ?>

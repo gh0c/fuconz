@@ -3549,17 +3549,33 @@ html body #content .main-content-box .form-container input {
 }
 html body #content .main-content-box .form-container .vertical-section > div, html body #content .main-content-box .form-container .horizontal-section > div {
   width: 100%;
-  padding: 0.375em 0;
+  padding: 0.25em 0;
   position: relative;
 }
 @media only screen and (min-width: 560px) {
   html body #content .main-content-box .form-container .vertical-section > div, html body #content .main-content-box .form-container .horizontal-section > div {
-    padding: 0.375em 1em;
+    padding: 0.25em 1em;
   }
 }
 @media only screen and (min-width: 1024px) {
   html body #content .main-content-box .form-container .vertical-section > div, html body #content .main-content-box .form-container .horizontal-section > div {
-    padding: 0.375em 2.5em;
+    padding: 0.25em 2.5em;
+  }
+}
+html body #content .main-content-box .form-container .vertical-section.condensed > div, html body #content .main-content-box .form-container .horizontal-section.condensed > div {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+@media only screen and (min-width: 560px) {
+  html body #content .main-content-box .form-container .vertical-section.condensed > div, html body #content .main-content-box .form-container .horizontal-section.condensed > div {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  html body #content .main-content-box .form-container .vertical-section.condensed > div, html body #content .main-content-box .form-container .horizontal-section.condensed > div {
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 html body #content .main-content-box .form-container .std-text-input, html body #content .main-content-box .form-container .large-text-input, html body #content .main-content-box .form-container .medium-text-input, html body #content .main-content-box .form-container .small-text-input, html body #content .main-content-box .form-container .std-textarea-input {
@@ -3583,6 +3599,10 @@ html body #content .main-content-box .form-container .std-text-input, html body 
 }
 html body #content .main-content-box .form-container .std-text-input, html body #content .main-content-box .form-container .large-text-input, html body #content .main-content-box .form-container .medium-text-input, html body #content .main-content-box .form-container .small-text-input {
   height: 40px;
+}
+html body #content .main-content-box .form-container .std-text-input.condensed, html body #content .main-content-box .form-container .large-text-input.condensed, html body #content .main-content-box .form-container .medium-text-input.condensed, html body #content .main-content-box .form-container .small-text-input.condensed {
+  height: 32px;
+  padding: 2px 1.5em 2px 20px;
 }
 html body #content .main-content-box .form-container .std-textarea-input {
   height: 120px;
@@ -3695,6 +3715,27 @@ html body #content .main-content-box .form-container .nano-input-width + label {
     width: 100%;
   }
 }
+@media only screen and (max-width: 25em) {
+  html body #content .main-content-box .form-container select.medium-input-width, html body #content .main-content-box .form-container select.medium-input-width + label {
+    width: -moz-calc(100% - 4em);
+    width: -webkit-calc(100% - 4em);
+    width: calc(100% - 4em);
+  }
+}
+@media only screen and (max-width: 29em) {
+  html body #content .main-content-box .form-container select.std-input-width, html body #content .main-content-box .form-container select.std-input-width + label {
+    width: -moz-calc(100% - 4em);
+    width: -webkit-calc(100% - 4em);
+    width: calc(100% - 4em);
+  }
+}
+@media only screen and (max-width: 37em) {
+  html body #content .main-content-box .form-container select.large-input-width, html body #content .main-content-box .form-container select.large-input-width + label {
+    width: -moz-calc(100% - 4em);
+    width: -webkit-calc(100% - 4em);
+    width: calc(100% - 4em);
+  }
+}
 html body #content .main-content-box .form-container .std-text-input + label, html body #content .main-content-box .form-container .large-text-input + label, html body #content .main-content-box .form-container .medium-text-input + label, html body #content .main-content-box .form-container .small-text-input + label, html body #content .main-content-box .form-container .std-textarea-input + label {
   font-family: 'Raleway', Arial, sans-serif;
   font-weight: 100;
@@ -3704,10 +3745,10 @@ html body #content .main-content-box .form-container .std-text-input + label, ht
   position: absolute;
   text-align: left;
   height: 40px;
-  top: 0.375em;
   left: 0;
   right: 0;
-  bottom: 0.375em;
+  bottom: 0.25em;
+  top: 0.25em;
   margin: 0 auto;
 }
 html body #content .main-content-box .form-container .std-text-input + label:before, html body #content .main-content-box .form-container .large-text-input + label:before, html body #content .main-content-box .form-container .medium-text-input + label:before, html body #content .main-content-box .form-container .small-text-input + label:before, html body #content .main-content-box .form-container .std-textarea-input + label:before {
@@ -3759,6 +3800,14 @@ html body #content .main-content-box .form-container .std-text-input + label.req
   content: '\f12a';
   color: #bf1a1a;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+html body #content .main-content-box .form-container .std-text-input.condensed + label, html body #content .main-content-box .form-container .large-text-input.condensed + label, html body #content .main-content-box .form-container .medium-text-input.condensed + label, html body #content .main-content-box .form-container .small-text-input.condensed + label, html body #content .main-content-box .form-container .std-textarea-input.condensed + label {
+  height: 32px;
+  bottom: 2px;
+  top: 2px;
+}
+html body #content .main-content-box .form-container select.std-text-input + label, html body #content .main-content-box .form-container select.large-text-input + label, html body #content .main-content-box .form-container select.medium-text-input + label, html body #content .main-content-box .form-container select.small-text-input + label {
+  left: -3em;
 }
 html body #content .main-content-box .form-container .std-text-input:focus, html body #content .main-content-box .form-container .large-text-input:focus, html body #content .main-content-box .form-container .medium-text-input:focus, html body #content .main-content-box .form-container .small-text-input:focus, html body #content .main-content-box .form-container .std-textarea-input:focus {
   border-color: #183293;
@@ -4032,23 +4081,28 @@ html body #content .main-content-box .form-container .selected-span-cont {
 }
 html body #content .main-content-box .form-container .selected-span-cont .remove-selection {
   position: relative;
-  width: 2em;
-  font-size: 1.5em;
+  width: 3em;
   /* top: 0.5em; */
   cursor: pointer;
   display: inline-block;
   /* left: 4em; */
   z-index: 5;
 }
+html body #content .main-content-box .form-container .selected-span-cont .remove-selection:before {
+  font-size: 1.5em;
+  vertical-align: middle;
+}
 html body #content .main-content-box .form-container .selected-span-cont .remove-selection:hover {
   color: #ae2e15;
 }
 html body #content .main-content-box .form-container .player-selector .remove-selection {
-  position: absolute;
-  width: 2em;
-  font-size: 1.5em;
-  top: 0.5em;
+  position: relative;
+  width: 3em;
   cursor: pointer;
+}
+html body #content .main-content-box .form-container .player-selector .remove-selection:before {
+  font-size: 1.5em;
+  vertical-align: middle;
 }
 html body #content .main-content-box .form-container .player-selector .remove-selection:hover {
   color: #ae2e15;
@@ -4252,7 +4306,6 @@ html body #content .main-content-box div.info .status-container.msg > h4 {
   height: 2em;
   vertical-align: middle;
   display: table-cell;
-  color: #0c131d;
 }
 html body #content .main-content-box div.info .status-container.msg > h4.successful-validation {
   color: #edf0f4;
@@ -5691,6 +5744,7 @@ html body #content .main-content-box .stats-container.main.mega {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#183293', endColorstr='#122b72',GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
+  color: white;
 }
 html body #content .main-content-box .stats-container.main.mega * {
   box-sizing: border-box;
@@ -6010,12 +6064,23 @@ html body #content .main-content-box .stats-container.main .rankings-table-conta
 html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr.i-am-user {
   background-color: #122b72;
 }
+html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr.team-one-pl {
+  background-color: #eaeef1;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr.team-one-pl .td > div > * {
+  color: #0c131d;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr.team-two-pl {
+  background-color: #0c131d;
+}
+html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr.team-two-pl .td > div > * {
+  color: #edf0f4;
+}
 html body #content .main-content-box .stats-container.main .rankings-table-container .rows-container .tr .td {
   font-family: 'Raleway', Arial, sans-serif;
   font-weight: initial;
   display: inline-block;
   height: 100%;
-  overflow: hidden;
   vertical-align: bottom;
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;

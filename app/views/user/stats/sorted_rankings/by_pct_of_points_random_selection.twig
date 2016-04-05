@@ -48,7 +48,9 @@
         <div class = "rows-container">
 
             {% for user in users %}
-                <div class = "tr height-2-and-half-em {{ (auth_user.id == user.id)? 'i-am-user':'' }}">
+                <div class = "tr height-2-and-half-em
+                {{ (user.id in teams_ids[0])? ' team-one-pl':'' }}
+                {{ (user.id in teams_ids[1])? ' team-two-pl':'' }}">
 
                     <div class = "td data-user margin-std-lr text-left">
                         <div class = "user"><!--
@@ -118,7 +120,11 @@
             {% endfor %}
 
         </div>
-
+        <div class = "legend">
+            <div class = "text-center">
+                <i class = "fa fa-fw fa-square dark-blue-light-bg dark-dark-blue"></i><span> - Ekipa 1</span>
+                <i class = "fa fa-fw fa-square light-blue-gray-d"></i><span> - Ekipa 2</span>
+            </div>
         <div class = "legend">
             <div class = "data-points-percentage">
                 <span class = "short-name">

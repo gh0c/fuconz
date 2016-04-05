@@ -35,5 +35,61 @@ $app->group('/clanovi', function () use ($app, $user_model, $authenticated_user)
 
 
 
+    $app->get('/nasumicno-biranje-ekipa-simulacija', $authenticated_user(), function() use ($app) {
+
+        $app->render('user/random_sort_players_sim.twig', array(
+            'user' => $app->auth_user,
+//            'my_str' => $my_str,
+            'users' => User::getUsers()
+        ));
+
+
+    })->name('user.randomize-selection-simulation.home');
+
+    $app->post("/nasumicno-biranje-ekipa", $authenticated_user(), function() use ($app) {
+        if($app->request->isAjax()) {
+
+            try {
+                $body = $app->request->getBody();
+                $json_data_received = json_decode($body, true);
+//                echo "Evo me dolazim"; exit();
+                $user_ids = $json_data_received['selected-users'];
+
+
+                $validation_result = User::validateRandomUsersSplit($user_ids);
+                if(!($validation_result["validated"])) {
+                    // valudation failed
+                    if(isset($validation_result["errors"])) {
+                        $app->flashNow('errors',  $validation_result["errors"]);
+                        $app->render('templates/partials/user_messages.twig', array());
+                    }
+                } else {
+                    $users = $validation_result["users"];
+                    $random_selection = User::splitUsersRandom($users);
+
+                    $sorted_users = $random_selection["sorted_users"];
+                    $team_ids = $random_selection["teams_ids"];
+                    $teams = $random_selection["teams"];
+
+                    $app->render('user/stats/sorted_rankings/by_pct_of_points_random_selection.twig', array(
+                        'users' => $sorted_users,
+                        'teams_ids' => $team_ids,
+                        'teams' => $teams
+                    ));
+                }
+
+                exit();
+
+            } catch (Exception $e) {
+                echo json_encode(array(
+                    "error" => "Greska:" . $e->getMessage()
+                ));
+            }
+            exit();
+        }
+
+    })->name('user.randomize-selection-simulation.post');
+
+
 });
 ?>

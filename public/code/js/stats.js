@@ -35,6 +35,7 @@
                         }
                         if(typeof jsonReply["error"] != "undefined" && jsonReply["error"] != null) {
                             console.log("Error!!");
+                            console.log(jsonReply["error"])
                         } else {
                             callback(reply);
 
@@ -66,6 +67,7 @@
 
                     if(typeof jsonReply["error"] != "undefined" && jsonReply["error"] != null) {
                         console.log("Error!!");
+                        console.log(jsonReply["error"])
                     } else {
                         callback(jsonReply);
 
@@ -162,6 +164,39 @@
         });
 
 
+    });
+
+
+
+    $(document).on("click", ".random-sort-simulation .submitter > a.start-call", function() {
+        var $caller = $(this);
+
+        var $lights = $('<i>', {
+            class : 'light l-1 no fa fa-spinner fa-spin'
+        });
+        $caller.text("");
+        $lights.hide().appendTo($caller).slideDown();
+
+        var selectedIds = [];
+        $("select[name='players-team-one\\[\\]'] option:not(:disabled):selected").each(
+            function () {
+                selectedIds.push(parseInt($(this).val()));
+            }
+        );
+        var myParams = {};
+        myParams["selected-users"] = selectedIds;
+        var params = $.extend(generalStatsParams, myParams);
+
+        statsCalls.handleAjaxCall($caller.data("submit-url"), params, function(reply) {
+            $("#stats").html(reply);
+//            removeGifs();
+//            $(".stats-cont .nav-sort-filters a").removeClass("active");
+//            $caller.addClass("active");
+            $lights.slideDown(200, function(){
+                $(this).remove();
+                $caller.text("Provedi ponovo!");
+            });
+        });
     });
 
 }).call();
